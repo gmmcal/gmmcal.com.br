@@ -27,10 +27,23 @@
 
 jQuery(function($) {
 	$(document).ready( function() {
-		// for banner height js
-		var windowWidth = $(window).width();
-			var windowHeight =$(window).height();
+		var theWindow = $(window), $bg = $(".bannerImg");
+
+		theWindow.resize(function(){
+			// for banner height js
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
 			$('.banner').css({'width':windowWidth ,'height':windowHeight -"60" });
+			if ( theWindow.width() < theWindow.height() ) {
+				$bg
+					.removeClass()
+					.addClass('bgheight');
+			} else {
+				$bg
+					.removeClass()
+					.addClass('bgwidth');
+			}
+		}).trigger("resize");
 
 		var $container = $('.portfolioContainer');
 		$container.isotope({
@@ -99,11 +112,6 @@ jQuery(function($) {
 			chart.update(Math.random()*100);
 		});
 
-		var theWindow        = $(window),
-			$bg              = $(".bannerImg");
-
-		theWindow.resize(resizeBg).trigger("resize");
-
 		// enabling stickUp on the '.navbar-wrapper' class
 		$('.navbar-wrapper').stickUp({
 			parts: {
@@ -113,7 +121,8 @@ jQuery(function($) {
 				3: 'exprience',
 				4: 'education',
 				5: 'protfolio',
-				6: 'contact'
+				6: 'contact',
+				7: 'footer'
 			},
 			itemClass: 'menuItem',
 			itemHover: 'active',
@@ -137,18 +146,5 @@ jQuery(function($) {
 		$( ".navbar-toggle" ).click(function() {
 			$( ".navbar-collapse" ).removeClass( "hideClass" );
 		});
-
-		function resizeBg() {
-			if ( theWindow.width() < theWindow.height() ) {
-				$bg
-					.removeClass()
-					.addClass('bgheight');
-			} else {
-				$bg
-					.removeClass()
-					.addClass('bgwidth');
-			}
-		}
-
 	});
 });
