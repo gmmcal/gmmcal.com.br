@@ -1,0 +1,85 @@
+/*----------------------------------------------------
+ 2.	Document Setup
+------------------------------------------------------*/
+.wrapper{
+	width:100%;
+}
+.spHeight{
+	padding-top:63px;
+}
+
+.noMar{
+	margin:0 !important;
+}
+.noPadd{
+	padding:0px !important;
+}
+
+.container .row{
+	margin:0px;
+}
+
+p{
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	line-height:21px;
+	font-weight:400;
+	padding-bottom:22px;
+	margin:0px;
+}
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-size:80px;
+	line-height:90px;
+	font-weight:700;
+	margin:0px;
+	padding-bottom:8px;
+}
+h2{
+	font-family: 'Open Sans', sans-serif;
+	font-size:36px;
+	line-height:38px;
+	padding-bottom:0px;
+	font-weight:300;
+	text-transform:uppercase;
+	margin:0px;
+}
+h3{
+	font-family: 'Open Sans', sans-serif;
+	font-size:24px;
+	line-height:30px;
+	padding-bottom:6px;
+	font-weight:400;
+	margin:0px;
+}
+h4{
+	font-family: 'Open Sans', sans-serif;
+	font-size:19px;
+	line-height:24px;
+	padding-bottom:6px;
+	font-weight:600;
+	margin:0px;
+}
+h5{
+	font-family: 'Open Sans', sans-serif;
+	font-size:16px;
+	line-height:24px;
+	padding-bottom:6px;
+	font-weight:400;
+	margin:0px;
+}
+
+h4.subHeading{
+	font-weight:600;
+	font-size:18px;
+	padding-bottom:22px;
+}
+
+.heading{
+	text-align:center;
+	padding-bottom:45px;
+}
+
+.topmar{
+	margin-top:20px;
+}

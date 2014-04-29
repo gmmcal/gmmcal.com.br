@@ -1,0 +1,92 @@
+/*----------------------------------------------------
+ 7.	Technical Skills Style
+------------------------------------------------------*/
+.addspace{
+	height:60px;
+	background:#eeeeee;
+}
+
+.technical{
+	background:#eeeeee;
+	color:#474d5d;
+}
+.technical .container{
+	padding-top:85px ;
+	padding-bottom:69px ;
+}
+.technical .heading p{
+	padding-bottom:41px;
+}
+
+.technical p{
+	color:#474d5d;
+}
+.technical h2{
+	color:#ff675f;
+}
+
+.technical .skillsArea{
+	padding:0px;
+}
+.technical .skills{
+	margin:0 auto;
+	margin-bottom:23px;
+	text-align:center;
+	padding:0px;
+	float:none;
+}
+.technical .skills p{
+	color:#84868d;
+	font-size:13px;
+	line-height:18px;
+	text-align:center;
+}
+.technical .skills img{
+	margin:0 auto;
+	margin-bottom:33px;
+	width:100%;
+	max-width:152px;
+}
+
+.technical .skills h4{
+	font-weight:700;
+	text-transform:uppercase;
+}
+
+
+.skilBg{
+	background:url(website/skills.png) no-repeat 0 0;
+}
+
+
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 152px;
+  height: 152px;
+  margin-bottom: 26px;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+  display: inline-block;
+  font-size:21px;
+  color:#474d5d;
+  line-height: 152px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+.angular {
+  margin-top: 100px;
+}
+.angular .chart {
+  margin-top: 0;
+}
