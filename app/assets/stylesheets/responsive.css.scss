@@ -2,6 +2,13 @@
  13. Responsive style
 -------------------------------------------------------------------------------*/
 
+@media screen and (max-width: 1024px) {
+	.bgwidth {
+		width: auto;
+		height: 100%;
+	}
+}
+
 @media screen and (min-width: 1200px) {
 	.workYear{
 		width:140px;
@@ -127,17 +134,18 @@
 
 
 	.bannerText {
-		top: 25%;
+		top: 20%;
 		padding-top:15px;
 		padding-bottom:15px;
 	}
 	.bannerText h1 {
 		font-size: 42px;
-		line-height: 48px;
+		line-height: 40px;
 	}
 	.bannerText h2 {
-		font-size: 18px;
+		font-size: 15px;
 		line-height:24px;
+		padding-top: 10px;
 	}
 }
 

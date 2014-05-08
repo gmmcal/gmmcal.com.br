@@ -17,17 +17,19 @@ header{
 	top:35%;
 	text-align:center;
 	padding:30px 0 30px ;
-	border:1px solid #fff;
-	background: rgba(0, 0, 0, 0.2);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000, endColorstr=#b2000000);
 	zoom: 1;
 }
 .bannerText h1{
 	text-transform:uppercase;
+	font-weight: 100;
+	font-size: 51px;
+	letter-spacing: 16px;
 }
 .bannerText h2{
-	font-size:34px;
-	text-transform:none;
+	font-size:17px;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	line-height: 45px;
 }
 
 .bannerPart{
