@@ -41,5 +41,8 @@ gem 'capistrano-bundler', group: :development
 # Use brakeman
 gem 'brakeman', group: :development
 
-#use passenger
+# Use passenger
 gem 'passenger'
+
+# User quiet_assets on development
+gem 'quiet_assets', group: :development
