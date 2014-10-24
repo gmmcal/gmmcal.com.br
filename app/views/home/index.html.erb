@@ -207,41 +207,197 @@
 	<section class="protfolio" id="protfolio">
 		<div class="container">
 			<div class="heading">
-				<h2>Portfolio</h2>
-				<p>showcase of my latest works</p>
+				<h2>Portfólio</h2>
+				<p>Alguns dos meus trabalhos sozinho ou com parceiros</p>
 			</div>
 			<div class="portfolioFilter">
 				<ul>
-					<li><a href="#" data-filter="*" class="current">All</a></li>
-					<li><a href="#" data-filter=".photos">Photos</a></li>
-					<li><a href="#" data-filter=".branding">Branding</a></li>
-					<li><a href="#" data-filter=".illustration">Illustration</a></li>
+					<li><a href="#" data-filter="*" class="current">Todos</a></li>
+					<li><a href="#" data-filter=".backend">Backend</a></li>
+					<li><a href="#" data-filter=".frontend">Integração Frontend</a></li>
+					<li><a href="#" data-filter=".engenharia">Engenharia de Software</a></li>
 				</ul>
 			</div>
 			<ul class="portfolioContainer row">
-				<li class="photos col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/1.jpg" title="Project Title1" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image1" alt=""  > </div>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/add.jpg'), rel: "lightbox-demo", title: "Alagoas Dev Day - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.alagoasdevday.com.br", rel: "lightbox-demo", title: "Alagoas Dev Day", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/add.jpg", width: 450, height: 450, alt: "Alagoas Dev Day" %>
+					</div>
 				</li>
-				<li class="branding illustration col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/2.jpg" title="Project Title2" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image2" alt="" > </div>
+				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/casamento.jpg'), rel: "lightbox-demo", title: "Casamento - Planejamento, desenvolvimento de sistema com testes unitários e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.rosanaegustavo.com.br", rel: "lightbox-demo", title: "Casamento", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/casamento.jpg", width: 450, height: 450, alt: "Casamento" %>
+					</div>
 				</li>
-				<li class="illustration col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/3.jpg" title="Project Title3" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image3" alt="" > </div>
+				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/duranbah.jpg'), rel: "lightbox-demo", title: "Duranbah Music - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.duranbah.com.br", rel: "lightbox-demo", title: "Duranbah Music", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/duranbah.jpg", width: 450, height: 450, alt: "Duranbah Music" %>
+					</div>
 				</li>
-				<li class="branding illustration col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/4.jpg" title="Project Title4" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image4" alt="" > </div>
+				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/waterhouse.jpg'), rel: "lightbox-demo", title: "Waterhouse - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.waterhouse.com.br", rel: "lightbox-demo", title: "Waterhouse", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/waterhouse.jpg", width: 450, height: 450, alt: "Waterhouse" %>
+					</div>
 				</li>
-				<li class="illustration photos col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/5.jpg" title="Project Title5" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image5" alt="" > </div>
+				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/lotebox-mvp.jpg'), rel: "lightbox-demo", title: "Lotebox MPV - Desenvolvimento backend e integração com frontend de MVP", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://mvp.lotebox.co", rel: "lightbox-demo", title: "Lotebox MPV", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/lotebox-mvp.jpg", width: 450, height: 450, alt: "Lotebox MPV" %>
+					</div>
 				</li>
-				<li class="branding photos col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/6.jpg" title="Project Title6" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image6" alt="" > </div>
+				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/zeropixel.jpg'), rel: "lightbox-demo", title: "Zeropixel - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.zeropixel.com.br", rel: "lightbox-demo", title: "Zeropixel", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/zeropixel.jpg", width: 450, height: 450, alt: "Zeropixel" %>
+					</div>
 				</li>
-				<li class="illustration photos col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/7.jpg" title="Project Title7" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image7" alt="" > </div>
+				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/kuka.jpg'), rel: "lightbox-demo", title: "Kuka Estratégia - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://kukaestrategia.com/", rel: "lightbox-demo", title: "Kuka Estratégia", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/kuka.jpg", width: 450, height: 450, alt: "Kuka Estratégia" %>
+					</div>
 				</li>
-				<li class="branding col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon"> <span class="hoverBox"> <span class="smallIcon"> <a rel="lightbox-demo" href="/assets/website/portfolio/big/8.jpg" title="Project Title8" class="zoom lb lb_warsaw1"><i class="fa fa-search fa-2x"></i></a> <a href="#" title="Project Link" target="_blank" class="linKed"><i class="fa fa-link fa-2x"></i></i></a> </span> </span> <img src="http://placehold.it/450x450&text=image8" alt="" > </div>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/cliom.jpg'), rel: "lightbox-demo", title: "Hospital Cliom - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://hospitalcliom.com.br/", rel: "lightbox-demo", title: "Hospital Cliom", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/cliom.jpg", width: 450, height: 450, alt: "Hospital Cliom" %>
+					</div>
+				</li>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/jambo.jpg'), rel: "lightbox-demo", title: "Grupo Jambo - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://grupojambo.com.br/", rel: "lightbox-demo", title: "Grupo Jambo", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/jambo.jpg", width: 450, height: 450, alt: "Grupo Jambo" %>
+					</div>
+				</li>
+				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/junior-almeida.jpg'), rel: "lightbox-demo", title: "Junior Almeida - Integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://suechamusca.com.br/junioralmeida/", rel: "lightbox-demo", title: "Junior Almeida", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/junior-almeida.jpg", width: 450, height: 450, alt: "Junior Almeida" %>
+					</div>
+				</li>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/maceiomarhotel.jpg'), rel: "lightbox-demo", title: "Maceió Mar Hotel - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.maceiomarhotel.com.br/", rel: "lightbox-demo", title: "Maceió Mar Hotel", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/maceiomarhotel.jpg", width: 450, height: 450, alt: "Maceió Mar Hotel" %>
+					</div>
+				</li>
+				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/nordeste.jpg'), rel: "lightbox-demo", title: "Nordeste Gestão Contábil e Empresarial - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.nordestetecnologia.com.br/", rel: "lightbox-demo", title: "Nordeste Gestão Contábil e Empresarial", class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/nordeste.jpg", width: 450, height: 450, alt: "Nordeste Gestão Contábil e Empresarial" %>
+					</div>
 				</li>
 			</ul>
 		</div>
