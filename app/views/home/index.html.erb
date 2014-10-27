@@ -2,18 +2,16 @@
 	<section class="aboutme" id="aboutme">
 		<div class="container">
 			<div class="heading">
-				<h2>Sobre mim</h2>
-				<p></p>
+				<h2><%=t(:title, scope: [:about])%></h2>
 			</div>
 			<div class="row">
 				<div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
-					<h3 itemprop="name">Gustavo Cunha</h3>
-					<h4 class="subHeading" itemprop="jobTitle">Engenheiro de Software em Maceió / AL - Brasil</h4>
-					<p itemprop="description">Bacharel em Ciência da Computação e especialista em Engenharia de Software, trabalho com desenvolvimento web desde 2003 e atualmente sou Engenheiro de Software na Quimbik, Inc. Entusiasta de desenvolvimento mobile desde 2010, sou certificado em desenvolvimento para iOS pela IDS Tecnologia, primeira Apple Authorized Training Center na América Latina, desde 2012.</p>
-					<p>Gosto de trabalhar em grupo, sou movido a desafios. Sou perfeccionista, e sei que isso nem sempre é bom. Gosto de pesquisar coisas novas, propor soluções, resolver problemas, principalmente os mais difíceis.</p>
-					<%=link_to "Download em PDF", "gmmcal.pdf", class: "bntDownload", target: :_blank%>
+					<h3 itemprop="name"><%=t(:name, scope: [:template])%></h3>
+					<h4 class="subHeading" itemprop="jobTitle"><%=t(:job_title, scope: [:about])%></h4>
+					<%=t(:text, scope: [:about]).html_safe%>
+					<%=link_to t(:file_title, scope: [:about]), t(:file, scope: [:about]), class: "bntDownload", target: :_blank %>
 				</div>
-				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_url("website/gmmcal.png"), alt: "Gustavo Cunha", class: "topmar", itemprop: "image" %> </div>
+				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_url("website/gmmcal.png"), alt: t(:name, scope: [:template]), class: "topmar", itemprop: "image" %> </div>
 			</div>
 		</div>
 	</section>
