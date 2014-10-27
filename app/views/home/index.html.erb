@@ -193,15 +193,15 @@
 	<section class="protfolio" id="protfolio">
 		<div class="container">
 			<div class="heading">
-				<h2>Portfólio</h2>
-				<p>Alguns dos meus trabalhos sozinho ou com parceiros</p>
+				<h2><%=t(:title, scope: [:portfolio])%></h2>
+				<p><%=t(:subtitle, scope: [:portfolio])%></p>
 			</div>
 			<div class="portfolioFilter">
 				<ul>
-					<li><a href="#" data-filter="*" class="current">Todos</a></li>
-					<li><a href="#" data-filter=".backend">Backend</a></li>
-					<li><a href="#" data-filter=".frontend">Integração Frontend</a></li>
-					<li><a href="#" data-filter=".engenharia">Engenharia de Software</a></li>
+					<li><a href="#" data-filter="*" class="current"><%=t(:all, scope: [:portfolio, :filters])%></a></li>
+					<li><a href="#" data-filter=".backend"><%=t(:backend, scope: [:portfolio, :filters])%></a></li>
+					<li><a href="#" data-filter=".frontend"><%=t(:frontend, scope: [:portfolio, :filters])%></a></li>
+					<li><a href="#" data-filter=".engineering"><%=t(:engineering, scope: [:portfolio, :filters])%></a></li>
 				</ul>
 			</div>
 			<ul class="portfolioContainer row">
@@ -209,180 +209,180 @@
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/add.jpg'), rel: "lightbox-demo", title: "Alagoas Dev Day - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/add.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item1]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.alagoasdevday.com.br", rel: "lightbox-demo", title: "Alagoas Dev Day", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.alagoasdevday.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item1]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/add.jpg", width: 450, height: 450, alt: "Alagoas Dev Day" %>
+						<%=image_tag "portfolio/tn/add.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item1]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/casamento.jpg'), rel: "lightbox-demo", title: "Casamento - Planejamento, desenvolvimento de sistema com testes unitários e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/casamento.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item2]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.rosanaegustavo.com.br", rel: "lightbox-demo", title: "Casamento", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.rosanaegustavo.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item2]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/casamento.jpg", width: 450, height: 450, alt: "Casamento" %>
+						<%=image_tag "portfolio/tn/casamento.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item2]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/duranbah.jpg'), rel: "lightbox-demo", title: "Duranbah Music - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/duranbah.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item3]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.duranbah.com.br", rel: "lightbox-demo", title: "Duranbah Music", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.duranbah.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item3]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/duranbah.jpg", width: 450, height: 450, alt: "Duranbah Music" %>
+						<%=image_tag "portfolio/tn/duranbah.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item3]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/waterhouse.jpg'), rel: "lightbox-demo", title: "Waterhouse - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/waterhouse.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item4]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.waterhouse.com.br", rel: "lightbox-demo", title: "Waterhouse", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.waterhouse.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item4]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/waterhouse.jpg", width: 450, height: 450, alt: "Waterhouse" %>
+						<%=image_tag "portfolio/tn/waterhouse.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item4]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/lotebox-mvp.jpg'), rel: "lightbox-demo", title: "Lotebox MPV - Desenvolvimento backend e integração com frontend de MVP", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/lotebox-mvp.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item5]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://mvp.lotebox.co", rel: "lightbox-demo", title: "Lotebox MPV", class: "linKed", target: :blank do %>
+								<%=link_to "http://mvp.lotebox.co", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item5]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/lotebox-mvp.jpg", width: 450, height: 450, alt: "Lotebox MPV" %>
+						<%=image_tag "portfolio/tn/lotebox-mvp.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item5]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/zeropixel.jpg'), rel: "lightbox-demo", title: "Zeropixel - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/zeropixel.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item6]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.zeropixel.com.br", rel: "lightbox-demo", title: "Zeropixel", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.zeropixel.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item6]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/zeropixel.jpg", width: 450, height: 450, alt: "Zeropixel" %>
-					</div>
-				</li>
-				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/kuka.jpg'), rel: "lightbox-demo", title: "Kuka Estratégia - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://kukaestrategia.com/", rel: "lightbox-demo", title: "Kuka Estratégia", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/kuka.jpg", width: 450, height: 450, alt: "Kuka Estratégia" %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/cliom.jpg'), rel: "lightbox-demo", title: "Hospital Cliom - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://hospitalcliom.com.br/", rel: "lightbox-demo", title: "Hospital Cliom", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/cliom.jpg", width: 450, height: 450, alt: "Hospital Cliom" %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/jambo.jpg'), rel: "lightbox-demo", title: "Grupo Jambo - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://grupojambo.com.br/", rel: "lightbox-demo", title: "Grupo Jambo", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/jambo.jpg", width: 450, height: 450, alt: "Grupo Jambo" %>
+						<%=image_tag "portfolio/tn/zeropixel.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item6]) %>
 					</div>
 				</li>
 				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/junior-almeida.jpg'), rel: "lightbox-demo", title: "Junior Almeida - Integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/kuka.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item7]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://suechamusca.com.br/junioralmeida/", rel: "lightbox-demo", title: "Junior Almeida", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.kukaestrategia.com/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item7]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/junior-almeida.jpg", width: 450, height: 450, alt: "Junior Almeida" %>
+						<%=image_tag "portfolio/tn/kuka.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item7]) %>
 					</div>
 				</li>
 				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/maceiomarhotel.jpg'), rel: "lightbox-demo", title: "Maceió Mar Hotel - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/cliom.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item8]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.maceiomarhotel.com.br/", rel: "lightbox-demo", title: "Maceió Mar Hotel", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.hospitalcliom.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item8]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/maceiomarhotel.jpg", width: 450, height: 450, alt: "Maceió Mar Hotel" %>
+						<%=image_tag "portfolio/tn/cliom.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item8]) %>
+					</div>
+				</li>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/jambo.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item9]), class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.grupojambo.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item9]), class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/jambo.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item9]) %>
 					</div>
 				</li>
 				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/nordeste.jpg'), rel: "lightbox-demo", title: "Nordeste Gestão Contábil e Empresarial - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/junior-almeida.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item10]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.nordestetecnologia.com.br/", rel: "lightbox-demo", title: "Nordeste Gestão Contábil e Empresarial", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.suechamusca.com.br/junioralmeida/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item10]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/nordeste.jpg", width: 450, height: 450, alt: "Nordeste Gestão Contábil e Empresarial" %>
+						<%=image_tag "portfolio/tn/junior-almeida.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item10]) %>
+					</div>
+				</li>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/maceiomarhotel.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item11]), class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.maceiomarhotel.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item11]), class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/maceiomarhotel.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item11]) %>
+					</div>
+				</li>
+				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/nordeste.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item12]), class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.nordestetecnologia.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item12]), class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/nordeste.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item12]) %>
 					</div>
 				</li>
 			</ul>

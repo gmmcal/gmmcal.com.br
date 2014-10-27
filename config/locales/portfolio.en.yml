@@ -1,0 +1,46 @@
+en:
+  portfolio:
+    title: "Portfolio"
+    subtitle: "Some of my jobs by myself or working with partners"
+    filters:
+      all: "All"
+      backend: "Backend"
+      frontend: "Frontend Integration"
+      engineering: "Software Engineering"
+    items:
+      item1:
+        name: "Alagoas Dev Day"
+        caption: "Alagoas Dev Day - Backend development and frontend integration"
+      item2:
+        name: "Casamento - Planning, system development with unit tests and frontend integration"
+        caption: "Casamento"
+      item3:
+        name: "Duranbah Music - Backend development and frontend integration"
+        caption: "Duranbah Music"
+      item4:
+        name: "Waterhouse - Backend development and frontend integration"
+        caption: "Waterhouse"
+      item5:
+        name: "Lotebox MPV - Backend development and frontend integration de MVP"
+        caption: "Lotebox MPV"
+      item6:
+        name: "Zeropixel - Backend development and frontend integration"
+        caption: "Zeropixel"
+      item7:
+        name: "Kuka Estratégia - Backend development and frontend integration (partned with Zeropixel)"
+        caption: "Kuka Estratégia"
+      item8:
+        name: "Hospital Cliom - Backend development and frontend integration (partned with Zeropixel)"
+        caption: "Hospital Cliom"
+      item9:
+        name: "Grupo Jambo - Backend development and frontend integration (partned with Zeropixel)"
+        caption: "Grupo Jambo"
+      item10:
+        name: "Junior Almeida - Frontend integration (partned with Zeropixel)"
+        caption: "Junior Almeida"
+      item11:
+        name: "Maceió Mar Hotel - Backend development and frontend integration (partned with Zeropixel)"
+        caption: "Maceió Mar Hotel"
+      item12:
+        name: "Nordeste Gestão Contábil e Empresarial - Backend development and frontend integration (partned with Zeropixel)"
+        caption: "Nordeste Gestão Contábil e Empresarial"
