@@ -7,13 +7,13 @@
 			</div>
 			<div class="row">
 				<div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
-					<h3>Gustavo Cunha</h3>
-					<h4 class="subHeading">Engenheiro de Software em Maceió / AL - Brasil</h4>
-					<p>Bacharel em Ciência da Computação e especialista em Engenharia de Software, trabalho com desenvolvimento web desde 2003 e atualmente sou Engenheiro de Software na Quimbik, Inc. Entusiasta de desenvolvimento mobile desde 2010, sou certificado em desenvolvimento para iOS pela IDS Tecnologia, primeira Apple Authorized Training Center na América Latina, desde 2012.</p>
+					<h3 itemprop="name">Gustavo Cunha</h3>
+					<h4 class="subHeading" itemprop="jobTitle">Engenheiro de Software em Maceió / AL - Brasil</h4>
+					<p itemprop="description">Bacharel em Ciência da Computação e especialista em Engenharia de Software, trabalho com desenvolvimento web desde 2003 e atualmente sou Engenheiro de Software na Quimbik, Inc. Entusiasta de desenvolvimento mobile desde 2010, sou certificado em desenvolvimento para iOS pela IDS Tecnologia, primeira Apple Authorized Training Center na América Latina, desde 2012.</p>
 					<p>Gosto de trabalhar em grupo, sou movido a desafios. Sou perfeccionista, e sei que isso nem sempre é bom. Gosto de pesquisar coisas novas, propor soluções, resolver problemas, principalmente os mais difíceis.</p>
 					<%=link_to "Download em PDF", "gmmcal.pdf", class: "bntDownload", target: :_blank%>
 				</div>
-				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag "website/gmmcal.png", alt: "Gustavo Cunha", class: "topmar" %> </div>
+				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_url("website/gmmcal.png"), alt: "Gustavo Cunha", class: "topmar", itemprop: "image" %> </div>
 			</div>
 		</div>
 	</section>
@@ -73,42 +73,42 @@
 				<h2>Experiência de trabalho</h2>
 				<p>Empresas por onde andei</p>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 					<div class="workYear">Set / 2012<br>Atualmente</div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Quimbik, Inc - São Francisco - CA - EUA</h4>
+						<h4><span itemprop="legalName">Quimbik, Inc</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">São Francisco</span> - <span itemprop="addressRegion">CA</span> - <span itemprop="addressCountry">EUA</span></span></h4>
 						<h5>Engenheiro de Software</h5>
-						<p>Engenheiro de Software responsável por desenvolvimento de sistemas na empresa, em sistema de Home Office, usando Ruby on Rails, MySQL e Objective-C (iOS). Trabalho usando ferramentas para a integração e funcionamento das rotinas de trabalho, como o Redmine e Pivotal para gerenciamento de tickets, Skype e Slack para reuniões e conversas, Harverst para contabilização de horas, Git para versionamento de código, entre outras ferramentas.</p>
+						<p itemprop="description">Engenheiro de Software responsável por desenvolvimento de sistemas na empresa, em sistema de Home Office, usando Ruby on Rails, MySQL e Objective-C (iOS). Trabalho usando ferramentas para a integração e funcionamento das rotinas de trabalho, como o Redmine e Pivotal para gerenciamento de tickets, Skype e Slack para reuniões e conversas, Harverst para contabilização de horas, Git para versionamento de código, entre outras ferramentas.</p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 					<div class="workYear">Out / 2014<br>Atualmente</div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Abound - Maceió - AL - Brasil</h4>
+						<h4><span itemprop="legalName">Abound</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Maceió</span> - <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></span></h4>
 						<h5>Co-Fundador / Editor</h5>
-						<p>Blog com conteúdo para desenvolvedores feito em Wordpress.</p>
+						<p itemprop="description">Blog com conteúdo para desenvolvedores feito em Wordpress.</p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 					<div class="workYear">Abr / 2014<br>Atualmente</div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Alagoas Dev Day - Maceió - AL - Brasil</h4>
+						<h4><span itemprop="legalName">Alagoas Dev Day</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Maceió</span> - <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></span></h4>
 						<h5>Co-Fundador / Organizador</h5>
-						<p>Evento anual de desenvolvimento criado para fomentar e fortalecer a cultura de programação em Alagoas e região, trazendo profissionais de renome no estado e no país para compartilhar experiências e difundir conhecimento.</p>
+						<p itemprop="description">Evento anual de desenvolvimento criado para fomentar e fortalecer a cultura de programação em Alagoas e região, trazendo profissionais de renome no estado e no país para compartilhar experiências e difundir conhecimento.</p>
 					</div>
 				</div>
 			</div>
@@ -162,7 +162,7 @@
 				<p>O que eu fiz na minha carreira acadêmica</p>
 			</div>
 
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 					<div class="workYear">Nov / 2012</div>
 				</div>
@@ -170,12 +170,12 @@
 					<div class="arrowpart"></div>
 					<div class="exCon">
 						<h4>Pós-gradução em Engenharia de Software</h4>
-						<h5>Centro Universitário CESMAC</h5>
-						<p>Pós-graduação em Engenharia de Software pelo Centro Universitário CESMAC, focando em padrões de projetos.</p>
+						<h5 itemprop="legalName">Centro Universitário CESMAC</h5>
+						<p itemprop="description">Pós-graduação em Engenharia de Software pelo Centro Universitário CESMAC, focando em padrões de projetos.</p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 					<div class="workYear">Mai / 2008</div>
 				</div>
@@ -183,8 +183,8 @@
 					<div class="arrowpart"></div>
 					<div class="exCon">
 						<h4>Bacharel em Ciência da Computação</h4>
-						<h5>Universidade Federal de Alagoas</h5>
-						<p>Graduação em Ciência da Computação pela Universidade Federal de Alagoas, iniciando o curso em Junho / 2002 e concluindo em Maio / 2008.</p>
+						<h5 itemprop="legalName">Universidade Federal de Alagoas</h5>
+						<p itemprop="description">Graduação em Ciência da Computação pela Universidade Federal de Alagoas, iniciando o curso em Junho / 2002 e concluindo em Maio / 2008.</p>
 					</div>
 				</div>
 			</div>
@@ -405,9 +405,9 @@
 			<!--contact info start-->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<h4>Contatos</h4>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-map-marker fa-lg"></i> Maceió / AL - Brasil</p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-mobile fa-lg"></i> +55 (82) 9987-2799</p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com">gustavocunha&#64;gmail&#46;com</a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality">Maceió</span> / <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="telephone"> <i class="fa fa-mobile fa-lg"></i> +55 (82) 9987-2799</p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="email"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com">gustavocunha&#64;gmail&#46;com</a></p>
 				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="http://github.com/gmmcal" target="_blank">gmmcal</a></p>
 				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="http://linkedin.com/in/gmmcal" target="_blank">Gustavo Cunha</a></p>
 				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="http://twitter.com/gmmcal" target="_blank">@gmmcal</a></p>
