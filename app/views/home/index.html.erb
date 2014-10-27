@@ -393,8 +393,8 @@
 	<section class="contact" id="contact">
 		<div class="container topCon">
 			<div class="heading">
-				<h2>Contate-me</h2>
-				<p>Sinta-se a vontade para entrar em contato.</p>
+				<h2><%=t(:title, scope: [:contact])%></h2>
+				<p><%=t(:subtitle, scope: [:contact])%></p>
 			</div>
 		</div>
 	</section>
@@ -402,13 +402,13 @@
 		<div class="container">
 			<!--contact info start-->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h4>Contatos</h4>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality">Maceió</span> / <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="telephone"> <i class="fa fa-mobile fa-lg"></i> +55 (82) 9987-2799</p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="email"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com">gustavocunha&#64;gmail&#46;com</a></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="http://github.com/gmmcal" target="_blank">gmmcal</a></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="http://linkedin.com/in/gmmcal" target="_blank">Gustavo Cunha</a></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="http://twitter.com/gmmcal" target="_blank">@gmmcal</a></p>
+				<h4><%=t(:title, scope: [:contact, :contacts])%></h4>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality"><%=t(:city, scope: [:contact, :contacts, :address])%></span> / <span itemprop="addressRegion"><%=t(:state, scope: [:contact, :contacts, :address])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:contact, :contacts, :address])%></span></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="telephone"> <i class="fa fa-mobile fa-lg"></i> <%=t(:phone, scope: [:contact, :contacts])%></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="email"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com"><%=t(:email, scope: [:contact, :contacts])%></a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="http://github.com/gmmcal" target="_blank"><%=t(:github, scope: [:contact, :contacts])%></a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="http://linkedin.com/in/gmmcal" target="_blank"><%=t(:linkedin, scope: [:contact, :contacts])%></a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="http://twitter.com/gmmcal" target="_blank"><%=t(:twitter, scope: [:contact, :contacts])%></a></p>
 			</div>
 			<!--contact info end-->
 		</div>
