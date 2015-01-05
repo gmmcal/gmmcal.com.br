@@ -19,6 +19,7 @@ config/database.yml
 
 ## Environment normalisation:
 /.bundle
+/.capistrano
 /vendor/bundle
 
 # these should all be checked in to normalise the environment:
