@@ -47,8 +47,8 @@ gem 'passenger'
 # User quiet_assets on development
 gem 'quiet_assets', group: :development
 
+# Environment variables
+gem 'figaro'
+
 # Monitor with New Relic
 gem 'newrelic_rpm'
-
-# Environment variables
-gem 'dotenv-rails'
