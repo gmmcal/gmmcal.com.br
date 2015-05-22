@@ -25,10 +25,10 @@ set :log_level, :debug
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/secrets.yml}
+set :linked_files, %w{config/secrets.yml .env}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for keep_releases is 5
 set :keep_releases, 10
