@@ -10,7 +10,7 @@ en:
     items:
       item1:
         name: "Alagoas Dev Day"
-        caption: "Alagoas Dev Day - Backend development and frontend integration"
+        caption: "Alagoas Dev Day - Backend development"
       item2:
         name: "Casamento - Planning, system development with unit tests and frontend integration"
         caption: "Casamento"

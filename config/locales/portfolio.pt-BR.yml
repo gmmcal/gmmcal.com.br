@@ -10,7 +10,7 @@ pt-BR:
     items:
       item1:
         name: "Alagoas Dev Day"
-        caption: "Alagoas Dev Day - Desenvolvimento backend e integração com frontend"
+        caption: "Alagoas Dev Day - Desenvolvimento backend"
       item2:
         name: "Casamento - Planejamento, desenvolvimento de sistema com testes unitários e integração com frontend"
         caption: "Casamento"

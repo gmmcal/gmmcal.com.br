@@ -9,7 +9,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Technical Support Intern"
-        description: "Estágio dando suporte a usuários em um setor da SEFAZ / AL, ajudando a ensinar os funcionários a usar o computador e seus recursos, agilizar o suporte, entre outros. Também trabalhei alimentando um sistema de produtividade desenvolvido pela equipe de TI da SEFAZ. No fim do estágio, cheguei a desenvolver um pequeno sistema em PHP de tabulação de um pesquisa interna para o supervisor do setor."
+        description: "Technical Support Intern helping emploees to user computer and its resources. I also helped with data input to a productivity system. By the end of the internship, I developed a PHP system for a internal research."
         start_date: "Mar / 2003"
         end_date: "Sep / 2004"
       item2:
@@ -18,7 +18,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Development Intern"
-        description: "Responsável pela manutenção da Intranet da Diretoria Regional de Alagoas e desenvolvimento de sistemas demandados pelos setores, sob a supervisão dos analistas de sistemas da empresa. Todos os sistemas eram desenvolvidos em Coldfusion, linguagem proprietária da Macromedia (comprada posteriormente pela Adobe)."
+        description: "Responsible for maintaing the Regional Intranet of the company and develop new systems, under the supervision of the System Analysts of the Company."
         start_date: "Mar / 2006"
         end_date: "Mar / 2007"
       item3:
@@ -27,7 +27,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Programmer / System Analyst"
-        description: "Responsável pela análise e desenvolvimento de sistemas da empresa. Comecei fazendo manutenções e desenvolvimento em um sistema de apoio a decisões em ASP / Access. Depois, passei a dar manutenção e desenvolver no sistema de gerenciamento de conteúdos proprietário da empresa em ASP / SQL Server. Em 2010, a empresa trocou o sistema proprietário pelo Wordpress, e voltei a desenvolver em PHP / MySQL. Desde então, fui responsável por quase toda a análise e todo o desenvolvimento de sistemas."
+        description: "Responsible for the analysis and development of some of the company systems. I started with maintaining and developing in a decision support system written in ASP / Access. After, I was moved to take care of the content management system writen in ASP / SQL Server. In 2010, the company changed the system to Wordpress."
         start_date: "Jun / 2007"
         end_date: "Sep / 2012"
       item4:
@@ -36,7 +36,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Cofounder / Organizer"
-        description: "Evento anual de desenvolvimento criado para fomentar e fortalecer a cultura de programação em Alagoas e região, trazendo profissionais de renome no estado e no país para compartilhar experiências e difundir conhecimento."
+        description: "Anual development event created to promote strengthen the programming culture in Alagoas, bringing well known professionals in the country the share their experiences."
         start_date: "Apr / 2014"
         end_date: "Currently"
       item5:
@@ -45,7 +45,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Cofounder / Organizer"
-        description: "Blog com conteúdo para desenvolvedores feito em Wordpress."
+        description: "Blog with developers content built in Wordpress."
         start_date: "Oct / 2014"
         end_date: "Currently"
       item6:
@@ -54,6 +54,6 @@ en:
         region: "CA"
         country: "USA"
         position: "Software Engineer"
-        description: "Engenheiro de Software responsável por desenvolvimento de sistemas na empresa, em sistema de Home Office, usando Ruby on Rails, MySQL e Objective-C (iOS). Trabalho usando ferramentas para a integração e funcionamento das rotinas de trabalho, como o Redmine e Pivotal para gerenciamento de tickets, Skype e Slack para reuniões e conversas, Harverst para contabilização de horas, Git para versionamento de código, entre outras ferramentas."
+        description: "Software Engineer responsible for developing some of the company systems, in a Home Office base, using Ruby on Rails, MySQL, Objective-C and Swift (iOS). I work using tools to integrate the workflow routine, such as Redmine, Pivotal, Skype, Slack and Git, among others."
         start_date: "Sep / 2012"
         end_date: "Currently"

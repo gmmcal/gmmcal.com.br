@@ -4,12 +4,12 @@ en:
     subtitle: "I know what I'm good at, but I'm always learning"
     details:
       skill1_name: "PHP"
-      skill1_title: "11 years of experience"
+      skill1_title: "+13 years of experience"
       skill1_percentage: 90
       skill2_name: "Ruby on Rails"
       skill2_title: "Love at first line of code"
       skill2_percentage: 85
-      skill3_name: "Objective-C"
+      skill3_name: "Objective-C / Swift"
       skill3_title: "Challenges ahead"
       skill3_percentage: 70
       skill4_name: "MySQL"
