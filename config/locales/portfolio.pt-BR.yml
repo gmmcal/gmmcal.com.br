@@ -1,0 +1,46 @@
+pt-BR:
+  portfolio:
+    title: "Portfólio"
+    subtitle: "Alguns dos meus trabalhos sozinho ou com parceiros"
+    filters:
+      all: "Todos"
+      backend: "Backend"
+      frontend: "Integração Frontend"
+      engineering: "Engenharia de Software"
+    items:
+      item1:
+        name: "Alagoas Dev Day"
+        caption: "Alagoas Dev Day - Desenvolvimento backend"
+      item2:
+        name: "Casamento - Planejamento, desenvolvimento de sistema com testes unitários e integração com frontend"
+        caption: "Casamento"
+      item3:
+        name: "Duranbah Music - Desenvolvimento backend e integração com frontend"
+        caption: "Duranbah Music"
+      item4:
+        name: "Waterhouse - Desenvolvimento backend e integração com frontend"
+        caption: "Waterhouse"
+      item5:
+        name: "Lotebox MPV - Desenvolvimento backend e integração com frontend de MVP"
+        caption: "Lotebox MPV"
+      item6:
+        name: "Zeropixel - Desenvolvimento backend e integração com frontend"
+        caption: "Zeropixel"
+      item7:
+        name: "Kuka Estratégia - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)"
+        caption: "Kuka Estratégia"
+      item8:
+        name: "Hospital Cliom - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)"
+        caption: "Hospital Cliom"
+      item9:
+        name: "Grupo Jambo - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)"
+        caption: "Grupo Jambo"
+      item10:
+        name: "Junior Almeida - Integração com frontend (parceria com Zeropixel)"
+        caption: "Junior Almeida"
+      item11:
+        name: "Maceió Mar Hotel - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)"
+        caption: "Maceió Mar Hotel"
+      item12:
+        name: "Nordeste Gestão Contábil e Empresarial - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)"
+        caption: "Nordeste Gestão Contábil e Empresarial"
