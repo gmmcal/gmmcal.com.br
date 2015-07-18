@@ -68,84 +68,84 @@
 	<section class="exprience" id="exprience">
 		<div class="container">
 			<div class="heading">
-				<h2>Experiência de trabalho</h2>
-				<p>Empresas por onde andei</p>
+				<h2><%=t(:title, scope: [:experience])%></h2>
+				<p><%=t(:subtitle, scope: [:experience])%></p>
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Set / 2012<br>Atualmente</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item6])%><br><%=t(:end_date, scope: [:experience, :items, :item6])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName">Quimbik, Inc</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">São Francisco</span> - <span itemprop="addressRegion">CA</span> - <span itemprop="addressCountry">EUA</span></span></h4>
-						<h5>Engenheiro de Software</h5>
-						<p itemprop="description">Engenheiro de Software responsável por desenvolvimento de sistemas na empresa, em sistema de Home Office, usando Ruby on Rails, MySQL e Objective-C (iOS). Trabalho usando ferramentas para a integração e funcionamento das rotinas de trabalho, como o Redmine e Pivotal para gerenciamento de tickets, Skype e Slack para reuniões e conversas, Harverst para contabilização de horas, Git para versionamento de código, entre outras ferramentas.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Out / 2014<br>Atualmente</div>
-				</div>
-				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
-					<div class="arrowpart"></div>
-					<div class="exCon">
-						<h4><span itemprop="legalName">Abound</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Maceió</span> - <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></span></h4>
-						<h5>Co-Fundador / Editor</h5>
-						<p itemprop="description">Blog com conteúdo para desenvolvedores feito em Wordpress.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item6])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item6])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item6])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item6])%></p>
 					</div>
 				</div>
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Abr / 2014<br>Atualmente</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item5])%><br><%=t(:end_date, scope: [:experience, :items, :item5])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName">Alagoas Dev Day</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Maceió</span> - <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></span></h4>
-						<h5>Co-Fundador / Organizador</h5>
-						<p itemprop="description">Evento anual de desenvolvimento criado para fomentar e fortalecer a cultura de programação em Alagoas e região, trazendo profissionais de renome no estado e no país para compartilhar experiências e difundir conhecimento.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item5])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item5])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item5])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item5])%></p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Jun / 2007<br>Set / 2012</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item4])%><br><%=t(:end_date, scope: [:experience, :items, :item4])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>id5 Solução Web - Maceió - AL - Brasil</h4>
-						<h5>Programador / Analista de Sistemas</h5>
-						<p>Responsável pela análise e desenvolvimento de sistemas da empresa. Comecei fazendo manutenções e desenvolvimento em um sistema de apoio a decisões em ASP / Access. Depois, passei a dar manutenção e desenvolver no sistema de gerenciamento de conteúdos proprietário da empresa em ASP / SQL Server. Em 2010, a empresa trocou o sistema proprietário pelo Wordpress, e voltei a desenvolver em PHP / MySQL. Desde então, fui responsável por quase toda a análise e todo o desenvolvimento de sistemas.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item4])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item4])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item4])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item4])%></p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Mar / 2006<br>Mar / 2007</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item3])%><br><%=t(:end_date, scope: [:experience, :items, :item3])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Correios - Maceió - AL - Brasil</h4>
-						<h5>Estágio em Desenvolvimento</h5>
-						<p>Responsável pela manutenção da Intranet da Diretoria Regional de Alagoas e desenvolvimento de sistemas demandados pelos setores, sob a supervisão dos analistas de sistemas da empresa. Todos os sistemas eram desenvolvidos em Coldfusion, linguagem proprietária da Macromedia (comprada posteriormente pela Adobe).</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item3])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item3])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item3])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item3])%></p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Mar / 2003<br>Set / 2004</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item2])%><br><%=t(:end_date, scope: [:experience, :items, :item2])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Secretaria de Fazenda de Alagoas / SEFAZ - Maceió - AL - Brasil</h4>
-						<h5>Estágio em suporte ao usuário</h5>
-						<p>Estágio dando suporte a usuários em um setor da SEFAZ / AL, ajudando a ensinar os funcionários a usar o computador e seus recursos, agilizar o suporte, entre outros. Também trabalhei alimentando um sistema de produtividade desenvolvido pela equipe de TI da SEFAZ. No fim do estágio, cheguei a desenvolver um pequeno sistema em PHP de tabulação de um pesquisa interna para o supervisor do setor.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item2])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item2])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item2])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item2])%></p>
+					</div>
+				</div>
+			</div>
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item1])%><br><%=t(:end_date, scope: [:experience, :items, :item1])%></div>
+				</div>
+				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
+					<div class="arrowpart"></div>
+					<div class="exCon">
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item1])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item1])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item1])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item1])%></p>
 					</div>
 				</div>
 			</div>
