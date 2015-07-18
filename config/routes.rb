@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  get '/(:locale)', to: "home#index", as: :home, locale: /en|br/
   get 'sitemap', to: "home#index", defaults: { format: :xml }
 end
