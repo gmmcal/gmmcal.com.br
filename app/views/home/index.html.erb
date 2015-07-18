@@ -156,33 +156,33 @@
 	<section class="education" id="education">
 		<div class="container">
 			<div class="heading">
-				<h2>Educação e Diplomas</h2>
-				<p>O que eu fiz na minha carreira acadêmica</p>
+				<h2><%=t(:title, scope: [:education])%></h2>
+				<p><%=t(:subtitle, scope: [:education])%></p>
 			</div>
 
 			<div class="row workDetails" itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Nov / 2012</div>
+					<div class="workYear"><%=t(:date, scope: [:education, :items, :item2])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Pós-gradução em Engenharia de Software</h4>
-						<h5 itemprop="legalName">Centro Universitário CESMAC</h5>
-						<p itemprop="description">Pós-graduação em Engenharia de Software pelo Centro Universitário CESMAC, focando em padrões de projetos.</p>
+						<h4><%=t(:course, scope: [:education, :items, :item2])%></h4>
+						<h5 itemprop="legalName"><%=t(:institution, scope: [:education, :items, :item2])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:education, :items, :item2])%></p>
 					</div>
 				</div>
 			</div>
 			<div class="row workDetails" itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Mai / 2008</div>
+					<div class="workYear"><%=t(:date, scope: [:education, :items, :item1])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Bacharel em Ciência da Computação</h4>
-						<h5 itemprop="legalName">Universidade Federal de Alagoas</h5>
-						<p itemprop="description">Graduação em Ciência da Computação pela Universidade Federal de Alagoas, iniciando o curso em Junho / 2002 e concluindo em Maio / 2008.</p>
+						<h4><%=t(:course, scope: [:education, :items, :item1])%></h4>
+						<h5 itemprop="legalName"><%=t(:institution, scope: [:education, :items, :item1])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:education, :items, :item1])%></p>
 					</div>
 				</div>
 			</div>
