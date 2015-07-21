@@ -6,10 +6,10 @@ en:
       item1:
         course: "Bachelor's degree, Computer Science"
         institution: "Universidade Federal de Alagoas"
-        description: "Bachelor's degree in Computer Science on Universidade Federal de Alagoas, starting the course in June / 2002 and finishing in May / 2008"
+        description: "Bachelor's degree in Computer Science at Universidade Federal de Alagoas, starting the course in June / 2002 and finishing in May / 2008"
         date: "May / 2008"
       item2:
         course: "Specialization, Computer Software Engineering"
         institution: "Centro Universitário CESMAC"
-        description: "Specialization in Computer Software Engineering on Centro Universitário CESMAC, with a focus on Design Patters, starting the course in March / 2011 and finishing in November / 2012"
+        description: "Specialization in Computer Software Engineering at Centro Universitário CESMAC, with a focus on Design Patterns, starting the course in March / 2011 and finishing in November / 2012"
         date: "Nov / 2012"

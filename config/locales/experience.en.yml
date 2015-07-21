@@ -1,7 +1,7 @@
 en:
   experience:
     title: "Work Experience"
-    subtitle: "Companies that I worked for"
+    subtitle: "Companies that I have worked for"
     items:
       item1:
         name: "Secretaria de Fazenda de Alagoas / SEFAZ"
@@ -9,7 +9,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Technical Support Intern"
-        description: "Technical Support Intern helping emploees to user computer and its resources. I also helped with data input to a productivity system. By the end of the internship, I developed a PHP system for a internal research."
+        description: "Technical Support Intern helping employees to use the computer and its resources. I also helped with data input to a productivity system. By the end of the internship, I developed a PHP system for an internal research."
         start_date: "Mar / 2003"
         end_date: "Sep / 2004"
       item2:
@@ -18,16 +18,16 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Development Intern"
-        description: "Responsible for maintaing the Regional Intranet of the company and develop new systems, under the supervision of the System Analysts of the Company."
+        description: "Responsible for maintaing the Regional Intranet of the company and develop new systems, under the close supervision of the System Analysts of the Company."
         start_date: "Mar / 2006"
         end_date: "Mar / 2007"
       item3:
-        name: "id5 Solução Web"
+        name: "id5 Soluções Web"
         city: "Maceió"
         region: "AL"
         country: "Brazil"
         position: "Programmer / System Analyst"
-        description: "Responsible for the analysis and development of some of the company systems. I started with maintaining and developing in a decision support system written in ASP / Access. After, I was moved to take care of the content management system writen in ASP / SQL Server. In 2010, the company changed the system to Wordpress."
+        description: "Responsible for the analysis and development of some of the company systems. I started with maintaining and developing in a decision support system written in ASP / Access. Then, I moved up to take care of the content management systems writen in ASP / SQL Server. In 2010, the company changed the systems to a Wordpress based environment."
         start_date: "Jun / 2007"
         end_date: "Sep / 2012"
       item4:
@@ -36,7 +36,7 @@ en:
         region: "AL"
         country: "Brazil"
         position: "Cofounder / Organizer"
-        description: "Anual development event created to promote strengthen the programming culture in Alagoas, bringing well known professionals in the country the share their experiences."
+        description: "Anual development event created to promote and strengthen the programming culture in Alagoas, bringing well known professionals from Brazil to share their experiences."
         start_date: "Apr / 2014"
         end_date: "Currently"
       item5:
