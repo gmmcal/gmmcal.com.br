@@ -1,10 +1,10 @@
-//= require jquery
+//= require jquery2
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
 //= require jquery.gridrotator
 //= require jquery.placeholder
-//= require stickUp
+//= require waypoint
 //= require jquery.isotope
 //= require jquery.ui.widget.min
 //= require jquery.ui.rlightbox
@@ -99,10 +99,10 @@ jQuery(function($) {
 				var target = $(this.hash);
 				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 				if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top -60
-				}, 1000);
-				return false;
+					$('html,body').animate({
+						scrollTop: target.offset().top -60
+					}, 1000);
+					return false;
 				}
 			}
 		});
@@ -112,21 +112,27 @@ jQuery(function($) {
 			chart.update(Math.random()*100);
 		});
 
-		// enabling stickUp on the '.navbar-wrapper' class
-		$('.navbar-wrapper').stickUp({
-			parts: {
-				0: 'banner',
-				1: 'aboutme',
-				2: 'technical',
-				3: 'exprience',
-				4: 'education',
-				5: 'protfolio',
-				6: 'contact',
-				7: 'footer'
+		$('.navbar-wrapper').waypoint({
+			handler: function(direction) {
+				if(direction == "down"){
+					$('.navbar-wrapper').addClass('isStuck');
+				}else{
+					$('.navbar-wrapper').removeClass('isStuck');
+				}
 			},
-			itemClass: 'menuItem',
-			itemHover: 'active',
-			topMargin: 'auto'
+			offset: 0
+		});
+		$('#home, #aboutme, #technical, #experience, #education, #portfolio, #contact, #footer').waypoint({
+			handler: function(direction) {
+				$('.navbar-wrapper li').removeClass('active');
+				var link = $('a[href="#'+ $(this.element).attr('id') +'"');
+				link.parent().addClass('active');
+				ga('send', 'pageview', {
+					'page': $(link).attr('href'),
+					'title': $(link).text()
+				});
+			},
+			offset: $('.navbar-wrapper').height()
 		});
 
 		$( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {

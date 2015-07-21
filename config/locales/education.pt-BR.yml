@@ -1,0 +1,15 @@
+pt-BR:
+  education:
+    title: "Educação e Diplomas"
+    subtitle: "O que eu fiz na minha carreira acadêmica"
+    items:
+      item1:
+        course: "Bacharel em Ciência da Computação"
+        institution: "Universidade Federal de Alagoas"
+        description: "Graduação em Ciência da Computação pela Universidade Federal de Alagoas, iniciando o curso em Junho / 2002 e concluindo em Maio / 2008."
+        date: "Mai / 2008"
+      item2:
+        course: "Pós-gradução em Engenharia de Software"
+        institution: "Centro Universitário CESMAC"
+        description: "Pós-graduação em Engenharia de Software pelo Centro Universitário CESMAC, focando em Padrões de Projetos."
+        date: "Nov / 2012"

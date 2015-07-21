@@ -1,9 +1,11 @@
 /*----------------------------------------------------
  5.	Menu Style
 ------------------------------------------------------*/
-.isStuck{
+.navbar-wrapper.isStuck{
     left:0px;
     width:100%;
+    position: fixed;
+    top: 0;
 }
 .menu{
 	 margin-top:0px;

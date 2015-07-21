@@ -2,18 +2,16 @@
 	<section class="aboutme" id="aboutme">
 		<div class="container">
 			<div class="heading">
-				<h2>Sobre mim</h2>
-				<p></p>
+				<h2><%=t(:title, scope: [:about])%></h2>
 			</div>
 			<div class="row">
 				<div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
-					<h3 itemprop="name">Gustavo Cunha</h3>
-					<h4 class="subHeading" itemprop="jobTitle">Engenheiro de Software em Maceió / AL - Brasil</h4>
-					<p itemprop="description">Bacharel em Ciência da Computação e especialista em Engenharia de Software, trabalho com desenvolvimento web desde 2003 e atualmente sou Engenheiro de Software na Quimbik, Inc. Entusiasta de desenvolvimento mobile desde 2010, sou certificado em desenvolvimento para iOS pela IDS Tecnologia, primeira Apple Authorized Training Center na América Latina, desde 2012.</p>
-					<p>Gosto de trabalhar em grupo, sou movido a desafios. Sou perfeccionista, e sei que isso nem sempre é bom. Gosto de pesquisar coisas novas, propor soluções, resolver problemas, principalmente os mais difíceis.</p>
-					<%=link_to "Download em PDF", "gmmcal.pdf", class: "bntDownload", target: :_blank%>
+					<h3 itemprop="name"><%=t(:name, scope: [:template])%></h3>
+					<h4 class="subHeading" itemprop="jobTitle"><%=t(:job_title, scope: [:about])%></h4>
+					<%=t(:text, scope: [:about]).html_safe%>
+					<%=link_to t(:file_title, scope: [:about]), t(:file, scope: [:about]), class: "bntDownload", target: :_blank %>
 				</div>
-				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_url("website/gmmcal.png"), alt: "Gustavo Cunha", class: "topmar", itemprop: "image" %> </div>
+				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_url("website/gmmcal.png"), alt: t(:name, scope: [:template]), class: "topmar", itemprop: "image" %> </div>
 			</div>
 		</div>
 	</section>
@@ -22,188 +20,188 @@
 	<section class="technical" id="technical">
 		<div class="container">
 			<div class="heading">
-				<h2>Habilidades Técnicas</h2>
-				<p>Eu sei no que eu sou bom, mas estou sempre aprendendo</p>
+				<h2><%=t(:title, scope: [:skills])%></h2>
+				<p><%=t(:subtitle, scope: [:skills])%></p>
 			</div>
 			<div class="row">
 				<div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="90"> <span class="percent"></span> </span>
-						<h4>PHP</h4>
-						<p>11 anos de experiência</p>
+					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="<%=t(:skill1_percentage, scope: [:skills, :details])%>"> <span class="percent"></span> </span>
+						<h4><%=t(:skill1_name, scope: [:skills, :details])%></h4>
+						<p><%=t(:skill1_title, scope: [:skills, :details])%></p>
 					</div>
 				</div>
 				<div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="85"> <span class="percent"></span> </span>
-						<h4>Ruby on Rails</h4>
-						<p>Paixão a primeira linha de código</p>
+					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="<%=t(:skill2_percentage, scope: [:skills, :details])%>"> <span class="percent"></span> </span>
+						<h4><%=t(:skill2_name, scope: [:skills, :details])%></h4>
+						<p><%=t(:skill2_title, scope: [:skills, :details])%></p>
 					</div>
 				</div>
 				<div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="70"> <span class="percent"></span> </span>
-						<h4>Objective-C</h4>
-						<p>Desafios a frente</p>
+					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="<%=t(:skill3_percentage, scope: [:skills, :details])%>"> <span class="percent"></span> </span>
+						<h4><%=t(:skill3_name, scope: [:skills, :details])%></h4>
+						<p><%=t(:skill3_title, scope: [:skills, :details])%></p>
 					</div>
 				</div>
 				<div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="75"> <span class="percent"></span> </span>
-						<h4>MySQL</h4>
-						<p>select * from table...</p>
+					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="<%=t(:skill4_percentage, scope: [:skills, :details])%>"> <span class="percent"></span> </span>
+						<h4><%=t(:skill4_name, scope: [:skills, :details])%></h4>
+						<p><%=t(:skill4_title, scope: [:skills, :details])%></p>
 					</div>
 				</div>
 				<div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="40"> <span class="percent"></span> </span>
-						<h4>PostgreSQL</h4>
-						<p>Uma nova abordagem....</p>
+					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="<%=t(:skill5_percentage, scope: [:skills, :details])%>"> <span class="percent"></span> </span>
+						<h4><%=t(:skill5_name, scope: [:skills, :details])%></h4>
+						<p><%=t(:skill5_title, scope: [:skills, :details])%></p>
 					</div>
 				</div>
 				<div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skillsArea">
-					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="50"> <span class="percent"></span> </span>
-						<h4>HTML / CSS</h4>
-						<p>Aprendendo diariamente</p>
+					<div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"> <span class="chart skilBg" data-percent="<%=t(:skill6_percentage, scope: [:skills, :details])%>"> <span class="percent"></span> </span>
+						<h4><%=t(:skill6_name, scope: [:skills, :details])%></h4>
+						<p><%=t(:skill6_title, scope: [:skills, :details])%></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--technical end-->
-	<!--exprience start-->
-	<section class="exprience" id="exprience">
+	<!--experience start-->
+	<section class="experience" id="experience">
 		<div class="container">
 			<div class="heading">
-				<h2>Experiência de trabalho</h2>
-				<p>Empresas por onde andei</p>
+				<h2><%=t(:title, scope: [:experience])%></h2>
+				<p><%=t(:subtitle, scope: [:experience])%></p>
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Set / 2012<br>Atualmente</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item6])%><br><%=t(:end_date, scope: [:experience, :items, :item6])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName">Quimbik, Inc</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">São Francisco</span> - <span itemprop="addressRegion">CA</span> - <span itemprop="addressCountry">EUA</span></span></h4>
-						<h5>Engenheiro de Software</h5>
-						<p itemprop="description">Engenheiro de Software responsável por desenvolvimento de sistemas na empresa, em sistema de Home Office, usando Ruby on Rails, MySQL e Objective-C (iOS). Trabalho usando ferramentas para a integração e funcionamento das rotinas de trabalho, como o Redmine e Pivotal para gerenciamento de tickets, Skype e Slack para reuniões e conversas, Harverst para contabilização de horas, Git para versionamento de código, entre outras ferramentas.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item6])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item6])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item6])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item6])%></p>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item5])%><br><%=t(:end_date, scope: [:experience, :items, :item5])%></div>
+				</div>
+				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
+					<div class="arrowpart"></div>
+					<div class="exCon">
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item5])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item5])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item5])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item5])%></p>
+					</div>
+				</div>
+			</div> -->
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item4])%><br><%=t(:end_date, scope: [:experience, :items, :item4])%></div>
+				</div>
+				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
+					<div class="arrowpart"></div>
+					<div class="exCon">
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item4])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item4])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item4])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item4])%></p>
 					</div>
 				</div>
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Out / 2014<br>Atualmente</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item3])%><br><%=t(:end_date, scope: [:experience, :items, :item3])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName">Abound</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Maceió</span> - <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></span></h4>
-						<h5>Co-Fundador / Editor</h5>
-						<p itemprop="description">Blog com conteúdo para desenvolvedores feito em Wordpress.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item3])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item3])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item3])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item3])%></p>
 					</div>
 				</div>
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Abr / 2014<br>Atualmente</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item2])%><br><%=t(:end_date, scope: [:experience, :items, :item2])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName">Alagoas Dev Day</span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Maceió</span> - <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></span></h4>
-						<h5>Co-Fundador / Organizador</h5>
-						<p itemprop="description">Evento anual de desenvolvimento criado para fomentar e fortalecer a cultura de programação em Alagoas e região, trazendo profissionais de renome no estado e no país para compartilhar experiências e difundir conhecimento.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item2])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item2])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item2])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item2])%></p>
 					</div>
 				</div>
 			</div>
-			<div class="row workDetails">
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Jun / 2007<br>Set / 2012</div>
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item1])%><br><%=t(:end_date, scope: [:experience, :items, :item1])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>id5 Solução Web - Maceió - AL - Brasil</h4>
-						<h5>Programador / Analista de Sistemas</h5>
-						<p>Responsável pela análise e desenvolvimento de sistemas da empresa. Comecei fazendo manutenções e desenvolvimento em um sistema de apoio a decisões em ASP / Access. Depois, passei a dar manutenção e desenvolver no sistema de gerenciamento de conteúdos proprietário da empresa em ASP / SQL Server. Em 2010, a empresa trocou o sistema proprietário pelo Wordpress, e voltei a desenvolver em PHP / MySQL. Desde então, fui responsável por quase toda a análise e todo o desenvolvimento de sistemas.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row workDetails">
-				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Mar / 2006<br>Mar / 2007</div>
-				</div>
-				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
-					<div class="arrowpart"></div>
-					<div class="exCon">
-						<h4>Correios - Maceió - AL - Brasil</h4>
-						<h5>Estágio em Desenvolvimento</h5>
-						<p>Responsável pela manutenção da Intranet da Diretoria Regional de Alagoas e desenvolvimento de sistemas demandados pelos setores, sob a supervisão dos analistas de sistemas da empresa. Todos os sistemas eram desenvolvidos em Coldfusion, linguagem proprietária da Macromedia (comprada posteriormente pela Adobe).</p>
-					</div>
-				</div>
-			</div>
-			<div class="row workDetails">
-				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Mar / 2003<br>Set / 2004</div>
-				</div>
-				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
-					<div class="arrowpart"></div>
-					<div class="exCon">
-						<h4>Secretaria de Fazenda de Alagoas / SEFAZ - Maceió - AL - Brasil</h4>
-						<h5>Estágio em suporte ao usuário</h5>
-						<p>Estágio dando suporte a usuários em um setor da SEFAZ / AL, ajudando a ensinar os funcionários a usar o computador e seus recursos, agilizar o suporte, entre outros. Também trabalhei alimentando um sistema de produtividade desenvolvido pela equipe de TI da SEFAZ. No fim do estágio, cheguei a desenvolver um pequeno sistema em PHP de tabulação de um pesquisa interna para o supervisor do setor.</p>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item1])%></span> - <span itemprop="location" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item1])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item1])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item1])%></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--exprience end-->
+	<!--experience end-->
 	<!--education start-->
 	<section class="education" id="education">
 		<div class="container">
 			<div class="heading">
-				<h2>Educação e Diplomas</h2>
-				<p>O que eu fiz na minha carreira acadêmica</p>
+				<h2><%=t(:title, scope: [:education])%></h2>
+				<p><%=t(:subtitle, scope: [:education])%></p>
 			</div>
 
 			<div class="row workDetails" itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Nov / 2012</div>
+					<div class="workYear"><%=t(:date, scope: [:education, :items, :item2])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Pós-gradução em Engenharia de Software</h4>
-						<h5 itemprop="legalName">Centro Universitário CESMAC</h5>
-						<p itemprop="description">Pós-graduação em Engenharia de Software pelo Centro Universitário CESMAC, focando em padrões de projetos.</p>
+						<h4><%=t(:course, scope: [:education, :items, :item2])%></h4>
+						<h5 itemprop="legalName"><%=t(:institution, scope: [:education, :items, :item2])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:education, :items, :item2])%></p>
 					</div>
 				</div>
 			</div>
 			<div class="row workDetails" itemprop="alumniOf" itemscope itemtype="http://schema.org/CollegeOrUniversity">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-					<div class="workYear">Mai / 2008</div>
+					<div class="workYear"><%=t(:date, scope: [:education, :items, :item1])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4>Bacharel em Ciência da Computação</h4>
-						<h5 itemprop="legalName">Universidade Federal de Alagoas</h5>
-						<p itemprop="description">Graduação em Ciência da Computação pela Universidade Federal de Alagoas, iniciando o curso em Junho / 2002 e concluindo em Maio / 2008.</p>
+						<h4><%=t(:course, scope: [:education, :items, :item1])%></h4>
+						<h5 itemprop="legalName"><%=t(:institution, scope: [:education, :items, :item1])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:education, :items, :item1])%></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--education end-->
-	<!--protfolio start-->
-	<section class="protfolio" id="protfolio">
+	<!--portfolio start-->
+	<section class="portfolio" id="portfolio">
 		<div class="container">
 			<div class="heading">
-				<h2>Portfólio</h2>
-				<p>Alguns dos meus trabalhos sozinho ou com parceiros</p>
+				<h2><%=t(:title, scope: [:portfolio])%></h2>
+				<p><%=t(:subtitle, scope: [:portfolio])%></p>
 			</div>
 			<div class="portfolioFilter">
 				<ul>
-					<li><a href="#" data-filter="*" class="current">Todos</a></li>
-					<li><a href="#" data-filter=".backend">Backend</a></li>
-					<li><a href="#" data-filter=".frontend">Integração Frontend</a></li>
-					<li><a href="#" data-filter=".engenharia">Engenharia de Software</a></li>
+					<li><a href="#" data-filter="*" class="current"><%=t(:all, scope: [:portfolio, :filters])%></a></li>
+					<li><a href="#" data-filter=".backend"><%=t(:backend, scope: [:portfolio, :filters])%></a></li>
+					<li><a href="#" data-filter=".frontend"><%=t(:frontend, scope: [:portfolio, :filters])%></a></li>
+					<li><a href="#" data-filter=".engineering"><%=t(:engineering, scope: [:portfolio, :filters])%></a></li>
 				</ul>
 			</div>
 			<ul class="portfolioContainer row">
@@ -211,192 +209,192 @@
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/add.jpg'), rel: "lightbox-demo", title: "Alagoas Dev Day - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/add.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item1]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.alagoasdevday.com.br", rel: "lightbox-demo", title: "Alagoas Dev Day", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.alagoasdevday.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item1]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/add.jpg", width: 450, height: 450, alt: "Alagoas Dev Day" %>
+						<%=image_tag "portfolio/tn/add.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item1]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/casamento.jpg'), rel: "lightbox-demo", title: "Casamento - Planejamento, desenvolvimento de sistema com testes unitários e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/casamento.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item2]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.rosanaegustavo.com.br", rel: "lightbox-demo", title: "Casamento", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.rosanaegustavo.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item2]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/casamento.jpg", width: 450, height: 450, alt: "Casamento" %>
+						<%=image_tag "portfolio/tn/casamento.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item2]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/duranbah.jpg'), rel: "lightbox-demo", title: "Duranbah Music - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/duranbah.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item3]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.duranbah.com.br", rel: "lightbox-demo", title: "Duranbah Music", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.duranbah.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item3]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/duranbah.jpg", width: 450, height: 450, alt: "Duranbah Music" %>
+						<%=image_tag "portfolio/tn/duranbah.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item3]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/waterhouse.jpg'), rel: "lightbox-demo", title: "Waterhouse - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/waterhouse.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item4]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.waterhouse.com.br", rel: "lightbox-demo", title: "Waterhouse", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.waterhouse.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item4]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/waterhouse.jpg", width: 450, height: 450, alt: "Waterhouse" %>
+						<%=image_tag "portfolio/tn/waterhouse.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item4]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/lotebox-mvp.jpg'), rel: "lightbox-demo", title: "Lotebox MPV - Desenvolvimento backend e integração com frontend de MVP", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/lotebox-mvp.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item5]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://mvp.lotebox.co", rel: "lightbox-demo", title: "Lotebox MPV", class: "linKed", target: :blank do %>
+								<%=link_to "http://mvp.lotebox.co", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item5]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/lotebox-mvp.jpg", width: 450, height: 450, alt: "Lotebox MPV" %>
+						<%=image_tag "portfolio/tn/lotebox-mvp.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item5]) %>
 					</div>
 				</li>
-				<li class="backend frontend engenharia col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/zeropixel.jpg'), rel: "lightbox-demo", title: "Zeropixel - Desenvolvimento backend e integração com frontend", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/zeropixel.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item6]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.zeropixel.com.br", rel: "lightbox-demo", title: "Zeropixel", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.zeropixel.com.br", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item6]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/zeropixel.jpg", width: 450, height: 450, alt: "Zeropixel" %>
-					</div>
-				</li>
-				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/kuka.jpg'), rel: "lightbox-demo", title: "Kuka Estratégia - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://kukaestrategia.com/", rel: "lightbox-demo", title: "Kuka Estratégia", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/kuka.jpg", width: 450, height: 450, alt: "Kuka Estratégia" %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/cliom.jpg'), rel: "lightbox-demo", title: "Hospital Cliom - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://hospitalcliom.com.br/", rel: "lightbox-demo", title: "Hospital Cliom", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/cliom.jpg", width: 450, height: 450, alt: "Hospital Cliom" %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/jambo.jpg'), rel: "lightbox-demo", title: "Grupo Jambo - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://grupojambo.com.br/", rel: "lightbox-demo", title: "Grupo Jambo", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/jambo.jpg", width: 450, height: 450, alt: "Grupo Jambo" %>
+						<%=image_tag "portfolio/tn/zeropixel.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item6]) %>
 					</div>
 				</li>
 				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/junior-almeida.jpg'), rel: "lightbox-demo", title: "Junior Almeida - Integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/kuka.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item7]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://suechamusca.com.br/junioralmeida/", rel: "lightbox-demo", title: "Junior Almeida", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.kukaestrategia.com/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item7]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/junior-almeida.jpg", width: 450, height: 450, alt: "Junior Almeida" %>
+						<%=image_tag "portfolio/tn/kuka.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item7]) %>
 					</div>
 				</li>
 				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/maceiomarhotel.jpg'), rel: "lightbox-demo", title: "Maceió Mar Hotel - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/cliom.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item8]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.maceiomarhotel.com.br/", rel: "lightbox-demo", title: "Maceió Mar Hotel", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.hospitalcliom.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item8]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/maceiomarhotel.jpg", width: 450, height: 450, alt: "Maceió Mar Hotel" %>
+						<%=image_tag "portfolio/tn/cliom.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item8]) %>
+					</div>
+				</li>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/jambo.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item9]), class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.grupojambo.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item9]), class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/jambo.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item9]) %>
 					</div>
 				</li>
 				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
 					<div class="lightCon">
 						<span class="hoverBox">
 							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/nordeste.jpg'), rel: "lightbox-demo", title: "Nordeste Gestão Contábil e Empresarial - Desenvolvimento backend e integração com frontend (parceria com Zeropixel)", class: "zoom lb lb_warsaw1" do %>
+								<%=link_to asset_path('portfolio/junior-almeida.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item10]), class: "zoom lb lb_warsaw1" do %>
 									<i class="fa fa-search fa-2x"></i>
 								<%end%>
-								<%=link_to "http://www.nordestetecnologia.com.br/", rel: "lightbox-demo", title: "Nordeste Gestão Contábil e Empresarial", class: "linKed", target: :blank do %>
+								<%=link_to "http://www.suechamusca.com.br/junioralmeida/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item10]), class: "linKed", target: :blank do %>
 									<i class="fa fa-link fa-2x"></i></i>
 								<%end%>
 							</span>
 						</span>
-						<%=image_tag "portfolio/tn/nordeste.jpg", width: 450, height: 450, alt: "Nordeste Gestão Contábil e Empresarial" %>
+						<%=image_tag "portfolio/tn/junior-almeida.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item10]) %>
+					</div>
+				</li>
+				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/maceiomarhotel.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item11]), class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.maceiomarhotel.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item11]), class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/maceiomarhotel.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item11]) %>
+					</div>
+				</li>
+				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
+					<div class="lightCon">
+						<span class="hoverBox">
+							<span class="smallIcon">
+								<%=link_to asset_path('portfolio/nordeste.jpg'), rel: "lightbox-demo", title: t(:caption, scope: [:portfolio, :items, :item12]), class: "zoom lb lb_warsaw1" do %>
+									<i class="fa fa-search fa-2x"></i>
+								<%end%>
+								<%=link_to "http://www.nordestetecnologia.com.br/", rel: "lightbox-demo", title: t(:name, scope: [:portfolio, :items, :item12]), class: "linKed", target: :blank do %>
+									<i class="fa fa-link fa-2x"></i></i>
+								<%end%>
+							</span>
+						</span>
+						<%=image_tag "portfolio/tn/nordeste.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item12]) %>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</section>
-	<!--protfolio end-->
+	<!--portfolio end-->
 	<!--contact start-->
 	<section class="contact" id="contact">
 		<div class="container topCon">
 			<div class="heading">
-				<h2>Contate-me</h2>
-				<p>Sinta-se a vontade para entrar em contato.</p>
+				<h2><%=t(:title, scope: [:contact])%></h2>
+				<p><%=t(:subtitle, scope: [:contact])%></p>
 			</div>
 		</div>
 	</section>
@@ -404,13 +402,13 @@
 		<div class="container">
 			<!--contact info start-->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h4>Contatos</h4>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality">Maceió</span> / <span itemprop="addressRegion">AL</span> - <span itemprop="addressCountry">Brasil</span></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="telephone"> <i class="fa fa-mobile fa-lg"></i> +55 (82) 9987-2799</p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="email"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com">gustavocunha&#64;gmail&#46;com</a></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="http://github.com/gmmcal" target="_blank">gmmcal</a></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="http://linkedin.com/in/gmmcal" target="_blank">Gustavo Cunha</a></p>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="http://twitter.com/gmmcal" target="_blank">@gmmcal</a></p>
+				<h4><%=t(:title, scope: [:contact, :contacts])%></h4>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality"><%=t(:city, scope: [:contact, :contacts, :address])%></span> / <span itemprop="addressRegion"><%=t(:state, scope: [:contact, :contacts, :address])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:contact, :contacts, :address])%></span></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="telephone"> <i class="fa fa-mobile fa-lg"></i> <%=t(:phone, scope: [:contact, :contacts])%></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="email"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com"><%=t(:email, scope: [:contact, :contacts]).html_safe%></a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="http://github.com/gmmcal" target="_blank"><%=t(:github, scope: [:contact, :contacts])%></a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="http://linkedin.com/in/gmmcal" target="_blank"><%=t(:linkedin, scope: [:contact, :contacts])%></a></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="http://twitter.com/gmmcal" target="_blank"><%=t(:twitter, scope: [:contact, :contacts])%></a></p>
 			</div>
 			<!--contact info end-->
 		</div>
