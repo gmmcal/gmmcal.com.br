@@ -4,7 +4,7 @@ lock '3.4.0'
 set :application, 'gmmcal.com.br'
 set :repo_url, 'git@github.com:gmmcal/gmmcal.com.br.git'
 set :base_path, "/var/www/rails/gmmcal.com.br"
-set :ruby_version, "2.2.0"
+set :ruby_version, "2.2.2"
 set :ruby_gemset, "gmmcal.com.br"
 ask :user, "root"
 ask :server, "example.com"
