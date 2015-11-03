@@ -56,4 +56,13 @@ en:
         position: "Software Engineer"
         description: "Software Engineer responsible for developing some of the company systems, in a Home Office base, using Ruby on Rails, MySQL, Objective-C and Swift (iOS). I work using tools to integrate the workflow routine, such as Redmine, Pivotal, Skype, Slack and Git, among others."
         start_date: "Sep / 2012"
+        end_date: "Sep / 2015"
+      item7:
+        name: "Landing.jobs"
+        city: "Lisbon"
+        region: "LX"
+        country: "Portugal"
+        position: "Senior Software Engineer"
+        description: "Senior Software Engineer helping to develop the company platform using Ruby on Rails, Postgres, Redis, Sidekiq. I work using tools to integrate the workflow routine, such as Trello, Skype, Slack and Git, among others."
+        start_date: "Oct / 2015"
         end_date: "Currently"
