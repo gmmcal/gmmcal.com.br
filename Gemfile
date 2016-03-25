@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.3'
+gem 'rails', '~> 4.2.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,6 +35,8 @@ gem 'capistrano-rails', group: :development
 gem 'capistrano-rvm', group: :development
 gem 'capistrano-bundler', group: :development
 
+gem 'puma', group: :production
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
@@ -42,7 +44,7 @@ gem 'capistrano-bundler', group: :development
 gem 'brakeman', group: :development
 
 # Use passenger
-gem 'passenger'
+gem 'passenger', group: :development
 
 # User quiet_assets on development
 gem 'quiet_assets', group: :development
