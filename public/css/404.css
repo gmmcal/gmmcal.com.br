@@ -21,7 +21,7 @@ body {
 }
 
 .body404, .head404, .eyes404, .leftarm404, .rightarm404, .chair404, .leftshoe404, .rightshoe404, .legs404, .laptop404 {
-	background: url(/assets/website/404.png) 0 0 no-repeat;
+	background: url('404.png') 0 0 no-repeat;
 	width: 200px;
 	height: 200px;
 }
