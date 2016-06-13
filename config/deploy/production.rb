@@ -3,7 +3,7 @@ role :web, "#{fetch(:user)}@#{fetch(:server)}"
 role :db,  "#{fetch(:user)}@#{fetch(:server)}"
 set :stage, :production
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "#{fetch(:base_path)}/prod"
+set :deploy_to, "#{fetch(:base_path)}"
 
 set :puma_bind,       "unix://#{shared_path}/sockets/puma.sock"
 set :puma_state,      "#{shared_path}/pids/puma.state"
