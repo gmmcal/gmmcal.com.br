@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 
 # Use puma as the app server
-gem 'puma', group: :production
+gem 'puma'
 
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
@@ -43,9 +43,6 @@ gem 'capistrano3-puma', group: :development
 
 # Use brakeman
 gem 'brakeman', group: :development
-
-# Use passenger
-gem 'passenger', group: :development
 
 # User quiet_assets on development
 gem 'quiet_assets', group: :development
