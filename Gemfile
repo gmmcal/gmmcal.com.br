@@ -29,13 +29,14 @@ gem 'bcrypt', '~> 3.1.7'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+# Use puma as the app server
+gem 'puma', group: :production
+
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
 gem 'capistrano-rails', group: :development
-gem 'capistrano-rvm', group: :development
 gem 'capistrano-bundler', group: :development
-
-gem 'puma', group: :production
+gem 'capistrano3-puma', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

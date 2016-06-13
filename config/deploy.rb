@@ -1,13 +1,16 @@
 # config valid only for Capistrano 3.1
 lock '3.4.0'
 
-set :application, 'gmmcal.com.br'
+set :application, 'project'
 set :repo_url, 'git@github.com:gmmcal/gmmcal.com.br.git'
-set :base_path, "/var/www/rails/gmmcal.com.br"
-set :ruby_version, "2.2.2"
-set :ruby_gemset, "gmmcal.com.br"
+set :base_path, "/var/www/project"
+# set :ruby_version, "2.3.0"
+# set :ruby_gemset, "gmmcal.com.br"
 ask :user, "root"
 ask :server, "example.com"
+
+set :puma_threads,    [4, 16]
+set :puma_workers,    1
 
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -28,7 +31,7 @@ set :pty, true
 set :linked_files, %w{config/secrets.yml config/application.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{pids sockets log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for keep_releases is 5
 set :keep_releases, 10
