@@ -1,11 +1,9 @@
 # config valid only for Capistrano 3.1
-lock '3.4.0'
+lock '3.5.0'
 
-set :application, 'project'
+set :application, 'gmmcal.com.br'
 set :repo_url, 'git@github.com:gmmcal/gmmcal.com.br.git'
-set :base_path, "/var/www/project"
-# set :ruby_version, "2.3.0"
-# set :ruby_gemset, "gmmcal.com.br"
+set :base_path, "/var/www/gmmcal.com.br"
 ask :user, "root"
 ask :server, "example.com"
 
