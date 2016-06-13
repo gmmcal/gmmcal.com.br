@@ -1,0 +1,10 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.3.0
+before_script:
+  - cp config/secrets.yml.travis config/secrets.yml
+
+addons:
+  code_climate:
+    repo_token: de204ee6df952565167b2ea21b961a94aae1ab0c18fd1db60cd88674f5b84bff
