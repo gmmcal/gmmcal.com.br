@@ -24,7 +24,6 @@ body {
 	background: url(/assets/website/404.png) 0 0 no-repeat;
 	width: 200px;
 	height: 200px;
-	// border: 1px dotted red;
 }
 
 .newcharacter404, .torso404, .body404, .head404, .eyes404, .leftarm404, .rightarm404, .chair404, .leftshoe404, .rightshoe404, .legs404, .laptop404 {
