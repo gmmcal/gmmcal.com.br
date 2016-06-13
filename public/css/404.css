@@ -41,8 +41,6 @@ body {
 	margin-left: -200px;
 }
 
-$swayspeed: 20s;
-
 .torso404 {
 	position: absolute;
 	display: block;
@@ -50,7 +48,7 @@ $swayspeed: 20s;
 	left: 0px;
 	width: 389px;
 	height: 252px;
-	animation: sway $swayspeed ease infinite;
+	animation: sway 20s ease infinite;
 	transform-origin: 50% 100%;
 }
 
@@ -71,7 +69,7 @@ $swayspeed: 20s;
 	height: 194px;
 	background-position: 0px -265px;
 	transform-origin: 50% 85%;
-	animation: headTilt $swayspeed ease infinite;
+	animation: headTilt 20s ease infinite;
 }
 
 .eyes404 {
