@@ -52,19 +52,19 @@
 	z-index:110;
 }
 // .ui-lightbox-panorama-icon-expand {
-// 	background:url(/assets/website/zoom.png) top left no-repeat;
+// 	background:asset_url('website/zoom.png') top left no-repeat;
 // }
 // .ui-lightbox-panorama-icon-expand-hover {
-// 	background:url(/assets/website/zoom.png) top left no-repeat;
+// 	background:asset_url('website/zoom.png') top left no-repeat;
 // }
 // .ui-lightbox-panorama-icon-shrink {
-// 	background:url(/assets/website/zoom-hover.png) top right no-repeat;
+// 	background:asset_url('website/zoom-hover.png') top right no-repeat;
 // }
 // .ui-lightbox-panorama-icon-shrink-hover {
-// 	background:url(/assets/website/zoom-hover.png) top right no-repeat;
+// 	background:asset_url('website/zoom-hover.png') top right no-repeat;
 // }
 .ui-lightbox-loader {
-	background:url(/assets/website/ajax-loader.gif) center center no-repeat;
+	background:asset_url('website/ajax-loader.gif') center center no-repeat;
 }
 #ui-lightbox-bottombar {
 	margin-top:5px;
@@ -141,7 +141,7 @@
 	position:fixed;
 }
 #ui-lightbox-error {
-	background:url(error_bg.png) repeat left top;
+	background:asset_url('error_bg.png') repeat left top;
 }
 #ui-lightbox-error-message {
 	color:#fff;
@@ -158,5 +158,5 @@
 	margin-right:15px;
 }
 .ui-lightbox-error-icon-sign {
-	background:url(error_sign.png) no-repeat center 226px;
+	background:asset_url('error_sign.png') no-repeat center 226px;
 }

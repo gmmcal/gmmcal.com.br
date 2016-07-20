@@ -118,10 +118,10 @@
 		float:none;
 		width:100%;
 		height:40px;
-		background:url(/assets/website/arrow-top.png) no-repeat 50% 100%;
+		background:asset_url('website/arrow-top.png') no-repeat 50% 100%;
 	}
 	.education .arrowpart{
-		background:url(/assets/website/arrow-top-light.png) no-repeat 50% 100%;
+		background:asset_url('website/arrow-top-light.png') no-repeat 50% 100%;
 	}
 	.exCon{
 		margin-left:0px;
