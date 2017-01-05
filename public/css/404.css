@@ -44,7 +44,7 @@ body {
 	position: absolute;
 	display: block;
 	top: 138px;
-	left: 0px;
+	left: 0;
 	width: 389px;
 	height: 252px;
 	animation: sway 20s ease infinite;
@@ -54,8 +54,8 @@ body {
 .body404 {
 	position: absolute;
 	display: block;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 389px;
 	height: 253px;
 }
@@ -66,7 +66,7 @@ body {
 	left: 106px;
 	width: 160px;
 	height: 194px;
-	background-position: 0px -265px;
+	background-position: 0 -265px;
 	transform-origin: 50% 85%;
 	animation: headTilt 20s ease infinite;
 }

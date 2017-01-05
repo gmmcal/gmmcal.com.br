@@ -1,5 +1,5 @@
-# config valid only for Capistrano 3.1
-lock '3.5.0'
+# config valid only for Capistrano 3.7
+lock '3.7.1'
 
 set :application, 'gmmcal.com.br'
 set :repo_url, 'git@github.com:gmmcal/gmmcal.com.br.git'
