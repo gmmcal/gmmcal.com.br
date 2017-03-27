@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
+ruby '2.4.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.7.1'
+gem 'rails', '~> 5.0.2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 3.1.10'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -32,20 +34,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use puma as the app server
 gem 'puma'
 
-# Use Capistrano for deployment
-gem 'capistrano', group: :development
-gem 'capistrano-rails', group: :development
-gem 'capistrano-bundler', group: :development
-gem 'capistrano3-puma', group: :development
-
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
 # Use brakeman
 gem 'brakeman', group: :development
-
-# User quiet_assets on development
-gem 'quiet_assets', group: :development
 
 # Environment variables
 gem 'figaro'
