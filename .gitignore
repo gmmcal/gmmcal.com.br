@@ -25,4 +25,5 @@ config/database.yml
 .env
 
 /config/application.yml
-node_modules/
+/public/packs
+/node_modules
