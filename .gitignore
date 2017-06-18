@@ -25,3 +25,4 @@ config/database.yml
 .env
 
 /config/application.yml
+node_modules/

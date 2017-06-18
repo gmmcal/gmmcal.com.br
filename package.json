@@ -1,0 +1,14 @@
+{
+  "name": "gmmcal.com.br",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "easy-pie-chart": "^2.1.7",
+    "ekko-lightbox": "^5.1.1",
+    "isotope-layout": "^3.0.4",
+    "jquery": "^3.2.1",
+    "jquery.easing": "^1.4.1",
+    "rails-ujs": "^5.1.1",
+    "waypoints": "^4.0.1"
+  }
+}
