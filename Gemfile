@@ -46,3 +46,5 @@ gem 'figaro'
 gem 'newrelic_rpm'
 
 gem 'modernizr-rails'
+
+gem 'webpacker', group: :production
