@@ -73,8 +73,8 @@ jQuery(function($) {
           scaleLength: 0,
           lineWidth: 15,
           size: 152,
-          onStep: function(from, to) {
-            $(this.el).find(".percent").text(Math.round(to));
+          onStep: function(from, to, percent) {
+            $(this.el).find(".percent").text(Math.round(percent));
           },
         });
       }
