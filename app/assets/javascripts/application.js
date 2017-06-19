@@ -1,24 +1,24 @@
-//= require jquery
-//= require rails-ujs
-//= require turbolinks/dist/turbolinks
-//= require bootstrap/dist/js/bootstrap
-//= require jquery.gridrotator
-//= require jquery.placeholder
-//= require waypoints/lib/jquery.waypoints
-//= require isotope-layout/dist/isotope.pkgd
-//= require ekko-lightbox/dist/ekko-lightbox
-//= require jquery.easing/jquery.easing
-//= require easy-pie-chart/dist/jquery.easypiechart
+// = require jquery
+// = require rails-ujs
+// = require turbolinks/dist/turbolinks
+// = require bootstrap/dist/js/bootstrap
+// = require jquery.gridrotator
+// = require jquery.placeholder
+// = require waypoints/lib/jquery.waypoints
+// = require isotope-layout/dist/isotope.pkgd
+// = require ekko-lightbox/dist/ekko-lightbox
+// = require jquery.easing/jquery.easing
+// = require easy-pie-chart/dist/jquery.easypiechart
 
 jQuery(function($) {
-  var theWindow = $(window), $bg = $(".bannerImg");
+  var $bg = $('.bannerImg');
 
-  theWindow.resize(function(){
+  $(window).resize(function() {
     // for banner height js
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
-    $('.banner').css({'width':windowWidth ,'height':windowHeight -"60" });
-    if ( theWindow.width() < theWindow.height() ) {
+    $('.banner').css({'width': windowWidth, 'height': windowHeight -'60' });
+    if ( $(window).width() < $(window).height() ) {
       $bg
         .removeClass()
         .addClass('bgheight');
@@ -27,7 +27,7 @@ jQuery(function($) {
         .removeClass()
         .addClass('bgwidth');
     }
-  }).trigger("resize");
+  }).trigger('resize');
 
   var $container = $('.portfolioContainer');
   $container.isotope({
@@ -35,11 +35,11 @@ jQuery(function($) {
     animationOptions: {
       duration: 750,
       easing: 'linear',
-      queue: false
-    }
+      queue: false,
+    },
   });
 
-  $('.portfolioFilter a').click(function(){
+  $('.portfolioFilter a').click(function() {
     $('.portfolioFilter .current').removeClass('current');
     $(this).addClass('current');
 
@@ -49,8 +49,8 @@ jQuery(function($) {
       animationOptions: {
         duration: 750,
         easing: 'linear',
-        queue: false
-      }
+        queue: false,
+      },
      });
      return false;
   });
@@ -62,11 +62,10 @@ jQuery(function($) {
   });
 
   var index=0;
-  $(document).on('scroll', function(){
+  $(document).on('scroll', function() {
     var top = $('.technical').height()-$(window).scrollTop();
-    if(top<-300){
-      if(index==0){
-
+    if (top<-300) {
+      if (index==0) {
         $('.chart').easyPieChart({
           barColor: '#ff675f',
           trackColor: '#e1e1e3',
@@ -76,9 +75,8 @@ jQuery(function($) {
           size: 152,
           onStep: function(from, to) {
             $(this.el).find('.percent').text(Math.round(to));
-          }
+          },
         });
-
       }
       index++;
     }
@@ -86,13 +84,13 @@ jQuery(function($) {
 
   $('.navbar-wrapper').waypoint({
     handler: function(direction) {
-      if(direction == "down"){
+      if (direction == 'down') {
         $('.navbar-wrapper').addClass('isStuck');
-      }else{
+      } else {
         $('.navbar-wrapper').removeClass('isStuck');
       }
     },
-    offset: 0
+    offset: 0,
   });
 
   $('#home, #aboutme, #technical, #experience, #education, #portfolio, #contact, #footer').waypoint({
@@ -102,25 +100,25 @@ jQuery(function($) {
       link.parent().addClass('active');
       ga('send', 'pageview', {
         'page': $(link).attr('href'),
-        'title': $(link).text()
+        'title': $(link).text(),
       });
     },
-    offset: $('.navbar-wrapper').height()
+    offset: $('.navbar-wrapper').height(),
   });
 
-  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-    $( ".navbar-collapse" ).addClass( "hideClass" );
+  $( '.navbar.navbar-inverse.navbar-static-top a' ).click(function() {
+    $( '.navbar-collapse' ).addClass( 'hideClass' );
   });
 
-  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-    $( ".navbar-collapse" ).addClass( "collapse" );
+  $( '.navbar.navbar-inverse.navbar-static-top a' ).click(function() {
+    $( '.navbar-collapse' ).addClass( 'collapse' );
   });
 
-  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-    $( ".navbar-collapse" ).removeClass( "in" );
+  $( '.navbar.navbar-inverse.navbar-static-top a' ).click(function() {
+    $( '.navbar-collapse' ).removeClass( 'in' );
   });
 
-  $( ".navbar-toggle" ).click(function() {
-    $( ".navbar-collapse" ).removeClass( "hideClass" );
+  $( '.navbar-toggle' ).click(function() {
+    $( '.navbar-collapse' ).removeClass( 'hideClass' );
   });
 });
