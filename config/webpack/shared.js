@@ -18,10 +18,10 @@ const packPaths = sync(join(entryPath, extensionGlob));
 module.exports = {
   entry: packPaths.reduce(
     (map, entry) => {
-      const localMap = map
-      const namespace = relative(join(entryPath), dirname(entry))
-      localMap[join(namespace, basename(entry, extname(entry)))] = resolve(entry)
-      return localMap
+      const localMap = map;
+      const namespace = relative(join(entryPath), dirname(entry));
+      localMap[join(namespace, basename(entry, extname(entry)))] = resolve(entry);
+      return localMap;
     }, {}
   ),
 
