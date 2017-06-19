@@ -1,6 +1,6 @@
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
+//= require turbolinks/dist/turbolinks
 //= require bootstrap/dist/js/bootstrap
 //= require jquery.gridrotator
 //= require jquery.placeholder
