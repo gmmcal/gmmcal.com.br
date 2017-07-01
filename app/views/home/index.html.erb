@@ -9,7 +9,7 @@
 					<h3 itemprop="name"><%=t(:name, scope: [:template])%></h3>
 					<h4 class="subHeading" itemprop="jobTitle"><%=t(:job_title, scope: [:about])%></h4>
 					<%=t(:text, scope: [:about]).html_safe%>
-					<%=link_to t(:file_title, scope: [:about]), t(:file, scope: [:about]), class: "bntDownload", target: :_blank %>
+					<%=link_to t(:file_title, scope: [:about]), asset_path(t(:file, scope: [:about])), class: "bntDownload", target: :_blank %>
 				</div>
 				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_path("website/gmmcal.png"), alt: t(:name, scope: [:template]), class: "topmar", itemprop: "image" %> </div>
 			</div>
@@ -70,6 +70,19 @@
 			<div class="heading">
 				<h2><%=t(:title, scope: [:experience])%></h2>
 				<p><%=t(:subtitle, scope: [:experience])%></p>
+			</div>
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item8])%><br><%=t(:end_date, scope: [:experience, :items, :item8])%></div>
+				</div>
+				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
+					<div class="arrowpart"></div>
+					<div class="exCon">
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item8])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item8])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item8])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item8])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item8])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item8])%></p>
+					</div>
+				</div>
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
