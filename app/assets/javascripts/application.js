@@ -10,7 +10,7 @@
 // = require jquery.easing/jquery.easing
 // = require easy-pie-chart/dist/jquery.easypiechart
 
-jQuery(function($) {
+document.addEventListener("turbolinks:load", function() {
   var $bg = $(".bannerImg");
 
   $(window).resize(function() {
