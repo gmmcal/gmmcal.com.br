@@ -38,9 +38,6 @@ gem 'brakeman', group: :development
 # Environment variables
 gem 'figaro'
 
-# Monitor with New Relic
-gem 'newrelic_rpm'
-
 gem 'modernizr-rails'
 
 gem 'webpacker'

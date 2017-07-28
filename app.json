@@ -7,9 +7,6 @@
     "LANG": {
       "required": true
     },
-    "NEW_RELIC_LICENSE_KEY": {
-      "required": true
-    },
     "RACK_ENV": {
       "required": true
     },
