@@ -75,7 +75,6 @@ GEM
     minitest (5.10.2)
     modernizr-rails (2.7.1)
     multi_json (1.12.1)
-    newrelic_rpm (4.2.0.334)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -156,7 +155,6 @@ DEPENDENCIES
   figaro
   listen
   modernizr-rails
-  newrelic_rpm
   puma
   rails (~> 5.1.1)
   sass-rails (~> 5.0.6)
