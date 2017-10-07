@@ -79,7 +79,4 @@ test:
 #     url: <%ra= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: gmmcalcombr_production
-  username: gmmcalcombr
-  password: <%= ENV['GMMCALCOMBR_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
