@@ -7,11 +7,9 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     lang = :en
-    unless params[:locale].nil?
-      lang = params[:locale]
-    end
-    lang = :"pt-BR" if lang.downcase == "pt"
-    lang = :"pt-BR" if lang.downcase == "br"
+    lang = params[:locale] unless params[:locale].nil?
+    lang = :"pt-BR" if lang.casecmp('pt').zero?
+    lang = :"pt-BR" if lang.casecmp('br').zero?
     I18n.locale = I18n.available_locales.include?(lang.to_sym) ? lang : I18n.default_locale
   end
 end

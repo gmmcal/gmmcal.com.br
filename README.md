@@ -23,7 +23,7 @@ If you use RVM, make sure you have ruby 2.4.1 installed. If so, when in the app 
 rvm rvmrc create ruby-2.4.1@gmmcal.com.br --ruby-version
 rvm use ruby-2.4.1@gmmcal.com.br
 bundle install
-cp config/secrets-example.yml config/secrets.yml
+rake db:create db:migrate db:seeds
 ```
 
 The go to your browser and load ```localhost:3000```.

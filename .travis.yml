@@ -3,7 +3,11 @@ cache: bundler
 rvm:
   - 2.4.1
 before_script:
+  - cp config/database.yml.travis config/database.yml
   - cp config/secrets.yml.travis config/secrets.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+bundler_args: --without production
 
 addons:
   code_climate:
