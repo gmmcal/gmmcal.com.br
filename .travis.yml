@@ -7,6 +7,10 @@ before_script:
   - cp config/secrets.yml.travis config/secrets.yml
   - psql -c 'create database travis_ci_test;' -U postgres
 
+script:
+  - bundle exec rake db:migrate
+  - bundle exec rake
+
 bundler_args: --without production
 
 addons:
