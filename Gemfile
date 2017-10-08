@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -41,3 +41,13 @@ gem 'figaro'
 gem 'modernizr-rails'
 
 gem 'webpacker'
+
+gem 'pg'
+
+# Test suite
+gem 'database_cleaner', group: %i[development test]
+gem 'factory_girl_rails', group: %i[development test]
+gem 'faker', group: %i[development test]
+gem 'rspec-rails', group: %i[development test]
+gem 'shoulda-matchers', require: false, group: %i[development test]
+gem 'simplecov', require: false, group: %i[development test]
