@@ -25,3 +25,4 @@ pickle-email-*.html
 /node_modules
 
 db/schema.rb
+.env

@@ -36,11 +36,13 @@ gem 'puma'
 gem 'brakeman', group: :development
 
 # Environment variables
-gem 'figaro'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'modernizr-rails'
 
 gem 'webpacker'
+
+gem 'contentful'
 
 gem 'pg'
 

@@ -7,6 +7,12 @@
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
+    "CONTENTFUL_SPACE": {
+      "required": true
+    },
+    "CONTENTFUL_TOKEN": {
+      "required": true
+    },
     "DATABASE_URL": {
       "required": true
     },
@@ -32,7 +38,7 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "9.6.1"
+        "version": "9.6"
       }
     }
   ],

@@ -2,6 +2,7 @@ class CreatePortfolios < ActiveRecord::Migration[5.1]
   def change
     create_table :portfolios do |t|
       t.string :title
+      t.string :caption
       t.string :url
       t.string :thumbnail
       t.string :image
