@@ -1,6 +1,6 @@
 module Cms
   class Sync
-    def all
+    def self.all
       sync = client.sync(initial: true)
       sync.each_item do |resource|
         next unless resource.is_a? Contentful::Entry
@@ -8,7 +8,7 @@ module Cms
       end
     end
 
-    def client
+    def self.client
       Contentful::Client.new(
         space: ENV['CONTENTFUL_SPACE'],
         access_token: ENV['CONTENTFUL_TOKEN'],
