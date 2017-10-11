@@ -2,7 +2,7 @@ class CreateEducations < ActiveRecord::Migration[5.1]
   def change
     create_table :educations do |t|
       t.string :course
-      t.string :location
+      t.string :institution
       t.text :description
       t.date :start_date
       t.date :end_date

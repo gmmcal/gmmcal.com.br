@@ -7,6 +7,12 @@
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
+    "CONTENTFUL_SPACE": {
+      "required": true
+    },
+    "CONTENTFUL_TOKEN": {
+      "required": true
+    },
     "DATABASE_URL": {
       "required": true
     },
