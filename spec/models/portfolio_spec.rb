@@ -6,8 +6,7 @@ RSpec.describe Portfolio, type: :model do
   it { should validate_presence_of(:thumbnail) }
   it { should validate_presence_of(:image) }
   it { should validate_presence_of(:categories) }
-  it { should validate_presence_of(:locale) }
-  it { should validate_presence_of(:contentful_id) }
+  include_examples "validates locale and contentful_id"
 
   it 'has a valid factory' do
     expect(build(:portfolio)).to be_valid
