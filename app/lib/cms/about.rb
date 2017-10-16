@@ -14,6 +14,15 @@ module Cms
         {
           job_title: :job_title,
           description: :description,
+          city: :city,
+          country: :country,
+        }
+      end
+
+      def attributes
+        {
+          phone_number: :phone_number,
+          email: :email,
         }
       end
   end

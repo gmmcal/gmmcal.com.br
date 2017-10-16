@@ -2,6 +2,7 @@ en:
   template:
     name: "Gustavo Cunha"
     title: "Web developer, Mobile and Software Engineer Consultant"
+    current: 'Currently'
     menu:
       home: "Home"
       about: "About"

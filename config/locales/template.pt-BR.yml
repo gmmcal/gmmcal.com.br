@@ -2,6 +2,7 @@ pt-BR:
   template:
     name: "Gustavo Cunha"
     title: "Desenvolvedor Web, Mobile, Consultor em Engenharia de Software"
+    current: 'Atualmente'
     menu:
       home: "Home"
       about: "Sobre"

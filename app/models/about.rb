@@ -1,4 +1,6 @@
 class About < ApplicationRecord
+  scope :with_locale, -> (locale) { find_by(locale: locale) }
+
   validates :job_title, presence: true
   validates :description, presence: true
   validates :cv, presence: true

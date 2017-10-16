@@ -8,4 +8,8 @@ class Portfolio < ApplicationRecord
   validates :categories, presence: true
   validates :locale, presence: true
   validates :contentful_id, presence: true
+
+  def full_title
+    "#{title} - #{caption}"
+  end
 end
