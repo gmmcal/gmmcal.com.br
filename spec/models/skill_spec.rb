@@ -8,4 +8,8 @@ RSpec.describe Skill, type: :model do
   it { should validate_numericality_of(:value).is_less_than_or_equal_to(100) }
   it { should validate_presence_of(:locale) }
   it { should validate_presence_of(:contentful_id) }
+
+  it 'has a valid factory' do
+    expect(build(:skill)).to be_valid
+  end
 end

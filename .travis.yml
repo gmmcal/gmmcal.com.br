@@ -1,11 +1,20 @@
 language: ruby
-cache: bundler
+cache:
+  - bundler
+  - yarn
 rvm:
   - 2.4.2
 before_script:
   - cp config/database.yml.travis config/database.yml
   - cp config/secrets.yml.travis config/secrets.yml
   - psql -c 'create database travis_ci_test;' -U postgres
+
+install:
+  - bundle install
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn
 
 script:
   - bundle exec rake db:migrate
@@ -15,4 +24,7 @@ bundler_args: --without production
 
 addons:
   code_climate:
-    repo_token: de204ee6df952565167b2ea21b961a94aae1ab0c18fd1db60cd88674f5b84bff
+    repo_token: 422fbc1732579b7382207ea8e9508188fd7a3e67494c7b3be5cecd8e740cec9d
+
+after_success:
+  - bundle exec codeclimate-test-reporter

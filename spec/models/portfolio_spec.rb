@@ -8,4 +8,16 @@ RSpec.describe Portfolio, type: :model do
   it { should validate_presence_of(:categories) }
   it { should validate_presence_of(:locale) }
   it { should validate_presence_of(:contentful_id) }
+
+  it 'has a valid factory' do
+    expect(build(:portfolio)).to be_valid
+  end
+
+  describe '#full_title' do
+    it 'should return title and caption' do
+      portfolio = create(:portfolio)
+
+      expect(portfolio.full_title).to eq("#{portfolio.title} - #{portfolio.caption}")
+    end
+  end
 end

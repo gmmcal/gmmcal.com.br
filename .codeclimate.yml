@@ -45,3 +45,4 @@ exclude_paths:
   - "app/assets/javascripts/jquery.ui.widget.min.js"
   - "app/assets/javascripts/modernizr.js"
   - "app/assets/javascripts/waypoint.js"
+  - "spec/"

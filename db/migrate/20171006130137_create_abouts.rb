@@ -4,6 +4,10 @@ class CreateAbouts < ActiveRecord::Migration[5.1]
       t.string :job_title
       t.text :description
       t.string :cv
+      t.string :city
+      t.string :country
+      t.string :phone_number
+      t.string :email
       t.string :locale, index: true
       t.string :contentful_id, index: true
 
