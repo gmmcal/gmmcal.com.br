@@ -76,7 +76,7 @@
 <section class="contactDetails">
   <div class="container">
     <!--contact info start-->
-    <%=render 'abouts/contact'%>
+    <%=render partial: 'abouts/contact', collection: @about, as: :about%>
     <!--contact info end-->
   </div>
 </section>
