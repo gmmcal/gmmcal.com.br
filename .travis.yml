@@ -18,7 +18,7 @@ install:
 
 script:
   - bundle exec rake db:migrate
-  - PULL_REQUEST_ID=$TRAVIS_PULL_REQUEST bundle exec pronto run -f github_status github_pr -c origin/master
+  - PULL_REQUEST_ID=$TRAVIS_PULL_REQUEST bundle exec pronto run -f github_status github_pr
   - bundle exec rake
 
 bundler_args: --without production
