@@ -27,7 +27,7 @@ gem 'listen',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use puma as the app server
-gem 'puma'
+gem 'puma', group: %i[production]
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -61,3 +61,4 @@ gem 'pronto-eslint', require: false, group: %i[development test]
 gem 'pronto-flay', require: false, group: %i[development test]
 gem 'pronto-rails_best_practices', require: false, group: %i[development test]
 gem 'pronto-rubocop', require: false, group: %i[development test]
+gem 'codeclimate-test-reporter', group: %i[test]
