@@ -18,7 +18,7 @@ install:
 
 script:
   - bundle exec rake db:migrate
-  - PRONTO_GITHUB_ACCESS_TOKEN=$GITHUB_TOKEN PULL_REQUEST_ID=$TRAVIS_PULL_REQUEST bundle exec pronto run -f github_status github_pr -c origin/master
+  - PRONTO_GITHUB_ACCESS_TOKEN=$GITHUB_TOKEN PRONTO_PULL_REQUEST_ID=$TRAVIS_PULL_REQUEST bundle exec pronto run -f github_status github_pr -c origin/master
   - bundle exec rspec
 
 bundler_args: --without production
