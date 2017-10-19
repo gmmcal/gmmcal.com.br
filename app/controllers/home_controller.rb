@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
   def index
-    @about = About.with_locale(I18n.locale)
-    @educations = Education.with_locale(I18n.locale)
-    @portfolios = Portfolio.with_locale(I18n.locale)
-    @skills = Skill.with_locale(I18n.locale)
-    @work_experiences = WorkExperience.with_locale(I18n.locale)
+    current_locale = I18n.locale
+    @about = About.with_locale(current_locale)
+    @educations = Education.ordered.with_locale(current_locale)
+    @portfolios = Portfolio.ordered.with_locale(current_locale)
+    @skills = Skill.ordered.with_locale(current_locale)
+    @work_experiences = WorkExperience.ordered.with_locale(current_locale)
   end
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Education < ApplicationRecord
-  default_scope -> { order(:order) }
+  scope :ordered, -> { order(:order) }
 
   validates :course, presence: true
   validates :institution, presence: true

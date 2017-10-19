@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cms
   class Skill < Cms::Base
     def model
@@ -6,18 +8,18 @@ module Cms
 
     protected
 
-      def localized_attributes
-        {
-          name: :name,
-          hero: :hero
-        }
-      end
+    def localized_attributes
+      {
+        name: :name,
+        hero: :hero
+      }
+    end
 
-      def attributes
-        {
-          value: :value,
-          order: :order
-        }
-      end
+    def attributes
+      {
+        value: :value,
+        order: :order
+      }
+    end
   end
 end

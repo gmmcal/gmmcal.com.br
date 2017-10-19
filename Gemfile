@@ -27,13 +27,13 @@ gem 'listen',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use puma as the app server
-gem 'puma'
+gem 'puma', group: %i[production]
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
 # Environment variables
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', group: %i[development test]
 
 gem 'modernizr-rails'
 
@@ -53,3 +53,12 @@ gem 'faker', group: %i[development test]
 gem 'rspec-rails', group: %i[development test]
 gem 'shoulda-matchers', require: false, group: %i[development test]
 gem 'simplecov', require: false, group: %i[development test]
+
+# Automated code review
+gem 'codeclimate-test-reporter', group: %i[test]
+gem 'pronto', group: %i[development test]
+gem 'pronto-brakeman', require: false, group: %i[development test]
+gem 'pronto-eslint', require: false, group: %i[development test]
+gem 'pronto-flay', require: false, group: %i[development test]
+gem 'pronto-rails_best_practices', require: false, group: %i[development test]
+gem 'pronto-rubocop', require: false, group: %i[development test]

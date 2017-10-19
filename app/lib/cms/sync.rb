@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cms
   class Sync
     def self.all
@@ -9,17 +11,27 @@ module Cms
     end
 
     def self.client
-      Contentful::Client.new(
+      Contentful::Client.new(contentful_config)
+    end
+
+    private
+
+    def contentful_config
+      {
         space: ENV['CONTENTFUL_SPACE'],
         access_token: ENV['CONTENTFUL_TOKEN'],
-        entry_mapping: {
-          'about' => About,
-          'education' => Education,
-          'portfolio' => Portfolio,
-          'skill' => Skill,
-          'work_experience' => WorkExperience,
-        }
-      )
+        entry_mapping: contentful_mapping_config
+      }
+    end
+
+    def contentful_mapping_config
+      {
+        'about' => About,
+        'education' => Education,
+        'portfolio' => Portfolio,
+        'skill' => Skill,
+        'work_experience' => WorkExperience
+      }
     end
   end
 end
