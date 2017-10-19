@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateAbouts < ActiveRecord::Migration[5.1]
+  # rubocop:disable Metrics/MethodLength
   def change
     create_table :abouts do |t|
       t.string :job_title

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreatePortfolios < ActiveRecord::Migration[5.1]
+  # rubocop:disable Metrics/MethodLength
   def change
     create_table :portfolios do |t|
       t.string :title

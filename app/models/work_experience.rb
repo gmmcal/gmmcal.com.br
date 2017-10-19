@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class WorkExperience < ApplicationRecord
-  default_scope -> { order(:order) }
+  scope :ordered, -> { order(:order) }
 
   validates :company_name, presence: true
   validates :position, presence: true

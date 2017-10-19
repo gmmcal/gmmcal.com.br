@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Portfolio < ApplicationRecord
-  default_scope -> { order(:order) }
+  scope :ordered, -> { order(:order) }
 
   validates :title, presence: true
   validates :caption, presence: true
