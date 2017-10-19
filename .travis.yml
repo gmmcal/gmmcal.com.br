@@ -8,7 +8,7 @@ before_script:
   - cp config/database.yml.travis config/database.yml
   - cp config/secrets.yml.travis config/secrets.yml
   - psql -c 'create database travis_ci_test;' -U postgres
-  - PRONTO_GITHUB_ACCESS_TOKEN=${GITHUB_TOKEN} PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} bundle exec pronto run -f github_status github_pr_review -c origin/${TRAVIS_BRANCH}
+  - PRONTO_GITHUB_ACCESS_TOKEN=${GITHUB_TOKEN} PRONTO_PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} bundle exec pronto run -f github_status github_pr_review -c origin/master
 
 install:
   - bundle install
