@@ -1,6 +1,11 @@
 AllCops:
   TargetRubyVersion: 2.4
   DisplayCopNames: true
+  Exclude:
+    - 'db/schema.rb'
+    - 'spec/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
 
 Documentation:
   Enabled: false

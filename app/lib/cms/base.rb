@@ -5,8 +5,8 @@ module Cms
     def save
       available_locales.each do |locale|
         @data = model.find_or_initialize_by(contentful_id: id, locale: locale)
-        set_localized_attributes
-        set_attributes
+        update_localized_attributes(locale)
+        update_attributes
         update_file_fields(locale)
         @data.save
       end
@@ -26,13 +26,13 @@ module Cms
 
     private
 
-    def set_localized_attributes
+    def update_localized_attributes(locale)
       localized_attributes.each do |app_attribute, cms_attribute|
         @data[app_attribute] = fields_with_locales.dig(cms_attribute, locale)
       end
     end
 
-    def set_attributes
+    def update_attributes
       attributes.each do |app_attribute, cms_attribute|
         @data[app_attribute] =
           fields_with_locales.dig(cms_attribute, default_locale)
@@ -40,11 +40,11 @@ module Cms
     end
 
     def available_locales
-      %i[en 'pt-BR']
+      I18n.available_locales
     end
 
     def default_locale
-      available_locales.first
+      I18n.default_locale
     end
   end
 end
