@@ -14,9 +14,7 @@ module Cms
       Contentful::Client.new(contentful_config)
     end
 
-    private
-
-    def contentful_config
+    def self.contentful_config
       {
         space: ENV['CONTENTFUL_SPACE'],
         access_token: ENV['CONTENTFUL_TOKEN'],
@@ -24,7 +22,7 @@ module Cms
       }
     end
 
-    def contentful_mapping_config
+    def self.contentful_mapping_config
       {
         'about' => About,
         'education' => Education,
