@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Você achou um erro. E eu já vou achar uma solução pra ele.</title>
-	<link data-turbolinks-track="true" href="css/404.css" media="all" rel="stylesheet" />
+  <title>Looks like you found a bug...</title>
+  <link data-turbolinks-track="true" href="css/404.css" media="all" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="error404page">
-		<a href="/">
-			<div class="newcharacter404">
-				<div class="chair404"></div>
-				<div class="leftshoe404"></div>
-				<div class="rightshoe404"></div>
-				<div class="legs404"></div>
-				<div class="torso404">
-					<div class="body404"></div>
-					<div class="leftarm404"></div>
-					<div class="rightarm404"></div>
-					<div class="head404">
-						<div class="eyes404"></div>
-					</div>
-				</div>
-				<div class="laptop404"></div>
-			</div>
-		</a>
-	</div>
+  <div class="error-page">
+    <header class="error-page__header">
+      <img class="error-page__header-image" src="css/404.gif" alt="Sad computer">
+      <h1 class="error-page__title nolinks">Looks like you found a bug...</h1>
+    </header>
+    <p class="error-page__message">Let me check if I can find a fix for it. BRB</p>
+  </div>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12085288-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 </body>
 </html>
