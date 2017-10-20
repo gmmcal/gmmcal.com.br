@@ -5,7 +5,6 @@ gmmcal.com.br
 [![code climate](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/gpa.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
 [![issue count](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/issue_count.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
 [![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)](https://hakiri.io/github/gmmcal/gmmcal.com.br/master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ac7e69313af848fa9cf0b91badec541a)](https://www.codacy.com/app/gmmcal/gmmcal.com.br)
 
 My personal website code
 
