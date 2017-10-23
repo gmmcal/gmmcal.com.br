@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :work_experience do
     company_name { Faker::Company.name }
     position { Faker::Job.title }

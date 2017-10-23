@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :skill do
     name { Faker::Job.key_skill }
     hero { Faker::HowIMetYourMother.catch_phrase }

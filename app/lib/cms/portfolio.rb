@@ -8,11 +8,6 @@ module Cms
 
     protected
 
-    def update_file_fields(_locale)
-      @data.thumbnail = thumbnail.fields_with_locales[:file][default_locale].url
-      @data.image = image.fields_with_locales[:file][default_locale].url
-    end
-
     def localized_attributes
       {
         title: :title,
@@ -27,6 +22,13 @@ module Cms
       {
         url: :url,
         order: :order
+      }
+    end
+
+    def file_fields
+      {
+        thumbnail: :thumbnail,
+        image: :image
       }
     end
   end

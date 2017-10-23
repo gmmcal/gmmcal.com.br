@@ -8,19 +8,21 @@ module Cms
         update_localized_attributes(locale)
         update_attributes
         update_file_fields(locale)
-        @data.save
+        @data.save!
       end
     end
 
     protected
-
-    def update_file_fields(locale); end
 
     def localized_attributes
       {}
     end
 
     def attributes
+      {}
+    end
+
+    def file_fields
       {}
     end
 
@@ -37,6 +39,17 @@ module Cms
         @data[app_attribute] =
           fields_with_locales.dig(cms_attribute, default_locale)
       end
+    end
+
+    def update_file_fields(locale)
+      file_fields.each do |app_attribute, cms_attribute|
+        @data[app_attribute] = url_for_field(locale, cms_attribute)
+      end
+    end
+
+    def url_for_field(locale, attribute)
+      asset = fields_with_locales.dig(attribute, locale)
+      asset.fields_with_locales.dig(:file, locale).url
     end
 
     def available_locales
