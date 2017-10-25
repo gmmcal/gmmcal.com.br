@@ -8,10 +8,6 @@ module Cms
 
     protected
 
-    def update_file_fields(locale)
-      @data.cv = cv.fields_with_locales[:file][locale].url
-    end
-
     def localized_attributes
       {
         job_title: :job_title,
@@ -25,6 +21,12 @@ module Cms
       {
         phone_number: :phone_number,
         email: :email
+      }
+    end
+
+    def file_fields
+      {
+        cv: :cv
       }
     end
   end

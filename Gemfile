@@ -50,12 +50,12 @@ gem 'pg'
 gem 'bootsnap', require: false
 
 # Test suite
-gem 'database_cleaner', group: %i[development test]
-gem 'factory_girl_rails', group: %i[development test]
-gem 'faker', group: %i[development test]
-gem 'rspec-rails', group: %i[development test]
-gem 'shoulda-matchers', require: false, group: %i[development test]
-gem 'simplecov', require: false, group: %i[development test]
+gem 'database_cleaner', group: %i[test]
+gem 'factory_bot_rails', group: %i[test]
+gem 'faker', group: %i[test]
+gem 'rspec-rails', group: %i[test]
+gem 'shoulda-matchers', require: false, group: %i[test]
+gem 'simplecov', require: false, group: %i[test]
 
 # Automated code review
 gem 'codeclimate-test-reporter', group: %i[test]

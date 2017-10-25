@@ -18,6 +18,8 @@ module Cms
       {
         space: ENV['CONTENTFUL_SPACE'],
         access_token: ENV['CONTENTFUL_TOKEN'],
+        logger: ::Logger.new(STDOUT),
+        gzip_encoded: false,
         entry_mapping: contentful_mapping_config
       }
     end
