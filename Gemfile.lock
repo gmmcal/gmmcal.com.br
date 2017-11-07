@@ -46,6 +46,8 @@ GEM
       msgpack (~> 1.0)
     brakeman (4.0.1)
     builder (3.2.3)
+    codacy-coverage (1.1.8)
+      simplecov
     code_analyzer (0.4.8)
       sexp_processor
     codeclimate-test-reporter (1.0.8)
@@ -289,6 +291,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  codacy-coverage
   codeclimate-test-reporter
   contentful
   database_cleaner
