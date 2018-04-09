@@ -73,6 +73,19 @@
 			</div>
 			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
 				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item9])%><br><%=t(:end_date, scope: [:experience, :items, :item9])%></div>
+				</div>
+				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
+					<div class="arrowpart"></div>
+					<div class="exCon">
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item9])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item9])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item9])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item9])%></span></span></h4>
+						<h5><%=t(:position, scope: [:experience, :items, :item9])%></h5>
+						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item9])%></p>
+					</div>
+				</div>
+			</div>
+			<div class="row workDetails" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+				<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
 					<div class="workYear"><%=t(:start_date, scope: [:experience, :items, :item8])%><br><%=t(:end_date, scope: [:experience, :items, :item8])%></div>
 				</div>
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -215,206 +228,6 @@
 		</div>
 	</section>
 	<!--education end-->
-	<!--portfolio start-->
-	<section class="portfolio" id="portfolio">
-		<div class="container">
-			<div class="heading">
-				<h2><%=t(:title, scope: [:portfolio])%></h2>
-				<p><%=t(:subtitle, scope: [:portfolio])%></p>
-			</div>
-			<div class="portfolioFilter">
-				<ul>
-					<li><a href="#" data-filter="*" class="current"><%=t(:all, scope: [:portfolio, :filters])%></a></li>
-					<li><a href="#" data-filter=".backend"><%=t(:backend, scope: [:portfolio, :filters])%></a></li>
-					<li><a href="#" data-filter=".frontend"><%=t(:frontend, scope: [:portfolio, :filters])%></a></li>
-					<li><a href="#" data-filter=".engineering"><%=t(:engineering, scope: [:portfolio, :filters])%></a></li>
-				</ul>
-			</div>
-			<ul class="portfolioContainer row">
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/add.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item1]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.alagoasdevday.com.br", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/add.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item1]) %>
-					</div>
-				</li>
-				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/casamento.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item2]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.rosanaegustavo.com.br", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/casamento.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item2]) %>
-					</div>
-				</li>
-				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/duranbah.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item3]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.duranbah.com.br", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/duranbah.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item3]) %>
-					</div>
-				</li>
-				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/waterhouse.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item4]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.waterhouse.com.br", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/waterhouse.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item4]) %>
-					</div>
-				</li>
-				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/lotebox-mvp.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item5]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://mvp.lotebox.co", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/lotebox-mvp.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item5]) %>
-					</div>
-				</li>
-				<li class="backend frontend engineering col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/zeropixel.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item6]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.zeropixel.com.br", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/zeropixel.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item6]) %>
-					</div>
-				</li>
-				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/kuka.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item7]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.kukaestrategia.com/", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/kuka.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item7]) %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/cliom.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item8]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.hospitalcliom.com.br/", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/cliom.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item8]) %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/jambo.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item9]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.grupojambo.com.br/", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/jambo.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item9]) %>
-					</div>
-				</li>
-				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/junior-almeida.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item10]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.suechamusca.com.br/junioralmeida/", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/junior-almeida.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item10]) %>
-					</div>
-				</li>
-				<li class="backend frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/maceiomarhotel.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item11]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.maceiomarhotel.com.br/", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/maceiomarhotel.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item11]) %>
-					</div>
-				</li>
-				<li class="frontend col-xs-6 col-sm-4 col-md-3 col-lg-3">
-					<div class="lightCon">
-						<span class="hoverBox">
-							<span class="smallIcon">
-								<%=link_to asset_path('portfolio/nordeste.jpg'), rel: "lightbox-demo", data: { title: t(:caption, scope: [:portfolio, :items, :item12]) }, class: "zoom lb lb_warsaw1" do %>
-									<i class="fa fa-search fa-2x"></i>
-								<%end%>
-								<%=link_to "http://www.nordestetecnologia.com.br/", class: "linKed", target: :blank do %>
-									<i class="fa fa-link fa-2x"></i></i>
-								<%end%>
-							</span>
-						</span>
-						<%=image_tag "portfolio/tn/nordeste.jpg", width: 450, height: 450, alt: t(:name, scope: [:portfolio, :items, :item12]) %>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<!--portfolio end-->
 	<!--contact start-->
 	<section class="contact" id="contact">
 		<div class="container topCon">
