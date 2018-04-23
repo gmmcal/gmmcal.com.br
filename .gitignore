@@ -26,3 +26,6 @@ pickle-email-*.html
 
 db/schema.rb
 .env
+/public/packs
+/public/packs-test
+/node_modules

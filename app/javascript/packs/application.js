@@ -1,8 +1,123 @@
 /* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
+window.$ = window.jQuery = require('jquery/dist/jquery')
+require('bootstrap/dist/js/bootstrap')
+require('waypoints/lib/jquery.waypoints')
+require('isotope-layout/dist/isotope.pkgd')
+require('ekko-lightbox/dist/ekko-lightbox')
+require('jquery.easing/jquery.easing')
+require('easy-pie-chart/dist/jquery.easypiechart')
+require('./jquery.gridrotator')
+require('./jquery.placeholder')
+
+document.addEventListener("DOMContentLoaded", function() {
+  const $bg = $(".bannerImg");
+
+  $(window).resize(() => {
+    // for banner height js
+    const windowWidth = $(window).width();
+    const windowHeight = $(window).height();
+    $(".banner").css({"width": windowWidth, "height": windowHeight -"60" });
+    if ( $(window).width() < $(window).height() ) {
+      $bg
+        .removeClass()
+        .addClass("bgheight");
+    } else {
+      $bg
+        .removeClass()
+        .addClass("bgwidth");
+    }
+  }).trigger("resize");
+
+  const $container = $(".portfolioContainer");
+  $container.isotope({
+    filter: "*",
+    animationOptions: {
+      duration: 750,
+      easing: "linear",
+      queue: false,
+    },
+  });
+
+  $(".portfolioFilter a").click(function() {
+    $(".portfolioFilter .current").removeClass("current");
+    $(this).addClass("current");
+
+    const selector = $(this).attr("data-filter");
+    $container.isotope({
+      filter: selector,
+      animationOptions: {
+        duration: 750,
+        easing: "linear",
+        queue: false,
+      },
+      });
+      return false;
+  });
+
+  // run rlightbox
+  $(document).on("click", ".lb", function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+  });
+
+  let index=0;
+  $(document).on("scroll", () => {
+    const top = $(".technical").height()-$(window).scrollTop();
+    if (top<-300) {
+      if (index===0) {
+        $(".chart").easyPieChart({
+          barColor: "#ff675f",
+          trackColor: "#e1e1e3",
+          scaleColor: "#e1e1e3",
+          scaleLength: 0,
+          lineWidth: 15,
+          size: 152,
+          onStep(from, to, percent) {
+            $(this.el).find(".percent").text(Math.round(percent));
+          },
+        });
+      }
+      index++;
+    }
+  });
+
+  $(".navbar-wrapper").waypoint({
+    handler(direction) {
+      if (direction === "down") {
+        $(".navbar-wrapper").addClass("isStuck");
+      } else {
+        $(".navbar-wrapper").removeClass("isStuck");
+      }
+    },
+    offset: 0,
+  });
+
+  $("#home, #aboutme, #technical, #experience, #education, #portfolio, #contact, #footer").waypoint({
+    handler(direction) {
+      $(".navbar-wrapper li").removeClass("active");
+      const link = $(`a[href='#${$(this.element).attr("id")}'`);
+      link.parent().addClass("active");
+      ga("send", "pageview", {
+        "page": $(link).attr("href"),
+        "title": $(link).text(),
+      });
+    },
+    offset: $(".navbar-wrapper").height(),
+  });
+
+  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(() => {
+    $( ".navbar-collapse" ).addClass( "hideClass" );
+  });
+
+  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(() => {
+    $( ".navbar-collapse" ).addClass( "collapse" );
+  });
+
+  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(() => {
+    $( ".navbar-collapse" ).removeClass( "in" );
+  });
+
+  $( ".navbar-toggle" ).click(() => {
+    $( ".navbar-collapse" ).removeClass( "hideClass" );
+  });
+});
