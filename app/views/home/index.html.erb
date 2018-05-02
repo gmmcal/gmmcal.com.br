@@ -9,7 +9,7 @@
 					<h3 itemprop="name"><%=t(:name, scope: [:template])%></h3>
 					<h4 class="subHeading" itemprop="jobTitle"><%=t(:job_title, scope: [:about])%></h4>
 					<%=t(:text, scope: [:about]).html_safe%>
-					<%=link_to t(:file_title, scope: [:about]), asset_path(t(:file, scope: [:about])), class: "bntDownload", target: :_blank %>
+					<%#=link_to t(:file_title, scope: [:about]), asset_path(t(:file, scope: [:about])), class: "bntDownload", target: :_blank %>
 				</div>
 				<div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 proPic"> <%= image_tag asset_path("website/gmmcal.png"), alt: t(:name, scope: [:template]), class: "topmar", itemprop: "image" %> </div>
 			</div>
@@ -78,7 +78,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item9])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item9])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item9])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item9])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item9])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item9])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item9])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item9])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item9])%></p>
 					</div>
@@ -91,7 +91,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item8])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item8])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item8])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item8])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item8])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item8])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item8])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item8])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item8])%></p>
 					</div>
@@ -104,7 +104,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item7])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item7])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item7])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item7])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item7])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item7])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item7])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item7])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item7])%></p>
 					</div>
@@ -117,7 +117,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item6])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item6])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item6])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item6])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item6])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item6])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item6])%></p>
 					</div>
@@ -130,7 +130,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item5])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item5])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item5])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item5])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item5])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item5])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item5])%></p>
 					</div>
@@ -143,7 +143,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item4])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item4])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item4])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item4])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item4])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item4])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item4])%></p>
 					</div>
@@ -156,7 +156,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item3])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item3])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item3])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item3])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item3])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item3])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item3])%></p>
 					</div>
@@ -169,7 +169,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item2])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item2])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item2])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item2])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item2])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item2])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item2])%></p>
 					</div>
@@ -182,7 +182,7 @@
 				<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
 					<div class="arrowpart"></div>
 					<div class="exCon">
-						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item1])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressRegion"><%=t(:region, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item1])%></span></span></h4>
+						<h4><span itemprop="legalName"><%=t(:name, scope: [:experience, :items, :item1])%></span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality"><%=t(:city, scope: [:experience, :items, :item1])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:experience, :items, :item1])%></span></span></h4>
 						<h5><%=t(:position, scope: [:experience, :items, :item1])%></h5>
 						<p itemprop="description"><%=t(:description, scope: [:experience, :items, :item1])%></p>
 					</div>
@@ -242,7 +242,7 @@
 			<!--contact info start-->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<h4><%=t(:title, scope: [:contact, :contacts])%></h4>
-				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality"><%=t(:city, scope: [:contact, :contacts, :address])%></span> / <span itemprop="addressRegion"><%=t(:state, scope: [:contact, :contacts, :address])%></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:contact, :contacts, :address])%></span></p>
+				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"> <i class="fa fa-map-marker fa-lg"></i> <span itemprop="addressLocality"><%=t(:city, scope: [:contact, :contacts, :address])%></span></span> - <span itemprop="addressCountry"><%=t(:country, scope: [:contact, :contacts, :address])%></span></p>
 				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="telephone"> <i class="fa fa-mobile fa-lg"></i> <%=t(:phone, scope: [:contact, :contacts])%></p>
 				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4" itemprop="email"> <i class="fa fa-envelope-o "></i> <a href="mailto:gustavocunha&#64;gmail&#46;com"><%=t(:email, scope: [:contact, :contacts]).html_safe%></a></p>
 				<p class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="https://github.com/gmmcal" target="_blank"><%=t(:github, scope: [:contact, :contacts])%></a></p>
