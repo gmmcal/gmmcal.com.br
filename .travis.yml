@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.4.1
+  - 2.5.1
 before_script:
   - cp config/secrets.yml.travis config/secrets.yml
 
