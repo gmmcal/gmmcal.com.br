@@ -11,7 +11,7 @@ My personal website code
 
 # Requirements
 
-This app was built using ruby 2.5.1.
+This app was built using ruby 2.5.1, but it should work on any ruby >= 2.3.
 
 # Installing
 
