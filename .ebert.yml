@@ -18,8 +18,6 @@ pull_requests:
   comments: false
 
 exclude_paths:
-  - "app/assets/javascripts/jquery.gridrotator.js"
-  - "app/assets/javascripts/jquery.placeholder.js"
-  - "app/javascripts/packs/jquery.gridrotator.js"
-  - "app/javascripts/packs/jquery.placeholder.js"
+  - "app/javascript/packs/jquery.gridrotator.js"
+  - "app/javascript/packs/jquery.placeholder.js"
   - "spec/"
