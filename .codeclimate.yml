@@ -29,5 +29,7 @@ ratings:
 exclude_paths:
   - "app/javascript/packs/jquery.gridrotator.js"
   - "app/javascript/packs/jquery.placeholder.js"
+  - "app/assets/stylesheets/application.css.scss"
   - "app/assets/stylesheets/font-awesome.css.scss"
+  - "app/assets/stylesheets/responsive.css.scss"
   - "spec/"

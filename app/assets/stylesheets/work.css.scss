@@ -1,74 +1,79 @@
-/*----------------------------------------------------
- 8.  Work Experience Style
-------------------------------------------------------*/
-.experience{
-  background:#fff;
-}
-.experience .container{
-  padding-top:85px ;
-  padding-bottom:90px ;
-}
+//----------------------------------------------------
+// 8.  Work Experience Style
+//----------------------------------------------------
+.experience {
+  background: #fff;
 
-.experience h2{
-  color:#ff675f;
-}
-.experience p{
-  color:#84868d;
-  /*font-size:13px;*/
-  line-height:18px;
-}
-.experience .heading p{
-  padding-bottom:41px;
-}
+  .container {
+    padding-bottom: 90px;
+    padding-top: 85px;
+  }
 
-.experience h4{
-  font-weight:700;
-}
+  h2 {
+    color: #ff675f;
+  }
 
-.work-details .right-area{
-  border-left: solid 1px #eaeaea;
-  padding-bottom:47px;
-}
-.work-details:last-child .right-area{
-  padding-bottom:0px;
-}
-.work-year{
-  font-size:17px;
-  color:#fff;
-  background:#ff675f;
-  text-align:center;
-  width:120px;
-  height:120px;
-  padding:40px 0 40px 0;
+  p {
+    color: #84868d;
+    //font-size: 13px;
+    line-height: 18px;
+  }
 
-  -webkit-border-radius: 50%;
+  .heading p {
+    padding-bottom: 41px;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+
+  .work-details .right-area {
+    border-left: solid 1px #eaeaea;
+    padding-bottom: 47px;
+
+    &:last-child .right-area {
+      padding-bottom: 0;
+    }
+  }
+
+  .work-year {
+    background: #ff675f;
     border-radius: 50%;
-}
+    color: #fff;
+    font-size: 17px;
+    height: 120px;
+    padding: 40px 0;
+    text-align: center;
+    width: 120px;
+  }
 
+  .arrowpart {
+    background: asset_url('website/arrow-left.png') no-repeat 0 23px;
+    float: left;
+    height: 50px;
+    width: 15px;
+  }
 
-.arrowpart{
-  float:left;
-  width:15px;
-  height:50px;
-  background:asset_url('website/arrow-left.png') no-repeat 0 23px;
-}
-.ex-con{
-  width:auto;
-  background:#f3f3f3;
-  border-bottom:solid 4px #eeeeee;
-  padding:22px 47px 6px 47px;
-  margin-left:15px;
-  text-align:left;
-}
+  .ex-con {
+    background: #f3f3f3;
+    border-bottom: solid 4px #eee;
+    margin-left: 15px;
+    padding: 22px 47px 6px;
+    text-align: left;
+    width: auto;
 
-.ex-con p{
-  color:#84868d;
-  line-height:21px;
-}
-.ex-con h4{
-  color:#474d5d;
-  padding-bottom:3px;
-}
-.ex-con h5{
-  color:#474d5d;
+    p {
+      color: #84868d;
+      line-height: 21px;
+    }
+
+    h4 {
+      color: #474d5d;
+      padding-bottom: 3px;
+    }
+
+    h5 {
+      color: #474d5d;
+    }
+  }
 }

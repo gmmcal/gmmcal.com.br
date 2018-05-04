@@ -1,93 +1,98 @@
-/*----------------------------------------------------
- 7.  Technical Skills Style
-------------------------------------------------------*/
-.addspace{
-  height:60px;
-  background:#eeeeee;
-}
+//----------------------------------------------------
+// 7.  Technical Skills Style
+//------------------------------------------------------
 
-.technical{
-  background:#eeeeee;
-  color:#474d5d;
-}
-.technical .container{
-  padding-top:85px ;
-  padding-bottom:69px ;
-}
-.technical .heading p{
-  padding-bottom:41px;
-}
+.technical {
+  background: #eee;
+  color: #474d5d;
 
-.technical p{
-  color:#474d5d;
-}
-.technical h2{
-  color:#ff675f;
-}
+  .container {
+    padding-bottom: 69px;
+    padding-top: 85px;
+  }
 
-.technical .skillsArea{
-  padding:0px;
-  height: 300px;
-}
-.technical .skills{
-  margin:0 auto;
-  margin-bottom:23px;
-  text-align:center;
-  padding:0px;
-  float:none;
-}
-.technical .skills p{
-  color:#84868d;
-  font-size:13px;
-  line-height:18px;
-  text-align:center;
-}
-.technical .skills img{
-  margin:0 auto;
-  margin-bottom:33px;
-  width:100%;
-  max-width:152px;
-}
+  .heading p {
+    padding-bottom: 41px;
+  }
 
-.technical .skills h4{
-  font-weight:700;
-  text-transform:uppercase;
-}
+  p {
+    color: #474d5d;
+  }
 
+  h2 {
+    color: #ff675f;
+  }
 
-.skilBg{
-  background:asset_url('website/skills.png') no-repeat 0 0;
-}
+  .skills-area {
+    height: 300px;
+    padding: 0;
+  }
 
+  .skills {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 23px;
+    padding: 0;
+    text-align: center;
 
-.chart {
-  position: relative;
-  display: inline-block;
-  width: 152px;
-  height: 152px;
-  margin-bottom: 26px;
-  text-align: center;
-}
-.chart canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.percent {
-  display: inline-block;
-  font-size:21px;
-  color:#474d5d;
-  line-height: 152px;
-  z-index: 2;
-}
-.percent:after {
-  content: '%';
-  margin-left: 0.1em;
-  font-size: .8em;
-}
-.angular {
-  margin-top: 100px;
-}
-.angular .chart {
-  margin-top: 0;
+    p {
+      color: #84868d;
+      font-size: 13px;
+      line-height: 18px;
+      text-align: center;
+    }
+
+    img {
+      margin: 0 auto;
+      margin-bottom: 33px;
+      max-width: 152px;
+      width: 100%;
+    }
+
+    h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .skill-bg {
+    background: asset_url('website/skills.png') no-repeat 0 0;
+  }
+
+  .chart {
+    display: inline-block;
+    height: 152px;
+    margin-bottom: 26px;
+    position: relative;
+    text-align: center;
+    width: 152px;
+
+    canvas {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .percent {
+    color: #474d5d;
+    display: inline-block;
+    font-size: 21px;
+    line-height: 152px;
+    z-index: 2;
+  }
+
+  .percent::after {
+    content: '%';
+    font-size: .8em;
+    margin-left: .1em;
+  }
+
+  .angular {
+    margin-top: 100px;
+
+    .chart {
+      margin-top: 0;
+    }
+  }
 }
