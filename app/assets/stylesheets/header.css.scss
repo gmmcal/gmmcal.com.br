@@ -1,53 +1,58 @@
-/*----------------------------------------------------
- 3.	Header Part
-------------------------------------------------------*/
-header{
-	position:relative;
-}
-.banner{
-	overflow:hidden;
-	margin:0 auto !important;
-	background:#CACACA;
-}
+//----------------------------------------------------
+// 3.  Header Part
+//------------------------------------------------------
+header {
+  position: relative;
 
-.bannerText{
-	position:absolute;
-	left:0;
-	right:0;
-	top:35%;
-	text-align:center;
-	padding:30px 0 30px ;
-	zoom: 1;
-}
-.bannerText h1{
-	text-transform:uppercase;
-	font-weight: 100;
-	font-size: 51px;
-	letter-spacing: 16px;
-}
-.bannerText h2{
-	font-size:17px;
-	text-transform: uppercase;
-	letter-spacing: 8px;
-	line-height: 45px;
-}
+  .banner {
+    background: #cacaca;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
-.bannerPart{
-	/*background:url(/assets/website/1.jpg) no-repeat 0 0;*/
-	height:100%;
-	overflow:hidden;
-}
+  .banner-text {
+    left: 0;
+    padding: 30px 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 35%;
+    zoom: 1;
 
-.bgwidth { width: 100%; }
-.bgheight { height: 100%; }
+    h1 {
+      font-size: 51px;
+      font-weight: 100;
+      letter-spacing: 16px;
+      text-transform: uppercase;
+    }
 
-/*------------------------------------
-	3.1 Slide show background control
---------------------------------------*/
-.bannerPart{
-	background:#1b1f2b;
-}
-.bannerPart img{
-	opacity:0.2;
-	filter:alpha(opacity=20); /* For IE8 and earlier */
+    h2 {
+      font-size: 17px;
+      letter-spacing: 8px;
+      line-height: 45px;
+      text-transform: uppercase;
+    }
+  }
+
+  .bgwidth {
+    width: 100%;
+  }
+
+  .bgheight {
+    height: 100%;
+  }
+
+  //------------------------------------
+  // 3.1 Slide show background control
+  //--------------------------------------
+  .banner-part {
+    background: #1b1f2b;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      filter: alpha(opacity = 20); // For IE8 and earlier
+      opacity: .2;
+    }
+  }
 }

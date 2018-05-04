@@ -1,232 +1,202 @@
-/*---------------------------------------------------------------------------------
- 13. Responsive style
--------------------------------------------------------------------------------*/
+//-------------------------------------------------------------------------------
+// 13. Responsive style
+//-------------------------------------------------------------------------------
 
 @media screen and (max-width: 1024px) {
-	.bgwidth {
-		width: auto;
-		height: 100%;
-	}
+  .bgwidth {
+    height: 100%;
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-	.workYear{
-		width:140px;
-		height:140px;
-		padding-top:50px;
-	}
+  .work-year {
+    height: 140px;
+    padding-top: 50px;
+    width: 140px;
+  }
 
-	.education .workYear{
-		padding-top:58px;
-	}
+  .education .work-year {
+    padding-top: 58px;
+  }
 }
-
 
 @media screen and (max-width: 991px) {
-	.navbar.navbar-inverse.navbar-static-top a{
-		padding-left:18px;
-		padding-right:18px;
-	}
+  .navbar.navbar-inverse.navbar-static-top a {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 
-	.bannerText{
-		padding-left:25px;
-		padding-right:25px;
-	}
-	.bannerText h1{
-		font-size:65px;
-		line-height:71px;
-	}
-	.bannerText h2{
-		font-size:28px;
-	}
-	.proPic{
-		text-align:center;
-	}
+  .banner-text {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 
-	.topmar{
-		margin-top: 20px;
-	}
+  .banner-text h1 {
+    font-size: 65px;
+    line-height: 71px;
+  }
+
+  .banner-text h2 {
+    font-size: 28px;
+  }
+
+  .pro-pic {
+    text-align: center;
+  }
+
+  .topmar {
+    margin-top: 20px;
+  }
 }
-
-
-
 
 @media screen and (max-width: 810px) {
-	body{
-		min-height:700px;
-	}
-	#header h3{
-		font-size: 38px;
-	}
-	#header h3 span{
-		font-size: 16px;
-	}
+  body {
+    min-height: 700px;
+  }
 
-	.abc{
-		width:100%;
-	}
+  #header h3 {
+    font-size: 38px;
+  }
 
-	.navbar.navbar-inverse.navbar-static-top a {
-		padding-left: 17px;
-	}
+  #header h3 span {
+    font-size: 16px;
+  }
 
-	.topmar{
-		margin-top: 20px;
-	}
+  .navbar.navbar-inverse.navbar-static-top a {
+    padding-left: 17px;
+  }
+
+  .topmar {
+    margin-top: 20px;
+  }
 }
-
-
-@media screen and (min-width: 768px) {
-	.conForm input.col-sm-6 {
-		width: 48.5%;
-	}
-	.conForm input.col-lg-6 {
-		width: 48.5%;
-	}
-}
-
 
 @media screen and (max-width: 768px) {
-	.navbar-wrapper .container,
-	.navwrapper .container{
-		padding-right: 15px;
-		padding-left: 15px;
-	}
-	ul.portfolioContainer li.col-xs-6{
-		width:49%;
-		min-height: 85px;
+  .navbar-wrapper .container,
+  .navwrapper .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-	}
+  ul.portfolio-container li.col-xs-6 {
+    min-height: 85px;
+    width: 49%;
+  }
 
-	.topmar{
-		margin-top: 20px;
-	}
+  .topmar {
+    margin-top: 20px;
+  }
 }
-
 
 @media screen and (max-width: 767px) {
-	.navbar-header{
-		display:block;
-	}
-	.workYear{
-		margin:0 auto;
-	}
-	.workDetails .rightArea{
-		border-left:none;
-	}
-	.arrowpart{
-		float:none;
-		width:100%;
-		height:40px;
-		background:asset_url('website/arrow-top.png') no-repeat 50% 100%;
-	}
-	.education .arrowpart{
-		background:asset_url('website/arrow-top-light.png') no-repeat 50% 100%;
-	}
-	.exCon{
-		margin-left:0px;
-	}
-	ul.navbar-nav li a{
-		display:block;
-	}
+  .navbar-header {
+    display: block;
+  }
 
-	.topmar{
-		margin-top: 20px;
-	}
+  .work-year {
+    margin: 0 auto;
+  }
+
+  .work-details .right-area {
+    border-left: 0;
+  }
+
+  .arrowpart {
+    background: asset_url('website/arrow-top.png') no-repeat 50% 100%;
+    float: none;
+    height: 40px;
+    width: 100%;
+  }
+
+  .education .arrowpart {
+    background: asset_url('website/arrow-top-light.png') no-repeat 50% 100%;
+  }
+
+  .ex-con {
+    margin-left: 0;
+  }
+
+  ul.navbar-nav li a {
+    display: block;
+  }
+
+  .topmar {
+    margin-top: 20px;
+  }
 }
-
 
 @media screen and (max-width: 650px) {
-	#wrapper{
-		top: 200px !important;
-	}
-	.upbox{
-		transform: translate(0px, -70px);
-		-ms-transform: translate(0px, -70px); /* IE 9 */
-		-webkit-transform: translate(0px, -70px); /* Safari and Chrome */
-	}
+  #wrapper {
+    top: 200px !important;
+  }
 
+  .upbox {
+    transform: translate(0, -70px);
+  }
 
-	.bannerText {
-		top: 20%;
-		padding-top:15px;
-		padding-bottom:15px;
-	}
-	.bannerText h1 {
-		font-size: 42px;
-		line-height: 40px;
-	}
-	.bannerText h2 {
-		font-size: 15px;
-		line-height:24px;
-		padding-top: 10px;
-	}
+  .banner-text {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    top: 20%;
+  }
 
-	.topmar{
-		margin-top: 20px;
-	}
+  .banner-text h1 {
+    font-size: 42px;
+    line-height: 40px;
+  }
+
+  .banner-text h2 {
+    font-size: 15px;
+    line-height: 24px;
+    padding-top: 10px;
+  }
+
+  .topmar {
+    margin-top: 20px;
+  }
 }
-
 
 @media screen and (max-width: 480px) {
-	.navbar.navbar-inverse.navbar-static-top a{
-		line-height: 17px;
-		padding-top:11px;
-		padding-bottom:11px;
-	}
+  .navbar.navbar-inverse.navbar-static-top a {
+    line-height: 17px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+  }
 
-	.topmar{
-		margin-top: 20px;
-	}
+  .topmar {
+    margin-top: 20px;
+  }
 }
 
-
 @media screen and (max-width: 400px) {
-	#loopedSlider, #newsSlider{
-		min-height: 650px;
-		height: 100%;
-	}
-	ul.slides{
-		min-height: 600px;
-		height: 100%;
-	}
+  ul.slides {
+    height: 100%;
+    min-height: 600px;
+  }
 
-	.item{
-		width: 19%;
-	}
-	.item p {
-		font-size: 36px;
-	}
+  .item {
+    width: 19%;
+  }
 
-	.aboutme img{
-		width:100%;
-	}
+  .item p {
+    font-size: 36px;
+  }
 
-	ul.portfolioContainer li.col-xs-6{
-		width:100%;
-	}
+  .aboutme img {
+    width: 100%;
+  }
 
-	.bntDownload{
-		font-size: 13px;
-		padding: 16px 14px;
-	}
+  ul.portfolio-container li.col-xs-6 {
+    width: 100%;
+  }
 
-	.conForm textarea{
-		margin-bottom:20px;
-	}
-	.textGroup{
-		display:block;
-		padding:0 0 40px 0;
-	}
+  .bnt-download {
+    font-size: 13px;
+    padding: 16px 14px;
+  }
 
-	.nameError,
-	.emailError{
-		left:0px;
-		top:0px;
-
-	}
-
-	.topmar{
-		margin-top: 20px;
-	}
+  .topmar {
+    margin-top: 20px;
+  }
 }

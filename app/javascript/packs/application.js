@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }).trigger("resize");
 
-  const $container = $(".portfolioContainer");
+  const $container = $(".portfolio-container");
   $container.isotope({
     filter: "*",
     animationOptions: {
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
     },
   });
 
-  $(".portfolioFilter a").click(function() {
-    $(".portfolioFilter .current").removeClass("current");
+  $(".portfolio-filter a").click(function() {
+    $(".portfolio-filter .current").removeClass("current");
     $(this).addClass("current");
 
     const selector = $(this).attr("data-filter");
@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
   $(".navbar-wrapper").waypoint({
     handler(direction) {
       if (direction === "down") {
-        $(".navbar-wrapper").addClass("isStuck");
+        $(".navbar-wrapper").addClass("is-stuck");
       } else {
-        $(".navbar-wrapper").removeClass("isStuck");
+        $(".navbar-wrapper").removeClass("is-stuck");
       }
     },
     offset: 0,
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   $( ".navbar.navbar-inverse.navbar-static-top a" ).click(() => {
-    $( ".navbar-collapse" ).addClass( "hideClass" );
+    $( ".navbar-collapse" ).addClass( "hide-class" );
   });
 
   $( ".navbar.navbar-inverse.navbar-static-top a" ).click(() => {
@@ -118,6 +118,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   $( ".navbar-toggle" ).click(() => {
-    $( ".navbar-collapse" ).removeClass( "hideClass" );
+    $( ".navbar-collapse" ).removeClass( "hide-class" );
   });
 });

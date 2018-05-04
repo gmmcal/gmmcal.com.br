@@ -1,136 +1,69 @@
-/*----------------------------------------------------
- 11. Get in tuch Style
-------------------------------------------------------*/
+//----------------------------------------------------
+// 11. Get in tuch Style
+//------------------------------------------------------
 
-.contact{
-	background:#fff;
-}
-.contact .container{
-	padding-top:85px ;
-	padding-bottom:90px ;
-}
+.contact {
+  background: #fff;
 
-.contact h2{
-	color:#ff675f;
-}
-.contact p{
-	color:#84868d;
-	/*font-size:13px;*/
-	line-height:18px;
-}
-.contact .heading p{
-	padding-bottom:41px;
-}
+  .container {
+    padding-bottom: 90px;
+    padding-top: 85px;
+  }
 
-.contact h4{
-	font-weight:700;
-}
+  h2 {
+    color: #ff675f;
+  }
 
-.topCon{
-	padding-bottom:0px !important;
-}
-.mapArea{
-	background:asset_url('website/map-bro.png') repeat-x 0 0;
-	padding-top:4px;
-	height:400px;
-	overflow:hidden;
-	width:100%;
-	margin:0;
-}
-.mapArea iframe{
-	width:100%;
-	height:396px;
-	padding-bottom: 4px;
-	background:asset_url('website/map-bro.png') repeat-x 0 100%;
+  p {
+    color: #84868d;
+    //font-size: 13px;
+    line-height: 18px;
+  }
+
+  .heading p {
+    padding-bottom: 41px;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+
+  .top-con {
+    padding-bottom: 0;
+  }
 }
 
+.contact-details {
+  background: #474d5d;
 
-.contactDetails{
-	background:#474d5d;
-}
-.contactDetails .container{
-	padding-top:85px ;
-	padding-bottom:90px ;
-}
-.contactDetails h4{
-	font-weight:600;
-	text-transform:uppercase;
-	padding-bottom:15px;
-}
-.contactDetails p{
-	color:#93959c;
-	font-size:13px;
-	line-height:19px;
-	padding-bottom:14px;
-}
-.contactDetails p a{
-	color:#93959c;
-}
-.contactDetails p a:hover{
-	color:#a9abb0;
-	text-decoration:none;
-}
+  .container {
+    padding-bottom: 90px;
+    padding-top: 85px;
+  }
 
-.contactDetails i{
-	padding-right:15px;
-}
+  h4 {
+    font-weight: 600;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+  }
 
+  p {
+    color: #93959c;
+    font-size: 13px;
+    line-height: 19px;
+    padding-bottom: 14px;
 
-.conForm input{
-	background:#585f73;
-	color:#93959c;
-	padding:15px 30px;
-	border:none;
-	margin-right:3%;
-	margin-bottom:30px;
-	outline:none;
-	font-style:italic;
-}
-.conForm input.noMarr{
-	margin-right:0px;
-}
+    a {
+      color: #93959c;
 
-.conForm textarea{
-	background:#585f73;
-	color:#93959c;
-	padding:15px 30px;
-	border:none;
-	margin-bottom:40px;
-	outline:none;
-	height:100px;
-	font-style:italic;
-}
+      &:hover {
+        color: #a9abb0;
+        text-decoration: none;
+      }
+    }
+  }
 
-
-.conForm .submitBnt{
-	background:#ff675f;
-	font-family: 'Open Sans', sans-serif;
-	color:#fff;
-	font-size:16px;
-	font-weight:600;
-	text-align:center;
-	float:right;
-	margin:0px;
-}
-.conForm .submitBnt:hover{
-	background:#f5534b;
-}
-
-.textGroup{
-	position:relative !important;
-	display: inline-block;
-	padding-left:0px !important;
-}
-
-#success_page{
-	color: #00bdbd;
-	font-weight: 500;
-}
-.error_message{
-	color: #ff675f;
-	padding-bottom: 15px;
-	font-weight: 500;
-}
-#success_page h3{
-	font-size:17px;
+  i {
+    padding-right: 15px;
+  }
 }

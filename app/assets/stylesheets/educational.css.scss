@@ -1,39 +1,43 @@
-/*----------------------------------------------------
- 9.	Education Style
-------------------------------------------------------*/
-.education{
-	background:#eeeeee;
-}
-.education .container{
-	padding-top:85px ;
-	padding-bottom:90px ;
-}
+//----------------------------------------------------
+// 9.  Education Style
+//------------------------------------------------------
 
-.education h2{
-	color:#ff675f;
-}
-.education p{
-	color:#84868d;
-	/*font-size:13px;*/
-	line-height:18px;
-}
-.education .heading p{
-	padding-bottom:41px;
-}
+.education {
+  background: #eee;
 
-.education h4{
-	font-weight:700;
-}
+  .container {
+    padding-bottom: 90px;
+    padding-top: 85px;
+  }
 
+  h2 {
+    color: #ff675f;
+  }
 
-.education .arrowpart{
-	background:asset_url('website/arrow-left-light.png') no-repeat 0 23px;
-}
-.education .exCon{
-	background:#fafafa;
-	border-bottom:solid 4px #e8e7e7;
-}
+  p {
+    color: #84868d;
+    //font-size: 13px;
+    line-height: 18px;
+  }
 
-.education .workDetails .rightArea{
-	border-left-color:#e5e4e4;
+  .heading p {
+    padding-bottom: 41px;
+  }
+
+  h4 {
+    font-weight: 700;
+  }
+
+  .arrowpart {
+    background: asset_url('website/arrow-left-light.png') no-repeat 0 23px;
+  }
+
+  .ex-con {
+    background: #fafafa;
+    border-bottom: solid 4px #e8e7e7;
+  }
+
+  .work-details .right-area {
+    border-left-color: #e5e4e4;
+  }
 }

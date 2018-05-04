@@ -1,31 +1,38 @@
 .i18n {
-	position: fixed;
-	width: 100px;
-	height: 50px;
-	top: 15px;
-	right: 0px;
-	z-index: 100;
-	li {
-		list-style: none;
-		float: right;
-		width: 40%;
-		margin-right: 8%;
-		.flag {
-			width: 32px;
-			height: 32px;
-			background:asset_url('website/flags.png') no-repeat;
-			text-indent: -10000px;
-			display: inline-block;
-			outline: none;
-			opacity: 0.8;
-			-webkit-transition: opacity 0.5s ease-in-out;
-			-moz-transition: opacity 0.5s ease-in-out;
-			transition: opacity 0.5s ease-in-out;
-			&:hover {
-				opacity: 1;
-			}
-			&.br {background-position: -32px 0}
-			&.gb {background-position: 0 -32px}
-		}
-	}
+  height: 50px;
+  position: fixed;
+  right: 0;
+  top: 15px;
+  width: 100px;
+  z-index: 100;
+
+  li {
+    float: right;
+    list-style: none;
+    margin-right: 8%;
+    width: 40%;
+
+    .flag {
+      background: asset_url('website/flags.png') no-repeat;
+      display: inline-block;
+      height: 32px;
+      opacity: .8;
+      outline: none;
+      text-indent: -10000px;
+      transition: opacity .5s ease-in-out;
+      width: 32px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.br {
+        background-position: -32px 0;
+      }
+
+      &.gb {
+        background-position: 0 -32px;
+      }
+    }
+  }
 }

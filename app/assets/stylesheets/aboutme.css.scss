@@ -1,6 +1,6 @@
-/*----------------------------------------------------
- 6. About me Style
-------------------------------------------------------*/
+//----------------------------------------------------
+// 6. About me Style
+//------------------------------------------------------
 
 .aboutme {
   background: #00bdbd;
@@ -8,24 +8,24 @@
   position: relative;
 
   .container {
-    padding-top: 85px ;
+    padding-top: 85px;
   }
 }
 
-.aboutTop {
+.about-top {
   background: #00bdbd;
   height: 60px;
 }
 
-.spHeight .aboutTop {
-  margin-top: -62px !important;
+.sp-height .about-top {
+  margin-top: -62px;
 }
 
-.bntDownload {
+.bnt-download {
   background: #474d5d;
   display: inline-block;
-  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   font-weight: 700;
   padding: 16px 22px;
 
