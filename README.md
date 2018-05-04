@@ -11,19 +11,19 @@ My personal website code
 
 # Requirements
 
-This app was built using ruby 2.4.2.
+This app was built using ruby 2.5.1, but it should work on any ruby >= 2.3.
 
 # Installing
 
 After cloning this app, run the following commands:
 
-If you use RVM, make sure you have ruby 2.4.2 installed. If so, when in the app folder, run (change .x for the minor version of your ruby. I.E.: 2.4.0)
+If you use RVM, make sure you have ruby 2.5.1 installed. If so, when in the app folder, run
 
 ```
-rvm rvmrc create ruby-2.4.2@gmmcal.com.br --ruby-version
-rvm use ruby-2.4.2@gmmcal.com.br
+rvm rvmrc create ruby-2.5.1@gmmcal.com.br --ruby-version
+rvm use ruby-2.5.1@gmmcal.com.br
 bundle install
-rake db:create db:migrate db:seeds
+cp config/secrets-example.yml config/secrets.yml
 ```
 
 The go to your browser and load ```localhost:3000```.

@@ -5,10 +5,9 @@ en:
     contacts:
       title: "Contacts"
       address:
-        city: "Lisbon"
-        state: "LX"
-        country: "Portugal"
-      phone: "+351 918 293 950"
+        city: "Amsterdam"
+        country: "Netherlands"
+      phone: "+31 06 51 41 60 37"
       email: "gustavocunha&#64;gmail&#46;com"
       github: "gmmcal"
       linkedin: "Gustavo Cunha"
