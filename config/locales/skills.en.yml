@@ -2,22 +2,3 @@ en:
   skills:
     title: "Technical Skills"
     subtitle: "I know what I'm good at, but I'm always learning"
-    details:
-      skill1_name: "Ruby on Rails"
-      skill1_title: "Love at first line of code"
-      skill1_percentage: 90
-      skill2_name: "PHP"
-      skill2_title: "+13 years of experience"
-      skill2_percentage: 90
-      skill3_name: "Objective-C / Swift"
-      skill3_title: "Challenges ahead"
-      skill3_percentage: 70
-      skill4_name: "MySQL"
-      skill4_title: "select * from table..."
-      skill4_percentage: 75
-      skill5_name: "PostgreSQL"
-      skill5_title: "A new approach...."
-      skill5_percentage: 70
-      skill6_name: "HTML / CSS"
-      skill6_title: "Daily learning"
-      skill6_percentage: 60

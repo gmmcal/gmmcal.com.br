@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -7,11 +9,19 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     lang = :en
-    unless params[:locale].nil?
-      lang = params[:locale]
-    end
-    lang = :"pt-BR" if lang.downcase == "pt"
-    lang = :"pt-BR" if lang.downcase == "br"
-    I18n.locale = I18n.available_locales.include?(lang.to_sym) ? lang : I18n.default_locale
+    lang = params[:locale] unless params[:locale].nil?
+    lang = lang.downcase
+    lang = :'pt-BR' if lang == 'br'
+    I18n.locale = if language_is_available?(lang)
+                    lang
+                  else
+                    I18n.default_locale
+                  end
+  end
+
+  private
+
+  def language_is_available?(language)
+    I18n.available_locales.include?(language.to_sym)
   end
 end
