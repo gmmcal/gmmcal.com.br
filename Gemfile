@@ -58,11 +58,4 @@ gem 'shoulda-matchers', require: false, group: %i[test]
 gem 'simplecov', require: false, group: %i[test]
 
 # Automated code review
-gem 'codacy-coverage', require: false, group: %i[test]
 gem 'codeclimate-test-reporter', group: %i[test]
-gem 'pronto', group: %i[development test]
-gem 'pronto-brakeman', require: false, group: %i[development test]
-gem 'pronto-eslint', require: false, group: %i[development test]
-gem 'pronto-flay', require: false, group: %i[development test]
-gem 'pronto-rails_best_practices', require: false, group: %i[development test]
-gem 'pronto-rubocop', require: false, group: %i[development test]

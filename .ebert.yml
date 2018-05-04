@@ -1,0 +1,25 @@
+engines:
+  rubocop:
+    enabled: true
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  csslint:
+    enabled: true
+  eslint:
+    enabled: true
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
+  scss-lint:
+    enabled: true
+
+pull_requests:
+  comments: false
+
+exclude_paths:
+  - "app/assets/javascripts/jquery.gridrotator.js"
+  - "app/assets/javascripts/jquery.placeholder.js"
+  - "spec/"

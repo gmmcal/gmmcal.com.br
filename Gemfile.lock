@@ -41,15 +41,9 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    ast (2.4.0)
     bootsnap (1.3.0)
       msgpack (~> 1.0)
-    brakeman (4.2.1)
     builder (3.2.3)
-    codacy-coverage (1.1.8)
-      simplecov
-    code_analyzer (0.4.8)
-      sexp_processor
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
     concurrent-ruby (1.0.5)
@@ -67,11 +61,6 @@ GEM
       dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
-    erubis (2.7.0)
-    eslintrb (2.1.0)
-      execjs
-      multi_json (>= 1.3)
-      rake
     execjs (2.7.0)
     factory_bot (4.8.2)
       activesupport (>= 3.0.0)
@@ -80,17 +69,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.8.7)
       i18n (>= 0.7)
-    faraday (0.15.0)
-      multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
-    flay (2.12.0)
-      erubis (~> 2.7.0)
-      path_expander (~> 1.0)
-      ruby_parser (~> 3.0)
-      sexp_processor (~> 4.0)
-    gitlab (4.3.0)
-      httparty
-      terminal-table
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http (2.2.2)
@@ -102,8 +81,6 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
-    httparty (0.16.2)
-      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
@@ -123,41 +100,10 @@ GEM
     modernizr-rails (2.7.1)
     msgpack (1.2.4)
     multi_json (1.13.1)
-    multi_xml (0.6.0)
-    multipart-post (2.0.0)
     nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    octokit (4.8.0)
-      sawyer (~> 0.8.0, >= 0.5.3)
-    parallel (1.12.1)
-    parser (2.5.1.0)
-      ast (~> 2.4.0)
-    path_expander (1.0.3)
     pg (1.0.0)
-    powerpack (0.1.1)
-    pronto (0.9.5)
-      gitlab (~> 4.0, >= 4.0.0)
-      httparty (>= 0.13.7)
-      octokit (~> 4.7, >= 4.7.0)
-      rainbow (~> 2.1)
-      rugged (~> 0.24, >= 0.23.0)
-      thor (~> 0.19.0)
-    pronto-brakeman (0.9.1)
-      brakeman (>= 3.2.0)
-      pronto (~> 0.9.0)
-    pronto-eslint (0.9.1)
-      eslintrb (~> 2.0, >= 2.0.0)
-      pronto (~> 0.9.0)
-    pronto-flay (0.9.0)
-      flay (~> 2.8)
-      pronto (~> 0.9.0)
-    pronto-rails_best_practices (0.9.0)
-      pronto (~> 0.9.0)
-      rails_best_practices (~> 1.16, >= 1.15.0)
-    pronto-rubocop (0.9.0)
-      pronto (~> 0.9.0)
-      rubocop (~> 0.38, >= 0.35.0)
     public_suffix (3.0.2)
     puma (3.11.4)
     rack (2.0.5)
@@ -182,27 +128,16 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails_best_practices (1.19.2)
-      activesupport
-      code_analyzer (>= 0.4.8)
-      erubis
-      i18n
-      json
-      require_all (~> 2.0)
-      ruby-progressbar
     railties (5.1.6)
       actionpack (= 5.1.6)
       activesupport (= 5.1.6)
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rainbow (2.2.2)
-      rake
     rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    require_all (2.0.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -220,18 +155,7 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    rubocop (0.55.0)
-      parallel (~> 1.10)
-      parser (>= 2.5)
-      powerpack (~> 0.1)
-      rainbow (>= 2.2.2, < 4.0)
-      ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
-    ruby_parser (3.11.0)
-      sexp_processor (~> 4.9)
-    rugged (0.27.0)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -243,10 +167,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sawyer (0.8.1)
-      addressable (>= 2.3.5, < 2.6)
-      faraday (~> 0.8, < 1.0)
-    sexp_processor (4.11.0)
     shoulda-matchers (3.1.2)
       activesupport (>= 4.0.0)
     simplecov (0.13.0)
@@ -263,8 +183,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    terminal-table (1.8.0)
-      unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -275,7 +193,6 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    unicode-display_width (1.3.2)
     webpacker (3.5.3)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -289,7 +206,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  codacy-coverage
   codeclimate-test-reporter
   contentful (~> 2.1.3)
   database_cleaner
@@ -299,12 +215,6 @@ DEPENDENCIES
   listen
   modernizr-rails
   pg
-  pronto
-  pronto-brakeman
-  pronto-eslint
-  pronto-flay
-  pronto-rails_best_practices
-  pronto-rubocop
   puma
   rails (~> 5.1.6)
   rspec-rails
