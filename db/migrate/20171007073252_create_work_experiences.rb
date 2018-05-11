@@ -18,4 +18,5 @@ class CreateWorkExperiences < ActiveRecord::Migration[5.1]
       t.timestamps
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
