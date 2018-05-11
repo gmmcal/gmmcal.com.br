@@ -1,13 +1,11 @@
-# frozen_string_literal: true
-
+#!/usr/bin/env ruby
 VENDOR_PATH = File.expand_path('..', __dir__)
-puts VENDOR_PATH
 Dir.chdir(VENDOR_PATH) do
   begin
-    exec "yarnpkg #{ARGV.join(' ')}"
+    exec "yarnpkg #{ARGV.join(" ")}"
   rescue Errno::ENOENT
-    warn 'Yarn executable was not detected in the system.'
-    warn 'Download Yarn at https://yarnpkg.com/en/docs/install'
+    $stderr.puts "Yarn executable was not detected in the system."
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
     exit 1
   end
 end
