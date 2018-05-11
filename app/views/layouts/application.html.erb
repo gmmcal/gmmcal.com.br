@@ -31,7 +31,7 @@
     <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track' => true %>
   <![endif]-->
 </head>
-<body>
+<body id="home">
   <!--wrapper start-->
   <div class="wrapper" id="wrapper" itemscope itemtype="https://schema.org/Person">
     <header>
@@ -43,18 +43,18 @@
       <div class="banner row" id="banner">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
           <!--background slide show start-->
-          <div class="banner-part"> <%=image_tag "website/banner.jpg", class: "bannerImg"%> </div>
+          <div class="banner-part"> <%=image_tag "website/banner.jpg", class: "banner-img"%> </div>
           <!--background slide show end-->
         </div>
       </div>
       <!--banner end-->
-      <div id="home" class="banner-text container">
+      <div class="banner-text container">
         <h1><%=t(:name, scope: [:template])%></h1>
         <h2><%=t(:title, scope: [:template])%></h2>
       </div>
       <!--menu start-->
       <div class="menu">
-        <div class="navbar-wrapper">
+        <div class="navbar-wrapper is-stuck">
           <div class="container">
             <div class="navwrapper">
               <div class="navbar navbar-inverse navbar-static-top">
@@ -70,7 +70,6 @@
                       <li class="menuItem"><a href="#technical"><%=t(:skills, scope: [:template, :menu])%></a></li>
                       <li class="menuItem"><a href="#experience"><%=t(:experience, scope: [:template, :menu])%></a></li>
                       <li class="menuItem"><a href="#education"><%=t(:education, scope: [:template, :menu])%></a></li>
-                      <li class="menuItem"><a href="#portfolio"><%=t(:portfolio, scope: [:template, :menu])%></a></li>
                       <li class="menuItem"><a href="#contact"><%=t(:contact, scope: [:template, :menu])%></a></li>
                       <li class="menuItem"><a href="#footer"><%=t(:social, scope: [:template, :menu])%></a></li>
                     </ul>

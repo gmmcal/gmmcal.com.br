@@ -10,7 +10,7 @@ require('./jquery.gridrotator')
 require('./jquery.placeholder')
 
 document.addEventListener("DOMContentLoaded", function() {
-  const $bg = $(".bannerImg");
+  const $bg = $(".banner-img");
 
   $(window).resize(() => {
     // for banner height js
@@ -27,38 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .addClass("bgwidth");
     }
   }).trigger("resize");
-
-  const $container = $(".portfolio-container");
-  $container.isotope({
-    filter: "*",
-    animationOptions: {
-      duration: 750,
-      easing: "linear",
-      queue: false,
-    },
-  });
-
-  $(".portfolio-filter a").click(function() {
-    $(".portfolio-filter .current").removeClass("current");
-    $(this).addClass("current");
-
-    const selector = $(this).attr("data-filter");
-    $container.isotope({
-      filter: selector,
-      animationOptions: {
-        duration: 750,
-        easing: "linear",
-        queue: false,
-      },
-      });
-      return false;
-  });
-
-  // run rlightbox
-  $(document).on("click", ".lb", function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-  });
 
   let index=0;
   $(document).on("scroll", () => {
@@ -79,17 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       index++;
     }
-  });
-
-  $(".navbar-wrapper").waypoint({
-    handler(direction) {
-      if (direction === "down") {
-        $(".navbar-wrapper").addClass("is-stuck");
-      } else {
-        $(".navbar-wrapper").removeClass("is-stuck");
-      }
-    },
-    offset: 0,
   });
 
   $("#home, #aboutme, #technical, #experience, #education, #portfolio, #contact, #footer").waypoint({
