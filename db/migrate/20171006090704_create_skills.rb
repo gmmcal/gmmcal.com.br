@@ -2,15 +2,15 @@
 
 class CreateSkills < ActiveRecord::Migration[5.1]
   def change
-    create_table :skills do |t|
-      t.string :name
-      t.string :hero
-      t.decimal :value, precision: 5, scale: 2, default: 0
-      t.integer :order, default: 0, index: true
-      t.string :locale, index: true
-      t.string :contentful_id, index: true
+    create_table :skills do |table|
+      table.string :name
+      table.string :hero
+      table.decimal :value, precision: 5, scale: 2, default: 0
+      table.integer :order, default: 0, index: true
+      table.string :locale, index: true
+      table.string :contentful_id, index: true
 
-      t.timestamps
+      table.timestamps
     end
   end
 end
