@@ -28,7 +28,6 @@ module Cms
       {
         'about' => About,
         'education' => Education,
-        'portfolio' => Portfolio,
         'skill' => Skill,
         'work_experience' => WorkExperience
       }
