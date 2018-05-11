@@ -15,3 +15,6 @@ Style/PercentLiteralDelimiters:
 
 Documentation:
   Enabled: false
+
+Lint/ScriptPermission:
+  Enabled: false
