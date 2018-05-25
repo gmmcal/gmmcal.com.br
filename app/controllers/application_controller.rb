@@ -8,8 +8,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    lang = :en
-    lang = params[:locale] unless params[:locale].nil?
+    lang = params[:locale] || :en
     lang = lang.downcase
     lang = :'pt-BR' if lang == 'br'
     I18n.locale = if language_is_available?(lang)

@@ -4,11 +4,11 @@ module Cms
   class Base < Contentful::Entry
     def save
       available_locales.each do |locale|
-        @data = model.find_or_initialize_by(contentful_id: id, locale: locale)
-        update_localized_attributes(locale)
-        update_attributes
-        update_file_fields(locale)
-        @data.save!
+        data = self.get_instance(locale)
+        data = update_localized_attributes(data, locale)
+        data = update_attributes(data)
+        data = update_file_fields(data, locale)
+        data.save!
       end
     end
 
@@ -26,25 +26,32 @@ module Cms
       {}
     end
 
+    def get_instance(locale)
+      model.find_or_initialize_by(contentful_id: id, locale: locale)
+    end
+
     private
 
-    def update_localized_attributes(locale)
+    def update_localized_attributes(data, locale)
       localized_attributes.each do |app_attribute, cms_attribute|
-        @data[app_attribute] = fields_with_locales.dig(cms_attribute, locale)
+        data[app_attribute] = fields_with_locales.dig(cms_attribute, locale)
       end
+      data
     end
 
-    def update_attributes
+    def update_attributes(data)
       attributes.each do |app_attribute, cms_attribute|
-        @data[app_attribute] =
+        data[app_attribute] =
           fields_with_locales.dig(cms_attribute, default_locale)
       end
+      data
     end
 
-    def update_file_fields(locale)
+    def update_file_fields(data, locale)
       file_fields.each do |app_attribute, cms_attribute|
-        @data[app_attribute] = url_for_field(locale, cms_attribute)
+        data[app_attribute] = url_for_field(locale, cms_attribute)
       end
+      data
     end
 
     def url_for_field(locale, attribute)
