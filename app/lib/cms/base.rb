@@ -4,7 +4,7 @@ module Cms
   class Base < Contentful::Entry
     def save
       available_locales.each do |locale|
-        data = self.get_instance(locale)
+        data = get_instance(locale)
         data = update_localized_attributes(data, locale)
         data = update_attributes(data)
         data = update_file_fields(data, locale)
