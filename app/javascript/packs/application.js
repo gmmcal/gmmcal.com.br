@@ -1,12 +1,12 @@
-window.$ = window.jQuery = import('jquery/dist/jquery');
-import('bootstrap/dist/js/bootstrap');
-import('waypoints/lib/jquery.waypoints');
-import('isotope-layout/dist/isotope.pkgd');
-import('ekko-lightbox/dist/ekko-lightbox');
-import('jquery.easing/jquery.easing');
-import('easy-pie-chart/dist/jquery.easypiechart');
-import('./jquery.gridrotator');
-import('./jquery.placeholder');
+window.$ = window.jQuery = require('jquery/dist/jquery');
+require('bootstrap/dist/js/bootstrap');
+require('waypoints/lib/jquery.waypoints');
+require('isotope-layout/dist/isotope.pkgd');
+require('ekko-lightbox/dist/ekko-lightbox');
+require('jquery.easing/jquery.easing');
+require('easy-pie-chart/dist/jquery.easypiechart');
+require('./jquery.gridrotator');
+require('./jquery.placeholder');
 
 document.addEventListener('DOMContentLoaded', function () {
   const $ = window.jQuery;
