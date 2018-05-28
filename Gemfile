@@ -42,7 +42,7 @@ gem 'modernizr-rails'
 
 gem 'webpacker'
 
-gem 'contentful', '~> 2.1.3'
+gem 'contentful', '~> 2.8.0'
 
 gem 'pg'
 

@@ -1,7 +1,7 @@
 RSpec.shared_examples ".save" do
   let (:data) { file_content.to_h.with_indifferent_access }
 
-  subject { described_class.new(data, {}) }
+  subject { described_class.new(data, {}, true) }
 
   before(:each) do
     allow(subject).to receive(:fields_with_locales).and_return(data['fields'])
