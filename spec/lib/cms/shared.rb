@@ -4,8 +4,8 @@ RSpec.shared_examples ".save" do
   subject { described_class.new(data, {}, true) }
 
   before(:each) do
-    allow(subject).to receive(:fields_with_locales).and_return(data['fields'])
-    allow(subject).to receive(:url_for_field).and_return('file.ext')
+    allow_any_instance_of(described_class).to receive(:fields_with_locales).and_return(data['fields'])
+    allow_any_instance_of(described_class).to receive(:url_for_field).and_return('file.ext')
   end
 
   it 'should create an entry' do
