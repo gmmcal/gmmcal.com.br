@@ -7,7 +7,7 @@ RSpec.describe ContentfulController, type: :request do
         'X-Contentful-Topic': 'ContentManagement.Entry.publish',
         'X-Contentful-Webhook-Name': 'Content',
         'Content-Type': 'application/vnd.contentful.management.v1+json',
-        'HTTP_AUTHORIZATION': ActionController::HttpAuthentication::Basic.encode_credentials('gmmcal', 'gmmcal')
+        'HTTP_AUTHORIZATION': ActionController::HttpAuthentication::Basic.encode_credentials(ENV['CONTENTFUL_USERNAME'], ENV['CONTENTFUL_PASSWORD'])
       }
     end
 
