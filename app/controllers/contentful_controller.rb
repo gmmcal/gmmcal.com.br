@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class ContentfulController < ApplicationController
-  http_basic_authenticate_with name: ENV['CONTENTFUL_USERNAME'], password: ENV['CONTENTFUL_PASSWORD']
+  auth_params = {
+    name: ENV['CONTENTFUL_USERNAME'],
+    password: ENV['CONTENTFUL_PASSWORD']
+  }
+  http_basic_authenticate_with auth_params
   skip_before_action :verify_authenticity_token
 
   def update
