@@ -12,7 +12,24 @@ module Cms
       end
     end
 
+    def model
+      model_mapping[sys[:content_type].id]
+    end
+
+    def self.find_resource(hash)
+      "Cms::#{hash[:sys][:contentType][:sys][:id].classify}".constantize
+    end
+
     protected
+
+    def model_mapping
+      {
+        'about' => ::About,
+        'education' => ::Education,
+        'skill' => ::Skill,
+        'work_experience' => ::WorkExperience
+      }
+    end
 
     def localized_attributes
       {}

@@ -2,10 +2,6 @@
 
 module Cms
   class Education < Cms::Base
-    def model
-      ::Education
-    end
-
     protected
 
     def localized_attributes

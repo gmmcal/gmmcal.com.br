@@ -2,10 +2,6 @@
 
 module Cms
   class About < Cms::Base
-    def model
-      ::About
-    end
-
     protected
 
     def localized_attributes

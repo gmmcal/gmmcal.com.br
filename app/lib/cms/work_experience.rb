@@ -2,10 +2,6 @@
 
 module Cms
   class WorkExperience < Cms::Base
-    def model
-      ::WorkExperience
-    end
-
     protected
 
     def localized_attributes

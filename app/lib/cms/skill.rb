@@ -2,10 +2,6 @@
 
 module Cms
   class Skill < Cms::Base
-    def model
-      ::Skill
-    end
-
     protected
 
     def localized_attributes
