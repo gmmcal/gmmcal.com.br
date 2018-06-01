@@ -4,7 +4,8 @@ class ContentfulController < ApplicationController
   http_basic_authenticate_with name: ENV['CONTENTFUL_USERNAME'], password: ENV['CONTENTFUL_PASSWORD']
 
   def update
-    klass = Cms::Base.find_resource(params[:contentful])
-    klass.new(params[:contentful], {}, true).save
+    data = JSON.parse(request.body.read).with_indifferent_access
+    klass = Cms::Base.find_resource(data)
+    klass.new(data, {}, true).save
   end
 end
