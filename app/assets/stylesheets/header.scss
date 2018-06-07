@@ -5,9 +5,11 @@ header {
   position: relative;
 
   .banner {
-    background: #cacaca;
-    margin: 60px auto 0;
-    overflow: hidden;
+    .row {
+      background: #cacaca;
+      margin: 60px auto 0;
+      overflow: hidden;
+    }
   }
 
   .banner-text {

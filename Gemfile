@@ -37,6 +37,7 @@ gem 'puma', group: %i[production]
 
 # Environment variables
 gem 'dotenv-rails', group: %i[development test]
+gem 'foreman', group: %i[development]
 
 gem 'modernizr-rails'
 
@@ -59,3 +60,5 @@ gem 'simplecov', require: false, group: %i[test]
 
 # Automated code review
 gem 'codeclimate-test-reporter', group: %i[test]
+
+gem 'gon'
