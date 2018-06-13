@@ -18,12 +18,6 @@ class ApplicationController < ActionController::Base
                   end
   end
 
-  private
-
-  def language_is_available?(language)
-    I18n.available_locales.include?(language.to_sym)
-  end
-
   def self.auth_params
     {
       name: credentials(:username),
@@ -32,7 +26,14 @@ class ApplicationController < ActionController::Base
   end
 
   def self.credentials(field)
-    return ENV["CONTENTFUL_#{field.upcase}"] if Rails.application.credentials.contentful.nil?
-    Rails.application.credentials.contentful[field]
+    credentials = Rails.application.credentials
+    return credentials.contentful[field] if credentials.contentful.present?
+    ENV["CONTENTFUL_#{field.upcase}"]
+  end
+
+  private
+
+  def language_is_available?(language)
+    I18n.available_locales.include?(language.to_sym)
   end
 end
