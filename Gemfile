@@ -5,11 +5,11 @@ source 'https://rubygems.org'
 ruby '~> 2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.2.0'
+# gem 'uglifier', '~> 3.2.0'
 # Use CoffeeScript for .js.coffee assets and views
 # gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -43,7 +43,7 @@ gem 'modernizr-rails'
 
 gem 'webpacker'
 
-gem 'contentful', '~> 2.8.0'
+gem 'contentful'
 
 gem 'pg'
 

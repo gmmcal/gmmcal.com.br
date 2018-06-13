@@ -19,7 +19,7 @@ class HomeController < ApplicationController
   end
 
   def flag_links
-    [:br, :en].map do |flag|
+    %i[br en].map do |flag|
       {
         link: home_path(flag),
         label: flag,
@@ -29,10 +29,11 @@ class HomeController < ApplicationController
   end
 
   def menu_links
-    [:home, :about, :skills, :experience, :education, :contact, :social].map do |page|
+    links = %i[home about skills experience education contact social]
+    links.map do |page|
       {
         link: "##{page}",
-        label: page.to_s,
+        label: page.to_s
       }
     end
   end
