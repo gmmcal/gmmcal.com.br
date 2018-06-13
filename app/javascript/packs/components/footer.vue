@@ -1,6 +1,17 @@
+<template>
+  <!--footer start-->
+  <section class="footer" id="footer">
+    <vue-social />
+  </section>
+  <!--footer end-->
+</template>
+
 <script>
+import Social from './social.vue'
+
 export default {
-  computed: {
+  components: {
+    'vue-social': Social,
   }
 }
 </script>
