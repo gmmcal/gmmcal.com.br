@@ -25,6 +25,6 @@ export default {
   },
   components: {
     'vue-skill': Skill,
-  }
+  },
 }
 </script>
