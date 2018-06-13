@@ -7,10 +7,7 @@
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "CONTENTFUL_SPACE": {
-      "required": true
-    },
-    "CONTENTFUL_TOKEN": {
+    "RAILS_MASTER_KEY": {
       "required": true
     },
     "DATABASE_URL": {
@@ -28,9 +25,6 @@
     "RAILS_SERVE_STATIC_FILES": {
       "required": true
     },
-    "SECRET_KEY_BASE": {
-      "required": true
-    }
   },
   "formation": {
   },

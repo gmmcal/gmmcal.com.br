@@ -16,8 +16,8 @@ module Cms
 
     def self.contentful_config
       {
-        space: ENV['CONTENTFUL_SPACE'],
-        access_token: ENV['CONTENTFUL_TOKEN'],
+        space: Rails.application.credentials[:contentful][:space],
+        access_token: Rails.application.credentials[:contentful][:token],
         logger: ::Logger.new(STDOUT),
         gzip_encoded: false,
         entry_mapping: contentful_mapping_config
