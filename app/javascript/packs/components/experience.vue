@@ -8,7 +8,7 @@
       <div class="ex-con">
         <h4><span itemprop="legalName">{{ experience.company_name }}</span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">{{ experience.city }}</span> - <span itemprop="addressCountry">{{ experience.country }}</span></span></h4>
         <h5>{{ experience.position }}</h5>
-        <p itemprop="description">{{ experience.description }}</p>
+        <vue-markdown class="description" itemprop="description">{{ experience.description }}</vue-markdown>
       </div>
     </div>
   </div>
@@ -16,6 +16,7 @@
 
 <script>
 import I18n from '../i18n'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   props: ['experience'],
@@ -31,6 +32,9 @@ export default {
       }
       return I18n.l('date.formats.default', this.experience.end_date)
     }
-  }
+  },
+  components: {
+    'vue-markdown': VueMarkdown,
+  },
 }
 </script>

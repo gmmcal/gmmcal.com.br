@@ -63,9 +63,14 @@
   text-align: left;
   width: auto;
 
+  .description {
+    padding-bottom: 22px;
+  }
+
   p {
     color: #84868d;
     line-height: 21px;
+    padding-bottom: 5px;
   }
 
   h4 {

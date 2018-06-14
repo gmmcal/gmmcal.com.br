@@ -8,7 +8,7 @@
       <div class="ex-con">
         <h4>{{ education.institution }}</h4>
         <h5 itemprop="legalName">{{ education.course }}</h5>
-        <p itemprop="description">{{ education.description }}</p>
+        <vue-markdown class="description" itemprop="description">{{ education.description }}</vue-markdown>
       </div>
     </div>
   </div>
@@ -16,6 +16,7 @@
 
 <script>
 import I18n from '../i18n'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   props: ['education'],
@@ -31,6 +32,9 @@ export default {
       }
       return I18n.l('date.formats.default', this.education.end_date)
     }
-  }
+  },
+  components: {
+    'vue-markdown': VueMarkdown,
+  },
 }
 </script>
