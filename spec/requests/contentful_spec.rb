@@ -15,6 +15,7 @@ RSpec.describe ContentfulController, type: :request do
 
     before(:each) do
       allow_any_instance_of(Cms::About).to receive(:url_for_field).and_return('file.ext')
+      allow(Cms::Sync).to receive(:find).and_return(data_klass.new(JSON.parse(body), {}, true)) if defined?(data_klass)
 
       post '/contentful/update', params: body, headers: headers
     end
@@ -34,6 +35,8 @@ RSpec.describe ContentfulController, type: :request do
     end
 
     context 'With authentication' do
+      let(:data_klass) { "Cms::#{klass}".constantize }
+
       shared_examples_for 'sync webhook' do
         it 'should be successful' do
           expect(response).to have_http_status(:no_content)

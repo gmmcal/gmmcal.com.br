@@ -10,6 +10,10 @@ module Cms
       end
     end
 
+    def self.find(id)
+      client.entry(id, locale: '*')
+    end
+
     def self.client
       Contentful::Client.new(contentful_config)
     end

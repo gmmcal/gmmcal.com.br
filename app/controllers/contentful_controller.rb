@@ -6,7 +6,7 @@ class ContentfulController < ApplicationController
 
   def update
     data = JSON.parse(request.body.read).with_indifferent_access
-    klass = Cms::Base.find_resource(data)
-    klass.new(data, {}, true).save
+    resource = Cms::Sync.find(data[:sys][:id])
+    resource.save
   end
 end
