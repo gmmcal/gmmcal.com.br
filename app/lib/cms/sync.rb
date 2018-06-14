@@ -20,8 +20,8 @@ module Cms
 
     def self.contentful_config
       {
-        space: Rails.application.credentials[:contentful][:space],
-        access_token: Rails.application.credentials[:contentful][:token],
+        space: credentials(:space),
+        access_token: credentials(:token),
         logger: ::Logger.new(STDOUT),
         gzip_encoded: false,
         entry_mapping: contentful_mapping_config
@@ -35,6 +35,12 @@ module Cms
         'skill' => Skill,
         'work_experience' => WorkExperience
       }
+    end
+
+    def self.credentials(field)
+      credentials = Rails.application.credentials
+      return credentials.contentful[field] if credentials.contentful.present?
+      ENV["CONTENTFUL_#{field.upcase}"]
     end
   end
 end
