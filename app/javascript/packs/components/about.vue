@@ -1,5 +1,5 @@
 <template>
-  <section class="aboutme" id="aboutme">
+  <section class="aboutme" id="about">
     <div class="container">
       <div class="heading">
         <h2>{{ I18n.t('title', { scope: 'about' }) }}</h2>

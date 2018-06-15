@@ -28,9 +28,11 @@
   }
 }
 
-.work-details .right-area {
-  border-left: solid 1px #eaeaea;
-  padding-bottom: 47px;
+.work-details {
+  .right-area {
+    border-left: solid 1px #eaeaea;
+    padding-bottom: 47px;
+  }
 
   &:last-child .right-area {
     padding-bottom: 0;

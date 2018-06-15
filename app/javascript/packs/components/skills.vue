@@ -1,5 +1,5 @@
 <template>
-  <section class="technical" id="technical">
+  <section class="technical" id="skills">
     <div class="container">
       <div class="heading">
         <h2>{{ I18n.t('title', { scope: 'skills' }) }}</h2>

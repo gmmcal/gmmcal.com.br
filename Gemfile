@@ -62,3 +62,5 @@ gem 'simplecov', require: false, group: %i[test]
 gem 'codeclimate-test-reporter', group: %i[test]
 
 gem 'gon'
+
+gem 'i18n-js', group: %i[development]
