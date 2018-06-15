@@ -2,65 +2,50 @@
 
 source 'https://rubygems.org'
 
+# Enforce minimum ruby version
 ruby '~> 2.3'
 
+# Application gems
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
+# use PostgreSQL as database
+gem 'pg'
+# Use puma as the app server
+gem 'puma', group: %i[production]
+# Contentful as CMS
+gem 'contentful'
+# Use bootsnap to improve performance
+gem 'bootsnap', require: false
+
+# Frontend gems
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
-# Use CoffeeScript for .js.coffee assets and views
-# gem 'coffee-rails', '~> 4.2.1'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-# gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Spring speeds up development by keeping your application running in the
-# background. Read more: https://github.com/rails/spring
-gem 'spring', group: :development
-
-gem 'listen', group: :development
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use puma as the app server
-gem 'puma', group: %i[production]
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'modernizr-rails'
+gem 'webpacker'
+gem 'gon'
 
 # Environment variables
 gem 'dotenv-rails', group: %i[development test]
-gem 'foreman', group: %i[development]
 
-gem 'modernizr-rails'
-
-gem 'webpacker'
-
-gem 'contentful'
-
-gem 'pg'
-
-# Use bootsnap to improve performance
-gem 'bootsnap', require: false
+# Groups
+group :development do
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'listen'
+  gem 'foreman'
+  gem 'i18n-js'
+end
 
 # Test suite
-gem 'database_cleaner', group: %i[test]
-gem 'factory_bot_rails', group: %i[test]
-gem 'faker', group: %i[test]
-gem 'rspec-rails', group: %i[test]
-gem 'shoulda-matchers', require: false, group: %i[test]
-gem 'simplecov', require: false, group: %i[test]
-
-# Automated code review
-gem 'codeclimate-test-reporter', group: %i[test]
-
-gem 'gon'
-
-gem 'i18n-js', group: %i[development]
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', require: false
+  gem 'codeclimate-test-reporter'
+end
