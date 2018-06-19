@@ -19,7 +19,9 @@ class HomeController < ApplicationController
   end
 
   def flag_links
-    %i[br en].map do |flag|
+    flags = %i[pt-BR en]
+    flags.delete(I18n.locale)
+    flags.map do |flag|
       {
         link: home_path(flag),
         label: flag,
@@ -29,7 +31,7 @@ class HomeController < ApplicationController
   end
 
   def menu_links
-    links = %i[home about skills experience education contact social]
+    links = %i[home about skills experience education contact]
     links.map do |page|
       {
         link: "##{page}",

@@ -28,15 +28,14 @@
             <div class="navbar navbar-inverse navbar-static-top">
               <div class="container">
                 <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <button v-on:click="expand_menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">Menu</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                  <vue-menu-main :items="menu_links" :css_class="main_css_class" />
+                  <vue-menu-main :click="expand_menu" :items="menu_links" :css_class="main_css_class" />
                 </div>
               </div>
             </div>
@@ -105,6 +104,11 @@ export default {
     getHeight(event) {
       this.windowHeight = document.documentElement.clientHeight
       this.bannerHeight = this.windowHeight - 60
+    },
+    expand_menu(event) {
+      const menu = document.querySelector('.navbar-collapse');
+      menu.classList.toggle('expand')
+      menu.classList.toggle('collapse')
     }
   },
   beforeDestroy() {

@@ -30,8 +30,8 @@ RSpec.describe HomeController, type: :request do
       it_behaves_like 'Localization'
     end
 
-    context 'With locale in br' do
-      let(:locale) { :br }
+    context 'With locale in pt-BR' do
+      let(:locale) { :'pt-BR' }
       let(:expected_locale) { :'pt-BR' }
 
       it_behaves_like 'Localization'

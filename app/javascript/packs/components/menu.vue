@@ -1,7 +1,7 @@
 <template>
   <ul :class="css_class">
     <li :class="li_class(item)" v-for="item in items" :key="item.label">
-      <vue-menu-item :item="item" />
+      <vue-menu-item :click="click" :item="item" />
     </li>
   </ul>
 </template>
@@ -10,7 +10,7 @@
 import MenuItem from './menu_item'
 
 export default {
-  props: ['items', 'css_class'],
+  props: ['items', 'css_class', 'click'],
   data: function() {
     return {
       active: 'home'

@@ -6,7 +6,7 @@
 import I18n from '../i18n'
 
 export default {
-  props: ['item'],
+  props: ['item', 'click'],
   data: function() {
     return {
       I18n: I18n,
@@ -21,6 +21,7 @@ export default {
           top: el.offsetTop,
           behavior: 'smooth'
         });
+        this.click()
         event.preventDefault()
       }catch(e){}
     },

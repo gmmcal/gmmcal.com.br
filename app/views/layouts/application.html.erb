@@ -20,13 +20,12 @@
   <!--google font style-->
   <!--font-family: 'Open Sans', sans-serif;-->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-  <%= Gon::Base.render_data %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'modernizr', 'data-turbolinks-track' => true %>
   <%= javascript_pack_tag 'application', type: 'application/javascript' %>
 
   <noscript>
-  <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track' => true %>
   </noscript>
   <!--[if lt IE 9]>
     <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track' => true %>
@@ -38,5 +37,6 @@
     <%=yield%>
     <vue-footer></vue-footer>
   </div>
+  <%= Gon::Base.render_data %>
 </body>
 </html>

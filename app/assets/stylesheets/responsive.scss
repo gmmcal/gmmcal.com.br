@@ -27,17 +27,17 @@
     padding-right: 18px;
   }
 
-  .banner-text {
+  header .banner-text {
     padding-left: 25px;
     padding-right: 25px;
   }
 
-  .banner-text h1 {
+  header .banner-text h1 {
     font-size: 65px;
     line-height: 71px;
   }
 
-  .banner-text h2 {
+  header .banner-text h2 {
     font-size: 28px;
   }
 
@@ -73,12 +73,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navbar-wrapper .container,
-  .navwrapper .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   .portfolio-container .col-xs-6 {
     min-height: 85px;
     width: 49%;
@@ -124,6 +118,16 @@
   .topmar {
     margin-top: 20px;
   }
+
+  .i18n {
+    left: 0;
+    right: auto;
+
+    li {
+      margin-left: 8%;
+      margin-right: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -135,18 +139,18 @@
     transform: translate(0, -70px);
   }
 
-  .banner-text {
+  header .banner-text {
     padding-bottom: 15px;
     padding-top: 15px;
     top: 20%;
   }
 
-  .banner-text h1 {
+  header .banner-text h1 {
     font-size: 42px;
     line-height: 40px;
   }
 
-  .banner-text h2 {
+  header .banner-text h2 {
     font-size: 15px;
     line-height: 24px;
     padding-top: 10px;
