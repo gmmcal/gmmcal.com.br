@@ -16,6 +16,14 @@ export default {
       active: 'home'
     }
   },
+  computed: {
+    html: function() {
+      return document.querySelector('html');
+    },
+    scroll_items: function() {
+      return this.items.slice(0).reverse()
+    }
+  },
   components: {
     'vue-menu-item': MenuItem,
   },
@@ -27,10 +35,17 @@ export default {
       return null
     },
     scroll: function() {
-      // TODO: improve this method
-      const html = document.querySelector('html');
-      const items = this.items.slice(0).reverse()
-      const actives = items.filter(function(item) {
+      this.active = this.active_menu_item()
+    },
+    active_menu_item: function() {
+      const actives = this.active_menu_items()
+      if (actives.length === 0)
+        return
+      return actives[0].label
+    },
+    active_menu_items: function() {
+      const html = this.html
+      return this.scroll_items.filter(function(item) {
         const el = document.getElementById(item.label);
         if (el === null)
           return false
@@ -39,9 +54,6 @@ export default {
         }
         return false
       })
-      if (actives.length === 0)
-        return
-      this.active = actives[0].label
     }
   },
   mounted() {
