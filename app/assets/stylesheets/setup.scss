@@ -91,3 +91,31 @@ h5 {
 .modal-title {
   color: #000;
 }
+
+.schema {
+  display: none;
+}
+
+.en {
+  noscript {
+    .en {
+      display: block;
+    }
+
+    .pt-BR {
+      display: none;
+    }
+  }
+}
+
+.pt-BR {
+  noscript {
+    .en {
+      display: none;
+    }
+
+    .pt-BR {
+      display: block;
+    }
+  }
+}

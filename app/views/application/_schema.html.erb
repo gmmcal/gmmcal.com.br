@@ -1,0 +1,29 @@
+<div class="schema">
+  <div itemscope itemtype="https://schema.org/Person">
+    <span itemprop="name"><%= t(:name, scope: [:template]) %></span>
+    <span itemprop="jobTitle"><%= @about.job_title %></span>
+    <span itemprop="description"><%= @about.description %></span>
+    <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+      <span itemprop="addressLocality"><%= @about.city %></span>
+      <span itemprop="addressCountry"><%= @about.country %></span>
+    </p>
+    <p itemprop="telephone"><%= @about.phone_number %></p>
+    <p itemprop="email"><%= @about.email %></p>
+    <%= image_tag asset_path("website/gmmcal.png"), alt: t(:name, scope: [:template]), itemprop: "image" %>
+    <% @work_experiences.each do |experience| %>
+      <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="legalName"><%= experience.company_name %></span>
+        <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="addressLocality"><%= experience.city %></span>
+          <span itemprop="addressCountry"><%= experience.country %></span>
+        </span>
+      </div>
+    <% end %>
+    <% @educations.each do |education| %>
+      <div itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+        <h5 itemprop="legalName"><%= education.course %></h5>
+        <p itemprop="description"><%= education.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

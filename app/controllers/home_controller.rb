@@ -1,21 +1,24 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  before_action :set_gon_static_data
-
   def index
     current_locale = I18n.locale
-    gon.about = About.with_locale(current_locale).first
-    gon.educations = Education.ordered.with_locale(current_locale)
-    gon.skills = Skill.ordered.with_locale(current_locale)
-    gon.experiences = WorkExperience.ordered.with_locale(current_locale)
+    @about = About.with_locale(current_locale).first_or_initialize
+    @educations = Education.ordered.with_locale(current_locale)
+    @skills = Skill.ordered.with_locale(current_locale)
+    @work_experiences = WorkExperience.ordered.with_locale(current_locale)
+    set_gon_data
   end
 
   private
 
-  def set_gon_static_data
+  def set_gon_data
     gon.flag_links = flag_links
     gon.menu_links = menu_links
+    gon.about = @about
+    gon.educations = @educations
+    gon.skills = @skills
+    gon.experiences = @work_experiences
   end
 
   def flag_links
