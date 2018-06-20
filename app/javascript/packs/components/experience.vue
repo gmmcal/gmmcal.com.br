@@ -1,14 +1,14 @@
 <template>
-  <div class="row work-details" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+  <div class="row work-details">
     <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
       <div class="work-year">{{ I18n.l('date.formats.default', experience.start_date) }}<br>{{ end_date }}</div>
     </div>
     <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
       <div class="arrowpart"></div>
       <div class="ex-con">
-        <h4><span itemprop="legalName">{{ experience.company_name }}</span> - <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">{{ experience.city }}</span> - <span itemprop="addressCountry">{{ experience.country }}</span></span></h4>
+        <h4><span>{{ experience.company_name }}</span> - <span><span>{{ experience.city }}</span> - <span>{{ experience.country }}</span></span></h4>
         <h5>{{ experience.position }}</h5>
-        <vue-markdown class="description" itemprop="description">{{ experience.description }}</vue-markdown>
+        <vue-markdown class="description">{{ experience.description }}</vue-markdown>
       </div>
     </div>
   </div>

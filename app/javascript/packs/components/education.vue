@@ -1,5 +1,5 @@
 <template>
-  <div class="row work-details" itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+  <div class="row work-details">
     <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
       <div class="work-year">{{ end_date }}</div>
     </div>
@@ -7,8 +7,8 @@
       <div class="arrowpart"></div>
       <div class="ex-con">
         <h4>{{ education.institution }}</h4>
-        <h5 itemprop="legalName">{{ education.course }}</h5>
-        <vue-markdown class="description" itemprop="description">{{ education.description }}</vue-markdown>
+        <h5>{{ education.course }}</h5>
+        <vue-markdown class="description">{{ education.description }}</vue-markdown>
       </div>
     </div>
   </div>

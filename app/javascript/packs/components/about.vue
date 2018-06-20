@@ -6,13 +6,13 @@
       </div>
       <div class="row">
         <div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
-          <h3 itemprop="name">{{ I18n.t('name', { scope: 'template' }) }}</h3>
-          <h4 class="sub-heading" itemprop="jobTitle">{{ about.job_title }}</h4>
-          <vue-markdown itemprop="description">{{ about.description }}</vue-markdown>
+          <h3>{{ I18n.t('name', { scope: 'template' }) }}</h3>
+          <h4 class="sub-heading">{{ about.job_title }}</h4>
+          <vue-markdown>{{ about.description }}</vue-markdown>
           <a :href="about.cv" class="bnt-download" target="_blank">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
         </div>
         <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 pro-pic">
-          <img :src="image" :alt="I18n.t('name', { scope: 'template' })" class="topmar" itemprop="image" />
+          <img :src="image" :alt="I18n.t('name', { scope: 'template' })" class="topmar" />
         </div>
       </div>
     </div>
