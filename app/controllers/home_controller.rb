@@ -28,7 +28,7 @@ class HomeController < ApplicationController
       {
         link: home_path(flag),
         label: flag,
-        css_class: ['flag', flag].join(' ')
+        css_class: ['flag', flag.downcase].join(' ')
       }
     end
   end

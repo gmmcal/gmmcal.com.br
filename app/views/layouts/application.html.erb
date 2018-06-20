@@ -31,7 +31,7 @@
     <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track' => true %>
   <![endif]-->
 </head>
-<body id="home" class="<%= I18n.locale %>" data-locale="<%= I18n.locale %>">
+<body id="home" class="<%= I18n.locale.downcase %>" data-locale="<%= I18n.locale %>">
   <div class="wrapper" id="wrapper">
     <vue-header image="<%=asset_path("website/banner.jpg")%>"></vue-header>
     <%=yield%>
