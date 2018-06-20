@@ -100,7 +100,6 @@ export default {
       this.windowWidth = document.documentElement.clientWidth
       this.bannerWidth = this.windowWidth
     },
-
     getHeight(event) {
       this.windowHeight = document.documentElement.clientHeight
       this.bannerHeight = this.windowHeight - 60

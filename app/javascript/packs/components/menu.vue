@@ -38,12 +38,12 @@ export default {
       this.active = this.active_menu_item()
     },
     active_menu_item: function() {
-      const actives = this.active_menu_items()
+      const actives = this.active_scrolled_items()
       if (actives.length === 0)
         return
       return actives[0].label
     },
-    active_menu_items: function() {
+    active_scrolled_items: function() {
       const html = this.html
       return this.scroll_items.filter(function(item) {
         const el = document.getElementById(item.label);
