@@ -20,4 +20,5 @@ pull_requests:
 exclude_paths:
   - "app/assets/stylesheets/application.scss"
   - "app/assets/stylesheets/font-awesome.scss"
+  - "config/webpack/**.js"
   - "spec/"
