@@ -20,7 +20,7 @@ export default {
         window.scroll({
           top: el.offsetTop,
           behavior: 'smooth'
-        });
+        })
         this.click()
         event.preventDefault()
       }catch(e){}

@@ -105,7 +105,7 @@ export default {
       this.bannerHeight = this.windowHeight - 60
     },
     expand_menu(event) {
-      const menu = document.querySelector('.navbar-collapse');
+      const menu = document.querySelector('.navbar-collapse')
       menu.classList.toggle('expand')
       menu.classList.toggle('collapse')
     }

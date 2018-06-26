@@ -17,9 +17,6 @@ export default {
     }
   },
   computed: {
-    html: function() {
-      return document.querySelector('html');
-    },
     scroll_items: function() {
       return this.items.slice(0).reverse()
     }
@@ -40,16 +37,16 @@ export default {
     active_menu_item: function() {
       const actives = this.active_scrolled_items()
       if (actives.length === 0)
-        return
+        return 'home'
       return actives[0].label
     },
     active_scrolled_items: function() {
-      const html = this.html
+      const scrollingElement = document.scrollingElement || document.documentElement
       return this.scroll_items.filter(function(item) {
-        const el = document.getElementById(item.label);
+        const el = document.getElementById(item.label)
         if (el === null)
           return false
-        if (html.scrollTop >= el.offsetTop) {
+        if (scrollingElement.scrollTop >= el.offsetTop) {
           return true
         }
         return false
