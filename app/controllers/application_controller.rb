@@ -8,30 +8,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    lang = params[:locale] || :en
-    I18n.locale = if language_is_available?(lang)
-                    lang
-                  else
-                    I18n.default_locale
-                  end
-  end
-
-  def self.auth_params
-    {
-      name: credentials(:username),
-      password: credentials(:password)
-    }
-  end
-
-  def self.credentials(field)
-    credentials = Rails.application.credentials
-    return credentials.contentful[field] if credentials.contentful.present?
-    ENV["CONTENTFUL_#{field.upcase}"]
-  end
-
-  private
-
-  def language_is_available?(language)
-    I18n.available_locales.include?(language.to_sym)
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end

@@ -7,6 +7,36 @@
     "description": {
       "en": "Bacon is healthy!",
       "pt-BR": "Bacon is healthy!"
+    },
+    "cv": {
+      "en": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Asset",
+          "id": "jha09uqjkn0912381plknsajkda8928ouqjadsjh"
+        }
+      },
+      "pt-BR": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Asset",
+          "id": "jha09uqjkn0912381plknsajkda8928ouqjadsjh"
+        }
+      }
+    },
+    "city": {
+      "en": "Some City",
+      "pt-BR": "Some City"
+    },
+    "country": {
+      "en": "Some Country",
+      "pt-BR": "Some Country"
+    },
+    "phone_number": {
+      "en": "Phone Number"
+    },
+    "email": {
+      "en": "email@example.com"
     }
   },
   "sys": {
