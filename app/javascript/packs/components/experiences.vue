@@ -15,7 +15,7 @@ import I18n from '../i18n'
 import Experience from './experience'
 
 export default {
-  data: function() {
+  data() {
     return {
       experiences: gon.experiences,
       I18n: I18n,

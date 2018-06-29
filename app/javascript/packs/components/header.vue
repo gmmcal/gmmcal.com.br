@@ -54,7 +54,7 @@ import I18n from '../i18n'
 
 export default {
   props: ['image'],
-  data: function() {
+  data() {
     return {
       flag_links: gon.flag_links,
       menu_links: gon.menu_links,
@@ -72,13 +72,13 @@ export default {
     'vue-menu-main': Menu,
   },
   computed: {
-    banner_style: function() {
+    banner_style() {
       return {
         width: this.bannerWidth + 'px',
         height: this.bannerHeight + 'px',
       }
     },
-    banner_image_class: function() {
+    banner_image_class() {
       if (this.windowWidth < this.windowHeight) {
         return 'banner-img bgheight'
       }
@@ -86,7 +86,7 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(function() {
+    this.$nextTick(() => {
       window.addEventListener('resize', this.getWidth)
       window.addEventListener('resize', this.getHeight)
 

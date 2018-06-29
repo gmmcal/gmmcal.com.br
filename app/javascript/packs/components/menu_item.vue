@@ -7,13 +7,13 @@ import I18n from '../i18n'
 
 export default {
   props: ['item', 'click'],
-  data: function() {
+  data() {
     return {
       I18n: I18n,
     }
   },
   methods: {
-    scroll: function(event) {
+    scroll(event) {
       const destination = event.target.attributes['href'].value
       try {
         const el = document.querySelector(destination)

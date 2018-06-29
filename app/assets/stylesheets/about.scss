@@ -29,7 +29,9 @@
   font-weight: 700;
   padding: 16px 22px;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     background: #373d4c;
     color: #ccc;
     text-decoration: none;

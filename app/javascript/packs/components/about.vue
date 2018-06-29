@@ -25,7 +25,7 @@ import VueMarkdown from 'vue-markdown'
 
 export default {
   props: ['image'],
-  data: function() {
+  data() {
     return {
       about: gon.about,
       I18n: I18n,

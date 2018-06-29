@@ -30,7 +30,7 @@
 import I18n from '../i18n'
 
 export default {
-  data: function() {
+  data() {
     return {
       about: gon.about,
       I18n: I18n,

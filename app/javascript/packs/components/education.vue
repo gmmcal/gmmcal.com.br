@@ -20,13 +20,13 @@ import VueMarkdown from 'vue-markdown'
 
 export default {
   props: ['education'],
-  data: function() {
+  data() {
     return {
       I18n: I18n,
     }
   },
   computed: {
-    end_date: function() {
+    end_date() {
       if (this.education.end_date === null) {
         return I18n.t('current', { scope: 'template' })
       }

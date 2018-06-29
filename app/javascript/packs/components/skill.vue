@@ -15,7 +15,7 @@ import EasyPieChart from 'easy-pie-chart'
 
 export default {
   props: ['skill'],
-  mounted: function(el) {
+  mounted() {
     const element = this.$el.querySelector('.chart')
     new EasyPieChart(element, {
       barColor: '#ff675f',

@@ -17,7 +17,7 @@ import I18n from '../i18n'
 import Skill from './skill'
 
 export default {
-  data: function() {
+  data() {
     return {
       skills: gon.skills,
       I18n: I18n,

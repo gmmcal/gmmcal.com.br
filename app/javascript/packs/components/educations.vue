@@ -15,7 +15,7 @@ import I18n from '../i18n'
 import Education from './education'
 
 export default {
-  data: function() {
+  data() {
     return {
       educations: gon.educations,
       I18n: I18n,

@@ -11,13 +11,13 @@ import MenuItem from './menu_item'
 
 export default {
   props: ['items', 'css_class', 'click'],
-  data: function() {
+  data() {
     return {
       active: 'home'
     }
   },
   computed: {
-    scroll_items: function() {
+    scroll_items() {
       return this.items.slice(0).reverse()
     }
   },
@@ -25,22 +25,22 @@ export default {
     'vue-menu-item': MenuItem,
   },
   methods: {
-    li_class: function(item) {
+    li_class(item) {
       if (item.label === this.active) {
         return 'active'
       }
       return null
     },
-    scroll: function() {
+    scroll() {
       this.active = this.active_menu_item()
     },
-    active_menu_item: function() {
+    active_menu_item() {
       const actives = this.active_scrolled_items()
       if (actives.length === 0)
         return 'home'
       return actives[0].label
     },
-    active_scrolled_items: function() {
+    active_scrolled_items() {
       const scrollingElement = document.scrollingElement || document.documentElement
       return this.scroll_items.filter(function(item) {
         const el = document.getElementById(item.label)
@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(function() {
+    this.$nextTick(() => {
       window.addEventListener('scroll', this.scroll)
       window.addEventListener('resize', this.scroll)
     })
