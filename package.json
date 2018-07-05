@@ -14,6 +14,49 @@
     "vue-turbolinks": "^2.0.3"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-jest": "^23.2.0",
+    "jest": "^23.2.0",
+    "jest-canvas-mock": "^1.0.3",
+    "vue-jest": "^2.6.0",
     "webpack-dev-server": "^2.11.2"
+  },
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "spec/javascript",
+      "app/javascript/packs"
+    ],
+    "setupFiles": ["jest-canvas-mock"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "app/javascript/packs/components/**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "coverageDirectory": "cov_js",
+    "transform": {
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/app/javascript/packs/$1"
+    }
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "test:once": "jest"
   }
 }

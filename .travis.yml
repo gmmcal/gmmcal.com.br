@@ -27,6 +27,7 @@ install:
 script:
   - bundle exec rake db:migrate
   - bundle exec rspec
+  - yarn test:once
 
 bundler_args: --without production
 

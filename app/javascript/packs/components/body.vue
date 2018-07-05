@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import About from './about.vue'
-import Contact from './contact.vue'
-import Educations from './educations.vue'
-import Experiences from './experiences.vue'
-import Skills from './skills.vue'
+import About from './about'
+import Contact from './contact'
+import Educations from './educations'
+import Experiences from './experiences'
+import Skills from './skills'
 
 export default {
   props: ['image'],
