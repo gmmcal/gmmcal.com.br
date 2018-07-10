@@ -30,6 +30,7 @@
   <!--[if lt IE 9]>
     <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track' => true %>
   <![endif]-->
+  <%= csrf_meta_tags %>
 </head>
 <body id="home" class="<%= I18n.locale.downcase %>" data-locale="<%= I18n.locale %>">
   <div class="wrapper" id="wrapper">
