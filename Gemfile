@@ -22,6 +22,7 @@ gem 'gon'
 gem 'modernizr-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails'
+gem 'uglifier'
 gem 'webpacker'
 
 # Environment variables
