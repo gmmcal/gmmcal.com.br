@@ -154,6 +154,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.1)
     request_store (1.4.1)
       rack (>= 1.4)
     rspec-core (3.7.1)
@@ -238,6 +239,7 @@ DEPENDENCIES
   pg
   puma
   rails (~> 5.2.0)
+  redis
   rspec-rails
   sass-rails
   shoulda-matchers
