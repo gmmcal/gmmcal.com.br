@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 ruby '~> 2.3'
 
 # Application gems
+gem 'actionpack-action_caching'
 # Use bootsnap to improve performance
 gem 'bootsnap', require: false
 # Contentful as CMS

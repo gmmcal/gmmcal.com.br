@@ -9,7 +9,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
           <!--background slide show start-->
           <div class="banner-part">
-            <img :src="this.image" :class="banner_image_class" />
+            <img :src="this.image" :class="banner_image_class" alt="Banner" />
           </div>
           <!--background slide show end-->
         </div>
@@ -28,7 +28,7 @@
             <div class="navbar navbar-inverse navbar-static-top">
               <div class="container">
                 <div class="navbar-header">
-                  <button v-on:click="expand_menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <button v-on:click="expand_menu" aria-label="Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

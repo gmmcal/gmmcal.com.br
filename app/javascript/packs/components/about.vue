@@ -9,7 +9,7 @@
           <h3>{{ I18n.t('name', { scope: 'template' }) }}</h3>
           <h4 class="sub-heading">{{ about.job_title }}</h4>
           <vue-markdown>{{ about.description }}</vue-markdown>
-          <a :href="about.cv" class="bnt-download" target="_blank">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
+          <a :href="about.cv" class="bnt-download" target="_blank" rel="noopener">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
         </div>
         <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 pro-pic">
           <img :src="image" :alt="I18n.t('name', { scope: 'template' })" class="topmar" />

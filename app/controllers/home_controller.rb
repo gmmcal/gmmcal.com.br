@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
+  caches_action :index
+
   def index
     current_locale = I18n.locale
     @about = About.with_locale(current_locale).first_or_initialize

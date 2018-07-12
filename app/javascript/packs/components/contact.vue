@@ -16,9 +16,9 @@
           <p id="location" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-map-marker fa-lg"></i> <span>{{about.city}}</span>  - <span>{{about.country}}</span></p>
           <p id="phone_number" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-mobile fa-lg"></i> {{about.phone_number}}</p>
           <p id="email" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-envelope-o "></i> {{about.email}}</p>
-          <p id="github" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="https://github.com/gmmcal" target="_blank">{{I18n.t('github', {scope: 'contact.contacts'})}}</a></p>
-          <p id="linkedin" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/gmmcal" target="_blank">{{I18n.t('linkedin', {scope: 'contact.contacts'})}}</a></p>
-          <p id="twitter" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="https://twitter.com/gmmcal" target="_blank">{{I18n.t('twitter', {scope: 'contact.contacts'})}}</a></p>
+          <p id="github" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-github"></i> <a href="https://github.com/gmmcal" target="_blank" rel="noopener">{{I18n.t('github', {scope: 'contact.contacts'})}}</a></p>
+          <p id="linkedin" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">{{I18n.t('linkedin', {scope: 'contact.contacts'})}}</a></p>
+          <p id="twitter" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> <i class="fa fa-twitter"></i> <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">{{I18n.t('twitter', {scope: 'contact.contacts'})}}</a></p>
         </div>
         <!--contact info end-->
       </div>
