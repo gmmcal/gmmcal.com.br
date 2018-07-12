@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  # Verifies that versions and hashed value of the package contents in the
-  # project's package.json
-  config.webpacker.check_yarn_integrity = false
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -21,7 +20,7 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either
   # ENV["RAILS_MASTER_KEY"] or in config/master.key. This key is used to decrypt
   # credentials (and other encrypted files).
-  config.require_master_key = true
+  # config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -29,7 +28,7 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  config.assets.css_compressor = :sass
+  # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -59,13 +58,10 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = %i[request_id]
+  # config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
-  config.public_file_server.headers = {
-    'Cache-Control' => "public, max-age=#{2.days.to_i}"
-  }
+  # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job
   # (and separate queues per environment)
@@ -89,6 +85,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # Use a different logger for distributed setups.
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
@@ -97,6 +94,27 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+end
 
+Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the
+  # project's package.json
+  config.webpacker.check_yarn_integrity = false
+
+  # Ensures that a master key has been made available in either
+  # ENV["RAILS_MASTER_KEY"] or in config/master.key. This key is used to decrypt
+  # credentials (and other encrypted files).
   config.require_master_key = true
+
+  # Compress JavaScripts and CSS.
+  config.assets.css_compressor = :sass
+
+  # Prepend all log lines with the following tags.
+  config.log_tags = %i[request_id]
+
+  # Use a different cache store in production.
+  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
+  config.public_file_server.headers = {
+    'Cache-Control' => "public, max-age=#{2.days.to_i}"
+  }
 end
