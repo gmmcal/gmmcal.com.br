@@ -26,8 +26,20 @@ bundle install
 cp config/secrets-example.yml config/secrets.yml
 ```
 
-The go to your browser and load ```localhost:3000```.
+# Running
+
+Run
+
+```
+foreman start
+```
+
+The go to your browser and load `localhost:3000`.
+
+# Code of Conduct
+
+This repository has a [Code of Conduct](CODE_OF_CONDUCT.md) and all contributors are required to follow it.
 
 # Contributing
 
-Please, check [Contributing](https://github.com/gmmcal/gmmcal.com.br/blob/master/CONTRIBUTING.md)
+Please, check [Contributing](.github/CONTRIBUTING.md) on ways to contribute to this repository.

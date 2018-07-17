@@ -33,7 +33,7 @@ Implement your feature or bug fix.
 
 #### Write Documentation
 
-Document any external behavior in the [README](README.md).
+Document any external behavior in the [README](../README.md).
 
 #### Commit Changes
 
