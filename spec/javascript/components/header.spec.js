@@ -32,10 +32,20 @@ describe('Header', () => {
   })
 
   describe('Window', () => {
-    test.skip('is landscape', () => {
+    test('is landscape', () => {
+      wrapper.setData({
+        windowWidth: 100,
+        windowHeight: 90
+      })
+      expect(wrapper.vm.banner_image_class).toEqual('banner-img bgwidth')
     })
 
-    test.skip('is portrait', () => {
+    test('is portrait', () => {
+      wrapper.setData({
+        windowWidth: 90,
+        windowHeight: 100
+      })
+      expect(wrapper.vm.banner_image_class).toEqual('banner-img bgheight')
     })
   })
 
