@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  caches_action :index
+  # caches_action :index, cache_path: { locale: I18n.locale }
 
   def index
     current_locale = I18n.locale
