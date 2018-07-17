@@ -24,7 +24,7 @@
     },
     "RAILS_SERVE_STATIC_FILES": {
       "required": true
-    },
+    }
   },
   "formation": {
   },
@@ -33,6 +33,12 @@
       "plan": "heroku-postgresql",
       "options": {
         "version": "10"
+      }
+    },
+    {
+      "plan": "heroku-redis",
+      "options": {
+        "version": "3.2"
       }
     }
   ],
