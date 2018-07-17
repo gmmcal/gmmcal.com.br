@@ -1,17 +1,12 @@
 {
   "presets": [
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": "> 1%",
-        "uglify": true
-      },
-      "useBuiltIns": true
-    }]
+    ["env", { "modules": false }]
   ],
-
-  "plugins": [
-    "syntax-dynamic-import",
-    ["transform-class-properties", { "spec": true }]
-  ]
+  "env": {
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ]
+    }
+  }
 }

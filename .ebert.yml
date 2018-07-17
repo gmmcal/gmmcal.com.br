@@ -1,0 +1,23 @@
+engines:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  csslint:
+    enabled: true
+  eslint:
+    enabled: true
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
+  scss-lint:
+    enabled: true
+
+pull_requests:
+  comments: false
+
+exclude_paths:
+  - "app/assets/stylesheets/application.scss"
+  - "app/assets/stylesheets/font-awesome.scss"
+  - "spec/"

@@ -1,9 +1,18 @@
 {
   "name": "Gustavo Cunha",
   "description": "Personal Website",
+  "website": "https://www.gmmcal.com.br/",
+  "repository": "https://github.com/gmmcal/gmmcal.com.br",
   "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
+    "RAILS_MASTER_KEY": {
+      "required": true
+    },
+    "DATABASE_URL": {
+      "required": true
+    },
     "LANG": {
       "required": true
     },
@@ -16,14 +25,16 @@
     "RAILS_SERVE_STATIC_FILES": {
       "required": true
     },
-    "SECRET_KEY_BASE": {
-      "required": true
-    }
   },
   "formation": {
   },
   "addons": [
-
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "10"
+      }
+    }
   ],
   "buildpacks": [
     {

@@ -1,0 +1,10 @@
+export_i18n_js: false
+sort_translation_keys: false
+fallbacks: false
+
+translations:
+  - file: "app/javascript/packs/i18n/en.js"
+    only: 'en.*'
+  - file: "app/javascript/packs/i18n/pt-BR.js"
+    only: 'pt-BR.*'
+

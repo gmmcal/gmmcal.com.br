@@ -1,47 +1,33 @@
 engines:
   brakeman:
-    enabled: true
+    enabled: false
   bundler-audit:
-    enabled: true
+    enabled: false
   csslint:
-    enabled: true
+    enabled: false
   duplication:
     enabled: true
     config:
       languages:
-      - ruby
-      - javascript
-      - python
-      - php
+        - ruby
+        - javascript
   fixme:
     enabled: true
   rubocop:
-    enabled: true
+    enabled: false
 ratings:
   paths:
     - Gemfile.lock
     - "**.erb"
-    - "**.haml"
     - "**.rb"
-    - "**.rhtml"
-    - "**.slim"
     - "**.css"
-    - "**.inc"
     - "**.js"
     - "**.jsx"
     - "**.module"
     - "**.php"
     - "**.py"
 exclude_paths:
-  - "app/assets/javascripts/bootstrap.js"
-  - "app/assets/javascripts/jquery.contact.js"
-  - "app/assets/javascripts/jquery.easing.min.js"
-  - "app/assets/javascripts/jquery.easypiechart.js"
-  - "app/assets/javascripts/jquery.gridrotator.js"
-  - "app/assets/javascripts/jquery.isotope.js"
-  - "app/assets/javascripts/jquery.min.js"
-  - "app/assets/javascripts/jquery.placeholder.js"
-  - "app/assets/javascripts/jquery.ui.rlightbox.js"
-  - "app/assets/javascripts/jquery.ui.widget.min.js"
-  - "app/assets/javascripts/modernizr.js"
-  - "app/assets/javascripts/waypoint.js"
+  - "app/assets/stylesheets/application.scss"
+  - "app/assets/stylesheets/font-awesome.scss"
+  - "config/webpack/**.js"
+  - "spec/"

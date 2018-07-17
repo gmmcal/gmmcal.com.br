@@ -1,0 +1,98 @@
+//----------------------------------------------------
+// 7.  Technical Skills Style
+//------------------------------------------------------
+
+.technical {
+  background: #eee;
+  color: #474d5d;
+
+  .container {
+    padding-bottom: 69px;
+    padding-top: 85px;
+  }
+
+  .heading p {
+    padding-bottom: 41px;
+  }
+
+  p {
+    color: #474d5d;
+  }
+
+  h2 {
+    color: #ff675f;
+  }
+
+  .skills-area {
+    height: 300px;
+    padding: 0;
+  }
+
+  .skills {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 23px;
+    padding: 0;
+    text-align: center;
+
+    p {
+      color: #84868d;
+      font-size: 13px;
+      line-height: 18px;
+      text-align: center;
+    }
+
+    img {
+      margin: 0 auto;
+      margin-bottom: 33px;
+      max-width: 152px;
+      width: 100%;
+    }
+
+    h4 {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .skill-bg {
+    background: asset_url('skills.png') no-repeat 0 0;
+  }
+
+  .chart {
+    display: inline-block;
+    height: 152px;
+    margin-bottom: 26px;
+    position: relative;
+    text-align: center;
+    width: 152px;
+
+    canvas {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .percent {
+    color: #474d5d;
+    display: inline-block;
+    font-size: 21px;
+    line-height: 152px;
+    z-index: 2;
+  }
+
+  .percent::after {
+    content: '%';
+    font-size: .8em;
+    margin-left: .1em;
+  }
+
+  .angular {
+    margin-top: 100px;
+
+    .chart {
+      margin-top: 0;
+    }
+  }
+}

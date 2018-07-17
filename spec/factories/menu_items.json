@@ -1,0 +1,12 @@
+[
+  {
+    "label": "home",
+    "link": "#home",
+    "css_class": "home"
+  },
+  {
+    "label": "about",
+    "link": "#about",
+    "css_class": "about"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "fields": {
+    "job_title": {
+      "en": "Hello, World!",
+      "pt-BR": "Hello, World!"
+    },
+    "description": {
+      "en": "Bacon is healthy!",
+      "pt-BR": "Bacon is healthy!"
+    },
+    "cv": {
+      "en": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Asset",
+          "id": "jha09uqjkn0912381plknsajkda8928ouqjadsjh"
+        }
+      },
+      "pt-BR": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Asset",
+          "id": "jha09uqjkn0912381plknsajkda8928ouqjadsjh"
+        }
+      }
+    },
+    "city": {
+      "en": "Some City",
+      "pt-BR": "Some City"
+    },
+    "country": {
+      "en": "Some Country",
+      "pt-BR": "Some Country"
+    },
+    "phone_number": {
+      "en": "Phone Number"
+    },
+    "email": {
+      "en": "email@example.com"
+    }
+  },
+  "sys": {
+    "id": "asdijnoasdansdkasdnalkdnas",
+    "type": "Entry",
+    "version": 1,
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "asdflasfajksdfnasdfn"
+      }
+    },
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "about"
+      }
+    },
+    "createdAt": "2016-12-20T10:43:35.772Z",
+    "updatedAt": "2016-12-20T10:43:35.772Z",
+    "revision": 1
+  }
+}

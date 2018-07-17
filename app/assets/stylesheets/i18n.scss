@@ -1,0 +1,38 @@
+.i18n {
+  height: 50px;
+  position: fixed;
+  right: 0;
+  top: 15px;
+  width: 100px;
+  z-index: 100;
+
+  li {
+    float: right;
+    list-style: none;
+    margin-right: 8%;
+    width: 40%;
+
+    .flag {
+      background: asset_url('flags.png') no-repeat;
+      display: inline-block;
+      height: 32px;
+      opacity: .8;
+      outline: none;
+      text-indent: -10000px;
+      transition: opacity .5s ease-in-out;
+      width: 32px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.pt-br {
+        background-position: -32px 0;
+      }
+
+      &.en {
+        background-position: 0 -32px;
+      }
+    }
+  }
+}

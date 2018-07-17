@@ -1,0 +1,46 @@
+//----------------------------------------------------
+// 12. Footer Style
+//------------------------------------------------------
+.footer {
+  background: #00bdbd;
+
+  .container {
+    padding: 40px 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+
+    li {
+      background: #fff;
+      border-radius: 50%;
+      color: #00bdbd;
+      display: inline-block;
+      height: 42px;
+      line-height: 42px;
+      margin: 0 6px;
+      text-align: center;
+      width: 42px;
+
+      &:hover {
+        background: #0a9f9f;
+
+        a {
+          color: #fff;
+        }
+      }
+
+      a {
+        color: #00bdbd;
+        height: 42px;
+        width: 42px;
+
+        i {
+          line-height: 42px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+//----------------------------------------------------
+// 5.  Menu Style
+//------------------------------------------------------
+
+.navbar-wrapper {
+  //Special class on .container surrounding .navbar, used for positioning it into place.
+  background: #262b37;
+  margin-top: 0;
+  position: relative;
+  z-index: 15;
+
+  &.is-stuck {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0;
+  }
+}
+
+.menu {
+  left: 0;
+  margin-top: 0;
+  position: static;
+  right: 0;
+}
+
+.navwrapper .container {
+  padding: 0;
+  width: auto;
+}
+
+.navbar-header {
+  display: none;
+}
+
+.nav > li > a {
+  display: inline-block;
+}
+
+.navbar-nav {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+
+  > li {
+    display: inline;
+    float: none;
+
+    &::after {
+      content: ' ';
+    }
+  }
+}
+
+.navbar-toggle {
+  margin-top: 14px;
+}
+
+.navbar-collapse {
+  padding: 0;
+
+  &.in {
+    max-height: 100%;
+  }
+}
+
+.navbar.navbar-inverse.navbar-static-top {
+  background: #262b37;
+  border: 0;
+  color: #c3c8d6;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 0 auto;
+  text-transform: uppercase;
+
+  a {
+    color: #c3c8d6;
+    line-height: 18px;
+    padding: 22px 25px;
+    text-align: center;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background: #1b1f29;
+  color: #c3c8d6;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background: #1b1f29;
+  color: #fff;
+}
+
+.hide-class {
+  display: none;
+}
+
+
+//CUSTOMIZE THE CAROUSEL
+//--------------------------------------------------
+
+//Carousel base class
+.carousel {
+  //Since positioning the image, we need to help out the caption
+  .carousel-caption {
+    z-index: 10;
+  }
+
+  //Declare heights because of positioning of img element
+  .item {
+    background-color: #0a64a4;
+    height: 600px;
+  }
+
+  .carousel-inner > .item > img {
+    left: 0;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+  }
+}

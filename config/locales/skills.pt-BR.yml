@@ -2,22 +2,3 @@ pt-BR:
   skills:
     title: "Habilidades Técnicas"
     subtitle: "Eu sei no que eu sou bom, mas estou sempre aprendendo"
-    details:
-      skill1_name: "Ruby on Rails"
-      skill1_title: "Paixão a primeira linha de código"
-      skill1_percentage: 90
-      skill2_name: "PHP"
-      skill2_title: "+13 anos de experiência"
-      skill2_percentage: 90
-      skill3_name: "Objective-C / Swift"
-      skill3_title: "Desafios a frente"
-      skill3_percentage: 70
-      skill4_name: "MySQL"
-      skill4_title: "select * from table..."
-      skill4_percentage: 75
-      skill5_name: "PostgreSQL"
-      skill5_title: "Uma nova abordagem...."
-      skill5_percentage: 70
-      skill6_name: "HTML / CSS"
-      skill6_title: "Aprendendo diariamente"
-      skill6_percentage: 60
