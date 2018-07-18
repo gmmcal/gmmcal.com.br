@@ -39,10 +39,10 @@
       "!**/node_modules/**"
     ],
     "coverageReporters": [
-      "lcov",
+      "lcovonly",
       "html"
     ],
-    "coverageDirectory": "cov_js",
+    "coverageDirectory": "coverage/frontend",
     "transform": {
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"

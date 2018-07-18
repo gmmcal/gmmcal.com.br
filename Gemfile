@@ -41,7 +41,6 @@ end
 
 # Test suite
 group :test do
-  gem 'codeclimate-test-reporter'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'faker'
