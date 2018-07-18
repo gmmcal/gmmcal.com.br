@@ -1,18 +1,39 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  # caches_action :index, cache_path: { locale: I18n.locale }
-
   def index
-    current_locale = I18n.locale
-    @about = About.with_locale(current_locale).first_or_initialize
-    @educations = Education.ordered.with_locale(current_locale)
-    @skills = Skill.ordered.with_locale(current_locale)
-    @work_experiences = WorkExperience.ordered.with_locale(current_locale)
+    @about = about
+    @educations = educations
+    @skills = skills
+    @work_experiences = work_experiences
     set_gon_data
   end
 
   private
+
+  def about
+    Rails.cache.fetch("#{I18n.locale}/about", expires_in: 12.hours) do
+      About.with_locale(I18n.locale).first_or_initialize
+    end
+  end
+
+  def educations
+    Rails.cache.fetch("#{I18n.locale}/educations", expires_in: 12.hours) do
+      Education.ordered.with_locale(I18n.locale)
+    end
+  end
+
+  def skills
+    Rails.cache.fetch("#{I18n.locale}/skills", expires_in: 12.hours) do
+      Skill.ordered.with_locale(I18n.locale)
+    end
+  end
+
+  def work_experiences
+    Rails.cache.fetch("#{I18n.locale}/experiences", expires_in: 12.hours) do
+      WorkExperience.ordered.with_locale(I18n.locale)
+    end
+  end
 
   def set_gon_data
     gon.flag_links = flag_links
