@@ -36,4 +36,4 @@ script:
 bundler_args: --without production
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $EXIT_CODE
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
