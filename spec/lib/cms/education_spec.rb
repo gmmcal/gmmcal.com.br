@@ -1,11 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Cms::Education do
-  let (:file_content) { JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'education.json'))) }
+  subject(:education) { described_class.new(data, {}, true) }
 
-  include_examples ".save"
+  let(:file_content) { JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'education.json'))) }
 
-  it 'should map to Education model' do
-    expect(subject.model).to eq(::Education)
+  let(:data) { file_content.to_h.with_indifferent_access }
+
+  include_examples '.save' do
+    let(:object) { education }
+  end
+
+  it 'maps to Education model' do
+    expect(education.model).to eq(::Education)
   end
 end

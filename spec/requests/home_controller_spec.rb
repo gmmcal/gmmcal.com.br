@@ -1,36 +1,38 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :request do
   context do
-    before(:each) do
+    before do
       get "/#{locale}"
     end
 
-    shared_context 'Localization' do
-      it 'should be a success' do
+    shared_examples 'Localization' do
+      it 'is a success' do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'should render template in english' do
+      it 'renders template in english' do
         expect(I18n.locale).to be(expected_locale)
       end
     end
 
-    context 'Without locale' do
-      let(:locale) { }
+    context 'without locale' do
+      let(:locale) {}
       let(:expected_locale) { :en }
 
       it_behaves_like 'Localization'
     end
 
-    context 'With locale in en' do
+    context 'with locale in en' do
       let(:locale) { :en }
       let(:expected_locale) { :en }
 
       it_behaves_like 'Localization'
     end
 
-    context 'With locale in pt-BR' do
+    context 'with locale in pt-BR' do
       let(:locale) { :'pt-BR' }
       let(:expected_locale) { :'pt-BR' }
 
@@ -38,16 +40,16 @@ RSpec.describe HomeController, type: :request do
     end
   end
 
-  context '/sitemap' do
-    before(:each) do
-      get "/sitemap"
+  describe '/sitemap' do
+    before do
+      get '/sitemap'
     end
 
-    it 'should be a success' do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'should render template in xml' do
+    it 'renders template in xml' do
       expect(response.content_type).to eq 'application/xml'
     end
   end
