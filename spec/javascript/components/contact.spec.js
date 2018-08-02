@@ -11,48 +11,52 @@ describe('Contact', () => {
     wrapper = mount(Contact)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = ['about', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
-  describe('Contact details', () => {
-    test('Contains city', () => {
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  describe('Content', () => {
+    it('has a city', () => {
       const el = wrapper.find('#location span')
       expect(el.text()).toBe('City')
     })
 
-    test('Contains country', () => {
+    it('has a country', () => {
       const el = wrapper.find('#location span:last-child')
       expect(el.text()).toBe('Country')
     })
 
-    test('Contains phone number', () => {
+    it('has a phone number', () => {
       const el = wrapper.find('#phone_number')
       expect(el.text()).toBe('817634986124')
     })
 
-    test('Contains email', () => {
+    it('has an email', () => {
       const el = wrapper.find('#email')
       expect(el.text()).toBe('email@domain.com')
     })
 
-    test('Contains github', () => {
+    it('has a github link', () => {
       const el = wrapper.find('#github')
       expect(el.text()).toBe('gmmcal')
     })
 
-    test('Contains linkedin', () => {
+    it('has a linkedin link', () => {
       const el = wrapper.find('#linkedin')
       expect(el.text()).toBe('Gustavo Cunha')
     })
 
-    test('Contains twitter', () => {
+    it('has a twitter link', () => {
       const el = wrapper.find('#twitter')
       expect(el.text()).toBe('@gmmcal')
     })

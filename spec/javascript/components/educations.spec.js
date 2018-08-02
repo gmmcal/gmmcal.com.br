@@ -12,23 +12,27 @@ describe('Educations', () => {
     wrapper = mount(Educations)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = ['educations', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   describe('Child components', () => {
-    test('Educations', () => {
+    it('includes Educations', () => {
       const child_component = wrapper.find(Educations)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Renders 2 Education objects', () => {
+    it('renders 2 Education objects', () => {
       wrapper = shallowMount(Educations)
       const educations = wrapper.findAll(Education)
       expect(educations.length).toBe(2)

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header>
+  <div>
+    <ul class="i18n">
+      <li class="active">
+        <a href="#home" class="home">Home</a>
+      </li>
+      <li>
+        <a href="#about" class="about">About</a>
+      </li>
+    </ul>
+  </div>
+  <div class="banner">
+    <div class="row" style="width: 0px; height: -60px;">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">
+        <div class="banner-part">
+          <img src="bar.jpg" alt="Banner" class="banner-img bgwidth">
+        </div>
+      </div>
+    </div>
+    <div class="banner-text container">
+      <h1>Gustavo Cunha</h1>
+      <h2>Web developer, Mobile and Software Engineer Consultant</h2>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="navbar-wrapper is-stuck">
+      <div class="container">
+        <div class="navwrapper">
+          <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button aria-label="Menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+              </div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active">
+                    <a href="#home" class="home">Home</a>
+                  </li>
+                  <li>
+                    <a href="#about" class="about">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;

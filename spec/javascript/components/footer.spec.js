@@ -9,22 +9,26 @@ describe('Footer', () => {
     wrapper = mount(Footer)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = []
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
-  test('Has footer class', () => {
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  it('has footer class', () => {
     expect(wrapper.classes()).toContain('footer')
   })
 
   describe('Child components', () => {
-    test('Social', () => {
+    it('includes Social', () => {
       const child_component = wrapper.find(Social)
       expect(child_component.isVueInstance()).toBeTruthy()
     })

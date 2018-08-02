@@ -27,38 +27,42 @@ describe('Body', () => {
     wrapper = mount(Body, props)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = []
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   describe('Child components', () => {
-    test('About', () => {
+    it('includes About', () => {
       const child_component = wrapper.find(About)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Contact', () => {
+    it('includes Contact', () => {
       const child_component = wrapper.find(Contact)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Educations', () => {
+    it('includes Educations', () => {
       const child_component = wrapper.find(Educations)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Experiences', () => {
+    it('includes Experiences', () => {
       const child_component = wrapper.find(Experiences)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Skills', () => {
+    it('includes Skills', () => {
       const child_component = wrapper.find(Skills)
       expect(child_component.isVueInstance()).toBeTruthy()
     })

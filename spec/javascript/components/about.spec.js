@@ -18,43 +18,47 @@ describe('About', () => {
     wrapper = mount(About, props)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = ['about', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
-  describe('Contains', () => {
-    test('page title', () => {
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  describe('Content', () => {
+    it('has a page title', () => {
       const el = wrapper.find('h2')
       expect(el.text()).toBe('About Me')
     })
 
-    test('user name', () => {
+    it('has an user name', () => {
       const el = wrapper.find('h3')
       expect(el.text()).toBe('Gustavo Cunha')
     })
 
-    test('job title', () => {
+    it('has a job title', () => {
       const el = wrapper.find('.sub-heading')
       expect(el.text()).toBe('Some title at some company')
     })
 
-    test('user image', () => {
+    it('has an user image', () => {
       expect(wrapper.contains('img[src="bar.jpg"]')).toBe(true)
     })
 
-    test('CV link', () => {
+    it('has a CV link', () => {
       expect(wrapper.contains('a[href="file.pdf"]')).toBe(true)
     })
   })
 
   describe('Child components', () => {
-    test('VueMarkdown', () => {
+    it('includes VueMarkdown', () => {
       const child_component = wrapper.find(VueMarkdown)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
