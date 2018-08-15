@@ -45,7 +45,7 @@ describe('About', () => {
     })
 
     test('user image', () => {
-      expect(wrapper.contains('img[src="bar.jpg"]')).toBe(true)
+      expect(wrapper.contains('img.b-lazy[data-src="bar.jpg"]')).toBe(true)
     })
 
     test('CV link', () => {

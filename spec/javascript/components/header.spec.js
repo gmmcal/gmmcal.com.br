@@ -37,7 +37,7 @@ describe('Header', () => {
         windowWidth: 100,
         windowHeight: 90
       })
-      expect(wrapper.vm.banner_image_class).toEqual('banner-img bgwidth')
+      expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgwidth')
     })
 
     test('is portrait', () => {
@@ -45,7 +45,7 @@ describe('Header', () => {
         windowWidth: 90,
         windowHeight: 100
       })
-      expect(wrapper.vm.banner_image_class).toEqual('banner-img bgheight')
+      expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgheight')
     })
   })
 

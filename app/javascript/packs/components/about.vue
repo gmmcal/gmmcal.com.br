@@ -12,7 +12,7 @@
           <a :href="about.cv" class="bnt-download" target="_blank" rel="noopener">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
         </div>
         <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 pro-pic">
-          <img :src="image" :alt="I18n.t('name', { scope: 'template' })" class="topmar" />
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" :data-src="image" :alt="I18n.t('name', { scope: 'template' })" class="topmar b-lazy" />
         </div>
       </div>
     </div>

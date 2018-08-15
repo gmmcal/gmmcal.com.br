@@ -9,7 +9,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
           <!--background slide show start-->
           <div class="banner-part">
-            <img :src="this.image" :class="banner_image_class" alt="Banner" />
+            <img :data-src="this.image" :class="banner_image_class" alt="Banner" />
           </div>
           <!--background slide show end-->
         </div>
@@ -80,9 +80,9 @@ export default {
     },
     banner_image_class() {
       if (this.windowWidth < this.windowHeight) {
-        return 'banner-img bgheight'
+        return 'b-lazy banner-img bgheight'
       }
-      return 'banner-img bgwidth'
+      return 'b-lazy banner-img bgwidth'
     }
   },
   mounted() {

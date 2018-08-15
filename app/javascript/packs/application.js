@@ -9,6 +9,7 @@
 
 import Turbolinks from 'turbolinks'
 import TurbolinksAdapter from 'vue-turbolinks'
+import Blazy from 'blazy'
 import Vue from 'vue/dist/vue.esm'
 import Header from './components/header.vue'
 import Body from './components/body.vue'
@@ -29,6 +30,7 @@ document.addEventListener('turbolinks:load', () => {
     },
     mounted() {
       I18n.locale = document.getElementById('home').getAttribute('data-locale')
+      new Blazy()
     }
   })
 })

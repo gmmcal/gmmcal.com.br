@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.5",
+    "blazy": "^1.8.2",
     "bootstrap": "^3.3.7",
     "easy-pie-chart": "^2.1.7",
     "i18n-js": "^3.0.8",
