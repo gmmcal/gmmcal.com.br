@@ -1,0 +1,27 @@
+//----------------------------------------------------
+// 9.  Background  Images
+//------------------------------------------------------
+
+.education {
+  .arrowpart {
+    background: asset_url('arrow-left-light.png') no-repeat 0 23px;
+
+    @media screen and (max-width: 767px) {
+      background: asset_url('arrow-top-light.png') no-repeat 50% 100%;
+    }
+  }
+}
+
+.experience {
+  .arrowpart {
+    background: asset_url('arrow-left.png') no-repeat 0 23px;
+
+    @media screen and (max-width: 767px) {
+      background: asset_url('arrow-top.png') no-repeat 50% 100%;
+    }
+  }
+}
+
+.flag {
+  background: asset_url('flags.png') no-repeat;
+}

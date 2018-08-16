@@ -28,7 +28,7 @@ describe('Experience', () => {
 
   describe('Content', () => {
     test('Contains dates', () => {
-      const el = wrapper.find('.work-year')
+      const el = wrapper.find('.year')
       expect(el.text()).toBe('Jan / 2015Jan / 2016')
     })
 
@@ -71,7 +71,7 @@ describe('Experience', () => {
       })
 
       test('Contains currently text', () => {
-        const el = wrapper.find('.work-year')
+        const el = wrapper.find('.year')
         expect(el.text()).toBe('Jan / 2015Currently')
       })
     })

@@ -16,7 +16,7 @@ describe('Contact', () => {
   })
 
   test('Component data properties', () => {
-    const expected = ['about', 'I18n']
+    const expected = ['about', 'I18n', 'iconMap', 'iconMobile', 'iconEmail', 'iconGithub', 'iconLinkedin', 'iconTwitter']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })

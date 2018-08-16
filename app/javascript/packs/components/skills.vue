@@ -28,3 +28,24 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.technical {
+  background: #eee;
+  color: #474d5d;
+
+  .container {
+    padding-bottom: 69px;
+    padding-top: 85px;
+  }
+
+  p {
+    color: #474d5d;
+    padding-bottom: 41px;
+  }
+
+  h2 {
+    color: #ff675f;
+  }
+}
+</style>

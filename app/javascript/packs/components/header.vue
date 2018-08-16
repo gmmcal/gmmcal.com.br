@@ -116,3 +116,169 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+header {
+  position: relative;
+
+  .banner {
+    .row {
+      background: #cacaca;
+      margin: 60px auto 0;
+      overflow: hidden;
+
+      .no-padd {
+        padding: 0;
+      }
+    }
+  }
+
+  .banner-text {
+    left: 0;
+    padding: 30px 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 35%;
+    zoom: 1;
+
+    @media screen and (max-width: 991px) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 650px) {
+      padding-bottom: 15px;
+      padding-top: 15px;
+      top: 20%;
+    }
+
+    h1 {
+      font-size: 51px;
+      font-weight: 100;
+      letter-spacing: 16px;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 991px) {
+        font-size: 65px;
+        line-height: 71px;
+      }
+
+      @media screen and (max-width: 650px) {
+        font-size: 42px;
+        line-height: 40px;
+      }
+    }
+
+    h2 {
+      font-size: 17px;
+      letter-spacing: 8px;
+      line-height: 45px;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 991px) {
+        font-size: 28px;
+      }
+
+      @media screen and (max-width: 650px) {
+        font-size: 15px;
+        line-height: 24px;
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .bgwidth {
+    width: 100%;
+
+    @media screen and (max-width: 1024px) {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .bgheight {
+    height: 100%;
+  }
+
+  .navbar-wrapper {
+    min-height: 62px;
+  }
+
+  .banner-part {
+    background: #1b1f2b;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      filter: alpha(opacity = 20); // For IE8 and earlier
+      opacity: .2;
+    }
+  }
+
+  .menu {
+    left: 0;
+    margin-top: 0;
+    position: static;
+    right: 0;
+
+    .navbar-wrapper {
+      //Special class on .container surrounding .navbar, used for positioning it into place.
+      background: #262b37;
+      margin-top: 0;
+      position: relative;
+      z-index: 15;
+
+      &.is-stuck {
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .container {
+        padding: 0;
+
+        .navwrapper .container {
+          padding: 0;
+          width: auto;
+        }
+
+        .navbar-header {
+          display: none;
+
+          @media screen and (max-width: 767px) {
+            display: block;
+          }
+        }
+      }
+
+      .navbar-inverse {
+        &.navbar-static-top {
+          background: #262b37;
+          border: 0;
+          color: #c3c8d6;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 14px;
+          margin: 0 auto;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .navbar-toggle {
+      margin-top: 14px;
+    }
+
+    .navbar-collapse {
+      padding: 0;
+
+      &.in {
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+
+</style>

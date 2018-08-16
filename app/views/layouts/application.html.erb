@@ -21,13 +21,8 @@
   <!--font-family: 'Open Sans', sans-serif;-->
   <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
   <%= javascript_pack_tag 'application', type: 'application/javascript' %>
-  <noscript>
-    <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
-  </noscript>
-  <!--[if lt IE 9]>
-    <%= stylesheet_link_tag 'fallback', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
-  <![endif]-->
   <%= csrf_meta_tags %>
 </head>
 <body id="home" class="<%= I18n.locale.downcase %>" data-locale="<%= I18n.locale %>">

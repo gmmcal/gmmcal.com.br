@@ -28,7 +28,7 @@ describe('Education', () => {
 
   describe('Content', () => {
     test('Contains end date', () => {
-      const el = wrapper.find('.work-year')
+      const el = wrapper.find('.year')
       expect(el.text()).toBe('Jan / 2016')
     })
 
@@ -57,7 +57,7 @@ describe('Education', () => {
       const wrapper = mount(Education, props)
 
       test('Contains currently text', () => {
-        const el = wrapper.find('.work-year')
+        const el = wrapper.find('.year')
         expect(el.text()).toBe('Currently')
       })
     })

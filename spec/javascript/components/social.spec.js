@@ -13,7 +13,7 @@ describe('Social', () => {
   })
 
   test('Component data properties', () => {
-    const expected = []
+    const expected = ['iconGithub', 'iconLinkedin', 'iconTwitter']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })

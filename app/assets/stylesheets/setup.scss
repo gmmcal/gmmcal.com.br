@@ -1,20 +1,56 @@
 //----------------------------------------------------
-// 2. Document Setup
+// 1. Elements default
 //----------------------------------------------------
-.wrapper {
-  width: 100%;
-}
-
-.sp-height {
-  padding-top: 63px;
-}
-
-.no-padd {
+* {
+  margin: 0;
   padding: 0;
 }
 
-.container .row {
-  margin: 0;
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+
+  @media screen and (max-width: 810px) {
+    min-height: 700px;
+  }
+
+  &.en {
+    noscript {
+      .en {
+        display: block;
+      }
+
+      .pt-br {
+        display: none;
+      }
+    }
+  }
+
+  &.pt-br {
+    noscript {
+      .en {
+        display: none;
+      }
+
+      .pt-br {
+        display: block;
+      }
+    }
+  }
+
+}
+
+a {
+  color: #fff;
+  outline: none;
+  text-decoration: none;
 }
 
 p {
@@ -79,43 +115,36 @@ h5 {
   padding-bottom: 6px;
 }
 
+img {
+  vertical-align: middle;
+}
+
+//----------------------------------------------------
+// 2. Document Setup
+//----------------------------------------------------
+.wrapper {
+  width: 100%;
+
+  @media screen and (max-width: 650px) {
+    top: 200px;
+  }
+}
+
+.container {
+  @media (min-width: 1200px) {
+    max-width: 1170px;
+  }
+
+  .row {
+    margin: 0;
+  }
+}
+
 .heading {
   padding-bottom: 45px;
   text-align: center;
 }
 
-.topmar {
-  margin-top: -100px;
-}
-
-.modal-title {
-  color: #000;
-}
-
 .schema {
   display: none;
-}
-
-.en {
-  noscript {
-    .en {
-      display: block;
-    }
-
-    .pt-br {
-      display: none;
-    }
-  }
-}
-
-.pt-br {
-  noscript {
-    .en {
-      display: none;
-    }
-
-    .pt-br {
-      display: block;
-    }
-  }
 }
