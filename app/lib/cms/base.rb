@@ -6,7 +6,7 @@ module Cms
       available_locales.each do |locale|
         data = get_instance(locale)
         data = update_localized_attributes(data, locale)
-        data = update_attributes(data)
+        data = update_model_attributes(data)
         data = update_file_fields(data, locale)
         data.save!
       end
@@ -52,7 +52,7 @@ module Cms
       data
     end
 
-    def update_attributes(data)
+    def update_model_attributes(data)
       attributes.each do |app_attribute, cms_attribute|
         data[app_attribute] =
           fields_with_locales.dig(cms_attribute, default_locale)

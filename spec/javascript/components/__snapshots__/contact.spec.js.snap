@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact renders correctly 1`] = `
+<section id="contact">
+  <section class="contact">
+    <div class="container top-con">
+      <div class="heading">
+        <h2>Contact me</h2>
+        <p>Feel free to contact me</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-details">
+    <div class="container">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h4>Contacts</h4>
+        <p id="location" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <i class="fa fa-map-marker fa-lg"></i> <span>City</span> - <span>Country</span></p>
+        <p id="phone_number" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <i class="fa fa-mobile fa-lg"></i> 817634986124</p>
+        <p id="email" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <i class="fa fa-envelope-o "></i> email@domain.com</p>
+        <p id="github" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <i class="fa fa-github"></i>
+          <a href="https://github.com/gmmcal" target="_blank" rel="noopener">gmmcal</a>
+        </p>
+        <p id="linkedin" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <i class="fa fa-linkedin"></i>
+          <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">Gustavo Cunha</a>
+        </p>
+        <p id="twitter" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          <i class="fa fa-twitter"></i>
+          <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">@gmmcal</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</section>
+`;

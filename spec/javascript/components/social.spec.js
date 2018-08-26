@@ -8,13 +8,17 @@ describe('Social', () => {
     wrapper = mount(Social)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = []
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
+  })
+
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
   })
 })

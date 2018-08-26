@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Body renders correctly 1`] = `
+<section>
+  <section id="about" class="aboutme">
+    <div class="container">
+      <div class="heading">
+        <h2>About Me</h2>
+      </div>
+      <div class="row">
+        <div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
+          <h3>Gustavo Cunha</h3>
+          <h4 class="sub-heading">Some title at some company</h4>
+          <div>
+            <p>Lorem ipsum nulus dolor.</p>
+          </div>
+          <a href="file.pdf" target="_blank" rel="noopener" class="bnt-download">PDF Download</a>
+        </div>
+        <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-1 col-lg-offset-1 pro-pic">
+          <img src="bar.jpg" alt="Gustavo Cunha" class="topmar">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="technical">
+    <div class="container">
+      <div class="heading">
+        <h2>Technical Skills</h2>
+        <p>I know what I'm good at, but I'm always learning</p>
+      </div>
+      <div class="row">
+        <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-area">
+          <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"><span data-percent="100" class="chart skill-bg"><span class="percent"></span>
+            <div></div>
+            </span>
+            <h4>Skill Name</h4>
+            <p>Skill hero</p>
+          </div>
+        </div>
+        <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-area">
+          <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 skills"><span data-percent="90" class="chart skill-bg"><span class="percent"></span>
+            <div></div>
+            </span>
+            <h4>Another Skill</h4>
+            <p>You are awesome</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="heading">
+        <h2>Work Experience</h2>
+        <p>Companies that I have worked for</p>
+      </div>
+      <div class="row work-details">
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <div class="work-year">Jan / 2015
+            <br>Jan / 2016</div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+          <div class="arrowpart"></div>
+          <div class="ex-con">
+            <h4><span>Amazing company</span> - <span><span>Great city</span> - <span>Some country</span></span>
+            </h4>
+            <h5>Ninja developer</h5>
+            <div class="description">
+              <p>Lorem ipsum nulus dolor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row work-details">
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <div class="work-year">Jan / 2015
+            <br>Jan / 2016</div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+          <div class="arrowpart"></div>
+          <div class="ex-con">
+            <h4><span>Amazing company</span> - <span><span>Great city</span> - <span>Some country</span></span>
+            </h4>
+            <h5>Ninja developer</h5>
+            <div class="description">
+              <p>Lorem ipsum nulus dolor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="education" class="education">
+    <div class="container">
+      <div class="heading">
+        <h2>Education and Diplomas</h2>
+        <p>What I did on my academic career</p>
+      </div>
+      <div class="row work-details">
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <div class="work-year">Currently</div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+          <div class="arrowpart"></div>
+          <div class="ex-con">
+            <h4>Some awesome university</h4>
+            <h5>Computer science</h5>
+            <div class="description">
+              <p>Lorem ipsum nulus dolor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row work-details">
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <div class="work-year">Jan / 2016</div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+          <div class="arrowpart"></div>
+          <div class="ex-con">
+            <h4>Some awesome university</h4>
+            <h5>Computer science</h5>
+            <div class="description">
+              <p>Lorem ipsum nulus dolor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <section class="contact">
+      <div class="container top-con">
+        <div class="heading">
+          <h2>Contact me</h2>
+          <p>Feel free to contact me</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-details">
+      <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h4>Contacts</h4>
+          <p id="location" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <i class="fa fa-map-marker fa-lg"></i> <span>City</span> - <span>Country</span></p>
+          <p id="phone_number" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <i class="fa fa-mobile fa-lg"></i> 817634986124</p>
+          <p id="email" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <i class="fa fa-envelope-o "></i> email@domain.com</p>
+          <p id="github" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <i class="fa fa-github"></i>
+            <a href="https://github.com/gmmcal" target="_blank" rel="noopener">gmmcal</a>
+          </p>
+          <p id="linkedin" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <i class="fa fa-linkedin"></i>
+            <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">Gustavo Cunha</a>
+          </p>
+          <p id="twitter" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <i class="fa fa-twitter"></i>
+            <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">@gmmcal</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </section>
+</section>
+`;

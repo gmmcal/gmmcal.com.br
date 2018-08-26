@@ -18,6 +18,7 @@
     "babel-jest": "^23.2.0",
     "jest": "^23.2.0",
     "jest-canvas-mock": "^1.0.3",
+    "jest-serializer-vue": "^2.0.2",
     "vue-jest": "^2.6.0",
     "webpack-dev-server": "^2.11.2"
   },
@@ -27,7 +28,9 @@
       "spec/javascript",
       "app/javascript/packs"
     ],
-    "setupFiles": ["jest-canvas-mock"],
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",
@@ -53,7 +56,10 @@
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/app/javascript/packs/$1"
-    }
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ]
   },
   "scripts": {
     "test": "jest --watch",
