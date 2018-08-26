@@ -1,14 +1,12 @@
-RSpec.shared_examples ".save" do
-  let (:data) { file_content.to_h.with_indifferent_access }
+# frozen_string_literal: true
 
-  subject { described_class.new(data, {}, true) }
-
-  before(:each) do
-    allow_any_instance_of(described_class).to receive(:url_for_field).and_return('file.ext')
+RSpec.shared_examples '.save' do
+  before do
+    allow(object).to receive(:url_for_field).and_return('file.ext')
   end
 
-  it 'should create an entry' do
-    subject.save
-    expect(subject.model.count).to_not be_zero
+  it 'creates an entry' do
+    object.save
+    expect(object.model.count).not_to be_zero
   end
 end

@@ -21,18 +21,22 @@ describe('Header', () => {
     wrapper = mount(Header, props)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = ['flag_links', 'menu_links', 'bannerWidth', 'bannerHeight', 'windowWidth', 'windowHeight', 'i18n_css_class', 'main_css_class', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   describe('Window', () => {
-    test('is landscape', () => {
+    it('is landscape', () => {
       wrapper.setData({
         windowWidth: 100,
         windowHeight: 90
@@ -40,7 +44,7 @@ describe('Header', () => {
       expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgwidth')
     })
 
-    test('is portrait', () => {
+    it('is portrait', () => {
       wrapper.setData({
         windowWidth: 90,
         windowHeight: 100
@@ -49,13 +53,21 @@ describe('Header', () => {
     })
   })
 
+  it.skip('expand_menu', () => {
+    wrapper.vm.expand_menu()
+  })
+
+  it.skip('destroy', () => {
+    wrapper.destroy()
+  })
+
   describe('Child components', () => {
-    test('Menu', () => {
+    it('includes Menu', () => {
       const child_component = wrapper.find(Menu)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Renders 2 Menu objects', () => {
+    it('renders 2 Menu objects', () => {
       wrapper = shallowMount(Header)
       const menus = wrapper.findAll(Menu)
       expect(menus.length).toBe(2)

@@ -45,6 +45,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'rubocop-rspec'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
 end

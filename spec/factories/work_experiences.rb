@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :work_experience do
     company_name { Faker::Company.name }

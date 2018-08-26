@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Educations renders correctly 1`] = `
+<section id="education" class="education">
+  <div class="container">
+    <div class="heading">
+      <h2>Education and Diplomas</h2>
+      <p>What I did on my academic career</p>
+    </div>
+    <div class="row education-details">
+      <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+        <div class="year">Currently</div>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+        <div class="arrowpart"></div>
+        <div class="ex-con">
+          <h4>Some awesome university</h4>
+          <h5>Computer science</h5>
+          <div class="description">
+            <p>Lorem ipsum nulus dolor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row education-details">
+      <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+        <div class="year">Jan / 2016</div>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
+        <div class="arrowpart"></div>
+        <div class="ex-con">
+          <h4>Some awesome university</h4>
+          <h5>Computer science</h5>
+          <div class="description">
+            <p>Lorem ipsum nulus dolor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

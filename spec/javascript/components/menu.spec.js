@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Menu from '@/components/menu'
 import MenuItem from '@/components/menu_item'
 import create from '../settings/utils'
@@ -16,23 +16,33 @@ describe('Menu', () => {
     wrapper = mount(Menu, props)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = ['active']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
-  test.skip('Scroll', () => {
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  it.skip('scroll', () => {
   })
 
   describe('Child components', () => {
-    test('MenuItem', () => {
+    it('includes MenuItem', () => {
       const child_component = wrapper.find(MenuItem)
       expect(child_component.isVueInstance()).toBeTruthy()
+    })
+
+    it('renders 2 MenuItem objects', () => {
+      wrapper = shallowMount(Menu, props)
+      const menu_items = wrapper.findAll(MenuItem)
+      expect(menu_items.length).toBe(2)
     })
   })
 })

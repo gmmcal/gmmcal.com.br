@@ -12,23 +12,27 @@ describe('Skills', () => {
     wrapper = mount(Skills)
   })
 
-  test('Component is a Vue instance', () => {
+  it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('Component data properties', () => {
+  it('has data properties', () => {
     const expected = ['skills', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   describe('Child components', () => {
-    test('Skill', () => {
+    it('includes Skill', () => {
       const child_component = wrapper.find(Skill)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    test('Renders 2 Skill objects', () => {
+    it('renders 2 Skill objects', () => {
       wrapper = shallowMount(Skills)
       const skills = wrapper.findAll(Skill)
       expect(skills.length).toBe(2)

@@ -21,7 +21,7 @@ Vue.use(TurbolinksAdapter)
 Turbolinks.start()
 
 document.addEventListener('turbolinks:load', () => {
-  const app = new Vue({
+  new Vue({
     el: '#wrapper',
     components: {
       'vue-header': Header,

@@ -3,9 +3,11 @@ AllCops:
   DisplayCopNames: true
   Exclude:
     - 'db/schema.rb'
-    - 'spec/**/*'
     - 'node_modules/**/*'
     - 'vendor/**/*'
+
+Rails:
+  Enabled: true
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
@@ -21,3 +23,16 @@ Lint/ScriptPermission:
 
 Style/MixinUsage:
   Enabled: false
+
+Metrics/LineLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+require: rubocop-rspec
+
+RSpec/NestedGroups:
+  Max: 5

@@ -15,16 +15,20 @@ describe('Skill', () => {
     wrapper = mount(Skill, props)
   })
 
-  test('Component data properties', () => {
+  it('is a Vue instance', () => {
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
+
+  it('has data properties', () => {
     const expected = []
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
-  test('Component is a Vue instance', () => {
-    expect(wrapper.isVueInstance()).toBeTruthy()
+  it('renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
   })
 
-  test.skip('OnStep', () => {
+  it.skip('OnStep', () => {
   })
 })
