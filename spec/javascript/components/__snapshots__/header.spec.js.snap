@@ -16,7 +16,7 @@ exports[`Header renders correctly 1`] = `
     <div class="row" style="width: 0px; height: -60px;">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">
         <div class="banner-part">
-          <img data-src="bar.jpg" alt="Banner" class="b-lazy banner-img bgwidth">
+          <img data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Banner" class="b-lazy banner-img bgwidth">
         </div>
       </div>
     </div>

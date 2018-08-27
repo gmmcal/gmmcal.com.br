@@ -12,7 +12,13 @@
           <a :href="about.cv" class="bnt-download" target="_blank" rel="noopener">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic">
-          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" :data-src="image" :alt="I18n.t('name', { scope: 'template' })" class="topmar b-lazy" />
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+               :data-src="images.xlarge"
+               :data-src-small="images.small"
+               :data-src-medium="images.medium"
+               :data-src-large="images.large"
+               :alt="I18n.t('name', { scope: 'template' })"
+               class="topmar b-lazy" />
         </div>
       </div>
     </div>
@@ -24,10 +30,10 @@ import I18n from '../i18n'
 import VueMarkdown from 'vue-markdown'
 
 export default {
-  props: ['image'],
   data() {
     return {
       about: gon.about,
+      images: gon.images.user,
       I18n: I18n,
     }
   },

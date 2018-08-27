@@ -30,7 +30,22 @@ document.addEventListener('turbolinks:load', () => {
     },
     mounted() {
       I18n.locale = document.getElementById('home').getAttribute('data-locale')
-      new Blazy()
+      new Blazy({
+        breakpoints: [
+          {
+            width: 420,
+            src: 'data-src-small'
+          },
+          {
+            width: 768,
+            src: 'data-src-medium'
+          },
+          {
+            width: 1024,
+            src: 'data-src-large'
+          }
+        ]
+      })
     }
   })
 })

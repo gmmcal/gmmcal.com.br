@@ -64,10 +64,6 @@ export default {
       text-transform: uppercase;
     }
 
-    .skill-bg {
-      background: asset_url('skills.png') no-repeat 0 0;
-    }
-
     .chart {
       display: inline-block;
       height: 152px;

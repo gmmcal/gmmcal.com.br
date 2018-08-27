@@ -7,7 +7,19 @@ describe('About', () => {
   let props, wrapper
 
   beforeAll(() => {
-    window.gon = { about: create('about') }
+    const images = {
+      user: {
+        small: 'bar.jpg',
+        medium: 'bar.jpg',
+        large: 'bar.jpg',
+        xlarge: 'bar.jpg',
+      }
+    }
+
+    window.gon = {
+      about: create('about'),
+      images: images
+    }
 
     props = {
       propsData: {
@@ -15,7 +27,7 @@ describe('About', () => {
       }
     }
 
-    wrapper = mount(About, props)
+    wrapper = mount(About)
   })
 
   it('is a Vue instance', () => {
@@ -23,7 +35,7 @@ describe('About', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['about', 'I18n']
+    const expected = ['about', 'images', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })

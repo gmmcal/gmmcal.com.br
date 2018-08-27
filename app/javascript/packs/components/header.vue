@@ -9,7 +9,12 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
           <!--background slide show start-->
           <div class="banner-part">
-            <img :data-src="this.image" :class="banner_image_class" alt="Banner" />
+            <img :data-src="images.xlarge"
+                 :data-src-small="images.small"
+                 :data-src-medium="images.medium"
+                 :data-src-large="images.large"
+                 :class="banner_image_class"
+                 alt="Banner" />
           </div>
           <!--background slide show end-->
         </div>
@@ -53,11 +58,11 @@ import Menu from './menu'
 import I18n from '../i18n'
 
 export default {
-  props: ['image'],
   data() {
     return {
       flag_links: gon.flag_links,
       menu_links: gon.menu_links,
+      images: gon.images.banner,
       bannerWidth: 0,
       bannerHeight: 0,
       windowWidth: 0,

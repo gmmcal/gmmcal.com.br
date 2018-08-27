@@ -1,5 +1,5 @@
 //----------------------------------------------------
-// 9.  Background  Images
+// Background  Images
 //------------------------------------------------------
 
 .education {
@@ -24,4 +24,8 @@
 
 .flag {
   background: asset_url('flags.png') no-repeat;
+}
+
+.skill-bg {
+  background: asset_url('skills.png') no-repeat 0 0;
 }

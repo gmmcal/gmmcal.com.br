@@ -27,7 +27,7 @@
 </head>
 <body id="home" class="<%= I18n.locale.downcase %>" data-locale="<%= I18n.locale %>">
   <div class="wrapper" id="wrapper">
-    <vue-header image="<%=asset_path("banner.jpg")%>"></vue-header>
+    <vue-header></vue-header>
     <%=yield%>
     <vue-footer></vue-footer>
   </div>

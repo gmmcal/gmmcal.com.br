@@ -1,7 +1,7 @@
 <template>
   <section>
     <!--about me start-->
-    <vue-about :image="image" />
+    <vue-about />
     <!--about me end-->
     <!--technical start-->
     <vue-skills />
@@ -26,7 +26,6 @@ import Experiences from './experiences'
 import Skills from './skills'
 
 export default {
-  props: ['image'],
   components: {
     'vue-about': About,
     'vue-contact': Contact,

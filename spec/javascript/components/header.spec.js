@@ -7,18 +7,22 @@ describe('Header', () => {
   let props, wrapper
 
   beforeAll(() => {
-    window.gon = {
-      flag_links: create('menu_items'),
-      menu_links: create('menu_items'),
-    }
-
-    props = {
-      propsData: {
-        image: 'bar.jpg'
+    const images = {
+      banner: {
+        small: 'bar.jpg',
+        medium: 'bar.jpg',
+        large: 'bar.jpg',
+        xlarge: 'bar.jpg',
       }
     }
 
-    wrapper = mount(Header, props)
+    window.gon = {
+      flag_links: create('menu_items'),
+      menu_links: create('menu_items'),
+      images: images
+    }
+
+    wrapper = mount(Header)
   })
 
   it('is a Vue instance', () => {
@@ -26,7 +30,7 @@ describe('Header', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['flag_links', 'menu_links', 'bannerWidth', 'bannerHeight', 'windowWidth', 'windowHeight', 'i18n_css_class', 'main_css_class', 'I18n']
+    const expected = ['flag_links', 'menu_links', 'images', 'bannerWidth', 'bannerHeight', 'windowWidth', 'windowHeight', 'i18n_css_class', 'main_css_class', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })

@@ -38,6 +38,7 @@ class HomeController < ApplicationController
   def set_gon_data
     gon.flag_links = flag_links
     gon.menu_links = menu_links
+    gon.images = images
     gon.about = @about
     gon.educations = @educations
     gon.skills = @skills
@@ -64,5 +65,22 @@ class HomeController < ApplicationController
         label: page.to_s
       }
     end
+  end
+
+  def images
+    {
+      user: {
+        small: helpers.asset_path("gmmcal-small.png"),
+        medium: helpers.asset_path("gmmcal-medium.png"),
+        large: helpers.asset_path("gmmcal-large.png"),
+        xlarge: helpers.asset_path("gmmcal.png"),
+      },
+      banner: {
+        small: helpers.asset_path("banner-small.jpg"),
+        medium: helpers.asset_path("banner-medium.jpg"),
+        large: helpers.asset_path("banner-large.jpg"),
+        xlarge: helpers.asset_path("banner.jpg"),
+      }
+    }
   end
 end

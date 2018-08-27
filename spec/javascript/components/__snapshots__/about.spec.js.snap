@@ -16,7 +16,7 @@ exports[`About renders correctly 1`] = `
         <a href="file.pdf" target="_blank" rel="noopener" class="bnt-download">PDF Download</a>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic">
-        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="bar.jpg" alt="Gustavo Cunha" class="topmar b-lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Gustavo Cunha" class="topmar b-lazy">
       </div>
     </div>
   </div>
