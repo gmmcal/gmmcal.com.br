@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuContainer renders correctly 1`] = `
+<div class="menu fixed-top">
+  <div class="navbar navbar-expand-md navbar-dark">
+    <button aria-label="Menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="active">
+          <a href="#home" class="home">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

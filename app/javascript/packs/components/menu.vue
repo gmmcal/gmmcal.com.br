@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import MenuItem from './menu_item'
+import MenuItem from './menu-item'
 
 export default {
   props: ['items', 'css_class', 'click'],
@@ -68,18 +68,11 @@ export default {
 
 <style lang="scss" scoped>
 .navbar-nav {
-  float: none;
   margin: 0 auto;
   text-align: center;
+  background: #262b37;
 
   > li {
-    display: inline;
-    float: none;
-
-    &::after {
-      content: ' ';
-    }
-
     a {
       color: #c3c8d6;
       line-height: 18px;
@@ -88,22 +81,27 @@ export default {
 
       &:hover {
         color: #fff;
+        text-decoration: none;
       }
 
-      @media screen and (max-width: 991px) {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
+      // @media screen and (max-width: 991px) {
+      //   padding-left: 18px;
+      //   padding-right: 18px;
+      // }
 
-      @media screen and (max-width: 810px) {
-        padding-left: 17px;
-      }
+      // @media screen and (max-width: 810px) {
+      //   padding-left: 17px;
+      // }
 
-      @media screen and (max-width: 480px) {
-        line-height: 17px;
-        padding-bottom: 11px;
-        padding-top: 11px;
-      }
+      // @media screen and (max-width: 480px) {
+      //   line-height: 17px;
+      //   padding-bottom: 11px;
+      //   padding-top: 11px;
+      // }
+    }
+
+    @media screen and (max-width: 810px) {
+      width: 100%;
     }
 
     &.active > a,
@@ -120,29 +118,16 @@ export default {
 }
 
 .i18n {
-  height: 50px;
+  height: 32px;
   position: fixed;
-  right: 0;
+  right: 10px;
   top: 15px;
-  width: 100px;
-  z-index: 100;
-
-  @media screen and (max-width: 767px) {
-    left: 0;
-    right: auto;
-  }
+  width: 32px;
+  z-index: 1040;
 
   li {
     float: right;
     list-style: none;
-    margin-right: 8%;
-    width: 40%;
-
-    @media screen and (max-width: 767px) {
-      float: left;
-      margin-left: 8%;
-      margin-right: 0;
-    }
   }
 }
 </style>

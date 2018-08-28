@@ -7,8 +7,22 @@
  * License: GNU General Public License version 3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Version: 1.0
- *
- *= require bootstrap/dist/css/bootstrap-grid
- *= require setup
- *= require images
 */
+
+// bootstrap setup
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+// bootstrap components
+@import "bootstrap/scss/reboot";
+@import 'bootstrap/scss/grid';
+@import "bootstrap/scss/transitions";
+@import 'bootstrap/scss/navbar';
+
+// bootstrap utilities
+@import "bootstrap/scss/utilities/position";
+
+// local CSS
+@import 'setup';
+@import 'images';

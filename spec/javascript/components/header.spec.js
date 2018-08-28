@@ -1,6 +1,8 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import Header from '@/components/header'
 import Menu from '@/components/menu'
+import MenuContainer from '@/components/menu-container'
+import Banner from '@/components/banner'
 import create from '../settings/utils'
 
 describe('Header', () => {
@@ -30,7 +32,7 @@ describe('Header', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['flag_links', 'menu_links', 'images', 'bannerWidth', 'bannerHeight', 'windowWidth', 'windowHeight', 'i18n_css_class', 'main_css_class', 'I18n']
+    const expected = ['flag_links', 'i18n_css_class']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
@@ -39,42 +41,38 @@ describe('Header', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  describe('Window', () => {
-    it('is landscape', () => {
-      wrapper.setData({
-        windowWidth: 100,
-        windowHeight: 90
-      })
-      expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgwidth')
-    })
-
-    it('is portrait', () => {
-      wrapper.setData({
-        windowWidth: 90,
-        windowHeight: 100
-      })
-      expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgheight')
-    })
-  })
-
-  it.skip('expand_menu', () => {
-    wrapper.vm.expand_menu()
-  })
-
-  it.skip('destroy', () => {
-    wrapper.destroy()
-  })
-
   describe('Child components', () => {
     it('includes Menu', () => {
       const child_component = wrapper.find(Menu)
       expect(child_component.isVueInstance()).toBeTruthy()
     })
 
-    it('renders 2 Menu objects', () => {
+    it('includes MenuContainer', () => {
+      const child_component = wrapper.find(MenuContainer)
+      expect(child_component.isVueInstance()).toBeTruthy()
+    })
+
+    it('includes Banner', () => {
+      const child_component = wrapper.find(Banner)
+      expect(child_component.isVueInstance()).toBeTruthy()
+    })
+
+    it('renders 1 Menu object', () => {
       wrapper = shallowMount(Header)
       const menus = wrapper.findAll(Menu)
-      expect(menus.length).toBe(2)
+      expect(menus.length).toBe(1)
+    })
+
+    it('renders 1 Menu Container object', () => {
+      wrapper = shallowMount(Header)
+      const menus = wrapper.findAll(MenuContainer)
+      expect(menus.length).toBe(1)
+    })
+
+    it('renders 1 Banner object', () => {
+      wrapper = shallowMount(Header)
+      const menus = wrapper.findAll(Banner)
+      expect(menus.length).toBe(1)
     })
   })
 })
