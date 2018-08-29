@@ -15,13 +15,13 @@
 @import 'bootstrap/scss/mixins';
 
 // bootstrap components
-@import "bootstrap/scss/reboot";
+@import 'bootstrap/scss/reboot';
 @import 'bootstrap/scss/grid';
-@import "bootstrap/scss/transitions";
+@import 'bootstrap/scss/transitions';
 @import 'bootstrap/scss/navbar';
 
 // bootstrap utilities
-@import "bootstrap/scss/utilities/position";
+@import 'bootstrap/scss/utilities/position';
 
 // local CSS
 @import 'setup';

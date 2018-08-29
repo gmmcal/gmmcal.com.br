@@ -69,18 +69,26 @@ class HomeController < ApplicationController
 
   def images
     {
-      user: {
-        small: helpers.asset_path("gmmcal-small.png"),
-        medium: helpers.asset_path("gmmcal-medium.png"),
-        large: helpers.asset_path("gmmcal-large.png"),
-        xlarge: helpers.asset_path("gmmcal.png"),
-      },
-      banner: {
-        small: helpers.asset_path("banner-small.jpg"),
-        medium: helpers.asset_path("banner-medium.jpg"),
-        large: helpers.asset_path("banner-large.jpg"),
-        xlarge: helpers.asset_path("banner.jpg"),
-      }
+      user: user_images,
+      banner: banner_images
+    }
+  end
+
+  def user_images
+    {
+      small: helpers.asset_path('gmmcal-small.png'),
+      medium: helpers.asset_path('gmmcal-medium.png'),
+      large: helpers.asset_path('gmmcal-large.png'),
+      xlarge: helpers.asset_path('gmmcal.png')
+    }
+  end
+
+  def banner_images
+    {
+      small: helpers.asset_path('banner-small.jpg'),
+      medium: helpers.asset_path('banner-medium.jpg'),
+      large: helpers.asset_path('banner-large.jpg'),
+      xlarge: helpers.asset_path('banner.jpg')
     }
   end
 end
