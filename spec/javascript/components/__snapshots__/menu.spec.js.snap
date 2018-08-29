@@ -2,11 +2,7 @@
 
 exports[`Menu renders correctly 1`] = `
 <ul>
-  <li class="active">
-    <a href="#home" class="home">Home</a>
-  </li>
-  <li>
-    <a href="#about" class="about">About</a>
-  </li>
+  <li class="active"><a href="#home" class="home">Home</a></li>
+  <li><a href="#about" class="about">About</a></li>
 </ul>
 `;

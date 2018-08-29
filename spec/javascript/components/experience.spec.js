@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from '@/components/markdown'
 import Experience from '@/components/experience'
 import create from '../settings/utils'
 

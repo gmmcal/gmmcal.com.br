@@ -3,34 +3,23 @@
 exports[`Header renders correctly 1`] = `
 <header>
   <div class="menu fixed-top">
-    <div class="navbar navbar-expand-md navbar-dark">
-      <button aria-label="Menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div class="navbar navbar-expand-md navbar-dark"><button aria-label="Menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <li class="active">
-            <a href="#home" class="home">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="about">About</a>
-          </li>
+          <li class="active"><a href="#home" class="home">Home</a></li>
+          <li><a href="#about" class="about">About</a></li>
         </ul>
       </div>
     </div>
   </div>
   <ul class="i18n">
-    <li class="active">
-      <a href="#home" class="home">Home</a>
-    </li>
-    <li>
-      <a href="#about" class="about">About</a>
-    </li>
+    <li class="active"><a href="#home" class="home">Home</a></li>
+    <li><a href="#about" class="about">About</a></li>
   </ul>
   <div class="banner">
     <div class="row" style="width: 0px; height: 0px;">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">
-        <div class="banner-part">
-          <img data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Banner" class="b-lazy banner-img bgwidth">
-        </div>
+        <div class="banner-part"><img data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Banner" class="b-lazy banner-img bgwidth"></div>
       </div>
     </div>
     <div class="banner-text container">

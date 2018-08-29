@@ -16,7 +16,7 @@
 
 <script>
 import I18n from '../i18n'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from './markdown'
 
 export default {
   props: ['education'],
