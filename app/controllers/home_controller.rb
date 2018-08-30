@@ -58,7 +58,7 @@ class HomeController < ApplicationController
   end
 
   def menu_links
-    links = %i[home about skills experience education contact]
+    links = %i[home about experience skills education contact]
     links.map do |page|
       {
         link: "##{page}",

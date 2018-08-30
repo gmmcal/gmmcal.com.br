@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .technical {
-  background: #eee;
+  background: #fff;
   color: #474d5d;
 
   .container {

@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .experience {
-  background: #fff;
+  background: #eee;
 
   .container {
     padding-bottom: 90px;

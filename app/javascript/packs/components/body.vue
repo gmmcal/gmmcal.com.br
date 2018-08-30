@@ -3,12 +3,12 @@
     <!--about me start-->
     <vue-about />
     <!--about me end-->
-    <!--technical start-->
-    <vue-skills />
-    <!--technical end-->
     <!--experience start-->
     <vue-experiences />
     <!--experience end-->
+    <!--technical start-->
+    <vue-skills />
+    <!--technical end-->
     <!--education start-->
     <vue-educations />
     <!--education end-->

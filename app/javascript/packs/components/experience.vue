@@ -63,7 +63,7 @@ export default {
   }
 
   .right-area {
-    border-left: solid 1px #eaeaea;
+    border-left: solid 1px #e5e4e4;
     padding-bottom: 47px;
 
     @media screen and (max-width: 767px) {
@@ -83,16 +83,12 @@ export default {
     }
 
     .ex-con {
-      background: #f3f3f3;
-      border-bottom: solid 4px #eee;
+      background: #fafafa;
+      border-bottom: solid 4px #e8e7e7;
       margin-left: 15px;
       padding: 22px 47px 6px;
       text-align: left;
       width: auto;
-
-      @media screen and (max-width: 767px) {
-        margin-left: 0;
-      }
 
       .description {
         padding-bottom: 22px;
@@ -111,6 +107,10 @@ export default {
 
       h5 {
         color: #474d5d;
+      }
+
+      @media screen and (max-width: 767px) {
+        margin-left: 0;
       }
     }
   }
