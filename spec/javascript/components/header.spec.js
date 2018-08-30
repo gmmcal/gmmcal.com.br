@@ -6,7 +6,7 @@ import Banner from '@/components/banner'
 import create from '../settings/utils'
 
 describe('Header', () => {
-  let props, wrapper
+  let wrapper
 
   beforeAll(() => {
     const images = {

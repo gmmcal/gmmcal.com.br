@@ -68,11 +68,6 @@ export default {
     getHeight(event) {
       this.windowHeight = document.documentElement.clientHeight
       this.bannerHeight = this.windowHeight
-    },
-    expand_menu(event) {
-      const menu = document.querySelector('.navbar-collapse')
-      menu.classList.toggle('expand')
-      menu.classList.toggle('collapse')
     }
   },
   beforeDestroy() {

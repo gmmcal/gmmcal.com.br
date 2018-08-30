@@ -4,7 +4,7 @@ import About from '@/components/about'
 import create from '../settings/utils'
 
 describe('About', () => {
-  let props, wrapper
+  let wrapper
 
   beforeAll(() => {
     const images = {
@@ -19,12 +19,6 @@ describe('About', () => {
     window.gon = {
       about: create('about'),
       images: images
-    }
-
-    props = {
-      propsData: {
-        image: 'bar.jpg'
-      }
     }
 
     wrapper = mount(About)

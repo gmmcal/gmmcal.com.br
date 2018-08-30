@@ -4,7 +4,7 @@ import Menu from '@/components/menu'
 import create from '../settings/utils'
 
 describe('MenuContainer', () => {
-  let props, wrapper
+  let wrapper
 
   beforeAll(() => {
     window.gon = {

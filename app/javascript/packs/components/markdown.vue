@@ -1,24 +1,32 @@
 <template>
-  <div v-html="compiledMarkdown"><slot></slot></div>
+  <div v-html="markdown"><slot></slot></div>
 </template>
 
 <script>
 import marked from 'marked'
 
 export default {
-  data() {
-    return {
-      content: '',
-    }
-  },
   computed: {
-    compiledMarkdown () {
+    markdown() {
+      let text = ''
       if (this.$slots.default) {
         for (let slot of this.$slots.default) {
-          this.content += marked(slot.text, { sanitize: true })
+          text += this.content(slot)
         }
       }
-      return this.content
+      return text
+    }
+  },
+  methods: {
+    content(slot) {
+      if (slot.text === undefined) {
+        let text = ''
+        for (let child of slot.children) {
+          text += marked(child.text, { sanitize: true })
+        }
+        return text
+      }
+      return marked(slot.text, { sanitize: true })
     }
   }
 }

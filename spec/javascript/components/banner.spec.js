@@ -5,7 +5,7 @@ import MenuContainer from '@/components/menu-container'
 import create from '../settings/utils'
 
 describe('Banner', () => {
-  let props, wrapper
+  let wrapper
 
   beforeAll(() => {
     const images = {

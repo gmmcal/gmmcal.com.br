@@ -8,7 +8,7 @@ import Skills from '@/components/skills'
 import create from '../settings/utils'
 
 describe('Body', () => {
-  let props, wrapper
+  let wrapper
 
   beforeAll(() => {
     const images = {

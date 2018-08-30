@@ -52,13 +52,15 @@ describe('Education', () => {
     })
 
     describe('without end date', () => {
-      const props = {
-        propsData: {
-          education: create('education', { end_date: null })
+      beforeAll(() => {
+        props = {
+          propsData: {
+            education: create('education', { end_date: null })
+          }
         }
-      }
 
-      const wrapper = mount(Education, props)
+        wrapper = mount(Education, props)
+      })
 
       it('has Currently text', () => {
         const el = wrapper.find('.year')
