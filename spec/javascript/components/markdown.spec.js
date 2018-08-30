@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import Markdown from '@/components/Markdown'
+import Markdown from '@/components/markdown'
 
 describe('Markdown', () => {
   let slots, wrapper
