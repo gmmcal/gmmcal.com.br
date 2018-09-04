@@ -3,14 +3,12 @@
 exports[`Experience renders correctly 1`] = `
 <div class="row work-details">
   <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-    <div class="work-year">Jan / 2015
-      <br>Jan / 2016</div>
+    <div class="year">Jan / 2015<br>Jan / 2016</div>
   </div>
   <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 right-area">
     <div class="arrowpart"></div>
     <div class="ex-con">
-      <h4><span>Amazing company</span> - <span><span>Great city</span> - <span>Some country</span></span>
-      </h4>
+      <h4><span>Amazing company</span> - <span><span>Great city</span> - <span>Some country</span></span></h4>
       <h5>Ninja developer</h5>
       <div class="description">
         <p>Lorem ipsum nulus dolor</p>

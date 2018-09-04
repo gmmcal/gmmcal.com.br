@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from '@/components/markdown'
 import Experience from '@/components/experience'
 import create from '../settings/utils'
 
@@ -32,7 +32,7 @@ describe('Experience', () => {
 
   describe('Content', () => {
     it('has dates', () => {
-      const el = wrapper.find('.work-year')
+      const el = wrapper.find('.year')
       expect(el.text()).toBe('Jan / 2015Jan / 2016')
     })
 
@@ -75,7 +75,7 @@ describe('Experience', () => {
       })
 
       it('has Currently text', () => {
-        const el = wrapper.find('.work-year')
+        const el = wrapper.find('.year')
         expect(el.text()).toBe('Jan / 2015Currently')
       })
     })

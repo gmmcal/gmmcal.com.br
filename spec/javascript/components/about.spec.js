@@ -1,21 +1,27 @@
 import { mount } from '@vue/test-utils'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from '@/components/markdown'
 import About from '@/components/about'
 import create from '../settings/utils'
 
 describe('About', () => {
-  let props, wrapper
+  let wrapper
 
   beforeAll(() => {
-    window.gon = { about: create('about') }
-
-    props = {
-      propsData: {
-        image: 'bar.jpg'
+    const images = {
+      user: {
+        small: 'bar.jpg',
+        medium: 'bar.jpg',
+        large: 'bar.jpg',
+        xlarge: 'bar.jpg',
       }
     }
 
-    wrapper = mount(About, props)
+    window.gon = {
+      about: create('about'),
+      images: images
+    }
+
+    wrapper = mount(About)
   })
 
   it('is a Vue instance', () => {
@@ -23,7 +29,7 @@ describe('About', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['about', 'I18n']
+    const expected = ['about', 'images', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
@@ -49,7 +55,7 @@ describe('About', () => {
     })
 
     it('has an user image', () => {
-      expect(wrapper.contains('img[src="bar.jpg"]')).toBe(true)
+      expect(wrapper.contains('img.b-lazy[data-src="bar.jpg"]')).toBe(true)
     })
 
     it('has a CV link', () => {

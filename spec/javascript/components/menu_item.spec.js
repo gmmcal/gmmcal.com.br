@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import MenuItem from '@/components/menu_item'
+import MenuItem from '@/components/menu-item'
 import create from '../settings/utils'
 
 describe('MenuItem', () => {

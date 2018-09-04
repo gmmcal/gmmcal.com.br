@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import MenuItem from './menu_item'
+import MenuItem from './menu-item'
 
 export default {
   props: ['items', 'css_class', 'click'],
@@ -65,3 +65,69 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.navbar-nav {
+  margin: 0 auto;
+  text-align: center;
+  background: #262b37;
+
+  > li {
+    a {
+      color: #c3c8d6;
+      line-height: 18px;
+      padding: 22px 25px;
+      text-align: center;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      // @media screen and (max-width: 991px) {
+      //   padding-left: 18px;
+      //   padding-right: 18px;
+      // }
+
+      // @media screen and (max-width: 810px) {
+      //   padding-left: 17px;
+      // }
+
+      // @media screen and (max-width: 480px) {
+      //   line-height: 17px;
+      //   padding-bottom: 11px;
+      //   padding-top: 11px;
+      // }
+    }
+
+    @media screen and (max-width: 810px) {
+      width: 100%;
+    }
+
+    &.active > a,
+    &.active > a:focus {
+      background: #1b1f29;
+      color: #c3c8d6;
+    }
+
+    &.active > a:hover {
+      background: #1b1f29;
+      color: #fff;
+    }
+  }
+}
+
+.i18n {
+  height: 32px;
+  position: fixed;
+  right: 10px;
+  top: 15px;
+  width: 32px;
+  z-index: 1040;
+
+  li {
+    float: right;
+    list-style: none;
+  }
+}
+</style>

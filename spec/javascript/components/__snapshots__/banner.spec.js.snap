@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner renders correctly 1`] = `
+<div class="banner">
+  <div class="row" style="width: 0px; height: 0px;">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">
+      <div class="banner-part"><img data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Banner" class="b-lazy banner-img bgwidth"></div>
+    </div>
+  </div>
+  <div class="banner-text container">
+    <h1>Gustavo Cunha</h1>
+    <h2>Web developer, Mobile and Software Engineer Consultant</h2>
+  </div>
+</div>
+`;

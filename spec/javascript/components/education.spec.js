@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import VueMarkdown from 'vue-markdown'
+import VueMarkdown from '@/components/markdown'
 import Education from '@/components/education'
 import create from '../settings/utils'
 
@@ -32,7 +32,7 @@ describe('Education', () => {
 
   describe('Content', () => {
     it('has an end date', () => {
-      const el = wrapper.find('.work-year')
+      const el = wrapper.find('.year')
       expect(el.text()).toBe('Jan / 2016')
     })
 
@@ -52,16 +52,18 @@ describe('Education', () => {
     })
 
     describe('without end date', () => {
-      const props = {
-        propsData: {
-          education: create('education', { end_date: null })
+      beforeAll(() => {
+        props = {
+          propsData: {
+            education: create('education', { end_date: null })
+          }
         }
-      }
 
-      const wrapper = mount(Education, props)
+        wrapper = mount(Education, props)
+      })
 
       it('has Currently text', () => {
-        const el = wrapper.find('.work-year')
+        const el = wrapper.find('.year')
         expect(el.text()).toBe('Currently')
       })
     })
