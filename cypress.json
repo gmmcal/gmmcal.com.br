@@ -1,4 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
-  "integrationFolder": "spec/integration"
+  "integrationFolder": "spec/integration",
+  "reporter": "list",
+  "video": false
 }
