@@ -31,8 +31,6 @@ export default {
       images: gon.images.banner,
       bannerWidth: 0,
       bannerHeight: 0,
-      windowWidth: 0,
-      windowHeight: 0,
       I18n: I18n,
     }
   },
@@ -44,7 +42,7 @@ export default {
       }
     },
     banner_image_class() {
-      if (this.windowWidth < this.windowHeight) {
+      if (this.bannerWidth < this.bannerHeight) {
         return 'b-lazy banner-img bgheight'
       }
       return 'b-lazy banner-img bgwidth'
@@ -52,27 +50,20 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      window.addEventListener('resize', this.getWidth)
-      window.addEventListener('resize', this.getHeight)
+      window.addEventListener('resize', this.getDimensions)
 
       //Init
-      this.getWidth()
-      this.getHeight()
+      this.getDimensions()
     })
   },
   methods: {
-    getWidth(event) {
-      this.windowWidth = document.documentElement.clientWidth
-      this.bannerWidth = this.windowWidth
-    },
-    getHeight(event) {
-      this.windowHeight = document.documentElement.clientHeight
-      this.bannerHeight = this.windowHeight
+    getDimensions(event) {
+      this.bannerWidth = document.documentElement.clientWidth
+      this.bannerHeight = document.documentElement.clientHeight
     }
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.getWidth)
-    window.removeEventListener('resize', this.getHeight)
+    window.removeEventListener('resize', this.getDimensions)
   }
 }
 </script>

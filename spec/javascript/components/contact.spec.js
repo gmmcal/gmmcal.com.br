@@ -27,37 +27,37 @@ describe('Contact', () => {
 
   describe('Content', () => {
     it('has a city', () => {
-      const el = wrapper.find('#location span')
+      const el = wrapper.find('.location span')
       expect(el.text()).toBe('City')
     })
 
     it('has a country', () => {
-      const el = wrapper.find('#location span:last-child')
+      const el = wrapper.find('.location span:last-child')
       expect(el.text()).toBe('Country')
     })
 
     it('has a phone number', () => {
-      const el = wrapper.find('#phone_number')
+      const el = wrapper.find('.phone_number')
       expect(el.text()).toBe('817634986124')
     })
 
     it('has an email', () => {
-      const el = wrapper.find('#email')
+      const el = wrapper.find('.email')
       expect(el.text()).toBe('email@domain.com')
     })
 
     it('has a github link', () => {
-      const el = wrapper.find('#github')
+      const el = wrapper.find('.github')
       expect(el.text()).toBe('gmmcal')
     })
 
     it('has a linkedin link', () => {
-      const el = wrapper.find('#linkedin')
+      const el = wrapper.find('.linkedin')
       expect(el.text()).toBe('Gustavo Cunha')
     })
 
     it('has a twitter link', () => {
-      const el = wrapper.find('#twitter')
+      const el = wrapper.find('.twitter')
       expect(el.text()).toBe('@gmmcal')
     })
   })

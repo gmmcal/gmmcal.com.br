@@ -10,4 +10,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Cms::Sync.all
+require 'factory_bot_rails'
+require 'faker'
+
+FactoryBot.create(:about, locale: 'en')
+FactoryBot.create(:about, locale: 'pt-BR')
+
+FactoryBot.create_list(:work_experience, 5, locale: 'en')
+FactoryBot.create_list(:work_experience, 5, locale: 'pt-BR')
+
+FactoryBot.create_list(:skill, 6, locale: 'en')
+FactoryBot.create_list(:skill, 6, locale: 'pt-BR')
+
+FactoryBot.create_list(:education, 2, locale: 'en')
+FactoryBot.create_list(:education, 2, locale: 'pt-BR')

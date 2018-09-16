@@ -1,5 +1,5 @@
 <template>
-  <a v-on:click="scroll" :class="item.css_class" :href="item.link">{{ I18n.t(item.label, { scope: 'template.menu'}) }}</a>
+  <a v-on:click="scroll" data-turbolinks="false" :class="item.css_class" :href="item.link" :alt="item.label">{{ I18n.t(item.label, { scope: 'template.menu'}) }}</a>
 </template>
 
 <script>
@@ -15,15 +15,16 @@ export default {
   methods: {
     scroll(event) {
       const destination = event.target.attributes['href'].value
-      try {
-        const el = document.querySelector(destination)
-        window.scroll({
-          top: el.offsetTop,
-          behavior: 'smooth'
-        })
-        this.click()
+      if ( destination.indexOf('#') >=0 ) {
         event.preventDefault()
-      }catch(e){}
+        const title = event.target.attributes['alt']
+        const el = document.querySelector(destination)
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+        window.history.pushState(destination, title, destination);
+      }
     },
   },
 }

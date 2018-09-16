@@ -46,7 +46,7 @@ export default {
         const el = document.getElementById(item.label)
         if (el === null)
           return false
-        if (scrollingElement.scrollTop >= el.offsetTop) {
+        if (scrollingElement.scrollTop >= el.offsetTop - 60) {
           return true
         }
         return false

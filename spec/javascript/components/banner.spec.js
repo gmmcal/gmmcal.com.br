@@ -29,7 +29,7 @@ describe('Banner', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['images', 'bannerWidth', 'bannerHeight', 'windowWidth', 'windowHeight', 'I18n']
+    const expected = ['images', 'bannerWidth', 'bannerHeight', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
@@ -41,16 +41,16 @@ describe('Banner', () => {
   describe('Window', () => {
     it('is landscape', () => {
       wrapper.setData({
-        windowWidth: 100,
-        windowHeight: 90
+        bannerWidth: 100,
+        bannerHeight: 90
       })
       expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgwidth')
     })
 
     it('is portrait', () => {
       wrapper.setData({
-        windowWidth: 90,
-        windowHeight: 100
+        bannerWidth: 90,
+        bannerHeight: 100
       })
       expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgheight')
     })

@@ -7,15 +7,14 @@ exports[`About renders correctly 1`] = `
       <h2>About Me</h2>
     </div>
     <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-5">
         <h3>Gustavo Cunha</h3>
         <h4 class="sub-heading">Some title at some company</h4>
-        <div>
+        <div class="description">
           <p>Lorem ipsum nulus dolor.</p>
-        </div> <a href="file.pdf" target="_blank" rel="noopener" class="bnt-download">PDF Download</a>
+        </div> <a href="file.pdf" target="_blank" rel="noopener" class="btn-download">PDF Download</a>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg"
-          data-src-large="bar.jpg" alt="Gustavo Cunha" class="topmar b-lazy"></div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Gustavo Cunha" class="topmar b-lazy"></div>
     </div>
   </div>
 </section>

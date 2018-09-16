@@ -5,8 +5,8 @@ exports[`MenuContainer renders correctly 1`] = `
   <div class="navbar navbar-expand-md navbar-dark"><button aria-label="Menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
-        <li class="active"><a href="#home" class="home">Home</a></li>
-        <li><a href="#about" class="about">About</a></li>
+        <li class="active"><a data-turbolinks="false" href="#home" alt="home" class="home">Home</a></li>
+        <li><a data-turbolinks="false" href="#about" alt="about" class="about">About</a></li>
       </ul>
     </div>
   </div>
