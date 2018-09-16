@@ -32,7 +32,8 @@ script:
   - bundle exec rake db:migrate
   - bundle exec rspec
   - yarn test:once
-  - foreman start &
+  - bundle exec rake db:seed
+  - bundle exec foreman start &
   - yarn cypress:ci
   - kill $(jobs -p) || true
 
