@@ -19,11 +19,13 @@ export default {
         event.preventDefault()
         const title = event.target.attributes['alt']
         const el = document.querySelector(destination)
-        el.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
-        window.history.pushState(destination, title, destination);
+        if (el !== null) {
+          el.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+          window.history.pushState(destination, title, destination);
+        }
       }
     },
   },

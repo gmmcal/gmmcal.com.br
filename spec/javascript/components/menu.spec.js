@@ -30,7 +30,9 @@ describe('Menu', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it.skip('scroll', () => {
+  it('scroll', () => {
+    wrapper.trigger('scroll')
+    // FIXME: really test something
   })
 
   describe('Child components', () => {

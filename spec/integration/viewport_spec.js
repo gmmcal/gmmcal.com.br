@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 describe('Viewports', () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit('/')
   })
 
@@ -109,6 +109,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -182,6 +183,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -207,6 +209,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -232,6 +235,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -257,6 +261,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -282,6 +287,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -309,6 +315,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -334,6 +341,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -359,6 +367,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -384,6 +393,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {
@@ -409,6 +419,7 @@ describe('Viewports', () => {
         it('menu should be visible after click', () => {
           cy.get('.navbar-toggler').click()
           cy.get('.navbar .menu-container').should('be.visible')
+          cy.get('.navbar-toggler').click()
         })
 
         it('menu should close if it is open', () => {

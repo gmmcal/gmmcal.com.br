@@ -120,7 +120,7 @@ describe('Navigation', () => {
 
   context('i18n', () => {
     context('english', () => {
-      beforeEach(() => {
+      before(() => {
         cy.visit('/en')
       })
 
@@ -141,7 +141,7 @@ describe('Navigation', () => {
     })
 
     context('portuguese', () => {
-      beforeEach(() => {
+      before(() => {
         cy.visit('/pt-BR')
       })
 
