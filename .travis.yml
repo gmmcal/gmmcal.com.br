@@ -32,6 +32,9 @@ script:
   - bundle exec rake db:migrate
   - bundle exec rspec
   - yarn test:once
+  - foreman start &
+  - yarn cypress:ci
+  - kill $(jobs -p) || true
 
 bundler_args: --without production
 
