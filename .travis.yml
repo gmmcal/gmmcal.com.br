@@ -33,7 +33,8 @@ script:
   - bundle exec rspec
   - yarn test:once
   - bundle exec rake db:seed
-  - bundle exec foreman start &
+  - bin/webpack
+  - bundle exec rails server -p 3000 &
   - yarn cypress:ci
   - kill $(jobs -p) || true
 
