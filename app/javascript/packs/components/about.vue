@@ -12,7 +12,7 @@
           <a :href="about.cv" class="btn-download" target="_blank" rel="noopener">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic">
-          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          <img :src="images.small"
                :data-src="images.xlarge"
                :data-src-small="images.small"
                :data-src-medium="images.medium"
@@ -81,39 +81,19 @@ export default {
   }
 
   .pro-pic {
-    @media screen and (max-width: 991px) {
-      text-align: center;
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
     }
   }
 
   .topmar {
-    @media screen and (max-width: 991px) {
-      margin-top: 20px;
-    }
-
-    @media screen and (max-width: 810px) {
-      margin-top: 20px;
-    }
-
-    @media screen and (max-width: 768px) {
-      margin-top: 20px;
-    }
-
+    align-self: flex-end;
+    width: 100%;
     @media screen and (max-width: 767px) {
-      margin-top: 20px;
-    }
-
-    @media screen and (max-width: 650px) {
-      margin-top: 20px;
-    }
-
-    @media screen and (max-width: 480px) {
-      margin-top: 20px;
-    }
-
-    @media screen and (max-width: 400px) {
-      margin-top: 20px;
-      width: 100%;
+      width: auto;
+      align-self: center;
     }
   }
 }

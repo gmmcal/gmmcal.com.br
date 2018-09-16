@@ -4,7 +4,8 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
         <!--background slide show start-->
         <div class="banner-part">
-          <img :data-src="images.xlarge"
+          <img :src="images.small"
+               :data-src="images.xlarge"
                :data-src-small="images.small"
                :data-src-medium="images.medium"
                :data-src-large="images.large"

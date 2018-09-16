@@ -4,7 +4,7 @@
       <button v-on:click="expand_menu" aria-label="Menu" type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse">
+      <div class="menu-container collapse navbar-collapse">
         <vue-menu :click="expand_menu" :items="links" :css_class="css_class" />
       </div>
     </div>

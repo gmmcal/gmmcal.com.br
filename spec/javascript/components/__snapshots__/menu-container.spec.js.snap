@@ -3,7 +3,7 @@
 exports[`MenuContainer renders correctly 1`] = `
 <div class="menu fixed-top">
   <div class="navbar navbar-expand-md navbar-dark"><button aria-label="Menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse">
+    <div class="menu-container collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="active"><a data-turbolinks="false" href="#home" alt="home" class="home">Home</a></li>
         <li><a data-turbolinks="false" href="#about" alt="about" class="about">About</a></li>
