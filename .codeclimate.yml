@@ -62,5 +62,5 @@ exclude_patterns:
   - "config/"
   - "db/"
   - "**/node_modules/"
-  - spec/"
+  - "spec/"
   - "**/vendor/"
