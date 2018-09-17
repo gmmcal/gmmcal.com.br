@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :request do
-  context do
+  describe '/' do
     before do
       get "/#{locale}"
     end
