@@ -34,7 +34,7 @@ describe('Menu', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('scroll', () => {
+  it.skip('scroll', () => {
     wrapper.trigger('scroll')
     // FIXME: really test something
   })

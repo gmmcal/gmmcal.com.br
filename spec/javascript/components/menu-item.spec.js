@@ -29,7 +29,7 @@ describe('MenuItem', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('scroll', () => {
+  it.skip('scroll', () => {
     wrapper.trigger('click')
     // FIXME: really test something
   })

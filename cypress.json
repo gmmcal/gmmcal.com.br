@@ -5,6 +5,5 @@
   "pluginsFile": "spec/plugins/index.js",
   "screenshotsFolder": "spec/screenshots",
   "supportFile": "spec/support/index.js",
-  "reporter": "list",
   "video": false
 }
