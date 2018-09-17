@@ -59,8 +59,4 @@ describe('Banner', () => {
       expect(wrapper.vm.banner_image_class).toEqual('b-lazy banner-img bgheight')
     })
   })
-
-  it.skip('destroy', () => {
-    wrapper.destroy()
-  })
 })

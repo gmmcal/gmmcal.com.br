@@ -28,7 +28,4 @@ describe('Skill', () => {
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
-
-  it.skip('OnStep', () => {
-  })
 })
