@@ -29,13 +29,33 @@ install:
   - npm i -g yarn
   - yarn install
 
-script:
-  - bundle exec rspec
-  - yarn test:once
-  - bundle exec rake db:seed
-  - bundle exec rails server -p 3000 &
-  - yarn cypress:ci
-  - kill $(jobs -p) || true
+# script:
+#   - bundle exec rspec
+#   - yarn test:once
+#   - bundle exec rake db:seed
+#   - bundle exec rails server -p 3000 &
+#   - yarn cypress:ci
+#   - kill $(jobs -p) || true
+
+stages:
+  - backend
+  - frontend
+  - end-to-end
+
+jobs:
+  include:
+    - stage: backend
+      script:
+        - bundle exec rspec
+    - stage: frontend
+      script:
+        - yarn test:once
+    - stage: end-to-end
+      script:
+        - bundle exec rake db:seed
+        - bundle exec rails server -p 3000 &
+        - yarn cypress:ci
+        - kill $(jobs -p) || true
 
 bundler_args: --without production
 
