@@ -1,16 +1,10 @@
 language: ruby
 
-rvm:
-  - 2.3.7
-  - 2.4.4
-  - 2.5.0
-  - 2.5.1
-
 cache:
   directories:
-    - ~/.rvm
-    - ~/.npm
-    - ~/.cache
+    - /home/travis/.rvm
+    - /home/travis/.npm
+    - /home/travis/.cache
 
 before_install:
   - gem update --system
@@ -30,14 +24,6 @@ install:
   - npm i -g yarn
   - yarn install
 
-# script:
-#   - bundle exec rspec
-#   - yarn test:once
-#   - bundle exec rake db:seed
-#   - bundle exec rails server -p 3000 &
-#   - yarn cypress:ci
-#   - kill $(jobs -p) || true
-
 defaults: &defaults
   script:
     - bundle exec rspec
@@ -50,35 +36,19 @@ defaults: &defaults
 
 jobs:
   include:
-    - stage: prepare cache 2.3.7
-      rvm: 2.3.7
-      script: true
-
-    - stage: prepare cache 2.4.4
-      rvm: 2.4.4
-      script: true
-
-    - stage: prepare cache 2.5.0
-      rvm: 2.5.0
-      script: true
-
-    - stage: prepare cache 2.5.1
-      rvm: 2.5.1
-      script: true
-
-    - stage: unit tests 2.3.7
+    - stage: unit tests
       rvm: 2.3.7
       <<: *defaults
 
-    - stage: unit tests 2.4.4
+    - stage: unit tests
       rvm: 2.4.4
       <<: *defaults
 
-    - stage: unit tests 2.5.0
+    - stage: unit tests
       rvm: 2.5.0
       <<: *defaults
 
-    - stage: unit tests 2.5.1
+    - stage: unit tests
       rvm: 2.5.1
       <<: *defaults
 
