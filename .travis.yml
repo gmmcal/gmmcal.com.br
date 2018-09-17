@@ -7,8 +7,10 @@ rvm:
   - 2.5.1
 
 cache:
-  - bundler
-  - yarn
+  directories:
+    - ~/.rvm
+    - ~/.npm
+    - ~/.cache
 
 before_install:
   - gem update --system
@@ -36,34 +38,50 @@ install:
 #   - yarn cypress:ci
 #   - kill $(jobs -p) || true
 
-stages:
-  - prepare cache
-  - unit tests
-  - end-to-end
+defaults: &defaults
+  script:
+    - bundle exec rspec
+    - yarn test:once
+  after_script:
+    - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json
+    - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info
+    - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+    - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
 
 jobs:
   include:
-    - stage: prepare cache
-      rvm:
-        - 2.3.7
-        - 2.4.4
-        - 2.5.0
-        - 2.5.1
+    - stage: prepare cache 2.3.7
+      rvm: 2.3.7
       script: true
-    - stage: unit tests
-      rvm:
-        - 2.3.7
-        - 2.4.4
-        - 2.5.0
-        - 2.5.1
-      script:
-        - bundle exec rspec
-        - yarn test:once
-      after_script:
-        - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json
-        - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info
-        - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
-        - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
+
+    - stage: prepare cache 2.4.4
+      rvm: 2.4.4
+      script: true
+
+    - stage: prepare cache 2.5.0
+      rvm: 2.5.0
+      script: true
+
+    - stage: prepare cache 2.5.1
+      rvm: 2.5.1
+      script: true
+
+    - stage: unit tests 2.3.7
+      rvm: 2.3.7
+      <<: *defaults
+
+    - stage: unit tests 2.4.4
+      rvm: 2.4.4
+      <<: *defaults
+
+    - stage: unit tests 2.5.0
+      rvm: 2.5.0
+      <<: *defaults
+
+    - stage: unit tests 2.5.1
+      rvm: 2.5.1
+      <<: *defaults
+
     - stage: end-to-end
       rvm: 2.5.1
       script:
