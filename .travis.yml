@@ -20,20 +20,19 @@ before_script:
   - cp config/database.yml.travis config/database.yml
   - cp config/secrets.yml.travis config/secrets.yml
   - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rake db:migrate
+  - bin/webpack
 
 install:
   - bundle install
   - nvm install node
-  - node -v
   - npm i -g yarn
-  - yarn
+  - yarn install
 
 script:
-  - bundle exec rake db:migrate
   - bundle exec rspec
   - yarn test:once
   - bundle exec rake db:seed
-  - bin/webpack
   - bundle exec rails server -p 3000 &
   - yarn cypress:ci
   - kill $(jobs -p) || true
