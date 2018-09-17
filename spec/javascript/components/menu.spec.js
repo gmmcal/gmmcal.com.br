@@ -16,6 +16,10 @@ describe('Menu', () => {
     wrapper = mount(Menu, props)
   })
 
+  afterAll(() => {
+    wrapper.destroy()
+  })
+
   it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })

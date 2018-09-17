@@ -4,24 +4,14 @@ cache:
   - bundler
   - yarn
 
-rvm:
-  - 2.3.7
-  - 2.4.4
-  - 2.5.0
-  - 2.5.1
-
 before_install:
   - gem update --system
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 
 before_script:
   - cp config/database.yml.travis config/database.yml
   - cp config/secrets.yml.travis config/secrets.yml
   - psql -c 'create database travis_ci_test;' -U postgres
   - bundle exec rake db:migrate
-  - bin/webpack
 
 install:
   - bundle install
@@ -38,20 +28,33 @@ install:
 #   - kill $(jobs -p) || true
 
 stages:
-  - backend
-  - frontend
+  - unit-tests
   - end-to-end
 
 jobs:
   include:
-    - stage: backend
+    - stage: unit-tests
+      rvm:
+        - 2.3.7
+        - 2.4.4
+        - 2.5.0
+        - 2.5.1
+      before_install:
+        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        - chmod +x ./cc-test-reporter
+        - ./cc-test-reporter before-build
       script:
         - bundle exec rspec
-    - stage: frontend
-      script:
-        - yarn test:once
+      after_script:
+        - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json
+        - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info
+        - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+        - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
     - stage: end-to-end
+      rvm:
+        - 2.5.1
       script:
+        - bin/webpack
         - bundle exec rake db:seed
         - bundle exec rails server -p 3000 &
         - yarn cypress:ci
@@ -59,8 +62,3 @@ jobs:
 
 bundler_args: --without production
 
-after_script:
-  - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json
-  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info
-  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
