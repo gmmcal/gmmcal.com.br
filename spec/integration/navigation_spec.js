@@ -2,10 +2,6 @@
 
 describe('Navigation', () => {
   context('main', () => {
-    before(() => {
-      cy.visit('/')
-    })
-
     context('Home', () => {
       beforeEach(() => {
         cy.get('.navbar-nav').contains('Contact').click()

@@ -21,7 +21,7 @@ export default {
         const el = document.querySelector(destination)
         if (el !== null) {
           el.scrollIntoView({
-            behavior: 'smooth',
+            behavior: 'instant',
             block: 'start'
           })
           window.history.pushState(destination, title, destination);

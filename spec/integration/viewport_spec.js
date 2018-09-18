@@ -1,10 +1,6 @@
 /// <reference types="Cypress" />
 
 describe('Viewports', () => {
-  before(() => {
-    cy.visit('/')
-  })
-
   context('desktop', () => {
     context('huge desktop', () => {
       beforeEach(() => {

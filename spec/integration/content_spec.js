@@ -1,10 +1,6 @@
 /// <reference types="Cypress" />
 
 describe('Content', () => {
-  before(() => {
-    cy.visit('/')
-  })
-
   context('Header', () => {
     it('section exists', () => {
       cy.get('header').should('have.length', 1)
