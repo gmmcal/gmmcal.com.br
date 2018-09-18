@@ -54,6 +54,10 @@ jobs:
 
     - stage: end-to-end
       rvm: 2.5.1
+      addons:
+        chrome: stable
+      before_install:
+        - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
       script:
         - bin/webpack
         - bundle exec rake db:seed
