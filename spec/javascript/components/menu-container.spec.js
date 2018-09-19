@@ -19,17 +19,13 @@ describe('MenuContainer', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['links', 'css_class']
+    const expected = ['links', 'css_class', 'click']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
-  })
-
-  it.skip('expand_menu', () => {
-    wrapper.vm.expand_menu()
   })
 
   describe('Child components', () => {

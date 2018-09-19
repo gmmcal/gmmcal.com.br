@@ -1,33 +1,18 @@
 <template>
-  <a v-on:click="scroll" data-turbolinks="false" :class="item.css_class" :href="item.link" :alt="item.label">{{ I18n.t(item.label, { scope: 'template.menu'}) }}</a>
+  <a v-on:click="click" data-turbolinks="false" :class="item.css_class" :href="item.link" :alt="item.label">{{ I18n.t(item.label, { scope: 'template.menu'}) }}</a>
 </template>
 
 <script>
 import I18n from '../i18n'
+import { handleClick } from '../behavior'
 
 export default {
-  props: ['item', 'click'],
+  props: ['item'],
   data() {
     return {
       I18n: I18n,
+      click: handleClick,
     }
-  },
-  methods: {
-    scroll(event) {
-      const destination = event.target.attributes['href'].value
-      if ( destination.indexOf('#') >=0 ) {
-        event.preventDefault()
-        const title = event.target.attributes['alt']
-        const el = document.querySelector(destination)
-        if (el !== null) {
-          el.scrollIntoView({
-            behavior: 'instant',
-            block: 'start'
-          })
-          window.history.pushState(destination, title, destination);
-        }
-      }
-    },
   },
 }
 </script>

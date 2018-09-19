@@ -1,11 +1,11 @@
 <template>
   <div class="menu fixed-top">
     <div class="navbar navbar-expand-md navbar-dark">
-      <button v-on:click="expand_menu" aria-label="Menu" type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+      <button v-on:click="click" aria-label="Menu" type="button" class="navbar-toggler">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="menu-container collapse navbar-collapse">
-        <vue-menu :click="expand_menu" :items="links" :css_class="css_class" />
+        <vue-menu :items="links" :css_class="css_class" />
       </div>
     </div>
   </div>
@@ -13,23 +13,19 @@
 
 <script>
 import Menu from './menu'
+import { handleMenu } from '../behavior'
 
 export default {
   data() {
     return {
       links: gon.menu_links,
       css_class: 'navbar-nav',
+      click: handleMenu,
     }
   },
   components: {
     'vue-menu': Menu,
   },
-  methods: {
-    expand_menu(event) {
-      const menu = document.querySelector('.navbar-collapse')
-      menu.classList.toggle('show')
-    }
-  }
 }
 </script>
 

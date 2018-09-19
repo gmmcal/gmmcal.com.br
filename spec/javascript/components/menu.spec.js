@@ -34,11 +34,6 @@ describe('Menu', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it.skip('scroll', () => {
-    wrapper.trigger('scroll')
-    // FIXME: really test something
-  })
-
   describe('Child components', () => {
     it('includes MenuItem', () => {
       const child_component = wrapper.find(MenuItem)
