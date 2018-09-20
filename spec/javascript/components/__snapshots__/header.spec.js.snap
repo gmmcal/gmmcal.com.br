@@ -11,11 +11,11 @@ exports[`Header renders correctly 1`] = `
         </ul>
       </div>
     </div>
+    <ul class="i18n">
+      <li class="active"><a data-turbolinks="false" href="#home" alt="home" class="home">Home</a></li>
+      <li><a data-turbolinks="false" href="#about" alt="about" class="about">About</a></li>
+    </ul>
   </div>
-  <ul class="i18n">
-    <li class="active"><a data-turbolinks="false" href="#home" alt="home" class="home">Home</a></li>
-    <li><a data-turbolinks="false" href="#about" alt="about" class="about">About</a></li>
-  </ul>
   <div class="banner">
     <div class="row" style="width: 0px; height: 0px;">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">

@@ -78,21 +78,6 @@ export default {
         color: #fff;
         text-decoration: none;
       }
-
-      // @media screen and (max-width: 991px) {
-      //   padding-left: 18px;
-      //   padding-right: 18px;
-      // }
-
-      // @media screen and (max-width: 810px) {
-      //   padding-left: 17px;
-      // }
-
-      // @media screen and (max-width: 480px) {
-      //   line-height: 17px;
-      //   padding-bottom: 11px;
-      //   padding-top: 11px;
-      // }
     }
 
     @media screen and (max-width: 810px) {
@@ -118,7 +103,6 @@ export default {
   right: 10px;
   top: 15px;
   width: 32px;
-  z-index: 1040;
 
   li {
     float: right;

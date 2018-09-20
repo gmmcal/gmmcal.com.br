@@ -1,7 +1,9 @@
 <template>
   <header>
-    <vue-main-menu />
-    <vue-menu :items="flag_links" :css_class="i18n_css_class" />
+    <div class="menu fixed-top">
+      <vue-main-menu />
+      <vue-menu :items="flag_links" :css_class="i18n_css_class" />
+    </div>
     <vue-banner />
   </header>
 </template>
@@ -30,5 +32,10 @@ export default {
 <style lang="scss" scoped>
 header {
   position: relative;
+
+  .menu {
+    background: #262b37;
+    min-height: 62px;
+  }
 }
 </style>
