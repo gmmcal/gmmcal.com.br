@@ -8,7 +8,7 @@ import create from '../settings/utils'
 describe('Header', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     const images = {
       banner: {
         small: 'bar.jpg',

@@ -5,7 +5,7 @@ import create from '../settings/utils'
 describe('MenuItem', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
         item: create('menu_item')

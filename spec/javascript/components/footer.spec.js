@@ -5,7 +5,7 @@ import Social from '@/components/social'
 describe('Footer', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     wrapper = mount(Footer)
   })
 

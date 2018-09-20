@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('Skills', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     window.gon = { skills: create('skills') }
 
     wrapper = mount(Skills)

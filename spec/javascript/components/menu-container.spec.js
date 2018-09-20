@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('MenuContainer', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     window.gon = {
       menu_links: create('menu_items')
     }
@@ -19,7 +19,7 @@ describe('MenuContainer', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['links', 'css_class', 'click']
+    const expected = ['links', 'click']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })

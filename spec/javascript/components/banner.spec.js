@@ -7,7 +7,7 @@ import create from '../settings/utils'
 describe('Banner', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     const images = {
       banner: {
         small: 'bar.jpg',
@@ -24,7 +24,7 @@ describe('Banner', () => {
     wrapper = mount(Banner)
   })
 
-  afterAll(() => {
+  afterEach(() => {
     wrapper.destroy()
   })
 

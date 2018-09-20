@@ -5,7 +5,7 @@ import create from '../settings/utils'
 describe('Skill', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
         skill: create('skill')

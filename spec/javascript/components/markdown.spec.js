@@ -4,7 +4,7 @@ import Markdown from '@/components/markdown'
 describe('Markdown', () => {
   let slots, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     wrapper = mount(Markdown, slots)
   })
 
@@ -19,7 +19,7 @@ describe('Markdown', () => {
   })
 
   describe('with children', () => {
-    beforeAll(() => {
+    beforeEach(() => {
       slots = {
         slots: {
           default: '<p>Some text</p>'

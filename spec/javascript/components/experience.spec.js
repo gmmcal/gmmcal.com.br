@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('Experience', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
         experience: create('experience')
@@ -64,7 +64,7 @@ describe('Experience', () => {
     })
 
     describe('without end date', () => {
-      beforeAll(() => {
+      beforeEach(() => {
         props = {
           propsData: {
             experience: create('experience', { end_date: null })

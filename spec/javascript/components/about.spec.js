@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('About', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     const images = {
       user: {
         small: 'bar.jpg',

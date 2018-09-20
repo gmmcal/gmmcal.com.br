@@ -5,7 +5,7 @@ import create from '../settings/utils'
 describe('Contact', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     window.gon = { about: create('about') }
 
     wrapper = mount(Contact)
