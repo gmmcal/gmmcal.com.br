@@ -28,7 +28,7 @@ export default {
       return null
     },
     scroll() {
-      this.active = handleScroll(this.items)
+      this.active = handleScroll(this.items.slice())
     },
   },
   mounted() {
