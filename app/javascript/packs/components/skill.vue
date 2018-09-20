@@ -14,7 +14,12 @@
 import EasyPieChart from 'easy-pie-chart'
 
 export default {
-  props: ['skill'],
+  props: {
+    skill: {
+      type: Object,
+      required: true
+    }
+  },
   mounted() {
     const element = this.$el.querySelector('.chart')
     new EasyPieChart(element, {

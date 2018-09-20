@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Menu renders correctly 1`] = `
-<ul>
+<ul class="navbar-nav">
   <li class="active"><a data-turbolinks="false" href="#home" alt="home" class="home">Home</a></li>
   <li><a data-turbolinks="false" href="#about" alt="about" class="about">About</a></li>
 </ul>

@@ -19,7 +19,12 @@ import I18n from '../i18n'
 import VueMarkdown from './markdown'
 
 export default {
-  props: ['experience'],
+  props: {
+    experience: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       I18n: I18n,

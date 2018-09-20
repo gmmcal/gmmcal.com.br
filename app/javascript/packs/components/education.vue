@@ -19,7 +19,12 @@ import I18n from '../i18n'
 import VueMarkdown from './markdown'
 
 export default {
-  props: ['education'],
+  props: {
+    education: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       I18n: I18n,

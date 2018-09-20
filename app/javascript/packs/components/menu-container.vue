@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="menu-container collapse navbar-collapse">
-        <vue-menu :items="links" :css_class="css_class" />
+        <vue-menu :items="links" :monitor_scroll="true" />
       </div>
     </div>
   </div>
@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       links: gon.menu_links,
-      css_class: 'navbar-nav',
       click: handleMenu,
     }
   },

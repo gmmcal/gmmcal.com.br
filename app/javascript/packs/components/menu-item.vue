@@ -7,7 +7,12 @@ import I18n from '../i18n'
 import { handleClick } from '../behavior'
 
 export default {
-  props: ['item'],
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       I18n: I18n,
