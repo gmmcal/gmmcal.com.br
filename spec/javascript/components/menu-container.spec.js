@@ -35,7 +35,12 @@ describe('MenuContainer', () => {
     })
 
     it('renders 1 Menu objects', () => {
-      wrapper = shallowMount(Menu)
+      const props = {
+        propsData: {
+          items: gon.menu_links
+        }
+      }
+      wrapper = shallowMount(Menu, props)
       const menus = wrapper.findAll(Menu)
       expect(menus.length).toBe(1)
     })
