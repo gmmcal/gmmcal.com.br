@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Footer from '@/components/footer'
 import Social from '@/components/social'
 

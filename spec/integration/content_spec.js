@@ -7,7 +7,7 @@ describe('Content', () => {
     })
 
     it('has a banner image', () => {
-      cy.get('header img').should('have.attr', 'src')
+      cy.get('header .banner-img').should('have.class', 'visible')
     })
 
     it('has a title', () => {
@@ -44,7 +44,7 @@ describe('Content', () => {
       })
 
       it('has an image', () => {
-        cy.get('#about img').should('have.class', 'topmar').and('have.attr', 'src')
+        cy.get('#about .topmar').should('have.class', 'visible')
       })
     })
   })
