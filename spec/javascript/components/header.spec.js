@@ -9,19 +9,9 @@ describe('Header', () => {
   let wrapper
 
   beforeEach(() => {
-    const images = {
-      banner: {
-        small: 'bar.jpg',
-        medium: 'bar.jpg',
-        large: 'bar.jpg',
-        xlarge: 'bar.jpg',
-      }
-    }
-
     window.gon = {
       flag_links: create('menu_items'),
-      menu_links: create('menu_items'),
-      images: images
+      menu_links: create('menu_items')
     }
 
     wrapper = mount(Header)

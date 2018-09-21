@@ -15,7 +15,9 @@ exports[`Body renders correctly 1`] = `
             <p>Lorem ipsum nulus dolor.</p>
           </div> <a href="file.pdf" target="_blank" rel="noopener" class="btn-download">PDF Download</a>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic"><img src="bar.jpg" data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Gustavo Cunha" class="topmar b-lazy"></div>
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 offset-lg-1">
+          <div class="lazy topmar"></div>
+        </div>
       </div>
     </div>
   </section>

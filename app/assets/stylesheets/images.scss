@@ -29,3 +29,45 @@
 .skill-bg {
   background: asset_url('skills.png') no-repeat 0 0;
 }
+
+.banner {
+  .banner-part {
+    .banner-img {
+      background: asset_url('banner-small.jpg') no-repeat 0 0;
+
+      &.visible {
+        @media screen and (min-width: 420px) and (max-width: 767px) {
+          background: asset_url('banner-medium.jpg') no-repeat 0 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+          background: asset_url('banner-large.jpg') no-repeat 0 0;
+        }
+
+        @media screen and (min-width: 1024px) {
+          background: asset_url('banner.jpg') no-repeat 0 0;
+        }
+      }
+    }
+  }
+}
+
+.about-me {
+  .topmar {
+    background: asset_url('gmmcal-small.png') no-repeat 0 0;
+
+    &.visible {
+      @media screen and (min-width: 420px) and (max-width: 767px) {
+        background: asset_url('gmmcal-medium.png') no-repeat 0 0;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        background: asset_url('gmmcal-large.png') no-repeat 0 0;
+      }
+
+      @media screen and (min-width: 1024px) {
+        background: asset_url('gmmcal.png') no-repeat 0 0;
+      }
+    }
+  }
+}

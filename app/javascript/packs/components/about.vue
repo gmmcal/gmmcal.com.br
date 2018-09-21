@@ -11,14 +11,8 @@
           <vue-markdown class="description">{{ about.description }}</vue-markdown>
           <a :href="about.cv" class="btn-download" target="_blank" rel="noopener">{{ I18n.t('file_title', { scope: 'about'}) }}</a>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 offset-md-1 offset-lg-1 pro-pic">
-          <img :src="images.small"
-               :data-src="images.xlarge"
-               :data-src-small="images.small"
-               :data-src-medium="images.medium"
-               :data-src-large="images.large"
-               :alt="I18n.t('name', { scope: 'template' })"
-               class="topmar b-lazy" />
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 offset-lg-1">
+          <div class="lazy topmar"></div>
         </div>
       </div>
     </div>
@@ -33,7 +27,6 @@ export default {
   data() {
     return {
       about: gon.about,
-      images: gon.images.user,
       I18n: I18n,
     }
   },
@@ -80,19 +73,15 @@ export default {
     }
   }
 
-  .pro-pic {
-    display: flex;
-    flex-direction: row;
-    @media screen and (max-width: 767px) {
-      flex-direction: column;
-    }
-  }
-
   .topmar {
     align-self: flex-end;
     width: 100%;
+    height: 100%;
+    min-height: 250px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
     @media screen and (max-width: 767px) {
-      width: auto;
       align-self: center;
     }
   }

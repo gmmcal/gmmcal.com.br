@@ -11,27 +11,11 @@ describe('Body', () => {
   let wrapper
 
   beforeEach(() => {
-    const images = {
-      user: {
-        small: 'bar.jpg',
-        medium: 'bar.jpg',
-        large: 'bar.jpg',
-        xlarge: 'bar.jpg',
-      },
-      banner: {
-        small: 'bar.jpg',
-        medium: 'bar.jpg',
-        large: 'bar.jpg',
-        xlarge: 'bar.jpg',
-      }
-    }
-
     window.gon = {
       about: create('about'),
       educations: create('educations'),
       experiences: create('experiences'),
-      skills: create('skills'),
-      images: images
+      skills: create('skills')
     }
 
     wrapper = mount(Body)
