@@ -7,13 +7,13 @@
         </a>
       </li>
       <li>
-        <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <font-awesome-icon prefix="fab" :icon="iconLinkedin" size="lg"></font-awesome-icon>
+        <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener" aria-label="Twitter">
+          <font-awesome-icon prefix="fab" :icon="iconTwitter" size="lg"></font-awesome-icon>
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener" aria-label="Twitter">
-          <font-awesome-icon prefix="fab" :icon="iconTwitter" size="lg"></font-awesome-icon>
+        <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <font-awesome-icon prefix="fab" :icon="iconLinkedin" size="lg"></font-awesome-icon>
         </a>
       </li>
     </ul>
