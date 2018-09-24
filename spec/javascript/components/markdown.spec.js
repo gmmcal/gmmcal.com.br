@@ -14,7 +14,7 @@ describe('Markdown', () => {
     })
 
     it('renders correctly', () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot()
     })
   })
 
@@ -34,7 +34,7 @@ describe('Markdown', () => {
     })
 
     it('renders correctly', () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot()
     })
   })
 })

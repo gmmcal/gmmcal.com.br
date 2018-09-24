@@ -26,6 +26,6 @@ describe('MenuItem', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 })

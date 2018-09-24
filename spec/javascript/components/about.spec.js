@@ -25,7 +25,7 @@ describe('About', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Content', () => {

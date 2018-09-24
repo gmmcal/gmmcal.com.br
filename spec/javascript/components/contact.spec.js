@@ -22,7 +22,7 @@ describe('Contact', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Content', () => {

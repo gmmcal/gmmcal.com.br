@@ -23,7 +23,7 @@ describe('Experiences', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Child components', () => {

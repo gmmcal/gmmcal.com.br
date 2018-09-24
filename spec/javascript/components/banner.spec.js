@@ -19,6 +19,6 @@ describe('Banner', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 })

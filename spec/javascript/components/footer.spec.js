@@ -20,7 +20,7 @@ describe('Footer', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('has footer class', () => {
