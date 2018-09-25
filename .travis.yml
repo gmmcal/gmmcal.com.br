@@ -64,5 +64,18 @@ jobs:
         - bundle exec rails server -p 3000 &
         - yarn cypress:ci
         - kill $(jobs -p) || true
+    - stage: deploy to staging
+      deploy: &heroku
+        provider: heroku
+        app: gmmcal-dev
+        api_key: $HEROKU_AUTH_TOKEN
+    - stage: deploy to production
+      deploy: &heroku
+        provider: heroku
+        app: gmmcal-dev
+        api_key: $HEROKU_AUTH_TOKEN
+        on:
+          all_branches: true
+          tags: true
 
 bundler_args: --without production
