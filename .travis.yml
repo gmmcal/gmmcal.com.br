@@ -6,28 +6,34 @@ cache:
     - /home/travis/.npm
     - /home/travis/.cache
 
-before_install:
-  - gem update --system
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+common: &common
+  before_install:
+    - gem update --system
 
-before_script:
-  - cp config/database.yml.travis config/database.yml
-  - cp config/secrets.yml.travis config/secrets.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - bundle exec rake db:migrate
+  before_script:
+    - cp config/database.yml.travis config/database.yml
+    - cp config/secrets.yml.travis config/secrets.yml
+    - psql -c 'create database travis_ci_test;' -U postgres
+    - bundle exec rake db:migrate
 
-install:
-  - bundle install
-  - nvm install node
-  - npm i -g yarn
-  - yarn install
+  install:
+    - bundle install
+    - nvm install node
+    - npm i -g yarn
+    - yarn install
 
-defaults: &defaults
+tests: &tests
+  <<: *common
+  before_install:
+    - gem update --system
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
+
   script:
     - bundle exec rspec
     - yarn test:once
+
   after_script:
     - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json
     - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info
@@ -38,46 +44,53 @@ jobs:
   include:
     - stage: unit tests
       rvm: 2.3.7
-      <<: *defaults
+      <<: *tests
 
     - stage: unit tests
       rvm: 2.4.4
-      <<: *defaults
+      <<: *tests
 
     - stage: unit tests
       rvm: 2.5.0
-      <<: *defaults
+      <<: *tests
 
     - stage: unit tests
       rvm: 2.5.1
-      <<: *defaults
+      <<: *tests
 
-    - stage: end-to-end
+    - stage: end-to-end tests
       rvm: 2.5.1
       addons:
         chrome: stable
+
+      <<: *common
       before_install:
         - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
+
       script:
         - bin/webpack
         - bundle exec rake db:seed
         - bundle exec rails server -p 3000 &
         - yarn cypress:ci
         - kill $(jobs -p) || true
+
     - stage: deploy
       script: skip
       deploy: &heroku
         provider: heroku
         app: gmmcal-dev
         api_key: $HEROKU_AUTH_TOKEN
+        run: "rake db:setup"
         on:
           all_branches: true
+
     - stage: deploy
       script: skip
       deploy: &heroku
         provider: heroku
         app: gmmcal
         api_key: $HEROKU_AUTH_TOKEN
+        run: "rake db:migrate"
         on:
           all_branches: true
           tags: true
