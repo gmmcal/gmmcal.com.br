@@ -65,11 +65,13 @@ jobs:
         - yarn cypress:ci
         - kill $(jobs -p) || true
     - stage: deploy to staging
+      script: skip
       deploy: &heroku
         provider: heroku
         app: gmmcal-dev
         api_key: $HEROKU_AUTH_TOKEN
     - stage: deploy to production
+      script: skip
       deploy: &heroku
         provider: heroku
         app: gmmcal-dev
