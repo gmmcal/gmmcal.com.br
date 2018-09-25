@@ -84,7 +84,7 @@ jobs:
           - "rake db:migrate"
           - "rake db:staging"
         on:
-          all_branches: true
+          branch: master
 
     - stage: deploy
       script: skip
