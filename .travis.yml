@@ -80,7 +80,9 @@ jobs:
         provider: heroku
         app: gmmcal-dev
         api_key: $HEROKU_AUTH_TOKEN
-        run: "rake db:setup"
+        run:
+          - "rake db:migrate"
+          - "rake db:staging"
         on:
           all_branches: true
 
