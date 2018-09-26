@@ -1,12 +1,16 @@
 Personal Website: [https://www.gmmcal.com.br](https://www.gmmcal.com.br)
 =============
 
+[![github tag](https://img.shields.io/github/tag/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br)
 [![build state](https://travis-ci.org/gmmcal/gmmcal.com.br.svg?branch=master)](https://travis-ci.org/gmmcal/gmmcal.com.br)
+[![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)](https://hakiri.io/github/gmmcal/gmmcal.com.br/master)
+
+[![github issues](https://img.shields.io/github/issues/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/issues)
 [![issue count](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/issue_count.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
 [![code review](https://ebertapp.io/github/gmmcal/gmmcal.com.br.svg)](https://ebertapp.io/github/gmmcal/gmmcal.com.br)
+
 [![maintainability score](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/gpa.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
 [![test coverage](https://api.codeclimate.com/v1/badges/b5a87ae608a9e3957042/test_coverage)](https://codeclimate.com/github/gmmcal/gmmcal.com.br/test_coverage)
-[![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)](https://hakiri.io/github/gmmcal/gmmcal.com.br/master)
 
 My personal website code, playground and learning lab.
 
