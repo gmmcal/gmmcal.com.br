@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('MenuContainer', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     window.gon = {
       menu_links: create('menu_items')
     }
@@ -19,17 +19,13 @@ describe('MenuContainer', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['links', 'css_class']
+    const expected = ['links', 'click']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
-
-  it.skip('expand_menu', () => {
-    wrapper.vm.expand_menu()
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Child components', () => {
@@ -39,7 +35,12 @@ describe('MenuContainer', () => {
     })
 
     it('renders 1 Menu objects', () => {
-      wrapper = shallowMount(Menu)
+      const props = {
+        propsData: {
+          items: gon.menu_links
+        }
+      }
+      wrapper = shallowMount(Menu, props)
       const menus = wrapper.findAll(Menu)
       expect(menus.length).toBe(1)
     })

@@ -1,10 +1,10 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Markdown from '@/components/markdown'
 
 describe('Markdown', () => {
   let slots, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     wrapper = mount(Markdown, slots)
   })
 
@@ -14,12 +14,12 @@ describe('Markdown', () => {
     })
 
     it('renders correctly', () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot()
     })
   })
 
   describe('with children', () => {
-    beforeAll(() => {
+    beforeEach(() => {
       slots = {
         slots: {
           default: '<p>Some text</p>'
@@ -34,7 +34,7 @@ describe('Markdown', () => {
     })
 
     it('renders correctly', () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot()
     })
   })
 })

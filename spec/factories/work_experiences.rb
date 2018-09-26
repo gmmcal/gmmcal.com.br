@@ -7,7 +7,8 @@ FactoryBot.define do
     city { Faker::Address.city }
     country { Faker::Address.country }
     start_date { Faker::Date.between(5.years.ago, 2.years.ago) }
-    locale :en
+    description { Faker::Lorem.paragraphs(5).join("\n\n") }
+    locale { :en }
     contentful_id { Faker::Crypto.md5 }
   end
 end

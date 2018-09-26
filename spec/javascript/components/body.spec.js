@@ -10,28 +10,12 @@ import create from '../settings/utils'
 describe('Body', () => {
   let wrapper
 
-  beforeAll(() => {
-    const images = {
-      user: {
-        small: 'bar.jpg',
-        medium: 'bar.jpg',
-        large: 'bar.jpg',
-        xlarge: 'bar.jpg',
-      },
-      banner: {
-        small: 'bar.jpg',
-        medium: 'bar.jpg',
-        large: 'bar.jpg',
-        xlarge: 'bar.jpg',
-      }
-    }
-
+  beforeEach(() => {
     window.gon = {
       about: create('about'),
       educations: create('educations'),
       experiences: create('experiences'),
-      skills: create('skills'),
-      images: images
+      skills: create('skills')
     }
 
     wrapper = mount(Body)
@@ -48,7 +32,7 @@ describe('Body', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Child components', () => {

@@ -1,68 +1,63 @@
 <template>
   <ul :class="css_class">
-    <li :class="li_class(item)" v-for="item in items" :key="item.label">
-      <vue-menu-item :click="click" :item="item" />
+    <li :class="active_class(item)" v-for="item in items" :key="item.label">
+      <vue-menu-item :item="item" />
     </li>
   </ul>
 </template>
 
 <script>
 import MenuItem from './menu-item'
+import { handleScroll } from '../behavior'
 
 export default {
-  props: ['items', 'css_class', 'click'],
-  data() {
-    return {
-      active: 'home'
+  props: {
+    items: {
+      type: Array[Object],
+      required: true
+    },
+    css_class: {
+      type: String,
+      default: 'navbar-nav'
+    },
+    monitor_scroll: {
+      type: Boolean,
+      default: false
     }
   },
-  computed: {
-    scroll_items() {
-      return this.items.slice(0).reverse()
+  data() {
+    return {
+      active: 'home',
     }
   },
   components: {
     'vue-menu-item': MenuItem,
   },
   methods: {
-    li_class(item) {
+    active_class(item) {
       if (item.label === this.active) {
         return 'active'
       }
       return null
     },
     scroll() {
-      this.active = this.active_menu_item()
+      this.active = handleScroll(this.items.slice())
     },
-    active_menu_item() {
-      const actives = this.active_scrolled_items()
-      if (actives.length === 0)
-        return 'home'
-      return actives[0].label
-    },
-    active_scrolled_items() {
-      const scrollingElement = document.scrollingElement || document.documentElement
-      return this.scroll_items.filter(function(item) {
-        const el = document.getElementById(item.label)
-        if (el === null)
-          return false
-        if (scrollingElement.scrollTop >= el.offsetTop) {
-          return true
-        }
-        return false
-      })
-    }
   },
   mounted() {
     this.$nextTick(() => {
-      window.addEventListener('scroll', this.scroll)
-      window.addEventListener('resize', this.scroll)
+      if (this.monitor_scroll) {
+        window.addEventListener('scroll', this.scroll)
+        window.addEventListener('resize', this.scroll)
+      }
     })
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.scroll)
-    window.removeEventListener('resize', this.scroll)
-  }
+    if (this.monitor_scroll) {
+      window.removeEventListener('scroll', this.scroll)
+      window.removeEventListener('resize', this.scroll)
+    }
+  },
 }
 </script>
 
@@ -83,21 +78,6 @@ export default {
         color: #fff;
         text-decoration: none;
       }
-
-      // @media screen and (max-width: 991px) {
-      //   padding-left: 18px;
-      //   padding-right: 18px;
-      // }
-
-      // @media screen and (max-width: 810px) {
-      //   padding-left: 17px;
-      // }
-
-      // @media screen and (max-width: 480px) {
-      //   line-height: 17px;
-      //   padding-bottom: 11px;
-      //   padding-top: 11px;
-      // }
     }
 
     @media screen and (max-width: 810px) {
@@ -123,7 +103,6 @@ export default {
   right: 10px;
   top: 15px;
   width: 32px;
-  z-index: 1040;
 
   li {
     float: right;

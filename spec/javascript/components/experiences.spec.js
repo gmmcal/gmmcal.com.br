@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('Experiences', () => {
   let wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     window.gon = { experiences: create('experiences') }
 
     wrapper = mount(Experiences)
@@ -23,7 +23,7 @@ describe('Experiences', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Child components', () => {

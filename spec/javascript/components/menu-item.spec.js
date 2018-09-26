@@ -5,7 +5,7 @@ import create from '../settings/utils'
 describe('MenuItem', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
         item: create('menu_item')
@@ -20,15 +20,12 @@ describe('MenuItem', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['I18n']
+    const expected = ['I18n', 'click']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
-
-  it.skip('scroll', () => {
+    expect(wrapper).toMatchSnapshot()
   })
 })

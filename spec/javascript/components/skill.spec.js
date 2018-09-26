@@ -5,7 +5,7 @@ import create from '../settings/utils'
 describe('Skill', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
         skill: create('skill')
@@ -26,9 +26,6 @@ describe('Skill', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
-
-  it.skip('OnStep', () => {
+    expect(wrapper).toMatchSnapshot()
   })
 })

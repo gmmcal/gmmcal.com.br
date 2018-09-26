@@ -6,14 +6,19 @@ import create from '../settings/utils'
 describe('Menu', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
-        items: create('menu_items')
+        items: create('menu_items'),
+        monitor_scroll: true
       }
     }
 
     wrapper = mount(Menu, props)
+  })
+
+  afterEach(() => {
+    wrapper.destroy()
   })
 
   it('is a Vue instance', () => {
@@ -27,10 +32,7 @@ describe('Menu', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
-
-  it.skip('scroll', () => {
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Child components', () => {
@@ -40,6 +42,7 @@ describe('Menu', () => {
     })
 
     it('renders 2 MenuItem objects', () => {
+      props.propsData.monitor_scroll = false
       wrapper = shallowMount(Menu, props)
       const menu_items = wrapper.findAll(MenuItem)
       expect(menu_items.length).toBe(2)

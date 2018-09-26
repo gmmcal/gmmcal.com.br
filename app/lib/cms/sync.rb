@@ -6,6 +6,7 @@ module Cms
       sync = client.sync(initial: true)
       sync.each_item do |resource|
         next unless resource.is_a? Contentful::Entry
+
         resource.save
       end
     end
@@ -40,6 +41,7 @@ module Cms
     def self.credentials(field)
       credentials = Rails.application.credentials
       return credentials.contentful[field] if credentials.contentful.present?
+
       ENV["CONTENTFUL_#{field.upcase}"]
     end
   end

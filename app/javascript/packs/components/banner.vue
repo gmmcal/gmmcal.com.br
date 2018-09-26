@@ -1,15 +1,10 @@
 <template>
   <div class="banner">
-    <div class="row" :style="banner_style">
+    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
         <!--background slide show start-->
         <div class="banner-part">
-          <img :data-src="images.xlarge"
-               :data-src-small="images.small"
-               :data-src-medium="images.medium"
-               :data-src-large="images.large"
-               :class="banner_image_class"
-               alt="Banner" />
+          <div class="lazy banner-img"></div>
         </div>
         <!--background slide show end-->
       </div>
@@ -28,51 +23,8 @@ import I18n from '../i18n'
 export default {
   data() {
     return {
-      images: gon.images.banner,
-      bannerWidth: 0,
-      bannerHeight: 0,
-      windowWidth: 0,
-      windowHeight: 0,
       I18n: I18n,
     }
-  },
-  computed: {
-    banner_style() {
-      return {
-        width: this.bannerWidth + 'px',
-        height: this.bannerHeight + 'px',
-      }
-    },
-    banner_image_class() {
-      if (this.windowWidth < this.windowHeight) {
-        return 'b-lazy banner-img bgheight'
-      }
-      return 'b-lazy banner-img bgwidth'
-    }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.getWidth)
-      window.addEventListener('resize', this.getHeight)
-
-      //Init
-      this.getWidth()
-      this.getHeight()
-    })
-  },
-  methods: {
-    getWidth(event) {
-      this.windowWidth = document.documentElement.clientWidth
-      this.bannerWidth = this.windowWidth
-    },
-    getHeight(event) {
-      this.windowHeight = document.documentElement.clientHeight
-      this.bannerHeight = this.windowHeight
-    }
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.getWidth)
-    window.removeEventListener('resize', this.getHeight)
   }
 }
 </script>
@@ -83,6 +35,8 @@ export default {
     background: #cacaca;
     margin: 0;
     overflow: hidden;
+    height: 100vh;
+    width: 100vw;
 
     .no-padd {
       padding: 0;
@@ -163,9 +117,14 @@ export default {
     height: 100%;
     overflow: hidden;
 
-    img {
+    .banner-img {
       filter: alpha(opacity = 20); // For IE8 and earlier
       opacity: .2;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 }

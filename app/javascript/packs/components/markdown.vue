@@ -8,25 +8,25 @@ import marked from 'marked'
 export default {
   computed: {
     markdown() {
-      let text = ''
       if (this.$slots.default) {
-        for (let slot of this.$slots.default) {
-          text += this.content(slot)
-        }
+        const slots = this.$slots.default
+        this.transform.bind(this)
+        return this.transform(slots).join('')
       }
-      return text
+      return ''
     }
   },
   methods: {
-    content(slot) {
-      if (slot.text === undefined) {
-        let text = ''
-        for (let child of slot.children) {
-          text += marked(child.text, { sanitize: true })
-        }
-        return text
-      }
+    convert(slot) {
       return marked(slot.text, { sanitize: true })
+    },
+    transform(slots) {
+      return slots.map(slot => {
+        if (slot.text === undefined) {
+          return this.transform(slot.children)
+        }
+        return this.convert(slot)
+      })
     }
   }
 }

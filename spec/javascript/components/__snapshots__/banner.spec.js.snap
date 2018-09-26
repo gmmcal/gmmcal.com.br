@@ -2,9 +2,11 @@
 
 exports[`Banner renders correctly 1`] = `
 <div class="banner">
-  <div class="row" style="width: 0px; height: 0px;">
+  <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">
-      <div class="banner-part"><img data-src="bar.jpg" data-src-small="bar.jpg" data-src-medium="bar.jpg" data-src-large="bar.jpg" alt="Banner" class="b-lazy banner-img bgwidth"></div>
+      <div class="banner-part">
+        <div class="lazy banner-img"></div>
+      </div>
     </div>
   </div>
   <div class="banner-text container">

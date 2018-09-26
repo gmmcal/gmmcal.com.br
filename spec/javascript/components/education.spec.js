@@ -6,7 +6,7 @@ import create from '../settings/utils'
 describe('Education', () => {
   let props, wrapper
 
-  beforeAll(() => {
+  beforeEach(() => {
     props = {
       propsData: {
         education: create('education')
@@ -27,7 +27,7 @@ describe('Education', () => {
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Content', () => {
@@ -52,7 +52,7 @@ describe('Education', () => {
     })
 
     describe('without end date', () => {
-      beforeAll(() => {
+      beforeEach(() => {
         props = {
           propsData: {
             education: create('education', { end_date: null })

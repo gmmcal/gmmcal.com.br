@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`MenuItem renders correctly 1`] = `<a href="#home" class="home">[missing "en.template.menu.Home" translation]</a>`;

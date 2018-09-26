@@ -19,6 +19,7 @@ class ContentfulController < ApplicationController
   def self.credentials(field)
     credentials = Rails.application.credentials
     return credentials.contentful[field] if credentials.contentful.present?
+
     ENV["CONTENTFUL_#{field.upcase}"]
   end
 

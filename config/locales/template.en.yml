@@ -5,7 +5,7 @@ en:
     current: 'Currently'
     menu:
       en: "EN"
-      br: "BR"
+      pt-BR: "BR"
       home: "Home"
       about: "About"
       skills: "Skills"

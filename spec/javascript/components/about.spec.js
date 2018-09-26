@@ -6,19 +6,9 @@ import create from '../settings/utils'
 describe('About', () => {
   let wrapper
 
-  beforeAll(() => {
-    const images = {
-      user: {
-        small: 'bar.jpg',
-        medium: 'bar.jpg',
-        large: 'bar.jpg',
-        xlarge: 'bar.jpg',
-      }
-    }
-
+  beforeEach(() => {
     window.gon = {
-      about: create('about'),
-      images: images
+      about: create('about')
     }
 
     wrapper = mount(About)
@@ -29,13 +19,13 @@ describe('About', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['about', 'images', 'I18n']
+    const expected = ['about', 'I18n']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
 
   it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Content', () => {
@@ -55,7 +45,7 @@ describe('About', () => {
     })
 
     it('has an user image', () => {
-      expect(wrapper.contains('img.b-lazy[data-src="bar.jpg"]')).toBe(true)
+      expect(wrapper.contains('div.topmar')).toBe(true)
     })
 
     it('has a CV link', () => {
