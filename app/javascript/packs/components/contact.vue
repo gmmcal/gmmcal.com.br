@@ -14,27 +14,27 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h4>{{ I18n.t('title', { scope: 'contact.contacts' }) }}</h4>
           <div class="row">
-            <p class="location col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <p class="location col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fas" :icon="iconMap"></font-awesome-icon>
               <span>{{about.city}}</span>  - <span>{{about.country}}</span>
             </p>
-            <p class="phone_number col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <p class="phone_number col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fas" :icon="iconMobile"></font-awesome-icon>
               {{about.phone_number}}
             </p>
-            <p class="email col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <p class="email col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fas" :icon="iconEmail"></font-awesome-icon>
               {{about.email}}
             </p>
-            <p class="github col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <p class="github col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconGithub"></font-awesome-icon>
               <a href="https://github.com/gmmcal" target="_blank" rel="noopener">{{I18n.t('github', {scope: 'contact.contacts'})}}</a>
             </p>
-            <p class="linkedin col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <p class="linkedin col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconLinkedin"></font-awesome-icon>
               <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">{{I18n.t('linkedin', {scope: 'contact.contacts'})}}</a>
             </p>
-            <p class="twitter col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <p class="twitter col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconTwitter"></font-awesome-icon>
               <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">{{I18n.t('twitter', {scope: 'contact.contacts'})}}</a>
             </p>

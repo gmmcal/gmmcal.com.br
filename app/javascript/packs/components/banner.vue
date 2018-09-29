@@ -1,18 +1,10 @@
 <template>
   <div class="banner">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height:100%">
-        <!--background slide show start-->
-        <div class="banner-part">
-          <div class="lazy banner-img"></div>
-        </div>
-        <!--background slide show end-->
+    <div class="lazy banner-img">
+      <div class="banner-text container">
+        <h1>{{ I18n.t('name', { scope: 'template' }) }}</h1>
+        <h2>{{ I18n.t('title', { scope: 'template' }) }}</h2>
       </div>
-    </div>
-    <!--banner end-->
-    <div class="banner-text container">
-      <h1>{{ I18n.t('name', { scope: 'template' }) }}</h1>
-      <h2>{{ I18n.t('title', { scope: 'template' }) }}</h2>
     </div>
   </div>
 </template>
@@ -31,100 +23,70 @@ export default {
 
 <style lang="scss" scoped>
 .banner {
-  .row {
-    background: #cacaca;
-    margin: 0;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+  background-color: #1b1f2b;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
 
-    .no-padd {
-      padding: 0;
-    }
-  }
+  .banner-img {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
 
-  .banner-text {
-    left: 0;
-    padding: 30px 0;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 35%;
-    zoom: 1;
-
-    @media screen and (max-width: 991px) {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-
-    @media screen and (max-width: 650px) {
-      padding-bottom: 15px;
-      padding-top: 15px;
-      top: 20%;
+    &::after {
+      filter: alpha(opacity = 20); // For IE8 and earlier
+      opacity: .2;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
     }
 
-    h1 {
-      font-size: 51px;
-      font-weight: 100;
-      letter-spacing: 16px;
-      text-transform: uppercase;
+    .banner-text {
+      text-align: center;
+      align-self: center;
 
-      @media screen and (max-width: 991px) {
-        font-size: 65px;
-        line-height: 71px;
-      }
-
-      @media screen and (max-width: 650px) {
+      h1 {
         font-size: 42px;
+        font-weight: 100;
+        letter-spacing: 16px;
         line-height: 40px;
+        text-transform: uppercase;
+
+        @media screen and (min-width: 650px) {
+          font-size: 51px;
+          line-height: 60px;
+        }
+
+        @media screen and (min-width: 991px) {
+          font-size: 65px;
+          line-height: 90px;
+        }
       }
-    }
 
-    h2 {
-      font-size: 17px;
-      letter-spacing: 8px;
-      line-height: 45px;
-      text-transform: uppercase;
-
-      @media screen and (max-width: 991px) {
-        font-size: 28px;
-      }
-
-      @media screen and (max-width: 650px) {
+      h2 {
+        letter-spacing: 8px;
+        text-transform: uppercase;
         font-size: 15px;
         line-height: 24px;
         padding-top: 10px;
+
+        @media screen and (min-width: 650px) {
+          font-size: 17px;
+          line-height: 34px;
+        }
+
+        @media screen and (min-width: 991px) {
+          font-size: 28px;
+          line-height: 45px;
+        }
       }
-    }
-  }
-
-  .bgwidth {
-    width: 100%;
-
-    @media screen and (max-width: 1024px) {
-      height: 100%;
-      width: auto;
-    }
-  }
-
-  .bgheight {
-    height: 100%;
-    width: auto;
-  }
-
-  .banner-part {
-    background: #1b1f2b;
-    height: 100%;
-    overflow: hidden;
-
-    .banner-img {
-      filter: alpha(opacity = 20); // For IE8 and earlier
-      opacity: .2;
-      width: 100%;
-      height: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
     }
   }
 }

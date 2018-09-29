@@ -1,6 +1,6 @@
 <template>
-  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 skills-area">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 skills">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 skills-area">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 skills">
       <span class="chart skill-bg" :data-percent="skill.value">
         <span class="percent">{{ Math.round(skill.value) }}</span>
       </span>
