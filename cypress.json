@@ -1,4 +1,5 @@
 {
+  "projectId": "88eqvw",
   "baseUrl": "http://localhost:3000",
   "fixturesFolder": "spec/fixtures",
   "integrationFolder": "spec/integration",

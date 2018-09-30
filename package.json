@@ -72,6 +72,6 @@
     "test": "jest --watch",
     "test:once": "jest",
     "cypress": "rake db:setup && cypress open",
-    "cypress:ci": "cypress run --browser chrome"
+    "cypress:ci": "cypress run --browser chrome --record"
   }
 }

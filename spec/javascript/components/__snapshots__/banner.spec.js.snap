@@ -2,16 +2,11 @@
 
 exports[`Banner renders correctly 1`] = `
 <div class="banner">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padd" style="height: 100%;">
-      <div class="banner-part">
-        <div class="lazy banner-img"></div>
-      </div>
+  <div class="lazy banner-img">
+    <div class="banner-text container">
+      <h1>Gustavo Cunha</h1>
+      <h2>Web developer, Mobile and Software Engineer Consultant</h2>
     </div>
-  </div>
-  <div class="banner-text container">
-    <h1>Gustavo Cunha</h1>
-    <h2>Web developer, Mobile and Software Engineer Consultant</h2>
   </div>
 </div>
 `;

@@ -31,22 +31,22 @@
 }
 
 .banner {
-  .banner-part {
-    .banner-img {
+  .banner-img {
+    &::after {
       background: asset_url('banner-small.jpg') no-repeat 0 0;
+    }
 
-      &.visible {
-        @media screen and (min-width: 420px) and (max-width: 767px) {
-          background: asset_url('banner-medium.jpg') no-repeat 0 0;
-        }
+    &.visible::after {
+      @media screen and (min-width: 420px) and (max-width: 767px) {
+        background: asset_url('banner-medium.jpg') no-repeat 0 0;
+      }
 
-        @media screen and (min-width: 768px) and (max-width: 1023px) {
-          background: asset_url('banner-large.jpg') no-repeat 0 0;
-        }
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        background: asset_url('banner-large.jpg') no-repeat 0 0;
+      }
 
-        @media screen and (min-width: 1024px) {
-          background: asset_url('banner.jpg') no-repeat 0 0;
-        }
+      @media screen and (min-width: 1024px) {
+        background: asset_url('banner.jpg') no-repeat 0 0;
       }
     }
   }
