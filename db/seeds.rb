@@ -19,8 +19,8 @@ FactoryBot.create(:about, locale: 'pt-BR')
 FactoryBot.create_list(:work_experience, 5, locale: 'en')
 FactoryBot.create_list(:work_experience, 5, locale: 'pt-BR')
 
-FactoryBot.create_list(:skill, 6, locale: 'en')
-FactoryBot.create_list(:skill, 6, locale: 'pt-BR')
+FactoryBot.create_list(:skill, 40, locale: 'en')
+FactoryBot.create_list(:skill, 40, locale: 'pt-BR')
 
 FactoryBot.create_list(:education, 2, locale: 'en')
 FactoryBot.create_list(:education, 2, locale: 'pt-BR')
