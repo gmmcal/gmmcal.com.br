@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateWorkExperiences < ActiveRecord::Migration[5.1]
+class CreateWorkExperiences < ActiveRecord::Migration[5.2]
   # rubocop:disable Metrics/MethodLength
   def change
     create_table :work_experiences do |table|

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateAbouts < ActiveRecord::Migration[5.1]
+class CreateAbouts < ActiveRecord::Migration[5.2]
   # rubocop:disable Metrics/MethodLength
   def change
     create_table :abouts do |table|

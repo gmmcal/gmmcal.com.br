@@ -1,12 +1,10 @@
 [
   {
     "name": "Skill Name",
-    "hero": "Skill hero",
     "value": 100
   },
   {
     "name": "Another Skill",
-    "hero": "You are awesome",
     "value": 90
   }
 ]

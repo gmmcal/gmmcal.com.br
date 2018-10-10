@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateEducations < ActiveRecord::Migration[5.1]
+class CreateEducations < ActiveRecord::Migration[5.2]
   # rubocop:disable Metrics/MethodLength
   def change
     create_table :educations do |table|
