@@ -53,7 +53,7 @@ RSpec.describe ContentfulController, type: :request do
         end
 
         it 'creates one in portuguese' do
-          expected_count = klass.with_locale(:en).count
+          expected_count = klass.with_locale(:'pt-BR').count
           expect(expected_count).to eq(1)
         end
       end

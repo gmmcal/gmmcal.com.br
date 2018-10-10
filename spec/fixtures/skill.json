@@ -4,10 +4,6 @@
       "en": "Hello, World!",
       "pt-BR": "Hello, World!"
     },
-    "hero": {
-      "en": "Bacon is healthy!",
-      "pt-BR": "Bacon is healthy!"
-    },
     "value": {
       "en": 90
     }
