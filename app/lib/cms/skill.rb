@@ -6,15 +6,13 @@ module Cms
 
     def localized_attributes
       {
-        name: :name,
-        hero: :hero
+        name: :name
       }
     end
 
     def attributes
       {
-        value: :value,
-        order: :order
+        value: :value
       }
     end
   end

@@ -4,13 +4,10 @@
   "website": "https://www.gmmcal.com.br/",
   "repository": "https://github.com/gmmcal/gmmcal.com.br",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "bundle exec rake db:migrate db:staging"
   },
   "env": {
     "RAILS_MASTER_KEY": {
-      "required": true
-    },
-    "DATABASE_URL": {
       "required": true
     },
     "LANG": {

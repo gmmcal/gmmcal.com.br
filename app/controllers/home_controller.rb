@@ -25,7 +25,7 @@ class HomeController < ApplicationController
 
   def skills
     Rails.cache.fetch("#{I18n.locale}/skills", expires_in: 12.hours) do
-      Skill.ordered.with_locale(I18n.locale)
+      Skill.random.with_locale(I18n.locale)
     end
   end
 

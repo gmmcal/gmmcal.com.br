@@ -5,6 +5,7 @@ fallbacks: false
 translations:
   - file: "app/javascript/packs/i18n/en.js"
     only: 'en.*'
+    pretty_print: true
   - file: "app/javascript/packs/i18n/pt-BR.js"
     only: 'pt-BR.*'
-
+    pretty_print: true

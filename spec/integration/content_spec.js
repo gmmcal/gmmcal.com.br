@@ -87,8 +87,8 @@ describe('Content', () => {
     })
 
     context('body', () => {
-      it('contains 6 skills', () => {
-        cy.get('#skills .skills').should('have.length', 6)
+      it('contains 40 skills', () => {
+        cy.get('#skills .skill').should('have.length', 40)
       })
     })
   })
