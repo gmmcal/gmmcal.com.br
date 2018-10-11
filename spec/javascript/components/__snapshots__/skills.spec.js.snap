@@ -5,7 +5,7 @@ exports[`Skills renders correctly 1`] = `
   <div class="container">
     <div class="heading">
       <h2>Technical Skills</h2>
-      <p>I know what I'm good at, but I'm always learning</p>
+      <p>The subjects I'm currently under my radar, but I'm always open to new technologies.</p>
     </div>
     <div class="row">
       <p class="skill" style="font-size: 70px;">Skill Name</p>
