@@ -1,5 +1,5 @@
 <template>
-  <p class="skill" :style="style">{{ skill.name }}</p>
+  <span class="skill" :style="style">{{ skill.name }}</span>
 </template>
 
 <script>
@@ -24,10 +24,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p.skill {
+.skill {
   margin: 10px;
   padding: 0;
-  line-height: 45px;
+  line-height: 30px;
   align-self: center;
+  display: inline-block;
 }
 </style>
