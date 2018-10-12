@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Skill renders correctly 1`] = `<p class="skill" style="font-size: 70px;">Skill Name</p>`;
+exports[`Skill renders correctly 1`] = `<span class="skill" style="font-size: 70px;">Skill Name</span>`;

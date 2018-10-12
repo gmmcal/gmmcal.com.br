@@ -47,5 +47,10 @@ export default {
   h2 {
     color: #ff675f;
   }
+
+  .row {
+    display: block;
+    text-align: center;
+  }
 }
 </style>
