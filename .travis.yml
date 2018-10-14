@@ -14,7 +14,7 @@ common: &common
     - cp config/database.yml.travis config/database.yml
     - cp config/secrets.yml.travis config/secrets.yml
     - psql -c 'create database travis_ci_test;' -U postgres
-    - bundle exec rake db:migrate
+    - bundle exec rails db:migrate
 
   install:
     - bundle install
@@ -69,7 +69,7 @@ jobs:
 
       script:
         - bin/webpack
-        - bundle exec rake db:seed
+        - bundle exec rails db:seed
         - bundle exec rails server -p 3000 &
         - yarn cypress:ci
         - kill $(jobs -p) || true
@@ -81,8 +81,9 @@ jobs:
         app: gmmcal-dev
         api_key: $HEROKU_AUTH_TOKEN
         run:
-          - "rake db:migrate"
-          - "rake db:staging"
+          - "rails db:migrate"
+          - "rails db:staging"
+          - "rails db:cache:clear"
         on:
           branch: master
 
@@ -92,7 +93,9 @@ jobs:
         provider: heroku
         app: gmmcal
         api_key: $HEROKU_AUTH_TOKEN
-        run: "rake db:migrate"
+        run:
+          - "rails db:migrate"
+          - "rails db:cache:clear"
         on:
           all_branches: true
           tags: true
