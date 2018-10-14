@@ -19,19 +19,19 @@ class HomeController < ApplicationController
 
   def educations
     Rails.cache.fetch("#{I18n.locale}/educations", expires_in: 12.hours) do
-      Education.ordered.with_locale(I18n.locale)
+      Education.ordered.with_locale(I18n.locale).to_a
     end
   end
 
   def skills
     Rails.cache.fetch("#{I18n.locale}/skills", expires_in: 12.hours) do
-      Skill.random.with_locale(I18n.locale)
+      Skill.random.with_locale(I18n.locale).to_a
     end
   end
 
   def work_experiences
     Rails.cache.fetch("#{I18n.locale}/experiences", expires_in: 12.hours) do
-      WorkExperience.ordered.with_locale(I18n.locale)
+      WorkExperience.ordered.with_locale(I18n.locale).to_a
     end
   end
 

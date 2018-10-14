@@ -9,4 +9,10 @@ namespace :db do
     end
     Cms::Sync.all
   end
+
+  namespace :cache do
+    task clear: :environment do
+      Rails.cache.clear
+    end
+  end
 end
