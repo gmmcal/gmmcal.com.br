@@ -51,6 +51,19 @@ export default {
   .row {
     display: block;
     text-align: center;
+    font-size: 6px;
+
+    @media screen and (min-width: 420px) and (max-width: 768px) {
+      font-size: 7px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      font-size: 8px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 10px;
+    }
   }
 }
 </style>
