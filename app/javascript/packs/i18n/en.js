@@ -298,7 +298,7 @@ export default {
   },
   "skills": {
     "title": "Technical Skills",
-    "subtitle": "The subjects I'm currently under my radar, but I'm always open to new technologies."
+    "subtitle": "The subjects currently under my radar, but I'm always open to new technologies."
   },
   "template": {
     "name": "Gustavo Cunha",

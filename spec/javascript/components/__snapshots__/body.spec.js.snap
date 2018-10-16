@@ -63,9 +63,9 @@ exports[`Body renders correctly 1`] = `
     <div class="container">
       <div class="heading">
         <h2>Technical Skills</h2>
-        <p>The subjects I'm currently under my radar, but I'm always open to new technologies.</p>
+        <p>The subjects currently under my radar, but I'm always open to new technologies.</p>
       </div>
-      <div class="row"><span class="skill" style="font-size: 70px;">Skill Name</span><span class="skill" style="font-size: 63px;">Another Skill</span></div>
+      <div class="row"><span class="skill" style="font-size: 7em;">Skill Name</span><span class="skill" style="font-size: 6.3em;">Another Skill</span></div>
     </div>
   </section>
   <section id="education" class="education">
