@@ -1,8 +1,16 @@
 # Changelog
-All notable changes to this project will be documented in this file.
+All changes to this project should be documented in this file. A similar information is also present in the [releases page](https://github.com/gmmcal/gmmcal.com.br/releases) of Github.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+You can add all changes provided by your pull request on [unreleased] section. When release is ready, I'll move all changes to a proper tag block. Please, use the most human way of describing your changes to the codebase.
+
+## [Unreleased]
+
+## [2.1.6] - 2018-10-16
+### Fixed
+- CHANGELOG Links
+- CHANGELOG description text
 
 ## [2.1.5] - 2018-10-16
 ### Added
@@ -404,7 +412,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.4...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.6...HEAD
+[2.1.6]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.5...v2.1.6
+[2.1.5]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.3...v2.1.4
 [2.1.3]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.2...v2.1.3
 [2.1.2]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.1...v2.1.2
