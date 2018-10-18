@@ -13,6 +13,9 @@
 require 'factory_bot_rails'
 require 'faker'
 
+FactoryBot.definition_file_paths = ['spec/backend/factories']
+FactoryBot.find_definitions
+
 FactoryBot.create(:about, locale: 'en')
 FactoryBot.create(:about, locale: 'pt-BR')
 

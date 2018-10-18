@@ -53,28 +53,28 @@ RSpec.describe ContentfulController, type: :request do
       end
 
       context 'with About', vcr: { cassette_name: 'cms/about' } do
-        let(:body) { File.read(Rails.root.join('spec', 'fixtures', 'about.json')).to_s }
+        let(:body) { File.read(Rails.root.join('spec', 'backend', 'fixtures', 'about.json')).to_s }
         let(:klass) { About }
 
         it_behaves_like 'sync webhook'
       end
 
       context 'with Education', vcr: { cassette_name: 'cms/education' } do
-        let(:body) { File.read(Rails.root.join('spec', 'fixtures', 'education.json')).to_s }
+        let(:body) { File.read(Rails.root.join('spec', 'backend', 'fixtures', 'education.json')).to_s }
         let(:klass) { Education }
 
         it_behaves_like 'sync webhook'
       end
 
       context 'with Skill', vcr: { cassette_name: 'cms/skill' } do
-        let(:body) { File.read(Rails.root.join('spec', 'fixtures', 'skill.json')).to_s }
+        let(:body) { File.read(Rails.root.join('spec', 'backend', 'fixtures', 'skill.json')).to_s }
         let(:klass) { Skill }
 
         it_behaves_like 'sync webhook'
       end
 
       context 'with WorkExperience', vcr: { cassette_name: 'cms/work_experience' } do
-        let(:body) { File.read(Rails.root.join('spec', 'fixtures', 'work_experience.json')).to_s }
+        let(:body) { File.read(Rails.root.join('spec', 'backend', 'fixtures', 'work_experience.json')).to_s }
         let(:klass) { WorkExperience }
 
         it_behaves_like 'sync webhook'

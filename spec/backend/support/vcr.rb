@@ -8,7 +8,7 @@ end
 
 VCR.configure do |c|
   c.hook_into :webmock
-  c.cassette_library_dir = 'spec/vcr'
+  c.cassette_library_dir = 'spec/backend/vcr'
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = false
   c.default_cassette_options = {
