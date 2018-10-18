@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe Cms::Sync do
   describe '#all', vcr: { cassette_name: 'cms/all' } do
-    before(:each) do
-      Cms::Sync.all
+    before do
+      described_class.all
     end
 
     shared_examples 'language' do |language|
@@ -32,37 +32,37 @@ RSpec.describe Cms::Sync do
   end
 
   describe '#find' do
-    subject { Cms::Sync.find(id) }
+    subject(:instance) { described_class.find(id) }
 
     context 'about', vcr: { cassette_name: 'cms/about' } do
       let(:id) { 'about_id' }
 
-      it 'should map to Cms::About class' do
-        expect(subject).to be_instance_of(Cms::About)
+      it 'maps to Cms::About class' do
+        expect(instance).to be_instance_of(Cms::About)
       end
     end
 
     context 'education', vcr: { cassette_name: 'cms/education' } do
       let(:id) { 'education_id' }
 
-      it 'should map to Cms::Education class' do
-        expect(subject).to be_instance_of(Cms::Education)
+      it 'maps to Cms::Education class' do
+        expect(instance).to be_instance_of(Cms::Education)
       end
     end
 
     context 'skill', vcr: { cassette_name: 'cms/skill' } do
       let(:id) { 'skill_id' }
 
-      it 'should map to Cms::Skill class' do
-        expect(subject).to be_instance_of(Cms::Skill)
+      it 'maps to Cms::Skill class' do
+        expect(instance).to be_instance_of(Cms::Skill)
       end
     end
 
     context 'work experience', vcr: { cassette_name: 'cms/work_experience' } do
       let(:id) { 'work_id' }
 
-      it 'should map to Cms::WorkExperience class' do
-        expect(subject).to be_instance_of(Cms::WorkExperience)
+      it 'maps to Cms::WorkExperience class' do
+        expect(instance).to be_instance_of(Cms::WorkExperience)
       end
     end
   end

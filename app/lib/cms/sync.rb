@@ -24,7 +24,7 @@ module Cms
         space: credentials(:space),
         access_token: credentials(:token),
         gzip_encoded: false,
-        entry_mapping: contentful_mapping_config,
+        entry_mapping: contentful_mapping_config
       }
     end
 

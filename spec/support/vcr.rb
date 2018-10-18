@@ -3,10 +3,7 @@
 require 'vcr'
 
 def sensitive_strings
-  [
-    'CONTENTFUL_SPACE',
-    'CONTENTFUL_TOKEN',
-  ]
+  %w[CONTENTFUL_SPACE CONTENTFUL_TOKEN]
 end
 
 VCR.configure do |c|
