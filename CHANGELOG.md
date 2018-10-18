@@ -7,6 +7,18 @@ You can add all changes provided by your pull request on [unreleased] section. W
 
 ## [Unreleased]
 
+## [2.1.7] - 2018-10-18
+### Added
+- VCR request mocks to Contentful
+
+### Changed
+- `Cms::Sync` tests
+- Reorganize `spec` folder to separate `backend` and `frontend` tests
+
+### Removed
+- Unecessary methods in `Cms::Base`
+- Logger on Contentful configuration object in `Cms::Sync`
+
 ## [2.1.6] - 2018-10-16
 ### Fixed
 - CHANGELOG Links
@@ -412,7 +424,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.6...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.7...HEAD
+[2.1.7]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.6...v2.1.7
 [2.1.6]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.3...v2.1.4
