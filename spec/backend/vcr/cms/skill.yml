@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cdn.contentful.com/spaces/[CONTENTFUL_SPACE]/environments/master/entries?locale=*&sys.id=skill_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful.rb/2.9.3; platform ruby/2.5.1; os macOS/17;
+      Authorization:
+      - Bearer [CONTENTFUL_TOKEN]
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Connection:
+      - close
+      Host:
+      - cdn.contentful.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - max-age=0
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Contentful-Api:
+      - cda_cached
+      Etag:
+      - '"78066c9b143d0fb64aef47bafc90ff7f"'
+      Server:
+      - Contentful
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Region:
+      - us-east-1
+      X-Contentful-Request-Id:
+      - 7f0906d966ac6c81421c85a54fdffc1d
+      Content-Length:
+      - '954'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 17 Oct 2018 17:54:58 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '18'
+      Connection:
+      - close
+      X-Served-By:
+      - cache-ams4148-AMS
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1539798899.950119,VS0,VE0
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "sys": {
+            "type": "Array"
+          },
+          "total": 1,
+          "skip": 0,
+          "limit": 100,
+          "items": [
+            {
+              "sys": {
+                "space": {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Space",
+                    "id": "[CONTENTFUL_SPACE]"
+                  }
+                },
+                "id": "6eOYyTvZHaUiuWUs4OeSCk",
+                "type": "Entry",
+                "createdAt": "2018-10-11T07:13:16.926Z",
+                "updatedAt": "2018-10-11T07:30:13.125Z",
+                "environment": {
+                  "sys": {
+                    "id": "master",
+                    "type": "Link",
+                    "linkType": "Environment"
+                  }
+                },
+                "revision": 2,
+                "contentType": {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "ContentType",
+                    "id": "skill"
+                  }
+                }
+              },
+              "fields": {
+                "name": {
+                  "en": "Vue.js",
+                  "pt-BR": "Vue.js"
+                },
+                "value": {
+                  "en": 93
+                }
+              }
+            }
+          ]
+        }
+    http_version:
+  recorded_at: Wed, 17 Oct 2018 17:54:55 GMT
+recorded_with: VCR 4.0.0

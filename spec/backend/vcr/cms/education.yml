@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cdn.contentful.com/spaces/[CONTENTFUL_SPACE]/environments/master/entries?locale=*&sys.id=education_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful.rb/2.9.3; platform ruby/2.5.1; os macOS/17;
+      Authorization:
+      - Bearer [CONTENTFUL_TOKEN]
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Connection:
+      - close
+      Host:
+      - cdn.contentful.com
+      User-Agent:
+      - http.rb/2.2.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - max-age=0
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Contentful-Api:
+      - cda_cached
+      Etag:
+      - W/"e6b77409e185464c042ab96e7faa54b0"
+      Server:
+      - Contentful
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Region:
+      - us-east-1
+      X-Contentful-Request-Id:
+      - 36cac4eb0215a1cf7ba4f37d74bc438f
+      Content-Length:
+      - '1638'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 17 Oct 2018 16:02:38 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '21'
+      Connection:
+      - close
+      X-Served-By:
+      - cache-ams4127-AMS
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1539792158.401905,VS0,VE1
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJzeXMiOiB7CiAgICAidHlwZSI6ICJBcnJheSIKICB9LAogICJ0b3RhbCI6IDEsCiAgInNraXAiOiAwLAogICJsaW1pdCI6IDEwMCwKICAiaXRlbXMiOiBbCiAgICB7CiAgICAgICJzeXMiOiB7CiAgICAgICAgInNwYWNlIjogewogICAgICAgICAgInN5cyI6IHsKICAgICAgICAgICAgInR5cGUiOiAiTGluayIsCiAgICAgICAgICAgICJsaW5rVHlwZSI6ICJTcGFjZSIsCiAgICAgICAgICAgICJpZCI6ICJbQ09OVEVOVEZVTF9TUEFDRV0iCiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICAiaWQiOiAiNlREYWhpakp1dzgwQThnd2lvT3NvRyIsCiAgICAgICAgInR5cGUiOiAiRW50cnkiLAogICAgICAgICJjcmVhdGVkQXQiOiAiMjAxNy0xMC0wN1QxMjo1NToyOC43OThaIiwKICAgICAgICAidXBkYXRlZEF0IjogIjIwMTctMTAtMDhUMjM6MzY6NTAuMDcxWiIsCiAgICAgICAgImVudmlyb25tZW50IjogewogICAgICAgICAgInN5cyI6IHsKICAgICAgICAgICAgImlkIjogIm1hc3RlciIsCiAgICAgICAgICAgICJ0eXBlIjogIkxpbmsiLAogICAgICAgICAgICAibGlua1R5cGUiOiAiRW52aXJvbm1lbnQiCiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICAicmV2aXNpb24iOiAyLAogICAgICAgICJjb250ZW50VHlwZSI6IHsKICAgICAgICAgICJzeXMiOiB7CiAgICAgICAgICAgICJ0eXBlIjogIkxpbmsiLAogICAgICAgICAgICAibGlua1R5cGUiOiAiQ29udGVudFR5cGUiLAogICAgICAgICAgICAiaWQiOiAiZWR1Y2F0aW9uIgogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfSwKICAgICAgImZpZWxkcyI6IHsKICAgICAgICAiY291cnNlIjogewogICAgICAgICAgImVuIjogIkJhY2hlbG9yJ3MgZGVncmVlLCBDb21wdXRlciBTY2llbmNlIiwKICAgICAgICAgICJwdC1CUiI6ICJCYWNoYXJlbCBlbSBDacOqbmNpYSBkYSBDb21wdXRhw6fDo28iCiAgICAgICAgfSwKICAgICAgICAiaW5zdGl0dXRpb24iOiB7CiAgICAgICAgICAiZW4iOiAiVW5pdmVyc2lkYWRlIEZlZGVyYWwgZGUgQWxhZ29hcyIsCiAgICAgICAgICAicHQtQlIiOiAiVW5pdmVyc2lkYWRlIEZlZGVyYWwgZGUgQWxhZ29hcyIKICAgICAgICB9LAogICAgICAgICJkZXNjcmlwdGlvbiI6IHsKICAgICAgICAgICJlbiI6ICJCYWNoZWxvcidzIGRlZ3JlZSBpbiBDb21wdXRlciBTY2llbmNlIGF0IFVuaXZlcnNpZGFkZSBGZWRlcmFsIGRlIEFsYWdvYXMsIHN0YXJ0aW5nIHRoZSBjb3Vyc2UgaW4gSnVuZSAvIDIwMDIgYW5kIGZpbmlzaGluZyBpbiBNYXkgLyAyMDA4IiwKICAgICAgICAgICJwdC1CUiI6ICJHcmFkdWHDp8OjbyBlbSBDacOqbmNpYSBkYSBDb21wdXRhw6fDo28gcGVsYSBVbml2ZXJzaWRhZGUgRmVkZXJhbCBkZSBBbGFnb2FzLCBpbmljaWFuZG8gbyBjdXJzbyBlbSBKdW5obyAvIDIwMDIgZSBjb25jbHVpbmRvIGVtIE1haW8gLyAyMDA4LiIKICAgICAgICB9LAogICAgICAgICJzdGFydF9kYXRlIjogewogICAgICAgICAgImVuIjogIjIwMDItMDYtMDQiCiAgICAgICAgfSwKICAgICAgICAiZW5kX2RhdGUiOiB7CiAgICAgICAgICAiZW4iOiAiMjAwOC0wNS0zMCIKICAgICAgICB9LAogICAgICAgICJvcmRlciI6IHsKICAgICAgICAgICJlbiI6IDIKICAgICAgICB9CiAgICAgIH0KICAgIH0KICBdCn0K
+    http_version:
+  recorded_at: Wed, 17 Oct 2018 16:02:36 GMT
+recorded_with: VCR 4.0.0

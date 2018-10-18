@@ -1,10 +1,10 @@
 {
   "projectId": "88eqvw",
   "baseUrl": "http://localhost:3000",
-  "fixturesFolder": "spec/fixtures",
-  "integrationFolder": "spec/integration",
-  "pluginsFile": "spec/plugins/index.js",
-  "screenshotsFolder": "spec/screenshots",
-  "supportFile": "spec/support/index.js",
+  "fixturesFolder": "spec/frontend/fixtures",
+  "integrationFolder": "spec/frontend/integration",
+  "pluginsFile": "spec/frontend/plugins/index.js",
+  "screenshotsFolder": "spec/frontend/screenshots",
+  "supportFile": "spec/frontend/support/index.js",
   "video": false
 }

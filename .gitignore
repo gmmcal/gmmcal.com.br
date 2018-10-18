@@ -1,6 +1,5 @@
 *.rbc
 capybara-*.html
-.rspec
 /log
 /tmp
 /db/*.sqlite3
@@ -9,8 +8,8 @@ capybara-*.html
 /public/uploads
 /coverage/
 /spec/tmp
-/spec/screenshots
-/spec/integration/screenshots*
+/spec/frontend/screenshots
+/spec/frontend/integration/screenshots*
 **.orig
 rerun.txt
 pickle-email-*.html
