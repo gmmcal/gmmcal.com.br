@@ -14,7 +14,8 @@ SimpleCov.start 'rails' do
 end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'shoulda/matchers'
+require 'support/shoulda'
+require 'support/vcr'
 require 'lib/cms/shared'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -85,12 +86,5 @@ RSpec.configure do |config|
 
   config.after do
     DatabaseCleaner.clean
-  end
-end
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
   end
 end

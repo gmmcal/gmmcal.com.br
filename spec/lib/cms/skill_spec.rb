@@ -2,18 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.describe Cms::Skill do
-  subject(:skill) { described_class.new(data, {}, true) }
+RSpec.describe Cms::Skill, vcr: { cassette_name: 'cms/skill' } do
+  subject(:object) { Cms::Sync.find('skill_id') }
 
-  let(:file_content) { JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'skill.json'))) }
-
-  let(:data) { file_content.to_h.with_indifferent_access }
-
-  include_examples '.save' do
-    let(:object) { skill }
-  end
+  include_examples '.save'
 
   it 'maps to Skill model' do
-    expect(skill.model).to eq(::Skill)
+    expect(object.model).to eq(::Skill)
   end
 end

@@ -2,18 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.describe Cms::Education do
-  subject(:education) { described_class.new(data, {}, true) }
+RSpec.describe Cms::Education, vcr: { cassette_name: 'cms/education' } do
+  subject(:object) { Cms::Sync.find('education_id') }
 
-  let(:file_content) { JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'education.json'))) }
-
-  let(:data) { file_content.to_h.with_indifferent_access }
-
-  include_examples '.save' do
-    let(:object) { education }
-  end
+  include_examples '.save'
 
   it 'maps to Education model' do
-    expect(education.model).to eq(::Education)
+    expect(object.model).to eq(::Education)
   end
 end

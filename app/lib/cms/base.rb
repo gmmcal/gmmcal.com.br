@@ -27,14 +27,6 @@ module Cms
       }
     end
 
-    def localized_attributes
-      {}
-    end
-
-    def attributes
-      {}
-    end
-
     def file_fields
       {}
     end

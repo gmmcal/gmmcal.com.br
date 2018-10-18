@@ -2,18 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.describe Cms::About do
-  subject(:about) { described_class.new(data, {}, true) }
+RSpec.describe Cms::About, vcr: { cassette_name: 'cms/about' } do
+  subject(:object) { Cms::Sync.find('about_id') }
 
-  let(:file_content) { JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'about.json'))) }
-
-  let(:data) { file_content.to_h.with_indifferent_access }
-
-  include_examples '.save' do
-    let(:object) { about }
-  end
+  include_examples '.save'
 
   it 'maps to About model' do
-    expect(about.model).to eq(::About)
+    expect(object.model).to eq(::About)
   end
 end

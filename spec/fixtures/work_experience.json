@@ -1,45 +1,5 @@
 {
-  "fields": {
-    "company": {
-      "en": "Hello, World!",
-      "pt-BR": "Hello, World!"
-    },
-    "position": {
-      "en": "Bacon is healthy!",
-      "pt-BR": "Bacon is healthy!"
-    },
-    "city": {
-      "en": "Bacon is healthy!",
-      "pt-BR": "Bacon is healthy!"
-    },
-    "country": {
-      "en": "Bacon is healthy!",
-      "pt-BR": "Bacon is healthy!"
-    },
-    "start_date": {
-      "en": "2017-01-01"
-    }
-  },
   "sys": {
-    "id": "asdijnoasdansdkasdnalkdnas",
-    "type": "Entry",
-    "version": 1,
-    "space": {
-      "sys": {
-        "type": "Link",
-        "linkType": "Space",
-        "id": "asdflasfajksdfnasdfn"
-      }
-    },
-    "contentType": {
-      "sys": {
-        "type": "Link",
-        "linkType": "ContentType",
-        "id": "work_experience"
-      }
-    },
-    "createdAt": "2016-12-20T10:43:35.772Z",
-    "updatedAt": "2016-12-20T10:43:35.772Z",
-    "revision": 1
+    "id": "work_id"
   }
 }

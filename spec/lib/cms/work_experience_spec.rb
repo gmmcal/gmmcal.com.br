@@ -2,18 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.describe Cms::WorkExperience do
-  subject(:work_experience) { described_class.new(data, {}, true) }
+RSpec.describe Cms::WorkExperience, vcr: { cassette_name: 'cms/work_experience' } do
+  subject(:object) { Cms::Sync.find('work_id') }
 
-  let(:file_content) { JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'work_experience.json'))) }
-
-  let(:data) { file_content.to_h.with_indifferent_access }
-
-  include_examples '.save' do
-    let(:object) { work_experience }
-  end
+  include_examples '.save'
 
   it 'maps to WorkExperience model' do
-    expect(work_experience.model).to eq(::WorkExperience)
+    expect(object.model).to eq(::WorkExperience)
   end
 end
