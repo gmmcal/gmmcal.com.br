@@ -18,7 +18,7 @@ VCR.configure do |c|
   sensitive_strings.each do |key|
     manifestations = {
       CGI.escape(ENV[key]) => "[#{CGI.escape(key)}]",
-      ENV[key]             => "[#{key}]"
+      ENV[key] => "[#{key}]"
     }
     manifestations.each_pair do |string, replacement|
       c.filter_sensitive_data(replacement) { string }

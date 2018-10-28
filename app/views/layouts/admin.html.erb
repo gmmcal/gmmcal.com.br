@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Gustavo Cunha - Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--google font style-->
+  <!--font-family: 'Open Sans', sans-serif;-->
+  <%= javascript_include_tag 'admin/application' %>
+  <%= stylesheet_link_tag 'admin/application', media: 'all', rel: 'stylesheet' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <%= link_to 'Dashboard', [:admin, :root], class: 'nav-link active' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'About', [:admin, :abouts], class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Educations', [:admin, :educations], class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Skills', [:admin, :skills], class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Work Experiences', [:admin, :work_experiences], class: 'nav-link' %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer>
+
+  </footer>
+</body>
+</html>
