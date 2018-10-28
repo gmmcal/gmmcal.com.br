@@ -29,11 +29,13 @@ gem 'webpacker'
 # Environment variables
 gem 'dotenv-rails', group: %i[development test]
 
+# Admin gems
+gem 'simple_form'
+
 # Groups
 group :development do
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
-  gem 'foreman'
   gem 'i18n-js'
   gem 'listen'
   gem 'spring'
