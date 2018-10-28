@@ -30,6 +30,7 @@ gem 'webpacker'
 gem 'dotenv-rails', group: %i[development test]
 
 # Admin gems
+gem 'country_select'
 gem 'simple_form'
 
 # Groups
