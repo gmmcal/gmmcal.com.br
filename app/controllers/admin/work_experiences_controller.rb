@@ -2,16 +2,19 @@
 
 module Admin
   class WorkExperiencesController < AdminController
-    before_action :set_work_experience, only: %i[edit update destroy]
+    before_action :set_work_experience, only: %i[show edit update destroy]
 
     # GET /work_experiences
     def index
       @work_experiences = WorkExperience.all
     end
 
+    # GET /work_experiences/1
+    def show; end
+
     # GET /work_experiences/new
     def new
-      @work_experience = WorkExperience.new
+      @work_experience = WorkExperience.new(locale: I18n.locale)
     end
 
     # GET /work_experiences/1/edit
@@ -22,7 +25,7 @@ module Admin
       @work_experience = WorkExperience.new(work_experience_params)
 
       if @work_experience.save
-        redirect_to %i[admin work_experiences],
+        redirect_to [:admin, @work_experience],
                     notice: 'Work experience was successfully created.'
       else
         render :new
@@ -32,7 +35,7 @@ module Admin
     # PATCH/PUT /work_experiences/1
     def update
       if @work_experience.update(work_experience_params)
-        redirect_to %i[admin work_experiences],
+        redirect_to [:admin, @work_experience],
                     notice: 'Work experience was successfully updated.'
       else
         render :edit
@@ -57,7 +60,7 @@ module Admin
     end
 
     def allowed_fields
-      %i[company_name position city country start_date description locale contentful_id]
+      %i[company_name position city country start_date description locale]
     end
   end
 end

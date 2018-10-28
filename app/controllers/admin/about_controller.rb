@@ -2,16 +2,19 @@
 
 module Admin
   class AboutController < AdminController
-    before_action :set_about, only: %i[edit update destroy]
+    before_action :set_about, only: %i[show edit update destroy]
 
     # GET /abouts
     def index
       @abouts = About.all
     end
 
+    # GET /abouts/1
+    def show; end
+
     # GET /abouts/new
     def new
-      @about = About.new
+      @about = About.new(locale: I18n.locale)
     end
 
     # GET /abouts/1/edit
@@ -22,7 +25,7 @@ module Admin
       @about = About.new(about_params)
 
       if @about.save
-        redirect_to %i[admin abouts],
+        redirect_to [:admin, @about],
                     notice: 'About was successfully created.'
       else
         render :new
@@ -32,7 +35,7 @@ module Admin
     # PATCH/PUT /abouts/1
     def update
       if @about.update(about_params)
-        redirect_to %i[admin abouts],
+        redirect_to [:admin, @about],
                     notice: 'About was successfully updated.'
       else
         render :edit
@@ -57,7 +60,7 @@ module Admin
     end
 
     def allowed_fields
-      %i[job_title description cv city country phone_number email locale contentful_id]
+      %i[job_title description cv city country phone_number email locale]
     end
   end
 end

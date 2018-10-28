@@ -2,16 +2,19 @@
 
 module Admin
   class EducationsController < AdminController
-    before_action :set_education, only: %i[edit update destroy]
+    before_action :set_education, only: %i[show edit update destroy]
 
     # GET /educations
     def index
       @educations = Education.all
     end
 
+    # GET /educations/1
+    def show; end
+
     # GET /educations/new
     def new
-      @education = Education.new
+      @education = Education.new(locale: I18n.locale)
     end
 
     # GET /educations/1/edit
@@ -22,7 +25,7 @@ module Admin
       @education = Education.new(education_params)
 
       if @education.save
-        redirect_to %i[admin educations],
+        redirect_to [:admin, @education],
                     notice: 'Education was successfully created.'
       else
         render :new
@@ -32,7 +35,7 @@ module Admin
     # PATCH/PUT /educations/1
     def update
       if @education.update(education_params)
-        redirect_to %i[admin educations],
+        redirect_to [:admin, @education],
                     notice: 'Education was successfully updated.'
       else
         render :edit
@@ -57,7 +60,7 @@ module Admin
     end
 
     def allowed_fields
-      %i[course institution description start_date locale contentful_id]
+      %i[course institution description start_date locale]
     end
   end
 end

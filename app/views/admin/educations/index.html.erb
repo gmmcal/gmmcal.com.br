@@ -27,6 +27,7 @@
           <td><%= link_to education.course, [:edit, :admin, education] %></td>
           <td><%= locale_to_language(education.locale) %></td>
           <td>
+            <%= link_to t(:show), [:admin, education], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:edit), [:edit, :admin, education], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:destroy), [:admin, education], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>

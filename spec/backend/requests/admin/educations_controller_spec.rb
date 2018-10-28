@@ -15,6 +15,14 @@ RSpec.describe Admin::EducationsController, type: :request do
     end
   end
 
+  describe 'GET #show' do
+    it 'returns a success response' do
+      education = create(:education, valid_attributes)
+      get "/admin/educations/#{education.id}"
+      expect(response).to be_successful
+    end
+  end
+
   describe 'GET #new' do
     it 'returns a success response' do
       get '/admin/educations/new'
@@ -40,7 +48,7 @@ RSpec.describe Admin::EducationsController, type: :request do
 
       it 'redirects to the created education' do
         post '/admin/educations', params: { education: valid_attributes }
-        expect(response).to redirect_to(%i[admin educations])
+        expect(response).to redirect_to([:admin, Education.last])
       end
     end
 
@@ -67,7 +75,7 @@ RSpec.describe Admin::EducationsController, type: :request do
       it 'redirects to the education' do
         education = create(:education, valid_attributes)
         put "/admin/educations/#{education.id}", params: { id: education.to_param, education: new_attributes }
-        expect(response).to redirect_to(%i[admin educations])
+        expect(response).to redirect_to([:admin, education])
       end
     end
 

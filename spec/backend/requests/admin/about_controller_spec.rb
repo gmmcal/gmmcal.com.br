@@ -15,6 +15,14 @@ RSpec.describe Admin::AboutController, type: :request do
     end
   end
 
+  describe 'GET #show' do
+    it 'returns a success response' do
+      about = create(:about, valid_attributes)
+      get "/admin/abouts/#{about.id}"
+      expect(response).to be_successful
+    end
+  end
+
   describe 'GET #new' do
     it 'returns a success response' do
       get '/admin/abouts/new'
@@ -40,7 +48,7 @@ RSpec.describe Admin::AboutController, type: :request do
 
       it 'redirects to the created about' do
         post '/admin/abouts', params: { about: valid_attributes }
-        expect(response).to redirect_to(%i[admin abouts])
+        expect(response).to redirect_to([:admin, About.last])
       end
     end
 
@@ -67,7 +75,7 @@ RSpec.describe Admin::AboutController, type: :request do
       it 'redirects to the about' do
         about = create(:about, valid_attributes)
         put "/admin/abouts/#{about.id}", params: { id: about.to_param, about: new_attributes }
-        expect(response).to redirect_to(%i[admin abouts])
+        expect(response).to redirect_to([:admin, about])
       end
     end
 

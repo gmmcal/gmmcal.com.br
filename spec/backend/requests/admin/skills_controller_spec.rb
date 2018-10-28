@@ -15,6 +15,14 @@ RSpec.describe Admin::SkillsController, type: :request do
     end
   end
 
+  describe 'GET #show' do
+    it 'returns a success response' do
+      skill = create(:skill, valid_attributes)
+      get "/admin/skills/#{skill.id}"
+      expect(response).to be_successful
+    end
+  end
+
   describe 'GET #new' do
     it 'returns a success response' do
       get '/admin/skills/new'
@@ -40,7 +48,7 @@ RSpec.describe Admin::SkillsController, type: :request do
 
       it 'redirects to the created skill' do
         post '/admin/skills', params: { skill: valid_attributes }
-        expect(response).to redirect_to(%i[admin skills])
+        expect(response).to redirect_to([:admin, Skill.last])
       end
     end
 
@@ -67,7 +75,7 @@ RSpec.describe Admin::SkillsController, type: :request do
       it 'redirects to the skill' do
         skill = create(:skill, valid_attributes)
         put "/admin/skills/#{skill.id}", params: { id: skill.to_param, skill: new_attributes }
-        expect(response).to redirect_to(%i[admin skills])
+        expect(response).to redirect_to([:admin, skill])
       end
     end
 

@@ -49,7 +49,10 @@ group :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop-rspec'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers',
+      git: 'https://github.com/thoughtbot/shoulda-matchers',
+      branch: :master,
+      require: false
   gem 'simplecov', require: false
   gem 'vcr', require: false
   gem 'webmock', require: false

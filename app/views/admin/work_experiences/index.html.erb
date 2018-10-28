@@ -27,6 +27,7 @@
           <td><%= link_to work_experience.company_name, [:edit, :admin, work_experience] %></td>
           <td><%= locale_to_language(work_experience.locale) %></td>
           <td>
+            <%= link_to t(:show), [:admin, work_experience], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:edit), [:edit, :admin, work_experience], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:destroy), [:admin, work_experience], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>

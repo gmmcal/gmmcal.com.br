@@ -2,16 +2,19 @@
 
 module Admin
   class SkillsController < AdminController
-    before_action :set_skill, only: %i[edit update destroy]
+    before_action :set_skill, only: %i[show edit update destroy]
 
     # GET /skills
     def index
       @skills = Skill.all
     end
 
+    # GET /skills/1
+    def show; end
+
     # GET /skills/new
     def new
-      @skill = Skill.new
+      @skill = Skill.new(locale: I18n.locale)
     end
 
     # GET /skills/1/edit
@@ -22,7 +25,7 @@ module Admin
       @skill = Skill.new(skill_params)
 
       if @skill.save
-        redirect_to %i[admin skills],
+        redirect_to [:admin, @skill],
                     notice: 'Skill was successfully created.'
       else
         render :new
@@ -32,7 +35,7 @@ module Admin
     # PATCH/PUT /skills/1
     def update
       if @skill.update(skill_params)
-        redirect_to %i[admin skills],
+        redirect_to [:admin, @skill],
                     notice: 'Skill was successfully updated.'
       else
         render :edit
@@ -57,7 +60,7 @@ module Admin
     end
 
     def allowed_fields
-      %i[name value locale contentful_id]
+      %i[name value locale]
     end
   end
 end
