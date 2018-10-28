@@ -6,7 +6,7 @@ module Admin
 
     # GET /educations
     def index
-      @educations = Education.all
+      @educations = Education.ordered
     end
 
     # GET /educations/1
