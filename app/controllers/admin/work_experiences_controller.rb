@@ -48,14 +48,16 @@ module Admin
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_work_experience
       @work_experience = WorkExperience.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def work_experience_params
-      params.require(:work_experience).permit(:company_name)
+      params.require(:work_experience).permit(allowed_fields)
+    end
+
+    def allowed_fields
+      %i[company_name position city country start_date description locale contentful_id]
     end
   end
 end

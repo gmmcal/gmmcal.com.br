@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def locale_to_language(locale)
-    locale
+    locale.to_s
   end
 end

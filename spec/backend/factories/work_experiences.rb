@@ -10,5 +10,9 @@ FactoryBot.define do
     description { Faker::Lorem.paragraphs(5).join("\n\n") }
     locale { :en }
     contentful_id { Faker::Crypto.md5 }
+
+    trait :invalid do
+      company_name { nil }
+    end
   end
 end

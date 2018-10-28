@@ -11,5 +11,9 @@ FactoryBot.define do
     email { Faker::Internet.email }
     locale { :en }
     contentful_id { Faker::Crypto.md5 }
+
+    trait :invalid do
+      job_title { nil }
+    end
   end
 end

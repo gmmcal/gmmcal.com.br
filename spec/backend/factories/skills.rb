@@ -6,5 +6,9 @@ FactoryBot.define do
     value { Faker::Number.between(30, 100) }
     locale { :en }
     contentful_id { Faker::Crypto.md5 }
+
+    trait :invalid do
+      name { nil }
+    end
   end
 end

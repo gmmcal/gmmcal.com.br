@@ -48,14 +48,16 @@ module Admin
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_education
       @education = Education.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def education_params
-      params.require(:education).permit(:course)
+      params.require(:education).permit(allowed_fields)
+    end
+
+    def allowed_fields
+      %i[course institution description start_date locale contentful_id]
     end
   end
 end
