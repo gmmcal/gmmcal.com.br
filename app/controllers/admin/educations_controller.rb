@@ -7,22 +7,29 @@ module Admin
     # GET /admin/educations
     def index
       @educations = Education.ordered
+      authorize @educations
     end
 
     # GET /admin/educations/1
-    def show; end
+    def show
+      authorize @education
+    end
 
     # GET /admin/educations/new
     def new
       @education = Education.new(locale: I18n.locale)
+      authorize @education
     end
 
     # GET /admin/educations/1/edit
-    def edit; end
+    def edit
+      authorize @education
+    end
 
     # POST /admin/educations
     def create
       @education = Education.new(education_params)
+      authorize @education
 
       if @education.save
         redirect_to [:admin, @education],
@@ -34,6 +41,7 @@ module Admin
 
     # PATCH/PUT /admin/educations/1
     def update
+      authorize @education
       if @education.update(education_params)
         redirect_to [:admin, @education],
                     notice: 'Education was successfully updated.'
@@ -45,6 +53,7 @@ module Admin
     # DELETE /admin/educations/1
     def destroy
       @education.destroy
+      authorize @education
       redirect_to %i[admin educations],
                   notice: 'Education was successfully destroyed.'
     end

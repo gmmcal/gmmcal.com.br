@@ -2,7 +2,9 @@
   <li class="nav-item">
     <%= link_to 'English', [:admin, :abouts, locale: :en], class: 'nav-link active' %>
   </li>
-  <li class="nav-item">
+  <% if policy(@about).translate? %>
+    <li class="nav-item">
       <%= link_to 'Portuguese', [:admin, :abouts, locale: :'pt-BR'], class: 'nav-link' %>
-  </li>
+    </li>
+  <% end %>
 </ul>

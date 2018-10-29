@@ -9,22 +9,24 @@ module Admin
       # @abouts = About.all
       @about = About.with_locale(params[:locale] || I18n.locale)
                     .first_or_initialize
+      authorize @about
     end
-
-    # GET /admin/about/1
-    def show; end
 
     # GET /admin/about/new
     def new
       @about = About.new(locale: I18n.locale)
+      authorize @about
     end
 
     # GET /admin/about/1/edit
-    def edit; end
+    def edit
+      authorize @about
+    end
 
     # POST /admin/about
     def create
-      @about = About.new(about_params)
+      @about = About.new(permitted_attributes(About))
+      authorize @about
 
       if @about.save
         redirect_to %i[admin abouts],
@@ -36,7 +38,8 @@ module Admin
 
     # PATCH/PUT /admin/about/1
     def update
-      if @about.update(about_params)
+      authorize @about
+      if @about.update(permitted_attributes(@about))
         redirect_to %i[admin abouts],
                     notice: 'About was successfully updated.'
       else
@@ -47,6 +50,7 @@ module Admin
     # DELETE /admin/about/1
     def destroy
       @about.destroy
+      authorize @about
       redirect_to %i[admin abouts],
                   notice: 'About was successfully destroyed.'
     end
@@ -55,14 +59,6 @@ module Admin
 
     def set_about
       @about = About.find(params[:id])
-    end
-
-    def about_params
-      params.require(:about).permit(allowed_fields)
-    end
-
-    def allowed_fields
-      %i[job_title description cv city country phone_number email locale]
     end
   end
 end

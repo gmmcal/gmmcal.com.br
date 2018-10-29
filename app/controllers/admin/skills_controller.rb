@@ -7,22 +7,29 @@ module Admin
     # GET /admin/skills
     def index
       @skills = Skill.all
+      authorize @skills
     end
 
     # GET /admin/skills/1
-    def show; end
+    def show
+      authorize @skill
+    end
 
     # GET /admin/skills/new
     def new
       @skill = Skill.new(locale: I18n.locale)
+      authorize @skill
     end
 
     # GET /admin/skills/1/edit
-    def edit; end
+    def edit
+      authorize @skill
+    end
 
     # POST /admin/skills
     def create
       @skill = Skill.new(skill_params)
+      authorize @skill
 
       if @skill.save
         redirect_to [:admin, @skill],
@@ -34,6 +41,7 @@ module Admin
 
     # PATCH/PUT /admin/skills/1
     def update
+      authorize @skill
       if @skill.update(skill_params)
         redirect_to [:admin, @skill],
                     notice: 'Skill was successfully updated.'
@@ -45,6 +53,7 @@ module Admin
     # DELETE /admin/skills/1
     def destroy
       @skill.destroy
+      authorize @skill
       redirect_to %i[admin skills],
                   notice: 'Skill was successfully destroyed.'
     end

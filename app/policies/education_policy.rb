@@ -1,0 +1,2 @@
+class EducationPolicy < ApplicationPolicy
+end

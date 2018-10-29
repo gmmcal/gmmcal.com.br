@@ -1,0 +1,2 @@
+class WorkExperiencePolicy < ApplicationPolicy
+end

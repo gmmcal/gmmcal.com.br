@@ -2,6 +2,8 @@
 
 module Admin
   class DashboardController < AdminController
-    def index; end
+    def index
+      authorize :dashboard
+    end
   end
 end
