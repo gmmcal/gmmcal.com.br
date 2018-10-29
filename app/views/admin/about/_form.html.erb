@@ -11,8 +11,8 @@
     <%= f.input :city %>
     <%= f.input :phone_number %>
     <%= f.input :email %>
-    <%= f.input :locale %>
-    <%= f.association :original %>
+    <%= f.input :locale, as: :hidden %>
+    <%= f.association :original, as: :hidden %>
   </div>
 
   <div class="form-actions">

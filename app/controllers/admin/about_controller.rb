@@ -6,9 +6,7 @@ module Admin
 
     # GET /admin/about
     def index
-      # @abouts = About.all
-      @about = About.with_locale(params[:locale] || I18n.locale)
-                    .first_or_initialize
+      @about = About.find_for_locale(params[:locale] || I18n.locale)
       authorize @about
     end
 

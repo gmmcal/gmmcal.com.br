@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <%= link_to 'English', [:admin, :abouts, locale: :en], class: 'nav-link active' %>
+    <%= link_to 'English', [:admin, :abouts], class: 'nav-link active' %>
   </li>
   <% if policy(about).translate? %>
     <li class="nav-item">

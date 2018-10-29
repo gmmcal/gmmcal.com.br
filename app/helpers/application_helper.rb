@@ -6,8 +6,6 @@ module ApplicationHelper
   end
 
   def markdown(text)
-    return '' if text.nil?
-
-    sanitize(Kramdown::Document.new(text).to_html.squish)
+    sanitize(Kramdown::Document.new(text || '').to_html.squish)
   end
 end

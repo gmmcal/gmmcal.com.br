@@ -37,7 +37,7 @@ class ApplicationPolicy
   end
 
   def translate?
-    return false if !@record.persisted? && @record.original.nil?
+    return false if !@record.persisted? && @record.original.present?
 
     true
   end
