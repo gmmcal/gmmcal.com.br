@@ -2,7 +2,7 @@
 
 module Admin
   class AboutController < AdminController
-    before_action :set_about, only: %i[show edit update destroy]
+    before_action :set_about, only: %i[edit update destroy]
 
     # GET /admin/about
     def index

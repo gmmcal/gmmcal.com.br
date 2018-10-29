@@ -28,7 +28,7 @@ module Admin
 
     # POST /admin/educations
     def create
-      @education = Education.new(education_params)
+      @education = Education.new(permitted_attributes(Education))
       authorize @education
 
       if @education.save
@@ -42,7 +42,7 @@ module Admin
     # PATCH/PUT /admin/educations/1
     def update
       authorize @education
-      if @education.update(education_params)
+      if @education.update(permitted_attributes(@education))
         redirect_to [:admin, @education],
                     notice: 'Education was successfully updated.'
       else
@@ -62,14 +62,6 @@ module Admin
 
     def set_education
       @education = Education.find(params[:id])
-    end
-
-    def education_params
-      params.require(:education).permit(allowed_fields)
-    end
-
-    def allowed_fields
-      %i[course institution description start_date locale]
     end
   end
 end

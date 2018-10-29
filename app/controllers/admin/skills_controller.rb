@@ -28,7 +28,7 @@ module Admin
 
     # POST /admin/skills
     def create
-      @skill = Skill.new(skill_params)
+      @skill = Skill.new(permitted_attributes(Skill))
       authorize @skill
 
       if @skill.save
@@ -42,7 +42,7 @@ module Admin
     # PATCH/PUT /admin/skills/1
     def update
       authorize @skill
-      if @skill.update(skill_params)
+      if @skill.update(permitted_attributes(@skill))
         redirect_to [:admin, @skill],
                     notice: 'Skill was successfully updated.'
       else
@@ -62,14 +62,6 @@ module Admin
 
     def set_skill
       @skill = Skill.find(params[:id])
-    end
-
-    def skill_params
-      params.require(:skill).permit(allowed_fields)
-    end
-
-    def allowed_fields
-      %i[name value locale]
     end
   end
 end

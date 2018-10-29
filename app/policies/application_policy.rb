@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -31,6 +33,12 @@ class ApplicationPolicy
   end
 
   def destroy?
+    true
+  end
+
+  def translate?
+    return false if !@record.persisted? && @record.original.nil?
+
     true
   end
 end

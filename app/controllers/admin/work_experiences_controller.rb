@@ -28,7 +28,7 @@ module Admin
 
     # POST /admin/work_experiences
     def create
-      @work_experience = WorkExperience.new(work_experience_params)
+      @work_experience = WorkExperience.new(permitted_attributes(WorkExperience))
       authorize @work_experience
 
       if @work_experience.save
@@ -42,7 +42,7 @@ module Admin
     # PATCH/PUT /admin/work_experiences/1
     def update
       authorize @work_experience
-      if @work_experience.update(work_experience_params)
+      if @work_experience.update(permitted_attributes(@work_experience))
         redirect_to [:admin, @work_experience],
                     notice: 'Work experience was successfully updated.'
       else
@@ -62,14 +62,6 @@ module Admin
 
     def set_work_experience
       @work_experience = WorkExperience.find(params[:id])
-    end
-
-    def work_experience_params
-      params.require(:work_experience).permit(allowed_fields)
-    end
-
-    def allowed_fields
-      %i[company_name position city country start_date description locale]
     end
   end
 end
