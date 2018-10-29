@@ -12,4 +12,14 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(helper.locale_to_language(:'pt-BR')).to eq('pt-BR')
     end
   end
+
+  describe '#markdown' do
+    it 'returns empty string if nil is passed' do
+      expect(helper.markdown(nil)).to eq('')
+    end
+
+    it 'returns html string if text is passed' do
+      expect(helper.markdown('text')).to eq('<p>text</p>')
+    end
+  end
 end

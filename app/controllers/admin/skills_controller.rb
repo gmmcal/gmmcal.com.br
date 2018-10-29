@@ -4,23 +4,23 @@ module Admin
   class SkillsController < AdminController
     before_action :set_skill, only: %i[show edit update destroy]
 
-    # GET /skills
+    # GET /admin/skills
     def index
       @skills = Skill.all
     end
 
-    # GET /skills/1
+    # GET /admin/skills/1
     def show; end
 
-    # GET /skills/new
+    # GET /admin/skills/new
     def new
       @skill = Skill.new(locale: I18n.locale)
     end
 
-    # GET /skills/1/edit
+    # GET /admin/skills/1/edit
     def edit; end
 
-    # POST /skills
+    # POST /admin/skills
     def create
       @skill = Skill.new(skill_params)
 
@@ -32,7 +32,7 @@ module Admin
       end
     end
 
-    # PATCH/PUT /skills/1
+    # PATCH/PUT /admin/skills/1
     def update
       if @skill.update(skill_params)
         redirect_to [:admin, @skill],
@@ -42,7 +42,7 @@ module Admin
       end
     end
 
-    # DELETE /skills/1
+    # DELETE /admin/skills/1
     def destroy
       @skill.destroy
       redirect_to %i[admin skills],

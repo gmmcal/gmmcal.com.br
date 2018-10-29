@@ -16,7 +16,7 @@
     <thead>
       <tr>
         <th>Course</th>
-        <th>Language</th>
+        <th>Translations?</th>
         <th></th>
       </tr>
     </thead>
@@ -25,7 +25,7 @@
       <% @educations.each do |education| %>
         <tr>
           <td><%= link_to education.course, [:edit, :admin, education] %></td>
-          <td><%= locale_to_language(education.locale) %></td>
+          <td><%= t education.translations? %></td>
           <td>
             <%= link_to t(:show), [:admin, education], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:edit), [:edit, :admin, education], class: 'btn btn-sm btn-primary' %>

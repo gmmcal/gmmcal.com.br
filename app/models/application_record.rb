@@ -17,4 +17,8 @@ class ApplicationRecord < ActiveRecord::Base
   scope :with_locale, ->(locale) { where(locale: locale) }
 
   validates :locale, presence: true
+
+  def translations?
+    translations.any?
+  end
 end
