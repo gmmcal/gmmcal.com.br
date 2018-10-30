@@ -16,7 +16,6 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Translations?</th>
         <th></th>
       </tr>
     </thead>
@@ -25,7 +24,6 @@
       <% @skills.each do |skill| %>
         <tr>
           <td><%= link_to skill.name, [:edit, :admin, skill] %></td>
-          <td><%= t skill.translations? %></td>
           <td>
             <%= link_to t(:show), [:admin, skill], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:edit), [:edit, :admin, skill], class: 'btn btn-sm btn-primary' %>

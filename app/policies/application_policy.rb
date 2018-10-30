@@ -35,10 +35,4 @@ class ApplicationPolicy
   def destroy?
     true
   end
-
-  def translate?
-    return false if !@record.persisted? && @record.original.present?
-
-    true
-  end
 end

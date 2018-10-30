@@ -6,7 +6,7 @@ module Admin
 
     # GET /admin/educations
     def index
-      @educations = Education.ordered
+      @educations = Education.with_locale(params[:locale] || I18n.locale).ordered
       authorize @educations
     end
 

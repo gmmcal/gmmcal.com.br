@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
 
-    resources :abouts, controller: :about, path: :about
+    resources :abouts, controller: :about, path: :about, except: %i[new show]
     resources :educations
     resources :skills
     resources :work_experiences

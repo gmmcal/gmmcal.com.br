@@ -11,12 +11,12 @@
   <p id="notice"><%= notice %></p>
 </div>
 
+<%= render 'tabs' %>
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
       <tr>
         <th>Course</th>
-        <th>Translations?</th>
         <th></th>
       </tr>
     </thead>
@@ -25,7 +25,6 @@
       <% @educations.each do |education| %>
         <tr>
           <td><%= link_to education.course, [:edit, :admin, education] %></td>
-          <td><%= t education.translations? %></td>
           <td>
             <%= link_to t(:show), [:admin, education], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:edit), [:edit, :admin, education], class: 'btn btn-sm btn-primary' %>

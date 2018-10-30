@@ -11,7 +11,7 @@
     </div>
     <%= markdown about.description %>
     <small class="d-block pb-1">City: <%= about.city %></small>
-    <small class="d-block pb-1">Country: <%= about.country %></small>
+    <small class="d-block pb-1">Country: <%= country_name(about.country) %></small>
     <small class="d-block pb-1">Phone: <%= about.phone_number %></small>
     <small class="d-block pb-1">Email: <%= about.email %></small>
   </div>

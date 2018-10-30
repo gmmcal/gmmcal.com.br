@@ -10,12 +10,6 @@ module Admin
       authorize @about
     end
 
-    # GET /admin/about/new
-    def new
-      @about = About.new(locale: I18n.locale)
-      authorize @about
-    end
-
     # GET /admin/about/1/edit
     def edit
       authorize @about

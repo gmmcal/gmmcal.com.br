@@ -14,21 +14,6 @@ RSpec.describe Admin::AboutController, type: :request do
     end
   end
 
-  # describe 'GET #show' do
-  #   it 'returns a success response' do
-  #     about = create(:about, valid_attributes)
-  #     get "/admin/about/#{about.id}"
-  #     expect(response).to be_successful
-  #   end
-  # end
-
-  describe 'GET #new' do
-    it 'returns a success response' do
-      get '/admin/about/new'
-      expect(response).to be_successful
-    end
-  end
-
   describe 'GET #edit' do
     it 'returns a success response' do
       about = create(:about, valid_attributes)

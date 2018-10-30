@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
   def about
     Rails.cache.fetch("#{I18n.locale}/about", expires_in: 12.hours) do
-      About.with_locale(I18n.locale).first_or_initialize
+      About.find_for_locale(I18n.locale)
     end
   end
 

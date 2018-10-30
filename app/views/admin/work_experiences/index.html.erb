@@ -16,7 +16,6 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Translations?</th>
         <th></th>
       </tr>
     </thead>
@@ -25,7 +24,6 @@
       <% @work_experiences.each do |work_experience| %>
         <tr>
           <td><%= link_to work_experience.company_name, [:edit, :admin, work_experience] %></td>
-          <td><%= t work_experience.translations? %></td>
           <td>
             <%= link_to t(:show), [:admin, work_experience], class: 'btn btn-sm btn-primary' %>
             <%= link_to t(:edit), [:edit, :admin, work_experience], class: 'btn btn-sm btn-primary' %>
