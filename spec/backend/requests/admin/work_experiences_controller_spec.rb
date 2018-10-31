@@ -15,14 +15,6 @@ RSpec.describe Admin::WorkExperiencesController, type: :request do
     end
   end
 
-  describe 'GET #show' do
-    it 'returns a success response' do
-      work_experience = create(:work_experience, valid_attributes)
-      get "/admin/work_experiences/#{work_experience.id}"
-      expect(response).to be_successful
-    end
-  end
-
   describe 'GET #new' do
     it 'returns a success response' do
       get '/admin/work_experiences/new'

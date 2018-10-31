@@ -2,22 +2,17 @@
 
 module Admin
   class WorkExperiencesController < AdminController
-    before_action :set_work_experience, only: %i[show edit update destroy]
+    before_action :set_work_experience, only: %i[edit update destroy]
 
     # GET /admin/work_experiences
     def index
-      @work_experiences = WorkExperience.ordered
+      @work_experiences = WorkExperience.with_locale(locale).ordered
       authorize @work_experiences
-    end
-
-    # GET /admin/work_experiences/1
-    def show
-      authorize @work_experience
     end
 
     # GET /admin/work_experiences/new
     def new
-      @work_experience = WorkExperience.new(locale: I18n.locale)
+      @work_experience = WorkExperience.new
       authorize @work_experience
     end
 

@@ -10,7 +10,6 @@ class WorkExperiencePolicy < ApplicationPolicy
       start_date
       description
       locale
-      translation_id
     ]
   end
 end

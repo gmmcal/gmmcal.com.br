@@ -9,5 +9,11 @@ module Admin
     def current_user
       Object.new
     end
+
+    protected
+
+    def locale
+      params[:locale] || I18n.locale
+    end
   end
 end

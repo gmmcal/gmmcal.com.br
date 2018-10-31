@@ -12,27 +12,7 @@
 </div>
 
 <%= render 'tabs' %>
-<div class="table-responsive">
-  <table class="table table-striped table-sm">
-    <thead>
-      <tr>
-        <th>Course</th>
-        <th></th>
-      </tr>
-    </thead>
 
-    <tbody>
-      <% @educations.each do |education| %>
-        <tr>
-          <td><%= link_to education.course, [:edit, :admin, education] %></td>
-          <td>
-            <%= link_to t(:show), [:admin, education], class: 'btn btn-sm btn-primary' %>
-            <%= link_to t(:edit), [:edit, :admin, education], class: 'btn btn-sm btn-primary' %>
-            <%= link_to t(:destroy), [:admin, education], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="row pt-3">
+  <%= render @educations %>
 </div>
-

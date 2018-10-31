@@ -15,14 +15,6 @@ RSpec.describe Admin::EducationsController, type: :request do
     end
   end
 
-  describe 'GET #show' do
-    it 'returns a success response' do
-      education = create(:education, valid_attributes)
-      get "/admin/educations/#{education.id}"
-      expect(response).to be_successful
-    end
-  end
-
   describe 'GET #new' do
     it 'returns a success response' do
       get '/admin/educations/new'

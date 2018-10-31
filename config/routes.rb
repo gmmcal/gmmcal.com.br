@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     root 'dashboard#index'
 
     resources :abouts, controller: :about, path: :about, except: %i[new show]
-    resources :educations
-    resources :skills
-    resources :work_experiences
+    resources :educations, except: :show
+    resources :skills, except: :show
+    resources :work_experiences, except: :show
   end
 end

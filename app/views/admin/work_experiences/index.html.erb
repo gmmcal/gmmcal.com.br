@@ -11,27 +11,8 @@
   <p id="notice"><%= notice %></p>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-sm">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th></th>
-      </tr>
-    </thead>
+<%= render 'tabs' %>
 
-    <tbody>
-      <% @work_experiences.each do |work_experience| %>
-        <tr>
-          <td><%= link_to work_experience.company_name, [:edit, :admin, work_experience] %></td>
-          <td>
-            <%= link_to t(:show), [:admin, work_experience], class: 'btn btn-sm btn-primary' %>
-            <%= link_to t(:edit), [:edit, :admin, work_experience], class: 'btn btn-sm btn-primary' %>
-            <%= link_to t(:destroy), [:admin, work_experience], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="row pt-3">
+  <%= render @work_experiences %>
 </div>
-

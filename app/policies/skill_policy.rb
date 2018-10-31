@@ -2,6 +2,6 @@
 
 class SkillPolicy < ApplicationPolicy
   def permitted_attributes
-    %i[name value locale translation_id]
+    %i[name value locale]
   end
 end

@@ -2,22 +2,17 @@
 
 module Admin
   class EducationsController < AdminController
-    before_action :set_education, only: %i[show edit update destroy]
+    before_action :set_education, only: %i[edit update destroy]
 
     # GET /admin/educations
     def index
-      @educations = Education.with_locale(params[:locale] || I18n.locale).ordered
+      @educations = Education.with_locale(locale).ordered
       authorize @educations
-    end
-
-    # GET /admin/educations/1
-    def show
-      authorize @education
     end
 
     # GET /admin/educations/new
     def new
-      @education = Education.new(locale: I18n.locale)
+      @education = Education.new
       authorize @education
     end
 

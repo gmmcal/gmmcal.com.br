@@ -15,7 +15,6 @@ class AboutPolicy < ApplicationPolicy
       phone_number
       email
       locale
-      translation_id
     ]
   end
 end

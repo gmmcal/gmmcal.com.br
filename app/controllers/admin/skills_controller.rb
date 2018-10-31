@@ -2,22 +2,17 @@
 
 module Admin
   class SkillsController < AdminController
-    before_action :set_skill, only: %i[show edit update destroy]
+    before_action :set_skill, only: %i[edit update destroy]
 
     # GET /admin/skills
     def index
-      @skills = Skill.all
+      @skills = Skill.with_locale(locale)
       authorize @skills
-    end
-
-    # GET /admin/skills/1
-    def show
-      authorize @skill
     end
 
     # GET /admin/skills/new
     def new
-      @skill = Skill.new(locale: I18n.locale)
+      @skill = Skill.new
       authorize @skill
     end
 

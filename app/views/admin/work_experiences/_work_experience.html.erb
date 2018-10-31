@@ -1,0 +1,18 @@
+<div class="col-md-6 pt-3">
+  <div class="list-group-item flex-column align-items-start">
+    <div class="d-flex justify-content-between pb-2 pt-2">
+      <h5 class="mb-1"><%= work_experience.company_name %></h5>
+      <small><%= l work_experience.start_date %><br /><%= end_date(work_experience.end_date) %></small>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group">
+          <%= link_to t(:edit), [:edit, :admin, work_experience], class: 'btn btn-primary btn-sm btn-outline-secondary' %>
+          <%= link_to t(:destroy), [:admin, work_experience], class: 'btn btn-primary btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+    <%= markdown work_experience.description %>
+    <small class="d-block pb-1">Position: <%= work_experience.position %></small>
+    <small class="d-block pb-1">City: <%= work_experience.city %></small>
+    <small class="d-block pb-1">Country: <%= country_name(work_experience.country) %></small>
+  </div>
+</div>

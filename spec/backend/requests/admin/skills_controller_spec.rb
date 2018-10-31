@@ -15,14 +15,6 @@ RSpec.describe Admin::SkillsController, type: :request do
     end
   end
 
-  describe 'GET #show' do
-    it 'returns a success response' do
-      skill = create(:skill, valid_attributes)
-      get "/admin/skills/#{skill.id}"
-      expect(response).to be_successful
-    end
-  end
-
   describe 'GET #new' do
     it 'returns a success response' do
       get '/admin/skills/new'
