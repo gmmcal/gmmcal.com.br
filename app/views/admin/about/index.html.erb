@@ -6,7 +6,8 @@
   <p id="notice"><%= notice %></p>
 </div>
 
-<%= render 'tabs' %>
+<%= render 'admin/shared/tabs', action: :abouts %>
+
 <% if @about.persisted? %>
   <%= render 'about', about: @about %>
 <% else %>

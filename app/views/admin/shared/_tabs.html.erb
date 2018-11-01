@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to 'English', [:admin, action], class: tab_classes(:en) %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Portuguese', [:admin, action, locale: :'pt-BR'], class: tab_classes(:'pt-BR') %>
+  </li>
+</ul>

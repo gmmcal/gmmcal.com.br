@@ -29,19 +29,19 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <%= link_to 'Dashboard', [:admin, :root], class: 'nav-link active' %>
+              <%= link_to 'Dashboard', [:admin, :root], class: menu_classes(:dashboard) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'About', [:admin, :abouts], class: 'nav-link' %>
+              <%= link_to 'About', [:admin, :abouts], class: menu_classes(:about) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Educations', [:admin, :educations], class: 'nav-link' %>
+              <%= link_to 'Educations', [:admin, :educations], class: menu_classes(:educations) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Skills', [:admin, :skills], class: 'nav-link' %>
+              <%= link_to 'Skills', [:admin, :skills], class: menu_classes(:skills) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Work Experiences', [:admin, :work_experiences], class: 'nav-link' %>
+              <%= link_to 'Work Experiences', [:admin, :work_experiences], class: menu_classes(:work_experiences) %>
             </li>
           </ul>
         </div>
