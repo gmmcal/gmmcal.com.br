@@ -6,13 +6,13 @@ module Admin
 
     # GET /admin/skills
     def index
-      @skills = Skill.with_locale(locale)
+      @skills = model.with_locale(locale)
       authorize @skills
     end
 
     # GET /admin/skills/new
     def new
-      @skill = Skill.new
+      @skill = model.new
       authorize @skill
     end
 
@@ -23,7 +23,7 @@ module Admin
 
     # POST /admin/skills
     def create
-      @skill = Skill.new(permitted_attributes(Skill))
+      @skill = model.new(permitted_attributes(model))
       authorize @skill
 
       if @skill.save
@@ -56,7 +56,7 @@ module Admin
     private
 
     def set_skill
-      @skill = Skill.find(params[:id])
+      @skill = model.find(params[:id])
     end
   end
 end

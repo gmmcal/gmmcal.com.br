@@ -6,13 +6,13 @@ module Admin
 
     # GET /admin/educations
     def index
-      @educations = Education.with_locale(locale).ordered
+      @educations = model.with_locale(locale).ordered
       authorize @educations
     end
 
     # GET /admin/educations/new
     def new
-      @education = Education.new
+      @education = model.new
       authorize @education
     end
 
@@ -23,7 +23,7 @@ module Admin
 
     # POST /admin/educations
     def create
-      @education = Education.new(permitted_attributes(Education))
+      @education = model.new(permitted_attributes(model))
       authorize @education
 
       if @education.save
@@ -56,7 +56,7 @@ module Admin
     private
 
     def set_education
-      @education = Education.find(params[:id])
+      @education = model.find(params[:id])
     end
   end
 end

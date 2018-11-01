@@ -15,5 +15,9 @@ module Admin
     def locale
       params[:locale] || I18n.locale
     end
+
+    def model
+      controller_name.classify.constantize
+    end
   end
 end

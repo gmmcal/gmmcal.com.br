@@ -6,7 +6,7 @@ module Admin
 
     # GET /admin/about
     def index
-      @about = About.find_for_locale(locale)
+      @about = model.find_for_locale(locale)
       authorize @about
     end
 
@@ -17,7 +17,7 @@ module Admin
 
     # POST /admin/about
     def create
-      @about = About.new(permitted_attributes(About))
+      @about = model.new(permitted_attributes(model))
       authorize @about
 
       if @about.save
@@ -50,7 +50,7 @@ module Admin
     private
 
     def set_about
-      @about = About.find(params[:id])
+      @about = model.find(params[:id])
     end
   end
 end

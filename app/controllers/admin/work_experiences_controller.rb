@@ -6,13 +6,13 @@ module Admin
 
     # GET /admin/work_experiences
     def index
-      @work_experiences = WorkExperience.with_locale(locale).ordered
+      @work_experiences = model.with_locale(locale).ordered
       authorize @work_experiences
     end
 
     # GET /admin/work_experiences/new
     def new
-      @work_experience = WorkExperience.new
+      @work_experience = model.new
       authorize @work_experience
     end
 
@@ -23,7 +23,7 @@ module Admin
 
     # POST /admin/work_experiences
     def create
-      @work_experience = WorkExperience.new(permitted_attributes(WorkExperience))
+      @work_experience = model.new(permitted_attributes(model))
       authorize @work_experience
 
       if @work_experience.save
@@ -56,7 +56,7 @@ module Admin
     private
 
     def set_work_experience
-      @work_experience = WorkExperience.find(params[:id])
+      @work_experience = model.find(params[:id])
     end
   end
 end
