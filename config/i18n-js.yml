@@ -1,5 +1,5 @@
 export_i18n_js: false
-sort_translation_keys: false
+sort_translation_keys: true
 fallbacks: false
 
 except: &except

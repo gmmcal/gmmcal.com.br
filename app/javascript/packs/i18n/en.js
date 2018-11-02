@@ -1,19 +1,36 @@
 export default {
-  "date": {
-    "formats": {
-      "default": "%b / %Y",
-      "short": "%b %d",
-      "long": "%B %d, %Y"
+  "about": {
+    "file_title": "PDF Download",
+    "title": "About Me"
+  },
+  "activerecord": {
+    "errors": {
+      "messages": {
+        "record_invalid": "Validation failed: %{errors}",
+        "restrict_dependent_destroy": {
+          "has_many": "Cannot delete record because dependent %{record} exist",
+          "has_one": "Cannot delete record because a dependent %{record} exists"
+        }
+      }
+    }
+  },
+  "contact": {
+    "contacts": {
+      "address": {
+        "city": "Amsterdam",
+        "country": "Netherlands"
+      },
+      "email": "gustavocunha&#64;gmail&#46;com",
+      "github": "gmmcal",
+      "linkedin": "Gustavo Cunha",
+      "phone": "+31 06 51 41 60 37",
+      "title": "Contacts",
+      "twitter": "@gmmcal"
     },
-    "day_names": [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
+    "subtitle": "Feel free to contact me",
+    "title": "Contact me"
+  },
+  "date": {
     "abbr_day_names": [
       "Sun",
       "Mon",
@@ -22,21 +39,6 @@ export default {
       "Thu",
       "Fri",
       "Sat"
-    ],
-    "month_names": [
-      null,
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
     ],
     "abbr_month_names": [
       null,
@@ -53,59 +55,185 @@ export default {
       "Nov",
       "Dec"
     ],
+    "day_names": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "formats": {
+      "default": "%Y-%m-%d",
+      "long": "%B %d, %Y",
+      "short": "%b %d"
+    },
+    "month_names": [
+      null,
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
     "order": [
       "year",
       "month",
       "day"
     ]
   },
-  "time": {
-    "formats": {
-      "default": "%a, %d %b %Y %H:%M:%S %z",
-      "short": "%d %b %H:%M",
-      "long": "%B %d, %Y %H:%M"
+  "datetime": {
+    "distance_in_words": {
+      "about_x_hours": {
+        "one": "about 1 hour",
+        "other": "about %{count} hours"
+      },
+      "about_x_months": {
+        "one": "about 1 month",
+        "other": "about %{count} months"
+      },
+      "about_x_years": {
+        "one": "about 1 year",
+        "other": "about %{count} years"
+      },
+      "almost_x_years": {
+        "one": "almost 1 year",
+        "other": "almost %{count} years"
+      },
+      "half_a_minute": "half a minute",
+      "less_than_x_minutes": {
+        "one": "less than a minute",
+        "other": "less than %{count} minutes"
+      },
+      "less_than_x_seconds": {
+        "one": "less than 1 second",
+        "other": "less than %{count} seconds"
+      },
+      "over_x_years": {
+        "one": "over 1 year",
+        "other": "over %{count} years"
+      },
+      "x_days": {
+        "one": "1 day",
+        "other": "%{count} days"
+      },
+      "x_minutes": {
+        "one": "1 minute",
+        "other": "%{count} minutes"
+      },
+      "x_months": {
+        "one": "1 month",
+        "other": "%{count} months"
+      },
+      "x_seconds": {
+        "one": "1 second",
+        "other": "%{count} seconds"
+      }
     },
-    "am": "am",
-    "pm": "pm"
+    "prompts": {
+      "day": "Day",
+      "hour": "Hour",
+      "minute": "Minute",
+      "month": "Month",
+      "second": "Seconds",
+      "year": "Year"
+    }
   },
-  "support": {
-    "array": {
-      "words_connector": ", ",
-      "two_words_connector": " and ",
-      "last_word_connector": ", and "
+  "education": {
+    "subtitle": "What I did on my academic career",
+    "title": "Education and Diplomas"
+  },
+  "errors": {
+    "format": "%{attribute} %{message}",
+    "messages": {
+      "accepted": "must be accepted",
+      "blank": "can't be blank",
+      "confirmation": "doesn't match %{attribute}",
+      "empty": "can't be empty",
+      "equal_to": "must be equal to %{count}",
+      "even": "must be even",
+      "exclusion": "is reserved",
+      "greater_than": "must be greater than %{count}",
+      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "inclusion": "is not included in the list",
+      "invalid": "is invalid",
+      "less_than": "must be less than %{count}",
+      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "model_invalid": "Validation failed: %{errors}",
+      "not_a_number": "is not a number",
+      "not_an_integer": "must be an integer",
+      "odd": "must be odd",
+      "other_than": "must be other than %{count}",
+      "present": "must be blank",
+      "required": "must exist",
+      "taken": "has already been taken",
+      "too_long": {
+        "one": "is too long (maximum is 1 character)",
+        "other": "is too long (maximum is %{count} characters)"
+      },
+      "too_short": {
+        "one": "is too short (minimum is 1 character)",
+        "other": "is too short (minimum is %{count} characters)"
+      },
+      "wrong_length": {
+        "one": "is the wrong length (should be 1 character)",
+        "other": "is the wrong length (should be %{count} characters)"
+      }
+    }
+  },
+  "experience": {
+    "subtitle": "Companies that I have worked for",
+    "title": "Work Experience"
+  },
+  "helpers": {
+    "select": {
+      "prompt": "Please select"
+    },
+    "submit": {
+      "create": "Create %{model}",
+      "submit": "Save %{model}",
+      "update": "Update %{model}"
     }
   },
   "number": {
+    "currency": {
+      "format": {
+        "delimiter": ",",
+        "format": "%u%n",
+        "precision": 2,
+        "separator": ".",
+        "significant": false,
+        "strip_insignificant_zeros": false,
+        "unit": "$"
+      }
+    },
     "format": {
-      "separator": ".",
       "delimiter": ",",
       "precision": 3,
+      "separator": ".",
       "significant": false,
       "strip_insignificant_zeros": false
     },
-    "currency": {
-      "format": {
-        "format": "%u%n",
-        "unit": "$",
-        "separator": ".",
-        "delimiter": ",",
-        "precision": 2,
-        "significant": false,
-        "strip_insignificant_zeros": false
-      }
-    },
-    "percentage": {
-      "format": {
-        "delimiter": "",
-        "format": "%n%"
-      }
-    },
-    "precision": {
-      "format": {
-        "delimiter": ""
-      }
-    },
     "human": {
+      "decimal_units": {
+        "format": "%n %u",
+        "units": {
+          "billion": "Billion",
+          "million": "Million",
+          "quadrillion": "Quadrillion",
+          "thousand": "Thousand",
+          "trillion": "Trillion",
+          "unit": ""
+        }
+      },
       "format": {
         "delimiter": "",
         "precision": 3,
@@ -119,202 +247,62 @@ export default {
             "one": "Byte",
             "other": "Bytes"
           },
+          "eb": "EB",
+          "gb": "GB",
           "kb": "KB",
           "mb": "MB",
-          "gb": "GB",
-          "tb": "TB",
           "pb": "PB",
-          "eb": "EB"
-        }
-      },
-      "decimal_units": {
-        "format": "%n %u",
-        "units": {
-          "unit": "",
-          "thousand": "Thousand",
-          "million": "Million",
-          "billion": "Billion",
-          "trillion": "Trillion",
-          "quadrillion": "Quadrillion"
+          "tb": "TB"
         }
       }
-    }
-  },
-  "errors": {
-    "format": "%{attribute} %{message}",
-    "messages": {
-      "model_invalid": "Validation failed: %{errors}",
-      "inclusion": "is not included in the list",
-      "exclusion": "is reserved",
-      "invalid": "is invalid",
-      "confirmation": "doesn't match %{attribute}",
-      "accepted": "must be accepted",
-      "empty": "can't be empty",
-      "blank": "can't be blank",
-      "present": "must be blank",
-      "too_long": {
-        "one": "is too long (maximum is 1 character)",
-        "other": "is too long (maximum is %{count} characters)"
-      },
-      "too_short": {
-        "one": "is too short (minimum is 1 character)",
-        "other": "is too short (minimum is %{count} characters)"
-      },
-      "wrong_length": {
-        "one": "is the wrong length (should be 1 character)",
-        "other": "is the wrong length (should be %{count} characters)"
-      },
-      "not_a_number": "is not a number",
-      "not_an_integer": "must be an integer",
-      "greater_than": "must be greater than %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
-      "equal_to": "must be equal to %{count}",
-      "less_than": "must be less than %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
-      "other_than": "must be other than %{count}",
-      "odd": "must be odd",
-      "even": "must be even",
-      "required": "must exist",
-      "taken": "has already been taken",
-      "record_invalid": "Validation failed: %{errors}",
-      "restrict_dependent_destroy": {
-        "one": "Cannot delete record because a dependent %{record} exists",
-        "many": "Cannot delete record because dependent %{record} exist"
+    },
+    "percentage": {
+      "format": {
+        "delimiter": "",
+        "format": "%n%"
       }
     },
-    "template": {
-      "body": "There were problems with the following fields:",
-      "header": {
-        "one": "1 error prohibited this %{model} from being saved",
-        "other": "%{count} errors prohibited this %{model} from being saved"
+    "precision": {
+      "format": {
+        "delimiter": ""
       }
     }
-  },
-  "activerecord": {
-    "errors": {
-      "messages": {
-        "record_invalid": "Validation failed: %{errors}",
-        "restrict_dependent_destroy": {
-          "has_one": "Cannot delete record because a dependent %{record} exists",
-          "has_many": "Cannot delete record because dependent %{record} exist"
-        }
-      }
-    }
-  },
-  "datetime": {
-    "distance_in_words": {
-      "half_a_minute": "half a minute",
-      "less_than_x_seconds": {
-        "one": "less than 1 second",
-        "other": "less than %{count} seconds"
-      },
-      "x_seconds": {
-        "one": "1 second",
-        "other": "%{count} seconds"
-      },
-      "less_than_x_minutes": {
-        "one": "less than a minute",
-        "other": "less than %{count} minutes"
-      },
-      "x_minutes": {
-        "one": "1 minute",
-        "other": "%{count} minutes"
-      },
-      "about_x_hours": {
-        "one": "about 1 hour",
-        "other": "about %{count} hours"
-      },
-      "x_days": {
-        "one": "1 day",
-        "other": "%{count} days"
-      },
-      "about_x_months": {
-        "one": "about 1 month",
-        "other": "about %{count} months"
-      },
-      "x_months": {
-        "one": "1 month",
-        "other": "%{count} months"
-      },
-      "about_x_years": {
-        "one": "about 1 year",
-        "other": "about %{count} years"
-      },
-      "over_x_years": {
-        "one": "over 1 year",
-        "other": "over %{count} years"
-      },
-      "almost_x_years": {
-        "one": "almost 1 year",
-        "other": "almost %{count} years"
-      }
-    },
-    "prompts": {
-      "year": "Year",
-      "month": "Month",
-      "day": "Day",
-      "hour": "Hour",
-      "minute": "Minute",
-      "second": "Seconds"
-    }
-  },
-  "helpers": {
-    "select": {
-      "prompt": "Please select"
-    },
-    "submit": {
-      "create": "Create %{model}",
-      "update": "Update %{model}",
-      "submit": "Save %{model}"
-    }
-  },
-  "about": {
-    "title": "About Me",
-    "file_title": "PDF Download"
-  },
-  "contact": {
-    "title": "Contact me",
-    "subtitle": "Feel free to contact me",
-    "contacts": {
-      "title": "Contacts",
-      "address": {
-        "city": "Amsterdam",
-        "country": "Netherlands"
-      },
-      "phone": "+31 06 51 41 60 37",
-      "email": "gustavocunha&#64;gmail&#46;com",
-      "github": "gmmcal",
-      "linkedin": "Gustavo Cunha",
-      "twitter": "@gmmcal"
-    }
-  },
-  "education": {
-    "title": "Education and Diplomas",
-    "subtitle": "What I did on my academic career"
-  },
-  "experience": {
-    "title": "Work Experience",
-    "subtitle": "Companies that I have worked for"
   },
   "skills": {
-    "title": "Technical Skills",
-    "subtitle": "The subjects currently under my radar, but I'm always open to new technologies."
+    "subtitle": "The subjects currently under my radar, but I'm always open to new technologies.",
+    "title": "Technical Skills"
+  },
+  "support": {
+    "array": {
+      "last_word_connector": ", and ",
+      "two_words_connector": " and ",
+      "words_connector": ", "
+    }
   },
   "template": {
-    "name": "Gustavo Cunha",
-    "title": "Web developer, Mobile and Software Engineer Consultant",
     "current": "Currently",
     "menu": {
-      "en": "EN",
-      "pt-BR": "BR",
-      "home": "Home",
       "about": "About",
-      "skills": "Skills",
-      "experience": "Experience",
-      "education": "Education",
-      "portfolio": "Portfolio",
       "contact": "Contact",
+      "education": "Education",
+      "en": "EN",
+      "experience": "Experience",
+      "home": "Home",
+      "portfolio": "Portfolio",
+      "pt-BR": "BR",
+      "skills": "Skills",
       "social": "Social"
-    }
+    },
+    "name": "Gustavo Cunha",
+    "title": "Web developer, Mobile and Software Engineer Consultant"
+  },
+  "time": {
+    "am": "am",
+    "formats": {
+      "default": "%a, %d %b %Y %H:%M:%S %z",
+      "long": "%B %d, %Y %H:%M",
+      "short": "%d %b %H:%M"
+    },
+    "pm": "pm"
   }
 }

@@ -14,3 +14,16 @@ en:
       portfolio: "Portfolio"
       contact: "Contact"
       social: "Social"
+  contact:
+    title: "Contact me"
+    subtitle: "Feel free to contact me"
+    contacts:
+      title: "Contacts"
+      address:
+        city: "Amsterdam"
+        country: "Netherlands"
+      phone: "+31 06 51 41 60 37"
+      email: "gustavocunha&#64;gmail&#46;com"
+      github: "gmmcal"
+      linkedin: "Gustavo Cunha"
+      twitter: "@gmmcal"

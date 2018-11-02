@@ -14,3 +14,16 @@ pt-BR:
       portfolio: "Portfólio"
       contact: "Contato"
       social: "Social"
+  contact:
+    title: "Contate-me"
+    subtitle: "Sinta-se a vontade para entrar em contato"
+    contacts:
+      title: "Contatos"
+      address:
+        city: "Amsterdã"
+        country: "Holanda"
+      phone: "+31 06 51 41 60 37"
+      email: "gustavocunha&#64;gmail&#46;com"
+      github: "gmmcal"
+      linkedin: "Gustavo Cunha"
+      twitter: "@gmmcal"
