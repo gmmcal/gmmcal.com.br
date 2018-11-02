@@ -1,0 +1,6 @@
+en:
+  date:
+    formats:
+      default: ! '%b / %Y'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'

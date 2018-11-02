@@ -3,27 +3,10 @@ export default {
     "file_title": "PDF Download",
     "title": "About Me"
   },
-  "activerecord": {
-    "errors": {
-      "messages": {
-        "record_invalid": "Validation failed: %{errors}",
-        "restrict_dependent_destroy": {
-          "has_many": "Cannot delete record because dependent %{record} exist",
-          "has_one": "Cannot delete record because a dependent %{record} exists"
-        }
-      }
-    }
-  },
   "contact": {
     "contacts": {
-      "address": {
-        "city": "Amsterdam",
-        "country": "Netherlands"
-      },
-      "email": "gustavocunha&#64;gmail&#46;com",
       "github": "gmmcal",
       "linkedin": "Gustavo Cunha",
-      "phone": "+31 06 51 41 60 37",
       "title": "Contacts",
       "twitter": "@gmmcal"
     },
@@ -65,7 +48,7 @@ export default {
       "Saturday"
     ],
     "formats": {
-      "default": "%Y-%m-%d",
+      "default": "%b / %Y",
       "long": "%B %d, %Y",
       "short": "%b %d"
     },
@@ -136,6 +119,10 @@ export default {
       "x_seconds": {
         "one": "1 second",
         "other": "%{count} seconds"
+      },
+      "x_years": {
+        "one": "1 year",
+        "other": "%{count} years"
       }
     },
     "prompts": {
@@ -186,6 +173,13 @@ export default {
       "wrong_length": {
         "one": "is the wrong length (should be 1 character)",
         "other": "is the wrong length (should be %{count} characters)"
+      }
+    },
+    "template": {
+      "body": "There were problems with the following fields:",
+      "header": {
+        "one": "1 error prohibited this %{model} from being saved",
+        "other": "%{count} errors prohibited this %{model} from being saved"
       }
     }
   },

@@ -1,29 +1,24 @@
 en:
   template:
-    name: "Gustavo Cunha"
-    title: "Web developer, Mobile and Software Engineer Consultant"
-    current: 'Currently'
+    name: Gustavo Cunha
+    title: Web developer, Mobile and Software Engineer Consultant
+    current: Currently
     menu:
-      en: "EN"
-      pt-BR: "BR"
-      home: "Home"
-      about: "About"
-      skills: "Skills"
-      experience: "Experience"
-      education: "Education"
-      portfolio: "Portfolio"
-      contact: "Contact"
-      social: "Social"
+      en: EN
+      pt-BR: BR
+      home: Home
+      about: About
+      skills: Skills
+      experience: Experience
+      education: Education
+      portfolio: Portfolio
+      contact: Contact
+      social: Social
   contact:
-    title: "Contact me"
-    subtitle: "Feel free to contact me"
+    title: Contact me
+    subtitle: Feel free to contact me
     contacts:
-      title: "Contacts"
-      address:
-        city: "Amsterdam"
-        country: "Netherlands"
-      phone: "+31 06 51 41 60 37"
-      email: "gustavocunha&#64;gmail&#46;com"
-      github: "gmmcal"
-      linkedin: "Gustavo Cunha"
-      twitter: "@gmmcal"
+      title: Contacts
+      github: gmmcal
+      linkedin: Gustavo Cunha
+      twitter: '@gmmcal'

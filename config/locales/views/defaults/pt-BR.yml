@@ -1,29 +1,24 @@
 pt-BR:
   template:
-    name: "Gustavo Cunha"
-    title: "Desenvolvedor Web, Mobile, Consultor em Engenharia de Software"
-    current: 'Atualmente'
+    name: Gustavo Cunha
+    title: Desenvolvedor Web, Mobile, Consultor em Engenharia de Software
+    current: Atualmente
     menu:
-      en: "EN"
-      pt-BR: "BR"
-      home: "Home"
-      about: "Sobre"
-      skills: "Habilidades"
-      experience: "Experiência"
-      education: "Educação"
-      portfolio: "Portfólio"
-      contact: "Contato"
-      social: "Social"
+      en: EN
+      pt-BR: BR
+      home: Home
+      about: Sobre
+      skills: Habilidades
+      experience: Experiência
+      education: Educação
+      portfolio: Portfólio
+      contact: Contato
+      social: Social
   contact:
-    title: "Contate-me"
-    subtitle: "Sinta-se a vontade para entrar em contato"
+    title: Contate-me
+    subtitle: Sinta-se a vontade para entrar em contato
     contacts:
-      title: "Contatos"
-      address:
-        city: "Amsterdã"
-        country: "Holanda"
-      phone: "+31 06 51 41 60 37"
-      email: "gustavocunha&#64;gmail&#46;com"
-      github: "gmmcal"
-      linkedin: "Gustavo Cunha"
-      twitter: "@gmmcal"
+      title: Contatos
+      github: gmmcal
+      linkedin: Gustavo Cunha
+      twitter: '@gmmcal'

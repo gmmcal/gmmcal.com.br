@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      about: About
+    attributes:
+      about:
+        job_title: Job Title
+        description: Description
+        cv: Curriculum
+        city: City
+        country: Country
+        phone_number: Phone
+        email: E-Mail
+        locale: Language

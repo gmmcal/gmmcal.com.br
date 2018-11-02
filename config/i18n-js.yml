@@ -4,15 +4,17 @@ fallbacks: false
 
 except: &except
   except:
-    - "*.simple_form"
-    - "*.admin"
+    - '*.simple_form'
+    - '*.admin'
+    - '*.activerecord'
+    - '*.i18n'
 
 translations:
-  - file: "app/javascript/packs/i18n/en.js"
+  - file: 'app/javascript/packs/i18n/en.js'
     only: 'en.*'
     pretty_print: true
     <<: *except
-  - file: "app/javascript/packs/i18n/pt-BR.js"
+  - file: 'app/javascript/packs/i18n/pt-BR.js'
     only: 'pt-BR.*'
     pretty_print: true
     <<: *except

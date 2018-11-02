@@ -1,0 +1,6 @@
+pt-BR:
+  date:
+    formats:
+      default: ! '%b / %Y'
+      long: ! '%d de %B de %Y'
+      short: ! '%d de %B'

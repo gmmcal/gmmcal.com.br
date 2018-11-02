@@ -16,6 +16,7 @@ gem 'pg'
 gem 'puma', group: %i[production]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
+gem 'rails-i18n'
 gem 'redis', group: %i[production]
 
 # Frontend gems
