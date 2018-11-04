@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include Locatable
+
   devise :database_authenticatable,
-         :lockable,
          :rememberable,
          :validatable,
          :trackable

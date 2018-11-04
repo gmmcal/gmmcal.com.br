@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
+  before_action :set_locale
+
   def index
     @about = about
     @educations = educations
@@ -65,8 +67,6 @@ class HomeController < ApplicationController
       }
     end
   end
-
-  before_action :set_locale
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

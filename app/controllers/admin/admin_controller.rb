@@ -5,16 +5,19 @@ module Admin
     include Pundit
     layout 'admin'
     before_action :authenticate_user!
+    before_action :set_locale
     after_action :verify_authorized
 
     protected
 
-    def locale
-      params[:locale] || I18n.locale
-    end
-
     def model
       controller_name.classify.constantize
+    end
+
+    private
+
+    def set_locale
+      I18n.locale = current_user.locale
     end
   end
 end
