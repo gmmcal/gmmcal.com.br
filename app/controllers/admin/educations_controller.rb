@@ -27,7 +27,7 @@ module Admin
       authorize @education
 
       if @education.save
-        redirect_to [:admin, @education],
+        redirect_to %i[admin educations],
                     notice: 'Education was successfully created.'
       else
         render :new
@@ -38,7 +38,7 @@ module Admin
     def update
       authorize @education
       if @education.update(permitted_attributes(@education))
-        redirect_to [:admin, @education],
+        redirect_to %i[admin educations],
                     notice: 'Education was successfully updated.'
       else
         render :edit

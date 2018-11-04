@@ -40,7 +40,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :request do
 
       it 'redirects to the created work_experience' do
         post '/admin/work_experiences', params: { work_experience: valid_attributes }
-        expect(response).to redirect_to([:admin, WorkExperience.last])
+        expect(response).to redirect_to(%i[admin work_experiences])
       end
     end
 
@@ -67,7 +67,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :request do
       it 'redirects to the work_experience' do
         work_experience = create(:work_experience, valid_attributes)
         put "/admin/work_experiences/#{work_experience.id}", params: { id: work_experience.to_param, work_experience: new_attributes }
-        expect(response).to redirect_to([:admin, work_experience])
+        expect(response).to redirect_to(%i[admin work_experiences])
       end
     end
 

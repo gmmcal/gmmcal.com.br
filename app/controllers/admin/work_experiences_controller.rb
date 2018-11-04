@@ -27,7 +27,7 @@ module Admin
       authorize @work_experience
 
       if @work_experience.save
-        redirect_to [:admin, @work_experience],
+        redirect_to %i[admin work_experiences],
                     notice: 'Work experience was successfully created.'
       else
         render :new
@@ -38,7 +38,7 @@ module Admin
     def update
       authorize @work_experience
       if @work_experience.update(permitted_attributes(@work_experience))
-        redirect_to [:admin, @work_experience],
+        redirect_to %i[admin work_experiences],
                     notice: 'Work experience was successfully updated.'
       else
         render :edit

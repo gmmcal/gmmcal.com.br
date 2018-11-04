@@ -27,7 +27,7 @@ module Admin
       authorize @skill
 
       if @skill.save
-        redirect_to [:admin, @skill],
+        redirect_to %i[admin skills],
                     notice: 'Skill was successfully created.'
       else
         render :new
@@ -38,7 +38,7 @@ module Admin
     def update
       authorize @skill
       if @skill.update(permitted_attributes(@skill))
-        redirect_to [:admin, @skill],
+        redirect_to %i[admin skills],
                     notice: 'Skill was successfully updated.'
       else
         render :edit

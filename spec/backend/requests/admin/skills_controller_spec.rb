@@ -40,7 +40,7 @@ RSpec.describe Admin::SkillsController, type: :request do
 
       it 'redirects to the created skill' do
         post '/admin/skills', params: { skill: valid_attributes }
-        expect(response).to redirect_to([:admin, Skill.last])
+        expect(response).to redirect_to(%i[admin skills])
       end
     end
 
@@ -67,7 +67,7 @@ RSpec.describe Admin::SkillsController, type: :request do
       it 'redirects to the skill' do
         skill = create(:skill, valid_attributes)
         put "/admin/skills/#{skill.id}", params: { id: skill.to_param, skill: new_attributes }
-        expect(response).to redirect_to([:admin, skill])
+        expect(response).to redirect_to(%i[admin skills])
       end
     end
 
