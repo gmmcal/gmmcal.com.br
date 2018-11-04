@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class About < ApplicationRecord
+  include Locatable
+
   validates :job_title, presence: true
   validates :description, presence: true
   validates :cv, presence: true

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Education < ApplicationRecord
+  include Locatable
+
   scope :ordered, -> { order(:order) }
 
   validates :course, presence: true

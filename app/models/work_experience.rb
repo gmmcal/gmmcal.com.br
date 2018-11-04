@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class WorkExperience < ApplicationRecord
+  include Locatable
+
   scope :ordered, -> { order(:order) }
 
   validates :company_name, presence: true

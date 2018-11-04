@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/(:locale)', to: 'home#index', as: :home, locale: /en|pt-BR/
   get 'sitemap', to: 'home#index', defaults: { format: :xml }
   post 'contentful/update', to: 'contentful#update'
+  devise_for :users
 
   namespace :admin do
     root 'dashboard#index'

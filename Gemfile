@@ -32,6 +32,7 @@ gem 'dotenv-rails', group: %i[development test]
 
 # Admin gems
 gem 'country_select'
+gem 'devise'
 gem 'kramdown'
 gem 'pundit'
 gem 'simple_form'
@@ -42,7 +43,6 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'i18n-js'
   gem 'listen'
-  gem 'spring'
 end
 
 # Test suite

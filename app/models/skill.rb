@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Skill < ApplicationRecord
+  include Locatable
+
   scope :random, -> { order(Arel::Nodes::NamedFunction.new('RANDOM', [])) }
 
   validates :name, presence: true
