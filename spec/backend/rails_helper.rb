@@ -2,16 +2,10 @@
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'simplecov'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
-SimpleCov.start 'rails' do
-  coverage_dir 'coverage/backend'
-  minimum_coverage 90
-  minimum_coverage_by_file 70
-end
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'support/shoulda'
@@ -39,6 +33,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :request
 
   config.before(:suite) do
     FactoryBot.definition_file_paths = ['spec/backend/factories']
