@@ -4,3 +4,15 @@ en:
       default: ! '%b / %Y'
       long: ! '%B %d, %Y'
       short: ! '%b %d'
+  helpers:
+    new: New
+    edit: Edit
+    delete: Delete
+    download_cv: Download CV
+    back: Back
+    title: Gustavo Cunha - Software Engineer
+    header: Gustavo Cunha
+    dashboard: Dashboard
+    submit:
+      create: Save
+      update: Update

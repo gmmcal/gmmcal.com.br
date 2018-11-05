@@ -4,15 +4,15 @@
       <h5 class="mb-1"><%= about.job_title %></h5>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
-          <%= link_to 'Edit', [:edit, :admin, about], class: 'btn btn-primary btn-sm btn-outline-secondary' %>
-          <%= link_to 'Download CV', about.cv, class: 'btn btn-sm btn-outline-secondary', target: '_blank' %>
+          <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, about], class: 'btn btn-primary btn-sm btn-outline-secondary' %>
+          <%= link_to t(:download_cv, scope: %i[helpers]), about.cv, class: 'btn btn-sm btn-outline-secondary', target: '_blank' %>
         </div>
       </div>
     </div>
     <%= markdown about.description %>
-    <small class="d-block pb-1">City: <%= about.city %></small>
-    <small class="d-block pb-1">Country: <%= country_name(about.country) %></small>
-    <small class="d-block pb-1">Phone: <%= about.phone_number %></small>
-    <small class="d-block pb-1">Email: <%= about.email %></small>
+    <small class="d-block pb-1"><%= About.human_attribute_name(:city) %>: <%= about.city %></small>
+    <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= country_name(about.country) %></small>
+    <small class="d-block pb-1"><%= About.human_attribute_name(:phone) %>: <%= about.phone_number %></small>
+    <small class="d-block pb-1"><%= About.human_attribute_name(:email) %>: <%= about.email %></small>
   </div>
 </div>

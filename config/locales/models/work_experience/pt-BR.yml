@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      work_experience: Trabalhos
+    attributes:
+      work_experience:
+        company_name: Empresa
+        position: Cargo
+        city: Cidade
+        country: País
+        start_date: Data de Entrada
+        end_date: Data de Saída

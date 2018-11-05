@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Perfil
+    attributes:
+      user:
+        first_name: Nome
+        last_name: Sobrenome
+        default_locale: Língua
+        email: E-Mail
+        password: Senha
+        password_confirmation: Confirme a Senha

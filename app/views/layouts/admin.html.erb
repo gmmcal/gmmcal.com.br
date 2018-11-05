@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Gustavo Cunha - Software Engineer</title>
+  <title><%= t(:title, scope: %i[helpers]) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--google font style-->
   <!--font-family: 'Open Sans', sans-serif;-->
@@ -14,11 +14,11 @@
 <body>
   <header>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <%= link_to t(:header, scope: %i[helpers]), admin_root_path, class: 'navbar-brand col-sm-3 col-md-2 mr-0' %>
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <%= link_to 'Sign out', [:destroy, :user, :session], method: :delete, class: 'nav-link' %>
+          <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
         </li>
       </ul>
     </nav>
@@ -29,22 +29,22 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <%= link_to 'Dashboard', [:admin, :root], class: menu_classes(:dashboard) %>
+              <%= link_to t(:dashboard, scope: %i[helpers]), %i[admin root], class: menu_classes(:dashboard) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'About', [:admin, :abouts], class: menu_classes(:about) %>
+              <%= link_to About.model_name.human, %i[admin abouts], class: menu_classes(:about) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Educations', [:admin, :educations], class: menu_classes(:educations) %>
+              <%= link_to Education.model_name.human, %i[admin educations], class: menu_classes(:educations) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Skills', [:admin, :skills], class: menu_classes(:skills) %>
+              <%= link_to Skill.model_name.human, %i[admin skills], class: menu_classes(:skills) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Work Experiences', [:admin, :work_experiences], class: menu_classes(:work_experiences) %>
+              <%= link_to WorkExperience.model_name.human, %i[admin work_experiences], class: menu_classes(:work_experiences) %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Profile', [:edit, :admin, :user], class: menu_classes(:user) %>
+              <%= link_to User.model_name.human, %i[edit admin user], class: menu_classes(:user) %>
             </li>
           </ul>
         </div>
@@ -55,7 +55,7 @@
     </div>
   </div>
   <footer>
-
+    <!-- reserved space -->
   </footer>
 </body>
 </html>

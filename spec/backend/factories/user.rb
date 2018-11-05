@@ -6,7 +6,7 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
     password { Faker::Internet.password(10, 256) }
-    locale { :en }
+    default_locale { :en }
 
     trait :invalid do
       first_name { nil }

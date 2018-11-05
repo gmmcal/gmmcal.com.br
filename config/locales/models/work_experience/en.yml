@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      work_experience: Work Experience
+    attributes:
+      work_experience:
+        company_name: Company Name
+        position: Position
+        city: City
+        country: Country
+        start_date: Start Date
+        end_date: End Date

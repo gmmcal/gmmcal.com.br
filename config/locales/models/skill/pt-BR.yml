@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    models:
+      skill: Habilidades
+    attributes:
+      skill:
+        name: Nome
+        value: Valor

@@ -4,7 +4,7 @@ User.where(
   first_name: 'Gustavo',
   last_name: 'Cunha',
   email: 'email@example.com',
-  locale: :en
+  default_locale: :en
 ).first_or_create(password: 'password2018')
 
 if Gem.loaded_specs.key?('factory_bot_rails')

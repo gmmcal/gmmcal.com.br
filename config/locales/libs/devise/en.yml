@@ -48,6 +48,13 @@ en:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+    shared:
+      links:
+        sign_in: Login
+        sign_out: Logout
+      minimum_password_length:
+        one: "(Mínimo de %{count} caractere)"
+        other: "(Mínimo de %{count} caracteres)"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."

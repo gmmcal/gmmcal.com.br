@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      user: Profile
+    attributes:
+      user:
+        first_name: First Name
+        last_name: Last Name
+        default_locale: Language
+        email: E-Mail
+        password: Password
+        password_confirmation: Confirm your Password
