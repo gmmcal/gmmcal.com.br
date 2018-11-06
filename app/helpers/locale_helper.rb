@@ -2,7 +2,7 @@
 
 module LocaleHelper
   def locale_to_language(locale)
-    locale.to_s
+    t(locale, scope: %i[i18n])
   end
 
   def available_locales

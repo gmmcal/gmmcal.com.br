@@ -1,30 +1,28 @@
 # frozen_string_literal: true
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
-  # rubocop:disable Metrics/AbcSize
   def change
-    create_table :users do |t|
+    create_table :users do |table|
       ## Database authenticatable
-      t.string :first_name
-      t.string :last_name
-      t.string :email,              null: false, default: ''
-      t.string :encrypted_password, null: false, default: ''
-      t.string :default_locale
+      table.string :first_name
+      table.string :last_name
+      table.string :email,              null: false, default: ''
+      table.string :encrypted_password, null: false, default: ''
+      table.string :default_locale
 
       ## Rememberable
-      t.datetime :remember_created_at
+      table.datetime :remember_created_at
 
       ## Trackable
-      t.integer  :sign_in_count, default: 0, null: false
-      t.datetime :current_sign_in_at
-      t.datetime :last_sign_in_at
-      t.inet     :current_sign_in_ip
-      t.inet     :last_sign_in_ip
+      table.integer  :sign_in_count, default: 0, null: false
+      table.datetime :current_sign_in_at
+      table.datetime :last_sign_in_at
+      table.inet     :current_sign_in_ip
+      table.inet     :last_sign_in_ip
 
-      t.timestamps null: false
+      table.timestamps null: false
     end
 
-    add_index :users, :email,                unique: true
+    add_index :users, :email, unique: true
   end
-  # rubocop:enable Metrics/AbcSize
 end

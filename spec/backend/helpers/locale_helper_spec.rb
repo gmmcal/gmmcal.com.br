@@ -4,12 +4,16 @@ require 'rails_helper'
 
 RSpec.describe LocaleHelper, type: :helper do
   describe '#locale_to_language' do
+    before do
+      I18n.locale = :en
+    end
+
     it 'returns en for english' do
-      expect(helper.locale_to_language(:en)).to eq('en')
+      expect(helper.locale_to_language(:en)).to eq('English')
     end
 
     it 'returns pt-BR for portuguese' do
-      expect(helper.locale_to_language(:'pt-BR')).to eq('pt-BR')
+      expect(helper.locale_to_language(:'pt-BR')).to eq('Portuguese')
     end
   end
 

@@ -16,3 +16,6 @@ pt-BR:
     submit:
       create: Salvar
       update: Atualizar
+  i18n:
+    en: Inglês
+    pt-BR: Português
