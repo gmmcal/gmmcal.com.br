@@ -10,3 +10,4 @@ pt-BR:
     labels:
       defaults:
         locale: Língua
+        remember_me: Lembrar de mim

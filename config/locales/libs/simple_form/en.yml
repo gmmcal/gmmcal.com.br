@@ -10,3 +10,4 @@ en:
     labels:
       defaults:
         locale: Language
+        remember_me: Remember me
