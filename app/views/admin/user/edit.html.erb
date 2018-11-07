@@ -6,4 +6,13 @@
   <p id="notice"><%= notice %></p>
 </div>
 
-<%= render 'form', user: @user %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-6">
+      <%= render 'form', user: @user %>
+    </div>
+    <div class="col col-6">
+      <%= render 'password_form', user: @user %>
+    </div>
+  </div>
+</div>

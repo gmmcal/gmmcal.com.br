@@ -14,13 +14,7 @@
 <body>
   <header>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <%= link_to t(:header, scope: %i[helpers]), admin_root_path, class: 'navbar-brand col-sm-3 col-md-2 mr-0' %>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
-        </li>
-      </ul>
+      <%= link_to t(:header, scope: %i[helpers]), admin_root_path, class: 'navbar-brand col-12' %>
     </nav>
   </header>
   <div class="container-fluid">
@@ -45,6 +39,9 @@
             </li>
             <li class="nav-item">
               <%= link_to User.model_name.human, %i[edit admin user], class: menu_classes(:user) %>
+            </li>
+            <li class="nav-item text-nowrap">
+              <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
             </li>
           </ul>
         </div>
