@@ -13,8 +13,16 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <%= link_to t(:header, scope: %i[helpers]), admin_root_path, class: 'navbar-brand col-12' %>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <%= link_to t(:header, scope: %i[helpers]), admin_root_path, class: 'navbar-brand' %>
+      <ul class="navbar-nav d-flex justify-content-end mr3">
+        <li class="nav-item">
+          <%= link_to User.model_name.human, %i[edit admin user], class: menu_classes(:user) %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
+        </li>
+      </ul>
     </nav>
   </header>
   <div class="container-fluid">
@@ -37,12 +45,6 @@
             <li class="nav-item">
               <%= link_to WorkExperience.model_name.human, %i[admin work_experiences], class: menu_classes(:work_experiences) %>
             </li>
-            <li class="nav-item">
-              <%= link_to User.model_name.human, %i[edit admin user], class: menu_classes(:user) %>
-            </li>
-            <li class="nav-item text-nowrap">
-              <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
-            </li>
           </ul>
         </div>
       </nav>
@@ -54,5 +56,6 @@
   <footer>
     <!-- reserved space -->
   </footer>
+  <%= Gon::Base.render_data %>
 </body>
 </html>
