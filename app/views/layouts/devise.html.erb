@@ -23,8 +23,10 @@
       </main>
     </div>
   </div>
-  <footer>
-    <!-- reserved space -->
+  <footer class="footer fixed-bottom bg-dark text-white">
+    <div class="container-fluid">
+      &copy; <%= Date.today.year %> <%= t(:title, scope: %i[helpers]) %>
+    </div>
   </footer>
 </body>
 </html>

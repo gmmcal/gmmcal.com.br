@@ -54,6 +54,7 @@ body {
 
 [role="main"] {
   padding-top: 48px; /* Space for fixed navbar */
+  padding-bottom: 60px; /* Space for fixed footer */
 }
 
 /*
@@ -69,4 +70,13 @@ body {
   .navbar-nav {
     width: 100%;
   }
+}
+
+/*
+ * Footer
+ */
+
+.footer {
+  height: 48px; /* Set the fixed height of the footer here */
+  line-height: 48px; /* Vertically center the text there */
 }

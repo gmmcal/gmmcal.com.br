@@ -48,13 +48,15 @@
           </ul>
         </div>
       </nav>
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 pb-3">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <%= yield %>
       </main>
     </div>
   </div>
-  <footer>
-    <!-- reserved space -->
+  <footer class="footer fixed-bottom bg-dark text-white">
+    <div class="container-fluid">
+      &copy; <%= Date.today.year %> <%= t(:title, scope: %i[helpers]) %>
+    </div>
   </footer>
   <%= Gon::Base.render_data %>
 </body>
