@@ -126,6 +126,10 @@ RSpec.describe CssClassesHelper, type: :helper do
   end
 
   describe '#tab_classes' do
+    before do
+      I18n.locale = :en
+    end
+
     context 'with empty params' do
       it 'returns active for english' do
         expect(helper.tab_classes(:en)).to include('active')

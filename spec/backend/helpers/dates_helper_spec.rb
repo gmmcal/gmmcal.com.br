@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe DatesHelper, type: :helper do
+  before do
+    I18n.locale = :en
+  end
+
   describe '#end_date' do
     it 'returns `currently` if no date is provided' do
       expect(helper.end_date(nil)).to eq('Currently')
