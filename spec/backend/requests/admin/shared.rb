@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples 'unauthorized' do
-  it 'fails' do
+  it 'request is rejected' do
     expect(response).not_to be_successful
   end
 

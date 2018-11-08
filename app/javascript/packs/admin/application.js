@@ -1,4 +1,4 @@
-import Rails from 'rails-ujs';
+import Rails from 'rails-ujs'
 import Turbolinks from 'turbolinks'
 import DashboardChart from './chart'
 
