@@ -22,8 +22,13 @@ body {
     color: #333;
   }
 
-  .nav-link.active {
-    color: #007bff;
+  .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+
+    &.active {
+      color: rgba(255, 255, 255, 1.0);
+      text-decoration: underline;
+    }
   }
 }
 
