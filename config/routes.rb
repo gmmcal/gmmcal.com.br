@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    root 'dashboard#index'
+    root 'about#index'
 
     resources :abouts, controller: :about, path: :about, except: %i[new show]
     resources :educations, except: :show

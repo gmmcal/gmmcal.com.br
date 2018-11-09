@@ -4,36 +4,8 @@ require 'rails_helper'
 
 RSpec.describe CssClassesHelper, type: :helper do
   describe '#menu_classes' do
-    context 'with dashboard about' do
-      before { allow(helper).to receive(:controller_name).and_return(:dashboard) }
-
-      it 'returns active for dashboard' do
-        expect(helper.menu_classes(:dashboard)).to include('active')
-      end
-
-      it 'returns inactive for about' do
-        expect(helper.menu_classes(:about)).not_to include('active')
-      end
-
-      it 'returns inactive for educations' do
-        expect(helper.menu_classes(:educations)).not_to include('active')
-      end
-
-      it 'returns inactive for skills' do
-        expect(helper.menu_classes(:skills)).not_to include('active')
-      end
-
-      it 'returns inactive for work_experiences' do
-        expect(helper.menu_classes(:work_experiences)).not_to include('active')
-      end
-    end
-
     context 'with about selected' do
       before { allow(helper).to receive(:controller_name).and_return(:about) }
-
-      it 'returns inactive for dashboard' do
-        expect(helper.menu_classes(:dashboard)).not_to include('active')
-      end
 
       it 'returns active for about' do
         expect(helper.menu_classes(:about)).to include('active')
@@ -55,10 +27,6 @@ RSpec.describe CssClassesHelper, type: :helper do
     context 'with educations selected' do
       before { allow(helper).to receive(:controller_name).and_return(:educations) }
 
-      it 'returns inactive for dashboard' do
-        expect(helper.menu_classes(:dashboard)).not_to include('active')
-      end
-
       it 'returns inactive for about' do
         expect(helper.menu_classes(:about)).not_to include('active')
       end
@@ -79,10 +47,6 @@ RSpec.describe CssClassesHelper, type: :helper do
     context 'with skills selected' do
       before { allow(helper).to receive(:controller_name).and_return(:skills) }
 
-      it 'returns inactive for dashboard' do
-        expect(helper.menu_classes(:dashboard)).not_to include('active')
-      end
-
       it 'returns inactive for about' do
         expect(helper.menu_classes(:about)).not_to include('active')
       end
@@ -102,10 +66,6 @@ RSpec.describe CssClassesHelper, type: :helper do
 
     context 'with work_experiences selected' do
       before { allow(helper).to receive(:controller_name).and_return(:work_experiences) }
-
-      it 'returns inactive for dashboard' do
-        expect(helper.menu_classes(:dashboard)).not_to include('active')
-      end
 
       it 'returns inactive for about' do
         expect(helper.menu_classes(:about)).not_to include('active')
