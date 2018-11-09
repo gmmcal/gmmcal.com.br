@@ -2,9 +2,7 @@
   <h1 class="h2"><%= t(:edit, scope: %i[helpers]) %> <%= @user.first_name %></h1>
 </div>
 
-<div>
-  <p id="notice"><%= notice %></p>
-</div>
+<%= render 'admin/shared/notification' %>
 
 <div class="container-fluid">
   <div class="row">
