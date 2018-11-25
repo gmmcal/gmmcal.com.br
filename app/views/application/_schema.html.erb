@@ -1,6 +1,6 @@
 <div class="schema">
   <div itemscope itemtype="https://schema.org/Person">
-    <span itemprop="name"><%= t(:name, scope: [:template]) %></span>
+    <span itemprop="name"><%= t(:name, scope: %i[frontend template]) %></span>
     <span itemprop="jobTitle"><%= @about.job_title %></span>
     <span itemprop="description"><%= @about.description %></span>
     <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
@@ -9,7 +9,7 @@
     </p>
     <p itemprop="telephone"><%= @about.phone_number %></p>
     <p itemprop="email"><%= @about.email %></p>
-    <%= image_tag asset_url("avatar.jpg"), alt: t(:name, scope: [:template]), itemprop: "image" %>
+    <%= image_tag asset_url("avatar.jpg"), alt: t(:name, scope: %i[frontend template]), itemprop: "image" %>
     <% @work_experiences.each do |experience| %>
       <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
         <span itemprop="legalName"><%= experience.company_name %></span>

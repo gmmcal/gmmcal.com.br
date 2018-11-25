@@ -28,7 +28,7 @@ module Admin
 
       if @education.save
         redirect_to %i[admin educations],
-                    notice: 'Education was successfully created.'
+                    notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
       end
@@ -39,7 +39,7 @@ module Admin
       authorize @education
       if @education.update(permitted_attributes(@education))
         redirect_to %i[admin educations],
-                    notice: 'Education was successfully updated.'
+                    notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
       end
@@ -50,7 +50,7 @@ module Admin
       @education.destroy
       authorize @education
       redirect_to %i[admin educations],
-                  notice: 'Education was successfully destroyed.'
+                  notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private

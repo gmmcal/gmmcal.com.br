@@ -22,7 +22,7 @@ module Admin
 
       if @about.save
         redirect_to %i[admin abouts],
-                    notice: 'About was successfully created.'
+                    notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
       end
@@ -33,7 +33,7 @@ module Admin
       authorize @about
       if @about.update(permitted_attributes(@about))
         redirect_to %i[admin abouts],
-                    notice: 'About was successfully updated.'
+                    notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
       end
@@ -44,7 +44,7 @@ module Admin
       @about.destroy
       authorize @about
       redirect_to %i[admin abouts],
-                  notice: 'About was successfully destroyed.'
+                  notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private

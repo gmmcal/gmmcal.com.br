@@ -1,5 +1,5 @@
 <template>
-  <a v-on:click="click" data-turbolinks="false" :class="item.css_class" :href="item.link" :alt="item.label">{{ I18n.t(item.label, { scope: 'template.menu'}) }}</a>
+  <a v-on:click="click" data-turbolinks="false" :class="item.css_class" :href="item.link" :alt="item.label">{{ I18n.t(item.label, { scope: 'frontend.template.menu'}) }}</a>
 </template>
 
 <script>

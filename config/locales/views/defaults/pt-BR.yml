@@ -1,24 +1,25 @@
 pt-BR:
-  template:
-    name: Gustavo Cunha
-    title: Desenvolvedor Web, Mobile, Consultor em Engenharia de Software
-    current: Atualmente
-    menu:
-      en: EN
-      pt-BR: BR
-      home: Home
-      about: Sobre
-      skills: Habilidades
-      experience: Experiência
-      education: Educação
-      portfolio: Portfólio
-      contact: Contato
-      social: Social
-  contact:
-    title: Contate-me
-    subtitle: Sinta-se a vontade para entrar em contato
-    contacts:
-      title: Contatos
-      github: gmmcal
-      linkedin: Gustavo Cunha
-      twitter: '@gmmcal'
+  frontend:
+    template:
+      name: Gustavo Cunha
+      title: Desenvolvedor Web, Mobile, Consultor em Engenharia de Software
+      current: Atualmente
+      menu:
+        en: EN
+        pt-BR: BR
+        home: Home
+        about: Sobre
+        skills: Habilidades
+        experience: Experiência
+        education: Educação
+        portfolio: Portfólio
+        contact: Contato
+        social: Social
+    contact:
+      title: Contate-me
+      subtitle: Sinta-se a vontade para entrar em contato
+      contacts:
+        title: Contatos
+        github: gmmcal
+        linkedin: Gustavo Cunha
+        twitter: '@gmmcal'

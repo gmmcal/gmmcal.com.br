@@ -1,7 +1,9 @@
 pt-BR:
   activerecord:
     models:
-      work_experience: Trabalhos
+      work_experience:
+        one: Trabalho
+        other: Trabalhos
     attributes:
       work_experience:
         company_name: Empresa

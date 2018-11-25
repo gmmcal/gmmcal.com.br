@@ -10,11 +10,16 @@ en:
     delete: Delete
     download_cv: Download CV
     back: Back
-    title: Gustavo Cunha - Software Engineer
-    header: Gustavo Cunha
     submit:
       create: Save
       update: Update
+    created: '%{model} was successfully created.'
+    updated: '%{model} was successfully updated.'
+    deleted: '%{model} was successfully deleted.'
+  frontend:
+    helpers:
+      title: Gustavo Cunha - Software Engineer
+      header: Gustavo Cunha
   i18n:
     en: English
     pt-BR: Portuguese

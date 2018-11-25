@@ -28,7 +28,7 @@ module Admin
 
       if @work_experience.save
         redirect_to %i[admin work_experiences],
-                    notice: 'Work experience was successfully created.'
+                    notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
       end
@@ -39,7 +39,7 @@ module Admin
       authorize @work_experience
       if @work_experience.update(permitted_attributes(@work_experience))
         redirect_to %i[admin work_experiences],
-                    notice: 'Work experience was successfully updated.'
+                    notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
       end
@@ -50,7 +50,7 @@ module Admin
       @work_experience.destroy
       authorize @work_experience
       redirect_to %i[admin work_experiences],
-                  notice: 'Work experience was successfully destroyed.'
+                  notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private

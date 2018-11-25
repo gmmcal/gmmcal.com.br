@@ -1,7 +1,9 @@
 en:
   activerecord:
     models:
-      skill: Skills
+      skill:
+        one: Skill
+        other: Skills
     attributes:
       skill:
         name: Name

@@ -2,8 +2,8 @@
   <section class="technical" id="skills">
     <div class="container">
       <div class="heading">
-        <h2>{{ I18n.t('title', { scope: 'skills' }) }}</h2>
-        <p>{{ I18n.t('subtitle', { scope: 'skills' }) }}</p>
+        <h2>{{ I18n.t('title', { scope: 'frontend.skills' }) }}</h2>
+        <p>{{ I18n.t('subtitle', { scope: 'frontend.skills' }) }}</p>
       </div>
       <div class="row">
         <vue-skill v-for="skill in skills" :skill="skill" :key="skill.id" />

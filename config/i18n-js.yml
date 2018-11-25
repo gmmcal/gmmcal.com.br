@@ -11,10 +11,10 @@ except: &except
 
 translations:
   - file: 'app/javascript/packs/i18n/en.js'
-    only: 'en.*'
+    only: ['en.frontend.*', 'en.date.formats.*']
     pretty_print: true
     <<: *except
   - file: 'app/javascript/packs/i18n/pt-BR.js'
-    only: 'pt-BR.*'
+    only: ['pt-BR.frontend.*', 'pt-BR.date.formats.*']
     pretty_print: true
     <<: *except

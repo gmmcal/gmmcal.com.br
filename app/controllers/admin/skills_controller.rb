@@ -28,7 +28,7 @@ module Admin
 
       if @skill.save
         redirect_to %i[admin skills],
-                    notice: 'Skill was successfully created.'
+                    notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
       end
@@ -39,7 +39,7 @@ module Admin
       authorize @skill
       if @skill.update(permitted_attributes(@skill))
         redirect_to %i[admin skills],
-                    notice: 'Skill was successfully updated.'
+                    notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
       end
@@ -50,7 +50,7 @@ module Admin
       @skill.destroy
       authorize @skill
       redirect_to %i[admin skills],
-                  notice: 'Skill was successfully destroyed.'
+                  notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private

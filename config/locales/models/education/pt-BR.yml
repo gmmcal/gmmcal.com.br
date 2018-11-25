@@ -1,7 +1,9 @@
 pt-BR:
   activerecord:
     models:
-      education: Educação
+      education:
+        one: Educação
+        other: Educações
     attributes:
       education:
         course: Curso

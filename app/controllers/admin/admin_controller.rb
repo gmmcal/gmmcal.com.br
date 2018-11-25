@@ -18,6 +18,10 @@ module Admin
       controller_name.classify.constantize
     end
 
+    def human_model
+      model.model_name.human
+    end
+
     private
 
     def set_default_locale

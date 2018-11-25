@@ -1,7 +1,9 @@
 en:
   activerecord:
     models:
-      education: Education
+      education:
+        one: Education
+        other: Educations
     attributes:
       education:
         course: Course

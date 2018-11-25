@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      about: About
+      about: Sobre
     attributes:
       about:
         job_title: Título

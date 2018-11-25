@@ -1,7 +1,9 @@
 en:
   activerecord:
     models:
-      work_experience: Work Experience
+      work_experience:
+        one: Work Experience
+        other: Work Experiences
     attributes:
       work_experience:
         company_name: Company Name

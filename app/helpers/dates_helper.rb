@@ -2,7 +2,7 @@
 
 module DatesHelper
   def end_date(date)
-    return t(:current, scope: :template) unless date
+    return t(:current, scope: %i[frontend template]) unless date
 
     l date
   end
