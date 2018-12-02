@@ -33,6 +33,7 @@ gem 'dotenv-rails', group: %i[development test]
 # Admin gems
 gem 'country_select'
 gem 'devise'
+gem 'i18n-debug', group: :development
 gem 'kramdown'
 gem 'pundit'
 gem 'simple_form'
