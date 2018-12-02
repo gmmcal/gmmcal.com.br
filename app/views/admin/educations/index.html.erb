@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2"><%= Education.model_name.human %></h1>
+  <h1 class="h2"><%= Education.model_name.human.pluralize %></h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
       <%= link_to t(:new, scope: %i[helpers]), %i[new admin education], class: 'btn btn-sm btn-outline-secondary' %>
@@ -11,6 +11,6 @@
 
 <%= render 'admin/shared/tabs', action: :educations %>
 
-<div class="row pt-3">
+<div class="row pt-3 sortable" data-url="<%= admin_reorder_path %>" data-model="<%= Education.model_name.param_key %>">
   <%= render @educations %>
 </div>

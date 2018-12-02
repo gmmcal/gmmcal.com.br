@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe CountryHelper, type: :helper do
+  before do
+    I18n.locale = :en
+  end
+
   describe '#country_name' do
     it 'country name if english name is provided' do
       expect(helper.country_name('Netherlands')).to eq('Netherlands')

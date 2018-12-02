@@ -48,6 +48,12 @@ body {
   padding-top: 48px;
 }
 
+.sortable {
+  .item {
+    cursor: pointer;
+  }
+}
+
 .navbar {
   .navbar-brand {
     font-size: 1rem;

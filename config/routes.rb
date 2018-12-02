@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     resources :skills, except: :show
     resources :work_experiences, except: :show
     resource :user, controller: :user, only: %i[edit update]
+    resource :reorder, only: :update, controller: :reorder
   end
 end
