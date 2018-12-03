@@ -7,6 +7,10 @@ You can add all changes provided by your pull request on [unreleased] section. W
 
 ## [Unreleased]
 
+## [2.1.8] - 2018-10-30
+### Fixed
+- Updated gem Loofah to address CVE-2018-16468
+
 ## [2.1.7] - 2018-10-18
 ### Added
 - VCR request mocks to Contentful
@@ -424,7 +428,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.7...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.8...HEAD
+[2.1.8]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.7...v2.1.8
 [2.1.7]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.6...v2.1.7
 [2.1.6]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.5...v2.1.6
 [2.1.5]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.4...v2.1.5
