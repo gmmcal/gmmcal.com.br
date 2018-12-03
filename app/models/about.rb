@@ -2,6 +2,7 @@
 
 class About < ApplicationRecord
   include Locatable
+  has_one_attached :cv
 
   validates :job_title, presence: true
   validates :description, presence: true

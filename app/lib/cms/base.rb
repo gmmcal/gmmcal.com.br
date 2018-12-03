@@ -35,6 +35,10 @@ module Cms
       model.find_or_initialize_by(contentful_id: id, locale: locale)
     end
 
+    def download_file(url)
+      open("https:#{url}")
+    end
+
     private
 
     def update_localized_attributes(data, locale)
@@ -54,7 +58,10 @@ module Cms
 
     def update_file_fields(data, locale)
       file_fields.each do |app_attribute, cms_attribute|
-        data[app_attribute] = url_for_field(locale, cms_attribute)
+        file_url = url_for_field(locale, cms_attribute)
+        filename = file_url.split('/').last
+        file = download_file(file_url)
+        data.send(app_attribute).attach(io: file, filename: filename)
       end
       data
     end
