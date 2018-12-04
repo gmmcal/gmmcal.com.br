@@ -3,26 +3,26 @@
 # This migration comes from active_storage (originally 20170806125915)
 class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
   def change
-    create_table :active_storage_blobs do |t|
-      t.string   :key,        null: false
-      t.string   :filename,   null: false
-      t.string   :content_type
-      t.text     :metadata
-      t.bigint   :byte_size,  null: false
-      t.string   :checksum,   null: false
-      t.datetime :created_at, null: false
+    create_table :active_storage_blobs do |table|
+      table.string   :key,        null: false
+      table.string   :filename,   null: false
+      table.string   :content_type
+      table.text     :metadata
+      table.bigint   :byte_size,  null: false
+      table.string   :checksum,   null: false
+      table.datetime :created_at, null: false
 
-      t.index %i[key], unique: true
+      table.index %i[key], unique: true
     end
 
-    create_table :active_storage_attachments do |t|
-      t.string     :name,     null: false
-      t.references :record,   null: false, polymorphic: true, index: false
-      t.references :blob,     null: false
+    create_table :active_storage_attachments do |table|
+      table.string     :name,     null: false
+      table.references :record,   null: false, polymorphic: true, index: false
+      table.references :blob,     null: false
 
-      t.datetime :created_at, null: false
+      table.datetime :created_at, null: false
 
-      t.index %i[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness', unique: true
+      table.index %i[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness', unique: true
     end
   end
 end

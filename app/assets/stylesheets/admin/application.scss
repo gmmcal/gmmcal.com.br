@@ -1,5 +1,6 @@
 @import 'bootstrap';
 @import 'mdb';
+@import 'mixins';
 
 body {
   font-size: .875rem;
@@ -13,18 +14,10 @@ body {
   position: fixed;
   top: 0;
   z-index: 100;
-}
 
-.sidebar, .navbar {
   .nav-item {
     .nav-link {
-      color: rgba(255, 255, 255, .75) !important;
-      font-weight: 500 !important;
-
-      &.active {
-        color: rgba(255, 255, 255, 1) !important;
-        text-decoration: underline !important;
-      }
+      @include menu;
     }
   }
 }
@@ -62,6 +55,16 @@ body {
 
   .navbar-nav {
     width: 100%;
+  }
+
+  &.navbar-dark {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          @include menu;
+        }
+      }
+    }
   }
 }
 

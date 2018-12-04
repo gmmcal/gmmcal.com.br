@@ -7,28 +7,30 @@ module Admin
     def update
       authorize :reorder
 
-      if valid_model?(params[:model]) && set_order
+      begin
+        params[:ids].each_with_index do |id, index|
+          model.where(id: id).update(order: index)
+        end
         head :ok
-      else
+      rescue StandardError
         head :precondition_failed
       end
     end
 
-    private
+    protected
 
-    def set_order
-      model = params[:model].classify.constantize
-      params[:ids].each_with_index do |id, index|
-        model.where(id: id).update(order: index)
-      end
+    def model
+      return Education if params[:model] == 'education'
+
+      return WorkExperience if params[:model] == 'work_experience'
+
+      raise StandardError
     end
+
+    private
 
     def permitted_attributes
       self.params = params.require(:reorder).permit(:model, ids: [])
-    end
-
-    def valid_model?(model)
-      %i[education work_experience].include?(model.to_sym)
     end
   end
 end
