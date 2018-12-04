@@ -47,6 +47,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "app/javascript/packs/components/**/*.{js,vue}",
+      "app/javascript/packs/functional/**/*.{js}",
       "!**/node_modules/**"
     ],
     "coverageReporters": [

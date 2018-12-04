@@ -1,7 +1,7 @@
 import Sortable from 'sortablejs'
 import Rails from 'rails-ujs'
 
-import serialize from '../behavior/serialize'
+import serialize from '../functional/serialize'
 
 const sort = (selector, callback) => {
   const element = document.querySelector(selector)
