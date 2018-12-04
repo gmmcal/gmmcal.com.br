@@ -13,7 +13,7 @@
     </div>
     <%= markdown about.description %>
     <small class="d-block pb-1"><%= About.human_attribute_name(:city) %>: <%= about.city %></small>
-    <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= country_name(about.country) %></small>
+    <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= about.country_name %></small>
     <small class="d-block pb-1"><%= About.human_attribute_name(:phone_number) %>: <%= about.phone_number %></small>
     <small class="d-block pb-1"><%= About.human_attribute_name(:email) %>: <%= about.email %></small>
   </div>

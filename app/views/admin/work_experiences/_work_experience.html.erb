@@ -13,6 +13,6 @@
     <%= markdown work_experience.description %>
     <small class="d-block pb-1"><%= About.human_attribute_name(:position) %>: <%= work_experience.position %></small>
     <small class="d-block pb-1"><%= About.human_attribute_name(:city) %>: <%= work_experience.city %></small>
-    <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= country_name(work_experience.country) %></small>
+    <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= work_experience.country_name %></small>
   </div>
 </div>
