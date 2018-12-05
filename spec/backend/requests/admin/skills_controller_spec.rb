@@ -103,7 +103,7 @@ RSpec.describe Admin::SkillsController, type: :request do
 
         it 'redirects to the created skill' do
           post '/admin/skills', params: { skill: valid_attributes }
-          expect(response).to redirect_to(%i[admin skills])
+          expect(response).to redirect_to(admin_skills_path(locale: :en))
         end
       end
 
@@ -130,7 +130,7 @@ RSpec.describe Admin::SkillsController, type: :request do
         it 'redirects to the skill' do
           skill = create(:skill, valid_attributes)
           put "/admin/skills/#{skill.id}", params: { id: skill.to_param, skill: new_attributes }
-          expect(response).to redirect_to(%i[admin skills])
+          expect(response).to redirect_to(admin_skills_path(locale: :en))
         end
       end
 
@@ -156,7 +156,7 @@ RSpec.describe Admin::SkillsController, type: :request do
       it 'redirects to the skills list' do
         skill = create(:skill, valid_attributes)
         delete "/admin/skills/#{skill.id}"
-        expect(response).to redirect_to(%i[admin skills])
+        expect(response).to redirect_to(admin_skills_path(locale: :en))
       end
     end
   end

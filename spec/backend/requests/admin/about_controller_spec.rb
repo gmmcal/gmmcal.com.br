@@ -88,7 +88,7 @@ RSpec.describe Admin::AboutController, type: :request do
 
         it 'redirects to the created about' do
           post '/admin/about', params: { about: valid_attributes }
-          expect(response).to redirect_to(%i[admin abouts])
+          expect(response).to redirect_to(admin_abouts_path(locale: :en))
         end
       end
 
@@ -115,7 +115,7 @@ RSpec.describe Admin::AboutController, type: :request do
         it 'redirects to the about' do
           about = create(:about, valid_attributes)
           put "/admin/about/#{about.id}", params: { id: about.to_param, about: new_attributes }
-          expect(response).to redirect_to(%i[admin abouts])
+          expect(response).to redirect_to(admin_abouts_path(locale: :en))
         end
       end
 
@@ -141,7 +141,7 @@ RSpec.describe Admin::AboutController, type: :request do
       it 'redirects to the abouts list' do
         about = create(:about, valid_attributes)
         delete "/admin/about/#{about.id}"
-        expect(response).to redirect_to(%i[admin abouts])
+        expect(response).to redirect_to(admin_abouts_path(locale: :en))
       end
     end
   end

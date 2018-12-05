@@ -103,7 +103,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :request do
 
         it 'redirects to the created work_experience' do
           post '/admin/work_experiences', params: { work_experience: valid_attributes }
-          expect(response).to redirect_to(%i[admin work_experiences])
+          expect(response).to redirect_to(admin_work_experiences_path(locale: :en))
         end
       end
 
@@ -130,7 +130,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :request do
         it 'redirects to the work_experience' do
           work_experience = create(:work_experience, valid_attributes)
           put "/admin/work_experiences/#{work_experience.id}", params: { id: work_experience.to_param, work_experience: new_attributes }
-          expect(response).to redirect_to(%i[admin work_experiences])
+          expect(response).to redirect_to(admin_work_experiences_path(locale: :en))
         end
       end
 
@@ -156,7 +156,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :request do
       it 'redirects to the work_experiences list' do
         work_experience = create(:work_experience, valid_attributes)
         delete "/admin/work_experiences/#{work_experience.id}"
-        expect(response).to redirect_to(%i[admin work_experiences])
+        expect(response).to redirect_to(admin_work_experiences_path(locale: :en))
       end
     end
   end

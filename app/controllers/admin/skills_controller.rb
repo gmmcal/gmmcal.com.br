@@ -27,7 +27,7 @@ module Admin
       authorize @skill
 
       if @skill.save
-        redirect_to %i[admin skills],
+        redirect_to admin_skills_path(locale: @skill.locale),
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
@@ -38,7 +38,7 @@ module Admin
     def update
       authorize @skill
       if @skill.update(permitted_attributes(@skill))
-        redirect_to %i[admin skills],
+        redirect_to admin_skills_path(locale: @skill.locale),
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
@@ -49,7 +49,7 @@ module Admin
     def destroy
       @skill.destroy
       authorize @skill
-      redirect_to %i[admin skills],
+      redirect_to admin_skills_path(locale: @skill.locale),
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
