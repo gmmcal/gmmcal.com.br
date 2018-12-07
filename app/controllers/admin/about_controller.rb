@@ -21,7 +21,7 @@ module Admin
       authorize @about
 
       if @about.save
-        redirect_to admin_abouts_path(locale: @about.locale),
+        redirect_to redirect_path,
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
@@ -32,7 +32,7 @@ module Admin
     def update
       authorize @about
       if @about.update(permitted_attributes(@about))
-        redirect_to admin_abouts_path(locale: @about.locale),
+        redirect_to redirect_path,
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
@@ -43,11 +43,15 @@ module Admin
     def destroy
       @about.destroy
       authorize @about
-      redirect_to admin_abouts_path(locale: @about.locale),
+      redirect_to redirect_path,
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private
+
+    def redirect_path
+      admin_abouts_path(locale: @about.locale)
+    end
 
     def set_about
       @about = model.find(params[:id])

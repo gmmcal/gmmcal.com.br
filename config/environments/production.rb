@@ -104,6 +104,9 @@ Rails.application.configure do
   # credentials (and other encrypted files).
   config.require_master_key = true
 
+  # Store uploaded files on the Amazon S3
+  config.active_storage.service = ENV['STORAGE_SERVICE'] || :local
+
   # Compress JavaScripts and CSS.
   config.assets.css_compressor = :sass
 
@@ -115,4 +118,7 @@ Rails.application.configure do
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{1.day.to_i}"
   }
+
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  config.action_controller.asset_host = ENV['ASSET_HOST']
 end

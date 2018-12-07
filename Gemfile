@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 ruby '~> 2.3'
 
 # Application gems
+gem 'aws-sdk-s3', group: %i[production], require: false
 # Use bootsnap to improve performance
 gem 'bootsnap', require: false
 # Contentful as CMS

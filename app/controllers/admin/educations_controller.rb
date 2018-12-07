@@ -27,7 +27,7 @@ module Admin
       authorize @education
 
       if @education.save
-        redirect_to admin_educations_path(locale: @education.locale),
+        redirect_to redirect_path,
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
@@ -38,7 +38,7 @@ module Admin
     def update
       authorize @education
       if @education.update(permitted_attributes(@education))
-        redirect_to admin_educations_path(locale: @education.locale),
+        redirect_to redirect_path,
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
@@ -49,11 +49,15 @@ module Admin
     def destroy
       @education.destroy
       authorize @education
-      redirect_to admin_educations_path(locale: @education.locale),
+      redirect_to redirect_path,
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private
+
+    def redirect_path
+      admin_educations_path(locale: @education.locale)
+    end
 
     def set_education
       @education = model.find(params[:id])

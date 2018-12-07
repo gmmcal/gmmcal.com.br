@@ -27,7 +27,7 @@ module Admin
       authorize @work_experience
 
       if @work_experience.save
-        redirect_to admin_work_experiences_path(locale: @work_experience.locale),
+        redirect_to redirect_path,
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
         render :new
@@ -38,7 +38,7 @@ module Admin
     def update
       authorize @work_experience
       if @work_experience.update(permitted_attributes(@work_experience))
-        redirect_to admin_work_experiences_path(locale: @work_experience.locale),
+        redirect_to redirect_path,
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
@@ -49,11 +49,15 @@ module Admin
     def destroy
       @work_experience.destroy
       authorize @work_experience
-      redirect_to admin_work_experiences_path(locale: @work_experience.locale),
+      redirect_to redirect_path,
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
 
     private
+
+    def redirect_path
+      admin_work_experiences_path(locale: @work_experience.locale)
+    end
 
     def set_work_experience
       @work_experience = model.find(params[:id])
