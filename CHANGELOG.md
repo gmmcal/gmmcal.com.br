@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 You can add all changes provided by your pull request on [unreleased] section. When release is ready, I'll move all changes to a proper tag block. Please, use the most human way of describing your changes to the codebase.
 
 ## [Unreleased]
+### Added
+- Custom build CMS
+- Handle authentication with Devise
+- Handle authorization with Pundit
+- Handle uploads with ActiveStorage
+- Store uploads on Amazon (production only)
+- I18n-debug gem (development only)
+
+### Changed
+- Reorganize locale files (frontend and backend)
+- Rails bumped to `5.2.2`
+- README instructions
+
+## [2.1.9] - 2018-12-03
+### Fixed
+- Rails bumped to `5.2.1.1` to address security warning
+- Update all gems
+- Update all javascript packages
 
 ## [2.1.8] - 2018-10-30
 ### Fixed
@@ -428,7 +446,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.8...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.9...HEAD
+[2.1.9]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.8...v2.1.9
 [2.1.8]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.7...v2.1.8
 [2.1.7]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.6...v2.1.7
 [2.1.6]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.5...v2.1.6
