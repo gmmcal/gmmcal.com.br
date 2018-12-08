@@ -47,6 +47,12 @@ body {
   }
 }
 
+.row {
+  .list-group-item {
+    height: 100%;
+  }
+}
+
 .navbar {
   .navbar-brand {
     font-size: 1rem;
