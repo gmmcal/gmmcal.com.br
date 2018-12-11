@@ -2,8 +2,8 @@
   <div class="banner">
     <div class="lazy banner-img">
       <div class="banner-text container">
-        <h1>{{ I18n.t('name', { scope: 'template' }) }}</h1>
-        <h2>{{ I18n.t('title', { scope: 'template' }) }}</h2>
+        <h1>{{ I18n.t('name', { scope: 'frontend.template' }) }}</h1>
+        <h2>{{ I18n.t('title', { scope: 'frontend.template' }) }}</h2>
       </div>
     </div>
   </div>

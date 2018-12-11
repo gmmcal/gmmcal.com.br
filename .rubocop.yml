@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.4
   DisplayCopNames: true
@@ -21,22 +23,27 @@ Documentation:
 Lint/ScriptPermission:
   Enabled: false
 
-Style/MixinUsage:
-  Enabled: false
-
-Metrics/LineLength:
-  Exclude:
-    - 'spec/**/*'
-
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
-require: rubocop-rspec
-
-RSpec/NestedGroups:
-  Max: 5
+Metrics/LineLength:
+  Exclude:
+    - 'db/migrate/*'
+    - 'spec/**/*'
 
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*'
+
+RSpec/NestedGroups:
+  Max: 5
+
+RSpec/AnyInstance:
+  Exclude:
+    - 'spec/backend/requests/contentful_controller_spec.rb'
+    - 'spec/backend/lib/**/*'
+
+Style/MixinUsage:
+  Enabled: false
+

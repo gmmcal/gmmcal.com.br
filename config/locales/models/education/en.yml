@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      education:
+        one: Education
+        other: Educations
+    attributes:
+      education:
+        course: Course
+        institution: Institution
+        start_date: Start Date
+        end_date: End Date

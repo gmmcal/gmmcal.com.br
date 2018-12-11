@@ -2,8 +2,8 @@
   <section class="education" id="education">
     <div class="container">
       <div class="heading">
-        <h2>{{ I18n.t('title', { scope: 'education' }) }}</h2>
-        <p>{{ I18n.t('subtitle', { scope: 'education' }) }}</p>
+        <h2>{{ I18n.t('title', { scope: 'frontend.education' }) }}</h2>
+        <p>{{ I18n.t('subtitle', { scope: 'frontend.education' }) }}</p>
       </div>
       <vue-education v-for="education in educations" :education="education" :key="education.id" />
     </div>

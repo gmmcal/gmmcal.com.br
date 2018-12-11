@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
+  before_action :set_locale
+
   def index
     @about = about
     @educations = educations
@@ -13,7 +15,7 @@ class HomeController < ApplicationController
 
   def about
     Rails.cache.fetch("#{I18n.locale}/about", expires_in: 12.hours) do
-      About.with_locale(I18n.locale).first_or_initialize
+      About.find_for_locale(I18n.locale)
     end
   end
 
@@ -64,5 +66,9 @@ class HomeController < ApplicationController
         label: page.to_s
       }
     end
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end

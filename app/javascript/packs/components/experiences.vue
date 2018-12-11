@@ -2,8 +2,8 @@
   <section class="experience" id="experience">
     <div class="container">
       <div class="heading">
-        <h2>{{ I18n.t('title', { scope: 'experience' }) }}</h2>
-        <p>{{ I18n.t('subtitle', { scope: 'experience' }) }}</p>
+        <h2>{{ I18n.t('title', { scope: 'frontend.experience' }) }}</h2>
+        <p>{{ I18n.t('subtitle', { scope: 'frontend.experience' }) }}</p>
       </div>
       <vue-experience v-for="experience in experiences" :experience="experience" :key="experience.id" />
     </div>

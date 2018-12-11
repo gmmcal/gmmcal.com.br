@@ -17,6 +17,7 @@ pickle-email-*.html
 /.bundle
 /.capistrano
 /vendor/bundle
+/storage
 
 .ruby-*
 .rvmrc

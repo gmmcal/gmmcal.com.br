@@ -16,6 +16,10 @@ RSpec.describe ContentfulController, type: :request do
     let(:body) { '' }
 
     before do
+      file_en = File.open(Rails.root.join('spec', 'backend', 'support', 'assets', 'cv-en.pdf'), 'rb')
+      file_br = File.open(Rails.root.join('spec', 'backend', 'support', 'assets', 'cv-br.pdf'), 'rb')
+      allow_any_instance_of(Cms::Base).to receive(:download_file).and_return(file_en, file_br)
+
       post '/contentful/update', params: body, headers: headers
     end
 

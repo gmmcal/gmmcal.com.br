@@ -8,5 +8,9 @@ FactoryBot.define do
     start_date { Faker::Date.between(5.years.ago, 2.years.ago) }
     locale { :en }
     contentful_id { Faker::Crypto.md5 }
+
+    trait :invalid do
+      course { nil }
+    end
   end
 end

@@ -1,0 +1,18 @@
+
+<%= simple_form_for([:admin, education]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :course %>
+    <%= f.input :institution %>
+    <%= f.input :description %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :locale %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

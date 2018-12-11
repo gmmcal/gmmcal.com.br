@@ -51,15 +51,11 @@ jobs:
       <<: *tests
 
     - stage: unit tests
-      rvm: 2.5.0
-      <<: *tests
-
-    - stage: unit tests
-      rvm: 2.5.1
+      rvm: 2.5.3
       <<: *tests
 
     - stage: end-to-end tests
-      rvm: 2.5.1
+      rvm: 2.5.3
       addons:
         chrome: stable
 

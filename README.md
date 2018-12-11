@@ -16,16 +16,21 @@ My personal website code, playground and learning lab.
 
 # Requirements
 
-The latest version of this app was built using Ruby 2.5.1, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
+The latest version of this app was built using Ruby 2.5.3, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
 # Installing
 
+The instructions below assumes that your computer has [RVM](https://rvm.io) configured.
+
+* If you use `rbenv`, please check it's documentation for **steps 1 and 2** or skip to **step 3**, at your will.
+* If you do not use any ruby version manager, **start from step 3**.
+
 After cloning this repository, run the following commands:
 
-1. `rvm rvmrc create ruby-2.5.1@gmmcal.com.br --ruby-version` to create a gemset for this project.
-1. `rvm use ruby-2.5.1@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
+1. `rvm rvmrc create ruby-2.5.3@gmmcal.com.br --ruby-version` to create a gemset for this project.
+1. `rvm use ruby-2.5.3@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
 1. `cp .env.example .env` to have all necessary environment variables. This step is not 100% necessary, but it is advised to do.
@@ -52,21 +57,25 @@ This will start local `rails` and `webpack` servers. By default, `rails` will ru
 
 If everything is fine, go to your browser and load [http://localhost:3000](http://localhost:3000) to view the website.
 
+# Admin
+
+Admin page is accessible via `/admin` path. Development credentials are provided on seed script.
+
 # Tests
 
-This application is covered by tests on backend, frontend and integration (browser) tests. All tests are located in `spec` folder.
+This application is covered by tests on backend, frontend and end-to-end (browser) tests. All tests are located in `spec` folder.
 
 ## Backend
 
-Backend tests are written in Ruby using RSpec. To run the tests, simply run `rspec` on your terminal.
+Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on your terminal.
 
 ## Frontend
 
-Frontend tests are written in Javascript using Jest. To run the tests, simply run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
+Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
-## Integration
+## End-to-end
 
-Integration tests are written in Javascript using Cypress. To run the tests, simply run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run integration tests.
+Integration tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 
 # Supported Devices
 

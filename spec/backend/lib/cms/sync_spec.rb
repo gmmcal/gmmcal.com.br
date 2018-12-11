@@ -3,6 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe Cms::Sync do
+  before do
+    file_en = File.open(Rails.root.join('spec', 'backend', 'support', 'assets', 'cv-en.pdf'), 'rb')
+    file_br = File.open(Rails.root.join('spec', 'backend', 'support', 'assets', 'cv-br.pdf'), 'rb')
+    allow_any_instance_of(Cms::Base).to receive(:download_file).and_return(file_en, file_br)
+  end
+
   describe '#all', vcr: { cassette_name: 'cms/all' } do
     before do
       described_class.all

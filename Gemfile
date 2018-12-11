@@ -12,11 +12,9 @@ gem 'bootsnap', require: false
 gem 'contentful'
 # use PostgreSQL as database
 gem 'pg'
-# Use puma as the app server
-gem 'puma', group: %i[production]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-gem 'redis', group: %i[production]
+gem 'rails-i18n'
 
 # Frontend gems
 gem 'gon'
@@ -29,11 +27,17 @@ gem 'webpacker'
 # Environment variables
 gem 'dotenv-rails', group: %i[development test]
 
+# Admin gems
+gem 'country_select'
+gem 'devise'
+gem 'kramdown'
+gem 'pundit'
+gem 'simple_form'
+
 # Groups
 group :development do
-  # Spring speeds up development by keeping your application running in the
-  # background. Read more: https://github.com/rails/spring
   gem 'foreman'
+  gem 'i18n-debug'
   gem 'i18n-js'
   gem 'listen'
   gem 'spring'
@@ -46,8 +50,18 @@ group :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop-rspec'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers',
+      git: 'https://github.com/thoughtbot/shoulda-matchers',
+      branch: :master,
+      require: false
   gem 'simplecov', require: false
   gem 'vcr', require: false
   gem 'webmock', require: false
+end
+
+group :production do
+  gem 'aws-sdk-s3', require: false
+  # Use puma as the app server
+  gem 'puma'
+  gem 'redis'
 end

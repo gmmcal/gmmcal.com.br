@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      education:
+        one: Educação
+        other: Educações
+    attributes:
+      education:
+        course: Curso
+        institution: Instituição
+        start_date: Data de Início
+        end_date: Data de Conclusão

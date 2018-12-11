@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="<%=I18n.locale%>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%= t(:title, scope: %i[frontend helpers]) %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= javascript_pack_tag 'admin/application', type: 'application/javascript' %>
+    <%= stylesheet_link_tag 'admin/application', media: 'all', rel: 'stylesheet' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark flex-md-nowrap p-0">
+        <%= link_to t(:header, scope: %i[frontend helpers]), admin_root_path, class: 'navbar-brand' %>
+        <ul class="navbar-nav d-flex justify-content-end mr-3">
+          <li class="nav-item">
+            <%= link_to User.model_name.human, %i[edit admin user], class: menu_classes(:user) %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <%= link_to About.model_name.human, %i[admin abouts], class: menu_classes(:about) %>
+              </li>
+              <li class="nav-item">
+                <%= link_to Education.model_name.human.pluralize, %i[admin educations], class: menu_classes(:educations) %>
+              </li>
+              <li class="nav-item">
+                <%= link_to Skill.model_name.human.pluralize, %i[admin skills], class: menu_classes(:skills) %>
+              </li>
+              <li class="nav-item">
+                <%= link_to WorkExperience.model_name.human.pluralize, %i[admin work_experiences], class: menu_classes(:work_experiences) %>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+    <footer class="footer fixed-bottom bg-dark text-white">
+      <div class="container-fluid">
+        &copy; <%= Date.today.year %> <%= t(:title, scope: %i[frontend helpers]) %>
+      </div>
+    </footer>
+    <%= Gon::Base.render_data %>
+  </body>
+</html>

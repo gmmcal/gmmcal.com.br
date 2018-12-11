@@ -33,7 +33,7 @@ export default {
   computed: {
     end_date() {
       if (this.experience.end_date === null) {
-        return I18n.t('current', { scope: 'template' })
+        return I18n.t('current', { scope: 'frontend.template' })
       }
       return I18n.l('date.formats.default', this.experience.end_date)
     }
