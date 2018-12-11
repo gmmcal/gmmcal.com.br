@@ -16,7 +16,7 @@ My personal website code, playground and learning lab.
 
 # Requirements
 
-The latest version of this app was built using Ruby 2.5.1, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
+The latest version of this app was built using Ruby 2.5.3, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
@@ -29,8 +29,8 @@ The instructions below assumes that your computer has [RVM](https://rvm.io) conf
 
 After cloning this repository, run the following commands:
 
-1. `rvm rvmrc create ruby-2.5.1@gmmcal.com.br --ruby-version` to create a gemset for this project.
-1. `rvm use ruby-2.5.1@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
+1. `rvm rvmrc create ruby-2.5.3@gmmcal.com.br --ruby-version` to create a gemset for this project.
+1. `rvm use ruby-2.5.3@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
 1. `cp .env.example .env` to have all necessary environment variables. This step is not 100% necessary, but it is advised to do.

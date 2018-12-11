@@ -17,6 +17,7 @@ You can add all changes provided by your pull request on [unreleased] section. W
 ### Changed
 - Reorganize locale files (frontend and backend)
 - Rails bumped to `5.2.2`
+- Ruby bumped to `2.5.3`
 - README instructions
 
 ## [2.1.9] - 2018-12-03
