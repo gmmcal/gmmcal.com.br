@@ -2,9 +2,9 @@
   "projectId": "88eqvw",
   "baseUrl": "http://localhost:3000",
   "fixturesFolder": "spec/frontend/fixtures",
-  "integrationFolder": "spec/frontend/integration",
+  "integrationFolder": "spec/frontend/end-to-end",
   "pluginsFile": "spec/frontend/plugins/index.js",
   "screenshotsFolder": "spec/frontend/screenshots",
   "supportFile": "spec/frontend/support/index.js",
-  "video": false
+  "video": true
 }

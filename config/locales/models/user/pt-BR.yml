@@ -7,6 +7,6 @@ pt-BR:
         first_name: Nome
         last_name: Sobrenome
         default_locale: Língua
-        email: E-Mail
+        email: E-mail
         password: Senha
         password_confirmation: Confirme a Senha

@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Enforce minimum ruby version
-ruby '~> 2.3'
+ruby '2.6.0' if ENV['RAILS_ENV'] == 'production'
 
 # Application gems
 # Use bootsnap to improve performance
@@ -13,7 +13,7 @@ gem 'contentful'
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.2'
 gem 'rails-i18n'
 
 # Frontend gems

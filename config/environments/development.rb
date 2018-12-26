@@ -71,4 +71,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   config.action_view.raise_on_missing_translations = true
+
+  # Disable request forgery protection during end-to-end tests.
+  config.action_controller.allow_forgery_protection = false if ENV['END2END']
 end

@@ -8,6 +8,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 ## [Unreleased]
 ### Added
 - Custom build CMS
+- End-to-end tests to CMS
+- Unit/Integration tests to CMS
 - Handle authentication with Devise
 - Handle authorization with Pundit
 - Handle uploads with ActiveStorage
@@ -17,7 +19,7 @@ You can add all changes provided by your pull request on [unreleased] section. W
 ### Changed
 - Reorganize locale files (frontend and backend)
 - Rails bumped to `5.2.2`
-- Ruby bumped to `2.5.3`
+- Ruby bumped to `2.5.3` and then to `2.6.0`
 - README instructions
 
 ## [2.1.9] - 2018-12-03

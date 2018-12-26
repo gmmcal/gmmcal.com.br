@@ -54,14 +54,14 @@ jobs:
       rvm: 2.5.3
       <<: *tests
 
+    - stage: unit tests
+      rvm: 2.6.0
+      <<: *tests
+
     - stage: end-to-end tests
-      rvm: 2.5.3
-      addons:
-        chrome: stable
+      rvm: 2.6.0
 
       <<: *common
-      before_install:
-        - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
 
       script:
         - bin/webpack

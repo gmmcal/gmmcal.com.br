@@ -25,6 +25,7 @@ Lint/ScriptPermission:
 
 Metrics/BlockLength:
   Exclude:
+    - 'lib/tasks/*'
     - 'spec/**/*'
 
 Metrics/LineLength:
