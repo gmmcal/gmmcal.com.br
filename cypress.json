@@ -6,5 +6,5 @@
   "pluginsFile": "spec/frontend/plugins/index.js",
   "screenshotsFolder": "spec/frontend/screenshots",
   "supportFile": "spec/frontend/support/index.js",
-  "video": false
+  "video": true
 }
