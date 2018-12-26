@@ -17,7 +17,7 @@ describe('About', () => {
     before(() => {
       cy.exec('rake db:seed:test[about,1]')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('About').click({force: true})
+      cy.contains('.sidebar a', 'About').click({force: true})
     })
 
     it('shows the current content', () => {
@@ -29,7 +29,7 @@ describe('About', () => {
     before(() => {
       cy.exec('rake db:clean')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('About').click({force: true})
+      cy.contains('.sidebar a', 'About').click({force: true})
     })
 
     it('shows the form', () => {
@@ -155,8 +155,8 @@ describe('About', () => {
     before(() => {
       cy.exec('rake db:seed:test[about,1]')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('About').click({force: true})
-      cy.get('.btn-primary').contains('Edit').click({force: true})
+      cy.contains('.sidebar a', 'About').click({force: true})
+      cy.contains('.btn-primary', 'Edit').click({force: true})
     })
 
     context('With invalid data', () => {
@@ -284,11 +284,11 @@ describe('About', () => {
     before(() => {
       cy.exec('rake db:seed:test[about,1]')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('About').click({force: true})
+      cy.contains('.sidebar a', 'About').click({force: true})
     })
 
     it('has a download button', () => {
-      cy.get('.list-group-item').contains('Download CV').should('be.visible')
+      cy.contains('.list-group-item', 'Download CV').should('be.visible')
     })
   })
 })

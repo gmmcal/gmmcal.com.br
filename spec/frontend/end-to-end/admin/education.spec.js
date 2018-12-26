@@ -17,7 +17,7 @@ describe('Education', () => {
     before(() => {
       cy.exec('rake db:seed:test[education,2]')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('Educations').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({force: true})
     })
 
     it('shows the current content', () => {
@@ -33,8 +33,8 @@ describe('Education', () => {
     before(() => {
       cy.exec('rake db:clean')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('Educations').click({force: true})
-      cy.get('a.btn').contains('New').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({force: true})
+      cy.contains('a.btn', 'New').click({force: true})
     })
 
     context('With invalid data', () => {
@@ -147,8 +147,8 @@ describe('Education', () => {
     before(() => {
       cy.exec('rake db:seed:test[education,1]')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('Educations').click({force: true})
-      cy.get('.btn-primary').contains('Edit').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({force: true})
+      cy.contains('.btn-primary', 'Edit').click({force: true})
     })
 
     context('With invalid data', () => {
@@ -265,8 +265,8 @@ describe('Education', () => {
     before(() => {
       cy.exec('rake db:seed:test[education,1]')
       cy.visit('/admin')
-      cy.get('.sidebar a').contains('Educations').click({force: true})
-      cy.get('main .row .item').contains('Delete').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({force: true})
+      cy.contains('.btn-danger', 'Delete').click({force: true})
     })
 
     it('is empty', () => {

@@ -10,7 +10,7 @@ describe('About', () => {
   })
 
   it('redirects to home after logout', () => {
-    cy.get('a').contains('Logout').click()
+    cy.contains('a', 'Logout').click()
     cy.url().should('not.include', '/admin')
   })
 })

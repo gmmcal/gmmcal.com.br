@@ -16,7 +16,7 @@ describe('Profile', () => {
   describe('Edit', () => {
     before(() => {
       cy.visit('/admin')
-      cy.get('a').contains('Profile').click()
+      cy.contains('a', 'Profile').click()
     })
 
     context('With invalid data', () => {
@@ -182,7 +182,7 @@ describe('Profile', () => {
   describe('Change Password', () => {
     before(() => {
       cy.visit('/admin')
-      cy.get('a').contains('Profile').click()
+      cy.contains('a', 'Profile').click()
     })
 
     context('With invalid data', () => {
