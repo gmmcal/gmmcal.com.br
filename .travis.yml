@@ -56,18 +56,26 @@ jobs:
 
     - stage: end-to-end tests
       rvm: 2.5.3
-      addons:
-        chrome: stable
 
       <<: *common
-      before_install:
-        - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
 
       script:
         - bin/webpack
         - bundle exec rails db:seed
         - bundle exec rails server -p 3000 &
-        - yarn cypress:ci
+        - yarn cypress:ci:admin
+        - kill $(jobs -p) || true
+
+    - stage: end-to-end tests
+      rvm: 2.5.3
+
+      <<: *common
+
+      script:
+        - bin/webpack
+        - bundle exec rails db:seed
+        - bundle exec rails server -p 3000 &
+        - yarn cypress:ci:frontend
         - kill $(jobs -p) || true
 
     - stage: deploy
