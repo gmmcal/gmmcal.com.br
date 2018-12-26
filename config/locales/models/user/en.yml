@@ -7,6 +7,6 @@ en:
         first_name: First Name
         last_name: Last Name
         default_locale: Language
-        email: E-Mail
+        email: E-mail
         password: Password
         password_confirmation: Confirm your Password

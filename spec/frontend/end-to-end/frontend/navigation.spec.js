@@ -1,6 +1,10 @@
 /// <reference types="Cypress" />
 
 describe('Navigation', () => {
+  before(() => {
+    cy.visit('/')
+  })
+
   context('main', () => {
     context('Home', () => {
       beforeEach(() => {

@@ -1,6 +1,11 @@
 /// <reference types="Cypress" />
 
 describe('Content', () => {
+  before(() => {
+    cy.exec('rake db:seed:all')
+    cy.visit('/')
+  })
+
   context('Header', () => {
     it('section exists', () => {
       cy.get('header').should('have.length', 1)
@@ -11,11 +16,11 @@ describe('Content', () => {
     })
 
     it('has a title', () => {
-      cy.get('header h1').should('contain', 'Gustavo Cunha')
+      cy.get('header h1').should('have.text', 'Gustavo Cunha')
     })
 
     it('has a subtitle', () => {
-      cy.get('header h2').should('contain', 'Web developer, Mobile and Software Engineer Consultant')
+      cy.get('header h2').should('have.text', 'Web developer, Mobile and Software Engineer Consultant')
     })
   })
 
@@ -32,7 +37,7 @@ describe('Content', () => {
 
     context('body', () => {
       it('has a title', () => {
-        cy.get('#about h3').should('contain', 'Gustavo Cunha')
+        cy.get('#about h3').should('have.text', 'Gustavo Cunha')
       })
 
       it('has a description block', () => {

@@ -2,6 +2,8 @@
   <h1 class="h2"><%= t(:sign_in, scope: %i[devise shared links]) %></h1>
 </div>
 
+<%= render 'admin/shared/notification' %>
+
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.input :email,
               required: false,
