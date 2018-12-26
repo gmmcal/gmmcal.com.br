@@ -54,8 +54,12 @@ jobs:
       rvm: 2.5.3
       <<: *tests
 
+    - stage: unit tests
+      rvm: 2.6.0
+      <<: *tests
+
     - stage: end-to-end tests
-      rvm: 2.5.3
+      rvm: 2.6.0
 
       <<: *common
 
