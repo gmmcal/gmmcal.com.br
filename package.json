@@ -123,7 +123,5 @@
     "test:once": "jest",
     "cypress": "rake db:setup && cypress open",
     "cypress:ci": "cypress run --record",
-    "cypress:ci:admin": "cypress run --record --group admin --spec 'spec/frontend/end-to-end/admin/**/*'",
-    "cypress:ci:frontend": "cypress run --record --group frontend --spec 'spec/frontend/end-to-end/frontend/**/*'"
   }
 }

@@ -63,19 +63,7 @@ jobs:
         - bin/webpack
         - bundle exec rails db:seed
         - bundle exec rails server -p 3000 &
-        - yarn cypress:ci:admin
-        - kill $(jobs -p) || true
-
-    - stage: end-to-end tests
-      rvm: 2.5.3
-
-      <<: *common
-
-      script:
-        - bin/webpack
-        - bundle exec rails db:seed
-        - bundle exec rails server -p 3000 &
-        - yarn cypress:ci:frontend
+        - yarn cypress:ci
         - kill $(jobs -p) || true
 
     - stage: deploy
