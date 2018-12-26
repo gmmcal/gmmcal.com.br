@@ -15,8 +15,8 @@ describe('Work Experience', () => {
 
   describe('List', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:seed:test[work_experience,2]')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Work Experiences').click({force: true})
     })
 
@@ -31,8 +31,8 @@ describe('Work Experience', () => {
 
   describe('Create', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:clean')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Work Experiences').click({force: true})
       cy.get('a.btn').contains('New').click({force: true})
     })
@@ -158,8 +158,8 @@ describe('Work Experience', () => {
 
   describe('Edit', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:seed:test[work_experience,1]')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Work Experiences').click({force: true})
       cy.get('.btn-primary').contains('Edit').click({force: true})
     })
@@ -293,8 +293,8 @@ describe('Work Experience', () => {
 
   describe('Delete', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:seed:test[work_experience,1]')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Work Experiences').click({force: true})
       cy.get('main .row .item').contains('Delete').click({force: true})
     })

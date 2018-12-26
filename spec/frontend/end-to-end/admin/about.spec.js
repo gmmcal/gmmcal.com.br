@@ -27,8 +27,8 @@ describe('About', () => {
 
   describe('Create', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:clean')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('About').click({force: true})
     })
 

@@ -15,8 +15,8 @@ describe('Education', () => {
 
   describe('List', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:seed:test[education,2]')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Educations').click({force: true})
     })
 
@@ -31,8 +31,8 @@ describe('Education', () => {
 
   describe('Create', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:clean')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Educations').click({force: true})
       cy.get('a.btn').contains('New').click({force: true})
     })
@@ -145,8 +145,8 @@ describe('Education', () => {
 
   describe('Edit', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:seed:test[education,1]')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Educations').click({force: true})
       cy.get('.btn-primary').contains('Edit').click({force: true})
     })
@@ -263,8 +263,8 @@ describe('Education', () => {
 
   describe('Delete', () => {
     before(() => {
-      cy.visit('/admin')
       cy.exec('rake db:seed:test[education,1]')
+      cy.visit('/admin')
       cy.get('.sidebar a').contains('Educations').click({force: true})
       cy.get('main .row .item').contains('Delete').click({force: true})
     })
