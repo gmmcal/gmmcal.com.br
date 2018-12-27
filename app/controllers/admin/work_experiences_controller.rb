@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class WorkExperiencesController < AdminController
-    before_action :set_work_experience, only: %i[edit update destroy]
-
+  class WorkExperiencesController < CrudController
     # GET /admin/work_experiences
     def index
       @work_experiences = model.with_locale(locale).ordered
@@ -57,10 +55,6 @@ module Admin
 
     def redirect_path
       admin_work_experiences_path(locale: @work_experience.locale)
-    end
-
-    def set_work_experience
-      @work_experience = model.find(params[:id])
     end
   end
 end

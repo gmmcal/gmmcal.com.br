@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class UserController < AdminController
-    before_action :set_user, only: %i[edit update]
-
+  class UserController < CrudController
     # GET /admin/users/1/edit
     def edit
       authorize @user
@@ -23,7 +21,7 @@ module Admin
 
     private
 
-    def set_user
+    def set_model
       @user = current_user
     end
   end

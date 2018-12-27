@@ -37,6 +37,9 @@ Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*'
 
+Rails/LexicallyScopedActionFilter:
+    Enabled: false
+
 RSpec/NestedGroups:
   Max: 5
 
