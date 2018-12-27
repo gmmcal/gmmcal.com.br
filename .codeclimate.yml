@@ -50,7 +50,7 @@ plugins:
     config:
       languages:
         ruby:
-          mass_threshold: 20
+          mass_threshold: 100
         javascript:
   fixme:
     enabled: true
