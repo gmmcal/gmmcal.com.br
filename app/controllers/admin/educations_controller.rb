@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class EducationsController < AdminController
-    before_action :set_education, only: %i[edit update destroy]
-
+  class EducationsController < CrudController
     # GET /admin/educations
     def index
       @educations = model.with_locale(locale).ordered
@@ -57,10 +55,6 @@ module Admin
 
     def redirect_path
       admin_educations_path(locale: @education.locale)
-    end
-
-    def set_education
-      @education = model.find(params[:id])
     end
   end
 end

@@ -49,8 +49,9 @@ plugins:
     enabled: true
     config:
       languages:
-        - ruby
-        - javascript
+        ruby:
+          mass_threshold: 100
+        javascript:
   fixme:
     enabled: true
   rubocop:

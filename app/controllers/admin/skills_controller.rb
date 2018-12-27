@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class SkillsController < AdminController
-    before_action :set_skill, only: %i[edit update destroy]
-
+  class SkillsController < CrudController
     # GET /admin/skills
     def index
       @skills = model.with_locale(locale)
@@ -57,10 +55,6 @@ module Admin
 
     def redirect_path
       admin_skills_path(locale: @skill.locale)
-    end
-
-    def set_skill
-      @skill = model.find(params[:id])
     end
   end
 end

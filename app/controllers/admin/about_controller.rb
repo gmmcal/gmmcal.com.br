@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class AboutController < AdminController
-    before_action :set_about, only: %i[edit update destroy]
-
+  class AboutController < CrudController
     # GET /admin/about
     def index
       @about = model.find_for_locale(locale)
@@ -51,10 +49,6 @@ module Admin
 
     def redirect_path
       admin_abouts_path(locale: @about.locale)
-    end
-
-    def set_about
-      @about = model.find(params[:id])
     end
   end
 end
