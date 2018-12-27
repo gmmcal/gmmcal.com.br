@@ -121,4 +121,15 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = ENV['ASSET_HOST']
+
+  # Force all access to the app over SSL, use Strict-Transport-Security,
+  # and use secure cookies.
+  config.force_ssl = ENV['FORCE_SSL']
+
+  # Define default URL options
+  config.action_controller.default_url_options = {
+    host: ENV['URL_HOST'],
+    port: ENV['URL_PORT'],
+    protocol: ENV['URL_PROTOCOL']
+  }
 end
