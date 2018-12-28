@@ -43,11 +43,6 @@ Rails/LexicallyScopedActionFilter:
 RSpec/NestedGroups:
   Max: 5
 
-RSpec/AnyInstance:
-  Exclude:
-    - 'spec/backend/requests/contentful_controller_spec.rb'
-    - 'spec/backend/lib/**/*'
-
 Style/MixinUsage:
   Enabled: false
 

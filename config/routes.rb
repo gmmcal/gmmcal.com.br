@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/(:locale)', to: 'home#index', as: :home, locale: /en|pt-BR/
   get 'sitemap', to: 'home#index', defaults: { format: :xml }
-  post 'contentful/update', to: 'contentful#update'
 
   devise_for :users, path: 'admin', path_names: {
     sign_in: 'login',

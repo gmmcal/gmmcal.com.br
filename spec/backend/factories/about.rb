@@ -9,7 +9,6 @@ FactoryBot.define do
     phone_number { Faker::PhoneNumber.cell_phone }
     email { Faker::Internet.email }
     locale { :en }
-    contentful_id { Faker::Crypto.md5 }
 
     cv do
       path = Rails.root.join('spec', 'backend', 'support', 'assets', 'cv-en.pdf')

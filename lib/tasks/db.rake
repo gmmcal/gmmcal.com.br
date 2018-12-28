@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 namespace :db do
-  task staging: %i[clean environment] do
-    Cms::Sync.all
-  end
-
   namespace :cache do
     task clear: :environment do
       Rails.cache.clear

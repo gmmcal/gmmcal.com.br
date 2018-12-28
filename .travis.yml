@@ -78,7 +78,7 @@ jobs:
         api_key: $HEROKU_AUTH_TOKEN
         run:
           - "rails db:migrate"
-          - "rails db:staging"
+          - "rails db:seed:all"
           - "rails db:cache:clear"
         on:
           branch: master

@@ -7,7 +7,6 @@ FactoryBot.define do
     description { Faker::Lorem.paragraphs(5).join("\n\n") }
     start_date { Faker::Date.between(5.years.ago, 2.years.ago) }
     locale { :en }
-    contentful_id { Faker::Crypto.md5 }
 
     trait :invalid do
       course { nil }
