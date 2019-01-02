@@ -23,7 +23,7 @@ namespace :db do
   end
 
   namespace :seed do
-    task all: %i[clean environment] do
+    task all: %i[clean seed environment] do
       require 'seed_manager'
 
       SeedManager.all

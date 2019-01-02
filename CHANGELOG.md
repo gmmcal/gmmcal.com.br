@@ -6,8 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 You can add all changes provided by your pull request on [unreleased] section. When release is ready, I'll move all changes to a proper tag block. Please, use the most human way of describing your changes to the codebase.
 
 ## [Unreleased]
+### Added
+- Gitlab templates
+
+### Changed
+- Credentials encrypted file
+- Set rails defaults to 5.2
+- FactoryBot and Faker are a dependency due to seed script, but not automatically included
+
 ### Removed
 - Google Analytics code from error pages
+- Contentful service
+- VCR gem
+- dotenv gem
 
 ## [2.5.0] - 2018-12-27
 ### Added

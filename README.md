@@ -42,7 +42,7 @@ After database credentials are set, run the following commands to make it ready 
 
 1. `rake db:create` to create database.
 1. `rake db:migrate` to migrate the database structure to it's latest state.
-1. `rake db:seed` to add some dummy data to database.
+1. `rake db:seed:all` to add some dummy data to database.
 
 # Running application
 
@@ -58,7 +58,7 @@ If everything is fine, go to your browser and load [http://localhost:3000](http:
 
 # Admin
 
-Admin page is accessible via `/admin` path. Development credentials are provided on seed script.
+Admin page is accessible via `/admin` path. Development credentials are provided on [seed](db/seeds.rb) script.
 
 # Tests
 
@@ -99,4 +99,4 @@ This repository has a [Code of Conduct](CODE_OF_CONDUCT.md) and all contributors
 
 # Contributing
 
-Please, check [Contributing](.github/CONTRIBUTING.md) on ways to contribute to this repository.
+Please, check [Contributing](CONTRIBUTING.md) on ways to contribute to this repository.
