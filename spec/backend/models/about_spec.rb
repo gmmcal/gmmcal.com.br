@@ -8,7 +8,6 @@ RSpec.describe About, type: :model do
   # it { is_expected.to validate_attachment_of(:cv) }
   it { is_expected.to validate_presence_of(:locale) }
 
-  it { is_expected.to have_db_index(:contentful_id) }
   it { is_expected.to have_db_index(:locale) }
 
   it 'has a valid factory' do

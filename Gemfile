@@ -8,8 +8,6 @@ ruby '2.6.0' if ENV['RAILS_ENV'] == 'production'
 # Application gems
 # Use bootsnap to improve performance
 gem 'bootsnap', require: false
-# Contentful as CMS
-gem 'contentful'
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -24,15 +22,16 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
 
-# Environment variables
-gem 'dotenv-rails', group: %i[development test]
-
 # Admin gems
 gem 'country_select'
 gem 'devise'
 gem 'kramdown'
 gem 'pundit'
 gem 'simple_form'
+
+# Fake Data gems
+gem 'factory_bot_rails', require: false
+gem 'faker', require: false
 
 # Groups
 group :development do
@@ -46,8 +45,6 @@ end
 # Test suite
 group :test do
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'rspec-rails'
   gem 'rubocop-rspec'
   gem 'shoulda-matchers',
@@ -55,8 +52,6 @@ group :test do
       branch: :master,
       require: false
   gem 'simplecov', require: false
-  gem 'vcr', require: false
-  gem 'webmock', require: false
 end
 
 group :production do

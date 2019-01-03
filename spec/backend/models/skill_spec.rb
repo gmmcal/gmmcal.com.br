@@ -9,7 +9,6 @@ RSpec.describe Skill, type: :model do
   it { is_expected.to validate_numericality_of(:value).is_less_than_or_equal_to(100) }
   it { is_expected.to validate_presence_of(:locale) }
 
-  it { is_expected.to have_db_index(:contentful_id) }
   it { is_expected.to have_db_index(:locale) }
 
   it 'has a valid factory' do

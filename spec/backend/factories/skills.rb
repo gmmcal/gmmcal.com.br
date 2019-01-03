@@ -5,7 +5,6 @@ FactoryBot.define do
     name { Faker::Job.key_skill }
     value { Faker::Number.between(30, 100) }
     locale { :en }
-    contentful_id { Faker::Crypto.md5 }
 
     trait :invalid do
       name { nil }

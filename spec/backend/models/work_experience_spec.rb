@@ -10,7 +10,6 @@ RSpec.describe WorkExperience, type: :model do
   it { is_expected.to validate_presence_of(:start_date) }
   it { is_expected.to validate_presence_of(:locale) }
 
-  it { is_expected.to have_db_index(:contentful_id) }
   it { is_expected.to have_db_index(:locale) }
   it { is_expected.to have_db_index(:order) }
 
