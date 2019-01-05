@@ -41,3 +41,5 @@ InstanceVariableAssumption:
 "db/migrate":
   TooManyStatements:
     enabled: false
+exclude_paths:
+  - node_modules

@@ -20,7 +20,9 @@ gem 'modernizr-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker',
+    git: 'https://github.com/rails/webpacker',
+    branch: :master
 
 # Admin gems
 gem 'country_select'
