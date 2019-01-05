@@ -12,7 +12,7 @@ exports[`About renders correctly 1`] = `
         <h4 class="sub-heading">Some title at some company</h4>
         <div class="description">
           <p>Lorem ipsum nulus dolor.</p>
-        </div> <a href="file.pdf" target="_blank" rel="noopener" class="btn-download">PDF Download</a>
+        </div> <a href="file.pdf" target="_blank" rel="noopener" class="btn-download">Download CV</a>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 offset-lg-1">
         <div class="lazy topmar"></div>
