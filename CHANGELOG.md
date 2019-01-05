@@ -16,6 +16,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - Change CV button from `Download PDF` to `Download CV` to be more clear
 - Updated all packages to latest versions
 - Updated all gems to latest version
+- Updated webpacker gem to 4.x to address CVE-2018-14732
+- Move Jest configuration to `jest.config.js`
 
 ### Removed
 - Google Analytics code from error pages
