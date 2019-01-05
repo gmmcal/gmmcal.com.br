@@ -69,3 +69,4 @@ exclude_patterns:
   - "app/assets/images/"
   - ".*"
   - "app/javascript/packs/i18n/"
+  - "babel.config.js"
