@@ -8,6 +8,7 @@ class WorkExperiencePolicy < ApplicationPolicy
       city
       country
       start_date
+      end_date
       description
       locale
     ]

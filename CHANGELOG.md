@@ -19,6 +19,9 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - Updated webpacker gem to 4.x to address CVE-2018-14732
 - Move Jest configuration to `jest.config.js`
 
+### Fixed
+- End dates were not being saved on education and work experiences
+
 ### Removed
 - Google Analytics code from error pages
 - Contentful service
