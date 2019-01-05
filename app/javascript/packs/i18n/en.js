@@ -8,7 +8,7 @@ export default {
   },
   "frontend": {
     "about": {
-      "file_title": "PDF Download",
+      "file_title": "Download CV",
       "title": "About Me"
     },
     "contact": {

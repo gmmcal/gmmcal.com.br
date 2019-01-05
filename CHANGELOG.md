@@ -13,6 +13,7 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - Credentials encrypted file
 - Set rails defaults to 5.2
 - FactoryBot and Faker are a dependency due to seed script, but not automatically included
+- Change CV button from `Download PDF` to `Download CV` to be more clear
 
 ### Removed
 - Google Analytics code from error pages
