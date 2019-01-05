@@ -1,6 +1,13 @@
 {
   "presets": [
-    ["env", { "modules": false }]
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": "> 1%",
+        "uglify": true
+      },
+      "useBuiltIns": true
+    }]
   ],
   "env": {
     "test": {
@@ -8,5 +15,10 @@
         ["env", { "targets": { "node": "current" }}]
       ]
     }
-  }
+  },
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-object-rest-spread",
+    ["transform-class-properties", { "spec": true }]
+  ]
 }
