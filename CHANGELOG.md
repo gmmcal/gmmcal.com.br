@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 You can add all changes provided by your pull request on [unreleased] section. When release is ready, I'll move all changes to a proper tag block. Please, use the most human way of describing your changes to the codebase.
 
 ## [Unreleased]
+
+## [2.6.0] - 2019-01-06
 ### Added
 - Gitlab templates
 
@@ -472,7 +474,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.5.0...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.6.0...HEAD
+[2.6.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.9...v2.5.0
 [2.1.9]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.8...v2.1.9
 [2.1.8]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.7...v2.1.8
