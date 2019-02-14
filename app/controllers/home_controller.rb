@@ -4,36 +4,23 @@ class HomeController < ApplicationController
   before_action :set_locale
 
   def index
-    @about = about
-    @educations = educations
-    @skills = skills
-    @work_experiences = work_experiences
+    @about = fetch_from_cache('about')
+    @educations = fetch_from_cache('education')
+    @skills = fetch_from_cache('skill')
+    @work_experiences = fetch_from_cache('work_experience')
     set_gon_data
   end
 
   private
 
-  def about
-    Rails.cache.fetch("#{I18n.locale}/about", expires_in: 12.hours) do
-      About.find_for_locale(I18n.locale)
-    end
-  end
-
-  def educations
-    Rails.cache.fetch("#{I18n.locale}/educations", expires_in: 12.hours) do
-      Education.ordered.with_locale(I18n.locale).to_a
-    end
-  end
-
-  def skills
-    Rails.cache.fetch("#{I18n.locale}/skills", expires_in: 12.hours) do
-      Skill.random.with_locale(I18n.locale).to_a
-    end
-  end
-
-  def work_experiences
-    Rails.cache.fetch("#{I18n.locale}/experiences", expires_in: 12.hours) do
-      WorkExperience.ordered.with_locale(I18n.locale).to_a
+  def fetch_from_cache(model)
+    Rails.cache.fetch("#{I18n.locale}/#{model}") do
+      data = model.classify.constantize.find_for_locale(I18n.locale)
+      if data.is_a?(ActiveRecord::Relation)
+        data.to_a
+      else
+        data
+      end
     end
   end
 

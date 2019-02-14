@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-class WorkExperience < ApplicationRecord
-  include Locatable
-
+class WorkExperience < Locatable
   scope :ordered, -> { order(:order) }
+  scope :find_for_locale, ->(locale) { ordered.with_locale(locale) }
 
   validates :company_name, presence: true
   validates :position, presence: true
