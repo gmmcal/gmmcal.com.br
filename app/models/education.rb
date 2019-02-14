@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-class Education < ApplicationRecord
-  include Locatable
-
+class Education < Locatable
   scope :ordered, -> { order(:order) }
+  scope :find_for_locale, ->(locale) { ordered.with_locale(locale) }
 
   validates :course, presence: true
   validates :institution, presence: true

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class About < ApplicationRecord
-  include Locatable
+class About < Locatable
   has_one_attached :cv
 
   validates :job_title, presence: true
@@ -9,7 +8,7 @@ class About < ApplicationRecord
   validates :cv, presence: true
 
   def self.find_for_locale(locale)
-    with_locale(locale).first_or_initialize
+    with_locale(locale).includes(:cv_blob).first_or_initialize
   end
 
   def as_json(_options = {})
