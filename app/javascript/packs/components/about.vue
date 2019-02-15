@@ -46,11 +46,6 @@ export default {
     padding-top: 85px;
   }
 
-  .about-top {
-    background: #00bdbd;
-    height: 60px;
-  }
-
   .btn-download {
     background: #474d5d;
     display: inline-block;

@@ -21,6 +21,7 @@ pickle-email-*.html
 
 .ruby-*
 .rvmrc
+.nvmrc
 
 .env
 

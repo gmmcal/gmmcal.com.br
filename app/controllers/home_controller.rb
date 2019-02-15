@@ -2,57 +2,60 @@
 
 class HomeController < ApplicationController
   before_action :set_locale
-
-  def index
-    @about = fetch_from_cache('about')
-    @educations = fetch_from_cache('education')
-    @skills = fetch_from_cache('skill')
-    @work_experiences = fetch_from_cache('work_experience')
-    set_gon_data
-  end
+  before_action :set_data
+  before_action :set_flag_links
+  before_action :set_menu_links
 
   private
 
   def fetch_from_cache(model)
-    Rails.cache.fetch("#{I18n.locale}/#{model}") do
-      data = model.classify.constantize.find_for_locale(I18n.locale)
-      if data.is_a?(ActiveRecord::Relation)
-        data.to_a
-      else
-        data
-      end
+    result = Rails.cache.fetch("#{I18n.locale}/#{model}") do
+      retrieve_data(model)
     end
+    instance_variable_set("@#{model}", result)
   end
 
-  def set_gon_data
-    gon.flag_links = flag_links
-    gon.menu_links = menu_links
-    gon.about = @about
-    gon.educations = @educations
-    gon.skills = @skills
-    gon.experiences = @work_experiences
+  def retrieve_data(model)
+    data = model.classify.constantize.find_for_locale(I18n.locale)
+    return data.to_a if data.is_a?(ActiveRecord::Relation)
+
+    data
   end
 
-  def flag_links
-    flags = %i[pt-BR en]
-    flags.delete(I18n.locale)
-    flags.map do |flag|
+  def set_data
+    gon.push(about: fetch_from_cache('about'))
+    gon.push(educations: fetch_from_cache('educations'))
+    gon.push(skills: fetch_from_cache('skills'))
+    gon.push(experiences: fetch_from_cache('work_experiences'))
+  end
+
+  def set_flag_links
+    links = flags.map do |flag|
       {
         link: home_path(flag),
         label: flag,
         css_class: ['flag', flag.downcase].join(' ')
       }
     end
+    gon.push(flag_links: links)
   end
 
-  def menu_links
-    links = %i[home about experience skills education contact]
-    links.map do |page|
+  def set_menu_links
+    links = menus.map do |page|
       {
         link: "##{page}",
         label: page.to_s
       }
     end
+    gon.push(menu_links: links)
+  end
+
+  def flags
+    %i[pt-BR en].delete_if { |lang| lang == I18n.locale }
+  end
+
+  def menus
+    %i[home about experience skills education contact]
   end
 
   def set_locale

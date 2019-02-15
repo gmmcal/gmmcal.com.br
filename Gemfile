@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Enforce minimum ruby version
-ruby '2.6.0' if ENV['RAILS_ENV'] == 'production'
+ruby '2.6.1' if ENV['RAILS_ENV'] == 'production'
 
 # Application gems
 # Use bootsnap to improve performance
@@ -37,10 +37,12 @@ gem 'faker', require: false
 
 # Groups
 group :development do
+  gem 'brakeman'
   gem 'foreman'
   gem 'i18n-debug'
   gem 'i18n-js'
   gem 'listen'
+  gem 'reek'
   gem 'spring'
 end
 

@@ -12,5 +12,6 @@ class Locatable < ApplicationRecord
 
   def expire_cache
     Rails.cache.delete("#{locale}/#{model_name.singular}")
+    Rails.cache.delete("#{locale}/#{model_name.plural}")
   end
 end
