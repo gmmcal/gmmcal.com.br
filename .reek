@@ -1,0 +1,21 @@
+# For now, this file is duplicated to .reek.yml because
+# ebertapp.io do not recognize a newer version of reek if
+# present on Gemfile
+UtilityFunction:
+  enabled: false
+DuplicateMethodCall:
+  max_calls: 2
+IrresponsibleModule:
+  enabled: false
+FeatureEnvy:
+  enabled: false
+InstanceVariableAssumption:
+  exclude:
+    - !ruby/regexp /Controller$/
+
+"db/migrate":
+  TooManyStatements:
+    enabled: false
+
+exclude_paths:
+  - node_modules
