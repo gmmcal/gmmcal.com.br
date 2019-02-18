@@ -1,0 +1,20 @@
+detectors:
+  UtilityFunction:
+    enabled: false
+  DuplicateMethodCall:
+    max_calls: 2
+  IrresponsibleModule:
+    enabled: false
+  FeatureEnvy:
+    enabled: false
+  InstanceVariableAssumption:
+    exclude:
+      - "/Controller$/"
+
+directories:
+  "db/migrate":
+    TooManyStatements:
+      enabled: false
+
+exclude_paths:
+  - node_modules

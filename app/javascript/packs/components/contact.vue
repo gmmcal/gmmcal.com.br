@@ -95,10 +95,6 @@ export default {
     padding-bottom: 41px;
   }
 
-  h4 {
-    font-weight: 700;
-  }
-
   .top-con {
     padding-bottom: 0;
   }

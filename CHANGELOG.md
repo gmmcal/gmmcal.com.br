@@ -8,6 +8,15 @@ You can add all changes provided by your pull request on [unreleased] section. W
 ## [Unreleased]
 ### Changed
 - Rewrite HomeController caching process
+- Dependencies update
+- Ruby bumped to `2.6.1`
+- Export i18n to JSON instead of plain JS
+
+### Fixed
+- Revisit some *hidden* `reek` complaints
+
+### Removed
+- Unused CSS from components
 
 ## [2.6.0] - 2019-01-06
 ### Added

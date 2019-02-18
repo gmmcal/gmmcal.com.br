@@ -1,6 +1,7 @@
 export_i18n_js: false
 sort_translation_keys: true
 fallbacks: false
+json_only: true
 
 except: &except
   except:
@@ -10,11 +11,7 @@ except: &except
     - '*.i18n'
 
 translations:
-  - file: 'app/javascript/packs/i18n/en.js'
-    only: ['en.frontend.*', 'en.date.formats.*']
-    pretty_print: true
-    <<: *except
-  - file: 'app/javascript/packs/i18n/pt-BR.js'
-    only: ['pt-BR.frontend.*', 'pt-BR.date.formats.*']
+  - file: 'app/javascript/packs/i18n/i18n.json'
+    only: ['*.frontend.*', '*.date.formats.*']
     pretty_print: true
     <<: *except

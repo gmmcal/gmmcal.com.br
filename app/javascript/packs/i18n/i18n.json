@@ -1,0 +1,118 @@
+{
+  "en": {
+    "date": {
+      "formats": {
+        "default": "%b / %Y",
+        "long": "%B %d, %Y",
+        "short": "%b %d"
+      }
+    },
+    "frontend": {
+      "about": {
+        "file_title": "Download CV",
+        "title": "About Me"
+      },
+      "contact": {
+        "contacts": {
+          "github": "gmmcal",
+          "linkedin": "Gustavo Cunha",
+          "title": "Contacts",
+          "twitter": "@gmmcal"
+        },
+        "subtitle": "Feel free to contact me",
+        "title": "Contact me"
+      },
+      "education": {
+        "subtitle": "What I did on my academic career",
+        "title": "Education and Diplomas"
+      },
+      "experience": {
+        "subtitle": "Companies that I have worked for",
+        "title": "Work Experience"
+      },
+      "helpers": {
+        "header": "Gustavo Cunha",
+        "title": "Gustavo Cunha - Software Engineer"
+      },
+      "skills": {
+        "subtitle": "The subjects currently under my radar, but I'm always open to new technologies.",
+        "title": "Technical Skills"
+      },
+      "template": {
+        "current": "Currently",
+        "menu": {
+          "about": "About",
+          "contact": "Contact",
+          "education": "Education",
+          "en": "EN",
+          "experience": "Experience",
+          "home": "Home",
+          "portfolio": "Portfolio",
+          "pt-BR": "BR",
+          "skills": "Skills",
+          "social": "Social"
+        },
+        "name": "Gustavo Cunha",
+        "title": "Web developer, Mobile and Software Engineer Consultant"
+      }
+    }
+  },
+  "pt-BR": {
+    "date": {
+      "formats": {
+        "default": "%b / %Y",
+        "long": "%d de %B de %Y",
+        "short": "%d de %B"
+      }
+    },
+    "frontend": {
+      "about": {
+        "file_title": "Download CV",
+        "title": "Sobre mim"
+      },
+      "contact": {
+        "contacts": {
+          "github": "gmmcal",
+          "linkedin": "Gustavo Cunha",
+          "title": "Contatos",
+          "twitter": "@gmmcal"
+        },
+        "subtitle": "Sinta-se a vontade para entrar em contato",
+        "title": "Contate-me"
+      },
+      "education": {
+        "subtitle": "O que eu fiz na minha carreira acadêmica",
+        "title": "Educação e Diplomas"
+      },
+      "experience": {
+        "subtitle": "Empresas por onde andei",
+        "title": "Experiência de trabalho"
+      },
+      "helpers": {
+        "header": "Gustavo Cunha",
+        "title": "Gustavo Cunha - Engenheiro de Software"
+      },
+      "skills": {
+        "subtitle": "Os assuntos que mais me interessam no momento, mas estou sempre aberto a novas tecnologias.",
+        "title": "Habilidades Técnicas"
+      },
+      "template": {
+        "current": "Atualmente",
+        "menu": {
+          "about": "Sobre",
+          "contact": "Contato",
+          "education": "Educação",
+          "en": "EN",
+          "experience": "Experiência",
+          "home": "Home",
+          "portfolio": "Portfólio",
+          "pt-BR": "BR",
+          "skills": "Habilidades",
+          "social": "Social"
+        },
+        "name": "Gustavo Cunha",
+        "title": "Desenvolvedor Web, Mobile, Consultor em Engenharia de Software"
+      }
+    }
+  }
+}

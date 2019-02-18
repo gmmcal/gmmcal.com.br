@@ -45,9 +45,5 @@ export default {
     color: #84868d;
     line-height: 18px;
   }
-
-  h4 {
-    font-weight: 700;
-  }
 }
 </style>

@@ -2,6 +2,8 @@
 
 module TextHelper
   def markdown(text)
-    sanitize(Kramdown::Document.new(text || '').to_html.squish)
+    return '' unless text
+
+    sanitize(Kramdown::Document.new(text).to_html.squish)
   end
 end
