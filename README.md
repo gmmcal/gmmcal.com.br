@@ -2,7 +2,7 @@ Personal Website: [https://www.gmmcal.com.br](https://www.gmmcal.com.br)
 =============
 
 [![github tag](https://img.shields.io/github/tag/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br)
-[![build state](https://travis-ci.org/gmmcal/gmmcal.com.br.svg?branch=master)](https://travis-ci.org/gmmcal/gmmcal.com.br)
+[![Build Status](https://travis-ci.com/gmmcal/gmmcal.com.br.svg?branch=master)](https://travis-ci.com/gmmcal/gmmcal.com.br)
 [![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)](https://hakiri.io/github/gmmcal/gmmcal.com.br/master)
 
 [![github issues](https://img.shields.io/github/issues/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/issues)
