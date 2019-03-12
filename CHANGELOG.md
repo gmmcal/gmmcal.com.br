@@ -7,6 +7,11 @@ You can add all changes provided by your pull request on [unreleased] section. W
 
 ## [Unreleased]
 
+## [2.7.1] - 2019-03-12
+### Added
+- Gitlab link to footer
+- Dev.to link to footer
+
 ## [2.7.0] - 2019-02-22
 ### Changed
 - Rewrite HomeController caching process
@@ -487,7 +492,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.0...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.1...HEAD
+[2.7.1]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.0...v2.7.1
 [2.7.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.6.0...v2.7.0
 [2.6.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.1.9...v2.5.0

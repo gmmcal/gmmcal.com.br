@@ -14,7 +14,7 @@ describe('Social', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['iconGithub', 'iconLinkedin', 'iconTwitter']
+    const expected = ['iconGithub', 'iconGitlab', 'iconDev', 'iconTwitter', 'iconLinkedin']
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
@@ -24,10 +24,10 @@ describe('Social', () => {
   })
 
   describe('Child components', () => {
-    it('renders 3 FontAwesomeIcon objects', () => {
+    it('renders 5 FontAwesomeIcon objects', () => {
       wrapper = mount(Social)
       const icons = wrapper.findAll(FontAwesomeIcon)
-      expect(icons.length).toBe(3)
+      expect(icons.length).toBe(5)
     })
   })
 })
