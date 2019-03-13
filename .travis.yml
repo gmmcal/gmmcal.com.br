@@ -18,8 +18,8 @@ common: &common
 
   install:
     - bundle install
-    - nvm install node -v 11.9.0
-    - npm i -g yarn -v 1.13.0
+    - nvm install node
+    - npm i -g yarn
     - yarn install
 
 tests: &tests
