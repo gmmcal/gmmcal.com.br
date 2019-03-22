@@ -30,12 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  position: relative;
-
-  .menu {
-    background: #262b37;
-    min-height: 62px;
-  }
-}
+@import "./app/assets/stylesheets/components/header";
 </style>

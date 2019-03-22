@@ -1,0 +1,49 @@
+@media screen {
+  .navbar-nav {
+    margin: 0 auto;
+    text-align: center;
+    background: #262b37;
+
+    > li {
+      a {
+        color: #c3c8d6;
+        line-height: 18px;
+        padding: 22px 25px;
+        text-align: center;
+
+        &:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+      @media screen and (max-width: 810px) {
+        width: 100%;
+      }
+
+      &.active > a,
+      &.active > a:focus {
+        background: #1b1f29;
+        color: #c3c8d6;
+      }
+
+      &.active > a:hover {
+        background: #1b1f29;
+        color: #fff;
+      }
+    }
+  }
+
+  .i18n {
+    height: 32px;
+    position: fixed;
+    right: 10px;
+    top: 15px;
+    width: 32px;
+
+    li {
+      float: right;
+      list-style: none;
+    }
+  }
+}

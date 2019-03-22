@@ -1,0 +1,148 @@
+@page {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  size: A4 portrait;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: #000;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// Header
+header {
+  display: none;
+}
+
+// Container Spacing
+.contact,
+.education,
+.experience,
+.technical {
+  padding-bottom: 3rem;
+}
+
+// About
+.about-me {
+  .container {
+    .details {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-left: 0;
+
+      .btn-download {
+        display: none;
+      }
+    }
+
+    .image {
+      display: none;
+    }
+  }
+}
+
+// Contact
+.contact {
+  .top-con {
+    display: none;
+  }
+
+  .bottom-con {
+    .container {
+      > div {
+        padding-left: 0;
+      }
+    }
+
+    p {
+      padding-left: 0;
+    }
+  }
+}
+
+// Education
+.education {
+  .education-details {
+    flex-direction: row-reverse;
+    padding-bottom: 1rem;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    .left-area {
+      padding-right: 0;
+      -webkit-flex: 0 0 20%;
+
+      .year {
+        padding-top: 3rem;
+      }
+    }
+
+    .right-area {
+      padding-left: 0;
+      -webkit-flex: 0 0 80%;
+
+      .arrowpart {
+        display: none;
+      }
+    }
+  }
+}
+
+// Experience
+.experience {
+  .work-details {
+    flex-direction: row-reverse;
+    padding-bottom: 1rem;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    .left-area {
+      padding-right: 0;
+      -webkit-flex: 0 0 20%;
+    }
+
+    .right-area {
+      padding-left: 0;
+      -webkit-flex: 0 0 80%;
+
+      .arrowpart {
+        display: none;
+      }
+    }
+  }
+}
+
+// Skills
+.technical {
+  .skill {
+    display: inline-block;
+    padding-bottom: 0.7rem;
+    padding-right: 0.7rem;
+  }
+}
+
+// Footer
+.footer {
+  display: none;
+}
+
+// Schema
+.schema {
+  display: none;
+}

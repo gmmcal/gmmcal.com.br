@@ -8,14 +8,14 @@ exports[`Body renders correctly 1`] = `
         <h2>About Me</h2>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-5">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-5 details">
           <h3>Gustavo Cunha</h3>
           <h4 class="sub-heading">Some title at some company</h4>
           <div class="description">
             <p>Lorem ipsum nulus dolor.</p>
           </div> <a href="file.pdf" target="_blank" rel="noopener" class="btn-download">Download CV</a>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 offset-lg-1">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 offset-lg-1 image">
           <div class="lazy topmar"></div>
         </div>
       </div>
@@ -28,8 +28,8 @@ exports[`Body renders correctly 1`] = `
         <p>Companies that I have worked for</p>
       </div>
       <div class="row work-details">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-          <div class="year">Jan / 2015<br>Jan / 2016</div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
+          <div class="year"><span class="start">Jan / 2015</span> <span class="end">Jan / 2016</span></div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
           <div class="arrowpart"></div>
@@ -43,8 +43,8 @@ exports[`Body renders correctly 1`] = `
         </div>
       </div>
       <div class="row work-details">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-          <div class="year">Jan / 2015<br>Jan / 2016</div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
+          <div class="year"><span class="start">Jan / 2015</span> <span class="end">Jan / 2016</span></div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
           <div class="arrowpart"></div>
@@ -65,7 +65,7 @@ exports[`Body renders correctly 1`] = `
         <h2>Technical Skills</h2>
         <p>The subjects currently under my radar, but I'm always open to new technologies.</p>
       </div>
-      <div class="row"><span class="skill" style="font-size: 7em;">Skill Name</span><span class="skill" style="font-size: 6.3em;">Another Skill</span></div>
+      <div class="row"><span class="skill s-100">Skill Name</span><span class="skill s-90">Another Skill</span></div>
     </div>
   </section>
   <section id="education" class="education">
@@ -75,8 +75,8 @@ exports[`Body renders correctly 1`] = `
         <p>What I did on my academic career</p>
       </div>
       <div class="row education-details">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-          <div class="year">Currently</div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
+          <div class="year"><span class="end">Currently</span></div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
           <div class="arrowpart"></div>
@@ -90,8 +90,8 @@ exports[`Body renders correctly 1`] = `
         </div>
       </div>
       <div class="row education-details">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-          <div class="year">Jan / 2016</div>
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
+          <div class="year"><span class="end">Jan / 2016</span></div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
           <div class="arrowpart"></div>
@@ -106,16 +106,16 @@ exports[`Body renders correctly 1`] = `
       </div>
     </div>
   </section>
-  <section id="contact">
-    <section class="contact">
-      <div class="container top-con">
+  <section id="contact" class="contact">
+    <div class="top-con">
+      <div class="container">
         <div class="heading">
           <h2>Contact me</h2>
           <p>Feel free to contact me</p>
         </div>
       </div>
-    </section>
-    <section class="contact-details">
+    </div>
+    <div class="bottom-con">
       <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h4>Contacts</h4>
@@ -145,7 +145,7 @@ exports[`Body renders correctly 1`] = `
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </section>
 </section>
 `;

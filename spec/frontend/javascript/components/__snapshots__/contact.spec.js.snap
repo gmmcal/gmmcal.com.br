@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Contact renders correctly 1`] = `
-<section id="contact">
-  <section class="contact">
-    <div class="container top-con">
+<section id="contact" class="contact">
+  <div class="top-con">
+    <div class="container">
       <div class="heading">
         <h2>Contact me</h2>
         <p>Feel free to contact me</p>
       </div>
     </div>
-  </section>
-  <section class="contact-details">
+  </div>
+  <div class="bottom-con">
     <div class="container">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h4>Contacts</h4>
@@ -40,6 +40,6 @@ exports[`Contact renders correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </section>
 `;

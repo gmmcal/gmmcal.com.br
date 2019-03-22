@@ -28,22 +28,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.experience {
-  background: #eee;
-
-  .container {
-    padding-bottom: 90px;
-    padding-top: 85px;
-  }
-
-  h2 {
-    color: #ff675f;
-  }
-
-  .heading p {
-    padding-bottom: 41px;
-    color: #84868d;
-    line-height: 18px;
-  }
-}
+@import "./app/assets/stylesheets/components/experiences";
 </style>

@@ -8,8 +8,8 @@ exports[`Experiences renders correctly 1`] = `
       <p>Companies that I have worked for</p>
     </div>
     <div class="row work-details">
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-        <div class="year">Jan / 2015<br>Jan / 2016</div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
+        <div class="year"><span class="start">Jan / 2015</span> <span class="end">Jan / 2016</span></div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
         <div class="arrowpart"></div>
@@ -23,8 +23,8 @@ exports[`Experiences renders correctly 1`] = `
       </div>
     </div>
     <div class="row work-details">
-      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
-        <div class="year">Jan / 2015<br>Jan / 2016</div>
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
+        <div class="year"><span class="start">Jan / 2015</span> <span class="end">Jan / 2016</span></div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
         <div class="arrowpart"></div>

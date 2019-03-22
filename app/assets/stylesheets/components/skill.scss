@@ -1,0 +1,22 @@
+@media screen {
+  $max-font-size: 7;
+  $unit: 'em';
+
+  .skill {
+    margin: 10px;
+    padding: 0;
+    line-height: 30px;
+    align-self: center;
+    display: block;
+
+    @media screen and (min-width: 420px) {
+      display: inline-block;
+    }
+
+    @for $value from 0 through 100 {
+      &.s-#{$value} {
+        font-size: #{(($max-font-size * $value) / 100)}#{$unit};
+      }
+    }
+  }
+}

@@ -27,26 +27,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navbar {
-  border: 0;
-  color: #c3c8d6;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  margin: 0 auto;
-  padding: 0;
-  text-transform: uppercase;
-
-  @media screen and (max-width: 767px) {
-    padding: 1rem 0 0;
-  }
-
-  .navbar-toggler {
-    margin: 0 0 10px 10px;
-
-    .navbar-toggler-icon {
-      height: 1em;
-      width: 1em;
-    }
-  }
-}
+@import "./app/assets/stylesheets/components/menu-container";
 </style>
