@@ -83,17 +83,13 @@ header {
     }
 
     .left-area {
-      padding-right: 0;
       -webkit-flex: 0 0 20%;
-
-      .year {
-        padding-top: 3rem;
-      }
+      padding-right: 0;
     }
 
     .right-area {
-      padding-left: 0;
       -webkit-flex: 0 0 80%;
+      padding-left: 0;
 
       .arrowpart {
         display: none;
@@ -113,13 +109,13 @@ header {
     }
 
     .left-area {
-      padding-right: 0;
       -webkit-flex: 0 0 20%;
+      padding-right: 0;
     }
 
     .right-area {
-      padding-left: 0;
       -webkit-flex: 0 0 80%;
+      padding-left: 0;
 
       .arrowpart {
         display: none;
@@ -132,8 +128,8 @@ header {
 .technical {
   .skill {
     display: inline-block;
-    padding-bottom: 0.7rem;
-    padding-right: 0.7rem;
+    padding-bottom: .7rem;
+    padding-right: .7rem;
   }
 }
 

@@ -12,22 +12,22 @@
       width: 100%;
 
       &::after {
-        filter: alpha(opacity = 20); // For IE8 and earlier
-        opacity: .2;
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
-        content: "";
-        top: 0;
-        left: 0;
         bottom: 0;
-        right: 0;
+        content: '';
+        filter: alpha(opacity = 20); // For IE8 and earlier
+        left: 0;
+        opacity: .2;
         position: absolute;
+        right: 0;
+        top: 0;
       }
 
       .banner-text {
-        text-align: center;
         align-self: center;
+        text-align: center;
 
         h1 {
           font-size: 42px;
@@ -48,11 +48,11 @@
         }
 
         h2 {
-          letter-spacing: 8px;
-          text-transform: uppercase;
           font-size: 15px;
+          letter-spacing: 8px;
           line-height: 24px;
           padding-top: 10px;
+          text-transform: uppercase;
 
           @media screen and (min-width: 650px) {
             font-size: 17px;

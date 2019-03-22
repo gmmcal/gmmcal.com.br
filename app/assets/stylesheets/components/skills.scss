@@ -19,8 +19,8 @@
 
     .row {
       display: block;
-      text-align: center;
       font-size: 6px;
+      text-align: center;
 
       @media screen and (min-width: 420px) and (max-width: 768px) {
         font-size: 7px;
