@@ -11,6 +11,11 @@
         text-align: center;
         width: 120px;
 
+        .start,
+        .end {
+          display: block;
+        }
+
         @media screen and (min-width: 1200px) {
           height: 140px;
           padding-top: 50px;

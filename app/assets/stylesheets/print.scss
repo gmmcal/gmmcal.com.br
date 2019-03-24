@@ -91,14 +91,20 @@ header {
     }
 
     .left-area {
-      flex: 0 0 20%;
-      max-width: 20%;
+      flex: 0 0 30%;
+      max-width: 30%;
       padding-right: 0;
+
+      .start,
+      .end {
+        display: block;
+        text-align: center;
+      }
     }
 
     .right-area {
-      flex: 0 0 80%;
-      max-width: 80%;
+      flex: 0 0 70%;
+      max-width: 70%;
       padding-left: 0;
 
       .arrowpart {
@@ -119,14 +125,20 @@ header {
     }
 
     .left-area {
-      flex: 0 0 20%;
-      max-width: 20%;
+      flex: 0 0 30%;
+      max-width: 30%;
       padding-right: 0;
+
+      .start,
+      .end {
+        display: block;
+        text-align: center;
+      }
     }
 
     .right-area {
-      flex: 0 0 80%;
-      max-width: 80%;
+      flex: 0 0 70%;
+      max-width: 70%;
       padding-left: 0;
 
       .arrowpart {
