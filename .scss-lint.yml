@@ -11,5 +11,3 @@ linters:
     convention: snake_case
   SelectorDepth:
     max_depth: 5
-  VendorPrefix:
-    excluded_identifiers: ['flex']

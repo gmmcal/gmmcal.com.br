@@ -48,17 +48,17 @@ describe('Contact', () => {
 
     it('has a github link', () => {
       const el = wrapper.find('.github')
-      expect(el.text()).toBe('gmmcal')
+      expect(el.text()).toMatch('gmmcal')
     })
 
     it('has a linkedin link', () => {
       const el = wrapper.find('.linkedin')
-      expect(el.text()).toBe('Gustavo Cunha')
+      expect(el.text()).toMatch('Gustavo Cunha')
     })
 
     it('has a twitter link', () => {
       const el = wrapper.find('.twitter')
-      expect(el.text()).toBe('@gmmcal')
+      expect(el.text()).toMatch('@gmmcal')
     })
   })
 })

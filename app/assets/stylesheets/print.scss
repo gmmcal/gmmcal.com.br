@@ -67,7 +67,15 @@ header {
     }
 
     p {
+      flex: 0 0 100%;
+      max-width: 100%;
       padding-left: 0;
+
+      .print {
+        color: #ccc;
+        font-size: .7rem;
+        margin-left: .3rem;
+      }
     }
   }
 }
@@ -83,12 +91,14 @@ header {
     }
 
     .left-area {
-      -webkit-flex: 0 0 20%;
+      flex: 0 0 20%;
+      max-width: 20%;
       padding-right: 0;
     }
 
     .right-area {
-      -webkit-flex: 0 0 80%;
+      flex: 0 0 80%;
+      max-width: 80%;
       padding-left: 0;
 
       .arrowpart {
@@ -109,12 +119,14 @@ header {
     }
 
     .left-area {
-      -webkit-flex: 0 0 20%;
+      flex: 0 0 20%;
+      max-width: 20%;
       padding-right: 0;
     }
 
     .right-area {
-      -webkit-flex: 0 0 80%;
+      flex: 0 0 80%;
+      max-width: 80%;
       padding-left: 0;
 
       .arrowpart {

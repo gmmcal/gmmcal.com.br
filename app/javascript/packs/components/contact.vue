@@ -28,15 +28,24 @@
             </p>
             <p class="github col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconGithub"></font-awesome-icon>
-              <a href="https://github.com/gmmcal" target="_blank" rel="noopener">{{ I18n.t('github', { scope: 'frontend.contact.contacts' }) }}</a>
+              <a href="https://github.com/gmmcal" target="_blank" rel="noopener">
+                {{ I18n.t('github', { scope: 'frontend.contact.contacts' }) }}
+                <span class="print">(https://github.com/gmmcal)</span>
+              </a>
             </p>
             <p class="linkedin col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconLinkedin"></font-awesome-icon>
-              <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">{{ I18n.t('linkedin', { scope: 'frontend.contact.contacts' }) }}</a>
+              <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">
+                {{ I18n.t('linkedin', { scope: 'frontend.contact.contacts' }) }}
+                <span class="print">(https://linkedin.com/in/gmmcal)</span>
+              </a>
             </p>
             <p class="twitter col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconTwitter"></font-awesome-icon>
-              <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">{{ I18n.t('twitter', { scope: 'frontend.contact.contacts' }) }}</a>
+              <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">
+                {{ I18n.t('twitter', { scope: 'frontend.contact.contacts' }) }}
+                <span class="print">(https://twitter.com/gmmcal)</span>
+              </a>
             </p>
           </div>
         </div>
