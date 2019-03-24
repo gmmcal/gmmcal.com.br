@@ -33,6 +33,7 @@ After cloning this repository, run the following commands:
 1. `rvm use ruby-2.6.1@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
+1. `cp env.example .env` to configure foreman startup.
 
 # Database
 

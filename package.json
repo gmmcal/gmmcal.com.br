@@ -83,8 +83,7 @@
   "scripts": {
     "test": "jest --watch",
     "test:once": "jest",
-    "cypress": "cd . && rake db:setup && DOTFILES_LOADED='false' cypress open",
-    "cypress:ci": "cypress run --record",
-    "pdf": "chrome --headless --disable-gpu --print-to-pdf='tmp/site.pdf' --window-size=1200,1900 http://localhost:3000/"
+    "cypress": "rake db:setup && DOTFILES_LOADED='false' cypress open",
+    "cypress:ci": "cypress run --record"
   }
 }
