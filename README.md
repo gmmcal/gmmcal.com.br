@@ -14,13 +14,22 @@ Personal Website: [https://www.gmmcal.com.br](https://www.gmmcal.com.br)
 
 My personal website code, playground and learning lab.
 
-# Requirements
+# Features
+This website is a result of years of constant learning. The template was purchased at [ThemeForest](https://themeforest.net/item/flato-responsive-resume-personal-portfolio-temp/6486867) in 2014 and customized by me, with help from [Mac Giovanni](https://github.com/maclevison) and [Carlyson Oliveira](https://github.com/carlyson).
+
+Currently, it features a full-stack custom CMS backend built on top of [Ruby on Rails](https://rubyonrails.org/) and a frontend powered by [Vue.js](https://vuejs.org/) with a print friendly feature. It is deployed on [Heroku](https://www.heroku.com/). Backend tests are written in [RSpec](http://rspec.info/), frontend tests are written in [Jest](https://jestjs.io/) and end-to-end tests are written in [Cypress](https://www.cypress.io/).
+
+All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://travis-ci.com/gmmcal/gmmcal.com.br) [script](./.travis.yml) and works automatically (pull request application deployment is managed by Heroku). Code is reviewed by [Ebert](https://ebertapp.io/github/gmmcal/gmmcal.com.br), maintainability is managed by [Code Climate](https://codeclimate.com/github/gmmcal/gmmcal.com.br) and code security is managed by [Hakiri](https://hakiri.io/github/gmmcal/gmmcal.com.br/).
+
+# Development
+
+## Requirements
 
 The latest version of this app was built using Ruby 2.6.1, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
-# Installing
+## Installing
 
 The instructions below assumes that your computer has [RVM](https://rvm.io) configured.
 
@@ -35,7 +44,7 @@ After cloning this repository, run the following commands:
 1. `yarn install` to install all javascript packages.
 1. `cp env.example .env` to configure foreman startup.
 
-# Database
+## Database
 
 This application uses Postgres database. All credentials are provided in `config/database.yml` file. By default, it will use your current computer username to access database. You can modify it at your will, but it should not be pushed to this repository.
 
@@ -45,7 +54,7 @@ After database credentials are set, run the following commands to make it ready 
 1. `rake db:migrate` to migrate the database structure to it's latest state.
 1. `rake db:seed:all` to add some dummy data to database.
 
-# Running application
+## Running application
 
 To run the application, you can run the following command.
 
@@ -57,38 +66,38 @@ This will start local `rails` and `webpack` servers. By default, `rails` will ru
 
 If everything is fine, go to your browser and load [http://localhost:3000](http://localhost:3000) to view the website.
 
-# Admin
+## Admin
 
 Admin page is accessible via `/admin` path. Development credentials are provided on [seed](db/seeds.rb) script.
 
-# Tests
+## Tests
 
 This application is covered by tests on backend, frontend and end-to-end (browser) tests. All tests are located in `spec` folder.
 
-## Backend
+### Backend
 
 Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on your terminal.
 
-## Frontend
+### Frontend
 
 Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
-## End-to-end
+### End-to-end
 
 End-to-end tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 
-# Supported Devices
+## Supported Devices
 
 This website should run in all major browsers in both mobile and desktop versions. The supported browser list is featured below
 
-## Desktop
+### Desktop
 
 * Firefox - Fully supported on latest release and should work on most recent ones either.
 * Chrome - Fully supported on latest release and should work on most recent ones either.
 * Safari - Fully supported on latest release and should work on most recent ones either.
 * Internet Explorer - Partially supported on IE11 and Edge. Some animations might not be present.
 
-## Mobile
+### Mobile
 
 * Android - It should work on Chrome mobile in on latest releases. Wasn't tested on Android Browser.
 * iOS - Should work on iOS >= 9, but it is fully supported on latest release.
