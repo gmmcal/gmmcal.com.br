@@ -7,7 +7,7 @@ exports[`Skills renders correctly 1`] = `
       <h2>Technical Skills</h2>
       <p>The subjects currently under my radar, but I'm always open to new technologies.</p>
     </div>
-    <div class="row"><span class="skill" style="font-size: 7em;">Skill Name</span><span class="skill" style="font-size: 6.3em;">Another Skill</span></div>
+    <div class="row"><span class="skill s-100">Skill Name</span><span class="skill s-90">Another Skill</span></div>
   </div>
 </section>
 `;

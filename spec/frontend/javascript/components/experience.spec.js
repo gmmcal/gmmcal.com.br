@@ -33,7 +33,7 @@ describe('Experience', () => {
   describe('Content', () => {
     it('has dates', () => {
       const el = wrapper.find('.year')
-      expect(el.text()).toBe('Jan / 2015Jan / 2016')
+      expect(el.text()).toBe('Jan / 2015 Jan / 2016')
     })
 
     describe('Contains company details', () => {
@@ -76,7 +76,7 @@ describe('Experience', () => {
 
       it('has Currently text', () => {
         const el = wrapper.find('.year')
-        expect(el.text()).toBe('Jan / 2015Currently')
+        expect(el.text()).toBe('Jan / 2015 Currently')
       })
     })
   })

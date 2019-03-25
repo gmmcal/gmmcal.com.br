@@ -1,14 +1,14 @@
 <template>
-  <section id="contact">
-    <section class="contact">
-      <div class="container top-con">
+  <section id="contact" class="contact">
+    <div class="top-con">
+      <div class="container">
         <div class="heading">
           <h2>{{ I18n.t('title', { scope: 'frontend.contact' }) }}</h2>
           <p>{{ I18n.t('subtitle', { scope: 'frontend.contact' }) }}</p>
         </div>
       </div>
-    </section>
-    <section class="contact-details">
+    </div>
+    <div class="bottom-con">
       <div class="container">
         <!--contact info start-->
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -28,21 +28,30 @@
             </p>
             <p class="github col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconGithub"></font-awesome-icon>
-              <a href="https://github.com/gmmcal" target="_blank" rel="noopener">{{ I18n.t('github', { scope: 'frontend.contact.contacts' }) }}</a>
+              <a href="https://github.com/gmmcal" target="_blank" rel="noopener">
+                {{ I18n.t('github', { scope: 'frontend.contact.contacts' }) }}
+                <span class="print">(https://github.com/gmmcal)</span>
+              </a>
             </p>
             <p class="linkedin col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconLinkedin"></font-awesome-icon>
-              <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">{{ I18n.t('linkedin', { scope: 'frontend.contact.contacts' }) }}</a>
+              <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">
+                {{ I18n.t('linkedin', { scope: 'frontend.contact.contacts' }) }}
+                <span class="print">(https://linkedin.com/in/gmmcal)</span>
+              </a>
             </p>
             <p class="twitter col-xs-12 col-sm-6 col-md-6 col-lg-4">
               <font-awesome-icon prefix="fab" :icon="iconTwitter"></font-awesome-icon>
-              <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">{{ I18n.t('twitter', { scope: 'frontend.contact.contacts' }) }}</a>
+              <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">
+                {{ I18n.t('twitter', { scope: 'frontend.contact.contacts' }) }}
+                <span class="print">(https://twitter.com/gmmcal)</span>
+              </a>
             </p>
           </div>
         </div>
         <!--contact info end-->
       </div>
-    </section>
+    </div>
   </section>
 </template>
 
@@ -73,65 +82,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contact {
-  background: #fff;
-
-  .container {
-    padding-bottom: 90px;
-    padding-top: 85px;
-  }
-
-  h2 {
-    color: #ff675f;
-  }
-
-  p {
-    color: #84868d;
-    //font-size: 13px;
-    line-height: 18px;
-  }
-
-  .heading p {
-    padding-bottom: 41px;
-  }
-
-  .top-con {
-    padding-bottom: 0;
-  }
-}
-
-.contact-details {
-  background: #474d5d;
-
-  .container {
-    padding-bottom: 90px;
-    padding-top: 85px;
-  }
-
-  h4 {
-    font-weight: 600;
-    padding-bottom: 15px;
-    text-transform: uppercase;
-  }
-
-  p {
-    color: #93959c;
-    font-size: 13px;
-    line-height: 19px;
-    padding-bottom: 14px;
-
-    a {
-      color: #93959c;
-
-      &:hover {
-        color: #a9abb0;
-        text-decoration: none;
-      }
-    }
-  }
-
-  svg {
-    margin-right: 15px;
-  }
-}
+@import "./app/assets/stylesheets/components/contact";
 </style>

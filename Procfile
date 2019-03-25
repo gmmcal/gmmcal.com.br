@@ -1,2 +1,2 @@
-backend: rails s -p 3000
-frontend: bin/webpack-dev-server
+web: bin/rails server -p $PORT -e $RAILS_ENV
+webpack: bin/webpack-dev-server

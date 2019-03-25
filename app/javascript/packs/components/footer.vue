@@ -17,7 +17,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
-  background: #00bdbd;
-}
+@import "./app/assets/stylesheets/components/footer";
 </style>

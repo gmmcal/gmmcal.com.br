@@ -1,6 +1,8 @@
 exclude: 'app/assets/stylesheets/admin/mdb/**'
 
 linters:
+  Comment:
+    enabled: false
   ColorVariable:
     enabled: false
   NestingDepth:

@@ -26,5 +26,12 @@
 @import 'bootstrap/scss/utilities/spacing';
 
 // local CSS
-@import 'setup';
-@import 'images';
+@media screen {
+  @import 'setup';
+  @import 'images';
+}
+
+@media print {
+  @import 'bootstrap/scss/type';
+  @import 'print';
+}

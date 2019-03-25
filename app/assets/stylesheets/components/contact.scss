@@ -1,0 +1,60 @@
+@media screen {
+  .contact {
+    background: #fff;
+
+    .top-con {
+      .container {
+        padding-bottom: 0;
+        padding-top: 85px;
+      }
+
+      h2 {
+        color: #ff675f;
+      }
+
+      p {
+        color: #84868d;
+        line-height: 18px;
+      }
+
+      .heading p {
+        padding-bottom: 41px;
+      }
+    }
+
+    .bottom-con {
+      background: #474d5d;
+
+      .container {
+        padding-bottom: 90px;
+        padding-top: 85px;
+      }
+
+      h4 {
+        font-weight: 600;
+        padding-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: #93959c;
+        font-size: 13px;
+        line-height: 19px;
+        padding-bottom: 14px;
+
+        a {
+          color: #93959c;
+
+          &:hover {
+            color: #a9abb0;
+            text-decoration: none;
+          }
+        }
+      }
+
+      svg {
+        margin-right: 15px;
+      }
+    }
+  }
+}
