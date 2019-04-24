@@ -11,7 +11,7 @@ FactoryBot.define do
     locale { :en }
 
     cv do
-      path = Rails.root.join('spec', 'backend', 'support', 'assets', 'cv-en.pdf')
+      path = Rails.root.join('spec', 'assets', 'cv-en.pdf')
       Rack::Test::UploadedFile.new(path, 'application/pdf')
     end
 

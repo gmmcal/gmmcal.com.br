@@ -7,6 +7,11 @@ You can add all changes provided by your pull request on [unreleased] section. W
 
 ## [Unreleased]
 
+## [2.8.1] - 2019-04-26
+- Ruby bumped to `2.6.3`
+- Rails bumped to `6.0.0.rc1`
+- Dependencies update
+
 ## [2.8.0] - 2019-03-25
 ### Added
 - Printable version of the website.
@@ -500,7 +505,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.0...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.1...HEAD
+[2.8.1]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.1...v2.7.2
 [2.7.1]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.0...v2.7.1

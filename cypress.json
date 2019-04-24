@@ -1,7 +1,7 @@
 {
   "projectId": "88eqvw",
   "baseUrl": "http://localhost:3000",
-  "fixturesFolder": "spec/frontend/fixtures",
+  "fixturesFolder": "spec/assets",
   "integrationFolder": "spec/frontend/end-to-end",
   "pluginsFile": "spec/frontend/plugins/index.js",
   "screenshotsFolder": "spec/frontend/screenshots",

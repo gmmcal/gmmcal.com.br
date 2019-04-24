@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Enforce minimum ruby version
-ruby '2.6.1' if ENV['RAILS_ENV'] == 'production'
+ruby '2.6.3' if ENV['RAILS_ENV'] == 'production'
 
 # Application gems
 # Use bootsnap to improve performance
@@ -11,7 +11,7 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.0.0.rc1'
 gem 'rails-i18n'
 
 # Frontend gems
@@ -20,9 +20,7 @@ gem 'modernizr-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'uglifier'
-gem 'webpacker',
-    git: 'https://github.com/rails/webpacker',
-    branch: :master
+gem 'webpacker'
 
 # Admin gems
 gem 'country_select'
@@ -38,7 +36,6 @@ gem 'faker', require: false
 # Groups
 group :development do
   gem 'brakeman'
-  gem 'foreman'
   gem 'i18n-debug'
   gem 'i18n-js'
   gem 'listen'
@@ -50,11 +47,9 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'rubocop-performance'
   gem 'rubocop-rspec'
-  gem 'shoulda-matchers',
-      git: 'https://github.com/thoughtbot/shoulda-matchers',
-      branch: :master,
-      require: false
+  gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
 end
 

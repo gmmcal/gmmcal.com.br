@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('About', () => {
+describe('Logout', () => {
   before(() => {
     cy.login()
   })

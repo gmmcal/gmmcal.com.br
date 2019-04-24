@@ -55,11 +55,11 @@ jobs:
       <<: *tests
 
     - stage: unit tests
-      rvm: 2.6.1
+      rvm: 2.6.3
       <<: *tests
 
     - stage: end-to-end tests
-      rvm: 2.6.1
+      rvm: 2.6.3
 
       <<: *common
 

@@ -25,7 +25,7 @@ All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://tr
 
 ## Requirements
 
-The latest version of this app was built using Ruby 2.6.1, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
+The latest version of this app was built to be used with Ruby 2.6.3, but it should work on any Ruby >= 2.3. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
@@ -38,8 +38,8 @@ The instructions below assumes that your computer has [RVM](https://rvm.io) conf
 
 After cloning this repository, run the following commands:
 
-1. `rvm rvmrc create ruby-2.6.1@gmmcal.com.br --ruby-version` to create a gemset for this project.
-1. `rvm use ruby-2.6.1@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
+1. `rvm rvmrc create ruby-2.6.3@gmmcal.com.br --ruby-version` to create a gemset for this project.
+1. `rvm use ruby-2.6.3@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
 1. `cp env.example .env` to configure foreman startup.
@@ -59,12 +59,14 @@ After database credentials are set, run the following commands to make it ready 
 To run the application, you can run the following command.
 
 ```
-foreman start
+rails server
 ```
 
 This will start local `rails` and `webpack` servers. By default, `rails` will run on port `3000` and `webpack` will run on port `3035`. Make sure there are nothing else running on those ports.
 
 If everything is fine, go to your browser and load [http://localhost:3000](http://localhost:3000) to view the website.
+
+You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https://github.com/DarthSim/overmind) or any other process started that is [Procfile](Procfile) based.
 
 ## Admin
 

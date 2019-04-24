@@ -10,14 +10,14 @@ namespace :db do
   task clean: :environment do
     ActiveStorage::Attachment.all.each(&:purge)
     tables = %i[about
-                active_storage_attachments
                 active_storage_blobs
+                active_storage_attachments
                 education
                 skill
                 work_experience]
     tables.each do |model|
       ActiveRecord::Base.connection.execute(
-        "TRUNCATE #{model.to_s.tableize} RESTART IDENTITY"
+        "TRUNCATE #{model.to_s.tableize} RESTART IDENTITY CASCADE"
       )
     end
   end
