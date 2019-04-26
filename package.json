@@ -45,9 +45,9 @@
     "ci-cd"
   ],
   "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.4.0",
-    "yarn": ">=1.10.0"
+    "node": "^11.11.0",
+    "npm": "^6.7.0",
+    "yarn": "^1.15.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "*",
@@ -55,8 +55,9 @@
     "@fortawesome/free-regular-svg-icons": "*",
     "@fortawesome/free-solid-svg-icons": "*",
     "@fortawesome/vue-fontawesome": "*",
-    "@rails/webpacker": "https://github.com/rails/webpacker",
+    "@rails/webpacker": "^4.0.2",
     "bootstrap": "*",
+    "core-js": "3",
     "i18n-js": "*",
     "marked": "*",
     "rails-ujs": "*",
@@ -70,20 +71,19 @@
   },
   "devDependencies": {
     "@babel/core": "*",
-    "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-core": "^7.0.0-bridge.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-jest": "*",
     "cypress": "*",
     "jest": "*",
     "jest-canvas-mock": "*",
     "jest-serializer-vue": "*",
-    "vue-jest": "*",
+    "vue-jest": "^4.0.0-beta.2",
     "webpack-dev-server": "*"
   },
   "scripts": {
     "test": "jest --watch",
     "test:once": "jest",
     "cypress": "rake db:setup && DOTFILES_LOADED='false' cypress open",
-    "cypress:ci": "cypress run --record"
+    "cypress:ci": "cypress run"
   }
 }

@@ -1,5 +1,22 @@
 language: ruby
 
+dist: xenial
+
+services:
+  - postgresql
+
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+      - xvfb
+      - libgtk2.0-0
+      - libnotify-dev
+      - libgconf-2-4
+      - libnss3
+      - libxss1
+      - libasound2
+
 cache:
   directories:
     - /home/travis/.rvm
@@ -18,7 +35,7 @@ common: &common
 
   install:
     - bundle install
-    - nvm install node
+    - nvm install 11.11.0
     - npm i -g yarn
     - yarn install
 
@@ -43,23 +60,15 @@ tests: &tests
 jobs:
   include:
     - stage: unit tests
-      rvm: 2.3.7
+      rvm: 2.5.5
       <<: *tests
 
     - stage: unit tests
-      rvm: 2.4.4
-      <<: *tests
-
-    - stage: unit tests
-      rvm: 2.5.3
-      <<: *tests
-
-    - stage: unit tests
-      rvm: 2.6.1
+      rvm: 2.6.3
       <<: *tests
 
     - stage: end-to-end tests
-      rvm: 2.6.1
+      rvm: 2.6.3
 
       <<: *common
 
@@ -67,7 +76,7 @@ jobs:
         - bin/webpack
         - bundle exec rails db:seed
         - bundle exec rails server -p 3000 &
-        - yarn cypress:ci
+        - yarn cypress:ci $CYPRESS_FLAGS
         - kill $(jobs -p) || true
 
     - stage: deploy

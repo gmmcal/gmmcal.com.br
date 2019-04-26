@@ -59,8 +59,8 @@ describe('About', () => {
           cy.get('div.about_description .invalid-feedback').should('be.visible')
         })
 
-        it('do not show failure message for CV', () => {
-          cy.get('div.about_cv .invalid-feedback').should('not.exist')
+        it('shows failure message for CV', () => {
+          cy.get('div.about_cv .invalid-feedback').should('be.visible')
         })
 
         it('do not show failure message for country', () => {
@@ -107,8 +107,8 @@ describe('About', () => {
           cy.get('div.about_description .invalid-feedback').should('be.visible')
         })
 
-        it('do not show failure message for CV', () => {
-          cy.get('div.about_cv .invalid-feedback').should('not.exist')
+        it('shows failure message for CV', () => {
+          cy.get('div.about_cv .invalid-feedback').should('be.visible')
         })
 
         it('do not show failure message for country', () => {
@@ -138,7 +138,8 @@ describe('About', () => {
         cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
         cy.get('textarea[name="about[description]"]').clear().type('Lorem ipsum nulus dolor.')
         cy.get('select[name="about[locale]"]').select('en')
-        cy.get('input[value="Save"]').click({force: true})
+        cy.fileUpload('cv-en.pdf', 'application/pdf', 'input[name="about[cv]"]')
+        cy.get('input[value="Save"]').click({ force: true })
       })
 
       it('is successful', () => {
@@ -147,6 +148,10 @@ describe('About', () => {
 
       it('shows confirmation message', () => {
         cy.get('.alert').should('have.text', 'About was successfully created.')
+      })
+
+      it('has a download button', () => {
+        cy.contains('.list-group-item', 'Download CV').should('be.visible')
       })
     })
   })
