@@ -25,7 +25,7 @@ All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://tr
 
 ## Requirements
 
-The latest version of this app was built to be used with Ruby 2.6.3, but it should work on any Ruby >= 2.5. It also requires Postgres >= 9.5, Node >= 10 and Yarn >= 1.9.
+The latest version of this app was built to be used with Ruby 2.6.3, but it should work on any Ruby >= 2.5. It also requires Postgres 11.0, Node 11.0 and Yarn 1.15.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
