@@ -43,15 +43,7 @@ tests: &tests
 jobs:
   include:
     - stage: unit tests
-      rvm: 2.3.7
-      <<: *tests
-
-    - stage: unit tests
-      rvm: 2.4.4
-      <<: *tests
-
-    - stage: unit tests
-      rvm: 2.5.3
+      rvm: 2.5.5
       <<: *tests
 
     - stage: unit tests

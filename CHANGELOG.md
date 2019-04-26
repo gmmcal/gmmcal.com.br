@@ -10,6 +10,7 @@ You can add all changes provided by your pull request on [unreleased] section. W
 ## [2.8.1] - 2019-04-26
 - Ruby bumped to `2.6.3`
 - Rails bumped to `6.0.0.rc1`
+- Drop support for Ruby lower than `2.5.0`
 - Dependencies update
 
 ## [2.8.0] - 2019-03-25
