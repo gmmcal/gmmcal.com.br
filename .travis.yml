@@ -18,7 +18,7 @@ common: &common
 
   install:
     - bundle install
-    - nvm install node -v 11.11.0
+    - nvm install 11.11.0
     - npm i -g yarn
     - yarn install
 
