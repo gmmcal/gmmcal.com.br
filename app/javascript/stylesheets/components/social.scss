@@ -1,0 +1,29 @@
+@media screen {
+  .container {
+    @apply pt-40 pb-40 pr-0 pl-0;
+
+    .social {
+      @apply list-none mt-0 mb-0 mr-auto ml-auto text-center;
+
+      li {
+        @apply bg-white rounded-half text-cyan-strong inline-block h-42 leading-42 mt-0 mb-0 mr-6 ml-6 text-center w-42;
+
+        &:hover {
+          @apply bg-cyan-dark;
+
+          a {
+            @apply text-white;
+          }
+        }
+
+        a {
+          @apply text-cyan-strong w-42 h-42;
+
+          svg {
+            @apply leading-42;
+          }
+        }
+      }
+    }
+  }
+}

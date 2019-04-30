@@ -45,7 +45,7 @@
     "ci-cd"
   ],
   "engines": {
-    "node": "^11.11.0",
+    "node": "^12.0.0",
     "npm": "^6.7.0",
     "yarn": "^1.15.2"
   },
@@ -55,6 +55,7 @@
     "@fortawesome/free-regular-svg-icons": "*",
     "@fortawesome/free-solid-svg-icons": "*",
     "@fortawesome/vue-fontawesome": "*",
+    "@fullhuman/postcss-purgecss": "*",
     "@rails/webpacker": "^4.0.2",
     "bootstrap": "*",
     "core-js": "3",
@@ -62,6 +63,8 @@
     "marked": "*",
     "rails-ujs": "*",
     "sortablejs": "*",
+    "start-server-and-test": "*",
+    "tailwindcss": "^1.0.0-beta.8",
     "turbolinks": "*",
     "vue": "*",
     "vue-loader": "*",
@@ -72,6 +75,7 @@
   "devDependencies": {
     "@babel/core": "*",
     "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "*",
     "cypress": "*",
     "jest": "*",
@@ -83,7 +87,10 @@
   "scripts": {
     "test": "jest --watch",
     "test:once": "jest",
-    "cypress": "rake db:setup && DOTFILES_LOADED='false' cypress open",
-    "cypress:ci": "cypress run"
+    "cypress": "start-test server:start 3000 cypress:open",
+    "server:start": "bundle exec rails server -p 3000",
+    "cypress:run": "cypress run $CYPRESS_FLAGS",
+    "cypress:open": "DOTFILES_LOADED='false' cypress open",
+    "cypress:ci": "start-test server:start 3000 cypress:run"
   }
 }

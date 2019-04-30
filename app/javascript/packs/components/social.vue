@@ -51,5 +51,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/social";
+@import "stylesheets/components/social";
 </style>

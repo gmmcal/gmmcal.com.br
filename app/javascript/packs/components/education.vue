@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/education";
+@import "stylesheets/components/education";
 </style>

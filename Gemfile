@@ -47,7 +47,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'rubocop-performance'
+  gem 'rubocop', '~> 0.52.1'
   gem 'rubocop-rspec'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false

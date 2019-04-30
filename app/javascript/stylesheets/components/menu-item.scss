@@ -1,0 +1,27 @@
+@media screen {
+  a {
+    @apply inline-block;
+
+    @media screen and (max-width: 767px) {
+      @apply block;
+    }
+  }
+
+  .flag {
+    @apply inline-block h-32 opacity-80 outline-none w-32;
+    text-indent: -10000px;
+    transition: opacity .5s ease-in-out;
+
+    &:hover {
+      @apply opacity-100;
+    }
+
+    &.pt-br {
+      @apply bg-flag-br;
+    }
+
+    &.en {
+      @apply bg-flag-en;
+    }
+  }
+}

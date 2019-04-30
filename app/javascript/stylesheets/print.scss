@@ -1,0 +1,202 @@
+@page {
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+  size: A4 portrait;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply mb-8 font-medium text-black;
+  line-height: 1.2;
+}
+
+h1,
+.h1 {
+  @apply text-40;
+}
+
+h2,
+.h2 {
+  @apply text-32;
+}
+
+h3,
+.h3 {
+  @apply text-28;
+}
+
+h4,
+.h4 {
+  @apply text-24;
+}
+
+h5,
+.h5 {
+  @apply text-20;
+}
+
+h6,
+.h6 {
+  @apply text-16;
+}
+
+p {
+  @apply text-16 mb-16;
+}
+
+small,
+.small {
+  @apply text-12 font-normal;
+}
+
+a {
+  @apply text-black;
+}
+
+.row {
+  @apply ml-0 mr-0;
+}
+
+// Header
+header {
+  @apply hidden;
+}
+
+// Container Spacing
+.contact,
+.education,
+.experience,
+.technical {
+  @apply pb-48;
+}
+
+// About
+.about-me {
+  .container {
+    .details {
+      @apply flex-full max-w-full pl-0;
+
+      .btn-download {
+        @apply hidden;
+      }
+    }
+
+    .image {
+      @apply hidden;
+    }
+  }
+}
+
+// Contact
+.contact {
+  .top-con {
+    @apply hidden;
+  }
+
+  .bottom-con {
+    .container {
+      > div {
+        @apply pl-0;
+      }
+    }
+
+    p {
+      @apply flex-full max-w-full pl-0;
+
+      .print {
+        @apply text-gray-light text-11 ml-5;
+      }
+    }
+  }
+}
+
+// Education
+.education {
+  .education-details {
+    @apply flex-row-reverse pb-16;
+
+    &:last-of-type {
+      @apply pb-0;
+    }
+
+    .left-area {
+      @apply flex-30 max-w-p-30 pr-0;
+
+      .start,
+      .end {
+        @apply text-16 block text-center;
+      }
+    }
+
+    .right-area {
+      @apply flex-70 max-w-p-70 pl-0;
+
+      .arrowpart {
+        @apply hidden;
+      }
+    }
+  }
+}
+
+// Experience
+.experience {
+  .work-details {
+    @apply flex-row-reverse pb-16;
+
+    &:last-of-type {
+      @apply pb-0;
+    }
+
+    .left-area {
+      @apply flex-30 max-w-p-30 pr-0;
+
+      .start,
+      .end {
+        @apply text-16 block text-center;
+      }
+    }
+
+    .right-area {
+      @apply flex-70 max-w-p-70 pl-0;
+
+      .arrowpart {
+        @apply hidden;
+      }
+    }
+  }
+}
+
+// Skills
+.technical {
+  .skill {
+    @apply text-16 inline-block pb-11 pr-11;
+  }
+}
+
+// Footer
+.footer {
+  @apply hidden;
+}
+
+// Schema
+.schema {
+  @apply hidden;
+}

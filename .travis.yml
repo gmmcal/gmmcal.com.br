@@ -35,7 +35,7 @@ common: &common
 
   install:
     - bundle install
-    - nvm install 11.11.0
+    - nvm install 12.0.0
     - npm i -g yarn
     - yarn install
 
@@ -73,11 +73,8 @@ jobs:
       <<: *common
 
       script:
-        - bin/webpack
         - bundle exec rails db:seed
-        - bundle exec rails server -p 3000 &
-        - yarn cypress:ci $CYPRESS_FLAGS
-        - kill $(jobs -p) || true
+        - yarn cypress:ci
 
     - stage: deploy
       script: skip

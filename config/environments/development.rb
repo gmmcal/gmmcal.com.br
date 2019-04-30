@@ -72,5 +72,9 @@ Rails.application.configure do
   config.action_view.raise_on_missing_translations = true
 
   # Disable request forgery protection during end-to-end tests.
-  config.action_controller.allow_forgery_protection = false if ENV['END2END']
+  config.action_controller.allow_forgery_protection = false
+
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
 end

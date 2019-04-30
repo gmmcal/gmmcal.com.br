@@ -27,5 +27,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/menu-container";
+@import "stylesheets/components/menu-container";
 </style>
