@@ -82,5 +82,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/contact";
+@import "stylesheets/components/contact";
 </style>

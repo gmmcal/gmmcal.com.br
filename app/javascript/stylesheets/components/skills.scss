@@ -1,0 +1,21 @@
+@media screen {
+  .technical {
+    @apply bg-white text-blue-very-dark-grayish;
+
+    .container {
+      @apply pb-69 pt-85;
+    }
+
+    p {
+      @apply text-blue-very-dark-grayish pb-41;
+    }
+
+    h2 {
+      @apply text-red-light;
+    }
+
+    .row {
+      @apply block text-center;
+    }
+  }
+}

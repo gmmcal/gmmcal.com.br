@@ -1,0 +1,14 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'grid';
+
+@media screen {
+  @import 'navbar';
+  @import 'setup';
+  @import 'images';
+}
+
+@media print {
+  @import 'print';
+}

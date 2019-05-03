@@ -1,0 +1,38 @@
+@media screen {
+  .navbar-nav {
+    @apply bg-blue-menu mt-0 mb-0 ml-auto mr-auto text-center;
+
+    > li {
+      a {
+        @apply text-blue-grayish leading-18 pt-22 pb-22 pl-25 pr-25 text-center;
+
+        &:hover {
+          @apply text-white no-underline;
+        }
+      }
+
+      @media screen and (max-width: 810px) {
+        @apply w-full;
+      }
+
+      &.active > a,
+      &.active > a:focus {
+        @apply bg-black-blue text-blue-grayish;
+      }
+
+      &.active > a:hover {
+        @apply bg-black-blue text-white;
+      }
+    }
+  }
+
+  .i18n {
+    @apply h-32 fixed w-32;
+    right: 10px;
+    top: 15px;
+
+    li {
+      @apply float-right list-none;
+    }
+  }
+}

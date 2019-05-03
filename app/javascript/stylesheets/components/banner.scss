@@ -1,0 +1,42 @@
+@media screen {
+  .banner {
+    @apply bg-black-blue h-screen relative w-screen;
+
+    .banner-img {
+      @apply flex flex-row h-full w-full;
+
+      &::after {
+        @apply bg-top-center bg-no-repeat bg-cover bottom-0 left-0 opacity-20 absolute right-0 top-0;
+        content: '';
+      }
+
+      .banner-text {
+        @apply self-center text-center;
+
+        h1 {
+          @apply text-42 font-hairline tracking-16 leading-40 uppercase;
+
+          @media screen and (min-width: 650px) {
+            @apply text-56 leading-60;
+          }
+
+          @media screen and (min-width: 991px) {
+            @apply text-65 leading-90;
+          }
+        }
+
+        h2 {
+          @apply text-15 tracking-8 leading-24 pt-10 uppercase;
+
+          @media screen and (min-width: 650px) {
+            @apply text-17 leading-34;
+          }
+
+          @media screen and (min-width: 991px) {
+            @apply text-28 leading-45;
+          }
+        }
+      }
+    }
+  }
+}

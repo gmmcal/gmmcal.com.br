@@ -1,0 +1,67 @@
+@media screen {
+  .education-details {
+    .left-area {
+      .year {
+        @apply bg-red-light rounded-half text-white text-17 h-120 pt-40 pb-40 pr-0 pl-0 text-center w-120;
+
+        .start,
+        .end {
+          @apply block;
+        }
+
+        @media screen and (min-width: 1200px) {
+          @apply h-140 pt-58 w-140;
+        }
+
+        @media screen and (max-width: 767px) {
+          @apply mt-0 mb-0 ml-auto mr-auto;
+        }
+      }
+    }
+
+    .right-area {
+      @apply pb-47 border-solid border-red-light-grayish border-l-1;
+
+      @media screen and (max-width: 767px) {
+        @apply border-l-0;
+      }
+
+      .arrowpart {
+        @apply float-left h-50 w-15;
+
+        @media screen and (max-width: 767px) {
+          @apply float-none h-40 w-full;
+        }
+      }
+
+      .ex-con {
+        @apply bg-white-gray ml-15 pt-22 pb-6 pr-47 pl-47 text-left w-auto;
+        border-bottom: solid 4px #e8e7e7;
+
+        .description {
+          @apply pb-22;
+        }
+
+        /deep/ p {
+          @apply text-blue-dark-grayish-2 leading-21 pb-5;
+        }
+
+        h4 {
+          @apply text-blue-very-dark-grayish pb-3;
+        }
+
+        h5 {
+          @apply text-blue-very-dark-grayish;
+        }
+
+        @media screen and (max-width: 767px) {
+          @apply ml-0;
+        }
+      }
+    }
+
+    &:last-child .right-area {
+      @apply pb-0;
+    }
+  }
+}

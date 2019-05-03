@@ -15,6 +15,8 @@ import Body from './components/body.vue'
 import Footer from './components/footer.vue'
 import I18n from './i18n'
 
+import 'stylesheets/application'
+
 Vue.use(TurbolinksAdapter)
 
 Turbolinks.start()

@@ -1,16 +1,12 @@
 @media screen {
   $max_font_size: 7;
-  $unit: 'em';
+  $unit: 'rem';
 
   .skill {
-    align-self: center;
-    display: block;
-    line-height: 30px;
-    margin: 10px;
-    padding: 0;
+    @apply self-center block leading-30 mt-10 m-10 p-0;
 
     @media screen and (min-width: 420px) {
-      display: inline-block;
+      @apply inline-block;
     }
 
     @for $value from 0 through 100 {

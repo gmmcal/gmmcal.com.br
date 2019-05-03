@@ -1,9 +1,7 @@
-require:
-  - rubocop-performance
-  - rubocop-rspec
+require: rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.5
   DisplayCopNames: true
   Exclude:
     - 'bin/**/*'
@@ -57,3 +55,6 @@ Style/MixinUsage:
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
     - 'config/**/*'
+
+FactoryBot/StaticAttributeDefinedDynamically:
+  Enabled: false

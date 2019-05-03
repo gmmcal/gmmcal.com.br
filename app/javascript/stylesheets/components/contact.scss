@@ -1,0 +1,51 @@
+@media screen {
+  .contact {
+    @apply bg-white;
+
+    .top-con {
+      .container {
+        @apply pb-0 pt-85;
+      }
+
+      h2 {
+        @apply text-red-light;
+      }
+
+      p {
+        @apply text-blue-dark-grayish-2 leading-18;
+      }
+
+      .heading p {
+        @apply pb-41;
+      }
+    }
+
+    .bottom-con {
+      @apply bg-blue-very-dark-grayish;
+
+      .container {
+        @apply pb-90 pt-85;
+      }
+
+      h4 {
+        @apply font-semibold pb-15 uppercase;
+      }
+
+      p {
+        @apply text-blue-dark-grayish text-13 leading-19 pb-14;
+
+        a {
+          @apply text-blue-dark-grayish;
+
+          &:hover {
+            @apply text-blue-dark-grayish:hover no-underline;
+          }
+        }
+      }
+
+      svg {
+        @apply mr-15;
+      }
+    }
+  }
+}

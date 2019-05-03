@@ -8,7 +8,7 @@ exports[`Body renders correctly 1`] = `
         <h2>About Me</h2>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-5 details">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-48 details">
           <h3>Gustavo Cunha</h3>
           <h4 class="sub-heading">Some title at some company</h4>
           <div class="description">

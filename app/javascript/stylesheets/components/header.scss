@@ -1,0 +1,9 @@
+@media screen {
+  header {
+    @apply relative;
+
+    .menu {
+      @apply bg-blue-menu min-h-63;
+    }
+  }
+}

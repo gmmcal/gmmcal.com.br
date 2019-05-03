@@ -28,5 +28,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/experiences";
+@import "stylesheets/components/experiences";
 </style>

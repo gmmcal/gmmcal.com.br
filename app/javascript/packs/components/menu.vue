@@ -62,5 +62,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/menu";
+@import "stylesheets/components/menu";
 </style>

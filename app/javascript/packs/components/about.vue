@@ -5,7 +5,7 @@
         <h2>{{ I18n.t('title', { scope: 'frontend.about' }) }}</h2>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-5 details">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pb-48 details">
           <h3>{{ I18n.t('name', { scope: 'frontend.template' }) }}</h3>
           <h4 class="sub-heading">{{ about.job_title }}</h4>
           <vue-markdown class="description">{{ about.description }}</vue-markdown>
@@ -37,5 +37,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./app/assets/stylesheets/components/about";
+@import "stylesheets/components/about";
 </style>

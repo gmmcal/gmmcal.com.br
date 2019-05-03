@@ -1,0 +1,17 @@
+@media screen {
+  .navbar {
+    @apply border-none text-blue-grayish font-sans text-14 mt-0 mb-0 mr-auto ml-auto p-0 uppercase;
+
+    @media screen and (max-width: 767px) {
+      @apply pt-16 pb-0 pl-0 pr-0;
+    }
+
+    .navbar-toggler {
+      @apply mt-0 mb-10 mr-0 ml-10;
+
+      .navbar-toggler-icon {
+        @apply h-20 w-20;
+      }
+    }
+  }
+}

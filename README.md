@@ -25,7 +25,7 @@ All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://tr
 
 ## Requirements
 
-The latest version of this app was built to be used with Ruby 2.6.3, but it should work on any Ruby >= 2.5. It also requires Postgres 11.0, Node 11.0 and Yarn 1.15.
+The latest version of this app was built to be used with Ruby 2.6.3, but it should work on any Ruby >= 2.5. It also requires Postgres 11.0, Node 12.0 and Yarn 1.15.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
@@ -66,7 +66,7 @@ This will start local `rails` and `webpack` servers. By default, `rails` will ru
 
 If everything is fine, go to your browser and load [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https://github.com/DarthSim/overmind) or any other process started that is [Procfile](Procfile) based.
+You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https://github.com/DarthSim/overmind) or any other process starter that is [Procfile](Procfile) based.
 
 ## Admin
 

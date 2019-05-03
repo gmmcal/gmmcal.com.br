@@ -7,7 +7,21 @@ You can add all changes provided by your pull request on [unreleased] section. W
 
 ## [Unreleased]
 
+## [2.9.0] - 2019-05-03
+### Added
+- TailwindCSS to build frontend CSS
+- PurgeCSS to remove unused CSS classes in production
+
+### Changed
+- Move all frontend CSS from Asset Pipeline to Webpack
+- Node bumped to `12.0.0`
+
+### Removed
+- Bootstrap on frontend
+- foreman as a dependency
+
 ## [2.8.1] - 2019-04-26
+### Changed
 - Ruby bumped to `2.6.3`
 - Rails bumped to `6.0.0.rc1`
 - Drop support for Ruby lower than `2.5.0`
@@ -506,7 +520,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.1...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.9.0...HEAD
+[2.9.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.1...v2.9.0
 [2.8.1]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.1...v2.7.2

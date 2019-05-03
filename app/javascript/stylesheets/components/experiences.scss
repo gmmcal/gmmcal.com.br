@@ -1,0 +1,17 @@
+@media screen {
+  .experience {
+    @apply bg-gray-very-light;
+
+    .container {
+      @apply pb-90 pt-85;
+    }
+
+    h2 {
+      @apply text-red-light;
+    }
+
+    .heading p {
+      @apply text-blue-dark-grayish-2 leading-18 pb-41;
+    }
+  }
+}

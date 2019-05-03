@@ -58,8 +58,6 @@ plugins:
     enabled: false
 
 exclude_patterns:
-  - "app/assets/stylesheets/application.scss"
-  - "app/assets/stylesheets/font-awesome.scss"
   - "config/"
   - "db/"
   - "**/node_modules/"
@@ -69,4 +67,5 @@ exclude_patterns:
   - "app/assets/images/"
   - ".*"
   - "app/javascript/packs/i18n/"
+  - "app/javascript/packs/tailwind.config.js"
   - "babel.config.js"
