@@ -99,3 +99,32 @@ img {
 .print {
   @apply hidden;
 }
+
+.pwa,
+.errors {
+  @apply bg-white text-black text-center;
+
+  .page {
+    @apply flex w-full h-screen;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .page-header {
+    align-self: center;
+
+    .page-header-image {
+      @apply w-112 inline;
+    }
+
+    .page-title {
+      @apply font-error text-31;
+      align-self: center;
+    }
+  }
+
+  .footer {
+    @apply bottom-0 fixed w-full;
+  }
+}

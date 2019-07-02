@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/(:locale)', to: 'home#index', as: :home, locale: /en|pt-BR/
   get 'sitemap', to: 'home#index', defaults: { format: :xml }
 
+  get 'manifest', to: 'pwa#manifest', defaults: { format: :json }
+  get 'service-worker', to: 'pwa#worker', defaults: { format: :js }
+  get 'offline', to: 'pwa#offline'
+
   devise_for :users, path: 'admin', path_names: {
     sign_in: 'login',
     sign_out: 'logout'
@@ -20,4 +24,8 @@ Rails.application.routes.draw do
     resource :user, controller: :user, only: %i[edit update]
     resource :reorder, only: :update, controller: :reorder
   end
+
+  get '404', to: 'errors#not_found'
+  get '422', to: 'errors#unacceptable'
+  get '500', to: 'errors#internal_error'
 end

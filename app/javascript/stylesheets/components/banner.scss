@@ -39,4 +39,9 @@
       }
     }
   }
+
+  .pwa .banner,
+  .errors .banner {
+    @apply hidden;
+  }
 }

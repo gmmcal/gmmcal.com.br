@@ -1,9 +1,9 @@
 import handleMenu from './menu-handle'
 
 const handleClick = event => {
-  const destination = event.target.attributes['href'].value
+  const destination = event.target.hash
 
-  if ( destination.indexOf('#') >= 0 ) {
+  if (document.location.pathname === '/' && destination.indexOf('#') >= 0 ) {
     event.preventDefault()
 
     const title = event.target.attributes['alt']

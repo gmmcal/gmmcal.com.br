@@ -16,7 +16,6 @@ gem 'rails-i18n'
 
 # Frontend gems
 gem 'gon'
-gem 'modernizr-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'uglifier'
@@ -46,10 +45,10 @@ end
 # Test suite
 group :test do
   gem 'database_cleaner'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'rubocop', '~> 0.52.1'
   gem 'rubocop-rspec'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 4.0.1', require: false
   gem 'simplecov', require: false
 end
 
