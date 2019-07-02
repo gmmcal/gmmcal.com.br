@@ -7,6 +7,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><%= t(:title, scope: %i[frontend helpers]) %></title>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
+  <%= javascript_pack_tag 'application', type: 'application/javascript', defer: true %>
   <link rel="manifest" href="manifest.json">
   <%= favicon_link_tag %>
   <%= favicon_link_tag "icons/apple-icon-57x57.png", rel: "apple-touch-icon", sizes: "57x57" %>
@@ -37,9 +39,6 @@
   <meta property="og:locale" content="<%=I18n.locale%>" />
   <!--google font style-->
   <!--font-family: 'Open Sans', sans-serif;-->
-  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
-  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': true, rel: 'stylesheet' %>
-  <%= javascript_pack_tag 'application', type: 'application/javascript', defer: true %>
   <%= csrf_meta_tags %>
 </head>
 <body id="home" class="<%= body_class %>" data-locale="<%= I18n.locale %>">
