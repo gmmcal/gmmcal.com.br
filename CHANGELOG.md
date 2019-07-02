@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 You can add all changes provided by your pull request on [unreleased] section. When release is ready, I'll move all changes to a proper tag block. Please, use the most human way of describing your changes to the codebase.
 
 ## [Unreleased]
+
+## [2.10.0] - 2019-07-02
 ### Added
 - PWA Application
 - Offline version
@@ -534,7 +536,8 @@ You can add all changes provided by your pull request on [unreleased] section. W
 - First release
 - Static website in Portuguese
 
-[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.9.0...HEAD
+[Unreleased]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.10.0...HEAD
+[2.10.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.9.0...v2.10.0
 [2.9.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.1...v2.9.0
 [2.8.1]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/gmmcal/gmmcal.com.br/compare/v2.7.2...v2.8.0
