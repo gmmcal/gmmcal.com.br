@@ -107,8 +107,8 @@ img {
   .page {
     @apply flex w-full h-screen;
     align-self: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
   }
 
   .page-header {
