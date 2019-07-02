@@ -85,6 +85,11 @@ module.exports = {
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
+      ],
+      error: [
+        '"Roboto"',
+        'Arial',
+        'sans-serif'
       ]
     },
     fontSize: {

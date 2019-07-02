@@ -8,6 +8,7 @@ capybara-*.html
 /public/uploads
 /coverage/
 /spec/tmp
+/spec/backend/examples.txt
 /spec/frontend/screenshots
 /spec/frontend/end-to-end/screenshots*
 **.orig

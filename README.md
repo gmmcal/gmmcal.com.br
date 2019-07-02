@@ -1,20 +1,28 @@
-Personal Website: [https://www.gmmcal.com.br](https://www.gmmcal.com.br)
+Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 =============
 
-[![github tag](https://img.shields.io/github/tag/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br)
+[![github tag](https://img.shields.io/github/tag/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/releases)
+![repo size](https://img.shields.io/github/repo-size/gmmcal/gmmcal.com.br.svg)
+[![license](https://img.shields.io/github/license/gmmcal/gmmcal.com.br.svg)](LICENSE)
+
 [![Build Status](https://travis-ci.com/gmmcal/gmmcal.com.br.svg?branch=master)](https://travis-ci.com/gmmcal/gmmcal.com.br)
 [![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)](https://hakiri.io/github/gmmcal/gmmcal.com.br/master)
-
-[![github issues](https://img.shields.io/github/issues/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/issues)
-[![issue count](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/issue_count.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
-[![code review](https://ebertapp.io/github/gmmcal/gmmcal.com.br.svg)](https://ebertapp.io/github/gmmcal/gmmcal.com.br)
-
-[![maintainability score](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/gpa.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
-[![test coverage](https://api.codeclimate.com/v1/badges/b5a87ae608a9e3957042/test_coverage)](https://codeclimate.com/github/gmmcal/gmmcal.com.br/test_coverage)
 
 My personal website code, playground and learning lab.
 
 # Features
+![Ruby](https://img.shields.io/badge/Ruby-v2.6.3-green.svg?logo=Ruby)
+![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
+![Postgres](https://img.shields.io/badge/Postgres-v2.6.3-green.svg?logo=Postgresql)
+
+![Rails](https://img.shields.io/badge/Rails-v6.0.0.rc1-green.svg?logo=Rails)
+![Vue](https://img.shields.io/badge/VueJS-v2.6.10-green.svg?logo=Vue.js)
+
+![Bundler](https://img.shields.io/badge/Bundler-v2.6.3-green.svg?logo=Bundler)
+![NPM](https://img.shields.io/badge/NPM-v6.9.0-green.svg?logo=NPM)
+![Yarn](https://img.shields.io/badge/Yarn-v1.16.0-green.svg?logo=Yarn)
+![Webpack](https://img.shields.io/badge/Webpack-v4.31.0-green.svg?logo=Webpack)
+
 This website is a result of years of constant learning. The template was purchased at [ThemeForest](https://themeforest.net/item/flato-responsive-resume-personal-portfolio-temp/6486867) in 2014 and customized by me, with help from [Mac Giovanni](https://github.com/maclevison) and [Carlyson Oliveira](https://github.com/carlyson).
 
 Currently, it features a full-stack custom CMS backend built on top of [Ruby on Rails](https://rubyonrails.org/) and a frontend powered by [Vue.js](https://vuejs.org/) with a print friendly feature. It is deployed on [Heroku](https://www.heroku.com/). Backend tests are written in [RSpec](http://rspec.info/), frontend tests are written in [Jest](https://jestjs.io/) and end-to-end tests are written in [Cypress](https://www.cypress.io/).
@@ -22,6 +30,9 @@ Currently, it features a full-stack custom CMS backend built on top of [Ruby on 
 All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://travis-ci.com/gmmcal/gmmcal.com.br) [script](./.travis.yml) and works automatically (pull request application deployment is managed by Heroku). Code is reviewed by [Ebert](https://ebertapp.io/github/gmmcal/gmmcal.com.br), maintainability is managed by [Code Climate](https://codeclimate.com/github/gmmcal/gmmcal.com.br) and code security is managed by [Hakiri](https://hakiri.io/github/gmmcal/gmmcal.com.br/).
 
 # Development
+[![github issues](https://img.shields.io/github/issues/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/issues)
+[![codeclimate issue count](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/issue_count.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
+[![SourceLevel](https://app.sourcelevel.io/github/gmmcal/gmmcal.com.br.svg)](https://app.sourcelevel.io/github/gmmcal/gmmcal.com.br)
 
 ## Requirements
 
@@ -73,18 +84,23 @@ You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https
 Admin page is accessible via `/admin` path. Development credentials are provided on [seed](db/seeds.rb) script.
 
 ## Tests
+[![CodeClimate Maintainability](https://api.codeclimate.com/v1/badges/b5a87ae608a9e3957042/maintainability)](https://codeclimate.com/github/gmmcal/gmmcal.com.br/maintainability)
+[![CodeClimate Test Coverage](https://api.codeclimate.com/v1/badges/b5a87ae608a9e3957042/test_coverage)](https://codeclimate.com/github/gmmcal/gmmcal.com.br/test_coverage)
 
 This application is covered by tests on backend, frontend and end-to-end (browser) tests. All tests are located in `spec` folder.
 
 ### Backend
+![Rspec](https://img.shields.io/badge/Rspec-v3.8.0-green.svg?logo=Rspec)
 
 Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on your terminal.
 
 ### Frontend
+![Jest](https://img.shields.io/badge/Jest-v24.8.0-green.svg?logo=Jest)
 
 Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
 ### End-to-end
+![Cypress](https://img.shields.io/badge/Cypress-v3.2.0-green.svg?logo=Cypress)
 
 End-to-end tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 

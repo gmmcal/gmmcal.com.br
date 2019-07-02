@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 You can add all changes provided by your pull request on [unreleased] section. When release is ready, I'll move all changes to a proper tag block. Please, use the most human way of describing your changes to the codebase.
 
 ## [Unreleased]
+### Added
+- PWA Application
+- Offline version
+- Icons and Favicon
+
+### Changed
+- Better error pages for 404/422/500 errors
+- Dependencies updated
+
+### Fixed
+- Bump `node-tar` to `2.2.2` to fix security issue ([#152](https://github.com/gmmcal/gmmcal.com.br/pull/152))
+
+### Removed
+- Modernizr gem
 
 ## [2.9.0] - 2019-05-03
 ### Added

@@ -1,0 +1,74 @@
+var CACHE_VERSION = 'v1';
+var CACHE_NAME = CACHE_VERSION + ':sw-cache-';
+
+function onInstall(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function prefill(cache) {
+      return cache.addAll([
+        '<%= asset_pack_path 'application.js' %>',
+        '<%= asset_pack_path 'application.css' %>',
+        '<%= asset_pack_path 'media/images/flags.png' %>',
+        '<%= asset_path "icons/apple-icon-57x57.png" %>',
+        '<%= asset_path "icons/apple-icon-60x60.png" %>',
+        '<%= asset_path "icons/apple-icon-72x72.png" %>',
+        '<%= asset_path "icons/apple-icon-76x76.png" %>',
+        '<%= asset_path "icons/apple-icon-114x114.png" %>',
+        '<%= asset_path "icons/apple-icon-120x120.png" %>',
+        '<%= asset_path "icons/apple-icon-144x144.png" %>',
+        '<%= asset_path "icons/apple-icon-152x152.png" %>',
+        '<%= asset_path "icons/apple-icon-180x180.png" %>',
+        '<%= asset_path "icons/android-icon-144x144.png" %>',
+        '<%= asset_path "icons/android-icon-192x192.png" %>',
+        '<%= asset_path "icons/favicon-32x32.png" %>',
+        '<%= asset_path "icons/favicon-96x96.png" %>',
+        '<%= asset_path "icons/favicon-16x16.png" %>',
+        '<%= asset_path "icons/ms-icon-144x144.png" %>',
+        '<%= asset_path "favicon.ico" %>',
+        'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300',
+        '/manifest.json',
+        '/offline'
+      ]);
+    })
+  );
+}
+
+function onActivate(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          // Return true if you want to remove this cache,
+          // but remember that caches are shared across
+          // the whole origin
+          return cacheName.indexOf(CACHE_VERSION) !== 0;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+}
+
+// Borrowed from https://github.com/TalAter/UpUp
+function onFetch(event) {
+  event.respondWith(
+    // try to return untouched request from network first
+    fetch(event.request).catch(function() {
+      // if it fails, try to return request from the cache
+      return caches.match(event.request).then(function(response) {
+        if (response) {
+          return response;
+        }
+        // if not found in cache, return default offline content for navigate requests
+        if (event.request.mode === 'navigate' ||
+          (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+          return caches.match('/offline');
+        }
+      })
+    })
+  );
+}
+
+self.addEventListener('install', onInstall);
+self.addEventListener('activate', onActivate);
+self.addEventListener('fetch', onFetch);
