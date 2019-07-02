@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   def set_menu_links
     links = menus.map do |page|
       {
-        link: "/##{page}",
+        link: root_path(anchor: page),
         label: page.to_s
       }
     end

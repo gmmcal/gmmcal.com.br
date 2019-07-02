@@ -1,7 +1,7 @@
 import handleMenu from './menu-handle'
 
 const handleClick = event => {
-  const destination = event.target.attributes['href'].value
+  const destination = event.target.hash
 
   if (document.location.pathname === '/' && destination.indexOf('#') >= 0 ) {
     event.preventDefault()
