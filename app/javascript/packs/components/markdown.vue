@@ -4,6 +4,7 @@
 
 <script>
 import marked from 'marked'
+import DOMPurify from 'dompurify'
 
 export default {
   computed: {
@@ -18,7 +19,8 @@ export default {
   },
   methods: {
     convert(slot) {
-      return marked(slot.text, { sanitize: true })
+      const text = DOMPurify.sanitize(slot.text);
+      return marked(text)
     },
     transform(slots) {
       return slots.map(slot => {
