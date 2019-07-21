@@ -121,6 +121,10 @@ This website should run in all major browsers in both mobile and desktop version
 * iOS - Should work on iOS >= 9, but it is fully supported on latest release.
 * Windows Phone - Wasn't tested.
 
+# Changelog
+
+The CHANGELOG is maintained on [Github releases page](https://github.com/gmmcal/gmmcal.com.br/releases).
+
 # Code of Conduct
 
 This repository has a [Code of Conduct](CODE_OF_CONDUCT.md) and all contributors are required to follow it.

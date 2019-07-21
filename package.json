@@ -59,6 +59,7 @@
     "@rails/webpacker": "*",
     "bootstrap": "*",
     "core-js": "3",
+    "dompurify": "*",
     "i18n-js": "*",
     "marked": "*",
     "rails-ujs": "*",
