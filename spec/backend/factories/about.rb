@@ -10,11 +10,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     locale { :en }
 
-    cv do
-      path = Rails.root.join('spec', 'assets', 'cv-en.pdf')
-      Rack::Test::UploadedFile.new(path, 'application/pdf')
-    end
-
     trait :invalid do
       job_title { nil }
     end

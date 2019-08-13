@@ -9,7 +9,6 @@ class AboutPolicy < ApplicationPolicy
     %i[
       job_title
       description
-      cv
       city
       country
       phone_number

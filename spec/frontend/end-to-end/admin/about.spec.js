@@ -59,10 +59,6 @@ describe('About', () => {
           cy.get('div.about_description .invalid-feedback').should('be.visible')
         })
 
-        it('shows failure message for CV', () => {
-          cy.get('div.about_cv .invalid-feedback').should('be.visible')
-        })
-
         it('do not show failure message for country', () => {
           cy.get('div.about_country .invalid-feedback').should('not.exist')
         })
@@ -107,10 +103,6 @@ describe('About', () => {
           cy.get('div.about_description .invalid-feedback').should('be.visible')
         })
 
-        it('shows failure message for CV', () => {
-          cy.get('div.about_cv .invalid-feedback').should('be.visible')
-        })
-
         it('do not show failure message for country', () => {
           cy.get('div.about_country .invalid-feedback').should('not.exist')
         })
@@ -138,7 +130,6 @@ describe('About', () => {
         cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
         cy.get('textarea[name="about[description]"]').clear().type('Lorem ipsum nulus dolor.')
         cy.get('select[name="about[locale]"]').select('en')
-        cy.fileUpload('cv-en.pdf', 'application/pdf', 'input[name="about[cv]"]')
         cy.get('input[value="Save"]').click({ force: true })
       })
 
@@ -193,10 +184,6 @@ describe('About', () => {
           cy.get('div.about_description .invalid-feedback').should('be.visible')
         })
 
-        it('do not show failure message for CV', () => {
-          cy.get('div.about_cv .invalid-feedback').should('not.exist')
-        })
-
         it('do not show failure message for country', () => {
           cy.get('div.about_country .invalid-feedback').should('not.exist')
         })
@@ -239,10 +226,6 @@ describe('About', () => {
 
         it('shows failure message for description', () => {
           cy.get('div.about_description .invalid-feedback').should('be.visible')
-        })
-
-        it('do not show failure message for CV', () => {
-          cy.get('div.about_cv .invalid-feedback').should('not.exist')
         })
 
         it('do not show failure message for country', () => {
