@@ -50,7 +50,7 @@ RSpec.describe HomeController, type: :request do
     end
 
     it 'renders template in xml' do
-      expect(response.content_type).to eq 'application/xml'
+      expect(response.content_type).to eq 'application/xml; charset=utf-8'
     end
   end
 end
