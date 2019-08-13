@@ -17,12 +17,6 @@ RSpec.describe WorkExperience, type: :model do
     expect(build(:work_experience)).to be_valid
   end
 
-  it 'responds with a json' do
-    work_experience = create(:work_experience)
-    keys = work_experience.as_json.keys
-    expect(keys).to eq(%i[company_name position city description start_date end_date country])
-  end
-
   describe '.country_name' do
     it 'country name if english name is provided' do
       about = create(:about, country: 'Netherlands')

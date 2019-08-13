@@ -13,12 +13,6 @@ RSpec.describe About, type: :model do
     expect(build(:about)).to be_valid
   end
 
-  it 'responds with a json' do
-    about = create(:about)
-    keys = about.as_json.keys
-    expect(keys).to eq(%i[job_title description city phone_number email cv country])
-  end
-
   describe '.country_name' do
     it 'country name if english name is provided' do
       about = create(:about, country: 'Netherlands')

@@ -7,16 +7,4 @@ class About < Locatable
   def self.find_for_locale(locale)
     with_locale(locale).includes(:cv_blob).first_or_initialize
   end
-
-  def as_json(_options = {})
-    {
-      job_title: job_title,
-      description: description,
-      city: city,
-      phone_number: phone_number,
-      email: email,
-      cv: cv_path,
-      country: country_name
-    }
-  end
 end
