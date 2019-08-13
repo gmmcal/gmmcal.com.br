@@ -148,7 +148,7 @@ describe('Education', () => {
       cy.exec('rake db:seed:test[education,1]')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Educations').click({force: true})
-      cy.contains('.btn-primary', 'Edit').click({force: true})
+      cy.contains('.btn-outline-primary', 'Edit').click({force: true})
     })
 
     context('With invalid data', () => {

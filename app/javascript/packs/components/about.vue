@@ -9,7 +9,7 @@
           <h3>{{ I18n.t('name', { scope: 'frontend.template' }) }}</h3>
           <h4 class="sub-heading">{{ about.job_title }}</h4>
           <vue-markdown class="description">{{ about.description }}</vue-markdown>
-          <a :href="about.cv" class="btn-download" target="_blank" rel="noopener">{{ I18n.t('file_title', { scope: 'frontend.about'}) }}</a>
+          <a :href="about.cv" class="btn-download" data-turbolinks="false" rel="noopener">{{ I18n.t('file_title', { scope: 'frontend.about'}) }}</a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 offset-lg-1 image">
           <div class="lazy topmar"></div>
