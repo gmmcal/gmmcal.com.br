@@ -2,7 +2,12 @@
 
 Rails.application.routes.draw do
   root 'home#index'
-  get '/(:locale)', to: 'home#index', as: :home, locale: /en|pt-BR/
+
+  scope '(:locale)' do
+    get '/', to: 'home#index', as: :home, locale: /en|pt-BR/
+    get '/cv(/:disposition)', to: 'download#cv', as: :cv, disposition: /attachment|inline/, defaults: { disposition: :attachment }
+  end
+
   get 'sitemap', to: 'home#index', defaults: { format: :xml }
 
   get 'manifest', to: 'pwa#manifest', defaults: { format: :json }
