@@ -11,15 +11,19 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0.rc1'
+gem 'rails', '~> 6.0.0.rc2'
 gem 'rails-i18n'
 
 # Frontend gems
+gem 'blueprinter'
+gem 'draper'
 gem 'gon'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Admin gems
 gem 'country_select'
@@ -53,7 +57,6 @@ group :test do
 end
 
 group :production do
-  gem 'aws-sdk-s3', require: false
   # Use puma as the app server
   gem 'puma'
   gem 'redis'
