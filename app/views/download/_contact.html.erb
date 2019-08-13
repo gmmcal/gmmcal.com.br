@@ -1,0 +1,13 @@
+<div class="page contacts">
+  <div class="col">
+    <h1><%= t(:contact, scope: %i[cv]) %></h1>
+    <ul class="circle">
+      <li><%= link_to request.host, root_url %></li>
+      <li><%= link_to @about.email, "mailto:#{@about.email}" %></li>
+      <li><%= link_to 'github.com/gmmcal', 'https://github.com/gmmcal' %></li>
+      <li><%= link_to 'linkedin.com/in/gmmcal', 'https://linkedin.com/in/gmmcal' %></li>
+      <li><%= link_to 'twitter.com/gmmcal', 'https://twitter.com/gmmcal' %></li>
+      <li><%= link_to @about.phone_number, "tel:#{@about.phone_number}" %></li>
+    </ul>
+  </div>
+</div>

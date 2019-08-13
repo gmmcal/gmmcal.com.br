@@ -1,0 +1,13 @@
+$body-size: 16;
+$max_font_size: 60;
+
+$sizes: (
+  'h1': $body-size * 6,
+  'h2': $body-size * 5,
+  'h3': $body-size * 3.5,
+  'h4': $body-size * 3,
+  'h5': $body-size * 2.5,
+  'h6': $body-size * 2,
+  'p': $body-size * 1.5,
+  'lead': $body-size * 2,
+);

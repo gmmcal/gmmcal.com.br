@@ -1,0 +1,164 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+body {
+  @include no-spacing;
+  background-color: #FFF;
+  font-size: 62.5%;
+  height: 100%;
+  position: relative;
+  width: 100vw;
+}
+
+.page {
+  @include clear;
+  height: 100vh;
+  page-break-before: always;
+  position: relative;
+  width: 100vw;
+
+  .col {
+    float: left;
+    width: 100%;
+  }
+
+  .left {
+    width: 65%;
+  }
+
+  .right {
+    width: 35%;
+  }
+
+  h1 {
+    background-color: #FFF;
+    box-shadow: 0 size_with_unit(1) 0 0 #88A1C0,
+                0 size_with_unit(5) 0 0 #FFF,
+                0 size_with_unit(6) 0 0 #88A1C0;
+    color: #314864;
+    font-size: size_with_unit(map-get($sizes, 'h1'));
+    margin: 0;
+  }
+
+  h3 {
+    font-size: size_with_unit(map-get($sizes, 'h3'));
+    margin: 0;
+
+    span {
+      font-size: size_with_unit(20);
+      display: block;
+    }
+  }
+
+  h5 {
+    font-size: size_with_unit(map-get($sizes, 'h5'));
+    margin: 0;
+  }
+
+  p {
+    color: #000;
+    font-size: size_with_unit(map-get($sizes, 'p'));
+    margin: 0;
+
+    &:first-of-type {
+      margin-top: size_with_unit(32);
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .note {
+    font-size: size_with_unit(20);
+  }
+
+  .footnote {
+    font-size: size_with_unit(14);
+    font-style: italic;
+  }
+}
+
+.cover {
+  .left {
+    margin-top: size_with_unit(250);
+
+    h1 {
+      margin-right: size_with_unit(30);
+    }
+
+    p {
+      color: #7E86B9;
+      font-size: size_with_unit(map-get($sizes, 'lead'));
+      margin-right: size_with_unit(30);
+    }
+  }
+
+  .right {
+    margin-top: size_with_unit(250);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.experiences {
+  @include arrow;
+
+  .skills {
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      margin: size_with_unit(10);
+
+      @for $value from 0 through 100 {
+        .s-#{$value} {
+          font-size: size_with_unit((($max_font_size * $value) / 100));
+        }
+      }
+    }
+  }
+}
+
+.educations {
+  @include arrow;
+}
+
+.contacts {
+  @include circle;
+
+  li {
+    font-size: size_with_unit(52);
+    line-height: size_with_unit(70);
+    margin-bottom: size_with_unit(30);
+  }
+}
+
+.footer {
+  @include no-spacing;
+
+  span {
+    color: #7E86B9;
+    display: inline-block;
+    font-size: size_with_unit(16);
+    font-style: italic;
+    text-align: center;
+    width: 33%;
+
+    &:first-of-type {
+      text-align: left;
+    }
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+}

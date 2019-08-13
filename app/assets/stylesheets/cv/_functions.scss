@@ -1,0 +1,5 @@
+@function size_with_unit($size) {
+  $base: 16;
+  $unit: 'rem';
+  @return ($size / $base)#{$unit};
+};

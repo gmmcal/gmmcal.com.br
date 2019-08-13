@@ -1,0 +1,49 @@
+@mixin list {
+  padding-left: size_with_unit(60);
+
+  li::before {
+    color: #5C86B9;
+    font-size: size_with_unit(36);
+    font-weight: bold;
+    position: absolute;
+    margin-left: size_with_unit(-60);
+    margin-top: size_with_unit(10);
+  }
+}
+
+@mixin arrow {
+  .arrow {
+    @include list;
+
+    li {
+      margin-bottom: size_with_unit(16);
+
+      &::before {
+        content: "\27A1";
+      }
+    }
+  }
+}
+
+@mixin circle {
+  .circle {
+    @include list;
+
+    li::before {
+      content: "\25C9";
+    }
+  }
+}
+
+@mixin clear {
+  clear: both;
+
+  &::before {
+    clear: both;
+  }
+}
+
+@mixin no-spacing {
+  margin: 0;
+  padding: 0;
+}

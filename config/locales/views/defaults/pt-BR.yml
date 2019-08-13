@@ -23,3 +23,10 @@ pt-BR:
         github: gmmcal
         linkedin: Gustavo Cunha
         twitter: '@gmmcal'
+  cv:
+    experience: 'Experiências'
+    skill: 'Skills'
+    education: 'Educação'
+    contact: 'Contato'
+    spoken_languages: 'Fluente em: %{languages}'
+    previous_experiences_html: 'Para outras experiências profissionais, visite meu site website em %{link}'
