@@ -21,7 +21,7 @@ describe('Experience', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['I18n']
+    const expected = []
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
@@ -67,7 +67,7 @@ describe('Experience', () => {
       beforeEach(() => {
         props = {
           propsData: {
-            experience: create('experience', { end_date: null })
+            experience: create('experience', { end_date: 'Currently' })
           }
         }
 

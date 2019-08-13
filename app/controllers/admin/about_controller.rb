@@ -4,7 +4,7 @@ module Admin
   class AboutController < CrudController
     # GET /admin/about
     def index
-      @about = model.find_for_locale(locale)
+      @about = model.find_for_locale(locale).decorate
       authorize @about
     end
 

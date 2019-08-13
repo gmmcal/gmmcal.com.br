@@ -2,7 +2,7 @@
   <div class="row education-details">
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 left-area">
       <div class="year">
-        <span class="end">{{ end_date }}</span>
+        <span class="end">{{ education.end_date }}</span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10 right-area">
@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import I18n from '../i18n'
 import VueMarkdown from './markdown'
 
 export default {
@@ -25,19 +24,6 @@ export default {
     education: {
       type: Object,
       required: true
-    }
-  },
-  data() {
-    return {
-      I18n: I18n,
-    }
-  },
-  computed: {
-    end_date() {
-      if (this.education.end_date === null) {
-        return I18n.t('current', { scope: 'frontend.template' })
-      }
-      return I18n.l('date.formats.default', this.education.end_date)
     }
   },
   components: {

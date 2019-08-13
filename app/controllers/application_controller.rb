@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def retrieve_data(model)
-    data = model.classify.constantize.find_for_locale(I18n.locale)
+    data = model.classify.constantize.find_for_locale(I18n.locale).decorate
     return data.to_a if data.is_a?(ActiveRecord::Relation)
 
     data

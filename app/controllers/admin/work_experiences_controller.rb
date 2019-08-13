@@ -6,6 +6,7 @@ module Admin
     def index
       @work_experiences = model.with_locale(locale).ordered
       authorize @work_experiences
+      @work_experiences = @work_experiences.decorate
     end
 
     # GET /admin/work_experiences/new
