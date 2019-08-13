@@ -298,6 +298,7 @@ GEM
     wicked_pdf (1.4.0)
       activesupport
     wkhtmltopdf-binary (0.12.4)
+    wkhtmltopdf-heroku (2.12.5.0)
     zeitwerk (2.1.9)
 
 PLATFORMS
@@ -337,6 +338,7 @@ DEPENDENCIES
   webpacker
   wicked_pdf
   wkhtmltopdf-binary
+  wkhtmltopdf-heroku (= 2.12.5.0)
 
 BUNDLED WITH
    1.17.2
