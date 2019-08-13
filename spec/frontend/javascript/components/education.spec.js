@@ -26,10 +26,6 @@ describe('Education', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Content', () => {
     it('has an end date', () => {
       const el = wrapper.find('.year')

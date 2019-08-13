@@ -26,10 +26,6 @@ describe('Experience', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Content', () => {
     it('has dates', () => {
       const el = wrapper.find('.year')

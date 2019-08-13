@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Markdown with children renders correctly 1`] = `
-<div>
-  <p>Some text</p>
-</div>
-`;
-
-exports[`Markdown with text renders correctly 1`] = `<div></div>`;

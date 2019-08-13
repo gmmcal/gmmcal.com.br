@@ -24,8 +24,4 @@ describe('Skill', () => {
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
   })
-
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
 })

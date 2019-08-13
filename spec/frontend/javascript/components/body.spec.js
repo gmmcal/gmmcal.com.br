@@ -31,10 +31,6 @@ describe('Body', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Child components', () => {
     it('includes About', () => {
       const child_component = wrapper.find(About)

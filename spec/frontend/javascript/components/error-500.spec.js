@@ -12,8 +12,4 @@ describe('Error', () => {
   it('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
-
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
 })

@@ -22,10 +22,6 @@ describe('Experiences', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Child components', () => {
     it('includes Experience', () => {
       const child_component = wrapper.find(Experience)

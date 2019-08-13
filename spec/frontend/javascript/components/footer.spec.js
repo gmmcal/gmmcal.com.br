@@ -19,10 +19,6 @@ describe('Footer', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   it('has footer class', () => {
     expect(wrapper.classes()).toContain('footer')
   })

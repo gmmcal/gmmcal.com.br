@@ -24,10 +24,6 @@ describe('About', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Content', () => {
     it('has a page title', () => {
       const el = wrapper.find('h2')
