@@ -8,10 +8,7 @@ namespace :db do
   end
 
   task clean: :environment do
-    ActiveStorage::Attachment.all.each(&:purge)
     tables = %i[about
-                active_storage_blobs
-                active_storage_attachments
                 education
                 skill
                 work_experience]
