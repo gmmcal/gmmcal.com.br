@@ -2,12 +2,12 @@
   padding-left: size_with_unit(60);
 
   li::before {
-    color: #5C86B9;
+    color: #5c86b9;
     font-size: size_with_unit(36);
     font-weight: bold;
-    position: absolute;
     margin-left: size_with_unit(-60);
     margin-top: size_with_unit(10);
+    position: absolute;
   }
 }
 
@@ -19,7 +19,7 @@
       margin-bottom: size_with_unit(16);
 
       &::before {
-        content: "\27A1";
+        content: '\27A1';
       }
     }
   }
@@ -30,7 +30,7 @@
     @include list;
 
     li::before {
-      content: "\25C9";
+      content: '\25C9';
     }
   }
 }
@@ -43,7 +43,7 @@
   }
 }
 
-@mixin no-spacing {
+@mixin no_spacing {
   margin: 0;
   padding: 0;
 }

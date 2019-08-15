@@ -11,7 +11,7 @@
 # https://github.com/mileszs/wicked_pdf/blob/master/README.md
 
 WickedPdf.config ||= {}
-WickedPdf.config.merge!({
+WickedPdf.config.merge!(
   # Layout file to be used for all PDFs
   layout: 'download.html',
   orientation: 'Landscape',
@@ -40,4 +40,4 @@ WickedPdf.config.merge!({
       layout: false
     }
   }
-})
+)

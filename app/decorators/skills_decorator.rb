@@ -2,12 +2,12 @@
 
 class SkillsDecorator < Draper::CollectionDecorator
   def cv
-    top.slice(0, 10)
+    order_items.slice(0, 10)
   end
 
   private
 
-  def top
-    sort { |x, y| y.value <=> x.value }
+  def order_items
+    sort { |left, right| right.value <=> left.value }
   end
 end

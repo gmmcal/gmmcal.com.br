@@ -3,8 +3,8 @@
 @import 'mixins';
 
 body {
-  @include no-spacing;
-  background-color: #FFF;
+  @include no_spacing;
+  background-color: #fff;
   font-size: 62.5%;
   height: 100%;
   position: relative;
@@ -32,10 +32,10 @@ body {
   }
 
   h1 {
-    background-color: #FFF;
-    box-shadow: 0 size_with_unit(1) 0 0 #88A1C0,
-                0 size_with_unit(5) 0 0 #FFF,
-                0 size_with_unit(6) 0 0 #88A1C0;
+    background-color: #fff;
+    box-shadow: 0 size_with_unit(1) 0 0 #88a1c0,
+                0 size_with_unit(5) 0 0 #fff,
+                0 size_with_unit(6) 0 0 #88a1c0;
     color: #314864;
     font-size: size_with_unit(map-get($sizes, 'h1'));
     margin: 0;
@@ -46,8 +46,8 @@ body {
     margin: 0;
 
     span {
-      font-size: size_with_unit(20);
       display: block;
+      font-size: size_with_unit(20);
     }
   }
 
@@ -94,7 +94,7 @@ body {
     }
 
     p {
-      color: #7E86B9;
+      color: #7e86b9;
       font-size: size_with_unit(map-get($sizes, 'lead'));
       margin-right: size_with_unit(30);
     }
@@ -143,10 +143,10 @@ body {
 }
 
 .footer {
-  @include no-spacing;
+  @include no_spacing;
 
   span {
-    color: #7E86B9;
+    color: #7e86b9;
     display: inline-block;
     font-size: size_with_unit(16);
     font-style: italic;
