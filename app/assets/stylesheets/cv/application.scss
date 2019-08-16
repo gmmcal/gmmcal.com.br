@@ -5,7 +5,8 @@
 body {
   @include no_spacing;
   background-color: #fff;
-  font-size: 62.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: $body_size;
   height: 100%;
   position: relative;
   width: 100vw;
@@ -47,7 +48,7 @@ body {
 
     span {
       display: block;
-      font-size: size_with_unit(20);
+      font-size: size_with_unit(map-get($sizes, 'date'));
     }
   }
 
@@ -76,11 +77,11 @@ body {
   }
 
   .note {
-    font-size: size_with_unit(20);
+    font-size: size_with_unit(map-get($sizes, 'note'));
   }
 
   .footnote {
-    font-size: size_with_unit(14);
+    font-size: size_with_unit(map-get($sizes, 'footnote'));
     font-style: italic;
   }
 }
@@ -112,6 +113,10 @@ body {
 .experiences {
   @include arrow;
 
+  li::before {
+    margin-top: size_with_unit(10);
+  }
+
   .skills {
     padding-left: 0;
 
@@ -130,15 +135,23 @@ body {
 
 .educations {
   @include arrow;
+
+  li::before {
+    margin-top: size_with_unit(10);
+  }
 }
 
 .contacts {
-  @include circle;
+  @include arrow;
 
   li {
-    font-size: size_with_unit(52);
-    line-height: size_with_unit(70);
-    margin-bottom: size_with_unit(30);
+    font-size: size_with_unit(map-get($sizes, 'contact'));
+    line-height: size_with_unit(80);
+    padding-bottom: size_with_unit(30);
+
+    &::before {
+      margin-top: size_with_unit(0);
+    }
   }
 }
 
@@ -148,7 +161,7 @@ body {
   span {
     color: #7e86b9;
     display: inline-block;
-    font-size: size_with_unit(16);
+    font-size: size_with_unit(map-get($sizes, 'footer'));
     font-style: italic;
     text-align: center;
     width: 33%;

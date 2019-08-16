@@ -28,6 +28,7 @@ WickedPdf.config.merge!(
   disable_external_links: false,
   print_media_type: true,
   no_background: true,
+  zoom: 0.78125,
   margin: {
     top: 10,
     bottom: 10,

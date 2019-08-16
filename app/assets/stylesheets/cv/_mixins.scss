@@ -3,10 +3,9 @@
 
   li::before {
     color: #5c86b9;
-    font-size: size_with_unit(36);
+    font-size: size_with_unit(map-get($sizes, 'bullet'));
     font-weight: bold;
     margin-left: size_with_unit(-60);
-    margin-top: size_with_unit(10);
     position: absolute;
   }
 }
@@ -16,21 +15,11 @@
     @include list;
 
     li {
-      margin-bottom: size_with_unit(16);
+      padding-bottom: size_with_unit(16);
 
       &::before {
         content: '\27A1';
       }
-    }
-  }
-}
-
-@mixin circle {
-  .circle {
-    @include list;
-
-    li::before {
-      content: '\25C9';
     }
   }
 }
