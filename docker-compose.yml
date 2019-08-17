@@ -1,0 +1,61 @@
+version: '3.7'
+
+x-base: &base
+  build:
+    context: .
+    dockerfile: docker/Dockerfile
+  image: gmmcal:latest
+  depends_on:
+    - db
+  networks:
+    - db
+  volumes:
+    # folders
+    - ./app:/gustavocunha.dev/app/
+    - ./bin:/gustavocunha.dev/bin/
+    - ./config:/gustavocunha.dev/config
+    - ./db:/gustavocunha.dev/db
+    - ./lib:/gustavocunha.dev/lib
+    - ./spec:/gustavocunha.dev/spec
+    - ./vendor:/gustavocunha.dev/vendor
+    # files
+    - ./public/favicon.ico:/gustavocunha.dev/public/favicon.ico
+    - ./Procfile:/gustavocunha.dev/Procfile
+    - ./Rakefile:/gustavocunha.dev/Rakefile
+    - ./config.ru:/gustavocunha.dev/config.ru
+    - ./babel.config.js:/gustavocunha.dev/babel.config.js
+    - ./jest.config.js:/gustavocunha.dev/jest.config.js
+    - ./postcss.config.js:/gustavocunha.dev/postcss.config.js
+    - ./cypress.json:/gustavocunha.dev/cypress.json
+    # dotfiles
+    - ./.browserslistrc:/gustavocunha.dev/.browserslistrc
+    - ./.rspec:/gustavocunha.dev/.rspec
+    - ./.reek:/gustavocunha.dev/.reek
+    - ./.eslintrc.js:/gustavocunha.dev/.eslintrc.js
+    - ./.reek.yml:/gustavocunha.dev/.reek.yml
+    - ./.rubocop.yml:/gustavocunha.dev/.rubocop.yml
+    - ./.scss-lint.yml:/gustavocunha.dev/.scss-lint.yml
+
+services:
+  db:
+    image: postgres:11.4
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+
+  web:
+    <<: *base
+    command: foreman start
+    environment:
+      RAILS_ENV: development
+    ports:
+      - "3001:3001"
+
+  test:
+    <<: *base
+    environment:
+      RAILS_ENV: test
+
+networks:
+  db:
