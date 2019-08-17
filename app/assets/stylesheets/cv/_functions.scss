@@ -2,5 +2,5 @@
   $base: 16;
   $unit: "rem";
 
-  @return unquote("#{$size / $base}#{$unit}");
+  @return #{$size / $base}#{$unit};
 }
