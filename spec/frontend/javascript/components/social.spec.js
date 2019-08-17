@@ -19,10 +19,6 @@ describe('Social', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Child components', () => {
     it('renders 5 FontAwesomeIcon objects', () => {
       wrapper = mount(Social)

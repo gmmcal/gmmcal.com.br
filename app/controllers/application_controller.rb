@@ -3,10 +3,11 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception, except: :worker
+  protect_from_forgery with: :exception, except: %i[worker cv]
+  before_action :set_locale
   before_action :set_data, except: :worker
-  before_action :set_flag_links, except: :worker
-  before_action :set_menu_links, except: :worker
+  before_action :set_flag_links, except: %i[worker cv]
+  before_action :set_menu_links, except: %i[worker cv]
 
   private
 
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def retrieve_data(model)
-    data = model.classify.constantize.find_for_locale(I18n.locale)
+    data = model.classify.constantize.find_for_locale(I18n.locale).decorate
     return data.to_a if data.is_a?(ActiveRecord::Relation)
 
     data
@@ -55,5 +56,9 @@ class ApplicationController < ActionController::Base
 
   def menus
     %i[home about experience skills education contact]
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end

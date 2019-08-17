@@ -1,0 +1,14 @@
+<div class="page educations">
+  <div class="col">
+    <h1><%= t(:education, scope: %i[cv]) %></h1>
+    <ul class="arrow">
+      <% @educations.cv.each do |education| %>
+        <li>
+          <h3><%= education.course %></h3>
+          <h5><%= education.institution %> - <%= education.end_date %></h5>
+          <%= markdown education.description %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

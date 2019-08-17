@@ -1,0 +1,10 @@
+<div class="page cover">
+  <div class="col left">
+    <h1><%= t(:name, scope: %i[frontend template]) %></h1>
+    <div class="description"><%= markdown @about.description %></div>
+    <p class="note"><%= t(:spoken_languages, scope: %i[cv], languages: spoken_languages) %></p>
+  </div>
+  <div class="col right">
+    <%= image_tag webpacker_source_url('media/images/gmmcal.png'), alt: t(:name, scope: %i[frontend template]), itemprop: "image" %>
+  </div>
+</div>

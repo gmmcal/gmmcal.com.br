@@ -161,7 +161,7 @@ describe('Work Experience', () => {
       cy.exec('rake db:seed:test[work_experience,1]')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
-      cy.contains('.btn-primary', 'Edit').click({force: true})
+      cy.contains('.btn-outline-primary', 'Edit').click({force: true})
     })
 
     context('With invalid data', () => {

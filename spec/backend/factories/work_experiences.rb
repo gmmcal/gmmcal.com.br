@@ -6,8 +6,8 @@ FactoryBot.define do
     position { Faker::Job.title }
     city { Faker::Address.city }
     country { Faker::Address.country_code }
-    start_date { Faker::Date.between(5.years.ago, 2.years.ago) }
-    description { Faker::Lorem.paragraphs(5).join("\n\n") }
+    start_date { Faker::Date.between(from: 5.years.ago, to: 2.years.ago) }
+    description { Faker::Lorem.paragraphs(number: 3).join("\n\n") }
     locale { :en }
 
     trait :invalid do

@@ -1,0 +1,177 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+body {
+  @include no_spacing;
+  background-color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: $body_size;
+  height: 100%;
+  position: relative;
+  width: 100vw;
+}
+
+.page {
+  @include clear;
+  height: 100vh;
+  page-break-before: always;
+  position: relative;
+  width: 100vw;
+
+  .col {
+    float: left;
+    width: 100%;
+  }
+
+  .left {
+    width: 65%;
+  }
+
+  .right {
+    width: 35%;
+  }
+
+  h1 {
+    background-color: #fff;
+    box-shadow: 0 size_with_unit(1) 0 0 #88a1c0,
+                0 size_with_unit(5) 0 0 #fff,
+                0 size_with_unit(6) 0 0 #88a1c0;
+    color: #314864;
+    font-size: size_with_unit(map-get($sizes, 'h1'));
+    margin: 0;
+  }
+
+  h3 {
+    font-size: size_with_unit(map-get($sizes, 'h3'));
+    margin: 0;
+
+    span {
+      display: block;
+      font-size: size_with_unit(map-get($sizes, 'date'));
+    }
+  }
+
+  h5 {
+    font-size: size_with_unit(map-get($sizes, 'h5'));
+    margin: 0;
+  }
+
+  p {
+    color: #000;
+    font-size: size_with_unit(map-get($sizes, 'p'));
+    margin: 0;
+
+    &:first-of-type {
+      margin-top: size_with_unit(32);
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .note {
+    font-size: size_with_unit(map-get($sizes, 'note'));
+  }
+
+  .footnote {
+    font-size: size_with_unit(map-get($sizes, 'footnote'));
+    font-style: italic;
+  }
+}
+
+.cover {
+  .left {
+    margin-top: size_with_unit(250);
+
+    h1 {
+      margin-right: size_with_unit(30);
+    }
+
+    p {
+      color: #7e86b9;
+      font-size: size_with_unit(map-get($sizes, 'lead'));
+      margin-right: size_with_unit(30);
+    }
+  }
+
+  .right {
+    margin-top: size_with_unit(250);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.experiences {
+  @include arrow;
+
+  li::before {
+    margin-top: size_with_unit(10);
+  }
+
+  .skills {
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      margin: size_with_unit(10);
+
+      @for $value from 0 through 100 {
+        .s-#{$value} {
+          font-size: size_with_unit((($max_font_size * $value) / 100));
+        }
+      }
+    }
+  }
+}
+
+.educations {
+  @include arrow;
+
+  li::before {
+    margin-top: size_with_unit(10);
+  }
+}
+
+.contacts {
+  @include arrow;
+
+  li {
+    font-size: size_with_unit(map-get($sizes, 'contact'));
+    line-height: size_with_unit(80);
+    padding-bottom: size_with_unit(30);
+
+    &::before {
+      margin-top: size_with_unit(0);
+    }
+  }
+}
+
+.footer {
+  @include no_spacing;
+
+  span {
+    color: #7e86b9;
+    display: inline-block;
+    font-size: size_with_unit(map-get($sizes, 'footer'));
+    font-style: italic;
+    text-align: center;
+    width: 33%;
+
+    &:first-of-type {
+      text-align: left;
+    }
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+}

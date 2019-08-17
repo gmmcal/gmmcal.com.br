@@ -21,13 +21,9 @@ describe('Education', () => {
   })
 
   it('has data properties', () => {
-    const expected = ['I18n']
+    const expected = []
     const received = Object.keys(wrapper.vm.$data)
     expect(received).toEqual(expected)
-  })
-
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
   })
 
   describe('Content', () => {
@@ -55,7 +51,7 @@ describe('Education', () => {
       beforeEach(() => {
         props = {
           propsData: {
-            education: create('education', { end_date: null })
+            education: create('education', { end_date: 'Currently' })
           }
         }
 

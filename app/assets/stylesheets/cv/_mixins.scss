@@ -1,0 +1,38 @@
+@mixin list {
+  padding-left: size_with_unit(60);
+
+  li::before {
+    color: #5c86b9;
+    font-size: size_with_unit(map-get($sizes, 'bullet'));
+    font-weight: bold;
+    margin-left: size_with_unit(-60);
+    position: absolute;
+  }
+}
+
+@mixin arrow {
+  .arrow {
+    @include list;
+
+    li {
+      padding-bottom: size_with_unit(16);
+
+      &::before {
+        content: '\27A1';
+      }
+    }
+  }
+}
+
+@mixin clear {
+  clear: both;
+
+  &::before {
+    clear: both;
+  }
+}
+
+@mixin no_spacing {
+  margin: 0;
+  padding: 0;
+}

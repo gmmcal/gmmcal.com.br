@@ -122,9 +122,6 @@ Rails.application.configure do
   # credentials (and other encrypted files).
   config.require_master_key = true
 
-  # Store uploaded files on the Amazon S3
-  config.active_storage.service = ENV['STORAGE_SERVICE'] || :local
-
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(harmony: true)
   config.assets.css_compressor = :sass

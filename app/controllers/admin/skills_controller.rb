@@ -6,6 +6,7 @@ module Admin
     def index
       @skills = model.with_locale(locale)
       authorize @skills
+      @skills = @skills.decorate
     end
 
     # GET /admin/skills/new

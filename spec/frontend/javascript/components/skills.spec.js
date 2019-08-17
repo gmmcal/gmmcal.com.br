@@ -22,10 +22,6 @@ describe('Skills', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Child components', () => {
     it('includes Skill', () => {
       const child_component = wrapper.find(Skill)

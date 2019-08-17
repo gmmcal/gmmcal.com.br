@@ -10,13 +10,13 @@ class SeedManager
   def self.all
     create(:about, 1)
     create(:work_experience, 5)
-    create(:skill, 40)
-    create(:education, 2)
+    create(:skill, 20)
+    create(:education, 2, :finished)
   end
 
-  def self.create(model, quantity)
+  def self.create(model, quantity, trait = nil)
     I18n.available_locales.each do |locale|
-      FactoryBot.create_list(model, quantity, locale: locale)
+      FactoryBot.create_list(model, quantity, trait, locale: locale)
     end
   end
 end

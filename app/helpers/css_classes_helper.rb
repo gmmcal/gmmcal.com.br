@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 module CssClassesHelper
+  def body_class
+    [controller_name, I18n.locale.downcase].join(' ')
+  end
+
   def menu_classes(menu)
     classes = %w[nav-link]
     classes << active_class if menu_active?(menu)

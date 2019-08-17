@@ -2,11 +2,11 @@
   <div class="list-group-item flex-column align-items-start">
     <div class="d-flex justify-content-between pb-2 pt-2">
       <h5 class="mb-1"><%= education.course %></h5>
-      <small><%= l education.start_date %><br /><%= end_date(education.end_date) %></small>
+      <small><%= education.start_date %><br /><%= education.end_date %></small>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
-          <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, education], class: 'btn btn-primary btn-sm btn-outline-secondary' %>
-          <%= link_to t(:delete, scope: %i[helpers]), [:admin, education], class: 'btn btn-primary btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, education], class: 'btn btn-sm btn-outline-primary' %>
+          <%= link_to t(:delete, scope: %i[helpers]), [:admin, education], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>

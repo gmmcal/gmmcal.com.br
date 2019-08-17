@@ -21,10 +21,6 @@ describe('Contact', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Content', () => {
     it('has a city', () => {
       const el = wrapper.find('.location span')

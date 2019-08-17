@@ -3,6 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :request do
+  before do
+    create(:about)
+    create_list(:work_experience, 5)
+    create_list(:skill, 30)
+    create_list(:education, 3, :finished)
+  end
+
   describe '/' do
     before do
       get "/#{locale}"
@@ -50,7 +57,7 @@ RSpec.describe HomeController, type: :request do
     end
 
     it 'renders template in xml' do
-      expect(response.content_type).to eq 'application/xml'
+      expect(response.content_type).to eq 'application/xml; charset=utf-8'
     end
   end
 end

@@ -1,0 +1,19 @@
+$body_size: 20;
+$max_font_size: 80;
+
+$sizes: (
+  'h1': $body_size * 6,
+  'h2': $body_size * 5,
+  'h3': $body_size * 3.5,
+  'h4': $body_size * 3,
+  'h5': $body_size * 2.5,
+  'h6': $body_size * 2,
+  'p': $body_size * 1.5,
+  'lead': $body_size * 2,
+  'note': $body_size * 1.1,
+  'date': $body_size * 1.2,
+  'footnote': $body_size * 1,
+  'contact': $body_size * 3.5,
+  'footer': $body_size * .8,
+  'bullet': $body_size * 2.5,
+);

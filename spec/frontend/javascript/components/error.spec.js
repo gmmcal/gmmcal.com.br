@@ -20,10 +20,6 @@ describe('Error', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Content', () => {
     it('has a leading text', () => {
       const el = wrapper.find('h1')

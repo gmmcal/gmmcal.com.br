@@ -6,6 +6,7 @@ module Admin
     def index
       @educations = model.with_locale(locale).ordered
       authorize @educations
+      @educations = @educations.decorate
     end
 
     # GET /admin/educations/new

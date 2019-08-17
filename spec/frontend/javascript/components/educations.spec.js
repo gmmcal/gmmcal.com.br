@@ -22,10 +22,6 @@ describe('Educations', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Child components', () => {
     it('includes Educations', () => {
       const child_component = wrapper.find(Educations)

@@ -24,10 +24,6 @@ describe('MenuContainer', () => {
     expect(received).toEqual(expected)
   })
 
-  it('renders correctly', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
-
   describe('Child components', () => {
     it('includes Menu', () => {
       const child_component = wrapper.find(Menu)

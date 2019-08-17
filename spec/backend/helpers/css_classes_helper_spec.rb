@@ -3,6 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe CssClassesHelper, type: :helper do
+  describe '#body_class' do
+    it 'includes en when locale is set for English' do
+      I18n.locale = :en
+      expect(helper.body_class).to include('en')
+    end
+
+    it 'includes pt-br when locale is set for Portuguese' do
+      I18n.locale = :'pt-BR'
+      expect(helper.body_class).to include('pt-br')
+    end
+  end
+
   describe '#menu_classes' do
     context 'with about selected' do
       before { allow(helper).to receive(:controller_name).and_return(:about) }

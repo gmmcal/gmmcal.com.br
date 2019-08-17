@@ -15,13 +15,13 @@ My personal website code, playground and learning lab.
 ![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
 ![Postgres](https://img.shields.io/badge/Postgres-v11.4-green.svg?logo=Postgresql)
 
-![Rails](https://img.shields.io/badge/Rails-v6.0.0.rc1-green.svg?logo=Rails)
+![Rails](https://img.shields.io/badge/Rails-v6.0.0.rc2-green.svg?logo=Rails)
 ![Vue](https://img.shields.io/badge/VueJS-v2.6.10-green.svg?logo=Vue.js)
 
 ![Bundler](https://img.shields.io/badge/Bundler-v1.17.2-green.svg?logo=Bundler)
 ![NPM](https://img.shields.io/badge/NPM-v6.9.0-green.svg?logo=NPM)
-![Yarn](https://img.shields.io/badge/Yarn-v1.16.0-green.svg?logo=Yarn)
-![Webpack](https://img.shields.io/badge/Webpack-v4.35.0-green.svg?logo=Webpack)
+![Yarn](https://img.shields.io/badge/Yarn-v1.17.3-green.svg?logo=Yarn)
+![Webpack](https://img.shields.io/badge/Webpack-v4.39.1-green.svg?logo=Webpack)
 
 This website is a result of years of constant learning. The template was purchased at [ThemeForest](https://themeforest.net/item/flato-responsive-resume-personal-portfolio-temp/6486867) in 2014 and customized by me, with help from [Mac Giovanni](https://github.com/maclevison) and [Carlyson Oliveira](https://github.com/carlyson).
 
@@ -79,7 +79,7 @@ If everything is fine, go to your browser and load [http://localhost:3000](http:
 
 You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https://github.com/DarthSim/overmind) or any other process starter that is [Procfile](Procfile) based.
 
-## Admin
+### Admin
 
 Admin page is accessible via `/admin` path. Development credentials are provided on [seed](db/seeds.rb) script.
 
@@ -100,11 +100,26 @@ Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on 
 Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
 ### End-to-end
-![Cypress](https://img.shields.io/badge/Cypress-v3.3.2-green.svg?logo=Cypress)
+![Cypress](https://img.shields.io/badge/Cypress-v3.4.1-green.svg?logo=Cypress)
 
 End-to-end tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 
-## Supported Devices
+## Docker
+
+This application can be executed from a Docker container if you do not want to install all dependencies on your computer. To do so, follow the steps, after having Docker and Docker Compose properly installed in your computer.
+
+1. On your terminal, `docker-compose up -d`, to boot the container. If you are running this for the first time, it will take some time to install all dependencies.
+1. After the first time you run, database will be empty. If you want to have some data, run `docker-compose run web rake db:seed:all`.
+1. Open your browser and visit [http://localhost:3001](http://localhost:3001).
+1. To stop the container, just run `docker-compose down` at anytime.
+
+To run the tests, there are a few commands:
+
+1. `docker-compose run test rspec` to run the backend tests.
+1. `docker-compose run test yarn test:once` to run the frontend tests. At this moment, jest watch mode is not supported by current container.
+1. End-to-end tests are not supported by current container.
+
+# Supported Devices
 
 This website should run in all major browsers in both mobile and desktop versions. The supported browser list is featured below
 
