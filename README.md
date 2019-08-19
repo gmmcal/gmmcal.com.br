@@ -15,7 +15,7 @@ My personal website code, playground and learning lab.
 ![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
 ![Postgres](https://img.shields.io/badge/Postgres-v11.4-green.svg?logo=Postgresql)
 
-![Rails](https://img.shields.io/badge/Rails-v6.0.0.rc2-green.svg?logo=Rails)
+![Rails](https://img.shields.io/badge/Rails-v6.0.0-green.svg?logo=Rails)
 ![Vue](https://img.shields.io/badge/VueJS-v2.6.10-green.svg?logo=Vue.js)
 
 ![Bundler](https://img.shields.io/badge/Bundler-v1.17.2-green.svg?logo=Bundler)
