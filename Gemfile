@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Enforce minimum ruby version
 ruby '2.6.3' if ENV['RAILS_ENV'] == 'production'
@@ -11,7 +12,7 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0.rc2'
+gem 'rails', '~> 6.0.0'
 gem 'rails-i18n'
 
 # Frontend gems
@@ -27,7 +28,7 @@ gem 'wkhtmltopdf-binary'
 
 # Admin gems
 gem 'country_select'
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise'
 gem 'kramdown'
 gem 'pundit'
 gem 'simple_form'
