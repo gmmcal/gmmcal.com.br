@@ -104,20 +104,22 @@ Frontend tests are written in Javascript using Jest. To run the tests, run `yarn
 
 End-to-end tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 
-## Docker
+## Docker (experimental)
 
 This application can be executed from a Docker container if you do not want to install all dependencies on your computer. To do so, follow the steps, after having Docker and Docker Compose properly installed in your computer.
 
-1. On your terminal, `docker-compose up -d`, to boot the container. If you are running this for the first time, it will take some time to install all dependencies.
-1. After the first time you run, database will be empty. If you want to have some data, run `docker-compose run web rake db:seed:all`.
+1. On your terminal, `make docker/up`, to boot the container. If you are running this for the first time, it will take some time to install all dependencies.
+1. After the first time you run, database will be empty. If you want to have some data, run `make docker/migrate docker/seed`.
 1. Open your browser and visit [http://localhost:3001](http://localhost:3001).
-1. To stop the container, just run `docker-compose down` at anytime.
+1. To stop the container, just run `make docker/down` at anytime.
 
 To run the tests, there are a few commands:
 
-1. `docker-compose run test rspec` to run the backend tests.
-1. `docker-compose run test yarn test:once` to run the frontend tests. At this moment, jest watch mode is not supported by current container.
+1. `make docker/tests/backend` to run the backend tests.
+1. `make docker/tests/frontend` to run the frontend tests. At this moment, jest watch mode is not supported by current container.
 1. End-to-end tests are not supported by current container.
+
+If you change `Gemfile` or `package.json` to add or remove a dependency, you will need to rebuild the docker image. To do that, run `make docker/build`.
 
 # Supported Devices
 
