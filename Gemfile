@@ -28,7 +28,7 @@ gem 'wkhtmltopdf-binary'
 
 # Admin gems
 gem 'country_select'
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'kramdown'
 gem 'pundit'
 gem 'simple_form'
