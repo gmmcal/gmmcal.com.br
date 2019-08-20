@@ -28,15 +28,15 @@ RUN yarn -v
 RUN mkdir /$APP_HOME
 WORKDIR /$APP_HOME
 
-# add dependencies files
+# add/install dependencies files
 ADD Gemfile $APP_HOME
 ADD Gemfile.lock $APP_HOME
+RUN bundle install
+
 ADD package.json $APP_HOME
 ADD yarn.lock $APP_HOME
-
-# install dependencies
-RUN bundle install
 RUN yarn install
+
 RUN gem install foreman --no-document --norc
 
 # Add a script to be executed every time the container starts.
