@@ -61,7 +61,7 @@ jobs:
   include:
     - stage: unit tests
       rvm: 2.5.5
-      if: type IN (push, pull_request)
+      if: type = pull_request
       env:
         CACHE_NAME=RUBY-255-${TRAVIS_BRANCH}
       <<: *tests
@@ -74,7 +74,7 @@ jobs:
 
     - stage: end-to-end tests
       rvm: 2.6.3
-      if: type IN (push, pull_request)
+      if: type = pull_request
       env:
         CACHE_NAME=E2E-${TRAVIS_BRANCH}
       <<: *common
