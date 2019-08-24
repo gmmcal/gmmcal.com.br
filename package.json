@@ -90,7 +90,7 @@
     "test:once": "jest",
     "cypress": "start-test server:start 3000 cypress:open",
     "server:start": "bundle exec rails server -p 3000",
-    "cypress:run": "cypress run $CYPRESS_FLAGS",
+    "cypress:run": "cypress run",
     "cypress:open": "DOTFILES_LOADED='false' cypress open",
     "cypress:ci": "start-test server:start 3000 cypress:run"
   }
