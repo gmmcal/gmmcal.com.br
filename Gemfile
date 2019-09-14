@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Enforce minimum ruby version
-ruby '2.6.3' if ENV['RAILS_ENV'] == 'production'
+ruby '2.6.4' if ENV['RAILS_ENV'] == 'production'
 
 # Application gems
 # Use bootsnap to improve performance
