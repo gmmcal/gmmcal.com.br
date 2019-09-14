@@ -1,119 +1,238 @@
 /// <reference types="Cypress" />
 
 describe('Navigation', () => {
-  before(() => {
-    cy.visit('/')
-  })
-
   context('main', () => {
-    context('Home', () => {
-      beforeEach(() => {
-        cy.get('.navbar-nav').contains('Contact').click()
-        cy.get('.navbar-nav').contains('Home').click()
-        cy.wait(100)
+    context('english', () => {
+      before(() => {
+        cy.visit('/')
       })
 
-      it('shows section', () => {
-        cy.get('#home').should('be.visible')
+      context('Home', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Contact').click()
+          cy.get('.navbar-nav').contains('Home').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#home').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Home').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#home')
+        })
       })
 
-      it('activate menu', () => {
-        cy.get('.navbar-nav').contains('Home').parent().should('have.class', 'active')
+      context('About', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('About').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#about').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('About').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#about')
+        })
       })
 
-      it('changes url', () => {
-        cy.location('hash').should('eq', '#home')
+      context('Experience', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Experience').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#experience').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Experience').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#experience')
+        })
+      })
+
+      context('Skills', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Skills').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#skills').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Skills').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#skills')
+        })
+      })
+
+      context('Education', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Education').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#education').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Education').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#education')
+        })
+      })
+
+      context('Contact', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Contact').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#contact').should('be.visible')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#contact')
+        })
       })
     })
 
-    context('About', () => {
-      beforeEach(() => {
-        cy.get('.navbar-nav').contains('About').click()
-        cy.wait(100)
+    context('portuguese', () => {
+      before(() => {
+        cy.visit('/pt-BR')
       })
 
-      it('shows section', () => {
-        cy.get('#about').should('be.visible')
+      context('Home', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Contato').click()
+          cy.get('.navbar-nav').contains('Home').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#home').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Home').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#home')
+        })
       })
 
-      it('activate menu', () => {
-        cy.get('.navbar-nav').contains('About').parent().should('have.class', 'active')
+      context('About', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Sobre').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#about').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Sobre').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#about')
+        })
       })
 
-      it('changes url', () => {
-        cy.location('hash').should('eq', '#about')
-      })
-    })
+      context('Experience', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Experiência').click()
+          cy.wait(100)
+        })
 
-    context('Experience', () => {
-      beforeEach(() => {
-        cy.get('.navbar-nav').contains('Experience').click()
-        cy.wait(100)
-      })
+        it('shows section', () => {
+          cy.get('#experience').should('be.visible')
+        })
 
-      it('shows section', () => {
-        cy.get('#experience').should('be.visible')
-      })
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Experiência').parent().should('have.class', 'active')
+        })
 
-      it('activate menu', () => {
-        cy.get('.navbar-nav').contains('Experience').parent().should('have.class', 'active')
-      })
-
-      it('changes url', () => {
-        cy.location('hash').should('eq', '#experience')
-      })
-    })
-
-    context('Skills', () => {
-      beforeEach(() => {
-        cy.get('.navbar-nav').contains('Skills').click()
-        cy.wait(100)
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#experience')
+        })
       })
 
-      it('shows section', () => {
-        cy.get('#skills').should('be.visible')
+      context('Skills', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Habilidades').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#skills').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Habilidades').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#skills')
+        })
       })
 
-      it('activate menu', () => {
-        cy.get('.navbar-nav').contains('Skills').parent().should('have.class', 'active')
+      context('Education', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Educação').click()
+          cy.wait(100)
+        })
+
+        it('shows section', () => {
+          cy.get('#education').should('be.visible')
+        })
+
+        it('activate menu', () => {
+          cy.get('.navbar-nav').contains('Educação').parent().should('have.class', 'active')
+        })
+
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#education')
+        })
       })
 
-      it('changes url', () => {
-        cy.location('hash').should('eq', '#skills')
-      })
-    })
+      context('Contact', () => {
+        beforeEach(() => {
+          cy.get('.navbar-nav').contains('Contato').click()
+          cy.wait(100)
+        })
 
-    context('Education', () => {
-      beforeEach(() => {
-        cy.get('.navbar-nav').contains('Education').click()
-        cy.wait(100)
-      })
+        it('shows section', () => {
+          cy.get('#contact').should('be.visible')
+        })
 
-      it('shows section', () => {
-        cy.get('#education').should('be.visible')
-      })
-
-      it('activate menu', () => {
-        cy.get('.navbar-nav').contains('Education').parent().should('have.class', 'active')
-      })
-
-      it('changes url', () => {
-        cy.location('hash').should('eq', '#education')
-      })
-    })
-
-    context('Contact', () => {
-      beforeEach(() => {
-        cy.get('.navbar-nav').contains('Contact').click()
-        cy.wait(100)
-      })
-
-      it('shows section', () => {
-        cy.get('#contact').should('be.visible')
-      })
-
-      it('changes url', () => {
-        cy.location('hash').should('eq', '#contact')
+        it('changes url', () => {
+          cy.location('hash').should('eq', '#contact')
+        })
       })
     })
   })
