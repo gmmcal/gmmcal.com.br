@@ -11,7 +11,7 @@ Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 My personal website code, playground and learning lab.
 
 # Features
-![Ruby](https://img.shields.io/badge/Ruby-v2.6.3-green.svg?logo=Ruby)
+![Ruby](https://img.shields.io/badge/Ruby-v2.6.4-green.svg?logo=Ruby)
 ![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
 ![Postgres](https://img.shields.io/badge/Postgres-v11.4-green.svg?logo=Postgresql)
 
@@ -36,7 +36,7 @@ All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://tr
 
 ## Requirements
 
-The latest version of this app was built to be used with Ruby 2.6.3, but it should work on any Ruby >= 2.5. It also requires Postgres 11.0, Node 12.0 and Yarn 1.15.
+The latest version of this app was built to be used with Ruby 2.6.x, but it should work on any Ruby >= 2.5. It also requires Postgres 11.0, Node 12.0 and Yarn 1.15.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
@@ -49,8 +49,8 @@ The instructions below assumes that your computer has [RVM](https://rvm.io) conf
 
 After cloning this repository, run the following commands:
 
-1. `rvm rvmrc create ruby-2.6.3@gmmcal.com.br --ruby-version` to create a gemset for this project.
-1. `rvm use ruby-2.6.3@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
+1. `rvm rvmrc create ruby-2.6.4@gmmcal.com.br --ruby-version` to create a gemset for this project.
+1. `rvm use ruby-2.6.4@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
 1. `cp env.example .env` to configure foreman startup.
@@ -95,7 +95,7 @@ This application is covered by tests on backend, frontend and end-to-end (browse
 Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on your terminal.
 
 ### Frontend
-![Jest](https://img.shields.io/badge/Jest-v24.8.0-green.svg?logo=Jest)
+![Jest](https://img.shields.io/badge/Jest-v24.9.0-green.svg?logo=Jest)
 
 Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
