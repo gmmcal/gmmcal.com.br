@@ -202,22 +202,6 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     redis (4.1.3)
-    redis-actionpack (5.1.0)
-      actionpack (>= 4.0, < 7)
-      redis-rack (>= 1, < 3)
-      redis-store (>= 1.1.0, < 2)
-    redis-activesupport (5.2.0)
-      activesupport (>= 3, < 7)
-      redis-store (>= 1.3, < 2)
-    redis-rack (2.0.6)
-      rack (>= 1.5, < 3)
-      redis-store (>= 1.2, < 2)
-    redis-rails (5.0.2)
-      redis-actionpack (>= 5.0, < 6)
-      redis-activesupport (>= 5.0, < 6)
-      redis-store (>= 1.2, < 2)
-    redis-store (1.8.0)
-      redis (>= 4, < 5)
     reek (5.4.0)
       codeclimate-engine-rb (~> 0.4.0)
       kwalify (~> 0.7.0)
@@ -341,7 +325,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.0.0)
   rails-i18n
-  redis-rails
+  redis
   reek
   rspec-rails (~> 4.0.0.beta2)
   rubocop (~> 0.52.1)
