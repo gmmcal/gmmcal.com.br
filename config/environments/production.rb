@@ -131,7 +131,7 @@ Rails.application.configure do
   config.log_tags = %i[request_id]
 
   # Use a different cache store in production.
-  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
+  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }, { expires_in: (ENV['CACHE_EXPIRATION_TIME'] || 60).minutes }
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{1.day.to_i}"
   }

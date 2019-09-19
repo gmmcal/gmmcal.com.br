@@ -61,6 +61,6 @@ group :production do
   # Use puma as the app server
   gem 'puma'
   gem 'rack-cors'
-  gem 'redis'
+  gem 'redis-rails'
   gem 'wkhtmltopdf-heroku', '2.12.5.0'
 end
