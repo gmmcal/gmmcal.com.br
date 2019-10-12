@@ -79,7 +79,6 @@ jobs:
       env:
         - CACHE_NAME=E2E-${TRAVIS_BRANCH}
         - RAILS_ENV=production
-        - NODE_ENV=production
       <<: *common
 
       script:
