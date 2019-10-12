@@ -78,7 +78,6 @@ jobs:
       if: type = pull_request
       env:
         - CACHE_NAME=E2E-${TRAVIS_BRANCH}
-        - RAILS_ENV=production
       <<: *common
 
       script:
