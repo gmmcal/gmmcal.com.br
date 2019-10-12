@@ -10,6 +10,10 @@
 //= link icons/apple-icon-144x144.png
 //= link icons/apple-icon-152x152.png
 //= link icons/apple-icon-180x180.png
+//= link icons/android-icon-36x36.png
+//= link icons/android-icon-48x48.png
+//= link icons/android-icon-72x72.png
+//= link icons/android-icon-96x96.png
 //= link icons/android-icon-144x144.png
 //= link icons/android-icon-192x192.png
 //= link icons/favicon-32x32.png
