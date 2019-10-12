@@ -11,7 +11,7 @@ Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 My personal website code, playground and learning lab.
 
 # Features
-![Ruby](https://img.shields.io/badge/Ruby-v2.6.4-green.svg?logo=Ruby)
+![Ruby](https://img.shields.io/badge/Ruby-v2.6.5-green.svg?logo=Ruby)
 ![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
 ![Postgres](https://img.shields.io/badge/Postgres-v11.4-green.svg?logo=Postgresql)
 
@@ -49,8 +49,8 @@ The instructions below assumes that your computer has [RVM](https://rvm.io) conf
 
 After cloning this repository, run the following commands:
 
-1. `rvm rvmrc create ruby-2.6.4@gmmcal.com.br --ruby-version` to create a gemset for this project.
-1. `rvm use ruby-2.6.4@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
+1. `rvm rvmrc create ruby-2.6.5@gmmcal.com.br --ruby-version` to create a gemset for this project.
+1. `rvm use ruby-2.6.5@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
 1. `cp env.example .env` to configure foreman startup.

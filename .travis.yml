@@ -19,9 +19,10 @@ addons:
 
 cache:
   directories:
-    - /home/travis/.rvm
-    - /home/travis/.npm
-    - /home/travis/.cache
+    - ~/.rvm
+    - ~/.npm
+    - ~/.cache
+    - .node_modules
 
 common: &common
   before_install:
@@ -67,16 +68,18 @@ jobs:
       <<: *tests
 
     - stage: unit tests
-      rvm: 2.6.4
+      rvm: 2.6.5
       env:
         - CACHE_NAME=RUBY-263-${TRAVIS_BRANCH}
       <<: *tests
 
     - stage: end-to-end tests
-      rvm: 2.6.4
+      rvm: 2.6.5
       if: type = pull_request
       env:
         - CACHE_NAME=E2E-${TRAVIS_BRANCH}
+        - RAILS_ENV=production
+        - NODE_ENV=production
       <<: *common
 
       script:
