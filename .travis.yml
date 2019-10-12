@@ -83,6 +83,7 @@ jobs:
       <<: *common
 
       script:
+        - rake assets:precompile
         - bundle exec rails db:seed
         - yarn cypress:ci
 
