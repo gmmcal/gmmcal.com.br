@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DownloadController < ApplicationController
+class DownloadController < WebsiteController
   def cv
     fetch_from_cache('educations')
     fetch_from_cache('skills')

@@ -8,6 +8,7 @@ SimpleCov.start 'rails' do
   add_group 'Blueprints', 'app/blueprinters'
   add_group 'Decorators', 'app/decorators'
   add_group 'Policies', 'app/policies'
+  add_group 'Listeners', 'app/listeners'
   minimum_coverage 90
   minimum_coverage_by_file 70
 end

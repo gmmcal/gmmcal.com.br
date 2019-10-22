@@ -26,6 +26,7 @@ module Admin
       authorize @education
 
       if @education.save
+        publish(:education_created, education: @education)
         redirect_to redirect_path,
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
@@ -37,6 +38,7 @@ module Admin
     def update
       authorize @education
       if @education.update(permitted_attributes(@education))
+        publish(:education_updated, education: @education)
         redirect_to redirect_path,
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
@@ -48,6 +50,7 @@ module Admin
     def destroy
       @education.destroy
       authorize @education
+      publish(:education_destroyed, education: @education)
       redirect_to redirect_path,
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end

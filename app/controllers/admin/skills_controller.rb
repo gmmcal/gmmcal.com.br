@@ -26,6 +26,7 @@ module Admin
       authorize @skill
 
       if @skill.save
+        publish(:skill_created, skill: @skill)
         redirect_to redirect_path,
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
@@ -37,6 +38,7 @@ module Admin
     def update
       authorize @skill
       if @skill.update(permitted_attributes(@skill))
+        publish(:skill_updated, skill: @skill)
         redirect_to redirect_path,
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
@@ -48,6 +50,7 @@ module Admin
     def destroy
       @skill.destroy
       authorize @skill
+      publish(:skill_destroyed, skill: @skill)
       redirect_to redirect_path,
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
