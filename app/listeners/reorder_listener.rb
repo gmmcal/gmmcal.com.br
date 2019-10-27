@@ -20,9 +20,12 @@ class ReorderListener < BaseListener
     objects.each do |object|
       index = ids.index(object.id)
       object.update(order: index)
-      payload[hash_key(object)] = object
-      publish(event, payload)
+      publish(event, payload(object))
     end
+  end
+
+  def payload(object)
+    payload[hash_key(object)] = object
   end
 
   def hash_key(object)
