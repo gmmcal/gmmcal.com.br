@@ -50,8 +50,9 @@ plugins:
     config:
       languages:
         ruby:
-          mass_threshold: 100
+          mass_threshold: 18
         javascript:
+          mass_threshold: 45
   fixme:
     enabled: true
   rubocop:
