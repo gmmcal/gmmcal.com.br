@@ -27,17 +27,13 @@ class BaseListener
   def respond_to_missing?(name)
     return true if payload.keys.include?(name)
 
-    # :nocov:
     false
-    # :nocov:
   end
 
   def method_missing(name, *args)
     return payload[name] if respond_to_missing?(name)
 
-    # :nocov:
     super
-    # :nocov:
   end
 
   def payload
