@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ErrorsController < ApplicationController
+class ErrorsController < WebsiteController
   def not_found
     render status: 404
   end

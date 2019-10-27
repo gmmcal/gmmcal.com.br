@@ -31,7 +31,7 @@ RSpec.describe Admin::ReorderController, type: :request do
         let(:ids) { items.map(&:id).shuffle }
 
         it 'returns a failure response' do
-          expect(response).not_to be_successful
+          expect(response).to be_successful
         end
       end
 
@@ -57,7 +57,7 @@ RSpec.describe Admin::ReorderController, type: :request do
         let(:ids) { items.map(&:id).shuffle }
 
         it 'returns a failure response' do
-          expect(response).not_to be_successful
+          expect(response).to be_successful
         end
       end
 
@@ -83,7 +83,7 @@ RSpec.describe Admin::ReorderController, type: :request do
         let(:ids) { items.map(&:id).shuffle }
 
         it 'returns a failure response' do
-          expect(response).not_to be_successful
+          expect(response).to be_successful
         end
       end
     end

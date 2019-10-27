@@ -19,6 +19,7 @@ module Admin
       authorize @about
 
       if @about.save
+        publish(:about_created, about: @about)
         redirect_to redirect_path,
                     notice: t(:created, scope: %i[helpers], model: human_model)
       else
@@ -30,6 +31,7 @@ module Admin
     def update
       authorize @about
       if @about.update(permitted_attributes(@about))
+        publish(:about_updated, about: @about)
         redirect_to redirect_path,
                     notice: t(:updated, scope: %i[helpers], model: human_model)
       else
@@ -41,6 +43,7 @@ module Admin
     def destroy
       @about.destroy
       authorize @about
+      publish(:about_destroyed, about: @about)
       redirect_to redirect_path,
                   notice: t(:deleted, scope: %i[helpers], model: human_model)
     end
