@@ -30,7 +30,7 @@ class BaseListener
     false
   end
 
-  def method_missing(name)
+  def method_missing(name, *args)
     return payload[name] if respond_to_missing?(name)
 
     super

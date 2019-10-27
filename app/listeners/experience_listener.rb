@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class ExperienceListener < BaseListener
-  include Publisher
-
   def experience_created
     clear_cache
   end
@@ -13,15 +11,6 @@ class ExperienceListener < BaseListener
 
   def experience_destroyed
     clear_cache
-  end
-
-  def reorder_work_experience
-    experiences = WorkExperience.where(id: ids)
-    experiences.each do |experience|
-      index = ids.index(experience.id)
-      experience.update(order: index)
-      publish(:experience_updated, experience: experience)
-    end
   end
 
   private
