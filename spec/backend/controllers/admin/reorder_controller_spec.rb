@@ -2,11 +2,11 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::ReorderController, type: :request do
+RSpec.describe Admin::ReorderController, type: :controller do
   context 'without authenticated user' do
     describe 'PUT #update' do
       before do
-        put '/admin/reorder'
+        put :update
       end
 
       it_behaves_like 'unauthorized'
@@ -17,12 +17,13 @@ RSpec.describe Admin::ReorderController, type: :request do
     let(:user) { create(:user) }
 
     before do
+      allow(controller).to receive(:publish)
       sign_in(user)
     end
 
     describe 'PUT #update' do
       before do
-        put '/admin/reorder', params: { reorder: { ids: ids, model: model } }
+        put :update, params: { reorder: { ids: ids, model: model } }
       end
 
       context 'with about model' do
@@ -32,6 +33,10 @@ RSpec.describe Admin::ReorderController, type: :request do
 
         it 'returns a failure response' do
           expect(response).to be_successful
+        end
+
+        it 'triggers reorder event' do
+          expect(controller).to have_received(:publish).with(:reorder_about, ids: ids)
         end
       end
 
@@ -44,10 +49,8 @@ RSpec.describe Admin::ReorderController, type: :request do
           expect(response).to be_successful
         end
 
-        it 'reorders items' do
-          ordered_ids = Education.ordered.pluck(:id)
-
-          expect(ordered_ids).to eq(ids)
+        it 'triggers reorder event' do
+          expect(controller).to have_received(:publish).with(:reorder_education, ids: ids)
         end
       end
 
@@ -58,6 +61,10 @@ RSpec.describe Admin::ReorderController, type: :request do
 
         it 'returns a failure response' do
           expect(response).to be_successful
+        end
+
+        it 'triggers reorder event' do
+          expect(controller).to have_received(:publish).with(:reorder_skill, ids: ids)
         end
       end
 
@@ -70,10 +77,8 @@ RSpec.describe Admin::ReorderController, type: :request do
           expect(response).to be_successful
         end
 
-        it 'reorders items' do
-          ordered_ids = WorkExperience.ordered.pluck(:id)
-
-          expect(ordered_ids).to eq(ids)
+        it 'triggers reorder event' do
+          expect(controller).to have_received(:publish).with(:reorder_work_experience, ids: ids)
         end
       end
 
@@ -84,6 +89,10 @@ RSpec.describe Admin::ReorderController, type: :request do
 
         it 'returns a failure response' do
           expect(response).to be_successful
+        end
+
+        it 'triggers reorder event' do
+          expect(controller).to have_received(:publish).with(:reorder_user, ids: ids)
         end
       end
     end
