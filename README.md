@@ -15,13 +15,13 @@ My personal website code, playground and learning lab.
 ![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
 ![Postgres](https://img.shields.io/badge/Postgres-v11.4-green.svg?logo=Postgresql)
 
-![Rails](https://img.shields.io/badge/Rails-v6.0.0-green.svg?logo=Rails)
+![Rails](https://img.shields.io/badge/Rails-v6.0.1-green.svg?logo=Rails)
 ![Vue](https://img.shields.io/badge/VueJS-v2.6.10-green.svg?logo=Vue.js)
 
-![Bundler](https://img.shields.io/badge/Bundler-v1.17.2-green.svg?logo=Bundler)
-![NPM](https://img.shields.io/badge/NPM-v6.9.0-green.svg?logo=NPM)
-![Yarn](https://img.shields.io/badge/Yarn-v1.17.3-green.svg?logo=Yarn)
-![Webpack](https://img.shields.io/badge/Webpack-v4.39.1-green.svg?logo=Webpack)
+![Bundler](https://img.shields.io/badge/Bundler-v1.17.3-green.svg?logo=Bundler)
+![NPM](https://img.shields.io/badge/NPM-v6.11.3-green.svg?logo=NPM)
+![Yarn](https://img.shields.io/badge/Yarn-v1.19.1-green.svg?logo=Yarn)
+![Webpack](https://img.shields.io/badge/Webpack-v4.41.2-green.svg?logo=Webpack)
 
 This website is a result of years of constant learning. The template was purchased at [ThemeForest](https://themeforest.net/item/flato-responsive-resume-personal-portfolio-temp/6486867) in 2014 and customized by me, with help from [Mac Giovanni](https://github.com/maclevison) and [Carlyson Oliveira](https://github.com/carlyson).
 
@@ -90,7 +90,7 @@ Admin page is accessible via `/admin` path. Development credentials are provided
 This application is covered by tests on backend, frontend and end-to-end (browser) tests. All tests are located in `spec` folder.
 
 ### Backend
-![Rspec](https://img.shields.io/badge/Rspec-v4.0.0.beta2-green.svg?logo=Rspec)
+![Rspec](https://img.shields.io/badge/Rspec-v4.0.0.beta3-green.svg?logo=Rspec)
 
 Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on your terminal.
 
@@ -100,7 +100,7 @@ Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on 
 Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
 ### End-to-end
-![Cypress](https://img.shields.io/badge/Cypress-v3.4.1-green.svg?logo=Cypress)
+![Cypress](https://img.shields.io/badge/Cypress-v3.6.0-green.svg?logo=Cypress)
 
 End-to-end tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 

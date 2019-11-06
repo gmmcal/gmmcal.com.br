@@ -15,7 +15,7 @@ describe('Skill', () => {
 
   describe('List', () => {
     before(() => {
-      cy.exec('rake db:seed:test[skill,2]')
+      cy.exec('rake \'db:seed:test[skill,2]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
     })
@@ -113,7 +113,7 @@ describe('Skill', () => {
 
   describe('Edit', () => {
     before(() => {
-      cy.exec('rake db:seed:test[skill,1]')
+      cy.exec('rake \'db:seed:test[skill,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
       cy.contains('.btn-outline-primary', 'Edit').click({force: true})
@@ -201,7 +201,7 @@ describe('Skill', () => {
 
   describe('Delete', () => {
     before(() => {
-      cy.exec('rake db:seed:test[skill,1]')
+      cy.exec('rake \'db:seed:test[skill,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
       cy.contains('.btn-danger', 'Delete').click({force: true})
