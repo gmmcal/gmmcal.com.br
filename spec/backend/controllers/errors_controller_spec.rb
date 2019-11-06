@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe ErrorsController, type: :request do
+RSpec.describe ErrorsController, type: :controller do
   describe '404' do
     it 'is a success' do
-      get '/404'
+      get :not_found
 
       expect(response).to have_http_status(:not_found)
     end
@@ -13,7 +13,7 @@ RSpec.describe ErrorsController, type: :request do
 
   describe '422' do
     it 'is a success' do
-      get '/422'
+      get :unacceptable
 
       expect(response).to have_http_status(:unprocessable_entity)
     end
@@ -21,7 +21,7 @@ RSpec.describe ErrorsController, type: :request do
 
   describe '500' do
     it 'is a success' do
-      get '/500'
+      get :internal_error
 
       expect(response).to have_http_status(:internal_server_error)
     end

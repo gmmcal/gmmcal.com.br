@@ -2,14 +2,14 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::EducationsController, type: :request do
+RSpec.describe Admin::EducationsController, type: :controller do
   let(:valid_attributes) { attributes_for(:education) }
   let(:invalid_attributes) { attributes_for(:education, :invalid) }
 
   context 'without authenticated user' do
     describe 'GET #index' do
       before do
-        get '/admin/educations'
+        get :index
       end
 
       it_behaves_like 'unauthorized'
@@ -17,7 +17,7 @@ RSpec.describe Admin::EducationsController, type: :request do
 
     describe 'GET #new' do
       before do
-        get '/admin/educations/new'
+        get :new
       end
 
       it_behaves_like 'unauthorized'
@@ -27,7 +27,7 @@ RSpec.describe Admin::EducationsController, type: :request do
       let(:education) { create(:education, valid_attributes) }
 
       before do
-        get "/admin/educations/#{education.id}/edit"
+        get :edit, params: { id: education.id }
       end
 
       it_behaves_like 'unauthorized'
@@ -35,7 +35,7 @@ RSpec.describe Admin::EducationsController, type: :request do
 
     describe 'POST #create' do
       before do
-        post '/admin/educations', params: { education: valid_attributes }
+        post :create, params: { education: valid_attributes }
       end
 
       it_behaves_like 'unauthorized'
@@ -47,7 +47,7 @@ RSpec.describe Admin::EducationsController, type: :request do
       let(:new_attributes) { attributes_for(:education, course: new_course) }
 
       before do
-        put "/admin/educations/#{education.id}", params: { id: education.to_param, education: new_attributes }
+        put :update, params: { id: education.to_param, education: new_attributes }
       end
 
       it_behaves_like 'unauthorized'
@@ -57,7 +57,7 @@ RSpec.describe Admin::EducationsController, type: :request do
       let(:education) { create(:education, valid_attributes) }
 
       before do
-        delete "/admin/educations/#{education.id}"
+        delete :destroy, params: { id: education.id }
       end
 
       it_behaves_like 'unauthorized'
@@ -68,19 +68,20 @@ RSpec.describe Admin::EducationsController, type: :request do
     let(:user) { create(:user) }
 
     before do
+      allow(controller).to receive(:publish)
       sign_in(user)
     end
 
     describe 'GET #index' do
       it 'returns a success response' do
-        get '/admin/educations'
+        get :index
         expect(response).to be_successful
       end
     end
 
     describe 'GET #new' do
       it 'returns a success response' do
-        get '/admin/educations/new'
+        get :new
         expect(response).to be_successful
       end
     end
@@ -88,7 +89,7 @@ RSpec.describe Admin::EducationsController, type: :request do
     describe 'GET #edit' do
       it 'returns a success response' do
         education = create(:education, valid_attributes)
-        get "/admin/educations/#{education.id}/edit"
+        get :edit, params: { id: education.id }
         expect(response).to be_successful
       end
     end
@@ -97,20 +98,30 @@ RSpec.describe Admin::EducationsController, type: :request do
       context 'with valid params' do
         it 'creates a new education' do
           expect do
-            post '/admin/educations', params: { education: valid_attributes }
+            post :create, params: { education: valid_attributes }
           end.to change(Education, :count).by(1)
         end
 
         it 'redirects to the created education' do
-          post '/admin/educations', params: { education: valid_attributes }
+          post :create, params: { education: valid_attributes }
           expect(response).to redirect_to(admin_educations_path(locale: :en))
+        end
+
+        it 'triggers created event' do
+          post :create, params: { education: valid_attributes }
+          expect(controller).to have_received(:publish).with(:education_created, education: Education.last)
         end
       end
 
       context 'with invalid params' do
         it 'returns a success response (i.e. to display the new template)' do
-          post '/admin/educations', params: { education: invalid_attributes }
+          post :create, params: { education: invalid_attributes }
           expect(response).to be_successful
+        end
+
+        it 'does not triggers any event' do
+          post :create, params: { education: invalid_attributes }
+          expect(controller).not_to have_received(:publish)
         end
       end
     end
@@ -122,15 +133,21 @@ RSpec.describe Admin::EducationsController, type: :request do
 
         it 'updates the requested education' do
           education = create(:education, valid_attributes)
-          put "/admin/educations/#{education.id}", params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }
           education.reload
           expect(education.course).to eq(new_course)
         end
 
         it 'redirects to the education' do
           education = create(:education, valid_attributes)
-          put "/admin/educations/#{education.id}", params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }
           expect(response).to redirect_to(admin_educations_path(locale: :en))
+        end
+
+        it 'triggers updated event' do
+          education = create(:education, valid_attributes)
+          put :update, params: { id: education.to_param, education: new_attributes }
+          expect(controller).to have_received(:publish).with(:education_updated, education: education)
         end
       end
 
@@ -139,8 +156,14 @@ RSpec.describe Admin::EducationsController, type: :request do
 
         it 'returns a success response (i.e. to display the edit template)' do
           education = create(:education, valid_attributes)
-          put "/admin/educations/#{education.id}", params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }
           expect(response).to be_successful
+        end
+
+        it 'does not triggers any event' do
+          education = create(:education, valid_attributes)
+          put :update, params: { id: education.to_param, education: new_attributes }
+          expect(controller).not_to have_received(:publish)
         end
       end
     end
@@ -149,14 +172,20 @@ RSpec.describe Admin::EducationsController, type: :request do
       it 'destroys the requested education' do
         education = create(:education, valid_attributes)
         expect do
-          delete "/admin/educations/#{education.id}"
+          delete :destroy, params: { id: education.id }
         end.to change(Education, :count).by(-1)
       end
 
       it 'redirects to the educations list' do
         education = create(:education, valid_attributes)
-        delete "/admin/educations/#{education.id}"
+        delete :destroy, params: { id: education.id }
         expect(response).to redirect_to(admin_educations_path(locale: :en))
+      end
+
+      it 'triggers destroyed event' do
+        education = create(:education, valid_attributes)
+        delete :destroy, params: { id: education.id }
+        expect(controller).to have_received(:publish).with(:education_destroyed, education: education)
       end
     end
   end

@@ -2,14 +2,14 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::AboutController, type: :request do
+RSpec.describe Admin::AboutController, type: :controller do
   let(:valid_attributes) { attributes_for(:about) }
   let(:invalid_attributes) { attributes_for(:about, :invalid) }
 
   context 'without authenticated user' do
     describe 'GET #index' do
       before do
-        get '/admin/about'
+        get :index
       end
 
       it_behaves_like 'unauthorized'
@@ -19,7 +19,7 @@ RSpec.describe Admin::AboutController, type: :request do
       let(:about) { create(:about, valid_attributes) }
 
       before do
-        get "/admin/about/#{about.id}/edit"
+        get :edit, params: { id: about.id }
       end
 
       it_behaves_like 'unauthorized'
@@ -27,7 +27,7 @@ RSpec.describe Admin::AboutController, type: :request do
 
     describe 'POST #create' do
       before do
-        post '/admin/about', params: { about: valid_attributes }
+        post :create, params: { about: valid_attributes }
       end
 
       it_behaves_like 'unauthorized'
@@ -39,7 +39,7 @@ RSpec.describe Admin::AboutController, type: :request do
       let(:new_attributes) { attributes_for(:about, job_title: new_title) }
 
       before do
-        put "/admin/about/#{about.id}", params: { id: about.to_param, about: new_attributes }
+        put :update, params: { id: about.to_param, about: new_attributes }
       end
 
       it_behaves_like 'unauthorized'
@@ -49,7 +49,7 @@ RSpec.describe Admin::AboutController, type: :request do
       let(:about) { create(:about, valid_attributes) }
 
       before do
-        delete "/admin/about/#{about.id}"
+        delete :destroy, params: { id: about.id }
       end
 
       it_behaves_like 'unauthorized'
@@ -60,12 +60,13 @@ RSpec.describe Admin::AboutController, type: :request do
     let(:user) { create(:user) }
 
     before do
+      allow(controller).to receive(:publish)
       sign_in(user)
     end
 
     describe 'GET #index' do
       it 'returns a success response' do
-        get '/admin/about'
+        get :index
         expect(response).to be_successful
       end
     end
@@ -73,7 +74,7 @@ RSpec.describe Admin::AboutController, type: :request do
     describe 'GET #edit' do
       it 'returns a success response' do
         about = create(:about, valid_attributes)
-        get "/admin/about/#{about.id}/edit"
+        get :edit, params: { id: about.id }
         expect(response).to be_successful
       end
     end
@@ -82,20 +83,30 @@ RSpec.describe Admin::AboutController, type: :request do
       context 'with valid params' do
         it 'creates a new About' do
           expect do
-            post '/admin/about', params: { about: valid_attributes }
+            post :create, params: { about: valid_attributes }
           end.to change(About, :count).by(1)
         end
 
         it 'redirects to the created about' do
-          post '/admin/about', params: { about: valid_attributes }
+          post :create, params: { about: valid_attributes }
           expect(response).to redirect_to(admin_abouts_path(locale: :en))
+        end
+
+        it 'triggers created event' do
+          post :create, params: { about: valid_attributes }
+          expect(controller).to have_received(:publish).with(:about_created, about: About.last)
         end
       end
 
       context 'with invalid params' do
         it 'returns a success response (i.e. to display the new template)' do
-          post '/admin/about', params: { about: invalid_attributes }
+          post :create, params: { about: invalid_attributes }
           expect(response).to be_successful
+        end
+
+        it 'does not triggers any event' do
+          post :create, params: { about: invalid_attributes }
+          expect(controller).not_to have_received(:publish)
         end
       end
     end
@@ -107,15 +118,21 @@ RSpec.describe Admin::AboutController, type: :request do
 
         it 'updates the requested about' do
           about = create(:about, valid_attributes)
-          put "/admin/about/#{about.id}", params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }
           about.reload
           expect(about.job_title).to eq(new_title)
         end
 
         it 'redirects to the about' do
           about = create(:about, valid_attributes)
-          put "/admin/about/#{about.id}", params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }
           expect(response).to redirect_to(admin_abouts_path(locale: :en))
+        end
+
+        it 'triggers updated event' do
+          about = create(:about, valid_attributes)
+          put :update, params: { id: about.to_param, about: new_attributes }
+          expect(controller).to have_received(:publish).with(:about_updated, about: about)
         end
       end
 
@@ -124,8 +141,14 @@ RSpec.describe Admin::AboutController, type: :request do
 
         it 'returns a success response (i.e. to display the edit template)' do
           about = create(:about, valid_attributes)
-          put "/admin/about/#{about.id}", params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }
           expect(response).to be_successful
+        end
+
+        it 'does not triggers any event' do
+          about = create(:about, valid_attributes)
+          put :update, params: { id: about.to_param, about: new_attributes }
+          expect(controller).not_to have_received(:publish)
         end
       end
     end
@@ -134,14 +157,20 @@ RSpec.describe Admin::AboutController, type: :request do
       it 'destroys the requested about' do
         about = create(:about, valid_attributes)
         expect do
-          delete "/admin/about/#{about.id}"
+          delete :destroy, params: { id: about.id }
         end.to change(About, :count).by(-1)
       end
 
       it 'redirects to the abouts list' do
         about = create(:about, valid_attributes)
-        delete "/admin/about/#{about.id}"
+        delete :destroy, params: { id: about.id }
         expect(response).to redirect_to(admin_abouts_path(locale: :en))
+      end
+
+      it 'triggers destroyed event' do
+        about = create(:about, valid_attributes)
+        delete :destroy, params: { id: about.id }
+        expect(controller).to have_received(:publish).with(:about_destroyed, about: about)
       end
     end
   end

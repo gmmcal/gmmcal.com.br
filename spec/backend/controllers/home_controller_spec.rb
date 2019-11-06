@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe HomeController, type: :request do
+RSpec.describe HomeController, type: :controller do
   before do
     create(:about)
     create_list(:work_experience, 5)
@@ -11,10 +11,6 @@ RSpec.describe HomeController, type: :request do
   end
 
   describe '/' do
-    before do
-      get "/#{locale}"
-    end
-
     shared_examples 'Localization' do
       it 'is a success' do
         expect(response).to have_http_status(:ok)
@@ -26,21 +22,29 @@ RSpec.describe HomeController, type: :request do
     end
 
     context 'without locale' do
-      let(:locale) {}
+      before do
+        get :index
+      end
+
       let(:expected_locale) { :en }
 
       it_behaves_like 'Localization'
     end
 
     context 'with locale in en' do
-      let(:locale) { :en }
+      before do
+        get :index, params: { locale: :en }
+      end
+
       let(:expected_locale) { :en }
 
       it_behaves_like 'Localization'
     end
 
     context 'with locale in pt-BR' do
-      let(:locale) { :'pt-BR' }
+      before do
+        get :index, params: { locale: :'pt-BR' }
+      end
       let(:expected_locale) { :'pt-BR' }
 
       it_behaves_like 'Localization'
@@ -49,7 +53,7 @@ RSpec.describe HomeController, type: :request do
 
   describe '/sitemap' do
     before do
-      get '/sitemap'
+      get :index, format: :xml
     end
 
     it 'is a success' do
