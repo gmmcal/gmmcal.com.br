@@ -100,12 +100,12 @@ jobs:
       - name: Download backend coverage result
         uses: actions/download-artifact@v1
         with:
-          name: backend-coverage
+          name: backend-coverage.json
 
       - name: Download frontend coverage result
         uses: actions/download-artifact@v1
         with:
-          name: frontend-coverage
+          name: frontend-coverage.json
 
       - name: Upload coverage to CodeClimate
         run: |
