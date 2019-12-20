@@ -35,24 +35,25 @@ jobs:
       - name: Install PostgreSQL 11 client
         run: sudo apt-get -yqq install libpq-dev
 
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Check ruby version
+        run: ruby --version
+
       - name: Cache gems
         uses: actions/cache@v1
         with:
-          path: vendor/bundle
+          path: vendor/bundler
           key: ${{ runner.os }}-bundler-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-bundler-${{ env.cache-name }}-
             ${{ runner.os }}-bundler-
             ${{ runner.os }}-
 
-      # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-      - name: Check ruby version
-        run: ruby --version
       - name: Run bundle install
         run: |
-          bundle config path vendor/bundle
+          bundle config path vendor/bundler
           bundle install --jobs 4 --retry 3
       - name: Setup database
         run: bundle exec rails db:migrate
