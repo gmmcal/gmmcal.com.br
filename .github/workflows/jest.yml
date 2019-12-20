@@ -7,6 +7,7 @@ on:
 jobs:
   setup:
     name: Setup languages
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Install Node.js 12.x
@@ -16,6 +17,7 @@ jobs:
 
   install:
     name: Install dependencies
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Install yarn
