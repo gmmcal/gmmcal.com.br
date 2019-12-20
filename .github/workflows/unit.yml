@@ -52,7 +52,7 @@ jobs:
       - name: Upload backend coverage result
         uses: actions/upload-artifact@v1
         with:
-          name: backend-coverage
+          name: backend-coverage.json
           path: coverage/backend/.resultset.json
 
   frontend:
@@ -80,7 +80,7 @@ jobs:
       - name: Upload frontend coverage result
         uses: actions/upload-artifact@v1
         with:
-          name: frontend-coverage
+          name: frontend-coverage.json
           path: coverage/frontend/lcov.info
 
   coverage:
@@ -109,7 +109,7 @@ jobs:
 
       - name: Upload coverage to CodeClimate
         run: |
-          ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json backend-coverage/coverage/backend/.resultset.json
-          ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json frontend-coverage/coverage/frontend/lcov.info
+          ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json backend-coverage.json
+          ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json frontend-coverage.json
           ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
           ./cc-test-reporter upload-coverage
