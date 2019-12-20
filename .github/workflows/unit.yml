@@ -109,14 +109,9 @@ jobs:
         with:
           name: frontend-coverage
 
-      - name: See data
-        run: |
-          ls -la backend-coverage
-          ls -la frontend-coverage
-
       - name: Upload coverage to CodeClimate
         run: |
-          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/coverage/frontend/lcov.info
-          ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/coverage/frontend/lcov.info
+          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json
+          ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/lcov.info
           ./cc-test-reporter sum-coverage codeclimate.*.json -p 2
           ./cc-test-reporter upload-coverage
