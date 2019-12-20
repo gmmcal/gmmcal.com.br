@@ -8,37 +8,9 @@ env:
   RAILS_ENV: test
 
 jobs:
-  setup:
-    name: Setup languages
-    runs-on: ubuntu-18.04
-
-    steps:
-      - name: Install Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-  install:
-    name: Install dependencies
-    runs-on: ubuntu-18.04
-
-    needs:
-      - setup
-
-    steps:
-      - name: Install yarn
-        run: npm i -g yarn
-      - name: Check yarn version
-        run: yarn --version
-      - name: Run yarn install
-        run: yarn install
-
-  tests:
+  backend:
     name: Backend Tests
     runs-on: ubuntu-18.04
-
-    needs:
-      - install
 
     services:
       postgres:
@@ -76,3 +48,25 @@ jobs:
       # script
       - name: Run tests
         run: bundle exec rspec
+
+  frontend:
+    name: Frontend Tests
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install yarn
+        run: npm i -g yarn
+      - name: Check yarn version
+        run: yarn --version
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Run tests
+        run: yarn test:once
