@@ -109,7 +109,7 @@ jobs:
 
       - name: Upload coverage to CodeClimate
         run: |
-          ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json backend-coverage.json
-          ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json frontend-coverage.json
-          ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage.json
+          ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage.json
+          ./cc-test-reporter sum-coverage codeclimate.*.json -p 2
           ./cc-test-reporter upload-coverage
