@@ -1,0 +1,17 @@
+name: backend unit tests
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./.github/actions/database
+      - uses: ./.github/actions/languages
+      - uses: ./.github/actions/dependencies
+      - name: Run tests
+        run: bundle exec rspec

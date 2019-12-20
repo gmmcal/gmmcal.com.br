@@ -1,0 +1,14 @@
+- name: Install Bundler gem
+  run: gem install bundler
+- name: Install yarn
+  run: npm i -g yarn
+- name: Check ruby version
+  run: ruby --version
+- name: Check yarn version
+  run: yarn --version
+- name: Run bundle install
+  run: bundle install --jobs 4 --retry 3 --without production
+- name: Run yarn install
+  run: yarn install
+- name: Setup database
+  run: bundle exec rails db:migrate
