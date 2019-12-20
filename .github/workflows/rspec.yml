@@ -3,6 +3,9 @@ on:
   - push
   - pull_request
 
+env:
+  RAILS_ENV: test
+
 jobs:
   build:
 
