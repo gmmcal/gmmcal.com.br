@@ -19,6 +19,9 @@ jobs:
     name: Install dependencies
     runs-on: ubuntu-18.04
 
+  needs:
+    - setup
+
     steps:
       - name: Install yarn
         run: npm i -g yarn
@@ -31,7 +34,6 @@ jobs:
     name: Frontend Tests
     runs-on: ubuntu-18.04
     needs:
-      - setup
       - install
 
     steps:
