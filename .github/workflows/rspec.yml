@@ -8,6 +8,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:11.5
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v1
 
@@ -16,18 +22,13 @@ jobs:
         with:
           ruby-version: 2.6.x
 
+      - name: Install PostgreSQL 11 client
+        run: sudo apt-get -yqq install libpq-dev
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-
-      - name: Setup PostgreSQL
-        uses: Harmon758/postgresql-action@v1.0.0
-        with:
-          postgresql version: '11'
-          postgresql db: gmmcalcombr_test
-          postgresql user: postgres
-          postgresql password: postgres
 
       - name: Install Bundler gem
         run: gem install bundler
@@ -38,11 +39,19 @@ jobs:
       - name: Check yarn version
         run: yarn --version
       - name: Run bundle install
-        run: bundle install --jobs 4 --retry 3 --without production
+        run: bundle install --jobs 4 --retry 3
       - name: Run yarn install
         run: yarn install
       - name: Setup database
         run: bundle exec rails db:migrate
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+          RAILS_ENV: test
 
       - name: Run tests
         run: bundle exec rspec
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+          RAILS_ENV: test
