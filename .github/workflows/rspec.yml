@@ -7,9 +7,9 @@ env:
   RAILS_ENV: test
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  backend:
+    name: Backend Tests
+    runs-on: ubuntu-18.04
 
     services:
       postgres:
@@ -34,27 +34,68 @@ jobs:
       - name: Install PostgreSQL 11 client
         run: sudo apt-get -yqq install libpq-dev
 
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
+      # - name: Use Node.js 12.x
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 12.x
 
       # actions/dependencies
       - name: Install Bundler gem
         run: gem install bundler
-      - name: Install yarn
-        run: npm i -g yarn
+      # - name: Install yarn
+      #   run: npm i -g yarn
       - name: Check ruby version
         run: ruby --version
-      - name: Check yarn version
-        run: yarn --version
+      # - name: Check yarn version
+      #   run: yarn --version
       - name: Run bundle install
         run: bundle install --jobs 4 --retry 3
-      - name: Run yarn install
-        run: yarn install
+      # - name: Run yarn install
+      #   run: yarn install
       - name: Setup database
         run: bundle exec rails db:migrate
 
       # current script
       - name: Run tests
         run: bundle exec rspec
+
+  frontend:
+    name: Frontend Tests
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # actions/languages
+      # - name: Set up Ruby 2.6
+      #   uses: actions/setup-ruby@v1
+      #   with:
+      #     ruby-version: 2.6.x
+
+      # - name: Install PostgreSQL 11 client
+      #   run: sudo apt-get -yqq install libpq-dev
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      # actions/dependencies
+      # - name: Install Bundler gem
+      #   run: gem install bundler
+      - name: Install yarn
+        run: npm i -g yarn
+      # - name: Check ruby version
+      #   run: ruby --version
+      - name: Check yarn version
+        run: yarn --version
+      # - name: Run bundle install
+      #   run: bundle install --jobs 4 --retry 3
+      - name: Run yarn install
+        run: yarn install
+      # - name: Setup database
+      #   run: bundle exec rails db:migrate
+
+      # current script
+      - name: Run tests
+        run: yarn test:once
