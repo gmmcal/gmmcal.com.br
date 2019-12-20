@@ -11,12 +11,18 @@ jobs:
     services:
       postgres:
         image: postgres:11.5
-        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: gmmcalcombr_test
+        ports:
+          - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
       - uses: actions/checkout@v1
 
+      # actions/languages
       - name: Set up Ruby 2.6
         uses: actions/setup-ruby@v1
         with:
@@ -30,6 +36,7 @@ jobs:
         with:
           node-version: 12.x
 
+      # actions/dependencies
       - name: Install Bundler gem
         run: gem install bundler
       - name: Install yarn
@@ -44,16 +51,7 @@ jobs:
         run: yarn install
       - name: Setup database
         run: bundle exec rails db:migrate
-        env:
-          PGHOST: localhost
-          PGUSER: postgres
-          PGDATABASE: gmmcalcombr_test
-          RAILS_ENV: test
 
+      # current script
       - name: Run tests
         run: bundle exec rspec
-        env:
-          PGHOST: localhost
-          PGUSER: postgres
-          PGDATABASE: gmmcalcombr_test
-          RAILS_ENV: test
