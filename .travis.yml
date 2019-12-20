@@ -24,9 +24,12 @@ cache:
     - ~/.cache
     - .node_modules
 
+before_install:
+  - gem update --system --force
+
 common: &common
   before_install:
-    - gem update --system
+    - gem update --system --force
 
   before_script:
     - cp config/database.yml.travis config/database.yml
@@ -43,7 +46,7 @@ common: &common
 tests: &tests
   <<: *common
   before_install:
-    - gem update --system
+    - gem update --system --force
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
     - ./cc-test-reporter before-build
