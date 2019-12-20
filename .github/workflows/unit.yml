@@ -115,3 +115,5 @@ jobs:
           ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/lcov.info
           ./cc-test-reporter sum-coverage codeclimate.*.json -p 2
           ./cc-test-reporter upload-coverage
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
