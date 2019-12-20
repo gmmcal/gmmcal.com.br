@@ -10,8 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: ./.github/actions/database
       - uses: ./.github/actions/languages
+      - uses: ./.github/actions/database
       - uses: ./.github/actions/dependencies
       - name: Run tests
         run: bundle exec rspec
