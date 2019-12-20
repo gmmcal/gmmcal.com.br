@@ -47,6 +47,7 @@ jobs:
         env:
           PGHOST: localhost
           PGUSER: postgres
+          PGDATABASE: gmmcalcombr_test
           RAILS_ENV: test
 
       - name: Run tests
@@ -54,4 +55,5 @@ jobs:
         env:
           PGHOST: localhost
           PGUSER: postgres
+          PGDATABASE: gmmcalcombr_test
           RAILS_ENV: test
