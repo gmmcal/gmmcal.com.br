@@ -30,9 +30,9 @@ jobs:
       - name: Install Ruby 2.6.5
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.6.5'
+          ruby-version: 2.6.5
 
-      - name: Install PostgreSQL 11 client
+      - name: Install APT dependencies
         run: sudo apt-get -yqq install libpq-dev
 
       - name: Cache gems
