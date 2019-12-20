@@ -10,8 +10,39 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: ./.github/actions/languages
-      - uses: ./.github/actions/database
-      - uses: ./.github/actions/dependencies
+
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Setup PostgreSQL
+        uses: Harmon758/postgresql-action@v1.0.0
+        with:
+          postgresql version: '11'
+          postgresql db: gmmcalcombr_test
+          postgresql user: postgres
+          postgresql password: postgres
+
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Install yarn
+        run: npm i -g yarn
+      - name: Check ruby version
+        run: ruby --version
+      - name: Check yarn version
+        run: yarn --version
+      - name: Run bundle install
+        run: bundle install --jobs 4 --retry 3 --without production
+      - name: Run yarn install
+        run: yarn install
+      - name: Setup database
+        run: bundle exec rails db:migrate
+
       - name: Run tests
         run: bundle exec rspec
