@@ -49,6 +49,12 @@ jobs:
       - name: Run tests
         run: bundle exec rspec
 
+      - name: Upload backend coverage result
+        uses: actions/upload-artifact@v1
+        with:
+          name: backend-coverage
+          path: coverage/backend/.resultset.json
+
   frontend:
     name: Frontend Tests
     runs-on: ubuntu-18.04
@@ -70,3 +76,40 @@ jobs:
 
       - name: Run tests
         run: yarn test:once
+
+      - name: Upload frontend coverage result
+        uses: actions/upload-artifact@v1
+        with:
+          name: frontend-coverage
+          path: coverage/frontend/lcov.info
+
+  coverage:
+    name: Collect and upload coverage
+    runs-on: ubuntu-18.04
+
+    needs:
+      - backend
+      - frontend
+
+    steps:
+      - name: Install CodeClimate tool
+        run: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+
+      - name: Download backend coverage result
+        uses: actions/download-artifact@v1
+        with:
+          name: backend-coverage
+
+      - name: Download frontend coverage result
+        uses: actions/download-artifact@v1
+        with:
+          name: frontend-coverage
+
+      - name: Upload coverage to CodeClimate
+        run: |
+          ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json backend-coverage/coverage/backend/.resultset.json
+          ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json frontend-coverage/coverage/frontend/lcov.info
+          ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+          ./cc-test-reporter upload-coverage
