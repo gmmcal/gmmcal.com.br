@@ -3,6 +3,9 @@ name: End-to-end tests
 on:
   - pull_request
 
+env:
+  RAILS_ENV: test
+
 jobs:
   e2e:
     name: Tests
@@ -53,7 +56,7 @@ jobs:
         run: bundle exec rails db:migrate
 
       - name: Compile assets
-        run: bundle exec rake assets:precompile
+        run: bundle exec rails assets:precompile
 
       - name: Load default DB data
         run: bundle exec rails db:seed
