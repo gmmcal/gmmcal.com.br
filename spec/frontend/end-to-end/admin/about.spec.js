@@ -15,7 +15,7 @@ describe('About', () => {
 
   describe('List', () => {
     before(() => {
-      cy.exec('bundle exec rake \'db:seed:test[about,1]\'')
+      cy.exec('bundle exec rails \'db:seed:test[about,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
     })
@@ -27,7 +27,7 @@ describe('About', () => {
 
   describe('Create', () => {
     before(() => {
-      cy.exec('bundle exec rake db:clean')
+      cy.exec('bundle exec rails db:clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
     })
@@ -149,7 +149,7 @@ describe('About', () => {
 
   describe('Edit', () => {
     before(() => {
-      cy.exec('bundle exec rake \'db:seed:test[about,1]\'')
+      cy.exec('bundle exec rails \'db:seed:test[about,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
       cy.contains('.btn-outline-primary', 'Edit').click({force: true})
@@ -270,7 +270,7 @@ describe('About', () => {
 
   describe('Download CV', () => {
     before(() => {
-      cy.exec('bundle exec rake \'db:seed:test[about,1]\'')
+      cy.exec('bundle exec rails \'db:seed:test[about,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
     })
