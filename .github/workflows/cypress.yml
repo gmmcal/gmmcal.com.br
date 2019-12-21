@@ -70,7 +70,7 @@ jobs:
       - name: Run yarn install
         run: yarn install
 
-        - name: Setup database
+      - name: Setup database
         run: bundle exec rails db:migrate
 
       # script
