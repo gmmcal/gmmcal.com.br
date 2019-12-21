@@ -34,7 +34,7 @@ jobs:
           node-version: 12.x
 
       - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
+        run: sudo apt-get -yqq install libpq-dev libgconf-2-4
 
       # dependencies
       - name: Install Bundler gem
