@@ -57,6 +57,10 @@ group :test do
   gem 'simplecov', require: false
 end
 
+group :test, :development do
+  gem 'cypress-on-rails'
+end
+
 group :production do
   # Use puma as the app server
   gem 'puma'

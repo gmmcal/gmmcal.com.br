@@ -2,7 +2,7 @@
 
 describe('Content', () => {
   before(() => {
-    cy.exec('bundle exec rake db:seed:all')
+    cy.appScenario('frontend/all')
     cy.visit('/')
   })
 

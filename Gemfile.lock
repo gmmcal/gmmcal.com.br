@@ -84,6 +84,8 @@ GEM
       countries (~> 3.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.5)
+    cypress-on-rails (1.5.0)
+      rack
     database_cleaner (1.7.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -123,7 +125,7 @@ GEM
       concurrent-ruby (~> 1.0)
     i18n-debug (1.2.0)
       i18n (< 2)
-    i18n-js (3.5.0)
+    i18n-js (3.5.1)
       i18n (>= 0.6.6)
     i18n_data (0.8.0)
     ice_nine (0.11.2)
@@ -209,7 +211,7 @@ GEM
       parser (>= 2.5.0.0, < 2.7, != 2.5.1.1)
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
-    request_store (1.4.1)
+    request_store (1.5.0)
       rack (>= 1.4)
     responders (3.0.0)
       actionpack (>= 5.0)
@@ -309,6 +311,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   country_select
+  cypress-on-rails
   database_cleaner
   devise
   draper

@@ -15,7 +15,7 @@ describe('Skill', () => {
 
   describe('List', () => {
     before(() => {
-      cy.exec('bundle exec rake \'db:seed:test[skill,2]\'')
+      cy.appScenario('skill/list')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
     })
@@ -31,7 +31,7 @@ describe('Skill', () => {
 
   describe('Create', () => {
     before(() => {
-      cy.exec('bundle exec rake db:clean')
+      cy.app('clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
       cy.contains('a.btn', 'New').click({force: true})
@@ -113,7 +113,7 @@ describe('Skill', () => {
 
   describe('Edit', () => {
     before(() => {
-      cy.exec('bundle exec rake \'db:seed:test[skill,1]\'')
+      cy.appScenario('skill/edit')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
       cy.contains('.btn-outline-primary', 'Edit').click({force: true})
@@ -201,7 +201,7 @@ describe('Skill', () => {
 
   describe('Delete', () => {
     before(() => {
-      cy.exec('bundle exec rake \'db:seed:test[skill,1]\'')
+      cy.appScenario('skill/delete')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
       cy.contains('.btn-danger', 'Delete').click({force: true})

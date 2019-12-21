@@ -14,6 +14,18 @@ class SeedManager
     create(:education, 2, :finished)
   end
 
+  def self.clean
+    tables = %i[about
+                education
+                skill
+                work_experience]
+    tables.each do |model|
+      ActiveRecord::Base.connection.execute(
+        "TRUNCATE #{model.to_s.tableize} RESTART IDENTITY CASCADE"
+      )
+    end
+  end
+
   def self.create(model, quantity, trait = nil)
     I18n.available_locales.each do |locale|
       FactoryBot.create_list(model, quantity, trait, locale: locale)
