@@ -1,4 +1,4 @@
-name: Backend unit tests
+name: Unit Tests
 
 on:
   - push
@@ -9,7 +9,7 @@ env:
 
 jobs:
   backend:
-    name: Backend Tests
+    name: Backend
     runs-on: ubuntu-18.04
 
     services:
@@ -67,7 +67,7 @@ jobs:
           path: coverage/backend/.resultset.json
 
   frontend:
-    name: Frontend Tests
+    name: Frontend
     runs-on: ubuntu-18.04
 
     steps:
@@ -107,7 +107,7 @@ jobs:
           path: coverage/frontend/lcov.info
 
   coverage:
-    name: Collect and upload coverage
+    name: Coverage
     runs-on: ubuntu-18.04
 
     needs:
