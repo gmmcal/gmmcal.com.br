@@ -55,6 +55,12 @@ jobs:
       - name: Setup database
         run: bundle exec rails db:migrate
 
+      - name: Compile assets
+        run: bundle exec rake assets:precompile
+
+      - name: Load default DB data
+        run: bundle exec rails db:seed
+
       # script
       - name: run tests
         uses: cypress-io/github-action@v1
