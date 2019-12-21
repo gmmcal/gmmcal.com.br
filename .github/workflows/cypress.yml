@@ -43,11 +43,7 @@ jobs:
       - name: Install Bundler gem
         run: gem install bundler
       - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle config set deployment 'true'
-          bundle config set without production
-          bundle install --jobs 4 --retry 3
+        run: bundle install
 
       - name: Run yarn install
         run: yarn install
