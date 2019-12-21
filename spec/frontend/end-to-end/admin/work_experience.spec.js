@@ -15,7 +15,7 @@ describe('Work Experience', () => {
 
   describe('List', () => {
     before(() => {
-      cy.exec('rake \'db:seed:test[work_experience,2]\'')
+      cy.exec('bundle exec rake \'db:seed:test[work_experience,2]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
     })
@@ -31,7 +31,7 @@ describe('Work Experience', () => {
 
   describe('Create', () => {
     before(() => {
-      cy.exec('rake db:clean')
+      cy.exec('bundle exec rake db:clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
       cy.contains('a.btn', 'New').click({force: true})
@@ -158,7 +158,7 @@ describe('Work Experience', () => {
 
   describe('Edit', () => {
     before(() => {
-      cy.exec('rake \'db:seed:test[work_experience,1]\'')
+      cy.exec('bundle exec rake \'db:seed:test[work_experience,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
       cy.contains('.btn-outline-primary', 'Edit').click({force: true})
@@ -293,7 +293,7 @@ describe('Work Experience', () => {
 
   describe('Delete', () => {
     before(() => {
-      cy.exec('rake \'db:seed:test[work_experience,1]\'')
+      cy.exec('bundle exec rake \'db:seed:test[work_experience,1]\'')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
       cy.contains('.btn-danger', 'Delete').click({force: true})
