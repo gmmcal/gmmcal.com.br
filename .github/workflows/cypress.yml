@@ -59,7 +59,8 @@ jobs:
         run: bundle exec rails db:seed
 
       # script
-      - name: run tests
+      - name: Run tests
         uses: cypress-io/github-action@v1
         with:
           start: yarn cypress:ci
+          install: false
