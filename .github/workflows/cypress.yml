@@ -4,7 +4,7 @@ on:
   - pull_request
 
 env:
-  RAILS_ENV: test
+  RAILS_ENV: development
 
 jobs:
   admin:
@@ -17,7 +17,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: gmmcalcombr_test
+          POSTGRES_DB: gmmcalcombr_development
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -37,7 +37,7 @@ jobs:
           node-version: 12.x
 
       - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev libgconf-2-4
+        run: sudo apt-get -yqq install libpq-dev
 
       # dependencies
       - name: Install Bundler gem
@@ -66,7 +66,6 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn cypress:ci:admin
-          install: false
 
   frontend:
     name: Frontend
@@ -78,7 +77,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: gmmcalcombr_test
+          POSTGRES_DB: gmmcalcombr_development
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -98,7 +97,7 @@ jobs:
           node-version: 12.x
 
       - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev libgconf-2-4
+        run: sudo apt-get -yqq install libpq-dev
 
       # dependencies
       - name: Install Bundler gem
@@ -127,4 +126,3 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn cypress:ci:frontend
-          install: false
