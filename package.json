@@ -88,7 +88,7 @@
   "scripts": {
     "test": "jest --watch",
     "test:once": "jest",
-    "cypress": "start-test server:start 3000 cypress:open",
+    "cypress:dev": "start-test server:start 3000 cypress:open",
     "server:start": "bundle exec rails server -p 3000",
     "cypress:run": "cypress run",
     "cypress:run:admin": "cypress run -s \"spec/end-to-end/tests/admin/**.js\"",
