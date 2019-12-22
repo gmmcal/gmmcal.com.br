@@ -2,6 +2,22 @@ language: ruby
 
 dist: xenial
 
+services:
+  - postgresql
+
+addons:
+  postgresql: "10"
+
+cache:
+  directories:
+    - ~/.rvm
+    - ~/.npm
+    - ~/.cache
+    - .node_modules
+
+before_install:
+  - gem update --system --force
+
 jobs:
   include:
     - stage: deploy
@@ -29,3 +45,5 @@ jobs:
         on:
           all_branches: true
           tags: true
+
+bundler_args: --without production
