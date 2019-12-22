@@ -66,6 +66,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn cypress:ci:admin
+          runTests: false
 
   frontend:
     name: Frontend
@@ -126,3 +127,4 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn cypress:ci:frontend
+          runTests: false
