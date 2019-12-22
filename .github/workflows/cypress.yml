@@ -7,8 +7,8 @@ env:
   RAILS_ENV: test
 
 jobs:
-  e2e:
-    name: Tests
+  admin:
+    name: Admin
     runs-on: ubuntu-18.04
 
     services:
@@ -65,5 +65,66 @@ jobs:
       - name: Run tests
         uses: cypress-io/github-action@v1
         with:
-          start: yarn cypress:ci
+          start: yarn cypress:ci:admin
+          install: false
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-18.04
+
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: gmmcalcombr_test
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install APT dependencies
+        run: sudo apt-get -yqq install libpq-dev libgconf-2-4
+
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without production
+          bundle install --jobs 4 --retry 3
+
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Setup database
+        run: bundle exec rails db:migrate
+
+      - name: Compile assets
+        run: bundle exec rails assets:precompile
+
+      - name: Load default DB data
+        run: bundle exec rails db:seed
+
+      # script
+      - name: Run tests
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn cypress:ci:frontend
           install: false
