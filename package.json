@@ -91,11 +91,7 @@
     "cypress:dev": "start-test server:start 3000 cypress:open",
     "server:start": "bundle exec rails server -p 3000",
     "cypress:run": "cypress run",
-    "cypress:run:admin": "cypress run -s \"spec/end-to-end/tests/admin/**.js\"",
-    "cypress:run:frontend": "cypress run -s \"spec/end-to-end/tests/frontend/**.js\"",
     "cypress:open": "cypress open",
-    "cypress:ci": "start-test server:start 3000 cypress:run",
-    "cypress:ci:admin": "start-test server:start 3000 cypress:run:admin",
-    "cypress:ci:frontend": "start-test server:start 3000 cypress:run:frontend"
+    "cypress:ci": "start-test server:start 3000 cypress:run"
   }
 }
