@@ -1,10 +1,8 @@
 name: Unit Tests
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
+  - push
+  - pull_request
 
 env:
   RAILS_ENV: test
@@ -113,6 +111,8 @@ jobs:
     name: Coverage
     runs-on: ubuntu-18.04
 
+    if: github.event_name == 'push'
+
     needs:
       - backend
       - frontend
@@ -137,9 +137,9 @@ jobs:
 
       - name: Upload coverage to CodeClimate
         run: |
-          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json --debug
-          ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/lcov.info --debug
+          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json
+          ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/lcov.info
           ./cc-test-reporter sum-coverage codeclimate.*.json -p 2
-          ./cc-test-reporter upload-coverage --debug
+          ./cc-test-reporter upload-coverage
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
