@@ -9,7 +9,7 @@ env:
 
 jobs:
   backend:
-    name: Unit: Backend
+    name: "Unit: Backend"
     runs-on: ubuntu-18.04
 
     services:
@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-bundler-${{ hashFiles('**/Gemfile.lock') }}
+          key: ${{ runner.os }}-bundler-${{ hashFiles("**/Gemfile.lock") }}
           restore-keys: |
             ${{ runner.os }}-bundler-${{ env.cache-name }}-
             ${{ runner.os }}-bundler-
@@ -67,7 +67,7 @@ jobs:
           path: coverage/backend/.resultset.json
 
   frontend:
-    name: Unit: Frontend
+    name: "Unit: Frontend"
     runs-on: ubuntu-18.04
 
     steps:
@@ -87,7 +87,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles("**/yarn.lock") }}
           restore-keys: |
             ${{ runner.os }}-yarn-${{ env.cache-name }}-
             ${{ runner.os }}-yarn-
@@ -108,10 +108,10 @@ jobs:
           path: coverage/frontend/lcov.info
 
   coverage:
-    name: Unit: Coverage
+    name: "Unit: Coverage"
     runs-on: ubuntu-18.04
 
-    if: github.event_name == 'push'
+    if: github.event_name == "push"
 
     needs:
       - backend
