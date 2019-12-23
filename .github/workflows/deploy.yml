@@ -8,21 +8,21 @@ on:
 
 jobs:
   staging:
-    name: "Deploy: Staging"
+    name: 'Deploy: Staging'
     runs-on: ubuntu-18.04
 
-    if: github.event_name == "push"
+    if: github.event_name == 'push'
 
     steps:
       - name: Deploy
-        run: echo "Deploying to Staging"
+        run: echo 'Deploying to Staging'
 
   production:
-    name: "Deploy: Production"
+    name: 'Deploy: Production'
     runs-on: ubuntu-18.04
 
-    if: github.event_name == "release"
+    if: github.event_name == 'release'
 
     steps:
       - name: Deploy
-        run: echo "Deploying to Production"
+        run: echo 'Deploying to Production'

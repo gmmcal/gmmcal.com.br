@@ -8,7 +8,7 @@ env:
 
 jobs:
   admin:
-    name: "E2E: Admin"
+    name: 'E2E: Admin'
     runs-on: ubuntu-18.04
 
     services:
@@ -44,20 +44,20 @@ jobs:
         uses: actions/cache@v1
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-bundler-${{ hashFiles("**/Gemfile.lock") }}
+          key: ${{ runner.os }}-bundler-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-bundler-${{ env.cache-name }}-
             ${{ runner.os }}-bundler-
 
       - name: Get yarn cache
         id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo '::set-output name=dir::$(yarn cache dir)'
 
       - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles("**/yarn.lock") }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-${{ env.cache-name }}-
             ${{ runner.os }}-yarn-
@@ -89,12 +89,12 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn server:start
-          wait-on: "http://localhost:3000"
+          wait-on: 'http://localhost:3000'
           install: false
           spec: spec/end-to-end/tests/admin/**.js
 
   frontend:
-    name: "E2E: Frontend"
+    name: 'E2E: Frontend'
     runs-on: ubuntu-18.04
 
     services:
@@ -130,20 +130,20 @@ jobs:
         uses: actions/cache@v1
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-bundler-${{ hashFiles("**/Gemfile.lock") }}
+          key: ${{ runner.os }}-bundler-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-bundler-${{ env.cache-name }}-
             ${{ runner.os }}-bundler-
 
       - name: Get yarn cache
         id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo '::set-output name=dir::$(yarn cache dir)'
 
       - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles("**/yarn.lock") }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-${{ env.cache-name }}-
             ${{ runner.os }}-yarn-
@@ -175,6 +175,6 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: yarn server:start
-          wait-on: "http://localhost:3000"
+          wait-on: 'http://localhost:3000'
           install: false
           spec: spec/end-to-end/tests/frontend/**.js
