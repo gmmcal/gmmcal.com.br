@@ -1,15 +1,10 @@
 name: Deploy
 
-# on:
-#   push:
-#     branches:
-#       - master
-#   release:
-
 on:
-  - push
-  - release
-
+  push:
+    branches:
+      - master
+  release:
 
 jobs:
   staging:
