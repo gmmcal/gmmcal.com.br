@@ -1,0 +1,33 @@
+name: Deploy
+
+# on:
+#   push:
+#     branches:
+#       - master
+#   release:
+
+on:
+  - push
+  - release
+
+
+jobs:
+  staging:
+    name: Staging
+    runs-on: ubuntu-18.04
+
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Deploy
+        run: echo 'Deploying to Staging'
+
+  production:
+    name: Production
+    runs-on: ubuntu-18.04
+
+    if: github.event_name == 'release'
+
+    steps:
+      - name: Deploy
+        run: echo 'Deploying to Production'
