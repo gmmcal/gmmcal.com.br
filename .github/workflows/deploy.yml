@@ -8,7 +8,7 @@ on:
 
 jobs:
   staging:
-    name: Staging
+    name: Deploy: Staging
     runs-on: ubuntu-18.04
 
     if: github.event_name == 'push'
@@ -18,7 +18,7 @@ jobs:
         run: echo 'Deploying to Staging'
 
   production:
-    name: Production
+    name: Deploy: Production
     runs-on: ubuntu-18.04
 
     if: github.event_name == 'release'

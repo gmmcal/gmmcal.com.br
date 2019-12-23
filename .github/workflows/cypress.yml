@@ -8,7 +8,7 @@ env:
 
 jobs:
   admin:
-    name: Admin
+    name: E2E: Admin
     runs-on: ubuntu-18.04
 
     services:
@@ -91,10 +91,10 @@ jobs:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
           install: false
-          spec: spec/end-to-end/tests/admin/**.js # will only work when https://github.com/cypress-io/github-action/pull/51 is merged
+          spec: spec/end-to-end/tests/admin/**.js
 
   frontend:
-    name: Frontend
+    name: E2E: Frontend
     runs-on: ubuntu-18.04
 
     services:
@@ -177,4 +177,4 @@ jobs:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
           install: false
-          spec: spec/end-to-end/tests/frontend/**.js # will only work when https://github.com/cypress-io/github-action/pull/51 is merged
+          spec: spec/end-to-end/tests/frontend/**.js

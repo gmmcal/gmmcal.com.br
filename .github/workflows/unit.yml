@@ -9,7 +9,7 @@ env:
 
 jobs:
   backend:
-    name: Backend
+    name: Unit: Backend
     runs-on: ubuntu-18.04
 
     services:
@@ -67,7 +67,7 @@ jobs:
           path: coverage/backend/.resultset.json
 
   frontend:
-    name: Frontend
+    name: Unit: Frontend
     runs-on: ubuntu-18.04
 
     steps:
@@ -108,7 +108,7 @@ jobs:
           path: coverage/frontend/lcov.info
 
   coverage:
-    name: Coverage
+    name: Unit: Coverage
     runs-on: ubuntu-18.04
 
     if: github.event_name == 'push'
