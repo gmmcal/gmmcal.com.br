@@ -13,7 +13,6 @@ gem 'bootsnap', require: false
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
-gem 'rails-i18n'
 
 # Frontend gems
 gem 'blueprinter'
@@ -39,20 +38,23 @@ gem 'faker', require: false
 
 # Groups
 group :development do
-  gem 'brakeman'
-  gem 'i18n-debug'
+  # gem 'i18n-debug'
   gem 'i18n-js'
   gem 'listen'
-  gem 'reek'
   gem 'spring'
+end
+
+group :lint do
+  gem 'brakeman'
+  gem 'reek'
+  gem 'rubocop', '~> 0.52.1'
+  gem 'rubocop-rspec'
 end
 
 # Test suite
 group :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 4.0.0.beta2'
-  gem 'rubocop', '~> 0.52.1'
-  gem 'rubocop-rspec'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
 end

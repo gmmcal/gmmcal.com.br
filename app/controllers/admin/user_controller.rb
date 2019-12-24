@@ -13,7 +13,7 @@ module Admin
       if @user.update(permitted_attributes(@user))
         bypass_sign_in(@user)
         redirect_to %i[edit admin user],
-                    notice: 'User was successfully updated.'
+                    notice: t(:updated, scope: %i[helpers], model: human_model)
       else
         render :edit
       end
