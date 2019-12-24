@@ -157,18 +157,15 @@ en:
     delete: Delete
     download_cv: Download CV
     back: Back
-    submit:
-      create: Save
-      update: Update
     created: '%{model} was successfully created.'
     updated: '%{model} was successfully updated.'
     deleted: '%{model} was successfully deleted.'
     select:
       prompt: Please select
     submit:
-      create: Create %{model}
+      create: Save
+      update: Update
       submit: Save %{model}
-      update: Update %{model}
   number:
     currency:
       format:

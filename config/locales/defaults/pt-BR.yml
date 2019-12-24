@@ -157,18 +157,15 @@ pt-BR:
     delete: Deletar
     download_cv: Baixar CV
     back: Voltar
-    submit:
-      create: Salvar
-      update: Atualizar
     created: '%{model} criado com sucesso.'
     updated: '%{model} atualizado com sucesso.'
     deleted: '%{model} excluido com sucesso.'
     select:
       prompt: Por favor selecione
     submit:
-      create: Criar %{model}
+      create: Salvar
+      update: Atualizar
       submit: Salvar %{model}
-      update: Atualizar %{model}
   number:
     currency:
       format:
