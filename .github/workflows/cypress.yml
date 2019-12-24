@@ -137,7 +137,7 @@ jobs:
 
       - name: Get yarn cache
         id: yarn-cache
-        run: echo '::set-output name=dir::$(yarn cache dir)'
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Cache node modules
         uses: actions/cache@v1
