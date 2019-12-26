@@ -14,19 +14,13 @@ RSpec.describe About, type: :model do
   end
 
   describe '.country_name' do
-    it 'country name if english name is provided' do
-      about = create(:about, country: 'Netherlands')
-      expect(about.country_name).to eq('Netherlands')
+    before do
+      I18n.locale = :en
     end
 
     it 'country name if code is provided' do
       about = create(:about, country: 'NL')
       expect(about.country_name).to eq('Netherlands')
-    end
-
-    it 'equal country if portuguese name is provided' do
-      about = create(:about, country: 'Holanda')
-      expect(about.country_name).to eq('Holanda')
     end
   end
 end
