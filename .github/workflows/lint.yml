@@ -25,10 +25,10 @@ jobs:
         uses: actions/cache@v1
         with:
           path: vendor/bundle
-          key: bundler-unit-${{ hashFiles('**/Gemfile.lock') }}
+          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
-            bundler-unit-${{ env.cache-name }}-
-            bundler-unit-
+            bundler-lint-${{ env.cache-name }}-
+            bundler-lint-
 
       # dependencies
       - name: Install Bundler gem
@@ -63,10 +63,10 @@ jobs:
         uses: actions/cache@v1
         with:
           path: vendor/bundle
-          key: bundler-unit-${{ hashFiles('**/Gemfile.lock') }}
+          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
-            bundler-unit-${{ env.cache-name }}-
-            bundler-unit-
+            bundler-lint-${{ env.cache-name }}-
+            bundler-lint-
 
       # dependencies
       - name: Install Bundler gem
@@ -77,5 +77,111 @@ jobs:
           bundle config set without test development production
           bundle install --jobs 4 --retry 3
 
-      - name: Run rubocop
+      - name: Run reek
         run: bundle exec reek
+
+  brakeman:
+    name: 'Lint: Brakeman'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install APT dependencies
+        run: sudo apt-get -yqq install libpq-dev
+
+      # caching
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            bundler-lint-${{ env.cache-name }}-
+            bundler-lint-
+
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without test development production
+          bundle install --jobs 4 --retry 3
+
+      - name: Run brakeman
+        run: bundle exec brakeman
+
+  bundler-audit:
+    name: 'Lint: Bundler Audit'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install APT dependencies
+        run: sudo apt-get -yqq install libpq-dev
+
+      # caching
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            bundler-lint-${{ env.cache-name }}-
+            bundler-lint-
+
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without test development production
+          bundle install --jobs 4 --retry 3
+
+      - name: Install Bundler Audit
+        run: gem install bundler-audit
+
+      - name: Update advisory database
+        run: bundler-audit update
+
+      - name: Run bundler-audit
+        run: bundler-audit
+
+  csslint:
+    name: 'Lint: CSSLint'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Run CSSLint
+        run: echo 'Running CSSLint'
+
+  scsslint:
+    name: 'Lint: SCSSLint'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Run SCSSLint
+        run: echo 'Running SCSSLint'
+
+  eslint:
+    name: 'Lint: ESLint'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Run ESLint
+        run: echo 'Running ESLint'
