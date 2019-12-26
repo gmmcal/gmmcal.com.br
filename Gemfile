@@ -26,7 +26,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 # Admin gems
-gem 'country_select'
 gem 'devise'
 gem 'kramdown'
 gem 'pundit'
@@ -41,7 +40,6 @@ group :development do
   # gem 'i18n-debug'
   gem 'i18n-js'
   gem 'listen'
-  gem 'spring'
 end
 
 group :lint do
