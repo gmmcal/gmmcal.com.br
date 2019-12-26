@@ -1,0 +1,81 @@
+name: Lint
+
+on:
+  - pull_request
+
+jobs:
+  rubocop:
+    name: 'Lint: Rubocop'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install APT dependencies
+        run: sudo apt-get -yqq install libpq-dev
+
+      # caching
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-unit-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            bundler-unit-${{ env.cache-name }}-
+            bundler-unit-
+
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without test development production
+          bundle install --jobs 4 --retry 3
+
+      - name: Run rubocop
+        run: bundle exec rubocop
+
+  reek:
+    name: 'Lint: Reek'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install APT dependencies
+        run: sudo apt-get -yqq install libpq-dev
+
+      # caching
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-unit-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            bundler-unit-${{ env.cache-name }}-
+            bundler-unit-
+
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without test development production
+          bundle install --jobs 4 --retry 3
+
+      - name: Run rubocop
+        run: bundle exec reek
