@@ -5,7 +5,7 @@ class Country
   attr_reader :country
 
   def initialize(country)
-    @country = country.upcase
+    @country = country&.upcase
   end
 
   def name
