@@ -40,9 +40,9 @@ checks:
 
 plugins:
   brakeman:
-    enabled: false
+    enabled: true
   bundler-audit:
-    enabled: false
+    enabled: true
   csslint:
     enabled: false
   duplication:

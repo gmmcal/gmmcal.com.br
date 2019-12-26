@@ -1,4 +1,6 @@
-require: rubocop-rspec
+require:
+  - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.5
@@ -22,7 +24,7 @@ Style/StringLiterals:
   Exclude:
     - 'config/**/*'
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
 Lint/ScriptPermission:
@@ -33,7 +35,7 @@ Metrics/BlockLength:
     - 'lib/tasks/*'
     - 'spec/**/*'
 
-Metrics/LineLength:
+Layout/LineLength:
   Exclude:
     - 'config/**/*'
     - 'db/migrate/*'
@@ -44,10 +46,13 @@ Metrics/MethodLength:
     - 'db/migrate/*'
 
 Rails/LexicallyScopedActionFilter:
-    Enabled: false
+  Enabled: false
 
 RSpec/NestedGroups:
   Max: 5
+
+Rails/FilePath:
+  Enabled: false
 
 Style/MixinUsage:
   Enabled: false
@@ -55,6 +60,3 @@ Style/MixinUsage:
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
     - 'config/**/*'
-
-FactoryBot/StaticAttributeDefinedDynamically:
-  Enabled: false

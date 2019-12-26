@@ -45,7 +45,8 @@ end
 group :lint do
   gem 'brakeman'
   gem 'reek'
-  gem 'rubocop', '~> 0.52.1'
+  gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec'
 end
 
