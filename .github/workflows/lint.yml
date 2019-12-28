@@ -232,5 +232,5 @@ jobs:
       - name: Run yarn install
         run: yarn install
 
-    - name: Run ESLint
+      - name: Run ESLint
         run: yarn eslint
