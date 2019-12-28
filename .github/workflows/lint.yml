@@ -198,7 +198,7 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Run SCSSLint
-        run: scss-lint
+        run: bundle exec scss-lint
 
   eslint:
     name: 'Lint: ESLint'
@@ -221,10 +221,10 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-unit-${{ hashFiles('**/yarn.lock') }}
+          key: yarn-lint-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            yarn-unit-${{ env.cache-name }}-
-            yarn-unit-
+            yarn-lint-${{ env.cache-name }}-
+            yarn-lint-
 
       - name: Install yarn
         run: npm i -g yarn
