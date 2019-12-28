@@ -48,6 +48,7 @@ group :lint do
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'scss_lint', require: false
 end
 
 # Test suite

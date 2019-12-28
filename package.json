@@ -79,6 +79,7 @@
     "babel-eslint": "*",
     "babel-jest": "*",
     "cypress": "*",
+    "eslint": "*",
     "jest": "*",
     "jest-canvas-mock": "*",
     "jest-serializer-vue": "*",
@@ -92,6 +93,7 @@
     "server:start": "bundle exec rails server -p 3000",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
-    "cypress:ci": "start-test server:start 3000 cypress:run"
+    "cypress:ci": "start-test server:start 3000 cypress:run",
+    "eslint": "eslint --config=.eslintrc.js  app/javascript/packs/**/**.js"
   }
 }
