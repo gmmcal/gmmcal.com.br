@@ -24,7 +24,7 @@ jobs:
         run: gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        run: dpl --provider=heroku --app=gmmcal-dev --run="rake db:migrate db:seed:all db:cache:clear" --api-key=${{ secrets.HEROKU_API_KEY }}
+        run: dpl --provider=heroku --app=gmmcal-dev --run="rails db:migrate db:seed:all db:cache:clear" --api-key=${{ secrets.HEROKU_API_KEY }}
 
   production:
     name: 'Deploy: Production'
@@ -45,4 +45,4 @@ jobs:
         run: gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        run: dpl --provider=heroku --app=gmmcal --run="rake db:migrate db:cache:clear" --api-key=${{ secrets.HEROKU_API_KEY }}
+        run: dpl --provider=heroku --app=gmmcal --run="rails db:migrate db:cache:clear" --api-key=${{ secrets.HEROKU_API_KEY }}
