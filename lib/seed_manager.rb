@@ -8,13 +8,23 @@ FactoryBot.find_definitions
 
 class SeedManager
   def self.all
+    log('Create About')
     create(:about, 1)
+    log('Create Work Experiences')
     create(:work_experience, 5)
+    log('Create Skills')
     create(:skill, 20)
+    log('Create Educations')
     create(:education, 2, :finished)
   end
 
+  def self.clear_cache
+    log('Clearing cache')
+    Rails.cache.clear
+  end
+
   def self.clean
+    log('Cleaning tables')
     tables = %i[about
                 education
                 skill
@@ -30,5 +40,14 @@ class SeedManager
     I18n.available_locales.each do |locale|
       FactoryBot.create_list(model, quantity, trait, locale: locale)
     end
+  end
+
+  def self.log(message)
+    max_size = 79
+    messages = []
+    messages << '=' * 2
+    messages << message
+    messages << '=' * (max_size - 2 - messages.map(&:length).inject(:+))
+    puts messages.join(' ')
   end
 end

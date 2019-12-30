@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+puts '== Create/Update default user ================================================='
 User.where(
   first_name: 'Gustavo',
   last_name: 'Cunha',

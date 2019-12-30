@@ -3,7 +3,9 @@
 namespace :db do
   namespace :cache do
     task clear: :environment do
-      Rails.cache.clear
+      require 'seed_manager'
+
+      SeedManager.clear_cache
     end
   end
 

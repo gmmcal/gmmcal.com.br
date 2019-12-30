@@ -20,17 +20,8 @@ jobs:
         with:
           ruby-version: 2.6.x
 
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-deploy-staging-1.x
-          restore-keys: |
-            bundler-deploy-${{ env.cache-name }}-
-            bundler-deploy
-
       - name: Install dpl gem
-        run: gem install dpl --version "~> 1.10"
+        run: gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
         run: dpl --provider=heroku --app=gmmcal-dev --run="rails db:migrate db:seed:all db:cache:clear" --skip_cleanup --api-key=${{ secrets.HEROKU_API_KEY }}
@@ -50,17 +41,8 @@ jobs:
         with:
           ruby-version: 2.6.x
 
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-deploy-staging-1.x
-          restore-keys: |
-            bundler-deploy-${{ env.cache-name }}-
-            bundler-deploy
-
       - name: Install dpl gem
-        run: gem install dpl --version "~> 1.10"
+        run: gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
         run: dpl --provider=heroku --app=gmmcal --run="rails db:migrate db:cache:clear" --skip_cleanup --api-key=${{ secrets.HEROKU_API_KEY }}
