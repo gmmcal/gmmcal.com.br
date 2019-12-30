@@ -16,16 +16,10 @@ namespace :db do
   end
 
   namespace :seed do
-    task all: %i[clean seed:user environment] do
+    task all: %i[clean seed environment] do
       require 'seed_manager'
 
       SeedManager.all
-    end
-
-    task user: :environment do
-      require 'seed_manager'
-
-      SeedManager.user
     end
 
     task :test, %i[model quantity] => %i[clean environment] do |_task, args|
