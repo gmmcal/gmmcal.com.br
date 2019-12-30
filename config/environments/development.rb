@@ -74,7 +74,6 @@ Rails.application.configure do
   # Disable request forgery protection during end-to-end tests.
   config.action_controller.allow_forgery_protection = false
 
-  config.log_level = :fatal if ENV['GITHUB_ACTIONS']
   logger           = ActiveSupport::Logger.new(STDOUT)
   logger.formatter = config.log_formatter
   config.logger    = ActiveSupport::TaggedLogging.new(logger)

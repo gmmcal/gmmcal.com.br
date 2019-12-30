@@ -42,12 +42,22 @@ class SeedManager
     end
   end
 
+  def self.user
+    log('Create/Update default user')
+    User.where(
+      first_name: 'Gustavo',
+      last_name: 'Cunha',
+      email: 'email@example.com',
+      default_locale: :en
+    ).first_or_create(password: 'password2018')
+  end
+
   def self.log(message)
     max_size = 79
     messages = []
     messages << '=' * 2
     messages << message
     messages << '=' * (max_size - 2 - messages.map(&:length).inject(:+))
-    puts messages.join(' ')
+    Rails.logger.info messages.join(' ')
   end
 end

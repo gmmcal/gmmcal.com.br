@@ -54,11 +54,6 @@ RSpec/NestedGroups:
 Rails/FilePath:
   Enabled: false
 
-Rails/Output:
-  Exclude:
-    - 'db/seeds.rb'
-    - 'lib/seed_manager.rb'
-
 Style/MixinUsage:
   Enabled: false
 
