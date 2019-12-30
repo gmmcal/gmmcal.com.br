@@ -2,8 +2,6 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - master
   release:
 
 jobs:
@@ -14,8 +12,28 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-deploy-staging-1.x
+          restore-keys: |
+            bundler-deploy-${{ env.cache-name }}-
+            bundler-deploy
+
+      - name: Install dpl gem
+        run: gem install dpl --version "~> 1.10"
+
       - name: Deploy
-        run: echo 'Deploying to Staging'
+        run: dpl --provider=heroku --app=gmmcal-dev --run="rails db:migrate" --run="rails db:seed:all" --run="rails db:cache:clear" --skip_cleanup --api-key=${{ secrets.HEROKU_API_KEY }}
 
   production:
     name: 'Deploy: Production'
@@ -24,5 +42,25 @@ jobs:
     if: github.event_name == 'release'
 
     steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-deploy-staging-1.x
+          restore-keys: |
+            bundler-deploy-${{ env.cache-name }}-
+            bundler-deploy
+
+      - name: Install dpl gem
+        run: gem install dpl --version "~> 1.10"
+
       - name: Deploy
-        run: echo 'Deploying to Production'
+        run: dpl --provider=heroku --app=gmmcal --run="rails db:migrate" --run="rails db:cache:clear" --skip_cleanup --api-key=${{ secrets.HEROKU_API_KEY }}
