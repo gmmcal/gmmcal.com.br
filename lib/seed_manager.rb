@@ -8,6 +8,8 @@ FactoryBot.find_definitions
 
 class SeedManager
   def self.all
+    return if production?
+
     log('Create About')
     create(:about, 1)
     log('Create Work Experiences')
@@ -24,6 +26,8 @@ class SeedManager
   end
 
   def self.clean
+    return if production?
+
     log('Cleaning tables')
     tables = %i[about
                 education
@@ -37,12 +41,16 @@ class SeedManager
   end
 
   def self.create(model, quantity, trait = nil)
+    return if production?
+
     I18n.available_locales.each do |locale|
       FactoryBot.create_list(model, quantity, trait, locale: locale)
     end
   end
 
   def self.user
+    return if production?
+
     log('Create/Update default user')
     User.where(
       first_name: 'Gustavo',
@@ -59,5 +67,9 @@ class SeedManager
     messages << message
     messages << '=' * (max_size - 2 - messages.map(&:length).inject(:+))
     Rails.logger.info messages.join(' ')
+  end
+
+  def self.production?
+    ENV['IS_PRODUCTION'].present?
   end
 end
