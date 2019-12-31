@@ -1,0 +1,145 @@
+name: Unit Tests
+
+on:
+  - push
+  - pull_request
+
+env:
+  RAILS_ENV: test
+
+jobs:
+  backend:
+    name: 'Unit: Backend'
+    runs-on: ubuntu-18.04
+
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: gmmcalcombr_test
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install APT dependencies
+        run: sudo apt-get -yqq install libpq-dev
+
+      # caching
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundler-unit-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            bundler-unit-${{ env.cache-name }}-
+            bundler-unit-
+
+      # dependencies
+      - name: Install Bundler gem
+        run: gem install bundler
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without lint development production
+          bundle install --jobs 4 --retry 3 --deployment
+      - name: Setup database
+        run: bundle exec rails db:migrate
+
+      # script
+      - name: Run tests
+        run: bundle exec rspec
+
+      - name: Upload backend coverage result
+        uses: actions/upload-artifact@v1
+        with:
+          name: backend-coverage
+          path: coverage/backend/.resultset.json
+
+  frontend:
+    name: 'Unit: Frontend'
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      # caching
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: yarn-unit-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-unit-${{ env.cache-name }}-
+            yarn-unit-
+
+      - name: Install yarn
+        run: npm i -g yarn
+
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Run tests
+        run: yarn test:once
+
+      - name: Upload frontend coverage result
+        uses: actions/upload-artifact@v1
+        with:
+          name: frontend-coverage
+          path: coverage/frontend/lcov.info
+
+  coverage:
+    name: 'Unit: Coverage'
+    runs-on: ubuntu-18.04
+
+    if: github.event_name == 'push'
+
+    needs:
+      - backend
+      - frontend
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install CodeClimate tool
+        run: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+
+      - name: Download backend coverage result
+        uses: actions/download-artifact@v1
+        with:
+          name: backend-coverage
+
+      - name: Download frontend coverage result
+        uses: actions/download-artifact@v1
+        with:
+          name: frontend-coverage
+
+      - name: Upload coverage to CodeClimate
+        run: |
+          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json
+          ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/lcov.info
+          ./cc-test-reporter sum-coverage codeclimate.*.json -p 2
+          ./cc-test-reporter upload-coverage
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}

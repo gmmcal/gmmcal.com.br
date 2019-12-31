@@ -3,10 +3,10 @@
   "description": "Personal Website",
   "website": "https://www.gmmcal.com.br/",
   "repository": "https://github.com/gmmcal/gmmcal.com.br",
-  "scripts": {
-    "postdeploy": "bundle exec rake db:migrate db:seed db:seed:all"
-  },
   "env": {
+    "BUNDLE_WITHOUT": {
+      "required": true
+    },
     "RAILS_MASTER_KEY": {
       "required": true
     },

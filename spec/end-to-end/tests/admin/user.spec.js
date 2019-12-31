@@ -174,7 +174,7 @@ describe('Profile', () => {
       })
 
       it('shows confirmation message', () => {
-        cy.get('.alert').should('have.text', 'User was successfully updated.')
+        cy.get('.alert').should('have.text', 'Profile was successfully updated.')
       })
     })
   })
@@ -349,7 +349,7 @@ describe('Profile', () => {
       })
 
       it('shows confirmation message', () => {
-        cy.get('.alert').should('have.text', 'User was successfully updated.')
+        cy.get('.alert').should('have.text', 'Profile was successfully updated.')
       })
     })
   })

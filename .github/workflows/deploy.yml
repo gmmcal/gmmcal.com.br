@@ -1,0 +1,50 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+  release:
+
+jobs:
+  staging:
+    name: 'Deploy: Staging'
+    runs-on: ubuntu-18.04
+
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install dpl gem
+        run: gem install dpl --no-document --version "~> 1.10"
+
+      - name: Deploy
+        run: dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
+
+  production:
+    name: 'Deploy: Production'
+    runs-on: ubuntu-18.04
+
+    if: github.event_name == 'release'
+
+    steps:
+      - uses: actions/checkout@v1
+
+      # languages
+      - name: Install Ruby 2.6.x
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Install dpl gem
+        run: gem install dpl --no-document --version "~> 1.10"
+
+      - name: Deploy
+        run: dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}

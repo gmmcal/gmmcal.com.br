@@ -13,7 +13,6 @@ gem 'bootsnap', require: false
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
-gem 'rails-i18n'
 
 # Frontend gems
 gem 'blueprinter'
@@ -27,7 +26,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 # Admin gems
-gem 'country_select'
 gem 'devise'
 gem 'kramdown'
 gem 'pundit'
@@ -39,22 +37,30 @@ gem 'faker', require: false
 
 # Groups
 group :development do
-  gem 'brakeman'
-  gem 'i18n-debug'
+  # gem 'i18n-debug'
   gem 'i18n-js'
   gem 'listen'
+end
+
+group :lint do
+  gem 'brakeman'
   gem 'reek'
-  gem 'spring'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+  gem 'scss_lint', require: false
 end
 
 # Test suite
 group :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 4.0.0.beta2'
-  gem 'rubocop', '~> 0.52.1'
-  gem 'rubocop-rspec'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
+end
+
+group :test, :development do
+  gem 'cypress-on-rails'
 end
 
 group :production do

@@ -5,8 +5,10 @@ Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 ![repo size](https://img.shields.io/github/repo-size/gmmcal/gmmcal.com.br.svg)
 [![license](https://img.shields.io/github/license/gmmcal/gmmcal.com.br.svg)](LICENSE)
 
-[![Build Status](https://travis-ci.com/gmmcal/gmmcal.com.br.svg?branch=master)](https://travis-ci.com/gmmcal/gmmcal.com.br)
-[![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)](https://hakiri.io/github/gmmcal/gmmcal.com.br/master)
+![Unit Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/Unit%20Tests/badge.svg?branch=master)
+![End-to-end Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/End-to-end%20Tests/badge.svg?branch=master)
+![Lint](https://github.com/gmmcal/gmmcal.com.br/workflows/Lint/badge.svg?branch=master)
+![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)
 
 My personal website code, playground and learning lab.
 
@@ -27,12 +29,11 @@ This website is a result of years of constant learning. The template was purchas
 
 Currently, it features a full-stack custom CMS backend built on top of [Ruby on Rails](https://rubyonrails.org/) and a frontend powered by [Vue.js](https://vuejs.org/) with a print friendly feature. It is deployed on [Heroku](https://www.heroku.com/). Backend tests are written in [RSpec](http://rspec.info/), frontend tests are written in [Jest](https://jestjs.io/) and end-to-end tests are written in [Cypress](https://www.cypress.io/).
 
-All [testing](./spec/)/deployment pipelines are managed by a [Travis](https://travis-ci.com/gmmcal/gmmcal.com.br) [script](./.travis.yml) and works automatically (pull request application deployment is managed by Heroku). Code is reviewed by [Ebert](https://ebertapp.io/github/gmmcal/gmmcal.com.br), maintainability is managed by [Code Climate](https://codeclimate.com/github/gmmcal/gmmcal.com.br) and code security is managed by [Hakiri](https://hakiri.io/github/gmmcal/gmmcal.com.br/).
+All pipelines are managed by [Github Actions](https://github.com/features/actions) [scriptss](./.github/workflows/) and works automatically (pull request application deployment is managed by Heroku). Maintainability is managed by [Code Climate](https://codeclimate.com/github/gmmcal/gmmcal.com.br) and code security is managed by [Hakiri](https://hakiri.io/github/gmmcal/gmmcal.com.br/).
 
 # Development
 [![github issues](https://img.shields.io/github/issues/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/issues)
 [![codeclimate issue count](https://codeclimate.com/github/gmmcal/gmmcal.com.br/badges/issue_count.svg)](https://codeclimate.com/github/gmmcal/gmmcal.com.br)
-[![SourceLevel](https://app.sourcelevel.io/github/gmmcal/gmmcal.com.br.svg)](https://app.sourcelevel.io/github/gmmcal/gmmcal.com.br)
 
 ## Requirements
 
@@ -77,7 +78,7 @@ This will start local `rails` and `webpack` servers. By default, `rails` will ru
 
 If everything is fine, go to your browser and load [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https://github.com/DarthSim/overmind) or any other process starter that is [Procfile](Procfile) based.
+You can also use [Foreman](https://github.com/ddollar/foreman), [Overmind](https://github.com/DarthSim/overmind) or any other process starter that is [Procfile](Procfile) based. If you use any of those tools, look at the documentation on how to start a specific set of processes. You only need to start `web` and `webpack` processes. The `release` process is used for deployment flow.
 
 ### Admin
 

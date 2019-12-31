@@ -3,20 +3,16 @@
 namespace :db do
   namespace :cache do
     task clear: :environment do
-      Rails.cache.clear
+      require 'seed_manager'
+
+      SeedManager.clear_cache
     end
   end
 
   task clean: :environment do
-    tables = %i[about
-                education
-                skill
-                work_experience]
-    tables.each do |model|
-      ActiveRecord::Base.connection.execute(
-        "TRUNCATE #{model.to_s.tableize} RESTART IDENTITY CASCADE"
-      )
-    end
+    require 'seed_manager'
+
+    SeedManager.clean
   end
 
   namespace :seed do

@@ -5,7 +5,7 @@ FactoryBot.define do
     job_title { Faker::Job.title }
     description { Faker::Lorem.paragraphs(number: 5).join("\n\n") }
     city { Faker::Address.city }
-    country { Faker::Address.country_code }
+    country { Country.random }
     phone_number { Faker::PhoneNumber.cell_phone }
     email { Faker::Internet.email }
     locale { :en }

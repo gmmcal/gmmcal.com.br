@@ -17,7 +17,7 @@ const sort = (selector, callback) => {
       }
 
       Rails.ajax({
-        type: "PUT",
+        type: 'PUT',
         url: url,
         data: serialize(data)
       })

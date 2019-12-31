@@ -45,6 +45,7 @@ RSpec.describe HomeController, type: :controller do
       before do
         get :index, params: { locale: :'pt-BR' }
       end
+
       let(:expected_locale) { :'pt-BR' }
 
       it_behaves_like 'Localization'

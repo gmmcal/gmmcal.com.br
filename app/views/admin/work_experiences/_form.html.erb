@@ -7,7 +7,7 @@
     <%= f.input :company_name %>
     <%= f.input :position %>
     <%= f.input :city %>
-    <%= f.input :country %>
+    <%= f.input :country, collection: Country.all %>
     <%= f.input :start_date, include_blank: true %>
     <%= f.input :end_date, include_blank: true %>
     <%= f.input :description %>

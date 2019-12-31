@@ -2,9 +2,9 @@
   "projectId": "88eqvw",
   "baseUrl": "http://localhost:3000",
   "fixturesFolder": "spec/assets",
-  "integrationFolder": "spec/frontend/end-to-end",
-  "pluginsFile": "spec/frontend/plugins/index.js",
-  "screenshotsFolder": "spec/frontend/screenshots",
-  "supportFile": "spec/frontend/support/index.js",
-  "video": true
+  "integrationFolder": "spec/end-to-end/tests",
+  "pluginsFile": "spec/end-to-end/plugins/index.js",
+  "screenshotsFolder": "spec/end-to-end/screenshots",
+  "supportFile": "spec/end-to-end/support/index.js",
+  "video": false
 }
