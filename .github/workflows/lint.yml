@@ -37,7 +37,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without test development production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run rubocop
         run: bundle exec rubocop
@@ -75,7 +75,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without test development production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run reek
         run: bundle exec reek
@@ -113,7 +113,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without test development production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run brakeman
         run: bundle exec brakeman
@@ -151,7 +151,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without test development production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Install Bundler Audit
         run: gem install bundler-audit
@@ -195,7 +195,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without test development production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run SCSSLint
         run: bundle exec scss-lint

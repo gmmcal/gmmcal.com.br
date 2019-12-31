@@ -70,7 +70,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without lint test production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run yarn install
         run: yarn install
@@ -156,7 +156,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without lint test production
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run yarn install
         run: yarn install
