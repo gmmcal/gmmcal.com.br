@@ -5,9 +5,9 @@ Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 ![repo size](https://img.shields.io/github/repo-size/gmmcal/gmmcal.com.br.svg)
 [![license](https://img.shields.io/github/license/gmmcal/gmmcal.com.br.svg)](LICENSE)
 
-![Unit Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/Unit%20Tests/badge.svg)
-![End-to-end Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/End-to-end%20Tests/badge.svg)
-![Lint](https://github.com/gmmcal/gmmcal.com.br/workflows/Lint/badge.svg)
+![Unit Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/Unit%20Tests/badge.svg?branch=master)
+![End-to-end Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/End-to-end%20Tests/badge.svg?branch=master)
+![Lint](https://github.com/gmmcal/gmmcal.com.br/workflows/Lint/badge.svg?branch=master)
 ![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)
 
 My personal website code, playground and learning lab.
