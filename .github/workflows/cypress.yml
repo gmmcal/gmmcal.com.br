@@ -36,6 +36,7 @@ jobs:
           source $HOME/.rvm/scripts/rvm
           rvm install ${{ env.RUBY_VERSION }} --binary
           rvm --default use ${{ env.RUBY_VERSION }}
+          echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
 
       - name: Install Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
@@ -135,6 +136,7 @@ jobs:
           source $HOME/.rvm/scripts/rvm
           rvm install ${{ env.RUBY_VERSION }} --binary
           rvm --default use ${{ env.RUBY_VERSION }}
+          echo "source $HOME/.rvm/scripts/rvm" >> ~/.bash_profile
 
       - name: Install Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1

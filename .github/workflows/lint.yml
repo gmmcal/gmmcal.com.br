@@ -52,7 +52,9 @@ jobs:
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run rubocop
-        run: bundle exec rubocop
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          bundle exec rubocop
 
   reek:
     name: 'Lint: Reek'
@@ -98,7 +100,9 @@ jobs:
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run reek
-        run: bundle exec reek
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          bundle exec reek
 
   brakeman:
     name: 'Lint: Brakeman'
@@ -144,7 +148,9 @@ jobs:
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run brakeman
-        run: bundle exec brakeman
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          bundle exec brakeman
 
   bundler-audit:
     name: 'Lint: Bundler Audit'
@@ -197,12 +203,12 @@ jobs:
       - name: Update advisory database
         run: |
           source $HOME/.rvm/scripts/rvm
-          bundler-audit update
+          bundle exec bundler-audit update
 
       - name: Run bundler-audit
         run: |
           source $HOME/.rvm/scripts/rvm
-          bundler-audit
+          bundle exec bundler-audit
 
   scsslint:
     name: 'Lint: SCSSLint'
