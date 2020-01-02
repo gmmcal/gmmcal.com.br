@@ -63,7 +63,7 @@ jobs:
           bundle config set without lint development production
           bundle install --jobs 4 --retry 3 --deployment
 
-          - name: Setup database
+      - name: Setup database
         run: |
           source $HOME/.rvm/scripts/rvm
           bundle exec rails db:migrate
