@@ -3,7 +3,7 @@
 # yarn - needed to run Webpack, to install/compile javascript/images/css files.
 
 # Use latest ruby version
-FROM ruby:2.6.5
+FROM ruby:2.7.0
 
 # Define environment variables
 ENV APP_HOME /gustavocunha.dev
@@ -17,9 +17,10 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 
 # Install required packages.
 # Refer to top of this file for explanation of why those packages are required
-RUN apt-get update -qq && apt-get install -y nodejs yarn
+RUN apt-get update -qq && apt-get install -y nodejs yarn libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 
 # make sure that all dependencies were installed
+RUN ruby -v
 RUN node -v
 RUN npm -v
 RUN yarn -v

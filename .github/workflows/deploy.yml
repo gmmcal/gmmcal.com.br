@@ -5,6 +5,10 @@ on:
     branches:
       - master
   release:
+    types: [published]
+
+env:
+  RUBY_VERSION: 2.7.x
 
 jobs:
   staging:
@@ -17,10 +21,10 @@ jobs:
       - uses: actions/checkout@v1
 
       # languages
-      - name: Install Ruby 2.6.x
+      - name: Install Ruby ${{ env.RUBY_VERSION }}
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: ${{ env.RUBY_VERSION }}
 
       - name: Install dpl gem
         run: gem install dpl --no-document --version "~> 1.10"
@@ -38,10 +42,10 @@ jobs:
       - uses: actions/checkout@v1
 
       # languages
-      - name: Install Ruby 2.6.x
+      - name: Install Ruby ${{ env.RUBY_VERSION }}
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: ${{ env.RUBY_VERSION }}
 
       - name: Install dpl gem
         run: gem install dpl --no-document --version "~> 1.10"
