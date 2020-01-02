@@ -4,7 +4,7 @@ on:
   - pull_request
 
 env:
-  RUBY_VERSION: '2.7.x'
+  RUBY_VERSION: '2.7.0'
   NODE_VERSION: '12.x'
 
 jobs:

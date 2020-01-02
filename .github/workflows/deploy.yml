@@ -8,7 +8,7 @@ on:
     types: [published]
 
 env:
-  RUBY_VERSION: '2.7.x'
+  RUBY_VERSION: '2.7.0'
 
 jobs:
   staging:
