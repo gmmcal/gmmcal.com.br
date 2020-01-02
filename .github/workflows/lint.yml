@@ -4,8 +4,8 @@ on:
   - pull_request
 
 env:
-  RUBY_VERSION: 2.7.x
-  NODE_VERSION: 12.x
+  RUBY_VERSION: '2.7.x'
+  NODE_VERSION: '12.x'
 
 jobs:
   rubocop:

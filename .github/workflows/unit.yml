@@ -6,9 +6,8 @@ on:
 
 env:
   RAILS_ENV: test
-  RUBY_VERSION: 2.7.x
-  NODE_VERSION: 12.x
-
+  RUBY_VERSION: '2.7.x'
+  NODE_VERSION: '12.x'
 jobs:
   backend:
     name: 'Unit: Backend'
