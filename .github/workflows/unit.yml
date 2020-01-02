@@ -28,10 +28,14 @@ jobs:
       - uses: actions/checkout@v1
 
       # languages
+      - name: Set up RVM
+        run: curl -sSL https://get.rvm.io | bash
+
       - name: Install Ruby ${{ env.RUBY_VERSION }}
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: ${{ env.RUBY_VERSION }}
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          rvm install ${{ env.RUBY_VERSION }} --binary
+          rvm --default use ${{ env.RUBY_VERSION }}
 
       - name: Install APT dependencies
         run: sudo apt-get -yqq install libpq-dev
