@@ -31,10 +31,14 @@ jobs:
           rvm --default use ${{ env.RUBY_VERSION }}
 
       - name: Install dpl gem
-        run: gem install dpl --no-document --version "~> 1.10"
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        run: dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
 
   production:
     name: 'Deploy: Production'
@@ -56,7 +60,11 @@ jobs:
           rvm --default use ${{ env.RUBY_VERSION }}
 
       - name: Install dpl gem
-        run: gem install dpl --no-document --version "~> 1.10"
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        run: dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}
+        run: |
+          source $HOME/.rvm/scripts/rvm
+          dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}
