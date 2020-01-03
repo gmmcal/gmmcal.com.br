@@ -8,6 +8,7 @@ env:
   RAILS_ENV: test
   NODE_VERSION: '12.x'
   DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
+  DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
 
 jobs:
   backend:
