@@ -6,9 +6,6 @@ on:
 
 env:
   RAILS_ENV: test
-  NODE_VERSION: '12.x'
-  DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
-  DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
 
 jobs:
   backend:
@@ -60,11 +57,16 @@ jobs:
       - name: Setup database
         run: |
           bundle exec rails db:migrate
+        env:
+          DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
 
       # script
       - name: Run tests
         run: |
           bundle exec rspec
+        env:
+          DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
+          DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
 
       - name: Upload backend coverage result
         uses: actions/upload-artifact@v1
@@ -82,10 +84,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      - name: Install APT dependencies
+        run: |
+          curl -sL https://deb.nodesource.com/setup_12.x | bash -
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+          apt-get -yqq install nodejs yarn
 
       # caching
       - name: Get yarn cache
@@ -100,9 +104,6 @@ jobs:
           restore-keys: |
             yarn-unit-${{ env.cache-name }}-
             yarn-unit-
-
-      - name: Install yarn
-        run: npm i -g yarn
 
       - name: Run yarn install
         run: yarn install
