@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Country
-  class_attribute :available, default: %w[br nl pt]
+  class_attribute :available, default: %w[br nl pt us]
   attr_reader :country
 
   def initialize(country)
@@ -24,7 +24,7 @@ class Country
     end
 
     def random
-      available.sample
+      available.sample.upcase
     end
   end
 end
