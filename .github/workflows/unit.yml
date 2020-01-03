@@ -105,6 +105,12 @@ jobs:
       #       yarn-unit-${{ env.cache-name }}-
       #       yarn-unit-
 
+      - name: Check versions
+        run: |
+          node -v
+          npm -v
+          yarn -v
+
       - name: Run yarn install
         run: yarn install
 
