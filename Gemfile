@@ -42,14 +42,15 @@ group :development do
   gem 'listen'
 end
 
-group :lint do
-  gem 'brakeman'
-  gem 'reek'
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
-  gem 'scss_lint', require: false
-end
+# No need to install these gems all the time
+# group :lint do
+#   gem 'brakeman'
+#   gem 'reek'
+#   gem 'rubocop'
+#   gem 'rubocop-rails'
+#   gem 'rubocop-rspec'
+#   gem 'scss_lint', require: false
+# end
 
 # Test suite
 group :test do

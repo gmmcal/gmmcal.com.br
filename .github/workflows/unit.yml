@@ -40,7 +40,7 @@ jobs:
       # dependencies
       - name: Run bundle install
         run: |
-          bundle config set without lint development production
+          bundle config set without development production
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Setup database
