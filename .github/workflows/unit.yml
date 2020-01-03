@@ -51,10 +51,6 @@ jobs:
             bundler-unit-
 
       # dependencies
-      - name: Install Bundler gem
-        run: |
-          gem install bundler
-
       - name: Run bundle install
         run: |
           bundle config path vendor/bundle
@@ -79,6 +75,9 @@ jobs:
   frontend:
     name: 'Unit: Frontend'
     runs-on: ubuntu-18.04
+
+    container:
+      image: ruby:2.7.0
 
     steps:
       - uses: actions/checkout@v1
@@ -122,6 +121,9 @@ jobs:
     runs-on: ubuntu-18.04
 
     if: github.event_name == 'push'
+
+    container:
+      image: ruby:2.7.0
 
     needs:
       - backend
