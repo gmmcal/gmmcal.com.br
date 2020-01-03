@@ -6,7 +6,6 @@ on:
 
 env:
   RAILS_ENV: test
-  RUBY_VERSION: '2.7.0'
   NODE_VERSION: '12.x'
 jobs:
   backend:
@@ -28,15 +27,6 @@ jobs:
       - uses: actions/checkout@v1
 
       # languages
-      - name: Set up RVM
-        run: curl -sSL https://get.rvm.io | bash
-
-      - name: Install Ruby ${{ env.RUBY_VERSION }}
-        run: |
-          source $HOME/.rvm/scripts/rvm
-          rvm install ${{ env.RUBY_VERSION }} --binary
-          rvm --default use ${{ env.RUBY_VERSION }}
-
       - name: Install APT dependencies
         run: sudo apt-get -yqq install libpq-dev
 
@@ -53,25 +43,21 @@ jobs:
       # dependencies
       - name: Install Bundler gem
         run: |
-          source $HOME/.rvm/scripts/rvm
           gem install bundler
 
       - name: Run bundle install
         run: |
-          source $HOME/.rvm/scripts/rvm
           bundle config path vendor/bundle
           bundle config set without lint development production
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Setup database
         run: |
-          source $HOME/.rvm/scripts/rvm
           bundle exec rails db:migrate
 
       # script
       - name: Run tests
         run: |
-          source $HOME/.rvm/scripts/rvm
           bundle exec rspec
 
       - name: Upload backend coverage result
@@ -79,6 +65,9 @@ jobs:
         with:
           name: backend-coverage
           path: coverage/backend/.resultset.json
+
+    container:
+      image: ruby:2.7.0
 
   frontend:
     name: 'Unit: Frontend'
