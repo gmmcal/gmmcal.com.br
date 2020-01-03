@@ -40,7 +40,6 @@ jobs:
       # dependencies
       - name: Run bundle install
         run: |
-          bundle config path vendor/bundle
           bundle config set without lint development production
           bundle install --jobs 4 --retry 3 --deployment
 
@@ -83,12 +82,6 @@ jobs:
 
       - name: Install yarn
         run: npm i -g yarn
-
-      - name: Check versions
-        run: |
-          node -v
-          npm -v
-          yarn -v
 
       - name: Run yarn install
         run: yarn install
