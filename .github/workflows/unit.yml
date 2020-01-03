@@ -7,7 +7,7 @@ on:
 env:
   RAILS_ENV: test
   NODE_VERSION: '12.x'
-  DATABASE_URL: postgres://postgres:@postgres:5432/test
+  DATABASE_URL: postgres://postgres:@postgres:5432/gmmcalcombr_test
 
 jobs:
   backend:
@@ -20,6 +20,10 @@ jobs:
     services:
       postgres:
         image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: gmmcalcombr_test
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
