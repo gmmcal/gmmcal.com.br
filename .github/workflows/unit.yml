@@ -28,7 +28,7 @@ jobs:
 
       # languages
       - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
+        run: apt-get -yqq install libpq-dev
 
       # caching
       - name: Cache gems
