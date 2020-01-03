@@ -3,10 +3,6 @@ name: Lint
 on:
   - pull_request
 
-env:
-  RUBY_VERSION: '2.7.0'
-  NODE_VERSION: '12.x'
-
 jobs:
   rubocop:
     name: 'Lint: Rubocop'
@@ -18,23 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install APT dependencies
+      - name: Install Rubocop
         run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev
-
-      # dependencies
-      - name: Run bundle install
-        run: |
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+          gem install rubocop rubocop-rails rubocop-rspec
 
       - name: Run rubocop
         run: |
-          bundle exec rubocop
+          rubocop --config .rubocop.yml
 
   reek:
     name: 'Lint: Reek'
@@ -46,23 +32,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install APT dependencies
-        run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev
-
       # dependencies
-      - name: Run bundle install
+      - name: Install Reek
         run: |
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+          gem install reek
 
       - name: Run reek
         run: |
-          bundle exec reek
+          reek --config .reek.yml
 
   brakeman:
     name: 'Lint: Brakeman'
@@ -74,23 +51,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install APT dependencies
-        run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev
-
       # dependencies
-      - name: Run bundle install
+      - name: Install Brakeman
         run: |
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+          gem install brakeman
 
       - name: Run brakeman
         run: |
-          bundle exec brakeman
+          brakeman
 
   bundler-audit:
     name: 'Lint: Bundler Audit'
@@ -101,20 +69,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-
-      # languages
-      - name: Install APT dependencies
-        run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev
-
-      # dependencies
-      - name: Run bundle install
-        run: |
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Install Bundler Audit
         run: |
@@ -138,23 +92,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install APT dependencies
+      - name: Install SCSSLint
         run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev
-
-      # dependencies
-      - name: Run bundle install
-        run: |
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+          gem install scss_lint
 
       - name: Run SCSSLint
         run: |
-          bundle exec scss-lint
+          scss-lint --config .scss-lint.yml
 
   eslint:
     name: 'Lint: ESLint'

@@ -18,3 +18,4 @@ directories:
 
 exclude_paths:
   - node_modules
+  - lib/seed_manager.rb
