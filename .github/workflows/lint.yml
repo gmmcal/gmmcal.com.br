@@ -99,8 +99,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install yarn
-        run: npm install -g babel-eslint eslint
+      - name: Install ESLint
+        run: npm install eslint babel-eslint --save-dev
 
       - name: Run ESLint
-        run: eslint --config=.eslintrc.js  app/javascript/packs/**/**.js
+        run: ./node_modules/.bin/eslint --config=.eslintrc.js app/javascript/packs/**/**.js
