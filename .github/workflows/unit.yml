@@ -7,7 +7,7 @@ on:
 env:
   RAILS_ENV: test
   NODE_VERSION: '12.x'
-  DATABASE_URL: postgres://postgres:@postgres:5432/gmmcalcombr_test
+  DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
 
 jobs:
   backend:
