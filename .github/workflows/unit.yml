@@ -92,21 +92,18 @@ jobs:
           apt-get -yqq install nodejs yarn
 
       # caching
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      # - name: Get yarn cache
+      #   id: yarn-cache
+      #   run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-unit-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-unit-${{ env.cache-name }}-
-            yarn-unit-
-
-      - name: Install yarn
-        run: npm i -g yarn
+      # - name: Cache node modules
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: ${{ steps.yarn-cache.outputs.dir }}
+      #     key: yarn-unit-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       yarn-unit-${{ env.cache-name }}-
+      #       yarn-unit-
 
       - name: Run yarn install
         run: yarn install
