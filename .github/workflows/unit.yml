@@ -105,6 +105,9 @@ jobs:
             yarn-unit-${{ env.cache-name }}-
             yarn-unit-
 
+      - name: Install yarn
+        run: npm i -g yarn
+
       - name: Run yarn install
         run: yarn install
 
