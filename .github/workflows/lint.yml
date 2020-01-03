@@ -8,150 +8,61 @@ jobs:
     name: 'Lint: Rubocop'
     runs-on: ubuntu-18.04
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
-
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-lint-${{ env.cache-name }}-
-            bundler-lint-
-
-      # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+      - name: Install Rubocop
+        run: gem install rubocop rubocop-rails rubocop-rspec
 
       - name: Run rubocop
-        run: bundle exec rubocop
+        run: rubocop --config .rubocop.yml
 
   reek:
     name: 'Lint: Reek'
     runs-on: ubuntu-18.04
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
-
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-lint-${{ env.cache-name }}-
-            bundler-lint-
-
       # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+      - name: Install Reek
+        run: gem install reek
 
       - name: Run reek
-        run: bundle exec reek
+        run: reek --config .reek.yml
 
   brakeman:
     name: 'Lint: Brakeman'
     runs-on: ubuntu-18.04
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
-
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-lint-${{ env.cache-name }}-
-            bundler-lint-
-
       # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+      - name: Install Brakeman
+        run: gem install brakeman
 
       - name: Run brakeman
-        run: bundle exec brakeman
+        run: brakeman
 
   bundler-audit:
     name: 'Lint: Bundler Audit'
     runs-on: ubuntu-18.04
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
-
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
-
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-lint-${{ env.cache-name }}-
-            bundler-lint-
-
-      # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
 
       - name: Install Bundler Audit
         run: gem install bundler-audit
@@ -166,71 +77,30 @@ jobs:
     name: 'Lint: SCSSLint'
     runs-on: ubuntu-18.04
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
-
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-lint-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-lint-${{ env.cache-name }}-
-            bundler-lint-
-
-      # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle config set without test development production
-          bundle install --jobs 4 --retry 3 --deployment
+      - name: Install SCSSLint
+        run: gem install scss_lint
 
       - name: Run SCSSLint
-        run: bundle exec scss-lint
+        run: scss-lint --config .scss-lint.yml
 
   eslint:
     name: 'Lint: ESLint'
     runs-on: ubuntu-18.04
 
+    container:
+      image: node:12
+
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-      # caching
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-lint-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-lint-${{ env.cache-name }}-
-            yarn-lint-
-
-      - name: Install yarn
-        run: npm i -g yarn
-
-      - name: Run yarn install
-        run: yarn install
+      - name: Install ESLint
+        run: npm install eslint babel-eslint --save-dev
 
       - name: Run ESLint
-        run: yarn eslint
+        run: ./node_modules/.bin/eslint --config=.eslintrc.js app/javascript/packs/**/**.js

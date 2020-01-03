@@ -5,11 +5,15 @@ on:
 
 env:
   RAILS_ENV: development
+  DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_development
 
 jobs:
   admin:
     name: 'E2E: Admin'
     runs-on: ubuntu-18.04
+
+    container:
+      image: ruby:2.7.0
 
     services:
       postgres:
@@ -26,63 +30,36 @@ jobs:
       - uses: actions/checkout@v1
 
       # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
       - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
+        run: |
+          curl -sL https://deb.nodesource.com/setup_12.x | bash -
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+          apt-get -yqq install nodejs libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-e2e-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-e2e-${{ env.cache-name }}-
-            bundler-e2e-
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo '::set-output name=dir::$(yarn cache dir)'
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-e2e-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-e2e-${{ env.cache-name }}-
-            yarn-e2e-
+      - name: Install yarn
+        run: npm i -g yarn
 
       # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-
       - name: Run bundle install
         run: |
-          bundle config path vendor/bundle
-          bundle config set without lint test production
+          bundle config set without test production
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run yarn install
         run: yarn install
 
       - name: Setup database
-        run: bundle exec rails db:migrate
+        run: |
+          bundle exec rails db:migrate
 
       - name: Compile assets
-        run: bundle exec rails assets:precompile
+        run: |
+          bundle exec rails assets:precompile
 
       - name: Load default DB data
-        run: bundle exec rails db:seed
+        run: |
+          bundle exec rails db:seed
 
       # script
       - name: Run tests
@@ -97,6 +74,9 @@ jobs:
     name: 'E2E: Frontend'
     runs-on: ubuntu-18.04
 
+    container:
+      image: ruby:2.7.0
+
     services:
       postgres:
         image: postgres:11.5
@@ -111,64 +91,36 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
-      - name: Install Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
       - name: Install APT dependencies
-        run: sudo apt-get -yqq install libpq-dev
+        run: |
+          curl -sL https://deb.nodesource.com/setup_12.x | bash -
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+          apt-get -yqq install nodejs libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-e2e-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-e2e-${{ env.cache-name }}-
-            bundler-e2e-
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-e2e-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-e2e-${{ env.cache-name }}-
-            yarn-e2e-
+      - name: Install yarn
+        run: npm i -g yarn
 
       # dependencies
-      - name: Install Bundler gem
-        run: gem install bundler
-
       - name: Run bundle install
         run: |
-          bundle config path vendor/bundle
-          bundle config set without lint test production
+          bundle config set without test production
           bundle install --jobs 4 --retry 3 --deployment
 
       - name: Run yarn install
         run: yarn install
 
       - name: Setup database
-        run: bundle exec rails db:migrate
+        run: |
+          bundle exec rails db:migrate
 
       - name: Compile assets
-        run: bundle exec rails assets:precompile
+        run: |
+          bundle exec rails assets:precompile
 
       - name: Load default DB data
-        run: bundle exec rails db:seed
+        run: |
+          bundle exec rails db:seed
 
       # script
       - name: Run tests

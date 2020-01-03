@@ -6,24 +6,24 @@ Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 [![license](https://img.shields.io/github/license/gmmcal/gmmcal.com.br.svg)](LICENSE)
 
 ![Unit Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/Unit%20Tests/badge.svg?branch=master)
-![End-to-end Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/End-to-end%20Tests/badge.svg?branch=master)
-![Lint](https://github.com/gmmcal/gmmcal.com.br/workflows/Lint/badge.svg?branch=master)
+![End-to-end Tests](https://github.com/gmmcal/gmmcal.com.br/workflows/End-to-end%20Tests/badge.svg)
+![Lint](https://github.com/gmmcal/gmmcal.com.br/workflows/Lint/badge.svg)
 ![security](https://hakiri.io/github/gmmcal/gmmcal.com.br/master.svg)
 
 My personal website code, playground and learning lab.
 
 # Features
-![Ruby](https://img.shields.io/badge/Ruby-v2.6.5-green.svg?logo=Ruby)
+![Ruby](https://img.shields.io/badge/Ruby-v2.7.0-green.svg?logo=Ruby)
 ![Node](https://img.shields.io/badge/Node-v12.0.0-green.svg?logo=Node.js)
 ![Postgres](https://img.shields.io/badge/Postgres-v11.4-green.svg?logo=Postgresql)
 
-![Rails](https://img.shields.io/badge/Rails-v6.0.1-green.svg?logo=Rails)
+![Rails](https://img.shields.io/badge/Rails-v6.0.2.1-green.svg?logo=Rails)
 ![Vue](https://img.shields.io/badge/VueJS-v2.6.10-green.svg?logo=Vue.js)
 
-![Bundler](https://img.shields.io/badge/Bundler-v1.17.3-green.svg?logo=Bundler)
+![Bundler](https://img.shields.io/badge/Bundler-v2.1.2-green.svg?logo=Bundler)
 ![NPM](https://img.shields.io/badge/NPM-v6.11.3-green.svg?logo=NPM)
-![Yarn](https://img.shields.io/badge/Yarn-v1.19.1-green.svg?logo=Yarn)
-![Webpack](https://img.shields.io/badge/Webpack-v4.41.2-green.svg?logo=Webpack)
+![Yarn](https://img.shields.io/badge/Yarn-v1.21.1-green.svg?logo=Yarn)
+![Webpack](https://img.shields.io/badge/Webpack-v4.41.5-green.svg?logo=Webpack)
 
 This website is a result of years of constant learning. The template was purchased at [ThemeForest](https://themeforest.net/item/flato-responsive-resume-personal-portfolio-temp/6486867) in 2014 and customized by me, with help from [Mac Giovanni](https://github.com/maclevison) and [Carlyson Oliveira](https://github.com/carlyson).
 
@@ -37,7 +37,7 @@ All pipelines are managed by [Github Actions](https://github.com/features/action
 
 ## Requirements
 
-The latest version of this app was built to be used with Ruby 2.6.x, but it should work on any Ruby >= 2.5. It also requires Postgres 11.0, Node 12.0 and Yarn 1.15.
+The latest version of this app was built to be used with Ruby 2.7.x, but it should work on any Ruby >= 2.6. It also requires Postgres 11.0, Node 12.0 and Yarn 1.21.
 
 I'll not provide instructions on how to install them because this instructions could potentially be out-of-date soon.
 
@@ -50,8 +50,8 @@ The instructions below assumes that your computer has [RVM](https://rvm.io) conf
 
 After cloning this repository, run the following commands:
 
-1. `rvm rvmrc create ruby-2.6.5@gmmcal.com.br --ruby-version` to create a gemset for this project.
-1. `rvm use ruby-2.6.5@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
+1. `rvm rvmrc create ruby-2.7.0@gmmcal.com.br --ruby-version` to create a gemset for this project.
+1. `rvm use ruby-2.7.0@gmmcal.com.br` to select the current gemset. Next time you try to use this project, RMV will auto-select for you.
 1. `bundle install` to install all ruby gems.
 1. `yarn install` to install all javascript packages.
 1. `cp env.example .env` to configure foreman startup.
@@ -101,7 +101,7 @@ Backend tests are written in Ruby using RSpec. To run the tests, run `rspec` on 
 Frontend tests are written in Javascript using Jest. To run the tests, run `yarn test` and test suite will be running in watch mode. To run the test suite without test mode, you can run `yarn test:once`.
 
 ### End-to-end
-![Cypress](https://img.shields.io/badge/Cypress-v3.6.0-green.svg?logo=Cypress)
+![Cypress](https://img.shields.io/badge/Cypress-v3.8.1-green.svg?logo=Cypress)
 
 End-to-end tests are written in Javascript using Cypress. To run the tests, run `yarn cypress` and cypress dashboard will open. To run the test suite without cypress dashboard, run `yarn cypress:ci`. Currently, Cypress only support tests on Chrome, so it is a dependency if you want to run end-to-end tests.
 

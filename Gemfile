@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Enforce minimum ruby version
-ruby '2.6.5' if ENV['RAILS_ENV'] == 'production'
+ruby '2.7.0' if ENV['RAILS_ENV'] == 'production'
 
 # Application gems
 # Use bootsnap to improve performance
@@ -42,14 +42,15 @@ group :development do
   gem 'listen'
 end
 
-group :lint do
-  gem 'brakeman'
-  gem 'reek'
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
-  gem 'scss_lint', require: false
-end
+# No need to install these gems all the time
+# group :lint do
+#   gem 'brakeman'
+#   gem 'reek'
+#   gem 'rubocop'
+#   gem 'rubocop-rails'
+#   gem 'rubocop-rspec'
+#   gem 'scss_lint', require: false
+# end
 
 # Test suite
 group :test do

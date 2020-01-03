@@ -5,6 +5,10 @@ on:
     branches:
       - master
   release:
+    types: [published]
+
+env:
+  RUBY_VERSION: '2.7.0'
 
 jobs:
   staging:
@@ -13,20 +17,19 @@ jobs:
 
     if: github.event_name == 'push'
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
       - name: Install dpl gem
-        run: gem install dpl --no-document --version "~> 1.10"
+        run: |
+          gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        run: dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
+        run: |
+          dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
 
   production:
     name: 'Deploy: Production'
@@ -34,17 +37,16 @@ jobs:
 
     if: github.event_name == 'release'
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Install Ruby 2.6.x
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-
       - name: Install dpl gem
-        run: gem install dpl --no-document --version "~> 1.10"
+        run: |
+          gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        run: dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}
+        run: |
+          dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}
