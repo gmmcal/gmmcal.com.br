@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
   release:
     types: [published]
 
@@ -17,27 +17,18 @@ jobs:
 
     if: github.event_name == 'push'
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Set up RVM
-        run: curl -sSL https://get.rvm.io | bash
-
-      - name: Install Ruby ${{ env.RUBY_VERSION }}
-        run: |
-          source $HOME/.rvm/scripts/rvm
-          rvm install ${{ env.RUBY_VERSION }} --binary
-          rvm --default use ${{ env.RUBY_VERSION }}
-
       - name: Install dpl gem
         run: |
-          source $HOME/.rvm/scripts/rvm
           gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
         run: |
-          source $HOME/.rvm/scripts/rvm
           dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
 
   production:
@@ -46,25 +37,16 @@ jobs:
 
     if: github.event_name == 'release'
 
+    container:
+      image: ruby:2.7.0
+
     steps:
       - uses: actions/checkout@v1
 
-      # languages
-      - name: Set up RVM
-        run: curl -sSL https://get.rvm.io | bash
-
-      - name: Install Ruby ${{ env.RUBY_VERSION }}
-        run: |
-          source $HOME/.rvm/scripts/rvm
-          rvm install ${{ env.RUBY_VERSION }} --binary
-          rvm --default use ${{ env.RUBY_VERSION }}
-
       - name: Install dpl gem
         run: |
-          source $HOME/.rvm/scripts/rvm
           gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
         run: |
-          source $HOME/.rvm/scripts/rvm
           dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}
