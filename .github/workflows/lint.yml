@@ -15,12 +15,10 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Install Rubocop
-        run: |
-          gem install rubocop rubocop-rails rubocop-rspec
+        run: gem install rubocop rubocop-rails rubocop-rspec
 
       - name: Run rubocop
-        run: |
-          rubocop --config .rubocop.yml
+        run: rubocop --config .rubocop.yml
 
   reek:
     name: 'Lint: Reek'
@@ -34,12 +32,10 @@ jobs:
 
       # dependencies
       - name: Install Reek
-        run: |
-          gem install reek
+        run: gem install reek
 
       - name: Run reek
-        run: |
-          reek --config .reek.yml
+        run: reek --config .reek.yml
 
   brakeman:
     name: 'Lint: Brakeman'
@@ -53,12 +49,10 @@ jobs:
 
       # dependencies
       - name: Install Brakeman
-        run: |
-          gem install brakeman
+        run: gem install brakeman
 
       - name: Run brakeman
-        run: |
-          brakeman
+        run: brakeman
 
   bundler-audit:
     name: 'Lint: Bundler Audit'
@@ -71,16 +65,13 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Install Bundler Audit
-        run: |
-          gem install bundler-audit
+        run: gem install bundler-audit
 
       - name: Update advisory database
-        run: |
-          bundler-audit update
+        run: bundler-audit update
 
       - name: Run bundler-audit
-        run: |
-          bundler-audit
+        run: bundler-audit
 
   scsslint:
     name: 'Lint: SCSSLint'
@@ -93,35 +84,23 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Install SCSSLint
-        run: |
-          gem install scss_lint
+        run: gem install scss_lint
 
       - name: Run SCSSLint
-        run: |
-          scss-lint --config .scss-lint.yml
+        run: scss-lint --config .scss-lint.yml
 
   eslint:
     name: 'Lint: ESLint'
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.0
+      image: node:12
 
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install APT dependencies
-        run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs
-
       - name: Install yarn
-        run: npm i -g yarn
-
-      - name: Run yarn install
-        run: yarn install
+        run: npm install -g babel-eslint eslint
 
       - name: Run ESLint
-        run: yarn eslint
+        run: eslint --config=.eslintrc.js  app/javascript/packs/**/**.js
