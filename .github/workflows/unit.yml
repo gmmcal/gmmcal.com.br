@@ -35,17 +35,7 @@ jobs:
           curl -sL https://deb.nodesource.com/setup_12.x | bash -
           curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
           echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs yarn libpq-dev
-
-      # caching
-      - name: Cache gems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundler-unit-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundler-unit-${{ hashFiles('**/Gemfile.lock') }}-
-            bundler-unit-
+          apt-get -yqq install nodejs libpq-dev
 
       # dependencies
       - name: Run bundle install
@@ -90,20 +80,6 @@ jobs:
           curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
           echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
           apt-get -yqq install nodejs
-
-      # caching
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: yarn-unit-tests-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            yarn-unit-tests-${{ hashFiles('**/yarn.lock') }}-
-            yarn-unit-tests-
 
       - name: Install yarn
         run: npm i -g yarn
