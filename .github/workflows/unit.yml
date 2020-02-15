@@ -6,6 +6,7 @@ on:
 
 env:
   RAILS_ENV: test
+  YARN_ENV: test
 
 jobs:
   backend:
