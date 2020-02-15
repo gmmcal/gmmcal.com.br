@@ -57,7 +57,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'shoulda-matchers', require: false
-  gem 'simplecov', require: false
+  gem 'simplecov', '< 0.18', require: false
 end
 
 group :test, :development do
