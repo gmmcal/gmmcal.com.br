@@ -75,6 +75,8 @@
   },
   "devDependencies": {
     "@babel/core": "*",
+    "@vue/cli-plugin-unit-jest": "*",
+    "@vue/cli-service": "*",
     "@vue/test-utils": "^1.0.0-beta.30",
     "babel-eslint": "*",
     "babel-jest": "*",
@@ -83,12 +85,11 @@
     "jest": "*",
     "jest-canvas-mock": "*",
     "jest-serializer-vue": "*",
-    "vue-jest": "^4.0.0-beta.2",
     "webpack-dev-server": "*"
   },
   "scripts": {
-    "test": "jest --watch",
-    "test:once": "jest",
+    "test": "vue-cli-service test:unit --watch",
+    "test:once": "vue-cli-service test:unit",
     "cypress:dev": "start-test server:start 3000 cypress:open",
     "server:start": "bundle exec rails server -p 3000",
     "cypress:run": "cypress run",

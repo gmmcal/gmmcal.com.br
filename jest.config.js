@@ -22,8 +22,8 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "app/javascript/packs/components/**/*.{js,vue}",
-    "app/javascript/packs/functional/**/*.{js}",
+    "app/javascript/packs/components/**/*.{js,vue,}",
+    "app/javascript/packs/functional/**/*.{js,}",
     "!**/node_modules/**"
   ],
 
@@ -38,7 +38,8 @@ module.exports = {
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: [
     "lcovonly",
-    "html"
+    "html",
+    "text-summary"
   ],
 
   // An object that configures minimum threshold enforcement for coverage results
@@ -169,7 +170,7 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+    "^.+\\.vue$": "<rootDir>/node_modules/vue-jest",
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
   },
 
