@@ -2,10 +2,13 @@ name: Deploy
 
 on:
   push:
-    # branches:
-    #   - master
+    branches:
+      - master
   release:
     types: [published]
+
+env:
+  RUBY_VERSION: '2.7.0'
 
 jobs:
   staging:
@@ -20,12 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Deploy
-        env:
-          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_APP_NAME: "gmmcal-dev"
+      - name: Install dpl gem
         run: |
-          git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git $GITHUB_REF:master
+          gem install dpl --no-document --version "~> 1.10"
+
+      - name: Deploy
+        run: |
+          dpl --provider=heroku --app=gmmcal-dev --api-key=${{ secrets.HEROKU_API_KEY }}
 
   production:
     name: 'Deploy: Production'
@@ -39,9 +43,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Deploy
-        env:
-          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_APP_NAME: "gmmcal"
+      - name: Install dpl gem
         run: |
-          git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git $GITHUB_REF:master
+          gem install dpl --no-document --version "~> 1.10"
+
+      - name: Deploy
+        run: |
+          dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}

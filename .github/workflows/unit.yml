@@ -127,11 +127,20 @@ jobs:
         with:
           name: frontend-coverage
 
-      - name: Upload coverage to CodeClimate
+      - name: Prepare backend coverage
         run: |
           ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json
+
+      - name: Prepare frontend coverage
+        run: |
           ./cc-test-reporter format-coverage -t lcov -o codeclimate.frontend.json frontend-coverage/lcov.info
+
+      - name: Combine coverage files
+        run: |
           ./cc-test-reporter sum-coverage codeclimate.*.json -p 2
+
+      - name: Upload coverage to CodeClimate
+        run: |
           ./cc-test-reporter upload-coverage
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
