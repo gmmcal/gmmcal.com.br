@@ -30,9 +30,6 @@ jobs:
 
     if: github.event_name == 'release'
 
-    container:
-      image: ruby:2.7.0
-
     steps:
       - uses: actions/checkout@v1
 
