@@ -24,7 +24,7 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP_NAME: gmmcal-dev
         run: |
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master --force
+          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master
 
   production:
     name: 'Deploy: Production'
@@ -32,14 +32,16 @@ jobs:
 
     if: github.event_name == 'release'
 
+    container:
+      image: ruby:2.7.0
+
     steps:
-      - uses: actions/checkout@v2
-        with:
-           fetch-depth: 0
+      - uses: actions/checkout@v1
+
+      - name: Install dpl gem
+        run: |
+          gem install dpl --no-document --version "~> 1.10"
 
       - name: Deploy
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: gmmcal
         run: |
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master --force
+          dpl --provider=heroku --app=gmmcal --api-key=${{ secrets.HEROKU_API_KEY }}
