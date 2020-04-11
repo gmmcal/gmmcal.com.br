@@ -1,0 +1,54 @@
+<section id="contact" class="contact">
+  <div class="top-con">
+    <div class="container">
+      <div class="heading">
+        <h2><%= t('title', scope: %i[frontend contact]) %></h2>
+        <p><%= t('subtitle', scope: %i[frontend contact]) %></p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-con">
+    <div class="container">
+      <!--contact info start-->
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h4><%= t('title', scope: %i[frontend contact contacts]) %></h4>
+        <div class="row">
+          <p class="location col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <svg class="fas fa-map-marker-alt"></svg>
+            <span><%= @about.city %></span>  - <span><%= @about.country %></span>
+          </p>
+          <p class="phone_number col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <svg class="fas fa-mobile-alt"></svg>
+            <%= @about.phone_number %>
+          </p>
+          <p class="email col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <svg class="fas fa-email"></svg>
+            <%= @about.email %>
+          </p>
+          <p class="github col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <svg class="fab fa-github"></svg>
+            <a href="https://github.com/gmmcal" target="_blank" rel="noopener">
+              <%= t('github', scope: %i[frontend contact contacts]) %>
+              <span class="print">(https://github.com/gmmcal)</span>
+            </a>
+          </p>
+          <p class="linkedin col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <svg class="fab fa-linkedin-in"></svg>
+            <a href="https://linkedin.com/in/gmmcal" target="_blank" rel="noopener">
+              <%= t('linkedin', scope: %i[frontend contact contacts]) %>
+              <span class="print">(https://linkedin.com/in/gmmcal)</span>
+            </a>
+          </p>
+          <p class="twitter col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <svg class="fab fa-twitter"></svg>
+            <a href="https://twitter.com/gmmcal" target="_blank" rel="noopener">
+              <%= t('twitter', scope: %i[frontend contact contacts]) %>
+              <span class="print">(https://twitter.com/gmmcal)</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <!--contact info end-->
+    </div>
+  </div>
+</section>

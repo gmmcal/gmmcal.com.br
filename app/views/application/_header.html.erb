@@ -1,0 +1,33 @@
+<header>
+  <div class="menu fixed-top">
+    <div class="navbar navbar-expand-md navbar-dark">
+      <button aria-label="Menu" type="button" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="menu-container collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <% @links.each do |item| %>
+            <li id="menu-<%= item[:label].parameterize %>" class="<%= menu_classes(item[:label].downcase.to_sym) %>">
+              <a data-turbolinks="false" href="<%= item[:link] %>" alt="<%= item[:label] %>"><%= t(item[:label], scope: %i[frontend template menu]) %></a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <ul class="i18n">
+      <% @flags.each do |item| %>
+        <li>
+          <a data-turbolinks="false" href="<%= item[:link] %>" alt="<%= item[:label] %>" class="<%= item[:css_class]%>"><%= t(item[:label], scope: %i[frontend template menu]) %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="banner">
+    <div class="lazy banner-img">
+      <div class="banner-text container">
+        <h1><%= t('name', scope: %i[frontend template]) %></h1>
+        <h2><%= t('title', scope: %i[frontend template]) %></h2>
+      </div>
+    </div>
+  </div>
+</header>

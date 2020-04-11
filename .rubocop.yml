@@ -34,6 +34,7 @@ Metrics/BlockLength:
   Exclude:
     - 'lib/tasks/*'
     - 'spec/**/*'
+    - 'config/routes.rb'
 
 Layout/LineLength:
   Exclude:

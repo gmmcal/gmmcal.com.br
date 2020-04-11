@@ -8,43 +8,59 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import Turbolinks from 'turbolinks'
-import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
-import Header from './components/header.vue'
-import Body from './components/body.vue'
-import Footer from './components/footer.vue'
-import Error404 from './components/error-404.vue'
-import Error422 from './components/error-422.vue'
-import Error500 from './components/error-500.vue'
-import I18n from './i18n'
+import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faGithub, faGitlab, faDev, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { handleScroll, handleClick, handleMenu } from './behavior'
 
 import 'stylesheets/application'
-
-Vue.use(TurbolinksAdapter)
 
 Turbolinks.start()
 
 document.addEventListener('turbolinks:load', () => {
-  if(document.getElementById('wrapper')) {
-    new Vue({
-      el: '#wrapper',
-      components: {
-        'vue-header': Header,
-        'vue-body': Body,
-        'vue-footer': Footer,
-        'vue-error-404': Error404,
-        'vue-error-422': Error422,
-        'vue-error-500': Error500,
-      },
-      mounted() {
-        I18n.locale = document.getElementById('home').getAttribute('data-locale')
-        const lazy = document.getElementsByClassName('lazy')
-        const indexes = Array.from(Array(lazy.length).keys())
-        indexes.map(index => lazy.item(index).classList.add('visible'))
-      }
-    })
-  }
+  // fullstack page - most of these code will be moved to it's own files once rebuild is done
+  // lazy load images
+  const lazy = document.getElementsByClassName('lazy')
+  const indexes = Array.from(Array(lazy.length).keys())
+  indexes.map(index => lazy.item(index).classList.add('visible'))
+
+  // fontawesome
+  config.mutateApproach = 'sync'
+  library.add(
+    faGithub, faGitlab, faDev, faTwitter, faLinkedinIn, faMapMarkerAlt, faMobileAlt, faEnvelope
+  )
+  dom.watch()
+
+  // menu handling
+  // main menu
+  const menu_items = document.querySelectorAll('.menu-container .nav-link')
+  menu_items.forEach(element => {
+    element.onclick = handleClick
+  })
+  // hamburger menu
+  document.querySelector('.navbar-toggler').onclick = handleMenu
+  // page scroll
+  window.addEventListener("scroll", scroll)
+  window.addEventListener("resize", scroll)
+
   if (!document.getElementById('offline') && navigator.serviceWorker) {
     navigator.serviceWorker.register('/service-worker.js', { scope: './' })
   }
 })
+
+const scroll = () => {
+  const selected = handleScroll(gon.menu_links.slice())
+  const menu_items = document.querySelectorAll('.menu-container .nav-link')
+  menu_items.forEach(element => {
+    element.classList.remove('active')
+  })
+  document.getElementById("menu-" + selected).classList.add('active')
+}
+
+const click = () => {
+  const menu_items = document.querySelectorAll('.menu-container .nav-link')
+  menu_items.forEach(element => {
+    element.onclick = handleClick
+  })
+}

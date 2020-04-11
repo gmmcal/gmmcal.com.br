@@ -8,8 +8,8 @@ class HomeController < WebsiteController
 
   def set_data
     super
-    gon.push(educations: fetch_from_cache('educations'))
-    gon.push(skills: fetch_from_cache('skills'))
-    gon.push(experiences: fetch_from_cache('work_experiences'))
+    fetch_from_cache('educations')
+    fetch_from_cache('skills')
+    fetch_from_cache('work_experiences')
   end
 end

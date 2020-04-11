@@ -8,6 +8,21 @@
   @import 'setup';
   @import 'images';
   @import 'fonts';
+  @import 'components/about';
+  @import 'components/banner';
+  @import 'components/contact';
+  @import 'components/education';
+  @import 'components/educations';
+  @import 'components/experience';
+  @import 'components/experiences';
+  @import 'components/footer';
+  @import 'components/header';
+  @import 'components/menu';
+  @import 'components/menu-container';
+  @import 'components/menu-item';
+  @import 'components/skill';
+  @import 'components/skills';
+  @import 'components/social';
 }
 
 @media print {
