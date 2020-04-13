@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= t(:title, scope: %i[frontend helpers]) %></title>
-  <%= stylesheet_link_tag wicked_pdf_asset_base64('cv/application'), media: 'all', rel: 'stylesheet' %>
+  <%= wicked_pdf_stylesheet_link_tag 'cv/application' %>
 </head>
 <body>
   <%=yield%>

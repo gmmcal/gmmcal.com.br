@@ -1,5 +1,6 @@
 //= link avatar.jpg
 //= link admin/application.css
+//= link cv/application.css
 //= link favicon.ico
 //= link icons/apple-icon-57x57.png
 //= link icons/apple-icon-60x60.png
