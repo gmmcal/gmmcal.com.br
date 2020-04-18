@@ -22,7 +22,8 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "app/javascript/packs/functional/**/*.{js,}",
+    "app/javascript/packs/frontend/*.{js,}",
+    "app/javascript/packs/admin/serialize.js",
     "!**/node_modules/**"
   ],
 
@@ -111,7 +112,7 @@ module.exports = {
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [
-    "spec/frontend/javascript",
+    "spec/javascript",
     "app/javascript/packs"
   ],
 

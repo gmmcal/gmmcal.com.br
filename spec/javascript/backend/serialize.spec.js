@@ -1,4 +1,4 @@
-import serialize from '@/functional/serialize'
+import serialize from '@/admin/serialize'
 
 describe('Serialize', () => {
   it('simple params', () => {

@@ -57,12 +57,8 @@
     "@rails/webpacker": "*",
     "bootstrap": "*",
     "core-js": "*",
-    "dompurify": "*",
-    "i18n-js": "*",
-    "marked": "*",
     "rails-ujs": "*",
     "sortablejs": "*",
-    "start-server-and-test": "*",
     "tailwindcss": "*",
     "turbolinks": "*",
     "yarn": "*"
@@ -75,6 +71,7 @@
     "eslint": "*",
     "jest": "*",
     "jest-canvas-mock": "*",
+    "start-server-and-test": "*",
     "webpack-dev-server": "*"
   },
   "scripts": {

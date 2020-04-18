@@ -1,0 +1,44 @@
+import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faGithub, faGitlab, faDev, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+
+class Icons {
+  _icons = []
+  _config = config
+  _library = library
+
+  constructor() {
+    this.mutateApproach = 'sync'
+    this.icons = [
+      faGithub,
+      faGitlab,
+      faDev,
+      faTwitter,
+      faLinkedinIn,
+      faMapMarkerAlt,
+      faMobileAlt,
+      faEnvelope
+    ]
+  }
+
+  set mutateApproach(type) {
+    this._config.mutateApproach = type
+  }
+
+  set icons(icons) {
+    this._icons = icons
+    this._library.add(icons)
+    dom.watch()
+  }
+
+  get mutateApproach() {
+    return this._config.mutateApproach
+  }
+
+  get icons() {
+    return this._icons.map(icon => icon.iconName)
+  }
+}
+
+export default Icons

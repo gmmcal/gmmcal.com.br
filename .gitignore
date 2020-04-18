@@ -10,7 +10,6 @@ capybara-*.html
 /spec/tmp
 /spec/backend/examples.txt
 /spec/end-to-end/screenshots
-/spec/frontend/end-to-end/screenshots*
 **.orig
 rerun.txt
 pickle-email-*.html

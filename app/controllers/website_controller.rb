@@ -43,7 +43,6 @@ class WebsiteController < ApplicationController
         label: page.to_s
       }
     end
-    gon.push(menu_links: @links)
   end
 
   def flags

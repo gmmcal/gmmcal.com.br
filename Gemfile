@@ -15,15 +15,12 @@ gem 'pg'
 gem 'rails', '~> 6.0.0'
 
 # Frontend gems
-gem 'blueprinter'
 gem 'draper'
-gem 'gon'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'uglifier'
 gem 'webpacker'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
 
 # Admin gems
 gem 'devise'
@@ -38,8 +35,8 @@ gem 'faker', require: false
 # Groups
 group :development do
   # gem 'i18n-debug'
-  gem 'i18n-js'
   gem 'listen'
+  gem 'wkhtmltopdf-binary'
 end
 
 # No need to install these gems all the time
@@ -57,7 +54,8 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
-  gem 'simplecov', require: false
+  # https://github.com/codeclimate/test-reporter/issues/413
+  gem 'simplecov', '< 0.18', require: false
 end
 
 group :test, :development do

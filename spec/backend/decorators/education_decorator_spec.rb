@@ -5,9 +5,14 @@ require 'rails_helper'
 RSpec.describe EducationDecorator, type: :decorator do
   let(:education) { create(:education).decorate }
 
-  it 'responds with a json' do
-    keys = education.as_json.keys
-    expect(keys).to eq(%w[course institution description start_date end_date])
+  it 'returns CV url' do
+    I18n.locale = :en
+    expect(education.start_date).to eq('Dec / 2017')
+  end
+
+  it 'returns country name' do
+    I18n.locale = :en
+    expect(education.end_date).to eq('Currently')
   end
 
   it 'has a collection decorator class' do
