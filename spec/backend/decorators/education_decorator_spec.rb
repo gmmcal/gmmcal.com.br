@@ -3,14 +3,14 @@
 require 'rails_helper'
 
 RSpec.describe EducationDecorator, type: :decorator do
-  let(:education) { create(:education).decorate }
+  let(:education) { create(:education, start_date: '2017-12-01').decorate }
 
-  it 'returns CV url' do
+  it 'returns formatted start date' do
     I18n.locale = :en
     expect(education.start_date).to eq('Dec / 2017')
   end
 
-  it 'returns country name' do
+  it 'returns currently as end date' do
     I18n.locale = :en
     expect(education.end_date).to eq('Currently')
   end
