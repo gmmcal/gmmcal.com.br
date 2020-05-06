@@ -8,43 +8,21 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import Turbolinks from 'turbolinks'
-import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
-import Header from './components/header.vue'
-import Body from './components/body.vue'
-import Footer from './components/footer.vue'
-import Error404 from './components/error-404.vue'
-import Error422 from './components/error-422.vue'
-import Error500 from './components/error-500.vue'
-import I18n from './i18n'
+import { Icons, Images, Menu, Worker } from './frontend'
+import { handleClick, handleMenu } from './behavior'
 
 import 'stylesheets/application'
-
-Vue.use(TurbolinksAdapter)
 
 Turbolinks.start()
 
 document.addEventListener('turbolinks:load', () => {
-  if(document.getElementById('wrapper')) {
-    new Vue({
-      el: '#wrapper',
-      components: {
-        'vue-header': Header,
-        'vue-body': Body,
-        'vue-footer': Footer,
-        'vue-error-404': Error404,
-        'vue-error-422': Error422,
-        'vue-error-500': Error500,
-      },
-      mounted() {
-        I18n.locale = document.getElementById('home').getAttribute('data-locale')
-        const lazy = document.getElementsByClassName('lazy')
-        const indexes = Array.from(Array(lazy.length).keys())
-        indexes.map(index => lazy.item(index).classList.add('visible'))
-      }
-    })
-  }
-  if (!document.getElementById('offline') && navigator.serviceWorker) {
-    navigator.serviceWorker.register('/service-worker.js', { scope: './' })
-  }
+  // lazy load images
+  new Images()
+  // fontawesome
+  new Icons()
+  // menu
+  new Menu('.menu-container .nav-link', handleClick).watch()
+  new Menu('.navbar-toggler', handleMenu).watch()
+  // worker
+  new Worker()
 })

@@ -3,11 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe EducationDecorator, type: :decorator do
-  let(:education) { create(:education).decorate }
+  let(:education) { create(:education, start_date: '2017-12-01').decorate }
 
-  it 'responds with a json' do
-    keys = education.as_json.keys
-    expect(keys).to eq(%w[course institution description start_date end_date])
+  it 'returns formatted start date' do
+    I18n.locale = :en
+    expect(education.start_date).to eq('Dec / 2017')
+  end
+
+  it 'returns currently as end date' do
+    I18n.locale = :en
+    expect(education.end_date).to eq('Currently')
   end
 
   it 'has a collection decorator class' do

@@ -22,8 +22,8 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    "app/javascript/packs/components/**/*.{js,vue,}",
-    "app/javascript/packs/functional/**/*.{js,}",
+    "app/javascript/packs/frontend/*.{js,}",
+    "app/javascript/packs/admin/serialize.js",
     "!**/node_modules/**"
   ],
 
@@ -69,8 +69,7 @@ module.exports = {
   // An array of file extensions your modules use
   moduleFileExtensions: [
     "js",
-    "json",
-    "vue"
+    "json"
   ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
@@ -113,7 +112,7 @@ module.exports = {
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [
-    "spec/frontend/javascript",
+    "spec/javascript",
     "app/javascript/packs"
   ],
 
@@ -130,7 +129,6 @@ module.exports = {
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [
-  //   "<rootDir>/node_modules/jest-serializer-vue"
   // ],
 
   // The test environment that will be used for testing
@@ -170,7 +168,6 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.vue$": "<rootDir>/node_modules/vue-jest",
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
   },
 

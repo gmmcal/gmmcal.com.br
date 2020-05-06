@@ -23,28 +23,26 @@ class WebsiteController < ApplicationController
   end
 
   def set_data
-    gon.push(about: fetch_from_cache('about'))
+    fetch_from_cache('about')
   end
 
   def set_flag_links
-    links = flags.map do |flag|
+    @flags = flags.map do |flag|
       {
         link: home_path(flag),
         label: flag,
         css_class: ['flag', flag.downcase].join(' ')
       }
     end
-    gon.push(flag_links: links)
   end
 
   def set_menu_links
-    links = menus.map do |page|
+    @links = menus.map do |page|
       {
         link: home_path(I18n.locale, anchor: page),
         label: page.to_s
       }
     end
-    gon.push(menu_links: links)
   end
 
   def flags
