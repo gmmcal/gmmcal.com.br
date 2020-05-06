@@ -30,7 +30,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # dependencies
       - name: Install Reek
         run: gem install reek
 
@@ -47,7 +46,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # dependencies
       - name: Install Brakeman
         run: gem install brakeman
 
@@ -100,7 +98,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Install ESLint
-        run: npm install eslint babel-eslint --save-dev
+        run: yarn add eslint babel-eslint --dev
 
       - name: Run ESLint
-        run: ./node_modules/.bin/eslint --config=.eslintrc.js app/javascript/packs/**/**.js
+        run: yarn eslint --config=.eslintrc.js app/javascript/packs/**/**.js
