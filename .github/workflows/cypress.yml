@@ -29,6 +29,17 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      # languages
+      - name: Install APT dependencies
+        run: |
+          curl -sL https://deb.nodesource.com/setup_14.x | bash -
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+          apt-get -yqq install nodejs libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+
+      - name: Install yarn
+        run: npm i -g yarn
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -47,17 +58,6 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
-      # languages
-      - name: Install APT dependencies
-        run: |
-          curl -sL https://deb.nodesource.com/setup_14.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
-
-      - name: Install yarn
-        run: npm i -g yarn
 
       # dependencies
       - name: Run bundle install
@@ -111,6 +111,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Install APT dependencies
+        run: |
+          curl -sL https://deb.nodesource.com/setup_14.x | bash -
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+          apt-get -yqq install nodejs libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+
+      - name: Install yarn
+        run: npm i -g yarn
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -129,16 +139,6 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
-      - name: Install APT dependencies
-        run: |
-          curl -sL https://deb.nodesource.com/setup_14.x | bash -
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-          apt-get -yqq install nodejs libpq-dev xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
-
-      - name: Install yarn
-        run: npm i -g yarn
 
       # dependencies
       - name: Run bundle install
