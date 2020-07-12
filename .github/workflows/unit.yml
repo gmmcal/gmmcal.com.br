@@ -30,10 +30,17 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
       # languages
       - name: Install APT dependencies
         run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
+          curl -sL https://deb.nodesource.com/setup_14.x | bash -
           curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
           echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
           apt-get -yqq install nodejs libpq-dev
@@ -41,6 +48,7 @@ jobs:
       # dependencies
       - name: Run bundle install
         run: |
+          bundle config path vendor/bundle
           bundle config set without development production
           bundle install --jobs 4 --retry 3 --deployment
 
@@ -76,13 +84,25 @@ jobs:
 
       - name: Install APT dependencies
         run: |
-          curl -sL https://deb.nodesource.com/setup_12.x | bash -
+          curl -sL https://deb.nodesource.com/setup_14.x | bash -
           curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
           echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
           apt-get -yqq install nodejs
 
       - name: Install yarn
         run: npm i -g yarn
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       - name: Run yarn install
         run: yarn install
