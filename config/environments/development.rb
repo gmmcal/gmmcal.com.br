@@ -75,7 +75,7 @@ Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
 
   config.log_level = :fatal if ENV['GITHUB_ACTIONS']
-  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger           = ActiveSupport::Logger.new($stdout)
   logger.formatter = config.log_formatter
   config.logger    = ActiveSupport::TaggedLogging.new(logger)
 end

@@ -24,14 +24,14 @@ class BaseListener
     end
   end
 
-  def respond_to_missing?(name)
+  def respond_to_missing?(name, *args)
     return true if payload.keys.include?(name)
 
-    false
+    super
   end
 
   def method_missing(name, *args)
-    return payload[name] if respond_to_missing?(name)
+    return payload[name] if respond_to_missing?(name, args)
 
     super
   end

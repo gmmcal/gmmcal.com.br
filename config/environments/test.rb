@@ -51,7 +51,7 @@ end
 
 Rails.application.configure do
   config.log_level = :warn
-  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger           = ActiveSupport::Logger.new($stdout)
   logger.formatter = config.log_formatter
   config.logger    = config.logger = Logger.new('/dev/null')
 end
