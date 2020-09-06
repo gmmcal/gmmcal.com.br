@@ -55,7 +55,7 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   # https://github.com/codeclimate/test-reporter/issues/413
-  gem 'simplecov', require: false
+  gem 'simplecov', '< 0.18', require: false
 end
 
 group :test, :development do
