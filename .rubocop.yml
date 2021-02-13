@@ -3,7 +3,7 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
   DisplayCopNames: true
   NewCops: enable
   Exclude:
@@ -20,10 +20,6 @@ Style/PercentLiteralDelimiters:
     default: ()
     '%i': '[]'
     '%w': '[]'
-
-Style/StringLiterals:
-  Exclude:
-    - 'config/**/*'
 
 Style/Documentation:
   Enabled: false

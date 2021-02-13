@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Enforce minimum ruby version
-ruby '2.7.1' if ENV['RAILS_ENV'] == 'production'
+ruby '2.7.2' if ENV['RAILS_ENV'] == 'production'
 
 # Application gems
 # Use bootsnap to improve performance
@@ -12,7 +12,7 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.1.2'
 
 # Frontend gems
 gem 'draper'
