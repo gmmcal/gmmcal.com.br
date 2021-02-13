@@ -2,7 +2,7 @@
   "name": "gmmcal.com.br",
   "private": true,
   "description": "My personal website code, playground and learning lab.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "homepage": "https://www.gmmcal.com.br",
   "repository": "https://github.com/gmmcal/gmmcal.com.br",
   "bugs": {
@@ -52,7 +52,6 @@
     "@fortawesome/free-brands-svg-icons": "*",
     "@fortawesome/free-regular-svg-icons": "*",
     "@fortawesome/free-solid-svg-icons": "*",
-    "@fullhuman/postcss-purgecss": "*",
     "@rails/webpacker": "*",
     "bootstrap": "*",
     "core-js": "*",
