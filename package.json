@@ -43,9 +43,9 @@
     "ci-cd"
   ],
   "engines": {
-    "node": "^14.5.0",
-    "npm": "^6.14.5",
-    "yarn": "^1.22.4"
+    "node": "^14.15.5",
+    "npm": "^7.5.4",
+    "yarn": "^1.22.10"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "*",
@@ -58,7 +58,7 @@
     "core-js": "*",
     "rails-ujs": "*",
     "sortablejs": "*",
-    "tailwindcss": "*",
+    "tailwindcss": "<2.0",
     "turbolinks": "*",
     "yarn": "*"
   },
