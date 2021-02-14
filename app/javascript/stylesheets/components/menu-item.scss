@@ -1,9 +1,11 @@
 @media screen {
-  a {
-    @apply inline-block;
+  .nav-link {
+    a {
+      @apply inline-block;
 
-    @media screen and (max-width: 767px) {
-      @apply block;
+      @media screen and (max-width: 767px) {
+        @apply block;
+      }
     }
   }
 
