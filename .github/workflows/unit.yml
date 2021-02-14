@@ -70,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: backend-coverage
-          path: coverage/backend/.resultset.json
+          path: coverage/backend/coverage.json
 
   frontend:
     name: 'Unit: Frontend'
@@ -149,7 +149,7 @@ jobs:
 
       - name: Prepare backend coverage
         run: |
-          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json
+          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/coverage.json
 
       - name: Prepare frontend coverage
         run: |

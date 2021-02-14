@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'simplecov'
+require 'simplecov_json_formatter'
 SimpleCov.start 'rails' do
   coverage_dir 'coverage/backend'
   add_filter 'seed_manager.rb'
@@ -10,4 +11,5 @@ SimpleCov.start 'rails' do
   add_group 'Listeners', 'app/listeners'
   minimum_coverage 90
   minimum_coverage_by_file 70
+  formatter SimpleCov::Formatter::JSONFormatter
 end
