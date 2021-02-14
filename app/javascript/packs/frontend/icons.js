@@ -1,7 +1,6 @@
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faGithub, faGitlab, faDev, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faInbox, faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Icons {
   _icons = []
@@ -18,7 +17,7 @@ class Icons {
       faLinkedinIn,
       faMapMarkerAlt,
       faMobileAlt,
-      faEnvelope
+      faInbox
     ]
   }
 

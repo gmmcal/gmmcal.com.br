@@ -20,7 +20,7 @@ describe('Icons', () => {
       'linkedin-in',
       'map-marker-alt',
       'mobile-alt',
-      'envelope'
+      'inbox'
     ])
   })
 })

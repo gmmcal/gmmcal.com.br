@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.1
+      image: ruby:2.7.2
 
     services:
       postgres:
-        image: postgres:11.5
+        image: postgres:13.1
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -70,14 +70,14 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: backend-coverage
-          path: coverage/backend/.resultset.json
+          path: coverage/backend/coverage.json
 
   frontend:
     name: 'Unit: Frontend'
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.1
+      image: ruby:2.7.2
 
     steps:
       - uses: actions/checkout@v1
@@ -123,7 +123,7 @@ jobs:
     if: github.event_name == 'push'
 
     container:
-      image: ruby:2.7.1
+      image: ruby:2.7.2
 
     needs:
       - backend
@@ -149,7 +149,7 @@ jobs:
 
       - name: Prepare backend coverage
         run: |
-          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/.resultset.json
+          ./cc-test-reporter format-coverage -t simplecov -o codeclimate.backend.json backend-coverage/coverage.json
 
       - name: Prepare frontend coverage
         run: |

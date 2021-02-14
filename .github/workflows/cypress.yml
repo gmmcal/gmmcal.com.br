@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.1
+      image: ruby:2.7.2
 
     services:
       postgres:
-        image: postgres:11.5
+        image: postgres:13.1
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -83,7 +83,7 @@ jobs:
 
       # script
       - name: Run tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
@@ -95,11 +95,11 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.1
+      image: ruby:2.7.2
 
     services:
       postgres:
-        image: postgres:11.5
+        image: postgres:13.1
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -164,7 +164,7 @@ jobs:
 
       # script
       - name: Run tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
