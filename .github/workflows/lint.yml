@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     steps:
       - uses: actions/checkout@v1
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     steps:
       - uses: actions/checkout@v1
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     steps:
       - uses: actions/checkout@v1
@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     steps:
       - uses: actions/checkout@v1
@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     steps:
       - uses: actions/checkout@v1

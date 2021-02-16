@@ -3,7 +3,7 @@
 # yarn - needed to run Webpack, to install/compile javascript/images/css files.
 
 # Use latest ruby version
-FROM ruby:2.7.2
+FROM ruby:3.0.0
 
 # Define environment variables
 ENV APP_HOME /gustavocunha.dev
