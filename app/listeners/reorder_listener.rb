@@ -24,7 +24,7 @@ class ReorderListener < BaseListener
   end
 
   def payload_from(object)
-    Hash[hash_key(object), object]
+    { hash_key(object) => object }
   end
 
   def hash_key(object)

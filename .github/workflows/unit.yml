@@ -11,10 +11,10 @@ env:
 jobs:
   backend:
     name: 'Unit: Backend'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     services:
       postgres:
@@ -50,7 +50,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without development production
-          bundle install --jobs 4 --retry 3 --deployment
+          bundle install --jobs 4 --retry 3
 
       - name: Setup database
         run: |
@@ -74,10 +74,10 @@ jobs:
 
   frontend:
     name: 'Unit: Frontend'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     steps:
       - uses: actions/checkout@v1
@@ -118,12 +118,12 @@ jobs:
 
   coverage:
     name: 'Unit: Coverage'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     if: github.event_name == 'push'
 
     container:
-      image: ruby:2.7.2
+      image: ruby:3.0.0
 
     needs:
       - backend
