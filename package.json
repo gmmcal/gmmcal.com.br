@@ -65,7 +65,7 @@
     "@babel/core": "*",
     "babel-eslint": "*",
     "babel-jest": "*",
-    "cypress": "*",
+    "cypress": "6.4.0",
     "eslint": "*",
     "jest": "*",
     "jest-canvas-mock": "*",
