@@ -11,7 +11,7 @@ env:
 jobs:
   backend:
     name: 'Unit: Backend'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     container:
       image: ruby:3.0.0
@@ -74,7 +74,7 @@ jobs:
 
   frontend:
     name: 'Unit: Frontend'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     container:
       image: ruby:3.0.0
@@ -118,7 +118,7 @@ jobs:
 
   coverage:
     name: 'Unit: Coverage'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     if: github.event_name == 'push'
 
