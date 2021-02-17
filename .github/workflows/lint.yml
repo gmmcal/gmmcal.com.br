@@ -92,7 +92,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     container:
-      image: node:14
+      image: node:15
 
     steps:
       - uses: actions/checkout@v1
