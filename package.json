@@ -76,7 +76,7 @@
     "test": "jest --watch",
     "test:once": "jest",
     "cypress:dev": "start-test server:start 3000 cypress:open",
-    "server:start": "bundle exec rails server -p 3000",
+    "server:start": "bundle exec rails server -u puma -p 3000",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "cypress:ci": "start-test server:start 3000 cypress:run",

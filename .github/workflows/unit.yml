@@ -50,7 +50,7 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle config set without development production
-          bundle install --jobs 4 --retry 3 --deployment
+          bundle install --jobs 4 --retry 3
 
       - name: Setup database
         run: |

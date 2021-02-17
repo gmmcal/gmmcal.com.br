@@ -63,8 +63,7 @@ jobs:
       - name: Run bundle install
         run: |
           bundle config path vendor/bundle
-          bundle config set without test production
-          bundle install --jobs 4 --retry 3 --deployment
+          bundle install --jobs 4 --retry 3
 
       - name: Run yarn install
         run: yarn install
@@ -81,15 +80,11 @@ jobs:
         run: |
           bundle exec rails db:seed
 
-      - name: Run rails server
-        run: |
-          bundle exec rails server -p 3000 -d
-
       # script
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
-          # start: yarn server:start
+          start: yarn server:start
           wait-on: 'http://localhost:3000'
           install: false
           spec: spec/end-to-end/tests/admin/**.js
@@ -148,8 +143,7 @@ jobs:
       - name: Run bundle install
         run: |
           bundle config path vendor/bundle
-          bundle config set without test production
-          bundle install --jobs 4 --retry 3 --deployment
+          bundle install --jobs 4 --retry 3
 
       - name: Run yarn install
         run: yarn install
