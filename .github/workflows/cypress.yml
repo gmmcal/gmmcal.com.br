@@ -81,11 +81,15 @@ jobs:
         run: |
           bundle exec rails db:seed
 
+      - name: Run rails server
+        run: |
+          bundle exec rails server -p 3000 -d
+
       # script
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
-          start: yarn server:start
+          # start: yarn server:start
           wait-on: 'http://localhost:3000'
           install: false
           spec: spec/end-to-end/tests/admin/**.js
