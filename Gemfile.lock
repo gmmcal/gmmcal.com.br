@@ -70,7 +70,7 @@ GEM
     builder (3.2.4)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
-    cypress-on-rails (1.8.1)
+    cypress-on-rails (1.10.1)
       rack
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
