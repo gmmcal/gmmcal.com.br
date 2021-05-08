@@ -98,3 +98,7 @@ Style/RedundantRegexpEscape:
 
 Style/SlicingWithRange:
   Enabled: true
+
+Rails/EnvironmentVariableAccess:
+  Enabled: true
+  AllowReads: true
