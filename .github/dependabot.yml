@@ -9,9 +9,13 @@ updates:
     directory: "/"
     open-pull-requests-limit: 50
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
   - package-ecosystem: "npm"
     directory: "/"
     open-pull-requests-limit: 50
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
