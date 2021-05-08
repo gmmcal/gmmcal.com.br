@@ -18,7 +18,7 @@ jobs:
         run: gem install rubocop rubocop-rails rubocop-rspec
 
       - name: Run rubocop
-        run: rubocop --config .rubocop.yml
+        run: rubocop --config .rubocop.yml .
 
   reek:
     name: 'Lint: Reek'
@@ -34,7 +34,7 @@ jobs:
         run: gem install reek
 
       - name: Run reek
-        run: reek --config .reek.yml
+        run: reek --config .reek.yml .
 
   brakeman:
     name: 'Lint: Brakeman'
