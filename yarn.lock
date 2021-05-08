@@ -8086,9 +8086,9 @@ querystringify@^2.1.1:
   integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
 
 rails-ujs@*:
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.5.tgz#63908dbd31356d0c13fefc3b0d64f82cdd85488f"
-  integrity sha512-v4eP8U/ufoujBUNF9MKTGaWjpLVHcVmzG7s/EMIChAxi0OtWhYAofTJmZ91ypAFhQ/G74C100fki3+eGBHq4sA==
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.6.tgz#4193242a108d0cd9ed3595695644755c0bd329eb"
+  integrity sha512-JpUq5RlA4p5XE69dz0ZOIkn1xXQn9H8VDXQJWuVPRtFBOFylWFriaDVpxFmdQuARPo4bm2l67uIMMBpX6KNY+g==
 
 ramda@~0.27.1:
   version "0.27.1"
