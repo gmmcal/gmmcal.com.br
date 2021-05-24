@@ -1,0 +1,67 @@
+name: Backend Unit Tests
+
+on:
+  - push
+  - pull_request
+
+env:
+  RAILS_ENV: test
+  YARN_ENV: test
+
+jobs:
+  backend:
+    name: 'Unit: Backend'
+    runs-on: ubuntu-20.04
+
+    container:
+      image: ruby:3.0.0
+
+    services:
+      postgres:
+        image: postgres:13.1
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: gmmcalcombr_test
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # languages
+      - name: Install APT dependencies
+        run: |
+          curl -sL https://deb.nodesource.com/setup_14.x | bash -
+          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+          echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+          apt-get -yqq install nodejs libpq-dev
+
+      # dependencies
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without development production
+          bundle install --jobs 4 --retry 3
+
+      - name: Setup database
+        run: |
+          bundle exec rails db:migrate
+        env:
+          DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
+
+      # script
+      - name: Run tests
+        run: |
+          bundle exec rspec
+        env:
+          DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
+          DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
