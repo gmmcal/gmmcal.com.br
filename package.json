@@ -37,7 +37,6 @@
     "end-to-end-testing",
     "end-to-end",
     "github-actions",
-    "codeclimate",
     "hakiri",
     "heroku",
     "ci-cd"
