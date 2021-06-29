@@ -5,13 +5,15 @@ require 'rails_helper'
 RSpec.describe CssClassesHelper, type: :helper do
   describe '#body_class' do
     it 'includes en when locale is set for English' do
-      I18n.locale = :en
-      expect(helper.body_class).to include('en')
+      I18n.with_locale(:en) do
+        expect(helper.body_class).to include('en')
+      end
     end
 
     it 'includes pt-br when locale is set for Portuguese' do
-      I18n.locale = :'pt-BR'
-      expect(helper.body_class).to include('pt-br')
+      I18n.with_locale(:'pt-BR') do
+        expect(helper.body_class).to include('pt-br')
+      end
     end
   end
 
@@ -98,17 +100,17 @@ RSpec.describe CssClassesHelper, type: :helper do
   end
 
   describe '#tab_classes' do
-    before do
-      I18n.locale = :en
-    end
-
     context 'with empty params' do
       it 'returns active for english' do
-        expect(helper.tab_classes(:en)).to include('active')
+        I18n.with_locale(:en) do
+          expect(helper.tab_classes(:en)).to include('active')
+        end
       end
 
       it 'returns inactive for portuguese' do
-        expect(helper.tab_classes(:'pt-BR')).not_to include('active')
+        I18n.with_locale(:en) do
+          expect(helper.tab_classes(:'pt-BR')).not_to include('active')
+        end
       end
     end
 
@@ -116,11 +118,15 @@ RSpec.describe CssClassesHelper, type: :helper do
       before { allow(helper).to receive(:params).and_return(locale: :en) }
 
       it 'returns active for english' do
-        expect(helper.tab_classes(:en)).to include('active')
+        I18n.with_locale(:en) do
+          expect(helper.tab_classes(:en)).to include('active')
+        end
       end
 
       it 'returns inactive for portuguese' do
-        expect(helper.tab_classes(:'pt-BR')).not_to include('active')
+        I18n.with_locale(:en) do
+          expect(helper.tab_classes(:'pt-BR')).not_to include('active')
+        end
       end
     end
 
@@ -128,11 +134,15 @@ RSpec.describe CssClassesHelper, type: :helper do
       before { allow(helper).to receive(:params).and_return(locale: :'pt-BR') }
 
       it 'returns inactive for english' do
-        expect(helper.tab_classes(:en)).not_to include('active')
+        I18n.with_locale(:en) do
+          expect(helper.tab_classes(:en)).not_to include('active')
+        end
       end
 
       it 'returns active for portuguese' do
-        expect(helper.tab_classes(:'pt-BR')).to include('active')
+        I18n.with_locale(:en) do
+          expect(helper.tab_classes(:'pt-BR')).to include('active')
+        end
       end
     end
   end

@@ -6,12 +6,14 @@ RSpec.describe AboutDecorator, type: :decorator do
   let(:about) { create(:about, country: 'NL').decorate }
 
   it 'returns CV url' do
-    I18n.locale = :en
-    expect(about.cv).to eq('/en/cv')
+    I18n.with_locale(:en) do
+      expect(about.cv).to eq('/en/cv')
+    end
   end
 
   it 'returns country name' do
-    I18n.locale = :en
-    expect(about.country).to eq('Netherlands')
+    I18n.with_locale(:en) do
+      expect(about.country).to eq('Netherlands')
+    end
   end
 end
