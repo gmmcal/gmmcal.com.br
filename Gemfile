@@ -35,19 +35,15 @@ gem 'faker', require: false
 # Groups
 group :development do
   # gem 'i18n-debug'
+  gem 'brakeman'
   gem 'listen'
+  gem 'reek'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+  gem 'scss_lint', require: false
   gem 'wkhtmltopdf-binary'
 end
-
-# No need to install these gems all the time
-# group :lint do
-#   gem 'brakeman'
-#   gem 'reek'
-#   gem 'rubocop'
-#   gem 'rubocop-rails'
-#   gem 'rubocop-rspec'
-#   gem 'scss_lint', require: false
-# end
 
 # Test suite
 group :test do

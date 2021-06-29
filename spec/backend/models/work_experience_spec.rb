@@ -18,13 +18,11 @@ RSpec.describe WorkExperience, type: :model do
   end
 
   describe '.country_name' do
-    before do
-      I18n.locale = :en
-    end
-
     it 'country name if code is provided' do
-      about = create(:about, country: 'NL')
-      expect(about.country_name).to eq('Netherlands')
+      I18n.with_locale(:en) do
+        about = create(:about, country: 'NL')
+        expect(about.country_name).to eq('Netherlands')
+      end
     end
   end
 end

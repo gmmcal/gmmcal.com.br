@@ -6,18 +6,21 @@ RSpec.describe WorkExperienceDecorator, type: :decorator do
   let(:work_experience) { create(:work_experience, start_date: '2017-12-01', country: 'US').decorate }
 
   it 'returns formatted start date' do
-    I18n.locale = :en
-    expect(work_experience.start_date).to eq('Dec / 2017')
+    I18n.with_locale(:en) do
+      expect(work_experience.start_date).to eq('Dec / 2017')
+    end
   end
 
   it 'returns currently as end date' do
-    I18n.locale = :en
-    expect(work_experience.end_date).to eq('Currently')
+    I18n.with_locale(:en) do
+      expect(work_experience.end_date).to eq('Currently')
+    end
   end
 
   it 'returns country name' do
-    I18n.locale = :en
-    expect(work_experience.country).to eq('United States')
+    I18n.with_locale(:en) do
+      expect(work_experience.country).to eq('United States')
+    end
   end
 
   it 'has a collection decorator class' do

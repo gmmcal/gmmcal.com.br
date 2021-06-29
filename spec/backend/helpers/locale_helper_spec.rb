@@ -4,40 +4,44 @@ require 'rails_helper'
 
 RSpec.describe LocaleHelper, type: :helper do
   describe '#locale_to_language' do
-    before do
-      I18n.locale = :en
-    end
-
     it 'returns en for english' do
-      expect(helper.locale_to_language(:en)).to eq('English')
+      I18n.with_locale(:en) do
+        expect(helper.locale_to_language(:en)).to eq('English')
+      end
     end
 
     it 'returns pt-BR for portuguese' do
-      expect(helper.locale_to_language(:'pt-BR')).to eq('Portuguese')
+      I18n.with_locale(:en) do
+        expect(helper.locale_to_language(:'pt-BR')).to eq('Portuguese')
+      end
     end
   end
 
   describe '#available_locales' do
     it 'returns en for english' do
-      I18n.locale = :en
-      expect(helper.available_locales).to eq([:'pt-BR'])
+      I18n.with_locale(:en) do
+        expect(helper.available_locales).to eq([:'pt-BR'])
+      end
     end
 
     it 'returns pt-BR for portuguese' do
-      I18n.locale = :'pt-BR'
-      expect(helper.available_locales).to eq([:en])
+      I18n.with_locale(:'pt-BR') do
+        expect(helper.available_locales).to eq([:en])
+      end
     end
   end
 
   describe '#spoken_languages' do
     it 'returns en for english' do
-      I18n.locale = :en
-      expect(helper.spoken_languages).to eq('English, Portuguese')
+      I18n.with_locale(:en) do
+        expect(helper.spoken_languages).to eq('English, Portuguese')
+      end
     end
 
     it 'returns pt-BR for portuguese' do
-      I18n.locale = :'pt-BR'
-      expect(helper.spoken_languages).to eq('Inglês, Português')
+      I18n.with_locale(:'pt-BR') do
+        expect(helper.spoken_languages).to eq('Inglês, Português')
+      end
     end
   end
 end

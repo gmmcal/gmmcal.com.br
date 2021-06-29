@@ -102,3 +102,6 @@ Style/SlicingWithRange:
 Rails/EnvironmentVariableAccess:
   Enabled: true
   AllowReads: true
+
+Naming/InclusiveLanguage:
+  Enabled: false
