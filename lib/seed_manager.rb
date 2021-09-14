@@ -63,9 +63,9 @@ class SeedManager
   def self.log(message)
     max_size = 79
     messages = []
-    messages << '=' * 2
+    messages << ('=' * 2)
     messages << message
-    messages << '=' * (max_size - 2 - messages.map(&:length).inject(:+))
+    messages << ('=' * (max_size - 2 - messages.map(&:length).inject(:+)))
     Rails.logger.info messages.join(' ')
   end
 
