@@ -14,11 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install Rubocop
-        run: gem install rubocop rubocop-rails rubocop-rspec
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Run rubocop
-        run: rubocop --config .rubocop.yml .
+        run: bundle exec rubocop --config .rubocop.yml .
 
   reek:
     name: 'Lint: Reek'
@@ -30,11 +39,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install Reek
-        run: gem install reek
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Run reek
-        run: reek --config .reek.yml .
+        run: bundle exec reek --config .reek.yml .
 
   brakeman:
     name: 'Lint: Brakeman'
@@ -46,11 +64,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install Brakeman
-        run: gem install brakeman
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Run brakeman
-        run: brakeman
+        run: bundle exec brakeman
 
   bundler-audit:
     name: 'Lint: Bundler Audit'
@@ -81,11 +108,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install SCSSLint
-        run: gem install scss_lint
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Run bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Run SCSSLint
-        run: scss-lint --config .scss-lint.yml
+        run: bundle exec scss-lint --config .scss-lint.yml
 
   eslint:
     name: 'Lint: ESLint'
@@ -97,8 +133,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install ESLint
-        run: yarn add eslint @babel/eslint-parser --dev
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Run yarn install
+        run: yarn install
 
       - name: Run ESLint
         run: yarn eslint --config=.eslintrc.js app/javascript/packs/**/**.js
