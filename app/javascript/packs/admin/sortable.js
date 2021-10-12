@@ -3,12 +3,12 @@ import Rails from 'rails-ujs'
 
 import serialize from './serialize'
 
-const sort = (selector, callback) => {
+const sort = (selector) => {
   const element = document.querySelector(selector)
   const model = element.dataset.model
   const url = element.dataset.url
   const sortable = Sortable.create(element, {
-    onSort: (event) => {
+    onSort: () => {
       const data = {
         reorder: {
           model: model,

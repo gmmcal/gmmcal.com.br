@@ -1,12 +1,12 @@
-/*eslint-env node*/
 module.exports = {
-  'parser': 'babel-eslint',
-  'parserOptions': {
-    'ecmaVersion': 6,
-    'sourceType': 'module'
-  },
   'env': {
-    'browser': true
+    'browser': true,
+    'es2021': true
+  },
+  'extends': 'eslint:recommended',
+  'parserOptions': {
+    'ecmaVersion': 13,
+    'sourceType': 'module'
   },
   'rules': {
     'camelcase': 0,

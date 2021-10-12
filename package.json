@@ -42,7 +42,7 @@
     "ci-cd"
   ],
   "engines": {
-    "node": "^14.15.5",
+    "node": "^14.17.0",
     "npm": "^7.5.4",
     "yarn": "^1.22.0"
   },
@@ -65,7 +65,7 @@
     "babel-eslint": "*",
     "babel-jest": "*",
     "cypress": "*",
-    "eslint": "<8.0.0",
+    "eslint": "*",
     "jest": "*",
     "jest-canvas-mock": "*",
     "start-server-and-test": "*",
