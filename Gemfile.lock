@@ -178,7 +178,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.5.0)
+    redis (4.5.1)
     reek (6.0.6)
       kwalify (~> 0.7.0)
       parser (~> 3.0.0)
