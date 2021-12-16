@@ -12,7 +12,7 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0.0'
 
 # Frontend gems
 gem 'draper'
