@@ -2,6 +2,6 @@
 
 module Publisher
   def publish(event, payload)
-    ActiveSupport::Notifications.publish(event, payload)
+    ActiveSupport::Notifications.instrument(event.to_s, payload)
   end
 end
