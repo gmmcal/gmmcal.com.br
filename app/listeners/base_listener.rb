@@ -11,14 +11,14 @@ class BaseListener
     event_methods = self.class.instance_methods(false)
 
     event_methods.each do |method|
-      subscribe(method)
+      subscribe(method.to_s)
     end
   end
 
   private
 
   def subscribe(event)
-    ActiveSupport::Notifications.subscribe(event) do |name, data|
+    ActiveSupport::Notifications.subscribe(event) do |name, _start, _finish, _id, data|
       payload.merge!(data)
       send(name)
     end
