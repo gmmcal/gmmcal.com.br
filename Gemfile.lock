@@ -244,7 +244,7 @@ GEM
     scss_lint (0.59.0)
       sass (~> 3.5, >= 3.5.5)
     semantic_range (3.0.0)
-    shoulda-matchers (5.0.0)
+    shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
