@@ -13,7 +13,7 @@
 WickedPdf.config ||= {}
 WickedPdf.config.merge!(
   # Layout file to be used for all PDFs
-  layout: 'download.html',
+  layout: 'download',
   orientation: 'Landscape',
   page_size: 'A4',
   dpi: '300',
