@@ -18,8 +18,8 @@ describe('Icons', () => {
       'dev',
       'twitter',
       'linkedin-in',
-      'map-marker-alt',
-      'mobile-alt',
+      'location-dot',
+      'mobile-screen-button',
       'inbox'
     ])
   })
