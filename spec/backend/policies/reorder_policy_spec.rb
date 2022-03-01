@@ -8,6 +8,6 @@ RSpec.describe ReorderPolicy, type: :policy do
   let(:instance) { described_class.new(user, record) }
 
   it 'allows to update record' do
-    expect(instance.update?).to eq(true)
+    expect(instance.update?).to be(true)
   end
 end
