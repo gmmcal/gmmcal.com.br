@@ -33,9 +33,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
+            ${{ runner.os }}-gems-gmmcal-
 
       # languages
       - name: Install APT dependencies
