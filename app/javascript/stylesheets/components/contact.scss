@@ -38,7 +38,7 @@
           @apply text-blue-dark-grayish;
 
           &:hover {
-            @apply text-blue-dark-grayish:hover no-underline;
+            @apply hover:text-blue-dark-grayish no-underline;
           }
         }
       }

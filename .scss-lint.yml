@@ -3,7 +3,9 @@
 scss_files: "app/**/*.scss"
 plugin_directories: ['.scss-linters']
 
-exclude: 'app/assets/stylesheets/admin/mdb/**'
+exclude:
+  - 'app/assets/stylesheets/admin/mdb/**'
+  - 'app/javascript/stylesheets/components/skill.scss'
 
 # List of gem names to load custom linters from (make sure they are already
 # installed)

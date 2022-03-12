@@ -13,7 +13,7 @@
       &:hover,
       &:active,
       &:focus {
-        @apply bg-blue-very-dark-grayish:hover text-gray-light no-underline;
+        @apply hover:bg-blue-very-dark-grayish text-gray-light no-underline;
       }
 
       @media screen and (max-width: 400px) {

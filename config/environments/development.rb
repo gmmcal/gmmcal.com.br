@@ -73,6 +73,9 @@ Rails.application.configure do
   # project's package.json
   config.webpacker.check_yarn_integrity = true
 
+  # enable inline source maps
+  config.sass.inline_source_maps = true
+
   # Raises error for missing translations
   config.i18n.raise_on_missing_translations = true
 

@@ -29,7 +29,7 @@
   }
 
   &-collapse {
-    @apply flex-grow items-center;
+    @apply grow items-center;
     flex-basis: 100%;
   }
 
@@ -60,7 +60,7 @@
 
 @media (min-width: 768px) {
   .navbar-expand-md {
-    @apply flex-row flex-no-wrap justify-start;
+    @apply flex-row flex-nowrap justify-start;
 
     .navbar-nav {
       @apply flex-row;
@@ -76,7 +76,7 @@
 
     > .container,
     > .container-fluid {
-      @apply flex-no-wrap;
+      @apply flex-nowrap;
     }
 
     .navbar-collapse {
