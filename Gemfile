@@ -17,7 +17,7 @@ gem 'rails', '~> 7.0.2'
 # Frontend gems
 gem 'draper'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'uglifier'
 gem 'webpacker'
 gem 'wicked_pdf'
