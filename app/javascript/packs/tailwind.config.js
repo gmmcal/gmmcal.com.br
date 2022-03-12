@@ -21,11 +21,11 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       black: {
-        default: '#000',
+        DEFAULT: '#000',
         blue: '#1b1f29',
       },
       white: {
-        default: '#fff',
+        DEFAULT: '#fff',
         gray: '#fafafa',
       },
       blue: {
@@ -134,11 +134,11 @@ module.exports = {
       full: '100% 100%',
     },
     borderWidth: {
-      default: '0.1rem',
+      DEFAULT: '0.1rem',
       ...getScaleValues(8),
     },
     borderColor: theme => ({
-      default: theme('colors.gray.300', 'currentColor'),
+      DEFAULT: theme('colors.gray.300', 'currentColor'),
       ...theme('colors'),
     }),
     borderRadius: {
@@ -148,7 +148,7 @@ module.exports = {
     },
     cursor: {
       auto: 'auto',
-      default: 'default',
+      DEFAULT: 'default',
       pointer: 'pointer',
       wait: 'wait',
       move: 'move',
@@ -228,7 +228,7 @@ module.exports = {
       current: 'currentColor',
     },
     flex: {
-      '1': '1 1 0%',
+      1: '1 1 0%',
       auto: '0 0 auto',
       initial: '0 1 auto',
       none: 'none',
@@ -248,12 +248,12 @@ module.exports = {
       full: '0 0 100%',
     },
     flexGrow: {
-      '0': 0,
-      default: 1,
+      0: '0',
+      DEFAULT: '1',
     },
     flexShrink: {
-      '0': 0,
-      default: 1,
+      0: '0',
+      DEFAULT: '1',
     },
     listStyleType: {
       none: 'none',

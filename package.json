@@ -52,16 +52,21 @@
     "@fortawesome/free-regular-svg-icons": "*",
     "@fortawesome/free-solid-svg-icons": "*",
     "@rails/webpacker": "*",
+    "autoprefixer": "^10.4.2",
     "bootstrap": "*",
     "core-js": "*",
+    "postcss": "^8.4.8",
     "rails-ujs": "*",
     "sortablejs": "*",
-    "tailwindcss": "<2.0",
+    "tailwindcss": "<3.0.0",
     "turbolinks": "*",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
     "yarn": "*"
   },
   "devDependencies": {
     "@babel/core": "*",
+    "@webpack-cli/serve": "^1.6.1",
     "babel-eslint": "*",
     "babel-jest": "*",
     "cypress": "*",
@@ -69,7 +74,7 @@
     "jest": "*",
     "jest-canvas-mock": "*",
     "start-server-and-test": "*",
-    "webpack-dev-server": "*"
+    "webpack-dev-server": "^3"
   },
   "scripts": {
     "test": "jest --watch",
