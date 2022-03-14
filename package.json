@@ -61,7 +61,7 @@
     "tailwindcss": "*",
     "turbolinks": "*",
     "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.9.2",
     "yarn": "*"
   },
   "devDependencies": {
