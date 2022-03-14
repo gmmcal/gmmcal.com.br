@@ -74,7 +74,7 @@
     "jest": "*",
     "jest-canvas-mock": "*",
     "start-server-and-test": "*",
-    "webpack-dev-server": "^3"
+    "webpack-dev-server": "^4"
   },
   "scripts": {
     "test": "jest --watch",
