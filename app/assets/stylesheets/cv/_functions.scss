@@ -1,6 +1,8 @@
+@use 'sass:math';
+
 @function size_with_unit($size) {
   $base: 16;
   $unit: 'rem';
 
-  @return #{$size / $base}#{$unit};
+  @return #{math.div($size, $base)}#{$unit};
 }

@@ -1,0 +1,6 @@
+web: bin/rails server -p 3000
+js: yarn build --watch
+frontend: yarn build:frontend --watch
+tailwind: yarn build:tailwind --watch
+backend: yarn build:backend --watch
+cv: yarn build:cv --watch
