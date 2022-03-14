@@ -5,9 +5,9 @@ function onInstall(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function prefill(cache) {
       return cache.addAll([
-        '<%= asset_pack_url 'application.js' %>',
-        '<%= asset_pack_url 'application.css' %>',
-        '<%= asset_pack_url 'media/images/flags.png' %>',
+        '<%= asset_url 'application.js' %>',
+        '<%= asset_url 'application.css' %>',
+        '<%= asset_url 'frontend/flags.png' %>',
         '<%= asset_url 'icons/apple-icon-57x57.png' %>',
         '<%= asset_url 'icons/apple-icon-60x60.png' %>',
         '<%= asset_url 'icons/apple-icon-72x72.png' %>',

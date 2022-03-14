@@ -1,6 +1,6 @@
 import Rails from 'rails-ujs'
 import Turbolinks from 'turbolinks'
-import sort from './sortable'
+import sort from './foo/sortable'
 
 Rails.start()
 Turbolinks.start()

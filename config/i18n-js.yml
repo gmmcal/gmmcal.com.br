@@ -11,7 +11,7 @@ except: &except
     - '*.i18n'
 
 translations:
-  - file: 'app/javascript/packs/i18n/i18n.json'
+  - file: 'app/javascript/i18n/i18n.json'
     only: ['*.frontend.*']
     pretty_print: true
     <<: *except

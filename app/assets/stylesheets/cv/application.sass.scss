@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'variables';
 @import 'functions';
 @import 'mixins';
@@ -35,8 +36,8 @@ body {
   h1 {
     background-color: #fff;
     box-shadow: 0 size_with_unit(1) 0 0 #88a1c0,
-                0 size_with_unit(5) 0 0 #fff,
-                0 size_with_unit(6) 0 0 #88a1c0;
+      0 size_with_unit(5) 0 0 #fff,
+      0 size_with_unit(6) 0 0 #88a1c0;
     color: #314864;
     font-size: size_with_unit(map-get($sizes, 'h1'));
     margin: 0;
@@ -126,7 +127,7 @@ body {
 
       @for $value from 0 through 100 {
         .s-#{$value} {
-          font-size: size_with_unit((($max_font_size * $value) / 100));
+          font-size: size_with_unit(math.div($max_font_size * $value, 100));
         }
       }
     }

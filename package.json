@@ -51,39 +51,33 @@
     "@fortawesome/free-brands-svg-icons": "*",
     "@fortawesome/free-regular-svg-icons": "*",
     "@fortawesome/free-solid-svg-icons": "*",
-    "@rails/webpacker": "*",
-    "autoprefixer": "*",
-    "bootstrap": "*",
-    "core-js": "*",
-    "postcss": "*",
+    "bootstrap": "4",
+    "esbuild": "*",
     "rails-ujs": "*",
+    "sass": "*",
     "sortablejs": "*",
     "tailwindcss": "*",
-    "turbolinks": "*",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
-    "yarn": "*"
+    "turbolinks": "*"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "@webpack-cli/serve": "^1.6.1",
-    "babel-eslint": "*",
-    "babel-jest": "*",
     "cypress": "*",
     "eslint": "*",
-    "jest": "*",
-    "jest-canvas-mock": "*",
-    "start-server-and-test": "*",
-    "webpack-dev-server": "^3"
+    "start-server-and-test": "*"
   },
   "scripts": {
-    "test": "jest --watch",
-    "test:once": "jest",
+    "build": "yarn build:js:frontend && yarn build:js:admin",
+    "build:js:frontend": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "build:js:admin": "esbuild app/javascript/admin/application.js --bundle --sourcemap --outdir=app/assets/builds/admin",
+    "build:css:frontend": "sass ./app/assets/stylesheets/frontend/application.postcss.scss ./app/assets/builds/application.tailwind.css --no-source-map --load-path=node_modules",
+    "build:css:tailwind": "tailwind -i ./app/assets/builds/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "build:css:backend": "sass ./app/assets/stylesheets/admin/application.sass.scss ./app/assets/builds/admin/application.css --no-source-map --load-path=node_modules",
+    "build:css:cv": "sass ./app/assets/stylesheets/cv/application.sass.scss ./app/assets/builds/cv/application.css --no-source-map --load-path=node_modules",
+    "build:css": "yarn build:css:frontend && yarn build:css:tailwind && yarn build:css:backend && yarn build:css:cv",
     "cypress:dev": "start-test server:start 3000 cypress:open",
     "server:start": "bundle exec rails server -u puma -p 3000",
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "cypress:ci": "start-test server:start 3000 cypress:run",
-    "eslint": "eslint --config=.eslintrc.js  app/javascript/packs/**/**.js"
+    "eslint": "eslint --config=.eslintrc.js  app/javascript/**/**.js"
   }
 }
