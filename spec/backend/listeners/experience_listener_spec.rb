@@ -13,7 +13,7 @@ RSpec.describe ExperienceListener, type: :listener do
   end
 
   context 'with change object data event' do
-    let(:instance) { instance_double('WorkExperience') }
+    let(:instance) { instance_double(WorkExperience) }
 
     before do
       allow(instance).to receive(:locale).and_return(locale)

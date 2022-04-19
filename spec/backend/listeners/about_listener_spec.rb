@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe AboutListener, type: :listener do
   include Publisher
-  let(:instance) { instance_double('About') }
+  let(:instance) { instance_double(About) }
   let(:cache) { stub_const('Cache', double) }
   let(:locale) { I18n.default_locale }
 
