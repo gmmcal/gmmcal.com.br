@@ -13,7 +13,7 @@ RSpec.describe EducationListener, type: :listener do
   end
 
   context 'with change object data event' do
-    let(:instance) { instance_double('Education') }
+    let(:instance) { instance_double(Education) }
 
     before do
       allow(instance).to receive(:locale).and_return(locale)
