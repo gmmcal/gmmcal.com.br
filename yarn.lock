@@ -1773,9 +1773,9 @@ quick-lru@^5.1.1:
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
 rails-ujs@*:
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.7.tgz#b6ef09b26f6e195d48d0e797d3380aedd8bca6d4"
-  integrity sha512-Rk9kMVU5Sgup0no2f+2YoFou9F4ZIgQ1s0t4zOwi0RLmllD8DIUxXMH04wT5l+BHuH6qSfmANSw9EdqB/tkABA==
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.8.tgz#dffc6b7d15f735f523e31be0a30b47264b282623"
+  integrity sha512-qwCTG/7FgRRxQIWJ9vmLF8ucqFVM2Krk+0JWcI5OF485jymGa1Rix8kF5vNHGz/VGUvS2Dhom9PdlsdjMt9Kmg==
 
 readdirp@~3.6.0:
   version "3.6.0"
