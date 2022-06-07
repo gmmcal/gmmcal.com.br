@@ -82,7 +82,7 @@ jobs:
 
       # script
       - name: Run tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
@@ -162,7 +162,7 @@ jobs:
 
       # script
       - name: Run tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
