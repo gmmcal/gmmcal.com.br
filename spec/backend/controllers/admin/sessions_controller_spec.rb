@@ -19,7 +19,7 @@ RSpec.describe Admin::SessionsController, type: :controller do
     context 'with user locale set to english' do
       it 'login message is in english' do
         post :create, params: { user: attributes }
-        expect(flash[:notice]).to eq(I18n.t(:signed_in, scope: %i[devise sessions], locale: locale))
+        expect(flash[:notice]).to eq(I18n.t('devise.sessions.signed_in', locale: locale))
       end
     end
 
@@ -28,7 +28,7 @@ RSpec.describe Admin::SessionsController, type: :controller do
 
       it 'login message is in portuguese' do
         post :create, params: { user: attributes }
-        expect(flash[:notice]).to eq(I18n.t(:signed_in, scope: %i[devise sessions], locale: locale))
+        expect(flash[:notice]).to eq(I18n.t('devise.sessions.signed_in', locale: locale))
       end
     end
   end

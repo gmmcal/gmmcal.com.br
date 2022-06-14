@@ -28,7 +28,7 @@ module Admin
       if @work_experience.save
         publish(:experience_created, experience: @work_experience)
         redirect_to redirect_path,
-                    notice: t(:created, scope: %i[helpers], model: human_model)
+                    notice: t('helpers.created', model: human_model)
       else
         render :new
       end
@@ -40,7 +40,7 @@ module Admin
       if @work_experience.update(permitted_attributes(@work_experience))
         publish(:experience_updated, experience: @work_experience)
         redirect_to redirect_path,
-                    notice: t(:updated, scope: %i[helpers], model: human_model)
+                    notice: t('helpers.updated', model: human_model)
       else
         render :edit
       end
@@ -52,7 +52,7 @@ module Admin
       authorize @work_experience
       publish(:experience_destroyed, experience: @work_experience)
       redirect_to redirect_path,
-                  notice: t(:deleted, scope: %i[helpers], model: human_model)
+                  notice: t('helpers.deleted', model: human_model)
     end
 
     private
