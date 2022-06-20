@@ -28,7 +28,7 @@ module Admin
       if @skill.save
         publish(:skill_created, skill: @skill)
         redirect_to redirect_path,
-                    notice: t(:created, scope: %i[helpers], model: human_model)
+                    notice: t('helpers.created', model: human_model)
       else
         render :new
       end
@@ -40,7 +40,7 @@ module Admin
       if @skill.update(permitted_attributes(@skill))
         publish(:skill_updated, skill: @skill)
         redirect_to redirect_path,
-                    notice: t(:updated, scope: %i[helpers], model: human_model)
+                    notice: t('helpers.updated', model: human_model)
       else
         render :edit
       end
@@ -52,7 +52,7 @@ module Admin
       authorize @skill
       publish(:skill_destroyed, skill: @skill)
       redirect_to redirect_path,
-                  notice: t(:deleted, scope: %i[helpers], model: human_model)
+                  notice: t('helpers.deleted', model: human_model)
     end
 
     private

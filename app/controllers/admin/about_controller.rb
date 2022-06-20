@@ -21,7 +21,7 @@ module Admin
       if @about.save
         publish(:about_created, about: @about)
         redirect_to redirect_path,
-                    notice: t(:created, scope: %i[helpers], model: human_model)
+                    notice: t('helpers.created', model: human_model)
       else
         render :new
       end
@@ -33,7 +33,7 @@ module Admin
       if @about.update(permitted_attributes(@about))
         publish(:about_updated, about: @about)
         redirect_to redirect_path,
-                    notice: t(:updated, scope: %i[helpers], model: human_model)
+                    notice: t('helpers.updated', model: human_model)
       else
         render :edit
       end
@@ -45,7 +45,7 @@ module Admin
       authorize @about
       publish(:about_destroyed, about: @about)
       redirect_to redirect_path,
-                  notice: t(:deleted, scope: %i[helpers], model: human_model)
+                  notice: t('helpers.deleted', model: human_model)
     end
 
     private
