@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   get 'offline', to: 'pwa#offline'
 
   devise_for :users, path: 'admin', path_names: {
-                                      sign_in: 'login',
-                                      sign_out: 'logout'
-                                    }, controllers: { sessions: 'admin/sessions' }
+    sign_in: 'login',
+    sign_out: 'logout'
+  }, controllers: { sessions: 'admin/sessions' }
 
   namespace :admin do
     root 'about#index'
