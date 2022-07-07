@@ -120,6 +120,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
+    json (2.6.2)
     kramdown (2.4.0)
       rexml
     kwalify (0.7.2)
@@ -230,7 +231,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
-    rubocop (1.31.0)
+    rubocop (1.31.2)
+      json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
