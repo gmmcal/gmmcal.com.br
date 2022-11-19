@@ -9,8 +9,8 @@ describe('Navigation', () => {
 
       context('Home', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contact').click()
-          cy.get('.navbar-nav').contains('Home').click()
+          cy.get('.navbar-nav').contains('Contact').click({force: true})
+          cy.get('.navbar-nav').contains('Home').click({force: true})
           cy.wait(100)
         })
 
@@ -29,7 +29,7 @@ describe('Navigation', () => {
 
       context('About', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('About').click()
+          cy.get('.navbar-nav').contains('About').click({force: true})
           cy.wait(100)
         })
 
@@ -48,7 +48,7 @@ describe('Navigation', () => {
 
       context('Experience', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Experience').click()
+          cy.get('.navbar-nav').contains('Experience').click({force: true})
           cy.wait(100)
         })
 
@@ -67,7 +67,7 @@ describe('Navigation', () => {
 
       context('Skills', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Skills').click()
+          cy.get('.navbar-nav').contains('Skills').click({force: true})
           cy.wait(100)
         })
 
@@ -86,7 +86,7 @@ describe('Navigation', () => {
 
       context('Education', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Education').click()
+          cy.get('.navbar-nav').contains('Education').click({force: true})
           cy.wait(100)
         })
 
@@ -105,7 +105,7 @@ describe('Navigation', () => {
 
       context('Contact', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contact').click()
+          cy.get('.navbar-nav').contains('Contact').click({force: true})
           cy.wait(100)
         })
 
@@ -126,8 +126,8 @@ describe('Navigation', () => {
 
       context('Home', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contato').click()
-          cy.get('.navbar-nav').contains('Home').click()
+          cy.get('.navbar-nav').contains('Contato').click({force: true})
+          cy.get('.navbar-nav').contains('Home').click({force: true})
           cy.wait(100)
         })
 
@@ -146,7 +146,7 @@ describe('Navigation', () => {
 
       context('About', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Sobre').click()
+          cy.get('.navbar-nav').contains('Sobre').click({force: true})
           cy.wait(100)
         })
 
@@ -165,7 +165,7 @@ describe('Navigation', () => {
 
       context('Experience', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Experiência').click()
+          cy.get('.navbar-nav').contains('Experiência').click({force: true})
           cy.wait(100)
         })
 
@@ -184,7 +184,7 @@ describe('Navigation', () => {
 
       context('Skills', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Habilidades').click()
+          cy.get('.navbar-nav').contains('Habilidades').click({force: true})
           cy.wait(100)
         })
 
@@ -203,7 +203,7 @@ describe('Navigation', () => {
 
       context('Education', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Educação').click()
+          cy.get('.navbar-nav').contains('Educação').click({force: true})
           cy.wait(100)
         })
 
@@ -222,7 +222,7 @@ describe('Navigation', () => {
 
       context('Contact', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contato').click()
+          cy.get('.navbar-nav').contains('Contato').click({force: true})
           cy.wait(100)
         })
 
@@ -254,7 +254,7 @@ describe('Navigation', () => {
       })
 
       it('change language', () => {
-        cy.get('.flag').click()
+        cy.get('.flag').click({force: true})
         cy.get('.flag').should('have.class', 'en')
       })
     })
@@ -275,7 +275,7 @@ describe('Navigation', () => {
       })
 
       it('change language', () => {
-        cy.get('.flag').click()
+        cy.get('.flag').click({force: true})
         cy.get('.flag').should('have.class', 'pt-br')
       })
     })

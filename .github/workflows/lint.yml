@@ -128,7 +128,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     container:
-      image: node:14
+      image: node:18
 
     steps:
       - uses: actions/checkout@v1
