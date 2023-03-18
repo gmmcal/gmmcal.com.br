@@ -4,6 +4,7 @@ databases:
     user: gustavocunha
     plan: free
     ipAllowList: []
+    region: frankfurt
 
 services:
   - type: web
@@ -14,6 +15,7 @@ services:
     autoDeploy: true
     pullRequestPreviewsEnabled: true
     plan: free
+    region: frankfurt
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -29,3 +31,4 @@ services:
     name: gustavocunha
     ipAllowList: []
     plan: free
+    region: frankfurt
