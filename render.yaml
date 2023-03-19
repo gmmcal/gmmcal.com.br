@@ -5,7 +5,7 @@ databases:
     ipAllowList: []
     region: frankfurt
   - name: gustavocunha-staging
-    databaseName: gustavocunha-staging
+    databaseName: gustavocunha_staging
     plan: free
     ipAllowList: []
     region: frankfurt
