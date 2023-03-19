@@ -296,7 +296,6 @@ GEM
     wicked_pdf (2.6.3)
       activesupport
     wkhtmltopdf-binary (0.12.6.6)
-    wkhtmltopdf-heroku (2.12.6.0)
     zeitwerk (2.6.7)
 
 PLATFORMS
@@ -334,7 +333,6 @@ DEPENDENCIES
   uglifier
   wicked_pdf
   wkhtmltopdf-binary
-  wkhtmltopdf-heroku
 
 BUNDLED WITH
    2.2.22
