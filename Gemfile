@@ -22,6 +22,7 @@ gem 'jsbundling-rails'
 gem 'sprockets-rails'
 gem 'uglifier'
 gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Admin gems
 gem 'devise'
@@ -43,7 +44,6 @@ group :development do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'scss_lint', require: false
-  gem 'wkhtmltopdf-binary'
 end
 
 # Test suite
@@ -63,5 +63,4 @@ group :production do
   gem 'puma'
   gem 'rack-cors'
   gem 'redis'
-  gem 'wkhtmltopdf-heroku'
 end
