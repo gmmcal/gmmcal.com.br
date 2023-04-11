@@ -1,0 +1,6 @@
+<% if @work_experience.persisted? %>
+  <%= turbo_stream.append "work_experiences_#{@work_experience.locale.downcase}", partial: 'work_experience', locals: { work_experience: @work_experience.decorate } %>
+  <%= turbo_stream.replace 'modal', partial: 'admin/shared/modal', locals: { model: WorkExperience } %>
+<% else %>
+  <%= turbo_stream.replace 'new_work_experience', partial: 'form', locals: { work_experience: @work_experience } %>
+<% end %>

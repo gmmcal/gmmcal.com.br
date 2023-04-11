@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'factory_bot_rails', require: false
 gem 'faker', require: false
 
+gem 'turbo-rails'
+
 # Groups
 group :development do
   # gem 'i18n-debug'

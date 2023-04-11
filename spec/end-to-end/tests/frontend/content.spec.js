@@ -25,6 +25,10 @@ describe('Content', () => {
   })
 
   context('About', () => {
+    before(() => {
+      cy.get('#about').scrollIntoView()
+    })
+
     it('section exists', () => {
       cy.get('#about').should('have.length', 1)
     })
@@ -55,6 +59,10 @@ describe('Content', () => {
   })
 
   context('Experience', () => {
+    before(() => {
+      cy.get('#experience').scrollIntoView()
+    })
+
     it('section exists', () => {
       cy.get('#experience').should('have.length', 1)
     })
@@ -77,6 +85,10 @@ describe('Content', () => {
   })
 
   context('Skills', () => {
+    before(() => {
+      cy.get('#skills').scrollIntoView()
+    })
+
     it('section exists', () => {
       cy.get('#skills').should('have.length', 1)
     })
@@ -99,6 +111,10 @@ describe('Content', () => {
   })
 
   context('Education', () => {
+    before(() => {
+      cy.get('#education').scrollIntoView()
+    })
+
     it('section exists', () => {
       cy.get('#education').should('have.length', 1)
     })

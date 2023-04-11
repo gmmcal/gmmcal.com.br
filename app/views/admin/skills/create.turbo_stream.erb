@@ -1,0 +1,6 @@
+<% if @skill.persisted? %>
+  <%= turbo_stream.append "skills_#{@skill.locale.downcase}", partial: 'skill', locals: { skill: @skill.decorate } %>
+  <%= turbo_stream.replace 'modal', partial: 'admin/shared/modal', locals: { model: Skill } %>
+<% else %>
+  <%= turbo_stream.replace 'new_skill', partial: 'form', locals: { skill: @skill } %>
+<% end %>

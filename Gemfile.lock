@@ -283,6 +283,10 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.2.1)
     timeout (0.3.2)
+    turbo-rails (1.1.1)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -330,9 +334,10 @@ DEPENDENCIES
   simple_form
   simplecov
   sprockets-rails
+  turbo-rails
   uglifier
   wicked_pdf
   wkhtmltopdf-binary
 
 BUNDLED WITH
-   2.2.22
+   2.4.10

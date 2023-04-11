@@ -98,29 +98,24 @@ RSpec.describe Admin::SkillsController, type: :controller do
       context 'with valid params' do
         it 'creates a new skill' do
           expect do
-            post :create, params: { skill: valid_attributes }
+            post :create, params: { skill: valid_attributes }, format: :turbo_stream
           end.to change(Skill, :count).by(1)
         end
 
-        it 'redirects to the created skill' do
-          post :create, params: { skill: valid_attributes }
-          expect(response).to redirect_to(admin_skills_path(locale: :en))
-        end
-
         it 'triggers created event' do
-          post :create, params: { skill: valid_attributes }
+          post :create, params: { skill: valid_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:skill_created, skill: Skill.last)
         end
       end
 
       context 'with invalid params' do
         it 'returns a success response (i.e. to display the new template)' do
-          post :create, params: { skill: invalid_attributes }
+          post :create, params: { skill: invalid_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
-          post :create, params: { skill: invalid_attributes }
+          post :create, params: { skill: invalid_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -133,20 +128,14 @@ RSpec.describe Admin::SkillsController, type: :controller do
 
         it 'updates the requested skill' do
           skill = create(:skill, valid_attributes)
-          put :update, params: { id: skill.to_param, skill: new_attributes }
+          put :update, params: { id: skill.to_param, skill: new_attributes }, format: :turbo_stream
           skill.reload
           expect(skill.name).to eq(new_name)
         end
 
-        it 'redirects to the skill' do
-          skill = create(:skill, valid_attributes)
-          put :update, params: { id: skill.to_param, skill: new_attributes }
-          expect(response).to redirect_to(admin_skills_path(locale: :en))
-        end
-
         it 'triggers updated event' do
           skill = create(:skill, valid_attributes)
-          put :update, params: { id: skill.to_param, skill: new_attributes }
+          put :update, params: { id: skill.to_param, skill: new_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:skill_updated, skill: skill)
         end
       end
@@ -156,13 +145,13 @@ RSpec.describe Admin::SkillsController, type: :controller do
 
         it 'returns a success response (i.e. to display the edit template)' do
           skill = create(:skill, valid_attributes)
-          put :update, params: { id: skill.to_param, skill: new_attributes }
+          put :update, params: { id: skill.to_param, skill: new_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
           skill = create(:skill, valid_attributes)
-          put :update, params: { id: skill.to_param, skill: new_attributes }
+          put :update, params: { id: skill.to_param, skill: new_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -172,19 +161,13 @@ RSpec.describe Admin::SkillsController, type: :controller do
       it 'destroys the requested skill' do
         skill = create(:skill, valid_attributes)
         expect do
-          delete :destroy, params: { id: skill.id }
+          delete :destroy, params: { id: skill.id }, format: :turbo_stream
         end.to change(Skill, :count).by(-1)
-      end
-
-      it 'redirects to the skills list' do
-        skill = create(:skill, valid_attributes)
-        delete :destroy, params: { id: skill.id }
-        expect(response).to redirect_to(admin_skills_path(locale: :en))
       end
 
       it 'triggers destroyed event' do
         skill = create(:skill, valid_attributes)
-        delete :destroy, params: { id: skill.id }
+        delete :destroy, params: { id: skill.id }, format: :turbo_stream
         expect(controller).to have_received(:publish).with(:skill_destroyed, skill: skill)
       end
     end

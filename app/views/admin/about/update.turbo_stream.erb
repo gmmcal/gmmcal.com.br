@@ -1,0 +1,5 @@
+<% if @about.changed? %>
+  <%= turbo_stream.replace dom_id(@about), partial: 'form', locals: { about: @about } %>
+<% else %>
+  <%= turbo_stream.replace dom_id(@about), partial: 'about', locals: { about: @about.decorate } %>
+<% end %>

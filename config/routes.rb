@@ -3,9 +3,14 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  scope '(:locale)' do
-    get '/', to: 'home#index', as: :home, locale: /en|pt-BR/
+  scope '(:locale)', locale: /en|pt-BR/ do
+    get '/', to: 'home#index', as: :home
     get '/cv(/:disposition)', to: 'download#cv', as: :cv, disposition: /attachment|inline/, defaults: { disposition: :attachment }
+    scope 'content' do
+      get '/education', to: 'educations#index', as: :educations
+      get '/skills', to: 'skills#index', as: :skills
+      get '/work-experience', to: 'work_experiences#index', as: :work_experiences
+    end
   end
 
   get 'sitemap', to: 'home#index', defaults: { format: :xml }

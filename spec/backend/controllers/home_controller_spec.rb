@@ -5,9 +5,9 @@ require 'rails_helper'
 RSpec.describe HomeController, type: :controller do
   before do
     create(:about)
-    create_list(:work_experience, 5)
-    create_list(:skill, 30)
-    create_list(:education, 3, :finished)
+    # create_list(:work_experience, 5)
+    # create_list(:skill, 30)
+    # create_list(:education, 3, :finished)
   end
 
   describe '/' do

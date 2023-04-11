@@ -1,5 +1,36 @@
-<%=render 'about' %>
-<%=render 'work_experiences' %>
-<%=render 'skills' %>
-<%=render 'educations' %>
-<%=render 'contact' %>
+<style>
+.turbo-loading {
+  min-height: 100vh;
+}
+</style>
+<%=render @about %>
+<turbo-frame id="experience" src="<%= work_experiences_path(locale: I18n.locale) %>" loading="lazy">
+  <section class="experience turbo-loading">
+    <div class="container">
+      <div class="heading">
+        <h2><%= t('title', scope: %i[frontend experience]) %></h2>
+        <p><%= t('subtitle', scope: %i[frontend experience]) %></p>
+      </div>
+    </div>
+  </section>
+</turbo-frame>
+<turbo-frame id="skills" src="<%= skills_path(locale: I18n.locale) %>" loading="lazy">
+  <section class="technical turbo-loading">
+    <div class="container">
+      <div class="heading">
+        <h2><%= t('title', scope: %i[frontend skills]) %></h2>
+        <p><%= t('subtitle', scope: %i[frontend skills]) %></p>
+      </div>
+    </div>
+  </section>
+</turbo-frame>
+<turbo-frame id="education" src="<%= educations_path(locale: I18n.locale) %>" loading="lazy">
+  <section class="education turbo-loading">
+    <div class="container">
+      <div class="heading">
+        <h2><%= t('title', scope: %i[frontend education]) %></h2>
+        <p><%= t('subtitle', scope: %i[frontend education]) %></p>
+      </div>
+    </div>
+  </section>
+</turbo-frame>

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><%= t(:title, scope: %i[frontend helpers]) %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= javascript_include_tag 'admin/application', type: 'application/javascript', defer: true %>
-    <%= stylesheet_link_tag 'admin/application', media: 'all', rel: 'stylesheet' %>
+    <%= javascript_include_tag 'admin/application', type: 'application/javascript', 'data-turbo-track': 'reload', defer: true %>
+    <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -18,7 +18,7 @@
             <%= link_to User.model_name.human, %i[edit admin user], class: menu_classes(:user) %>
           </li>
           <li class="nav-item">
-            <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], method: :delete, class: 'nav-link' %>
+            <%= link_to t(:sign_out, scope: %i[devise shared links]), %i[destroy user session], data: { turbo_method: :delete }, class: 'nav-link' %>
           </li>
         </ul>
       </nav>

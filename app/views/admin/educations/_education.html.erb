@@ -1,4 +1,4 @@
-<div data-id="<%= education.id %>" class="col-md-6 pt-3 item">
+<%= turbo_frame_tag education, class: "col-md-6 pt-3 item", data: { id: education.id } do %>
   <div class="list-group-item flex-column align-items-start">
     <div class="d-flex justify-content-between pb-2 pt-2">
       <h5 class="mb-1"><%= education.course %></h5>
@@ -6,10 +6,11 @@
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
           <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, education], class: 'btn btn-sm btn-outline-primary' %>
-          <%= link_to t(:delete, scope: %i[helpers]), [:admin, education], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to t(:delete, scope: %i[helpers]), [:admin, education], class: 'btn btn-sm btn-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>
+    <h6 class="mb-3"><%= education.institution %></h6>
     <%= markdown education.description %>
   </div>
-</div>
+<% end %>

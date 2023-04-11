@@ -1,15 +1,16 @@
+<%= turbo_frame_tag skill do %>
+  <%= simple_form_for([:admin, skill]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for([:admin, skill]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :value %>
+      <%= f.input :locale %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :value %>
-    <%= f.input :locale %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
 <% end %>
