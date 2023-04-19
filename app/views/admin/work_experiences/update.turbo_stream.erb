@@ -1,0 +1,5 @@
+<% if @work_experience.changed? %>
+  <%= turbo_stream.replace dom_id(@work_experience), partial: 'form', locals: { work_experience: @work_experience } %>
+<% else %>
+  <%= turbo_stream.replace dom_id(@work_experience), partial: 'work_experience', locals: { work_experience: @work_experience.decorate } %>
+<% end %>

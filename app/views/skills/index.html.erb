@@ -1,0 +1,13 @@
+<turbo-frame id="skills">
+  <section class="technical">
+    <div class="container">
+      <div class="heading">
+        <h2><%= t('title', scope: %i[frontend skills]) %></h2>
+        <p><%= t('subtitle', scope: %i[frontend skills]) %></p>
+      </div>
+      <div class="row">
+        <%= render @skills %>
+      </div>
+    </div>
+  </section>
+</turbo-frame>

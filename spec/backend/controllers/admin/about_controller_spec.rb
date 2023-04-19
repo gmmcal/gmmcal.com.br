@@ -83,29 +83,24 @@ RSpec.describe Admin::AboutController, type: :controller do
       context 'with valid params' do
         it 'creates a new About' do
           expect do
-            post :create, params: { about: valid_attributes }
+            post :create, params: { about: valid_attributes }, format: :turbo_stream
           end.to change(About, :count).by(1)
         end
 
-        it 'redirects to the created about' do
-          post :create, params: { about: valid_attributes }
-          expect(response).to redirect_to(admin_abouts_path(locale: :en))
-        end
-
         it 'triggers created event' do
-          post :create, params: { about: valid_attributes }
+          post :create, params: { about: valid_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:about_created, about: About.last)
         end
       end
 
       context 'with invalid params' do
         it 'returns a success response (i.e. to display the new template)' do
-          post :create, params: { about: invalid_attributes }
+          post :create, params: { about: invalid_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
-          post :create, params: { about: invalid_attributes }
+          post :create, params: { about: invalid_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -118,20 +113,14 @@ RSpec.describe Admin::AboutController, type: :controller do
 
         it 'updates the requested about' do
           about = create(:about, valid_attributes)
-          put :update, params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }, format: :turbo_stream
           about.reload
           expect(about.job_title).to eq(new_title)
         end
 
-        it 'redirects to the about' do
-          about = create(:about, valid_attributes)
-          put :update, params: { id: about.to_param, about: new_attributes }
-          expect(response).to redirect_to(admin_abouts_path(locale: :en))
-        end
-
         it 'triggers updated event' do
           about = create(:about, valid_attributes)
-          put :update, params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:about_updated, about: about)
         end
       end
@@ -141,13 +130,13 @@ RSpec.describe Admin::AboutController, type: :controller do
 
         it 'returns a success response (i.e. to display the edit template)' do
           about = create(:about, valid_attributes)
-          put :update, params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
           about = create(:about, valid_attributes)
-          put :update, params: { id: about.to_param, about: new_attributes }
+          put :update, params: { id: about.to_param, about: new_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -157,19 +146,13 @@ RSpec.describe Admin::AboutController, type: :controller do
       it 'destroys the requested about' do
         about = create(:about, valid_attributes)
         expect do
-          delete :destroy, params: { id: about.id }
+          delete :destroy, params: { id: about.id }, format: :turbo_stream
         end.to change(About, :count).by(-1)
-      end
-
-      it 'redirects to the abouts list' do
-        about = create(:about, valid_attributes)
-        delete :destroy, params: { id: about.id }
-        expect(response).to redirect_to(admin_abouts_path(locale: :en))
       end
 
       it 'triggers destroyed event' do
         about = create(:about, valid_attributes)
-        delete :destroy, params: { id: about.id }
+        delete :destroy, params: { id: about.id }, format: :turbo_stream
         expect(controller).to have_received(:publish).with(:about_destroyed, about: about)
       end
     end

@@ -98,29 +98,24 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
       context 'with valid params' do
         it 'creates a new work_experience' do
           expect do
-            post :create, params: { work_experience: valid_attributes }
+            post :create, params: { work_experience: valid_attributes }, format: :turbo_stream
           end.to change(WorkExperience, :count).by(1)
         end
 
-        it 'redirects to the created work_experience' do
-          post :create, params: { work_experience: valid_attributes }
-          expect(response).to redirect_to(admin_work_experiences_path(locale: :en))
-        end
-
         it 'triggers created event' do
-          post :create, params: { work_experience: valid_attributes }
+          post :create, params: { work_experience: valid_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:experience_created, experience: WorkExperience.last)
         end
       end
 
       context 'with invalid params' do
         it 'returns a success response (i.e. to display the new template)' do
-          post :create, params: { work_experience: invalid_attributes }
+          post :create, params: { work_experience: invalid_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
-          post :create, params: { work_experience: invalid_attributes }
+          post :create, params: { work_experience: invalid_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -133,20 +128,14 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
 
         it 'updates the requested work_experience' do
           work_experience = create(:work_experience, valid_attributes)
-          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }
+          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }, format: :turbo_stream
           work_experience.reload
           expect(work_experience.company_name).to eq(new_company_name)
         end
 
-        it 'redirects to the work_experience' do
-          work_experience = create(:work_experience, valid_attributes)
-          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }
-          expect(response).to redirect_to(admin_work_experiences_path(locale: :en))
-        end
-
         it 'triggers updated event' do
           work_experience = create(:work_experience, valid_attributes)
-          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }
+          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:experience_updated, experience: work_experience)
         end
       end
@@ -156,13 +145,13 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
 
         it 'returns a success response (i.e. to display the edit template)' do
           work_experience = create(:work_experience, valid_attributes)
-          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }
+          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
           work_experience = create(:work_experience, valid_attributes)
-          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }
+          put :update, params: { id: work_experience.to_param, work_experience: new_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -172,19 +161,13 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
       it 'destroys the requested work_experience' do
         work_experience = create(:work_experience, valid_attributes)
         expect do
-          delete :destroy, params: { id: work_experience.id }
+          delete :destroy, params: { id: work_experience.id }, format: :turbo_stream
         end.to change(WorkExperience, :count).by(-1)
-      end
-
-      it 'redirects to the work_experiences list' do
-        work_experience = create(:work_experience, valid_attributes)
-        delete :destroy, params: { id: work_experience.id }
-        expect(response).to redirect_to(admin_work_experiences_path(locale: :en))
       end
 
       it 'triggers destroyed event' do
         work_experience = create(:work_experience, valid_attributes)
-        delete :destroy, params: { id: work_experience.id }
+        delete :destroy, params: { id: work_experience.id }, format: :turbo_stream
         expect(controller).to have_received(:publish).with(:experience_destroyed, experience: work_experience)
       end
     end

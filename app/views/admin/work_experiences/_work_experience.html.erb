@@ -1,4 +1,4 @@
-<div data-id="<%= work_experience.id %>" class="col-md-6 pt-3 item">
+<%= turbo_frame_tag work_experience, class: "col-md-6 pt-3 item", data: { id: work_experience.id } do %>
   <div class="list-group-item flex-column align-items-start">
     <div class="d-flex justify-content-between pb-2 pt-2">
       <h5 class="mb-1"><%= work_experience.company_name %></h5>
@@ -6,7 +6,7 @@
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
           <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, work_experience], class: 'btn btn-sm btn-outline-primary' %>
-          <%= link_to t(:delete, scope: %i[helpers]), [:admin, work_experience], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to t(:delete, scope: %i[helpers]), [:admin, work_experience], class: 'btn btn-sm btn-danger', data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>
@@ -15,4 +15,4 @@
     <small class="d-block pb-1"><%= About.human_attribute_name(:city) %>: <%= work_experience.city %></small>
     <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= work_experience.country_name %></small>
   </div>
-</div>
+<% end %>

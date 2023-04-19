@@ -1,14 +1,8 @@
-import Rails from 'rails-ujs'
-import Turbolinks from 'turbolinks'
-import sort from './foo/sortable'
+import '@hotwired/turbo-rails'
+import sort from './components/sortable'
+import modal from './components/modal'
 
-Rails.start()
-Turbolinks.start()
-
-document.addEventListener('turbolinks:load', () => {
-  const selector = '.sortable'
-  const el = document.querySelector(selector)
-  if (el !== null) {
-    sort(selector)
-  }
+document.addEventListener('turbo:load', () => {
+  modal('[data-toggle=modal]')
+  sort('.sortable')
 })

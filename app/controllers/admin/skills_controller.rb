@@ -25,25 +25,17 @@ module Admin
       @skill = model.new(permitted_attributes(model))
       authorize @skill
 
-      if @skill.save
-        publish(:skill_created, skill: @skill)
-        redirect_to redirect_path,
-                    notice: t('helpers.created', model: human_model)
-      else
-        render :new
-      end
+      return unless @skill.save
+
+      publish(:skill_created, skill: @skill)
     end
 
     # PATCH/PUT /admin/skills/1
     def update
       authorize @skill
-      if @skill.update(permitted_attributes(@skill))
-        publish(:skill_updated, skill: @skill)
-        redirect_to redirect_path,
-                    notice: t('helpers.updated', model: human_model)
-      else
-        render :edit
-      end
+      return unless @skill.update(permitted_attributes(@skill))
+
+      publish(:skill_updated, skill: @skill)
     end
 
     # DELETE /admin/skills/1
@@ -51,14 +43,6 @@ module Admin
       @skill.destroy
       authorize @skill
       publish(:skill_destroyed, skill: @skill)
-      redirect_to redirect_path,
-                  notice: t('helpers.deleted', model: human_model)
-    end
-
-    private
-
-    def redirect_path
-      admin_skills_path(locale: @skill.locale)
     end
   end
 end

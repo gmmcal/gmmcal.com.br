@@ -1,18 +1,20 @@
-<div class="list-group pt-3">
-  <div class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex justify-content-between pb-2 pt-2">
-      <h5 class="mb-1"><%= about.job_title %></h5>
-      <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group">
-          <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, about], class: 'btn btn-sm btn-outline-primary' %>
-          <%= link_to t(:download_cv, scope: %i[helpers]), about.cv, class: 'btn btn-sm btn-warning', data: { turbolinks: false } %>
+<%= turbo_frame_tag @about, class: "row" do %>
+  <div class="col pt-3">
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex justify-content-between pb-2 pt-2">
+        <h5 class="mb-1"><%= about.job_title %></h5>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group">
+            <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, about], class: 'btn btn-sm btn-outline-primary' %>
+            <%= link_to t(:download_cv, scope: %i[helpers]), about.cv, class: 'btn btn-sm btn-warning', data: { turbo: false } %>
+          </div>
         </div>
       </div>
+      <%= markdown about.description %>
+      <small class="d-block pb-1"><%= About.human_attribute_name(:city) %>: <%= about.city %></small>
+      <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= about.country_name %></small>
+      <small class="d-block pb-1"><%= About.human_attribute_name(:phone_number) %>: <%= about.phone_number %></small>
+      <small class="d-block pb-1"><%= About.human_attribute_name(:email) %>: <%= about.email %></small>
     </div>
-    <%= markdown about.description %>
-    <small class="d-block pb-1"><%= About.human_attribute_name(:city) %>: <%= about.city %></small>
-    <small class="d-block pb-1"><%= About.human_attribute_name(:country) %>: <%= about.country_name %></small>
-    <small class="d-block pb-1"><%= About.human_attribute_name(:phone_number) %>: <%= about.phone_number %></small>
-    <small class="d-block pb-1"><%= About.human_attribute_name(:email) %>: <%= about.email %></small>
   </div>
-</div>
+<% end %>

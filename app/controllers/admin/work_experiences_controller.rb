@@ -25,25 +25,17 @@ module Admin
       @work_experience = model.new(permitted_attributes(model))
       authorize @work_experience
 
-      if @work_experience.save
-        publish(:experience_created, experience: @work_experience)
-        redirect_to redirect_path,
-                    notice: t('helpers.created', model: human_model)
-      else
-        render :new
-      end
+      return unless @work_experience.save
+
+      publish(:experience_created, experience: @work_experience)
     end
 
     # PATCH/PUT /admin/work_experiences/1
     def update
       authorize @work_experience
-      if @work_experience.update(permitted_attributes(@work_experience))
-        publish(:experience_updated, experience: @work_experience)
-        redirect_to redirect_path,
-                    notice: t('helpers.updated', model: human_model)
-      else
-        render :edit
-      end
+      return unless @work_experience.update(permitted_attributes(@work_experience))
+
+      publish(:experience_updated, experience: @work_experience)
     end
 
     # DELETE /admin/work_experiences/1
@@ -51,14 +43,6 @@ module Admin
       @work_experience.destroy
       authorize @work_experience
       publish(:experience_destroyed, experience: @work_experience)
-      redirect_to redirect_path,
-                  notice: t('helpers.deleted', model: human_model)
-    end
-
-    private
-
-    def redirect_path
-      admin_work_experiences_path(locale: @work_experience.locale)
     end
   end
 end

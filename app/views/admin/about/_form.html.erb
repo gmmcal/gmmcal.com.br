@@ -1,19 +1,22 @@
+<%= turbo_frame_tag about, class: 'row' do %>
+  <div class="col pt-3">
+    <%= simple_form_for([:admin, about], html: { class: 'list-group-item list-group-item-action flex-column align-items-start' }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for([:admin, about]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs">
+        <%= f.input :job_title %>
+        <%= f.input :description %>
+        <%= f.input :country, collection: Country.all %>
+        <%= f.input :city %>
+        <%= f.input :phone_number %>
+        <%= f.input :email %>
+        <%= f.input :locale %>
+      </div>
 
-  <div class="form-inputs">
-    <%= f.input :job_title %>
-    <%= f.input :description %>
-    <%= f.input :country, collection: Country.all %>
-    <%= f.input :city %>
-    <%= f.input :phone_number %>
-    <%= f.input :email %>
-    <%= f.input :locale %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
   </div>
 <% end %>

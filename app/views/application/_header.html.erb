@@ -8,7 +8,7 @@
         <ul class="navbar-nav">
           <% @links.each do |item| %>
             <li id="menu-<%= item[:label].parameterize %>" class="<%= menu_classes(item[:label].downcase.to_sym) %>">
-              <a data-turbolinks="false" href="<%= item[:link] %>" alt="<%= item[:label] %>"><%= t(item[:label], scope: %i[frontend template menu]) %></a>
+              <a data-turbo="false" href="<%= item[:link] %>" alt="<%= item[:label] %>"><%= t(item[:label], scope: %i[frontend template menu]) %></a>
             </li>
           <% end %>
         </ul>
@@ -17,7 +17,7 @@
     <ul class="i18n">
       <% @flags.each do |item| %>
         <li>
-          <a data-turbolinks="false" href="<%= item[:link] %>" alt="<%= item[:label] %>" class="<%= item[:css_class]%>"><%= t(item[:label], scope: %i[frontend template menu]) %></a>
+          <a data-turbo="false" href="<%= item[:link] %>" alt="<%= item[:label] %>" class="<%= item[:css_class]%>"><%= t(item[:label], scope: %i[frontend template menu]) %></a>
         </li>
       <% end %>
     </ul>

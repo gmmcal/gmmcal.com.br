@@ -98,29 +98,24 @@ RSpec.describe Admin::EducationsController, type: :controller do
       context 'with valid params' do
         it 'creates a new education' do
           expect do
-            post :create, params: { education: valid_attributes }
+            post :create, params: { education: valid_attributes }, format: :turbo_stream
           end.to change(Education, :count).by(1)
         end
 
-        it 'redirects to the created education' do
-          post :create, params: { education: valid_attributes }
-          expect(response).to redirect_to(admin_educations_path(locale: :en))
-        end
-
         it 'triggers created event' do
-          post :create, params: { education: valid_attributes }
+          post :create, params: { education: valid_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:education_created, education: Education.last)
         end
       end
 
       context 'with invalid params' do
         it 'returns a success response (i.e. to display the new template)' do
-          post :create, params: { education: invalid_attributes }
+          post :create, params: { education: invalid_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
-          post :create, params: { education: invalid_attributes }
+          post :create, params: { education: invalid_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -133,20 +128,14 @@ RSpec.describe Admin::EducationsController, type: :controller do
 
         it 'updates the requested education' do
           education = create(:education, valid_attributes)
-          put :update, params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }, format: :turbo_stream
           education.reload
           expect(education.course).to eq(new_course)
         end
 
-        it 'redirects to the education' do
-          education = create(:education, valid_attributes)
-          put :update, params: { id: education.to_param, education: new_attributes }
-          expect(response).to redirect_to(admin_educations_path(locale: :en))
-        end
-
         it 'triggers updated event' do
           education = create(:education, valid_attributes)
-          put :update, params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }, format: :turbo_stream
           expect(controller).to have_received(:publish).with(:education_updated, education: education)
         end
       end
@@ -156,13 +145,13 @@ RSpec.describe Admin::EducationsController, type: :controller do
 
         it 'returns a success response (i.e. to display the edit template)' do
           education = create(:education, valid_attributes)
-          put :update, params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }, format: :turbo_stream
           expect(response).to be_successful
         end
 
         it 'does not triggers any event' do
           education = create(:education, valid_attributes)
-          put :update, params: { id: education.to_param, education: new_attributes }
+          put :update, params: { id: education.to_param, education: new_attributes }, format: :turbo_stream
           expect(controller).not_to have_received(:publish)
         end
       end
@@ -172,19 +161,13 @@ RSpec.describe Admin::EducationsController, type: :controller do
       it 'destroys the requested education' do
         education = create(:education, valid_attributes)
         expect do
-          delete :destroy, params: { id: education.id }
+          delete :destroy, params: { id: education.id }, format: :turbo_stream
         end.to change(Education, :count).by(-1)
-      end
-
-      it 'redirects to the educations list' do
-        education = create(:education, valid_attributes)
-        delete :destroy, params: { id: education.id }
-        expect(response).to redirect_to(admin_educations_path(locale: :en))
       end
 
       it 'triggers destroyed event' do
         education = create(:education, valid_attributes)
-        delete :destroy, params: { id: education.id }
+        delete :destroy, params: { id: education.id }, format: :turbo_stream
         expect(controller).to have_received(:publish).with(:education_destroyed, education: education)
       end
     end
