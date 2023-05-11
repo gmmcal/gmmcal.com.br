@@ -36,7 +36,7 @@ services:
     env: ruby
     buildCommand: "bundle install; bundle exec rake assets:precompile; bundle exec rake assets:clean; bundle exec rake db:migrate db:seed:all db:cache:clear;"
     startCommand: "bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-production}"
-    autoDeploy: true
+    autoDeploy: false
     pullRequestPreviewsEnabled: true
     plan: free
     region: frankfurt
