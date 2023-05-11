@@ -1,25 +1,39 @@
 name: Deploy
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: "0 0 * * 0"
   release:
     types: [published]
 
 jobs:
+  staging:
+    name: 'Deploy: Staging'
+    runs-on: ubuntu-20.04
+
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_STAGING }}
+          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE_STAGING }}
+        run: |
+          curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY&ref=$GITHUB_SHA"
+
   production:
     name: 'Deploy: Production'
     runs-on: ubuntu-20.04
 
-    container:
-      image: ruby:3.1.1
+    if: github.event_name != 'push'
 
     steps:
-      - uses: actions/checkout@v1
-
       - name: Deploy
         env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: gmmcal
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_PRODUCTION }}
+          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE_PRODUCTION }}
         run: |
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git origin/main:master
+          curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY&ref=$GITHUB_SHA"
