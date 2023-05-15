@@ -5,10 +5,6 @@ describe('Profile', () => {
     cy.login()
   })
 
-  beforeEach(function () {
-    cy.setSessionCookies()
-  })
-
   after(() => {
     cy.logout()
   })

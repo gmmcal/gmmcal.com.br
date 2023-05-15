@@ -11,7 +11,8 @@ describe('Navigation', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Contact').click({force: true})
           cy.get('.navbar-nav').contains('Home').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Home').click({force: true})
         })
 
         it('shows section', () => {
@@ -30,7 +31,8 @@ describe('Navigation', () => {
       context('About', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('About').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('About').click({force: true})
         })
 
         it('shows section', () => {
@@ -49,7 +51,8 @@ describe('Navigation', () => {
       context('Experience', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Experience').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Experience').click({force: true})
         })
 
         it('shows section', () => {
@@ -68,7 +71,8 @@ describe('Navigation', () => {
       context('Skills', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Skills').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Skills').click({force: true})
         })
 
         it('shows section', () => {
@@ -87,7 +91,8 @@ describe('Navigation', () => {
       context('Education', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Education').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Education').click({force: true})
         })
 
         it('shows section', () => {
@@ -106,7 +111,8 @@ describe('Navigation', () => {
       context('Contact', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Contact').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Contact').click({force: true})
         })
 
         it('shows section', () => {
@@ -128,7 +134,8 @@ describe('Navigation', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Contato').click({force: true})
           cy.get('.navbar-nav').contains('Home').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Home').click({force: true})
         })
 
         it('shows section', () => {
@@ -147,7 +154,8 @@ describe('Navigation', () => {
       context('About', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Sobre').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Sobre').click({force: true})
         })
 
         it('shows section', () => {
@@ -166,7 +174,8 @@ describe('Navigation', () => {
       context('Experience', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Experiência').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Experiência').click({force: true})
         })
 
         it('shows section', () => {
@@ -185,7 +194,8 @@ describe('Navigation', () => {
       context('Skills', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Habilidades').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Habilidades').click({force: true})
         })
 
         it('shows section', () => {
@@ -204,7 +214,8 @@ describe('Navigation', () => {
       context('Education', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Educação').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Educação').click({force: true})
         })
 
         it('shows section', () => {
@@ -223,7 +234,8 @@ describe('Navigation', () => {
       context('Contact', () => {
         beforeEach(() => {
           cy.get('.navbar-nav').contains('Contato').click({force: true})
-          cy.wait(100)
+          cy.wait(1000)
+          cy.get('.navbar-nav').contains('Contato').click({force: true})
         })
 
         it('shows section', () => {

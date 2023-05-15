@@ -2,4 +2,5 @@
   <%= turbo_stream.replace dom_id(@education), partial: 'form', locals: { education: @education } %>
 <% else %>
   <%= turbo_stream.replace dom_id(@education), partial: 'education', locals: { education: @education.decorate } %>
+  <%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.updated', model: Education) } %>
 <% end %>

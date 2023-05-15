@@ -1,1 +1,2 @@
 <%= turbo_stream.remove @skill %>
+<%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.deleted', model: Skill) } %>

@@ -25,17 +25,23 @@ module Admin
       @education = model.new(permitted_attributes(model))
       authorize @education
 
-      return unless @education.save
-
-      publish(:education_created, education: @education)
+      if @education.save
+        publish(:education_created, education: @education)
+        render_success('helpers.created')
+      else
+        render_failure(:new)
+      end
     end
 
     # PATCH/PUT /admin/educations/1
     def update
       authorize @education
-      return unless @education.update(permitted_attributes(@education))
-
-      publish(:education_updated, education: @education)
+      if @education.update(permitted_attributes(@education))
+        publish(:education_updated, education: @education)
+        render_success('helpers.updated')
+      else
+        render_failure(:edit)
+      end
     end
 
     # DELETE /admin/educations/1
@@ -43,6 +49,13 @@ module Admin
       @education.destroy
       authorize @education
       publish(:education_destroyed, education: @education)
+      render_success('helpers.deleted')
+    end
+
+    private
+
+    def redirect_path
+      admin_educations_path(locale: @education.locale)
     end
   end
 end

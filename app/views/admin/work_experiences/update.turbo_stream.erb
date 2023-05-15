@@ -2,4 +2,5 @@
   <%= turbo_stream.replace dom_id(@work_experience), partial: 'form', locals: { work_experience: @work_experience } %>
 <% else %>
   <%= turbo_stream.replace dom_id(@work_experience), partial: 'work_experience', locals: { work_experience: @work_experience.decorate } %>
+  <%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.updated', model: WorkExperience) } %>
 <% end %>

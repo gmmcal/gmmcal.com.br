@@ -21,5 +21,24 @@ module Admin
         instance_variable_value
       )
     end
+
+    def render_success(message)
+      respond_to do |format|
+        format.html do
+          redirect_to redirect_path,
+                      notice: t(message, model: human_model)
+        end
+        format.turbo_stream
+      end
+    end
+
+    def render_failure(template)
+      respond_to do |format|
+        format.html do
+          render template
+        end
+        format.turbo_stream
+      end
+    end
   end
 end

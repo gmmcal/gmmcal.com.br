@@ -1,5 +1,0 @@
-<% if @about.persisted? %>
-  <%= turbo_stream.replace 'new_about', target: dom_id(@about), partial: 'about', locals: { about: @about.decorate } %>
-<% else %>
-  <%= turbo_stream.replace 'new_about', partial: 'form', locals: { about: @about } %>
-<% end %>

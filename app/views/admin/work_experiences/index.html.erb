@@ -11,7 +11,7 @@
 
 <%= render 'admin/shared/tabs', action: :work_experiences %>
 
-<%= turbo_frame_tag 'work_experiences', class: "row sortable", data: { url: admin_reorder_path, model: WorkExperience.model_name.param_key } do %>
+<%= turbo_frame_tag "work_experiences_#{active_locale}", class: "row sortable", data: { url: admin_reorder_path, model: WorkExperience.model_name.param_key } do %>
   <%= render @work_experiences %>
 <% end %>
 
