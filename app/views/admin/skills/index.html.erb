@@ -11,7 +11,7 @@
 
 <%= render 'admin/shared/tabs', action: :skills %>
 
-<%= turbo_frame_tag 'skills', class: "row" do %>
+<%= turbo_frame_tag "skills_#{active_locale}", class: "row" do %>
   <%= render @skills %>
 <% end %>
 

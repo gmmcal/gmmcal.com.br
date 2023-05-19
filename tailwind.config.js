@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 const pxToRem = (px, base = 10) => `${px / base}rem`
 const getScaleValues = (limit = 100) => {
   let scale = {}
@@ -16,6 +18,15 @@ module.exports = {
     './app/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
+  ],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.collapse': {
+          visibility: 'inherit',
+        }
+      })
+    })
   ],
   theme: {
     colors: {

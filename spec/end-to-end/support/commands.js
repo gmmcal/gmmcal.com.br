@@ -1,13 +1,15 @@
 Cypress.Commands.add('login', (email = 'email@example.com', password = 'password2018') => {
-  return cy.request({
-    method: 'POST',
-    url: '/admin/login',
-    body: {
-      user: {
-        email: email,
-        password: password
+  cy.session({email, password}, () => {
+    cy.request({
+      method: 'POST',
+      url: '/admin/login',
+      body: {
+        user: {
+          email: email,
+          password: password
+        }
       }
-    }
+    })
   })
 })
 
@@ -23,17 +25,13 @@ Cypress.Commands.add('fileUpload', (fileName, fileType = ' ', selector) => {
     cy.fixture(fileName, 'base64')
       .then(Cypress.Blob.base64StringToBlob)
       .then(blob => {
-        const el = subject[0];
+        const el = subject[0]
         const testFile = new File([blob], fileName, {
           type: fileType
-        });
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(testFile);
-        el.files = dataTransfer.files;
-      });
-  });
-})
-
-Cypress.Commands.add('setSessionCookies', () => {
-  Cypress.Cookies.preserveOnce('_gmmcal_session')
+        })
+        const dataTransfer = new DataTransfer()
+        dataTransfer.items.add(testFile)
+        el.files = dataTransfer.files
+      })
+  })
 })

@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     container:
-      image: ruby:3.0.0
+      image: ruby:3.1.1
 
     services:
       postgres:
@@ -27,7 +27,7 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       # languages
       - name: Install APT dependencies
@@ -42,16 +42,16 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-gmmcal-
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -82,19 +82,25 @@ jobs:
 
       # script
       - name: Run tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
           install: false
           spec: spec/end-to-end/tests/admin/**.js
 
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots-backend
+          path: spec/end-to-end/screenshots
+
   frontend:
     name: 'E2E: Frontend'
     runs-on: ubuntu-20.04
 
     container:
-      image: ruby:3.0.0
+      image: ruby:3.1.1
 
     services:
       postgres:
@@ -108,7 +114,7 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Install APT dependencies
         run: |
@@ -122,16 +128,16 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-gmmcal-
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -162,9 +168,15 @@ jobs:
 
       # script
       - name: Run tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           start: yarn server:start
           wait-on: 'http://localhost:3000'
           install: false
           spec: spec/end-to-end/tests/frontend/**.js
+
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots-frontend
+          path: spec/end-to-end/screenshots
