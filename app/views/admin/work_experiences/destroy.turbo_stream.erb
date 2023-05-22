@@ -1,2 +1,2 @@
 <%= turbo_stream.remove @work_experience %>
-<%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.deleted', model: WorkExperience) } %>
+<%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.deleted', model: WorkExperience.model_name.human) } %>

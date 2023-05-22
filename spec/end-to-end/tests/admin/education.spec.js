@@ -1,16 +1,16 @@
 /// <reference types="Cypress" />
 
 describe('Education', () => {
-  before(() => {
+  beforeEach(() => {
     cy.login()
   })
 
-  after(() => {
+  afterEach(() => {
     cy.logout()
   })
 
   describe('List', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('education/list')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Educations').click({force: true})
@@ -26,7 +26,7 @@ describe('Education', () => {
   })
 
   describe('Create', () => {
-    before(() => {
+    beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Educations').click({force: true})
@@ -35,7 +35,7 @@ describe('Education', () => {
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('select[name="education[start_date(1i)]"]').select('')
           cy.get('select[name="education[start_date(2i)]"]').select('')
           cy.get('select[name="education[start_date(3i)]"]').select('')
@@ -79,7 +79,7 @@ describe('Education', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="education[course]"]').clear().type('Some title at some company')
           cy.get('input[value="Save"]').click({force: true})
         })
@@ -119,7 +119,7 @@ describe('Education', () => {
     })
 
     context('With valid data', () => {
-      before(() => {
+      beforeEach(() => {
         cy.get('input[name="education[course]"]').clear().type('Some title at some company')
         cy.get('input[name="education[institution]"]').clear().type('Some title at some company')
         cy.get('select[name="education[start_date(1i)]"]').select('2018')
@@ -140,27 +140,28 @@ describe('Education', () => {
   })
 
   describe('Edit', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('education/edit')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Educations').click({force: true})
-      cy.contains('.btn-outline-primary', 'Edit').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click()
+      cy.contains('.btn-outline-primary', 'Edit').click()
+      cy.wait(1000)
     })
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
-          cy.get('input[name="education[course]"]').clear()
-          cy.get('input[name="education[institution]"]').clear()
-          cy.get('textarea[name="education[description]"]').clear()
-          cy.get('select[name="education[start_date(1i)]"]').select('')
-          cy.get('select[name="education[start_date(2i)]"]').select('')
-          cy.get('select[name="education[start_date(3i)]"]').select('')
-          cy.get('select[name="education[end_date(1i)]"]').select('')
-          cy.get('select[name="education[end_date(2i)]"]').select('')
-          cy.get('select[name="education[end_date(3i)]"]').select('')
-          cy.get('select[name="education[locale]"]').select('')
-          cy.get('input[value="Update"]').click({force: true})
+        beforeEach(function () {
+          cy.get('form.edit_education input[name="education[course]"]').clear()
+          cy.get('form.edit_education input[name="education[institution]"]').clear()
+          cy.get('form.edit_education textarea[name="education[description]"]').clear()
+          cy.get('form.edit_education select[name="education[start_date(1i)]"]').select('')
+          cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('')
+          cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('')
+          cy.get('form.edit_education select[name="education[end_date(1i)]"]').select('')
+          cy.get('form.edit_education select[name="education[end_date(2i)]"]').select('')
+          cy.get('form.edit_education select[name="education[end_date(3i)]"]').select('')
+          cy.get('form.edit_education select[name="education[locale]"]').select('')
+          cy.get('form.edit_education input[value="Update"]').click()
         })
 
         it('shows the form', () => {
@@ -197,9 +198,18 @@ describe('Education', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
-          cy.get('input[name="education[course]"]').clear().type('Some title at some company')
-          cy.get('input[value="Update"]').click({force: true})
+        beforeEach(function () {
+          cy.get('form.edit_education input[name="education[course]"]').clear().type('Some title at some company')
+          cy.get('form.edit_education input[name="education[institution]"]').clear()
+          cy.get('form.edit_education textarea[name="education[description]"]').clear()
+          cy.get('form.edit_education select[name="education[start_date(1i)]"]').select('')
+          cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('')
+          cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('')
+          cy.get('form.edit_education select[name="education[end_date(1i)]"]').select('')
+          cy.get('form.edit_education select[name="education[end_date(2i)]"]').select('')
+          cy.get('form.edit_education select[name="education[end_date(3i)]"]').select('')
+          cy.get('form.edit_education select[name="education[locale]"]').select('')
+          cy.get('form.edit_education input[value="Update"]').click()
         })
 
         it('shows the form', () => {
@@ -237,14 +247,14 @@ describe('Education', () => {
     })
 
     context('With valid data', () => {
-      before(function () {
-        cy.get('input[name="education[course]"]').clear().type('Software Engineer')
-        cy.get('input[name="education[institution]"]').clear().type('Some title at some company')
-        cy.get('select[name="education[start_date(1i)]"]').select('2018')
-        cy.get('select[name="education[start_date(2i)]"]').select('1')
-        cy.get('select[name="education[start_date(3i)]"]').select('1')
-        cy.get('select[name="education[locale]"]').select('en')
-        cy.get('input[value="Update"]').click({force: true})
+      beforeEach(function () {
+        cy.get('form.edit_education input[name="education[course]"]').clear().type('Software Engineer')
+        cy.get('form.edit_education input[name="education[institution]"]').clear().type('Some title at some company')
+        cy.get('form.edit_education select[name="education[start_date(1i)]"]').select('2018')
+        cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('1')
+        cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('1')
+        cy.get('form.edit_education select[name="education[locale]"]').select('en')
+        cy.get('form.edit_education input[value="Update"]').click({force: true})
       })
 
       it('edits the information', () => {
@@ -257,21 +267,20 @@ describe('Education', () => {
     })
   })
 
-  // TODO: Reenable this test and make it pass
-  // describe('Delete', () => {
-  //   before(() => {
-  //     cy.appScenario('education/edit')
-  //     cy.visit('/admin')
-  //     cy.contains('.sidebar a', 'Educations').click({force: true})
-  //     cy.contains('.btn-danger', 'Delete').click({force: true})
-  //   })
+  describe('Delete', () => {
+    beforeEach(() => {
+      cy.appScenario('education/edit')
+      cy.visit('/admin')
+      cy.contains('.sidebar a', 'Educations').click({force: true})
+      cy.contains('.btn-danger', 'Delete').click({force: true})
+    })
 
-  //   it('is empty', () => {
-  //     cy.get('main .row .item').should('not.exist')
-  //   })
+    it('is empty', () => {
+      cy.get('main .row .item').should('not.exist')
+    })
 
-  //   it('shows confirmation message', () => {
-  //     cy.get('.alert').should('have.text', 'Education was successfully deleted.')
-  //   })
-  // })
+    it('shows confirmation message', () => {
+      cy.get('.alert').should('have.text', 'Education was successfully deleted.')
+    })
+  })
 })

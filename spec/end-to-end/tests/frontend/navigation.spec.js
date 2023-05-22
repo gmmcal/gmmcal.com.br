@@ -1,18 +1,20 @@
 /// <reference types="Cypress" />
 
-describe('Navigation', () => {
+describe('Navigation', {testIsolation: false}, () => {
+  before(() => {
+    cy.appScenario('frontend/all')
+  })
+
   context('main', () => {
     context('english', () => {
       before(() => {
         cy.visit('/')
+        cy.wait(1000) // wait for 1 second to give time for content to be loaded on turbo frame
       })
 
       context('Home', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contact').click({force: true})
-          cy.get('.navbar-nav').contains('Home').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Home').click({force: true})
+          cy.get('.navbar-nav').contains('Home').click()
         })
 
         it('shows section', () => {
@@ -30,9 +32,7 @@ describe('Navigation', () => {
 
       context('About', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('About').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('About').click({force: true})
+          cy.get('.navbar-nav').contains('About').click()
         })
 
         it('shows section', () => {
@@ -50,9 +50,7 @@ describe('Navigation', () => {
 
       context('Experience', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Experience').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Experience').click({force: true})
+          cy.get('.navbar-nav').contains('Experience').click()
         })
 
         it('shows section', () => {
@@ -70,9 +68,7 @@ describe('Navigation', () => {
 
       context('Skills', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Skills').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Skills').click({force: true})
+          cy.get('.navbar-nav').contains('Skills').click()
         })
 
         it('shows section', () => {
@@ -90,9 +86,7 @@ describe('Navigation', () => {
 
       context('Education', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Education').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Education').click({force: true})
+          cy.get('.navbar-nav').contains('Education').click()
         })
 
         it('shows section', () => {
@@ -110,9 +104,7 @@ describe('Navigation', () => {
 
       context('Contact', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contact').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Contact').click({force: true})
+          cy.get('.navbar-nav').contains('Contact').click()
         })
 
         it('shows section', () => {
@@ -128,14 +120,12 @@ describe('Navigation', () => {
     context('portuguese', () => {
       before(() => {
         cy.visit('/pt-BR')
+        cy.wait(1000) // wait for 1 second to give time for content to be loaded on turbo frame
       })
 
       context('Home', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contato').click({force: true})
-          cy.get('.navbar-nav').contains('Home').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Home').click({force: true})
+          cy.get('.navbar-nav').contains('Home').click()
         })
 
         it('shows section', () => {
@@ -153,9 +143,7 @@ describe('Navigation', () => {
 
       context('About', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Sobre').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Sobre').click({force: true})
+          cy.get('.navbar-nav').contains('Sobre').click()
         })
 
         it('shows section', () => {
@@ -173,9 +161,7 @@ describe('Navigation', () => {
 
       context('Experience', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Experiência').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Experiência').click({force: true})
+          cy.get('.navbar-nav').contains('Experiência').click()
         })
 
         it('shows section', () => {
@@ -193,9 +179,7 @@ describe('Navigation', () => {
 
       context('Skills', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Habilidades').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Habilidades').click({force: true})
+          cy.get('.navbar-nav').contains('Habilidades').click()
         })
 
         it('shows section', () => {
@@ -213,9 +197,7 @@ describe('Navigation', () => {
 
       context('Education', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Educação').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Educação').click({force: true})
+          cy.get('.navbar-nav').contains('Educação').click()
         })
 
         it('shows section', () => {
@@ -233,9 +215,7 @@ describe('Navigation', () => {
 
       context('Contact', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Contato').click({force: true})
-          cy.wait(1000)
-          cy.get('.navbar-nav').contains('Contato').click({force: true})
+          cy.get('.navbar-nav').contains('Contato').click()
         })
 
         it('shows section', () => {
@@ -266,7 +246,7 @@ describe('Navigation', () => {
       })
 
       it('change language', () => {
-        cy.get('.flag').click({force: true})
+        cy.get('.flag').click()
         cy.get('.flag').should('have.class', 'en')
       })
     })
@@ -287,7 +267,7 @@ describe('Navigation', () => {
       })
 
       it('change language', () => {
-        cy.get('.flag').click({force: true})
+        cy.get('.flag').click()
         cy.get('.flag').should('have.class', 'pt-br')
       })
     })

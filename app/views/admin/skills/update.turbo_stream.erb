@@ -2,5 +2,5 @@
   <%= turbo_stream.replace dom_id(@skill), partial: 'form', locals: { skill: @skill } %>
 <% else %>
   <%= turbo_stream.replace dom_id(@skill), partial: 'skill', locals: { skill: @skill.decorate } %>
-  <%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.updated', model: Skill) } %>
+  <%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.updated', model: Skill.model_name.human) } %>
 <% end %>

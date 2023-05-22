@@ -17,5 +17,9 @@ module Admin
       I18n.locale = current_user.default_locale if current_user
       I18n.locale = I18n.default_locale unless current_user
     end
+
+    def after_sign_in_path_for(_resource_or_scope)
+      admin_root_path
+    end
   end
 end

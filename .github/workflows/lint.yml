@@ -148,5 +148,8 @@ jobs:
       - name: Run yarn install
         run: yarn install
 
-      - name: Run ESLint
-        run: yarn eslint --config=.eslintrc.js app/javascript/**/**.js
+      - name: Run ESLint - Application
+        run: yarn eslint
+
+      - name: Run ESLint - Tests
+        run: yarn eslint:tests

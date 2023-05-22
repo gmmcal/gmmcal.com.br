@@ -77,6 +77,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "cypress:ci": "start-test server:start 3000 cypress:run",
-    "eslint": "eslint --config=.eslintrc.js  app/javascript/**/**.js"
+    "eslint": "eslint --config=.eslintrc.js app/javascript/**/**.js",
+    "eslint:tests": "eslint --config=.eslintrc.js spec/**/**.js"
   }
 }

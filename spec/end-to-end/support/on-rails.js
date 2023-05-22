@@ -1,8 +1,8 @@
 Cypress.Commands.add('appCommands', function (body) {
-  cy.log("APP: " + JSON.stringify(body))
+  cy.log('APP: ' + JSON.stringify(body))
   return cy.request({
     method: 'POST',
-    url: "/__cypress__/command",
+    url: '/__cypress__/command',
     body: JSON.stringify(body),
     log: true,
     failOnStatusCode: true

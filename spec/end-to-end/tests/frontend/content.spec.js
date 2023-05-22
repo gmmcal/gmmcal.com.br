@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Content', () => {
+describe('Content', {testIsolation: false}, () => {
   before(() => {
     cy.appScenario('frontend/all')
     cy.visit('/')
