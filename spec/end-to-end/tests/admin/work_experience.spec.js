@@ -1,16 +1,16 @@
 /// <reference types="Cypress" />
 
 describe('Work Experience', () => {
-  before(() => {
+  beforeEach(() => {
     cy.login()
   })
 
-  after(() => {
+  afterEach(() => {
     cy.logout()
   })
 
   describe('List', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('work_experience/list')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
@@ -26,7 +26,7 @@ describe('Work Experience', () => {
   })
 
   describe('Create', () => {
-    before(() => {
+    beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
@@ -35,8 +35,7 @@ describe('Work Experience', () => {
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
-          // cy.get('input[name="work_experience[value]"]').clear()
+        beforeEach(function () {
           cy.get('input[value="Save"]').click({force: true})
         })
 
@@ -82,7 +81,7 @@ describe('Work Experience', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="work_experience[company_name]"]').clear().type('Name of company')
           cy.get('input[value="Save"]').click({force: true})
         })
@@ -130,7 +129,7 @@ describe('Work Experience', () => {
     })
 
     context('With valid data', () => {
-      before(() => {
+      beforeEach(() => {
         cy.get('input[name="work_experience[company_name]"]').clear().type('Name of company')
         cy.get('input[name="work_experience[position]"]').clear().type('Programmer')
         cy.get('input[name="work_experience[city]"]').clear().type('Maceió')
@@ -153,7 +152,7 @@ describe('Work Experience', () => {
   })
 
   describe('Edit', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('work_experience/edit')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Work Experiences').click({force: true})
@@ -162,17 +161,17 @@ describe('Work Experience', () => {
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
-          cy.get('input[name="work_experience[company_name]"]').clear()
-          cy.get('input[name="work_experience[position]"]').clear()
-          cy.get('input[name="work_experience[city]"]').clear()
-          cy.get('select[name="work_experience[country]"]').select('')
-          cy.get('select[name="work_experience[start_date(1i)]"]').select('')
-          cy.get('select[name="work_experience[start_date(2i)]"]').select('')
-          cy.get('select[name="work_experience[start_date(3i)]"]').select('')
-          cy.get('textarea[name="work_experience[description]"]').clear()
-          cy.get('select[name="work_experience[locale]"]').select('')
-          cy.get('input[value="Update"]').click({force: true})
+        beforeEach(function () {
+          cy.get('form.edit_work_experience input[name="work_experience[company_name]"]').clear()
+          cy.get('form.edit_work_experience input[name="work_experience[position]"]').clear()
+          cy.get('form.edit_work_experience input[name="work_experience[city]"]').clear()
+          cy.get('form.edit_work_experience select[name="work_experience[country]"]').select('')
+          cy.get('form.edit_work_experience select[name="work_experience[start_date(1i)]"]').select('')
+          cy.get('form.edit_work_experience select[name="work_experience[start_date(2i)]"]').select('')
+          cy.get('form.edit_work_experience select[name="work_experience[start_date(3i)]"]').select('')
+          cy.get('form.edit_work_experience textarea[name="work_experience[description]"]').clear()
+          cy.get('form.edit_work_experience select[name="work_experience[locale]"]').select('')
+          cy.get('form.edit_work_experience input[value="Update"]').click({force: true})
         })
 
         it('shows the form', () => {
@@ -217,9 +216,17 @@ describe('Work Experience', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
-          cy.get('input[name="work_experience[company_name]"]').clear().type('Name of company')
-          cy.get('input[value="Update"]').click({force: true})
+        beforeEach(function () {
+          cy.get('form.edit_work_experience input[name="work_experience[company_name]"]').clear().type('Name of company')
+          cy.get('form.edit_work_experience input[name="work_experience[position]"]').clear()
+          cy.get('form.edit_work_experience input[name="work_experience[city]"]').clear()
+          cy.get('form.edit_work_experience select[name="work_experience[country]"]').select('')
+          cy.get('form.edit_work_experience select[name="work_experience[start_date(1i)]"]').select('')
+          cy.get('form.edit_work_experience select[name="work_experience[start_date(2i)]"]').select('')
+          cy.get('form.edit_work_experience select[name="work_experience[start_date(3i)]"]').select('')
+          cy.get('form.edit_work_experience textarea[name="work_experience[description]"]').clear()
+          cy.get('form.edit_work_experience select[name="work_experience[locale]"]').select('')
+          cy.get('form.edit_work_experience input[value="Update"]').click({force: true})
         })
 
         it('shows the form', () => {
@@ -265,16 +272,16 @@ describe('Work Experience', () => {
     })
 
     context('With valid data', () => {
-      before(function () {
-        cy.get('input[name="work_experience[company_name]"]').clear().type('Amazing company')
-        cy.get('input[name="work_experience[position]"]').clear().type('Programmer')
-        cy.get('input[name="work_experience[city]"]').clear().type('Maceió')
-        cy.get('select[name="work_experience[country]"]').select('BR')
-        cy.get('select[name="work_experience[start_date(1i)]"]').select('2018')
-        cy.get('select[name="work_experience[start_date(2i)]"]').select('1')
-        cy.get('select[name="work_experience[start_date(3i)]"]').select('1')
-        cy.get('select[name="work_experience[locale]"]').select('en')
-        cy.get('input[value="Update"]').click({force: true})
+      beforeEach(function () {
+        cy.get('form.edit_work_experience input[name="work_experience[company_name]"]').clear().type('Amazing company')
+        cy.get('form.edit_work_experience input[name="work_experience[position]"]').clear().type('Programmer')
+        cy.get('form.edit_work_experience input[name="work_experience[city]"]').clear().type('Maceió')
+        cy.get('form.edit_work_experience select[name="work_experience[country]"]').select('BR')
+        cy.get('form.edit_work_experience select[name="work_experience[start_date(1i)]"]').select('2018')
+        cy.get('form.edit_work_experience select[name="work_experience[start_date(2i)]"]').select('1')
+        cy.get('form.edit_work_experience select[name="work_experience[start_date(3i)]"]').select('1')
+        cy.get('form.edit_work_experience select[name="work_experience[locale]"]').select('en')
+        cy.get('form.edit_work_experience input[value="Update"]').click({force: true})
       })
 
       it('edits the information', () => {
@@ -287,21 +294,20 @@ describe('Work Experience', () => {
     })
   })
 
-  // TODO: Reenable this test and make it pass
-  // describe('Delete', () => {
-  //   before(() => {
-  //     cy.appScenario('work_experience/delete')
-  //     cy.visit('/admin')
-  //     cy.contains('.sidebar a', 'Work Experiences').click({force: true})
-  //     cy.contains('.btn-danger', 'Delete').click({force: true})
-  //   })
+  describe('Delete', () => {
+    beforeEach(() => {
+      cy.appScenario('work_experience/delete')
+      cy.visit('/admin')
+      cy.contains('.sidebar a', 'Work Experiences').click({force: true})
+      cy.contains('.btn-danger', 'Delete').click({force: true})
+    })
 
-  //   it('is empty', () => {
-  //     cy.get('main .row .item').should('not.exist')
-  //   })
+    it('is empty', () => {
+      cy.get('main .row .item').should('not.exist')
+    })
 
-  //   it('shows confirmation message', () => {
-  //     cy.get('.alert').should('have.text', 'Work Experience was successfully deleted.')
-  //   })
-  // })
+    it('shows confirmation message', () => {
+      cy.get('.alert').should('have.text', 'Work Experience was successfully deleted.')
+    })
+  })
 })

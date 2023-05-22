@@ -1,16 +1,16 @@
 /// <reference types="Cypress" />
 
 describe('Skill', () => {
-  before(() => {
+  beforeEach(() => {
     cy.login()
   })
 
-  after(() => {
+  afterEach(() => {
     cy.logout()
   })
 
   describe('List', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('skill/list')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
@@ -26,7 +26,7 @@ describe('Skill', () => {
   })
 
   describe('Create', () => {
-    before(() => {
+    beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
@@ -35,7 +35,7 @@ describe('Skill', () => {
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="skill[value]"]').clear()
           cy.get('input[value="Save"]').click({force: true})
         })
@@ -62,8 +62,9 @@ describe('Skill', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="skill[name]"]').clear().type('Software Engineer')
+          cy.get('input[name="skill[value]"]').clear()
           cy.get('input[value="Save"]').click({force: true})
         })
 
@@ -75,11 +76,11 @@ describe('Skill', () => {
           cy.get('.alert').should('have.text', 'Please review the problems below:')
         })
 
-        it('shows failure message for name', () => {
+        it('do not failure message for name', () => {
           cy.get('div.skill_name .invalid-feedback').should('not.exist')
         })
 
-        it('do not show failure message for value', () => {
+        it('shows show failure message for value', () => {
           cy.get('div.skill_value .invalid-feedback').should('be.visible')
         })
 
@@ -90,7 +91,7 @@ describe('Skill', () => {
     })
 
     context('With valid data', () => {
-      before(() => {
+      beforeEach(() => {
         cy.get('input[name="skill[name]"]').clear().type('Ruby on rails')
         cy.get('input[name="skill[value]"]').clear().type(90)
         cy.get('select[name="skill[locale]"]').select('en')
@@ -108,7 +109,7 @@ describe('Skill', () => {
   })
 
   describe('Edit', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('skill/edit')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'Skills').click({force: true})
@@ -116,16 +117,16 @@ describe('Skill', () => {
     })
 
     context('With invalid data', () => {
-      before(function () {
-        cy.get('input[name="skill[name]"]').clear()
-        cy.get('input[name="skill[value]"]').clear()
-        cy.get('select[name="skill[locale]"]').select('')
+      beforeEach(function () {
+        cy.get('form.edit_skill input[name="skill[name]"]').clear()
+        cy.get('form.edit_skill input[name="skill[value]"]').clear()
+        cy.get('form.edit_skill select[name="skill[locale]"]').select('')
       })
 
       context('with empty form', () => {
-        before(function () {
-          cy.get('input[name="skill[value]"]').clear()
-          cy.get('input[value="Update"]').click({force: true})
+        beforeEach(function () {
+          cy.get('form.edit_skill input[name="skill[value]"]').clear()
+          cy.get('form.edit_skill input[value="Update"]').click({force: true})
         })
 
         it('shows the form', () => {
@@ -150,9 +151,10 @@ describe('Skill', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
-          cy.get('input[name="skill[name]"]').clear().type('Software Engineer')
-          cy.get('input[value="Update"]').click({force: true})
+        beforeEach(function () {
+          cy.get('form.edit_skill input[name="skill[name]"]').clear().type('Software Engineer')
+          cy.get('form.edit_skill input[name="skill[value]"]').clear()
+          cy.get('form.edit_skill input[value="Update"]').click({force: true})
         })
 
         it('shows the form', () => {
@@ -178,11 +180,11 @@ describe('Skill', () => {
     })
 
     context('With valid data', () => {
-      before(function () {
-        cy.get('input[name="skill[name]"]').clear().type('Software Engineer')
-        cy.get('input[name="skill[value]"]').clear().type(90)
-        cy.get('select[name="skill[locale]"]').select('en')
-        cy.get('input[value="Update"]').click({force: true})
+      beforeEach(function () {
+        cy.get('form.edit_skill input[name="skill[name]"]').clear().type('Software Engineer')
+        cy.get('form.edit_skill input[name="skill[value]"]').clear().type(90)
+        cy.get('form.edit_skill select[name="skill[locale]"]').select('en')
+        cy.get('form.edit_skill input[value="Update"]').click({force: true})
       })
 
       it('edits the information', () => {
@@ -195,21 +197,20 @@ describe('Skill', () => {
     })
   })
 
-  // TODO: Reenable this test and make it pass
-  // describe('Delete', () => {
-  //   before(() => {
-  //     cy.appScenario('skill/delete')
-  //     cy.visit('/admin')
-  //     cy.contains('.sidebar a', 'Skills').click({force: true})
-  //     cy.contains('.btn-danger', 'Delete').click({force: true})
-  //   })
+  describe('Delete', () => {
+    beforeEach(() => {
+      cy.appScenario('skill/delete')
+      cy.visit('/admin')
+      cy.contains('.sidebar a', 'Skills').click({force: true})
+      cy.contains('.btn-danger', 'Delete').click({force: true})
+    })
 
-  //   it('is empty', () => {
-  //     cy.get('main .row .item').should('not.exist')
-  //   })
+    it('is empty', () => {
+      cy.get('main .row .item').should('not.exist')
+    })
 
-  //   it('shows confirmation message', () => {
-  //     cy.get('.alert').should('have.text', 'Skill was successfully deleted.')
-  //   })
-  // })
+    it('shows confirmation message', () => {
+      cy.get('.alert').should('have.text', 'Skill was successfully deleted.')
+    })
+  })
 })

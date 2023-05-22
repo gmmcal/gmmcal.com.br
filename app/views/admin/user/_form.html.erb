@@ -1,5 +1,5 @@
 
-<%= simple_form_for([:admin, user], url: %i[admin user], html: { id: 'edit_user' }) do |f| %>
+<%= simple_form_for([:admin, user], url: %i[admin user], html: { id: 'edit_user' }, data: { turbo: false }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 

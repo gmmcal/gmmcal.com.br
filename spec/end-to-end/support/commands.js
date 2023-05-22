@@ -14,6 +14,7 @@ Cypress.Commands.add('login', (email = 'email@example.com', password = 'password
 })
 
 Cypress.Commands.add('logout', () => {
+  Cypress.session.clearAllSavedSessions()
   return cy.request({
     method: 'DELETE',
     url: '/admin/logout',

@@ -6,7 +6,7 @@
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
           <%= link_to t(:edit, scope: %i[helpers]), [:edit, :admin, work_experience], class: 'btn btn-sm btn-outline-primary' %>
-          <%= link_to t(:delete, scope: %i[helpers]), [:admin, work_experience], class: 'btn btn-sm btn-danger', data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+          <%= link_to t(:delete, scope: %i[helpers]), [:admin, work_experience], class: 'btn btn-sm btn-danger', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>

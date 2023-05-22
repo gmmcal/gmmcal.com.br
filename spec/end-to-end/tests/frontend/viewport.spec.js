@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Viewports', () => {
+describe('Viewports', {testIsolation: false}, () => {
   before(() => {
     cy.visit('/')
   })

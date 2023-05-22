@@ -4,7 +4,7 @@
 }
 </style>
 <%=render @about %>
-<turbo-frame id="experience" src="<%= work_experiences_path(locale: I18n.locale) %>" loading="lazy">
+<turbo-frame id="experience" src="<%= work_experiences_path(locale: I18n.locale) %>">
   <section class="experience turbo-loading">
     <div class="container">
       <div class="heading">
@@ -14,7 +14,7 @@
     </div>
   </section>
 </turbo-frame>
-<turbo-frame id="skills" src="<%= skills_path(locale: I18n.locale) %>" loading="lazy">
+<turbo-frame id="skills" src="<%= skills_path(locale: I18n.locale) %>">
   <section class="technical turbo-loading">
     <div class="container">
       <div class="heading">
@@ -24,7 +24,7 @@
     </div>
   </section>
 </turbo-frame>
-<turbo-frame id="education" src="<%= educations_path(locale: I18n.locale) %>" loading="lazy">
+<turbo-frame id="education" src="<%= educations_path(locale: I18n.locale) %>">
   <section class="education turbo-loading">
     <div class="container">
       <div class="heading">

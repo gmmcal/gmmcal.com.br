@@ -1,2 +1,2 @@
 <%= turbo_stream.remove @education %>
-<%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.deleted', model: Education) } %>
+<%= turbo_stream.replace 'notifications', partial: 'admin/shared/notification', locals: { notice: t('helpers.deleted', model: Education.model_name.human) } %>

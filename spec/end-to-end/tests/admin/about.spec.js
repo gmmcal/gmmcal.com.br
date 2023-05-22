@@ -1,16 +1,16 @@
 /// <reference types="Cypress" />
 
 describe('About', () => {
-  before(() => {
+  beforeEach(() => {
     cy.login()
   })
 
-  after(() => {
+  afterEach(() => {
     cy.logout()
   })
 
   describe('List', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('about/data')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
@@ -22,7 +22,7 @@ describe('About', () => {
   })
 
   describe('Create', () => {
-    before(() => {
+    beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
@@ -34,7 +34,7 @@ describe('About', () => {
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('select[name="about[locale]"]').select('')
           cy.get('input[value="Save"]').click({force: true})
         })
@@ -77,7 +77,7 @@ describe('About', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
           cy.get('select[name="about[locale]"]').select('en')
           cy.get('input[value="Save"]').click({force: true})
@@ -122,7 +122,7 @@ describe('About', () => {
     })
 
     context('With valid data', () => {
-      before(function () {
+      beforeEach(function () {
         cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
         cy.get('textarea[name="about[description]"]').clear().type('Lorem ipsum nulus dolor.')
         cy.get('select[name="about[locale]"]').select('en')
@@ -144,7 +144,7 @@ describe('About', () => {
   })
 
   describe('Edit', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('about/data')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
@@ -153,7 +153,7 @@ describe('About', () => {
 
     context('With invalid data', () => {
       context('with empty form', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="about[job_title]"]').clear()
           cy.get('textarea[name="about[description]"]').clear()
           cy.get('select[name="about[country]"]').select('')
@@ -202,8 +202,13 @@ describe('About', () => {
       })
 
       context('with some required fields filled', () => {
-        before(function () {
+        beforeEach(function () {
           cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
+          cy.get('textarea[name="about[description]"]').clear()
+          cy.get('select[name="about[country]"]').select('')
+          cy.get('input[name="about[city]"]').clear()
+          cy.get('input[name="about[phone_number]"]').clear()
+          cy.get('input[name="about[email]"]').clear()
           cy.get('select[name="about[locale]"]').select('en')
           cy.get('input[value="Update"]').click({force: true})
         })
@@ -247,7 +252,7 @@ describe('About', () => {
     })
 
     context('With valid data', () => {
-      before(function () {
+      beforeEach(function () {
         cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
         cy.get('textarea[name="about[description]"]').clear().type('Lorem ipsum nulus dolor.')
         cy.get('select[name="about[locale]"]').select('en')
@@ -265,7 +270,7 @@ describe('About', () => {
   })
 
   describe('Download CV', () => {
-    before(() => {
+    beforeEach(() => {
       cy.appScenario('about/data')
       cy.visit('/admin')
       cy.contains('.sidebar a', 'About').click({force: true})
