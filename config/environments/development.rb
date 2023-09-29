@@ -75,6 +75,12 @@ Rails.application.configure do
   # Disable request forgery protection during end-to-end tests.
   config.action_controller.allow_forgery_protection = false
 
+  # Raises error for missing translations.
+  config.i18n.raise_on_missing_translations = true
+
+  # Annotate rendered view with file names.
+  config.action_view.annotate_rendered_view_with_filenames = true
+
   if ENV['CI'].present?
     config.log_level = :fatal
     config.logger    = ActiveSupport::Logger.new(nil)

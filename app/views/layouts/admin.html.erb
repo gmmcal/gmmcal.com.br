@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'admin/application', type: 'application/javascript', 'data-turbo-track': 'reload', defer: true %>
     <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
     <%= csrf_meta_tags %>
+    <meta name="theme-color" content="#212121">
   </head>
   <body>
     <header>
@@ -43,7 +44,7 @@
             </ul>
           </div>
         </nav>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <main role="main" class="col-md-9 ms-sm-auto col-lg-10 px-4">
           <%= yield %>
         </main>
       </div>
