@@ -52,7 +52,7 @@
     "@fortawesome/free-regular-svg-icons": "*",
     "@fortawesome/free-solid-svg-icons": "*",
     "@hotwired/turbo-rails": "*",
-    "bootstrap": "4",
+    "bootstrap": "*",
     "esbuild": "*",
     "sass": "*",
     "sortablejs": "*",

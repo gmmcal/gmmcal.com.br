@@ -48,6 +48,10 @@ body {
 }
 
 .row {
+  > .list-group {
+    padding-left: .75rem;
+  }
+
   .list-group-item {
     height: 100%;
   }

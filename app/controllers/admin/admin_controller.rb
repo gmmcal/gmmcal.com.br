@@ -2,7 +2,7 @@
 
 module Admin
   class AdminController < ApplicationController
-    include Pundit
+    include Pundit::Authorization
     layout 'admin'
     before_action :authenticate_user!
     before_action :set_default_locale
