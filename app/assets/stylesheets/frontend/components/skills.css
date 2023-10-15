@@ -1,0 +1,29 @@
+@media screen {
+  .technical {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(71 77 93 / var(--tw-text-opacity))
+  }
+
+  .technical .container {
+    padding-bottom: 6.9rem;
+    padding-top: 8.5rem
+  }
+
+  .technical p {
+    padding-bottom: 4.1rem;
+    --tw-text-opacity: 1;
+    color: rgb(71 77 93 / var(--tw-text-opacity))
+  }
+
+  .technical h2 {
+    --tw-text-opacity: 1;
+    color: rgb(255 103 95 / var(--tw-text-opacity))
+  }
+
+  .technical .row {
+    display: block;
+    text-align: center
+  }
+}

@@ -1,0 +1,1228 @@
+@media screen {
+  .skill {
+    margin: 1rem;
+    margin-top: 1rem;
+    display: block;
+    align-self: center;
+    padding: 0rem;
+    line-height: 3rem;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .skill {
+    display: inline-block;
+  }
+}
+
+@media screen {
+  .skill.s-0 {
+    font-size: 0rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-0 {
+    font-size: 0rem;
+  }
+}
+
+@media screen {
+  .skill.s-1 {
+    font-size: 0.07rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-1 {
+    font-size: 0.05rem;
+  }
+}
+
+@media screen {
+  .skill.s-2 {
+    font-size: 0.14rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-2 {
+    font-size: 0.1rem;
+  }
+}
+
+@media screen {
+  .skill.s-3 {
+    font-size: 0.21rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-3 {
+    font-size: 0.15rem;
+  }
+}
+
+@media screen {
+  .skill.s-4 {
+    font-size: 0.28rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-4 {
+    font-size: 0.2rem;
+  }
+}
+
+@media screen {
+  .skill.s-5 {
+    font-size: 0.35rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-5 {
+    font-size: 0.25rem;
+  }
+}
+
+@media screen {
+  .skill.s-6 {
+    font-size: 0.42rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-6 {
+    font-size: 0.3rem;
+  }
+}
+
+@media screen {
+  .skill.s-7 {
+    font-size: 0.49rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-7 {
+    font-size: 0.35rem;
+  }
+}
+
+@media screen {
+  .skill.s-8 {
+    font-size: 0.56rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-8 {
+    font-size: 0.4rem;
+  }
+}
+
+@media screen {
+  .skill.s-9 {
+    font-size: 0.63rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-9 {
+    font-size: 0.45rem;
+  }
+}
+
+@media screen {
+  .skill.s-10 {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-10 {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen {
+  .skill.s-11 {
+    font-size: 0.77rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-11 {
+    font-size: 0.55rem;
+  }
+}
+
+@media screen {
+  .skill.s-12 {
+    font-size: 0.84rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-12 {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen {
+  .skill.s-13 {
+    font-size: 0.91rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-13 {
+    font-size: 0.65rem;
+  }
+}
+
+@media screen {
+  .skill.s-14 {
+    font-size: 0.98rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-14 {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen {
+  .skill.s-15 {
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-15 {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen {
+  .skill.s-16 {
+    font-size: 1.12rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-16 {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen {
+  .skill.s-17 {
+    font-size: 1.19rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-17 {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen {
+  .skill.s-18 {
+    font-size: 1.26rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-18 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen {
+  .skill.s-19 {
+    font-size: 1.33rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-19 {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen {
+  .skill.s-20 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-20 {
+    font-size: 1rem;
+  }
+}
+
+@media screen {
+  .skill.s-21 {
+    font-size: 1.47rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-21 {
+    font-size: 1.05rem;
+  }
+}
+
+@media screen {
+  .skill.s-22 {
+    font-size: 1.54rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-22 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen {
+  .skill.s-23 {
+    font-size: 1.61rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-23 {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen {
+  .skill.s-24 {
+    font-size: 1.68rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-24 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen {
+  .skill.s-25 {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-25 {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen {
+  .skill.s-26 {
+    font-size: 1.82rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-26 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen {
+  .skill.s-27 {
+    font-size: 1.89rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-27 {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen {
+  .skill.s-28 {
+    font-size: 1.96rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-28 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen {
+  .skill.s-29 {
+    font-size: 2.03rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-29 {
+    font-size: 1.45rem;
+  }
+}
+
+@media screen {
+  .skill.s-30 {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-30 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen {
+  .skill.s-31 {
+    font-size: 2.17rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-31 {
+    font-size: 1.55rem;
+  }
+}
+
+@media screen {
+  .skill.s-32 {
+    font-size: 2.24rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-32 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen {
+  .skill.s-33 {
+    font-size: 2.31rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-33 {
+    font-size: 1.65rem;
+  }
+}
+
+@media screen {
+  .skill.s-34 {
+    font-size: 2.38rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-34 {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen {
+  .skill.s-35 {
+    font-size: 2.45rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-35 {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen {
+  .skill.s-36 {
+    font-size: 2.52rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-36 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen {
+  .skill.s-37 {
+    font-size: 2.59rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-37 {
+    font-size: 1.85rem;
+  }
+}
+
+@media screen {
+  .skill.s-38 {
+    font-size: 2.66rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-38 {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen {
+  .skill.s-39 {
+    font-size: 2.73rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-39 {
+    font-size: 1.95rem;
+  }
+}
+
+@media screen {
+  .skill.s-40 {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-40 {
+    font-size: 2rem;
+  }
+}
+
+@media screen {
+  .skill.s-41 {
+    font-size: 2.87rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-41 {
+    font-size: 2.05rem;
+  }
+}
+
+@media screen {
+  .skill.s-42 {
+    font-size: 2.94rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-42 {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen {
+  .skill.s-43 {
+    font-size: 3.01rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-43 {
+    font-size: 2.15rem;
+  }
+}
+
+@media screen {
+  .skill.s-44 {
+    font-size: 3.08rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-44 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen {
+  .skill.s-45 {
+    font-size: 3.15rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-45 {
+    font-size: 2.25rem;
+  }
+}
+
+@media screen {
+  .skill.s-46 {
+    font-size: 3.22rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-46 {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen {
+  .skill.s-47 {
+    font-size: 3.29rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-47 {
+    font-size: 2.35rem;
+  }
+}
+
+@media screen {
+  .skill.s-48 {
+    font-size: 3.36rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-48 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen {
+  .skill.s-49 {
+    font-size: 3.43rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-49 {
+    font-size: 2.45rem;
+  }
+}
+
+@media screen {
+  .skill.s-50 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-50 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen {
+  .skill.s-51 {
+    font-size: 3.57rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-51 {
+    font-size: 2.55rem;
+  }
+}
+
+@media screen {
+  .skill.s-52 {
+    font-size: 3.64rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-52 {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen {
+  .skill.s-53 {
+    font-size: 3.71rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-53 {
+    font-size: 2.65rem;
+  }
+}
+
+@media screen {
+  .skill.s-54 {
+    font-size: 3.78rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-54 {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen {
+  .skill.s-55 {
+    font-size: 3.85rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-55 {
+    font-size: 2.75rem;
+  }
+}
+
+@media screen {
+  .skill.s-56 {
+    font-size: 3.92rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-56 {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen {
+  .skill.s-57 {
+    font-size: 3.99rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-57 {
+    font-size: 2.85rem;
+  }
+}
+
+@media screen {
+  .skill.s-58 {
+    font-size: 4.06rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-58 {
+    font-size: 2.9rem;
+  }
+}
+
+@media screen {
+  .skill.s-59 {
+    font-size: 4.13rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-59 {
+    font-size: 2.95rem;
+  }
+}
+
+@media screen {
+  .skill.s-60 {
+    font-size: 4.2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-60 {
+    font-size: 3rem;
+  }
+}
+
+@media screen {
+  .skill.s-61 {
+    font-size: 4.27rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-61 {
+    font-size: 3.05rem;
+  }
+}
+
+@media screen {
+  .skill.s-62 {
+    font-size: 4.34rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-62 {
+    font-size: 3.1rem;
+  }
+}
+
+@media screen {
+  .skill.s-63 {
+    font-size: 4.41rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-63 {
+    font-size: 3.15rem;
+  }
+}
+
+@media screen {
+  .skill.s-64 {
+    font-size: 4.48rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-64 {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen {
+  .skill.s-65 {
+    font-size: 4.55rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-65 {
+    font-size: 3.25rem;
+  }
+}
+
+@media screen {
+  .skill.s-66 {
+    font-size: 4.62rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-66 {
+    font-size: 3.3rem;
+  }
+}
+
+@media screen {
+  .skill.s-67 {
+    font-size: 4.69rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-67 {
+    font-size: 3.35rem;
+  }
+}
+
+@media screen {
+  .skill.s-68 {
+    font-size: 4.76rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-68 {
+    font-size: 3.4rem;
+  }
+}
+
+@media screen {
+  .skill.s-69 {
+    font-size: 4.83rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-69 {
+    font-size: 3.45rem;
+  }
+}
+
+@media screen {
+  .skill.s-70 {
+    font-size: 4.9rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-70 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen {
+  .skill.s-71 {
+    font-size: 4.97rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-71 {
+    font-size: 3.55rem;
+  }
+}
+
+@media screen {
+  .skill.s-72 {
+    font-size: 5.04rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-72 {
+    font-size: 3.6rem;
+  }
+}
+
+@media screen {
+  .skill.s-73 {
+    font-size: 5.11rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-73 {
+    font-size: 3.65rem;
+  }
+}
+
+@media screen {
+  .skill.s-74 {
+    font-size: 5.18rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-74 {
+    font-size: 3.7rem;
+  }
+}
+
+@media screen {
+  .skill.s-75 {
+    font-size: 5.25rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-75 {
+    font-size: 3.75rem;
+  }
+}
+
+@media screen {
+  .skill.s-76 {
+    font-size: 5.32rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-76 {
+    font-size: 3.8rem;
+  }
+}
+
+@media screen {
+  .skill.s-77 {
+    font-size: 5.39rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-77 {
+    font-size: 3.85rem;
+  }
+}
+
+@media screen {
+  .skill.s-78 {
+    font-size: 5.46rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-78 {
+    font-size: 3.9rem;
+  }
+}
+
+@media screen {
+  .skill.s-79 {
+    font-size: 5.53rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-79 {
+    font-size: 3.95rem;
+  }
+}
+
+@media screen {
+  .skill.s-80 {
+    font-size: 5.6rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-80 {
+    font-size: 4rem;
+  }
+}
+
+@media screen {
+  .skill.s-81 {
+    font-size: 5.67rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-81 {
+    font-size: 4.05rem;
+  }
+}
+
+@media screen {
+  .skill.s-82 {
+    font-size: 5.74rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-82 {
+    font-size: 4.1rem;
+  }
+}
+
+@media screen {
+  .skill.s-83 {
+    font-size: 5.81rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-83 {
+    font-size: 4.15rem;
+  }
+}
+
+@media screen {
+  .skill.s-84 {
+    font-size: 5.88rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-84 {
+    font-size: 4.2rem;
+  }
+}
+
+@media screen {
+  .skill.s-85 {
+    font-size: 5.95rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-85 {
+    font-size: 4.25rem;
+  }
+}
+
+@media screen {
+  .skill.s-86 {
+    font-size: 6.02rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-86 {
+    font-size: 4.3rem;
+  }
+}
+
+@media screen {
+  .skill.s-87 {
+    font-size: 6.09rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-87 {
+    font-size: 4.35rem;
+  }
+}
+
+@media screen {
+  .skill.s-88 {
+    font-size: 6.16rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-88 {
+    font-size: 4.4rem;
+  }
+}
+
+@media screen {
+  .skill.s-89 {
+    font-size: 6.23rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-89 {
+    font-size: 4.45rem;
+  }
+}
+
+@media screen {
+  .skill.s-90 {
+    font-size: 6.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-90 {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen {
+  .skill.s-91 {
+    font-size: 6.37rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-91 {
+    font-size: 4.55rem;
+  }
+}
+
+@media screen {
+  .skill.s-92 {
+    font-size: 6.44rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-92 {
+    font-size: 4.6rem;
+  }
+}
+
+@media screen {
+  .skill.s-93 {
+    font-size: 6.51rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-93 {
+    font-size: 4.65rem;
+  }
+}
+
+@media screen {
+  .skill.s-94 {
+    font-size: 6.58rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-94 {
+    font-size: 4.7rem;
+  }
+}
+
+@media screen {
+  .skill.s-95 {
+    font-size: 6.65rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-95 {
+    font-size: 4.75rem;
+  }
+}
+
+@media screen {
+  .skill.s-96 {
+    font-size: 6.72rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-96 {
+    font-size: 4.8rem;
+  }
+}
+
+@media screen {
+  .skill.s-97 {
+    font-size: 6.79rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-97 {
+    font-size: 4.85rem;
+  }
+}
+
+@media screen {
+  .skill.s-98 {
+    font-size: 6.86rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-98 {
+    font-size: 4.9rem;
+  }
+}
+
+@media screen {
+  .skill.s-99 {
+    font-size: 6.93rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-99 {
+    font-size: 4.95rem;
+  }
+}
+
+@media screen {
+  .skill.s-100 {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skill.s-100 {
+    font-size: 5rem;
+  }
+}

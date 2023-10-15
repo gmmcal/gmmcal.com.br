@@ -1,0 +1,69 @@
+//----------------------------------------------------
+// Background  Images
+//------------------------------------------------------
+
+@media screen {
+  .arrowpart {
+    @apply bg-no-repeat bg-position-arrow-left;
+    background-image: url('frontend/arrow-left-light.png');
+
+    @media screen and (max-width: 767px) {
+      @apply bg-no-repeat bg-position-arrow-top;
+      background-image: url('frontend/arrow-top-light.png');
+    }
+  }
+
+  .flag {
+    @apply bg-no-repeat;
+    background-image: url('frontend/flags.png');
+  }
+
+  .skill-bg {
+    @apply bg-no-repeat bg-position-0;
+    background-image: url('frontend/skills.png');
+  }
+
+  .banner {
+    .banner-img {
+      &::after {
+        @apply bg-no-repeat bg-position-0;
+        background-image: url('frontend/banner-small.jpg');
+      }
+
+      &.visible::after {
+        @media screen and (min-width: 420px) and (max-width: 767px) {
+          background-image: url('frontend/banner-medium.jpg');
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+          background-image: url('frontend/banner-large.jpg');
+        }
+
+        @media screen and (min-width: 1024px) {
+          background-image: url('frontend/banner.jpg');
+        }
+      }
+    }
+  }
+
+  .about-me {
+    .topmar {
+      @apply bg-no-repeat bg-position-0;
+      background-image: url('frontend/gmmcal-small.png');
+
+      &.visible {
+        @media screen and (min-width: 420px) and (max-width: 767px) {
+          background-image: url('frontend/gmmcal-medium.png');
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+          background-image: url('frontend/gmmcal-large.png');
+        }
+
+        @media screen and (min-width: 1024px) {
+          background-image: url('frontend/gmmcal.png');
+        }
+      }
+    }
+  }
+}

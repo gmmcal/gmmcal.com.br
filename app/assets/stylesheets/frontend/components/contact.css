@@ -1,0 +1,68 @@
+@media screen {
+  .contact {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+  }
+
+  .contact .top-con .container {
+    padding-bottom: 0rem;
+    padding-top: 8.5rem
+  }
+
+  .contact .top-con h2 {
+    --tw-text-opacity: 1;
+    color: rgb(255 103 95 / var(--tw-text-opacity))
+  }
+
+  .contact .top-con p {
+    line-height: 1.8rem;
+    --tw-text-opacity: 1;
+    color: rgb(132 134 141 / var(--tw-text-opacity))
+  }
+
+  .contact .top-con .heading p {
+    padding-bottom: 4.1rem
+  }
+
+  .contact .bottom-con {
+    --tw-bg-opacity: 1;
+    background-color: rgb(71 77 93 / var(--tw-bg-opacity))
+  }
+
+  .contact .bottom-con .container {
+    padding-bottom: 9rem;
+    padding-top: 8.5rem
+  }
+
+  .contact .bottom-con h4 {
+    padding-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase
+  }
+
+  .contact .bottom-con p {
+    padding-bottom: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    --tw-text-opacity: 1;
+    color: rgb(147 149 156 / var(--tw-text-opacity))
+  }
+
+  .contact .bottom-con p a {
+    --tw-text-opacity: 1;
+    color: rgb(147 149 156 / var(--tw-text-opacity))
+  }
+
+  .contact .bottom-con p a:hover {
+    text-decoration-line: none
+  }
+
+  .contact .bottom-con p a:hover:hover {
+    --tw-text-opacity: 1;
+    color: rgb(147 149 156 / var(--tw-text-opacity))
+  }
+
+  .contact .bottom-con svg {
+    margin-right: 1.5rem
+  }
+}

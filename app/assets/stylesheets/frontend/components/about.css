@@ -1,0 +1,66 @@
+@media screen {
+  .about-me {
+    position: relative;
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 189 189 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    background: #00bdbd
+  }
+
+  .about-me .container {
+    padding-top: 8.5rem
+  }
+
+  .about-me .btn-download {
+    display: inline-block;
+    --tw-bg-opacity: 1;
+    background-color: rgb(71 77 93 / var(--tw-bg-opacity));
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    padding-right: 2.2rem;
+    padding-left: 2.2rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.6rem;
+    font-weight: 700
+  }
+
+  .about-me .btn-download:hover, .about-me .btn-download:active, .about-me .btn-download:focus {
+    --tw-text-opacity: 1;
+    color: rgb(204 204 204 / var(--tw-text-opacity));
+    text-decoration-line: none
+  }
+
+  .about-me .btn-download:hover:hover, .about-me .btn-download:active:hover, .about-me .btn-download:focus:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(71 77 93 / var(--tw-bg-opacity))
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about-me .btn-download {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    padding-right: 1.4rem;
+    padding-left: 1.4rem;
+    font-size: 1.3rem
+  }
+}
+
+@media screen {
+  .about-me .topmar {
+    height: 100%;
+    min-height: 25rem;
+    width: 100%;
+    align-self: flex-end;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-me .topmar {
+    align-self: center
+  }
+}

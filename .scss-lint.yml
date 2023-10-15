@@ -1,14 +1,13 @@
 # Default application configuration that all configurations inherit from.
 
-scss_files: "app/**/*.scss"
+scss_files: "scss/**/*.scss"
 plugin_directories: ['.scss-linters']
 
 exclude:
-  - 'app/assets/stylesheets/admin/mdb/**'
-  - 'app/javascript/stylesheets/components/skill.scss'
-  - 'app/assets/stylesheets/cv/_functions.scss'
-  - 'app/assets/stylesheets/cv/application.sass.scss'
-  - 'app/assets/stylesheets/frontend/components/skill.scss'
+  - 'scss/admin/mdb/**'
+  - 'scss/cv/_functions.scss'
+  - 'scss/cv/application.sass.scss'
+  - 'scss/frontend/components/skill.scss'
 
 # List of gem names to load custom linters from (make sure they are already
 # installed)

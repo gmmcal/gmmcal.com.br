@@ -1,4 +1,4 @@
-import handleMenu from './menu-handle'
+import handleMenu from 'behavior/menu-handle'
 
 const handleClick = event => {
   const destination = event.target.hash

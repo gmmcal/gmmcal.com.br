@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><%= t(:title, scope: %i[frontend helpers]) %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= javascript_include_tag 'admin/application', type: 'application/javascript', 'data-turbo-track': 'reload', defer: true %>
+    <%= javascript_importmap_tags("admin/application") %>
     <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
     <%= csrf_meta_tags %>
     <meta name="theme-color" content="#212121">

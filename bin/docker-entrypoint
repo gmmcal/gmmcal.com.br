@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+# If running the rails server then create or migrate existing database
+if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
+  ./bin/rails db:prepare
+  ./bin/rails db:seed:all
+fi
+
+# bundle exec rspec
+if [ "${3}" == "rspec" ]; then
+  ./bin/rails db:migrate
+fi
+
+exec "${@}"

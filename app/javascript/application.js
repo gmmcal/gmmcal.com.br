@@ -1,9 +1,11 @@
-/* eslint no-console:0 */
-// Entry point for the build script in your package.json
-
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import '@hotwired/turbo-rails'
-import { Icons, Images, Menu, Worker } from './frontend'
-import { handleClick, handleMenu } from './behavior'
+import Icons from 'frontend/icons'
+import Images from 'frontend/images'
+import Menu from 'frontend/menu'
+import Worker from 'frontend/worker'
+import handleClick from 'behavior/click-handle'
+import handleMenu from 'behavior/menu-handle'
 
 
 document.addEventListener('turbo:load', () => {

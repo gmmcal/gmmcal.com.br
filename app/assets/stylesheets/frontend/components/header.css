@@ -1,0 +1,11 @@
+@media screen {
+  header {
+    position: relative
+  }
+
+  header .menu {
+    min-height: 6.3rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(38 43 55 / var(--tw-bg-opacity))
+  }
+}

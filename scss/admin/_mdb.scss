@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'mdb/core/bootstrap/functions';
+@import 'mdb/core/bootstrap/variables';
+
+@import 'mdb/core/mixins';
+@import 'mdb/core/colors';
+@import 'mdb/core/variables';
+@import 'mdb/core/global';
+@import 'mdb/core/helpers';
+
+@import 'mdb/free/buttons';
+@import 'mdb/free/input-group';
+@import 'mdb/free/navbars';
+@import 'mdb/free/forms';
+@import 'mdb/free/msc';
+@import 'mdb/free/footers';
+@import 'mdb/free/list-group';

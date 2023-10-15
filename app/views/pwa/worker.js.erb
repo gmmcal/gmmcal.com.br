@@ -6,7 +6,7 @@ function onInstall(event) {
     caches.open(CACHE_NAME).then(function prefill(cache) {
       return cache.addAll([
         '<%= asset_url 'application.js' %>',
-        '<%= asset_url 'application.css' %>',
+        '<%= asset_url 'frontend/application.css' %>',
         '<%= asset_url 'frontend/flags.png' %>',
         '<%= asset_url 'icons/apple-icon-57x57.png' %>',
         '<%= asset_url 'icons/apple-icon-60x60.png' %>',

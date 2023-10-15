@@ -1,0 +1,485 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20;
+  height: 100%;
+  position: relative;
+  width: 100vw;
+}
+
+.page {
+  clear: both;
+  height: 100vh;
+  page-break-before: always;
+  position: relative;
+  width: 100vw;
+}
+.page::before {
+  clear: both;
+}
+.page .col {
+  float: left;
+  width: 100%;
+}
+.page .left {
+  width: 65%;
+}
+.page .right {
+  width: 35%;
+}
+.page h1 {
+  background-color: #fff;
+  box-shadow: 0 0.0625rem 0 0 #88a1c0, 0 0.3125rem 0 0 #fff, 0 0.375rem 0 0 #88a1c0;
+  color: #314864;
+  font-size: 7.5rem;
+  margin: 0;
+}
+.page h3 {
+  font-size: 4.375rem;
+  margin: 0;
+}
+.page h3 span {
+  display: block;
+  font-size: 1.5rem;
+}
+.page h5 {
+  font-size: 3.125rem;
+  margin: 0;
+}
+.page p {
+  color: #000;
+  font-size: 1.875rem;
+  margin: 0;
+}
+.page p:first-of-type {
+  margin-top: 2rem;
+}
+.page a {
+  color: #000;
+  text-decoration: none;
+}
+.page li {
+  list-style-type: none;
+}
+.page .note {
+  font-size: 1.375rem;
+}
+.page .footnote {
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.cover .left {
+  margin-top: 15.625rem;
+}
+.cover .left h1 {
+  margin-right: 1.875rem;
+}
+.cover .left p {
+  color: #7e86b9;
+  font-size: 2.5rem;
+  margin-right: 1.875rem;
+}
+.cover .right {
+  margin-top: 15.625rem;
+}
+.cover .right img {
+  width: 100%;
+}
+
+.experiences .arrow {
+  padding-left: 3.75rem;
+}
+.experiences .arrow li::before {
+  color: #5c86b9;
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-left: -3.75rem;
+  position: absolute;
+}
+.experiences .arrow li {
+  padding-bottom: 1rem;
+}
+.experiences .arrow li::before {
+  content: "➡";
+}
+.experiences li::before {
+  margin-top: 0.625rem;
+}
+.experiences .skills {
+  padding-left: 0;
+}
+.experiences .skills li {
+  display: inline-block;
+  margin: 0.625rem;
+}
+.experiences .skills li .s-0 {
+  font-size: 0rem;
+}
+.experiences .skills li .s-1 {
+  font-size: 0.05rem;
+}
+.experiences .skills li .s-2 {
+  font-size: 0.1rem;
+}
+.experiences .skills li .s-3 {
+  font-size: 0.15rem;
+}
+.experiences .skills li .s-4 {
+  font-size: 0.2rem;
+}
+.experiences .skills li .s-5 {
+  font-size: 0.25rem;
+}
+.experiences .skills li .s-6 {
+  font-size: 0.3rem;
+}
+.experiences .skills li .s-7 {
+  font-size: 0.35rem;
+}
+.experiences .skills li .s-8 {
+  font-size: 0.4rem;
+}
+.experiences .skills li .s-9 {
+  font-size: 0.45rem;
+}
+.experiences .skills li .s-10 {
+  font-size: 0.5rem;
+}
+.experiences .skills li .s-11 {
+  font-size: 0.55rem;
+}
+.experiences .skills li .s-12 {
+  font-size: 0.6rem;
+}
+.experiences .skills li .s-13 {
+  font-size: 0.65rem;
+}
+.experiences .skills li .s-14 {
+  font-size: 0.7rem;
+}
+.experiences .skills li .s-15 {
+  font-size: 0.75rem;
+}
+.experiences .skills li .s-16 {
+  font-size: 0.8rem;
+}
+.experiences .skills li .s-17 {
+  font-size: 0.85rem;
+}
+.experiences .skills li .s-18 {
+  font-size: 0.9rem;
+}
+.experiences .skills li .s-19 {
+  font-size: 0.95rem;
+}
+.experiences .skills li .s-20 {
+  font-size: 1rem;
+}
+.experiences .skills li .s-21 {
+  font-size: 1.05rem;
+}
+.experiences .skills li .s-22 {
+  font-size: 1.1rem;
+}
+.experiences .skills li .s-23 {
+  font-size: 1.15rem;
+}
+.experiences .skills li .s-24 {
+  font-size: 1.2rem;
+}
+.experiences .skills li .s-25 {
+  font-size: 1.25rem;
+}
+.experiences .skills li .s-26 {
+  font-size: 1.3rem;
+}
+.experiences .skills li .s-27 {
+  font-size: 1.35rem;
+}
+.experiences .skills li .s-28 {
+  font-size: 1.4rem;
+}
+.experiences .skills li .s-29 {
+  font-size: 1.45rem;
+}
+.experiences .skills li .s-30 {
+  font-size: 1.5rem;
+}
+.experiences .skills li .s-31 {
+  font-size: 1.55rem;
+}
+.experiences .skills li .s-32 {
+  font-size: 1.6rem;
+}
+.experiences .skills li .s-33 {
+  font-size: 1.65rem;
+}
+.experiences .skills li .s-34 {
+  font-size: 1.7rem;
+}
+.experiences .skills li .s-35 {
+  font-size: 1.75rem;
+}
+.experiences .skills li .s-36 {
+  font-size: 1.8rem;
+}
+.experiences .skills li .s-37 {
+  font-size: 1.85rem;
+}
+.experiences .skills li .s-38 {
+  font-size: 1.9rem;
+}
+.experiences .skills li .s-39 {
+  font-size: 1.95rem;
+}
+.experiences .skills li .s-40 {
+  font-size: 2rem;
+}
+.experiences .skills li .s-41 {
+  font-size: 2.05rem;
+}
+.experiences .skills li .s-42 {
+  font-size: 2.1rem;
+}
+.experiences .skills li .s-43 {
+  font-size: 2.15rem;
+}
+.experiences .skills li .s-44 {
+  font-size: 2.2rem;
+}
+.experiences .skills li .s-45 {
+  font-size: 2.25rem;
+}
+.experiences .skills li .s-46 {
+  font-size: 2.3rem;
+}
+.experiences .skills li .s-47 {
+  font-size: 2.35rem;
+}
+.experiences .skills li .s-48 {
+  font-size: 2.4rem;
+}
+.experiences .skills li .s-49 {
+  font-size: 2.45rem;
+}
+.experiences .skills li .s-50 {
+  font-size: 2.5rem;
+}
+.experiences .skills li .s-51 {
+  font-size: 2.55rem;
+}
+.experiences .skills li .s-52 {
+  font-size: 2.6rem;
+}
+.experiences .skills li .s-53 {
+  font-size: 2.65rem;
+}
+.experiences .skills li .s-54 {
+  font-size: 2.7rem;
+}
+.experiences .skills li .s-55 {
+  font-size: 2.75rem;
+}
+.experiences .skills li .s-56 {
+  font-size: 2.8rem;
+}
+.experiences .skills li .s-57 {
+  font-size: 2.85rem;
+}
+.experiences .skills li .s-58 {
+  font-size: 2.9rem;
+}
+.experiences .skills li .s-59 {
+  font-size: 2.95rem;
+}
+.experiences .skills li .s-60 {
+  font-size: 3rem;
+}
+.experiences .skills li .s-61 {
+  font-size: 3.05rem;
+}
+.experiences .skills li .s-62 {
+  font-size: 3.1rem;
+}
+.experiences .skills li .s-63 {
+  font-size: 3.15rem;
+}
+.experiences .skills li .s-64 {
+  font-size: 3.2rem;
+}
+.experiences .skills li .s-65 {
+  font-size: 3.25rem;
+}
+.experiences .skills li .s-66 {
+  font-size: 3.3rem;
+}
+.experiences .skills li .s-67 {
+  font-size: 3.35rem;
+}
+.experiences .skills li .s-68 {
+  font-size: 3.4rem;
+}
+.experiences .skills li .s-69 {
+  font-size: 3.45rem;
+}
+.experiences .skills li .s-70 {
+  font-size: 3.5rem;
+}
+.experiences .skills li .s-71 {
+  font-size: 3.55rem;
+}
+.experiences .skills li .s-72 {
+  font-size: 3.6rem;
+}
+.experiences .skills li .s-73 {
+  font-size: 3.65rem;
+}
+.experiences .skills li .s-74 {
+  font-size: 3.7rem;
+}
+.experiences .skills li .s-75 {
+  font-size: 3.75rem;
+}
+.experiences .skills li .s-76 {
+  font-size: 3.8rem;
+}
+.experiences .skills li .s-77 {
+  font-size: 3.85rem;
+}
+.experiences .skills li .s-78 {
+  font-size: 3.9rem;
+}
+.experiences .skills li .s-79 {
+  font-size: 3.95rem;
+}
+.experiences .skills li .s-80 {
+  font-size: 4rem;
+}
+.experiences .skills li .s-81 {
+  font-size: 4.05rem;
+}
+.experiences .skills li .s-82 {
+  font-size: 4.1rem;
+}
+.experiences .skills li .s-83 {
+  font-size: 4.15rem;
+}
+.experiences .skills li .s-84 {
+  font-size: 4.2rem;
+}
+.experiences .skills li .s-85 {
+  font-size: 4.25rem;
+}
+.experiences .skills li .s-86 {
+  font-size: 4.3rem;
+}
+.experiences .skills li .s-87 {
+  font-size: 4.35rem;
+}
+.experiences .skills li .s-88 {
+  font-size: 4.4rem;
+}
+.experiences .skills li .s-89 {
+  font-size: 4.45rem;
+}
+.experiences .skills li .s-90 {
+  font-size: 4.5rem;
+}
+.experiences .skills li .s-91 {
+  font-size: 4.55rem;
+}
+.experiences .skills li .s-92 {
+  font-size: 4.6rem;
+}
+.experiences .skills li .s-93 {
+  font-size: 4.65rem;
+}
+.experiences .skills li .s-94 {
+  font-size: 4.7rem;
+}
+.experiences .skills li .s-95 {
+  font-size: 4.75rem;
+}
+.experiences .skills li .s-96 {
+  font-size: 4.8rem;
+}
+.experiences .skills li .s-97 {
+  font-size: 4.85rem;
+}
+.experiences .skills li .s-98 {
+  font-size: 4.9rem;
+}
+.experiences .skills li .s-99 {
+  font-size: 4.95rem;
+}
+.experiences .skills li .s-100 {
+  font-size: 5rem;
+}
+
+.educations .arrow {
+  padding-left: 3.75rem;
+}
+.educations .arrow li::before {
+  color: #5c86b9;
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-left: -3.75rem;
+  position: absolute;
+}
+.educations .arrow li {
+  padding-bottom: 1rem;
+}
+.educations .arrow li::before {
+  content: "➡";
+}
+.educations li::before {
+  margin-top: 0.625rem;
+}
+
+.contacts .arrow {
+  padding-left: 3.75rem;
+}
+.contacts .arrow li::before {
+  color: #5c86b9;
+  font-size: 3.125rem;
+  font-weight: bold;
+  margin-left: -3.75rem;
+  position: absolute;
+}
+.contacts .arrow li {
+  padding-bottom: 1rem;
+}
+.contacts .arrow li::before {
+  content: "➡";
+}
+.contacts li {
+  font-size: 4.375rem;
+  line-height: 5rem;
+  padding-bottom: 1.875rem;
+}
+.contacts li::before {
+  margin-top: 0rem;
+}
+
+.footer {
+  margin: 0;
+  padding: 0;
+}
+.footer span {
+  color: #7e86b9;
+  display: inline-block;
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+  width: 33%;
+}
+.footer span:first-of-type {
+  text-align: left;
+}
+.footer span:last-of-type {
+  text-align: right;
+}
