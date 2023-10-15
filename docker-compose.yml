@@ -7,27 +7,28 @@ services:
       - "5432:5432"
     networks:
       - db
+    environment:
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: password
+      POSTGRESQL_DATABASE: gmmcalcombr_development
+      POSTGRES_HOST_AUTH_METHOD: trust
 
   web:
     build:
       context: .
-      dockerfile: docker/Dockerfile
-    image: gmmcal:latest
+      target: development
+    image: gmmcal:development
     depends_on:
       - db
     networks:
       - db
-    volumes:
-      - .:/gustavocunha.dev
-      - node_modules:/gustavocunha.dev/node_modules
-    command: foreman start
     environment:
       RAILS_ENV: development
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: password
     ports:
-      - "3001:3001"
+      - "3000:3000"
 
 networks:
   db:
-
-volumes:
-  node_modules:

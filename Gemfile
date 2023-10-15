@@ -17,10 +17,8 @@ gem 'rails', '~> 7.1.1'
 # Frontend gems
 gem 'draper'
 # Use SCSS for stylesheets
-gem 'cssbundling-rails'
-gem 'jsbundling-rails'
+gem 'importmap-rails'
 gem 'sprockets-rails'
-gem 'uglifier'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
@@ -43,6 +41,7 @@ group :development do
   gem 'listen'
   gem 'reek'
   gem 'rubocop'
+  gem 'rubocop-factory_bot'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'scss_lint', require: false

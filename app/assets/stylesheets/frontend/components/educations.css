@@ -1,0 +1,23 @@
+@media screen {
+  .education {
+    --tw-bg-opacity: 1;
+    background-color: rgb(238 238 238 / var(--tw-bg-opacity))
+  }
+
+  .education .container {
+    padding-bottom: 9rem;
+    padding-top: 8.5rem
+  }
+
+  .education h2 {
+    --tw-text-opacity: 1;
+    color: rgb(255 103 95 / var(--tw-text-opacity))
+  }
+
+  .education .heading p {
+    padding-bottom: 4.1rem;
+    line-height: 1.8rem;
+    --tw-text-opacity: 1;
+    color: rgb(132 134 141 / var(--tw-text-opacity))
+  }
+}

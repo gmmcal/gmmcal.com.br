@@ -6,7 +6,7 @@ const open = (event) => {
   const backdrop = document.querySelector('.modal-backdrop', el)
   backdrop.classList.add('show')
   backdrop.classList.remove('d-none')
-  const dismiss = document.querySelector('[data-dismiss=modal]', el)
+  const dismiss = document.querySelector('[data-bs-dismiss=modal]', el)
   dismiss.onclick = close
 }
 

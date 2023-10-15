@@ -1,0 +1,75 @@
+#!/usr/bin/env sh
+
+# cleanup
+rm -rf ./app/assets/_builds/
+rm -rf app/assets/stylesheets/frontend
+rm -rf app/assets/stylesheets/admin
+rm -rf app/assets/stylesheets/cv
+
+
+# compile frontend assets
+yarn sass ./scss/frontend/components/about.scss ./app/assets/_builds/tailwind/components/about.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/banner.scss ./app/assets/_builds/tailwind/components/banner.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/contact.scss ./app/assets/_builds/tailwind/components/contact.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/education.scss ./app/assets/_builds/tailwind/components/education.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/educations.scss ./app/assets/_builds/tailwind/components/educations.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/experience.scss ./app/assets/_builds/tailwind/components/experience.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/experiences.scss ./app/assets/_builds/tailwind/components/experiences.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/footer.scss ./app/assets/_builds/tailwind/components/footer.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/header.scss ./app/assets/_builds/tailwind/components/header.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/menu-container.scss ./app/assets/_builds/tailwind/components/menu-container.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/menu-item.scss ./app/assets/_builds/tailwind/components/menu-item.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/menu.scss ./app/assets/_builds/tailwind/components/menu.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/skill.scss ./app/assets/_builds/tailwind/components/skill.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/skills.scss ./app/assets/_builds/tailwind/components/skills.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/components/social.scss ./app/assets/_builds/tailwind/components/social.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/tailwind.scss ./app/assets/_builds/tailwind/tailwind.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/fonts.scss ./app/assets/_builds/tailwind/fonts.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/grid.scss ./app/assets/_builds/tailwind/grid.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/images.scss ./app/assets/_builds/tailwind/images.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/navbar.scss ./app/assets/_builds/tailwind/navbar.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/print.scss ./app/assets/_builds/tailwind/print.css --no-source-map --load-path=node_modules
+yarn sass ./scss/frontend/setup.scss ./app/assets/_builds/tailwind/setup.css --no-source-map --load-path=node_modules
+
+yarn tailwind -i ./app/assets/_builds/tailwind/components/about.css -o ./app/assets/_builds/frontend/components/about.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/banner.css -o ./app/assets/_builds/frontend/components/banner.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/contact.css -o ./app/assets/_builds/frontend/components/contact.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/education.css -o ./app/assets/_builds/frontend/components/education.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/educations.css -o ./app/assets/_builds/frontend/components/educations.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/experience.css -o ./app/assets/_builds/frontend/components/experience.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/experiences.css -o ./app/assets/_builds/frontend/components/experiences.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/footer.css -o ./app/assets/_builds/frontend/components/footer.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/header.css -o ./app/assets/_builds/frontend/components/header.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/menu-container.css -o ./app/assets/_builds/frontend/components/menu-container.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/menu-item.css -o ./app/assets/_builds/frontend/components/menu-item.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/menu.css -o ./app/assets/_builds/frontend/components/menu.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/skill.css -o ./app/assets/_builds/frontend/components/skill.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/skills.css -o ./app/assets/_builds/frontend/components/skills.css
+yarn tailwind -i ./app/assets/_builds/tailwind/components/social.css -o ./app/assets/_builds/frontend/components/social.css
+yarn tailwind -i ./app/assets/_builds/tailwind/tailwind.css -o ./app/assets/_builds/frontend/tailwind.css
+yarn tailwind -i ./app/assets/_builds/tailwind/fonts.css -o ./app/assets/_builds/frontend/fonts.css
+yarn tailwind -i ./app/assets/_builds/tailwind/grid.css -o ./app/assets/_builds/frontend/grid.css
+yarn tailwind -i ./app/assets/_builds/tailwind/images.css -o ./app/assets/_builds/frontend/images.css
+yarn tailwind -i ./app/assets/_builds/tailwind/navbar.css -o ./app/assets/_builds/frontend/navbar.css
+yarn tailwind -i ./app/assets/_builds/tailwind/print.css -o ./app/assets/_builds/frontend/print.css
+yarn tailwind -i ./app/assets/_builds/tailwind/setup.css -o ./app/assets/_builds/frontend/setup.css
+
+rm -rf ./app/assets/_builds/tailwind/
+cp -R app/assets/_builds/frontend app/assets/stylesheets/
+
+# compile admin assets
+yarn sass ./scss/admin/_bootstrap.scss ./app/assets/_builds/admin/bootstrap.css --no-source-map --load-path=node_modules
+yarn sass ./scss/admin/_mdb.scss ./app/assets/_builds/admin/mdb.css --no-source-map --load-path=node_modules
+yarn sass ./scss/admin/_content.scss ./app/assets/_builds/admin/content.css --no-source-map --load-path=node_modules
+
+rm -rf ./app/assets/_builds/tailwind/
+cp -R app/assets/_builds/admin app/assets/stylesheets/
+
+# compile cv assets
+yarn sass ./scss/cv/application.sass.scss ./app/assets/_builds/cv/content.css --no-source-map --load-path=node_modules
+
+rm -rf ./app/assets/_builds/tailwind/
+cp -R app/assets/_builds/cv app/assets/stylesheets/
+
+# cleanup
+rm -rf ./app/assets/_builds/

@@ -1,6 +1,5 @@
-//= link application.css
-//= link admin/application.css
-//= link cv/application.css
-//= link favicon.ico
 //= link_tree ../images
-//= link_tree ../builds
+//= link_directory ../stylesheets .css
+//= link_directory ../stylesheets/admin .css
+//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js

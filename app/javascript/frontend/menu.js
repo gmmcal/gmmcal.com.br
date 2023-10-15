@@ -1,4 +1,4 @@
-import { handleScroll } from '../behavior'
+import handleScroll from 'behavior/scroll-handle'
 
 class Menu {
   _items = []

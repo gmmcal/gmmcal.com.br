@@ -1,0 +1,55 @@
+@media screen {
+  .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 0rem;
+    padding-left: 0rem
+  }
+
+  .container .social {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: auto;
+    margin-left: auto;
+    list-style-type: none;
+    text-align: center
+  }
+
+  .container .social li {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: 0.6rem;
+    margin-left: 0.6rem;
+    display: inline-block;
+    height: 4.2rem;
+    width: 4.2rem;
+    border-radius: 50%;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    text-align: center;
+    line-height: 4.2rem;
+    --tw-text-opacity: 1;
+    color: rgb(0 189 189 / var(--tw-text-opacity))
+  }
+
+  .container .social li:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(10 159 159 / var(--tw-bg-opacity))
+  }
+
+  .container .social li:hover a {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+  }
+
+  .container .social li a {
+    height: 4.2rem;
+    width: 4.2rem;
+    --tw-text-opacity: 1;
+    color: rgb(0 189 189 / var(--tw-text-opacity))
+  }
+
+  .container .social li a svg {
+    line-height: 4.2rem
+  }
+}

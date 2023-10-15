@@ -1,0 +1,87 @@
+@media screen {
+  .banner {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    --tw-bg-opacity: 1;
+    background-color: rgb(27 31 41 / var(--tw-bg-opacity))
+  }
+
+  .banner .banner-img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row
+  }
+
+  .banner .banner-img::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    content: ""
+  }
+
+  .banner .banner-img .banner-text {
+    align-self: center;
+    text-align: center
+  }
+
+  .banner .banner-img .banner-text h1 {
+    font-size: 4.2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    line-height: 4rem;
+    letter-spacing: 1.6rem
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .banner .banner-img .banner-text h1 {
+    font-size: 5.6rem;
+    line-height: 6rem
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .banner .banner-img .banner-text h1 {
+    font-size: 6.5rem;
+    line-height: 9rem
+  }
+}
+
+@media screen {
+  .banner .banner-img .banner-text h2 {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    line-height: 2.4rem;
+    letter-spacing: 0.8rem
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .banner .banner-img .banner-text h2 {
+    font-size: 1.7rem;
+    line-height: 3.4rem
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .banner .banner-img .banner-text h2 {
+    font-size: 2.8rem;
+    line-height: 4.5rem
+  }
+}
+
+@media screen {
+  .pwa .banner,
+  .errors .banner {
+    display: none
+  }
+}

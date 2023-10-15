@@ -1,0 +1,72 @@
+body {
+  font-size: 0.875rem;
+}
+
+.sidebar {
+  bottom: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  left: 0;
+  padding: 48px 0 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.sidebar .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+.sidebar .nav-item .nav-link.active {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+.sidebar-sticky {
+  height: calc(100vh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 0.5rem;
+  position: relative;
+  top: 0;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+[role=main] {
+  padding-bottom: 60px;
+  padding-top: 48px;
+}
+
+.sortable .item {
+  cursor: pointer;
+}
+
+.row > .list-group {
+  padding-left: 0.75rem;
+}
+.row .list-group-item {
+  height: 100%;
+}
+
+.navbar .navbar-brand {
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+.navbar .navbar-nav {
+  width: 100%;
+}
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link.active {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+.footer {
+  height: 48px;
+  line-height: 48px;
+}

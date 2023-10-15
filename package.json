@@ -46,32 +46,12 @@
     "npm": "^7.5.4",
     "yarn": "^1.22.0"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "*",
-    "@fortawesome/free-brands-svg-icons": "*",
-    "@fortawesome/free-regular-svg-icons": "*",
-    "@fortawesome/free-solid-svg-icons": "*",
-    "@hotwired/turbo-rails": "*",
-    "bootstrap": "*",
-    "esbuild": "*",
-    "sass": "*",
-    "sortablejs": "*",
-    "tailwindcss": "*"
-  },
   "devDependencies": {
     "cypress": "*",
     "eslint": "*",
     "start-server-and-test": "*"
   },
   "scripts": {
-    "build": "yarn build:js:frontend && yarn build:js:admin",
-    "build:js:frontend": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
-    "build:js:admin": "esbuild app/javascript/admin/application.js --bundle --sourcemap --outdir=app/assets/builds/admin",
-    "build:css:frontend": "sass ./app/assets/stylesheets/frontend/application.postcss.scss ./app/assets/builds/application.tailwind.css --no-source-map --load-path=node_modules",
-    "build:css:tailwind": "tailwind -i ./app/assets/builds/application.tailwind.css -o ./app/assets/builds/application.css --minify",
-    "build:css:backend": "sass ./app/assets/stylesheets/admin/application.sass.scss ./app/assets/builds/admin/application.css --no-source-map --load-path=node_modules",
-    "build:css:cv": "sass ./app/assets/stylesheets/cv/application.sass.scss ./app/assets/builds/cv/application.css --no-source-map --load-path=node_modules",
-    "build:css": "yarn build:css:frontend && yarn build:css:tailwind && yarn build:css:backend && yarn build:css:cv",
     "cypress:dev": "start-test server:start 3000 cypress:open",
     "server:start": "bundle exec rails server -u puma -p 3000",
     "cypress:run": "cypress run",

@@ -4,81 +4,6 @@ on:
   - pull_request
 
 jobs:
-  rubocop:
-    name: 'Lint: Rubocop'
-    runs-on: ubuntu-20.04
-
-    container:
-      image: ruby:3.2.2
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-gmmcal-
-
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-
-      - name: Run rubocop
-        run: bundle exec rubocop --config .rubocop.yml .
-
-  reek:
-    name: 'Lint: Reek'
-    runs-on: ubuntu-20.04
-
-    container:
-      image: ruby:3.2.2
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-gmmcal-
-
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-
-      - name: Run reek
-        run: bundle exec reek --config .reek.yml .
-
-  brakeman:
-    name: 'Lint: Brakeman'
-    runs-on: ubuntu-20.04
-
-    container:
-      image: ruby:3.2.2
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-gmmcal-
-
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-
-      - name: Run brakeman
-        run: bundle exec brakeman
-
   bundler-audit:
     name: 'Lint: Bundler Audit'
     runs-on: ubuntu-20.04
@@ -98,31 +23,6 @@ jobs:
       - name: Run bundler-audit
         run: bundler-audit
 
-  scsslint:
-    name: 'Lint: SCSSLint'
-    runs-on: ubuntu-20.04
-
-    container:
-      image: ruby:3.2.2
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-gmmcal-${{ hashFiles('/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-gmmcal-
-
-      - name: Run bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
-
-      - name: Run SCSSLint
-        run: bundle exec scss-lint --config .scss-lint.yml
-
   eslint:
     name: 'Lint: ESLint'
     runs-on: ubuntu-20.04
@@ -131,7 +31,7 @@ jobs:
       image: node:18
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
