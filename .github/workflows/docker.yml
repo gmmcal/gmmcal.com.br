@@ -29,15 +29,13 @@ jobs:
           context: .
           target: test
           tags: "gmmcal/gmmcal:test"
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
+          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
 
   rubocop:
     name: 'Lint: Rubocop'
     runs-on: ubuntu-20.04
     needs: docker
-
-    if: github.event_name == 'pull_request'
 
     steps:
       - name: Run rubocop
@@ -49,8 +47,6 @@ jobs:
     runs-on: ubuntu-20.04
     needs: docker
 
-    if: github.event_name == 'pull_request'
-
     steps:
       - name: Run reek
         run: |
@@ -61,8 +57,6 @@ jobs:
     runs-on: ubuntu-20.04
     needs: docker
 
-    if: github.event_name == 'pull_request'
-
     steps:
       - name: Run brakeman
         run: |
@@ -72,8 +66,6 @@ jobs:
     name: 'Lint: SCSSLint'
     runs-on: ubuntu-20.04
     needs: docker
-
-    if: github.event_name == 'pull_request'
 
     steps:
       - name: Run SCSSLint

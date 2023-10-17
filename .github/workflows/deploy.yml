@@ -10,6 +10,64 @@ on:
     types: [published]
 
 jobs:
+  docker_production:
+    name: 'Docker: Production'
+    runs-on: ubuntu-20.04
+
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build test image
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          context: .
+          target: production
+          tags: "gmmcal/gmmcal:latest"
+          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
+          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
+
+  docker_development:
+    name: 'Docker: Development'
+    runs-on: ubuntu-20.04
+
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build test image
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          context: .
+          target: development
+          tags: "gmmcal/gmmcal:development"
+          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
+          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
+
   staging:
     name: 'Deploy: Staging'
     runs-on: ubuntu-20.04
