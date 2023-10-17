@@ -1,0 +1,118 @@
+name: Pipeline
+
+on:
+  - pull_request
+
+jobs:
+  build:
+    name: Test
+    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    secrets: inherit
+
+  cypress:
+    name: Cypress
+    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    secrets: inherit
+    with:
+      target: cypress
+
+  rubocop:
+    name: Rubocop
+    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    with:
+      command: bundle exec rubocop --config .rubocop.yml .
+    needs: build
+
+  reek:
+    name: Reek
+    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    with:
+      command: bundle exec reek --config .reek.yml .
+    needs: build
+
+  brakeman:
+    name: Brakeman
+    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    with:
+      command: bundle exec brakeman
+    needs: build
+
+  scsslint:
+    name: SCSSLint
+    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    with:
+      command: bundle exec scss-lint --config .scss-lint.yml
+    needs: build
+
+  tests:
+    name: Backend
+    uses: gmmcal/gmmcal.com.br/.github/workflows/tests.yml@reusable
+    needs: build
+
+  e2e-admin:
+    name: Admin
+    uses: gmmcal/gmmcal.com.br/.github/workflows/cypress.yml@reusable
+    with:
+      pattern: spec/end-to-end/tests/admin/**.js
+      artifact-name: cypress-screenshots-backend
+    needs: cypress
+
+  e2e-frontend:
+    name: Frontend
+    uses: gmmcal/gmmcal.com.br/.github/workflows/cypress.yml@reusable
+    with:
+      pattern: spec/end-to-end/tests/frontend/**.js
+      artifact-name: cypress-screenshots-frontend
+    needs: cypress
+
+  bundler-audit:
+    name: Bundler Audit / Lint
+    runs-on: ubuntu-20.04
+    needs: build # I don't need to wait, but I am waiting only because of pipeline organization
+
+    container:
+      image: ruby:3.2.2
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Bundler Audit
+        run: gem install bundler-audit
+
+      - name: Update advisory database
+        run: bundler-audit update
+
+      - name: Run bundler-audit
+        run: bundler-audit
+
+  eslint:
+    name: ESLint / Lint
+    runs-on: ubuntu-20.04
+    needs: build # I don't need to wait, but I am waiting only because of pipeline organization
+
+    container:
+      image: node:18
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-gmmcal-${{ hashFiles('/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-gmmcal-
+
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Run ESLint - Application
+        run: yarn eslint
+
+      - name: Run ESLint - Tests
+        run: yarn eslint:tests

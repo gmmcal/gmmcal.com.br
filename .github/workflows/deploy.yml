@@ -10,69 +10,25 @@ on:
     types: [published]
 
 jobs:
-  docker_production:
-    name: 'Docker: Production'
-    runs-on: ubuntu-20.04
+  build_production:
+    name: 'Build: Production'
+    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    secrets: inherit
+    with:
+      target: production
 
+  build_development:
+    name: 'Build: Development'
+    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    secrets: inherit
+    with:
+      target: development
     if: github.event_name == 'push'
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build test image
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          context: .
-          target: production
-          tags: "gmmcal/gmmcal:latest"
-          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
-          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
-
-  docker_development:
-    name: 'Docker: Development'
-    runs-on: ubuntu-20.04
-
-    if: github.event_name == 'push'
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build test image
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          context: .
-          target: development
-          tags: "gmmcal/gmmcal:development"
-          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
-          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
-
-  staging:
+  deploy_staging:
     name: 'Deploy: Staging'
     runs-on: ubuntu-20.04
-
-    if: github.event_name == 'push'
+    needs: build_production
 
     steps:
       - name: Deploy
@@ -82,9 +38,10 @@ jobs:
         run: |
           curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY&ref=$GITHUB_SHA"
 
-  production:
+  deploy_production:
     name: 'Deploy: Production'
     runs-on: ubuntu-20.04
+    needs: deploy_staging
 
     if: github.event_name != 'push'
 
