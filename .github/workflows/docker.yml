@@ -1,12 +1,20 @@
 name: Build
 
 on:
-  - push
-  - pull_request
+  workflow_call:
+    inputs:
+      tag-name:
+        type: string
+        required: false
+        default: "gmmcal/gmmcal"
+      target:
+        type: string
+        required: false
+        default: test
 
 jobs:
-  docker:
-    name: 'Docker: Build'
+  build:
+    name: 'Build Image'
     runs-on: ubuntu-20.04
 
     steps:
@@ -22,73 +30,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build test image
+      - name: Build image
         uses: docker/build-push-action@v5
         with:
           push: true
           context: .
-          target: test
-          tags: "gmmcal/gmmcal:test"
+          target: ${{ inputs.target }}
+          tags: ${{ inputs.tag-name }}:${{ inputs.target }}
           cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
           cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
-
-  rubocop:
-    name: 'Lint: Rubocop'
-    runs-on: ubuntu-20.04
-    needs: docker
-
-    steps:
-      - name: Run rubocop
-        run: |
-          docker run --rm gmmcal/gmmcal:test bundle exec rubocop --config .rubocop.yml .
-
-  reek:
-    name: 'Lint: Reek'
-    runs-on: ubuntu-20.04
-    needs: docker
-
-    steps:
-      - name: Run reek
-        run: |
-          docker run --rm gmmcal/gmmcal:test bundle exec reek --config .reek.yml .
-
-  brakeman:
-    name: 'Lint: Brakeman'
-    runs-on: ubuntu-20.04
-    needs: docker
-
-    steps:
-      - name: Run brakeman
-        run: |
-          docker run --rm gmmcal/gmmcal:test bundle exec brakeman
-
-  scsslint:
-    name: 'Lint: SCSSLint'
-    runs-on: ubuntu-20.04
-    needs: docker
-
-    steps:
-      - name: Run SCSSLint
-        run: |
-          docker run --rm gmmcal/gmmcal:test bundle exec scss-lint --config .scss-lint.yml
-
-  tests:
-    name: 'Unit: Backend'
-    runs-on: ubuntu-20.04
-    needs: docker
-
-    services:
-      postgres:
-        image: postgres:16
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: gmmcalcombr_test
-        ports:
-          - 5432:5432
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-
-    steps:
-      - name: Run rubocop
-        run: |
-          docker run --network=${{ job.services.postgres.network }} -e DATABASE_URL='postgres://postgres:postgres@postgres:5432/gmmcalcombr_test' -e DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true --rm gmmcal/gmmcal:test

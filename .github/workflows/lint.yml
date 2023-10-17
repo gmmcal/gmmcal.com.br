@@ -1,55 +1,17 @@
 name: Lint
 
 on:
-  - pull_request
+  workflow_call:
+    inputs:
+      command:
+        type: string
+        required: true
 
 jobs:
-  bundler-audit:
-    name: 'Lint: Bundler Audit'
+  lint:
+    name: Lint
     runs-on: ubuntu-20.04
 
-    container:
-      image: ruby:3.2.2
-
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Bundler Audit
-        run: gem install bundler-audit
-
-      - name: Update advisory database
-        run: bundler-audit update
-
-      - name: Run bundler-audit
-        run: bundler-audit
-
-  eslint:
-    name: 'Lint: ESLint'
-    runs-on: ubuntu-20.04
-
-    container:
-      image: node:18
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-gmmcal-${{ hashFiles('/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-gmmcal-
-
-      - name: Run yarn install
-        run: yarn install
-
-      - name: Run ESLint - Application
-        run: yarn eslint
-
-      - name: Run ESLint - Tests
-        run: yarn eslint:tests
+      - name: Execute linter
+        run: docker run --rm gmmcal/gmmcal:test ${{ inputs.command }}
