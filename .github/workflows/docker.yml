@@ -37,5 +37,5 @@ jobs:
           context: .
           target: ${{ inputs.target }}
           tags: ${{ inputs.tag-name }}:${{ inputs.target }}
-          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache
-          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache,mode=max
+          cache-from: type=registry,ref=gmmcal/gmmcal:buildcache${{ inputs.target }}
+          cache-to: type=registry,ref=gmmcal/gmmcal:buildcache${{ inputs.target }},mode=max
