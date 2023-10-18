@@ -6,52 +6,52 @@ on:
 jobs:
   build:
     name: Test
-    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    uses: ./.github/workflows/docker.yml
     secrets: inherit
 
   cypress:
     name: Cypress
-    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    uses: ./.github/workflows/docker.yml
     secrets: inherit
     with:
       target: cypress
 
   rubocop:
     name: Rubocop
-    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    uses: ./.github/workflows/lint.yml
     with:
       command: bundle exec rubocop --config .rubocop.yml .
     needs: build
 
   reek:
     name: Reek
-    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    uses: ./.github/workflows/lint.yml
     with:
       command: bundle exec reek --config .reek.yml .
     needs: build
 
   brakeman:
     name: Brakeman
-    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    uses: ./.github/workflows/lint.yml
     with:
       command: bundle exec brakeman
     needs: build
 
   scsslint:
     name: SCSSLint
-    uses: gmmcal/gmmcal.com.br/.github/workflows/lint.yml@reusable
+    uses: ./.github/workflows/lint.yml
     with:
       command: bundle exec scss-lint --config .scss-lint.yml
     needs: build
 
   tests:
     name: Backend
-    uses: gmmcal/gmmcal.com.br/.github/workflows/tests.yml@reusable
+    uses: ./.github/workflows/tests.yml
     needs: build
 
   e2e-admin:
     name: Admin
-    uses: gmmcal/gmmcal.com.br/.github/workflows/cypress.yml@reusable
+    uses: ./.github/workflows/cypress.yml
     with:
       pattern: spec/end-to-end/tests/admin/**.js
       artifact-name: cypress-screenshots-backend
@@ -59,7 +59,7 @@ jobs:
 
   e2e-frontend:
     name: Frontend
-    uses: gmmcal/gmmcal.com.br/.github/workflows/cypress.yml@reusable
+    uses: ./.github/workflows/cypress.yml
     with:
       pattern: spec/end-to-end/tests/frontend/**.js
       artifact-name: cypress-screenshots-frontend

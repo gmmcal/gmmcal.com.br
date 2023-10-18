@@ -12,14 +12,14 @@ on:
 jobs:
   build_production:
     name: 'Build: Production'
-    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    uses: ./.github/workflows/docker.yml
     secrets: inherit
     with:
       target: production
 
   build_development:
     name: 'Build: Development'
-    uses: gmmcal/gmmcal.com.br/.github/workflows/docker.yml@reusable
+    uses: ./.github/workflows/docker.yml
     secrets: inherit
     with:
       target: development
