@@ -54,16 +54,14 @@ jobs:
     uses: ./.github/workflows/cypress.yml
     with:
       pattern: spec/end-to-end/tests/admin/**.js
-      artifact-name: cypress-screenshots-backend
-    needs: cypress
+    needs: [build, cypress]
 
   e2e-frontend:
     name: Frontend
     uses: ./.github/workflows/cypress.yml
     with:
       pattern: spec/end-to-end/tests/frontend/**.js
-      artifact-name: cypress-screenshots-frontend
-    needs: cypress
+    needs: [build, cypress]
 
   bundler-audit:
     name: Bundler Audit / Lint

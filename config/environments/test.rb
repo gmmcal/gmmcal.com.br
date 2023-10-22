@@ -63,4 +63,6 @@ Rails.application.configure do
   logger           = ActiveSupport::Logger.new($stdout)
   logger.formatter = config.log_formatter
   config.logger    = config.logger = Logger.new('/dev/null')
+
+  config.hosts = %w[localhost web] # web is used for cypress tests on CI
 end
