@@ -132,4 +132,4 @@ RUN ls -la
 # ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
-CMD ["cypress", "run", "-c", "'{\"e2e\": {\"baseUrl\":\"http://web:3000\"}}'"]
+CMD ["cypress", "run"]
