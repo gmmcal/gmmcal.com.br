@@ -38,6 +38,7 @@ gem 'turbo-rails'
 group :development do
   # gem 'i18n-debug'
   gem 'brakeman'
+  gem 'bundler-audit'
   gem 'listen'
   gem 'reek'
   gem 'rubocop'
