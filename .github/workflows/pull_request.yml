@@ -64,53 +64,24 @@ jobs:
     needs: [build, cypress]
 
   bundler-audit:
-    name: Bundler Audit / Lint
-    runs-on: ubuntu-20.04
-    needs: build # I don't need to wait, but I am waiting only because of pipeline organization
-
-    container:
-      image: ruby:3.2.2
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Bundler Audit
-        run: gem install bundler-audit
-
-      - name: Update advisory database
-        run: bundler-audit update
-
-      - name: Run bundler-audit
-        run: bundler-audit
+    name: Bundler Audit
+    uses: ./.github/workflows/lint.yml
+    with:
+      command: bundle exec bundle-audit check --update
+    needs: build
 
   eslint:
-    name: ESLint / Lint
-    runs-on: ubuntu-20.04
-    needs: build # I don't need to wait, but I am waiting only because of pipeline organization
+    name: ESLint
+    uses: ./.github/workflows/lint.yml
+    with:
+      command: yarn eslint
+      image: gmmcal/gmmcal:cypress
+    needs: cypress
 
-    container:
-      image: node:18
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-gmmcal-${{ hashFiles('/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-gmmcal-
-
-      - name: Run yarn install
-        run: yarn install
-
-      - name: Run ESLint - Application
-        run: yarn eslint
-
-      - name: Run ESLint - Tests
-        run: yarn eslint:tests
+  eslint_tests:
+    name: ESLint / Tests
+    uses: ./.github/workflows/lint.yml
+    with:
+      command: yarn eslint:tests
+      image: gmmcal/gmmcal:cypress
+    needs: cypress

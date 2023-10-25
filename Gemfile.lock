@@ -86,6 +86,9 @@ GEM
       msgpack (~> 1.2)
     brakeman (6.0.1)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -343,6 +346,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  bundler-audit
   cypress-on-rails
   database_cleaner
   devise

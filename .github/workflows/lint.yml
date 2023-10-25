@@ -6,6 +6,10 @@ on:
       command:
         type: string
         required: true
+      image:
+        type: string
+        required: false
+        default: gmmcal/gmmcal:test
 
 jobs:
   lint:
@@ -13,5 +17,5 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Execute linter
-        run: docker run --rm gmmcal/gmmcal:test ${{ inputs.command }}
+      - name: Execute ${{ inputs.command }}
+        run: docker run --rm ${{ inputs.image }} ${{ inputs.command }}
