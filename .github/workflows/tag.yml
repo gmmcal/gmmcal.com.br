@@ -1,0 +1,59 @@
+name: Tag
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0"
+
+jobs:
+  determine-tag:
+    name: Determine version number
+    runs-on: ubuntu-20.04
+    outputs:
+      version: ${{ steps.tag.outputs.version }}
+      has-changes: ${{ steps.diff.outputs.has_changes }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+
+      - name: Get diff
+        id: diff
+        run: |
+          LATEST=`git describe --tags --abbrev=0`
+          DIFF=`git diff --name-only $LATEST $GITHUB_SHA | awk '{printf "%s+",$0} END {print ""}'`
+          if [ "$DIFF" != '' ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT;
+          fi
+
+      - name: Bump tag number
+        id: tag
+        run: |
+          VERSION=`git describe --tags --abbrev=0 | awk -F. '{OFS="."; $NF+=1; print $0}'`
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Print version
+        run: echo ${{ steps.tag.outputs.version }}
+
+  create-tag:
+    name: Create tag
+    runs-on: ubuntu-20.04
+    needs: determine-tag
+    if: needs.determine-tag.outputs.has-changes == 'true'
+
+    steps:
+      - name: Create Tag ${{needs.determine-tag.outputs.version}}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{needs.determine-tag.outputs.version}}',
+              sha: context.sha
+            })
