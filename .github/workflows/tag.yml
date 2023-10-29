@@ -62,4 +62,6 @@ jobs:
     name: Release
     uses: ./.github/workflows/release.yml
     secrets: inherit
-    needs: create-tag
+    needs: [create-tag, determine-tag]
+    with:
+      tag: ${{needs.determine-tag.outputs.version}}
