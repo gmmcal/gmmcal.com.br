@@ -57,3 +57,9 @@ jobs:
               ref: 'refs/tags/${{needs.determine-tag.outputs.version}}',
               sha: context.sha
             })
+
+  create-release:
+    name: Release
+    uses: ./.github/workflows/release.yml
+    secrets: inherit
+    needs: create-tag
