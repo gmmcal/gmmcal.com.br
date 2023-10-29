@@ -1,4 +1,4 @@
-name: Lint
+name: Backend Tests
 
 on:
   workflow_call:
@@ -8,7 +8,7 @@ on:
         required: false
 
 jobs:
-  rubocop:
+  tests:
     name: Tests
     runs-on: ubuntu-20.04
 
