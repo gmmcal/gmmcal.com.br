@@ -1,18 +1,24 @@
 name: Release
 
 on:
-  push:
-    tags:
-    - 'v*'
+  workflow_call:
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - uses: ncipollo/release-action@v1
-      with:
-        generateReleaseNotes: true
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: true
+
+  deploy:
+    name: Deploy
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    needs: release

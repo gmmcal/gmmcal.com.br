@@ -6,6 +6,7 @@ on:
       - main
   release:
     types: [published]
+  workflow_call:
 
 jobs:
   build_production:
