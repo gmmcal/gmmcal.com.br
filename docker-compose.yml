@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   db:
@@ -22,6 +22,7 @@ services:
       - db
     networks:
       - db
+    platform: linux/amd64/v2
     environment:
       RAILS_ENV: development
       DATABASE_HOST: db
