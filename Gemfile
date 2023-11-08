@@ -20,7 +20,6 @@ gem 'draper'
 gem 'importmap-rails'
 gem 'sprockets-rails'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
 
 # Admin gems
 gem 'devise'

@@ -337,7 +337,6 @@ GEM
     websocket-extensions (0.1.5)
     wicked_pdf (2.7.0)
       activesupport
-    wkhtmltopdf-binary (0.12.6.6)
     zeitwerk (2.6.12)
 
 PLATFORMS
@@ -375,7 +374,6 @@ DEPENDENCIES
   sprockets-rails
   turbo-rails
   wicked_pdf
-  wkhtmltopdf-binary
 
 BUNDLED WITH
    2.4.10
