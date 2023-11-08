@@ -42,8 +42,15 @@ ENV RAILS_ENV="production" \
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-  apt-get install --no-install-recommends -y curl libvips postgresql-client && \
+  apt-get install --no-install-recommends -y curl wget libvips postgresql-client && \
+  # dependencies for wkhtmltopdf
+  apt-get install --no-install-recommends -y xfonts-base xfonts-75dpi && \
+  # / dependencies for wkhtmltopdf
   rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# install wkhtmltopdf
+RUN wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_arm64.deb
+RUN apt install ./wkhtmltox_0.12.6.1-3.bookworm_arm64.deb
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
@@ -68,8 +75,15 @@ ENV RAILS_ENV="development"
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-  apt-get install --no-install-recommends -y curl libvips postgresql-client && \
+  apt-get install --no-install-recommends -y curl wget libvips postgresql-client && \
+  # dependencies for wkhtmltopdf
+  apt-get install --no-install-recommends -y xfonts-base xfonts-75dpi && \
+  # / dependencies for wkhtmltopdf
   rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# install wkhtmltopdf
+RUN wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_arm64.deb
+RUN apt install ./wkhtmltox_0.12.6.1-3.bookworm_arm64.deb
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
