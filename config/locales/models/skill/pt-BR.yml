@@ -2,8 +2,8 @@ pt-BR:
   activerecord:
     models:
       skill:
-        one: Habilidade
-        other: Habilidades
+        one: Interesse
+        other: Interesses
     attributes:
       skill:
         name: Nome

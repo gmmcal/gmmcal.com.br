@@ -13,7 +13,7 @@ describe('Skill', () => {
     beforeEach(() => {
       cy.appScenario('skill/list')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Skills').click({force: true})
+      cy.contains('.sidebar a', 'Interests').click({force: true})
     })
 
     it('shows the current content', () => {
@@ -29,7 +29,7 @@ describe('Skill', () => {
     beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Skills').click({force: true})
+      cy.contains('.sidebar a', 'Interests').click({force: true})
       cy.contains('a.btn', 'New').click({force: true})
     })
 
@@ -103,7 +103,7 @@ describe('Skill', () => {
       })
 
       it('shows confirmation message', () => {
-        cy.get('.alert').should('have.text', 'Skill was successfully created.')
+        cy.get('.alert').should('have.text', 'Interest was successfully created.')
       })
     })
   })
@@ -112,7 +112,7 @@ describe('Skill', () => {
     beforeEach(() => {
       cy.appScenario('skill/edit')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Skills').click({force: true})
+      cy.contains('.sidebar a', 'Interests').click({force: true})
       cy.contains('.btn-outline-primary', 'Edit').click({force: true})
     })
 
@@ -192,7 +192,7 @@ describe('Skill', () => {
       })
 
       it('shows confirmation message', () => {
-        cy.get('.alert').should('have.text', 'Skill was successfully updated.')
+        cy.get('.alert').should('have.text', 'Interest was successfully updated.')
       })
     })
   })
@@ -201,7 +201,7 @@ describe('Skill', () => {
     beforeEach(() => {
       cy.appScenario('skill/delete')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Skills').click({force: true})
+      cy.contains('.sidebar a', 'Interests').click({force: true})
       cy.contains('.btn-danger', 'Delete').click({force: true})
     })
 
@@ -210,7 +210,7 @@ describe('Skill', () => {
     })
 
     it('shows confirmation message', () => {
-      cy.get('.alert').should('have.text', 'Skill was successfully deleted.')
+      cy.get('.alert').should('have.text', 'Interest was successfully deleted.')
     })
   })
 })
