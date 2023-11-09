@@ -68,7 +68,7 @@ describe('Navigation', {testIsolation: false}, () => {
 
       context('Skills', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Skills').click()
+          cy.get('.navbar-nav').contains('Interests').click()
         })
 
         it('shows section', () => {
@@ -76,7 +76,7 @@ describe('Navigation', {testIsolation: false}, () => {
         })
 
         it('activate menu', () => {
-          cy.get('.navbar-nav').contains('Skills').parent().should('have.class', 'active')
+          cy.get('.navbar-nav').contains('Interests').parent().should('have.class', 'active')
         })
 
         it('changes url', () => {
@@ -179,7 +179,7 @@ describe('Navigation', {testIsolation: false}, () => {
 
       context('Skills', () => {
         beforeEach(() => {
-          cy.get('.navbar-nav').contains('Habilidades').click()
+          cy.get('.navbar-nav').contains('Interesses').click()
         })
 
         it('shows section', () => {
@@ -187,7 +187,7 @@ describe('Navigation', {testIsolation: false}, () => {
         })
 
         it('activate menu', () => {
-          cy.get('.navbar-nav').contains('Habilidades').parent().should('have.class', 'active')
+          cy.get('.navbar-nav').contains('Interesses').parent().should('have.class', 'active')
         })
 
         it('changes url', () => {

@@ -9,7 +9,7 @@ en:
         pt-BR: BR
         home: Home
         about: About
-        skills: Skills
+        skills: Interests
         experience: Experience
         education: Education
         portfolio: Portfolio
@@ -25,7 +25,7 @@ en:
         twitter: '@gmmcal'
   cv:
     experience: 'Experiences'
-    skill: 'Skills'
+    skill: 'Interests'
     education: 'Educations'
     contact: 'Contact'
     spoken_languages: 'Fluent in: %{languages}'
