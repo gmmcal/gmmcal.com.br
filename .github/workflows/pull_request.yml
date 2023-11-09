@@ -16,6 +16,22 @@ jobs:
     with:
       target: cypress
 
+  development:
+    name: Development
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+    with:
+      target: development
+      publish: false
+
+  production:
+    name: Production
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+    with:
+      target: production
+      publish: false
+
   rubocop:
     name: Rubocop
     uses: ./.github/workflows/lint.yml
