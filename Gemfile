@@ -19,7 +19,10 @@ gem 'draper'
 # Use SCSS for stylesheets
 gem 'importmap-rails'
 gem 'sprockets-rails'
-gem 'wicked_pdf'
+
+# CV PDF generation
+gem 'matrix'
+gem 'prawn'
 
 # Admin gems
 gem 'devise'

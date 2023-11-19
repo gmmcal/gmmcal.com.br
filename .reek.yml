@@ -10,6 +10,14 @@ detectors:
   InstanceVariableAssumption:
     exclude:
       - "/Controller$/"
+  UncommunicativeMethodName:
+    exclude:
+      - "Pdf::Format#h1"
+      - "Pdf::Format#h2"
+      - "Pdf::Format#h3"
+      - "Pdf::Format#h5"
+  TooManyStatements:
+    max_statements: 7
 
 directories:
   "db/migrate":

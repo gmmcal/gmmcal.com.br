@@ -15,6 +15,10 @@ class WorkExperienceDecorator < ApplicationDecorator
     h.end_date(object.end_date)
   end
 
+  def description
+    h.markdown(object.description)
+  end
+
   def self.collection_decorator_class
     WorkExperiencesDecorator
   end
