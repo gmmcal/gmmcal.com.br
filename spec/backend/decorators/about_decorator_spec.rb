@@ -16,4 +16,18 @@ RSpec.describe AboutDecorator, type: :decorator do
       expect(about.country).to eq('Netherlands')
     end
   end
+
+  describe '#spoken_languages' do
+    it 'returns en for english' do
+      I18n.with_locale(:en) do
+        expect(about.spoken_languages).to eq('English, Portuguese')
+      end
+    end
+
+    it 'returns pt-BR for portuguese' do
+      I18n.with_locale(:'pt-BR') do
+        expect(about.spoken_languages).to eq('Inglês, Português')
+      end
+    end
+  end
 end

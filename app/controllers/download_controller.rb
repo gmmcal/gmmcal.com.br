@@ -2,12 +2,24 @@
 
 class DownloadController < WebsiteController
   def cv
-    render pdf: "curriculum-gustavo-cunha-#{I18n.locale.downcase}",
-           disposition: params[:disposition],
-           show_as_html: params.key?('debug')
+    send_data(
+      pdf.render,
+      filename: "curriculum-gustavo-cunha-#{I18n.locale.downcase}",
+      type: 'application/pdf',
+      disposition: params[:disposition]
+    )
   end
 
   private
+
+  def pdf
+    file = Cv.new(@skills.cv, page_size: 'A4', page_layout: :landscape)
+    file.about(@about, request.host)
+    file.experiences(@work_experiences)
+    file.educations(@educations)
+    file.contact(@about, request.host)
+    file
+  end
 
   def set_data
     fetch_from_cache('about')

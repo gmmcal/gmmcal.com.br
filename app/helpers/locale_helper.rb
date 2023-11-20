@@ -9,10 +9,6 @@ module LocaleHelper
     I18n.available_locales - [I18n.locale]
   end
 
-  def spoken_languages
-    spoken_languages_list.join(', ')
-  end
-
   private
 
   def spoken_languages_list

@@ -10,4 +10,8 @@ class AboutDecorator < ApplicationDecorator
   def country
     object.country_name
   end
+
+  def spoken_languages
+    h.spoken_languages_list.join(', ')
+  end
 end

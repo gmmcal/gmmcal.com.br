@@ -30,18 +30,4 @@ RSpec.describe LocaleHelper, type: :helper do
       end
     end
   end
-
-  describe '#spoken_languages' do
-    it 'returns en for english' do
-      I18n.with_locale(:en) do
-        expect(helper.spoken_languages).to eq('English, Portuguese')
-      end
-    end
-
-    it 'returns pt-BR for portuguese' do
-      I18n.with_locale(:'pt-BR') do
-        expect(helper.spoken_languages).to eq('Inglês, Português')
-      end
-    end
-  end
 end

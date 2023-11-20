@@ -9,7 +9,7 @@ RSpec.describe TextHelper, type: :helper do
     end
 
     it 'returns html string if text is passed' do
-      expect(helper.markdown('text')).to eq('<p>text</p>')
+      expect(helper.markdown('text').squish).to eq('<p>text</p>')
     end
   end
 end

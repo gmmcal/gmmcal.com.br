@@ -3,12 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe DownloadController, type: :controller do
-  let(:sample_pdf) { '%PDF-1.4\ntrailer<</Root<</Pages<</Kids[<</MediaBox[0 0 3 3]>>]>>>>>>' }
+  before do
+    create(:about, locale: locale)
+    create_list(:work_experience, 5, locale: locale)
+    create_list(:education, 3, locale: locale)
+  end
 
   describe 'CV in English' do
-    before do
-      allow(controller).to receive(:make_pdf).and_return(sample_pdf)
+    let(:locale) { 'en' }
 
+    before do
       get :cv, params: { locale: 'en' }
     end
 
@@ -22,9 +26,9 @@ RSpec.describe DownloadController, type: :controller do
   end
 
   describe 'CV in Portuguese' do
-    before do
-      allow(controller).to receive(:make_pdf).and_return(sample_pdf)
+    let(:locale) { 'pt-BR' }
 
+    before do
       get :cv, params: { locale: 'pt-BR' }
     end
 

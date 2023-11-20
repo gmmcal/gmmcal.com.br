@@ -2,7 +2,7 @@
 
 class SkillsDecorator < Draper::CollectionDecorator
   def cv
-    order_items.slice(0, 10)
+    order_items.slice(0, 10).map(&:name)
   end
 
   private
