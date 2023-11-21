@@ -22,7 +22,6 @@ services:
       - db
     networks:
       - db
-    platform: linux/amd64/v2
     environment:
       RAILS_ENV: development
       DATABASE_HOST: db
