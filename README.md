@@ -4,9 +4,6 @@ Personal Website: [https://www.gustavocunha.dev](https://www.gustavocunha.dev)
 [![github tag](https://img.shields.io/github/tag/gmmcal/gmmcal.com.br.svg)](https://github.com/gmmcal/gmmcal.com.br/releases)
 ![repo size](https://img.shields.io/github/repo-size/gmmcal/gmmcal.com.br.svg)
 [![license](https://img.shields.io/github/license/gmmcal/gmmcal.com.br.svg)](LICENSE)
-[![Unit Tests](https://github.com/gmmcal/gmmcal.com.br/actions/workflows/backend.yml/badge.svg?branch=main)](https://github.com/gmmcal/gmmcal.com.br/actions/workflows/backend.yml)
-[![End-to-end Tests](https://github.com/gmmcal/gmmcal.com.br/actions/workflows/cypress.yml/badge.svg)](https://github.com/gmmcal/gmmcal.com.br/actions/workflows/cypress.yml)
-[![Lint](https://github.com/gmmcal/gmmcal.com.br/actions/workflows/lint.yml/badge.svg)](https://github.com/gmmcal/gmmcal.com.br/actions/workflows/lint.yml)
 
 My personal website code, playground and learning lab. You can read all about the project on the [wiki page](https://github.com/gmmcal/gmmcal.com.br/wiki)
 
