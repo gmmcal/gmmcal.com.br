@@ -15,7 +15,11 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-20.04
+    container:
+      image: ${{ inputs.image }}
+      options: "--user=root:root"
 
     steps:
       - name: Execute ${{ inputs.command }}
-        run: docker run --rm ${{ inputs.image }} ${{ inputs.command }}
+        run: ${{ inputs.command }}
+        working-directory: /rails

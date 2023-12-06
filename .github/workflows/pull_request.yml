@@ -63,6 +63,8 @@ jobs:
   tests:
     name: Backend
     uses: ./.github/workflows/tests.yml
+    with:
+      command: bundle exec rspec
     needs: build
 
   e2e-admin:
