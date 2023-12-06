@@ -5,12 +5,17 @@ on:
     inputs:
       command:
         type: string
-        required: false
+        required: true
 
 jobs:
   tests:
     name: Tests
     runs-on: ubuntu-20.04
+    container:
+      image: gmmcal/gmmcal:test
+      env:
+        DATABASE_URL: postgres://postgres:postgres@postgres:5432/gmmcalcombr_test
+        DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
 
     services:
       postgres:
@@ -24,5 +29,10 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
+      - name: Migrate database
+        run: bundle exec rails db:migrate
+        working-directory: /rails
+
       - name: Execute tests
-        run: docker run --network=${{ job.services.postgres.network }} -e DATABASE_URL='postgres://postgres:postgres@postgres:5432/gmmcalcombr_test' -e DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true --rm gmmcal/gmmcal:test ${{ inputs.command }}
+        run: ${{ inputs.command }}
+        working-directory: /rails

@@ -11,6 +11,12 @@ jobs:
   e2e:
     name: 'End-to-end'
     runs-on: ubuntu-20.04
+    container:
+      image: gmmcal/gmmcal:cypress
+      env:
+        CYPRESS_BASE_URL: http://web:3000
+        CYPRESS_SPEC_PATTERN: ${{ inputs.pattern }}
+
     strategy:
       matrix:
         browser: [chrome, firefox]
@@ -36,4 +42,5 @@ jobs:
 
     steps:
       - name: Run tests on ${{ matrix.browser }}
-        run: docker run --network=${{ job.services.web.network }} -e CYPRESS_BASE_URL='http://web:3000' -e CYPRESS_SPEC_PATTERN='${{ inputs.pattern }}' gmmcal/gmmcal:cypress cypress run --browser ${{ matrix.browser }}
+        run: cypress run --browser ${{ matrix.browser }}
+        working-directory: /rails
