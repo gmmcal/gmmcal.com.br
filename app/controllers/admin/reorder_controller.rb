@@ -7,7 +7,7 @@ module Admin
     def update
       authorize :reorder
 
-      publish("reorder_#{permitted_attributes[:model]}".to_sym, ids: ids)
+      publish(:"reorder_#{permitted_attributes[:model]}", ids: ids)
     end
 
     private
