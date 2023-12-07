@@ -27,19 +27,25 @@ jobs:
   deploy_staging:
     name: 'Deploy: Staging'
     runs-on: ubuntu-20.04
+    environment:
+      name: staging
+      url: https://staging.gustavocunha.dev
     needs: build_production
 
     steps:
       - name: Deploy
         env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_STAGING }}
-          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE_STAGING }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
         run: |
           curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
 
   deploy_production:
     name: 'Deploy: Production'
     runs-on: ubuntu-20.04
+    environment:
+      name: production
+      url: https://www.gustavocunha.dev
     needs: deploy_staging
 
     if: github.event_name != 'push'
@@ -47,7 +53,7 @@ jobs:
     steps:
       - name: Deploy
         env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY_PRODUCTION }}
-          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE_PRODUCTION }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
         run: |
           curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
