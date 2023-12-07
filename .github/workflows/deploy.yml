@@ -15,6 +15,9 @@ jobs:
     secrets: inherit
     with:
       target: production
+    concurrency:
+      group: build
+      cancel-in-progress: true
 
   build_development:
     name: 'Build: Development'
@@ -23,6 +26,9 @@ jobs:
     with:
       target: development
     if: github.event_name == 'push'
+    concurrency:
+      group: build
+      cancel-in-progress: true
 
   deploy_staging:
     name: 'Deploy: Staging'
@@ -31,6 +37,8 @@ jobs:
       name: staging
       url: https://staging.gustavocunha.dev
     needs: build_production
+    concurrency:
+      group: deploy
 
     steps:
       - name: Deploy
@@ -47,6 +55,8 @@ jobs:
       name: production
       url: https://www.gustavocunha.dev
     needs: deploy_staging
+    concurrency:
+      group: deploy
 
     if: github.event_name != 'push'
 
