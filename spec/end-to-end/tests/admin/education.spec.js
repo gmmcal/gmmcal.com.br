@@ -120,9 +120,10 @@ describe('Education', () => {
 
     context('With valid data', () => {
       beforeEach(() => {
+        const referenceYear = new Date().getFullYear() - 4
         cy.get('input[name="education[course]"]').clear().type('Some title at some company')
         cy.get('input[name="education[institution]"]').clear().type('Some title at some company')
-        cy.get('select[name="education[start_date(1i)]"]').select('2018')
+        cy.get('select[name="education[start_date(1i)]"]').select(referenceYear.toString())
         cy.get('select[name="education[start_date(2i)]"]').select('1')
         cy.get('select[name="education[start_date(3i)]"]').select('1')
         cy.get('select[name="education[locale]"]').select('en')
@@ -248,9 +249,10 @@ describe('Education', () => {
 
     context('With valid data', () => {
       beforeEach(function () {
+        const referenceYear = new Date().getFullYear() - 4
         cy.get('form.edit_education input[name="education[course]"]').clear().type('Software Engineer')
         cy.get('form.edit_education input[name="education[institution]"]').clear().type('Some title at some company')
-        cy.get('form.edit_education select[name="education[start_date(1i)]"]').select('2018')
+        cy.get('form.edit_education select[name="education[start_date(1i)]"]').select(referenceYear.toString())
         cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('1')
         cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('1')
         cy.get('form.edit_education select[name="education[locale]"]').select('en')

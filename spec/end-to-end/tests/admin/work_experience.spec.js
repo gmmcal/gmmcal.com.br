@@ -130,11 +130,12 @@ describe('Work Experience', () => {
 
     context('With valid data', () => {
       beforeEach(() => {
+        const referenceYear = new Date().getFullYear() - 4
         cy.get('input[name="work_experience[company_name]"]').clear().type('Name of company')
         cy.get('input[name="work_experience[position]"]').clear().type('Programmer')
         cy.get('input[name="work_experience[city]"]').clear().type('Maceió')
         cy.get('select[name="work_experience[country]"]').select('BR')
-        cy.get('select[name="work_experience[start_date(1i)]"]').select('2018')
+        cy.get('select[name="work_experience[start_date(1i)]"]').select(referenceYear.toString())
         cy.get('select[name="work_experience[start_date(2i)]"]').select('1')
         cy.get('select[name="work_experience[start_date(3i)]"]').select('1')
         cy.get('select[name="work_experience[locale]"]').select('en')
@@ -273,11 +274,12 @@ describe('Work Experience', () => {
 
     context('With valid data', () => {
       beforeEach(function () {
+        const referenceYear = new Date().getFullYear() - 4
         cy.get('form.edit_work_experience input[name="work_experience[company_name]"]').clear().type('Amazing company')
         cy.get('form.edit_work_experience input[name="work_experience[position]"]').clear().type('Programmer')
         cy.get('form.edit_work_experience input[name="work_experience[city]"]').clear().type('Maceió')
         cy.get('form.edit_work_experience select[name="work_experience[country]"]').select('BR')
-        cy.get('form.edit_work_experience select[name="work_experience[start_date(1i)]"]').select('2018')
+        cy.get('form.edit_work_experience select[name="work_experience[start_date(1i)]"]').select(referenceYear.toString())
         cy.get('form.edit_work_experience select[name="work_experience[start_date(2i)]"]').select('1')
         cy.get('form.edit_work_experience select[name="work_experience[start_date(3i)]"]').select('1')
         cy.get('form.edit_work_experience select[name="work_experience[locale]"]').select('en')

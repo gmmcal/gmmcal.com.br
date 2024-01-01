@@ -6,19 +6,19 @@ on:
 jobs:
   build:
     name: Test
-    uses: ./.github/workflows/docker.yml
+    uses: ./.github/workflows/_docker.yml
     secrets: inherit
 
   cypress:
     name: Cypress
-    uses: ./.github/workflows/docker.yml
+    uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
       target: cypress
 
   development:
     name: Development
-    uses: ./.github/workflows/docker.yml
+    uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
       target: development
@@ -26,7 +26,7 @@ jobs:
 
   production:
     name: Production
-    uses: ./.github/workflows/docker.yml
+    uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
       target: production
@@ -34,63 +34,63 @@ jobs:
 
   rubocop:
     name: Rubocop
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: bundle exec rubocop --config .rubocop.yml .
     needs: build
 
   reek:
     name: Reek
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: bundle exec reek --config .reek.yml .
     needs: build
 
   brakeman:
     name: Brakeman
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: bundle exec brakeman
     needs: build
 
   scsslint:
     name: SCSSLint
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: bundle exec scss-lint --config .scss-lint.yml
     needs: build
 
   tests:
     name: Backend
-    uses: ./.github/workflows/tests.yml
+    uses: ./.github/workflows/_tests.yml
     with:
       command: bundle exec rspec
     needs: build
 
   e2e-admin:
     name: Admin
-    uses: ./.github/workflows/cypress.yml
+    uses: ./.github/workflows/_cypress.yml
     with:
       pattern: spec/end-to-end/tests/admin/**.js
     needs: [build, cypress]
 
   e2e-frontend:
     name: Frontend
-    uses: ./.github/workflows/cypress.yml
+    uses: ./.github/workflows/_cypress.yml
     with:
       pattern: spec/end-to-end/tests/frontend/**.js
     needs: [build, cypress]
 
   bundler-audit:
     name: Bundler Audit
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: bundle exec bundle-audit check --update
     needs: build
 
   eslint:
     name: ESLint
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: yarn eslint
       image: gmmcal/gmmcal:cypress
@@ -98,7 +98,7 @@ jobs:
 
   eslint_tests:
     name: ESLint / Tests
-    uses: ./.github/workflows/lint.yml
+    uses: ./.github/workflows/_lint.yml
     with:
       command: yarn eslint:tests
       image: gmmcal/gmmcal:cypress
