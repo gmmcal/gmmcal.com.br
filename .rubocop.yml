@@ -106,3 +106,6 @@ Rails/EnvironmentVariableAccess:
 
 Naming/InclusiveLanguage:
   Enabled: false
+
+FactoryBot/ExcessiveCreateList:
+  Enabled: false
