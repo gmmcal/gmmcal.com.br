@@ -8,6 +8,7 @@ const sort = (selector) => {
   }
   const model = element.dataset.model
   const url = element.dataset.url
+  const csrf = document.querySelector('[name~=csrf-token]').content
   const sortable = Sortable.create(element, {
     onSort: () => {
       const data = {
@@ -19,6 +20,7 @@ const sort = (selector) => {
       fetch(url, {
         method: 'PUT',
         headers: {
+          'X-CSRF-Token': csrf,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
