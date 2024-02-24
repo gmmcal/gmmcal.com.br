@@ -45,3 +45,5 @@ yarn-debug.log*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+.yarn
+.yarnrc.yml
