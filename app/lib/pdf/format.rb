@@ -34,6 +34,13 @@ module Pdf
       end
     end
 
+    def small
+      pdf.font 'Helvetica', size: 10 do
+        pdf.fill_color '7e86b9'
+        yield
+      end
+    end
+
     def body(color: '000000', padding: 10, &block)
       pdf.font 'Helvetica', size: 13 do
         pdf.fill_color color

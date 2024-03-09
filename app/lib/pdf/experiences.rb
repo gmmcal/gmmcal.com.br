@@ -2,11 +2,11 @@
 
 module Pdf
   module Experiences
-    def experiences(experiences)
+    def experiences(experiences, host)
       pdf.start_new_page
       add_index(I18n.t('cv.experience'))
       experience_title
-      experience_content(experiences)
+      experience_content(experiences, host)
     end
 
     private
@@ -15,12 +15,13 @@ module Pdf
       h2 { pdf.text I18n.t('cv.experience') }
     end
 
-    def experience_content(experiences)
+    def experience_content(experiences, host)
       pdf.column_box([0, pdf.cursor], columns: 2, width: pdf.bounds.width, height: 440) do
         experiences.cv.each do |experience|
           pdf.pad_bottom(50) do
             experience_data(experience)
-            spacer unless experience.equal?(experiences.cv.last)
+            experience_footer(host)
+            spacer
           end
         end
       end
@@ -35,6 +36,10 @@ module Pdf
 
     def experience_index_title(experience)
       "#{experience.company_name} (#{experience.start_date} - #{experience.end_date})"
+    end
+
+    def experience_footer(host)
+      small { pdf.text I18n.t('cv.previous_experiences', link: host) }
     end
 
     def spacer

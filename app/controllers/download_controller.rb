@@ -13,11 +13,12 @@ class DownloadController < WebsiteController
   private
 
   def pdf
+    host = request.host
     file = Cv.new(@skills.cv, page_size: 'A4', page_layout: :landscape)
-    file.about(@about, request.host)
-    file.experiences(@work_experiences)
+    file.about(@about, host)
+    file.experiences(@work_experiences, host)
     file.educations(@educations)
-    file.contact(@about, request.host)
+    file.contact(@about, host)
     file
   end
 

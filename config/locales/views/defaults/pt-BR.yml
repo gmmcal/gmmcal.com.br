@@ -30,4 +30,4 @@ pt-BR:
     education: 'Educação'
     contact: 'Contato'
     spoken_languages: 'Fluente em: %{languages}'
-    previous_experiences_html: 'Para outras experiências profissionais, visite meu site website em %{link}'
+    previous_experiences: '* Para outras experiências profissionais, visite meu site website em %{link}'
