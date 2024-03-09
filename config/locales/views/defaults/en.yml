@@ -30,4 +30,4 @@ en:
     education: 'Educations'
     contact: 'Contact'
     spoken_languages: 'Fluent in: %{languages}'
-    previous_experiences_html: 'For previous experiences, please visit my website at %{link}'
+    previous_experiences: '* For previous experiences, please visit my website at %{link}'
