@@ -38,7 +38,7 @@ jobs:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
         run: |
-          curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
+          curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
 
   deploy_production:
     name: 'Deploy: Production'
@@ -56,4 +56,4 @@ jobs:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
         run: |
-          curl -v "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
+          curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"

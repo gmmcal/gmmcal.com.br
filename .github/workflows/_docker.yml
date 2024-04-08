@@ -6,7 +6,7 @@ on:
       tag-name:
         type: string
         required: false
-        default: "gmmcal/gmmcal"
+        default: "gmmcal/gmmcal:test"
       target:
         type: string
         required: false
@@ -18,7 +18,7 @@ on:
 
 jobs:
   build:
-    name: 'Build Image'
+    name: "Build Image"
     runs-on: ubuntu-20.04
 
     steps:
@@ -40,6 +40,6 @@ jobs:
           push: ${{ inputs.publish }}
           context: .
           target: ${{ inputs.target }}
-          tags: ${{ inputs.tag-name }}:${{ inputs.target }}
+          tags: ${{ inputs.tag-name }}
           cache-from: type=registry,ref=gmmcal/gmmcal:buildcache${{ inputs.target }}
           cache-to: type=registry,ref=gmmcal/gmmcal:buildcache${{ inputs.target }},mode=max

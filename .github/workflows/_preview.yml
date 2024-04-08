@@ -1,0 +1,21 @@
+name: Deploy preview image
+
+on:
+  workflow_call:
+    inputs:
+      tag-name:
+        type: string
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: preview
+      url: ${{ steps.result.outputs.url }}
+    steps:
+      - name: Create Render service preview
+        id: result
+        run: |
+          curl -X POST https://api.render.com/v1/services/srv-${{ secrets.DEPLOY_SERVICE }}/preview -H 'Authorization: Bearer ${{ secrets.RENDER_API_KEY }}' -H 'Accept: application/json' -d '{"imagePath": "docker.io/${{ inputs.tag-name }}", "name": "gustavocunha-preview-pr-${{ github.event.number }}-${{ github.run_number }}"}' > result.json
+          echo "url=$(jq -r '.service.serviceDetails.url' result.json)" >> "$GITHUB_OUTPUT"
