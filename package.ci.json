@@ -45,7 +45,7 @@
     "eslint": "*"
   },
   "scripts": {
-    "eslint": "eslint --config=.eslintrc.js app/javascript/**/**.js",
-    "eslint:tests": "eslint --config=.eslintrc.js spec/**/**.js"
+    "eslint": "eslint --config=eslintrc.config.mjs app/javascript/**/**.js",
+    "eslint:tests": "eslint --config=eslintrc.config.mjs spec/**/**.js"
   }
 }
