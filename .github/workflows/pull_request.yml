@@ -4,6 +4,7 @@ on:
   - pull_request
 
 jobs:
+  # DOCKER
   build:
     name: Test
     uses: ./.github/workflows/_docker.yml
@@ -15,6 +16,16 @@ jobs:
     secrets: inherit
     with:
       target: cypress
+      tag-name: "gmmcal/gmmcal:cypress"
+
+  preview:
+    name: Preview
+    uses: ./.github/workflows/_docker.yml
+    secrets: inherit
+    with:
+      target: production
+      tag-name: "gmmcal/gmmcal:preview-${{ github.event.number }}-${{ github.run_number }}"
+      publish: true
 
   development:
     name: Development
@@ -32,6 +43,7 @@ jobs:
       target: production
       publish: false
 
+  # LINT
   rubocop:
     name: Rubocop
     uses: ./.github/workflows/_lint.yml
@@ -60,27 +72,6 @@ jobs:
       command: bundle exec scss-lint --config .scss-lint.yml
     needs: build
 
-  tests:
-    name: Backend
-    uses: ./.github/workflows/_tests.yml
-    with:
-      command: bundle exec rspec
-    needs: build
-
-  e2e-admin:
-    name: Admin
-    uses: ./.github/workflows/_cypress.yml
-    with:
-      pattern: spec/end-to-end/tests/admin/**.js
-    needs: [build, cypress]
-
-  e2e-frontend:
-    name: Frontend
-    uses: ./.github/workflows/_cypress.yml
-    with:
-      pattern: spec/end-to-end/tests/frontend/**.js
-    needs: [build, cypress]
-
   bundler-audit:
     name: Bundler Audit
     uses: ./.github/workflows/_lint.yml
@@ -103,3 +94,34 @@ jobs:
       command: yarn eslint:tests
       image: gmmcal/gmmcal:cypress
     needs: cypress
+
+  # TESTS
+  tests:
+    name: Backend
+    uses: ./.github/workflows/_tests.yml
+    with:
+      command: bundle exec rspec
+    needs: build
+
+  e2e-admin:
+    name: Admin
+    uses: ./.github/workflows/_cypress.yml
+    with:
+      pattern: spec/end-to-end/tests/admin/**.js
+    needs: [build, cypress]
+
+  e2e-frontend:
+    name: Frontend
+    uses: ./.github/workflows/_cypress.yml
+    with:
+      pattern: spec/end-to-end/tests/frontend/**.js
+    needs: [build, cypress]
+
+  # Preview and Cleanup
+  deploy:
+    name: Preview
+    uses: ./.github/workflows/_preview.yml
+    needs: preview
+    secrets: inherit
+    with:
+      tag-name: "gmmcal/gmmcal:preview-${{ github.event.number }}-${{ github.run_number }}"
