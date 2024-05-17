@@ -35,6 +35,7 @@ services:
           name: gustavocunha
           property: connectionString
       - fromGroup: production
+      - fromGroup: gmmcal
   - type: web
     name: gustavocunha-staging
     env: ruby
@@ -52,7 +53,7 @@ services:
         fromDatabase:
           name: gustavocunha-staging
           property: connectionString
-      - fromGroup: staging
+      - fromGroup: gmmcal
   - type: redis
     name: gustavocunha
     ipAllowList: []
