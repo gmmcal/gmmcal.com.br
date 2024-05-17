@@ -6,7 +6,8 @@ on:
     - cron: "0 2 * * *"
 
 jobs:
-  deploy:
+  cleanup:
+    name: Cleanup old preview environments
     runs-on: ubuntu-latest
     steps:
       # Remove preview environments that are older than 7 days
