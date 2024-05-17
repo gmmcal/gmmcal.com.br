@@ -1,4 +1,4 @@
-name: Tag application
+name: Deploy application
 
 on:
   workflow_call:
