@@ -3,118 +3,137 @@ name: Pipeline
 on:
   - pull_request
 
+concurrency:
+  group: pull-request-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # DOCKER
   build:
-    name: Test
-    uses: ./.github/workflows/_docker.yml
-    secrets: inherit
-
-  cypress:
-    name: Cypress
+    name: Build Image
     uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
+      name: Test
+
+  cypress:
+    name: Build Image
+    uses: ./.github/workflows/_docker.yml
+    secrets: inherit
+    with:
+      name: Cypress
       target: cypress
       tag-name: "gmmcal/gmmcal:cypress"
 
   preview:
-    name: Preview
+    name: Build Image
     uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
+      name: Preview
       target: production
       tag-name: "gmmcal/gmmcal:preview-${{ github.event.number }}-${{ github.run_number }}"
       publish: true
 
   development:
-    name: Development
+    name: Build Image
     uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
+      name: Development
       target: development
       publish: false
 
   production:
-    name: Production
+    name: Build Image
     uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
+      name: Production
       target: production
       publish: false
 
   # LINT
   rubocop:
-    name: Rubocop
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: Rubocop
       command: bundle exec rubocop --config .rubocop.yml .
     needs: build
 
   reek:
-    name: Reek
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: Reek
       command: bundle exec reek --config .reek.yml .
     needs: build
 
   brakeman:
-    name: Brakeman
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: Brakeman
       command: bundle exec brakeman
     needs: build
 
   scsslint:
-    name: SCSSLint
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: SCSSLint
       command: bundle exec scss-lint --config .scss-lint.yml
     needs: build
 
   bundler-audit:
-    name: Bundler Audit
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: Bundler Audit
       command: bundle exec bundle-audit check --update
     needs: build
 
   eslint:
-    name: ESLint
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: ESLint
       command: yarn eslint
       image: gmmcal/gmmcal:cypress
     needs: cypress
 
   eslint_tests:
-    name: ESLint / Tests
+    name: Lint
     uses: ./.github/workflows/_lint.yml
     with:
+      name: ESLint - Tests
       command: yarn eslint:tests
       image: gmmcal/gmmcal:cypress
     needs: cypress
 
   # TESTS
   tests:
-    name: Backend
+    name: Tests
     uses: ./.github/workflows/_tests.yml
     with:
       command: bundle exec rspec
     needs: build
 
   e2e-admin:
-    name: Admin
+    name: Tests
     uses: ./.github/workflows/_cypress.yml
     with:
       pattern: spec/end-to-end/tests/admin/**.js
+      name: Admin
     needs: [build, cypress]
 
   e2e-frontend:
-    name: Frontend
+    name: Tests
     uses: ./.github/workflows/_cypress.yml
     with:
       pattern: spec/end-to-end/tests/frontend/**.js
+      name: Frontend
     needs: [build, cypress]
 
   # Preview and Cleanup
