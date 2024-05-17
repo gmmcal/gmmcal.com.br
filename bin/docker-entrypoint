@@ -3,6 +3,7 @@
 # ./bin/rails server (executed on production image)
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   ./bin/rails db:migrate
+  ./bin/rails db:seed:all
 fi
 
 # bundle exec rails <anything> (executed on development image)
