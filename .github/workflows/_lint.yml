@@ -3,6 +3,9 @@ name: Lint
 on:
   workflow_call:
     inputs:
+      name:
+        type: string
+        required: true
       command:
         type: string
         required: true
@@ -13,7 +16,7 @@ on:
 
 jobs:
   lint:
-    name: Lint
+    name: ${{ inputs.name }}
     runs-on: ubuntu-20.04
     container:
       image: ${{ inputs.image }}

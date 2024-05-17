@@ -4,56 +4,85 @@ on:
   push:
     branches:
       - main
-  release:
-    types: [published]
-  workflow_call:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
+  tag:
+    name: "Tag: Production"
+    uses: ./.github/workflows/_tag.yml
+
   build_production:
-    name: 'Build: Production'
+    name: Build
     uses: ./.github/workflows/_docker.yml
+    needs: tag
     secrets: inherit
     with:
+      name: Production
       target: production
+      reference: ${{needs.tag.outputs.version}}
+      tag-name: "gmmcal/gmmcal:${{needs.tag.outputs.version}},gmmcal/gmmcal:production"
 
   build_development:
-    name: 'Build: Development'
+    name: Build
     uses: ./.github/workflows/_docker.yml
     secrets: inherit
     with:
+      name: Development
       target: development
-    if: github.event_name == 'push'
+      tag-name: "gmmcal/gmmcal:development"
 
   deploy_staging:
-    name: 'Deploy: Staging'
-    runs-on: ubuntu-20.04
-    environment:
-      name: staging
-      url: https://staging.gustavocunha.dev
+    name: Deploy
+    uses: ./.github/workflows/_deploy.yml
+    secrets: inherit
     needs: build_production
+    with:
+      name: Staging
+      environment: staging
+      url: https://staging.gustavocunha.dev
+    # name: "Deploy / Staging"
+    # runs-on: ubuntu-20.04
+    # environment:
+    #   name: staging
+    #   url: https://staging.gustavocunha.dev
+    # needs: build_production
 
-    steps:
-      - name: Deploy
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
-        run: |
-          curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
+    # steps:
+    #   - name: Deploy
+    #     env:
+    #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+    #       DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
+    #     run: |
+    #       curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
 
   deploy_production:
-    name: 'Deploy: Production'
-    runs-on: ubuntu-20.04
-    environment:
-      name: production
+    name: Deploy
+    uses: ./.github/workflows/_deploy.yml
+    secrets: inherit
+    needs:
+      - build_production
+      - tag
+    with:
+      name: Production
+      environment: production
       url: https://www.gustavocunha.dev
-    needs: deploy_staging
+      params: imgURL=docker.io/gmmcal/gmmcal:${{needs.tag.outputs.version}}
+    # name: "Deploy / Production"
+    # runs-on: ubuntu-20.04
+    # environment:
+    #   name: production
+    #   url: https://www.gustavocunha.dev
+    # needs:
+    #   - build_production
+    #   - tag
 
-    if: github.event_name != 'push'
-
-    steps:
-      - name: Deploy
-        env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-          DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
-        run: |
-          curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
+    # steps:
+    #   - name: Deploy
+    #     env:
+    #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+    #       DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
+    #     run: |
+    #       curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY&imgURL=docker.io/gmmcal/gmmcal:${{needs.tag.outputs.version}}"

@@ -6,10 +6,13 @@ on:
       pattern:
         type: string
         required: true
+      name:
+        type: string
+        required: true
 
 jobs:
   e2e:
-    name: 'End-to-end'
+    name: "End-to-end - ${{ inputs.name }} (${{ matrix.browser }})"
     runs-on: ubuntu-20.04
     container:
       image: gmmcal/gmmcal:cypress

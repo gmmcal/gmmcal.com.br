@@ -9,7 +9,7 @@ on:
 
 jobs:
   tests:
-    name: Tests
+    name: Backend
     runs-on: ubuntu-20.04
     container:
       image: gmmcal/gmmcal:test

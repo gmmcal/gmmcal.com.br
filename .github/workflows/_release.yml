@@ -9,6 +9,7 @@ on:
 
 jobs:
   release:
+    name: Create release page
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,9 +22,3 @@ jobs:
         with:
           generateReleaseNotes: true
           tag: ${{ inputs.tag }}
-
-  deploy:
-    name: Deploy
-    uses: ./.github/workflows/deploy.yml
-    secrets: inherit
-    needs: release
