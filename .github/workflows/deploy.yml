@@ -12,12 +12,22 @@ concurrency:
 jobs:
   tag:
     name: "Tag: Production"
-    uses: ./.github/workflows/_tag.yml
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tag.yml@v0
+
+  release:
+    name: Release
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_release.yml@v0
+    secrets: inherit
+    needs: tag
+    with:
+      tag: ${{needs.tag.outputs.version}}
 
   build_production:
     name: Build
-    uses: ./.github/workflows/_docker.yml
-    needs: tag
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
+    needs:
+      - tag
+      - release
     secrets: inherit
     with:
       name: Production
@@ -27,7 +37,7 @@ jobs:
 
   build_development:
     name: Build
-    uses: ./.github/workflows/_docker.yml
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
     secrets: inherit
     with:
       name: Development
@@ -36,31 +46,17 @@ jobs:
 
   deploy_staging:
     name: Deploy
-    uses: ./.github/workflows/_deploy.yml
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_deploy.yml@v0
     secrets: inherit
     needs: build_production
     with:
       name: Staging
       environment: staging
       url: https://staging.gustavocunha.dev
-    # name: "Deploy / Staging"
-    # runs-on: ubuntu-20.04
-    # environment:
-    #   name: staging
-    #   url: https://staging.gustavocunha.dev
-    # needs: build_production
-
-    # steps:
-    #   - name: Deploy
-    #     env:
-    #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-    #       DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
-    #     run: |
-    #       curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY"
 
   deploy_production:
     name: Deploy
-    uses: ./.github/workflows/_deploy.yml
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_deploy.yml@v0
     secrets: inherit
     needs:
       - build_production
@@ -70,19 +66,3 @@ jobs:
       environment: production
       url: https://www.gustavocunha.dev
       params: imgURL=docker.io/gmmcal/gmmcal:${{needs.tag.outputs.version}}
-    # name: "Deploy / Production"
-    # runs-on: ubuntu-20.04
-    # environment:
-    #   name: production
-    #   url: https://www.gustavocunha.dev
-    # needs:
-    #   - build_production
-    #   - tag
-
-    # steps:
-    #   - name: Deploy
-    #     env:
-    #       DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-    #       DEPLOY_SERVICE: ${{ secrets.DEPLOY_SERVICE }}
-    #     run: |
-    #       curl "https://api.render.com/deploy/srv-$DEPLOY_SERVICE?key=$DEPLOY_KEY&imgURL=docker.io/gmmcal/gmmcal:${{needs.tag.outputs.version}}"
