@@ -24,7 +24,7 @@ jobs:
           branch: main
           majorList: "BREAK"
           minorList: "NEW"
-          patchList: "FIX"
+          patchList: "FIX,OPT"
 
   create-release:
     name: Release
