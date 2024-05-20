@@ -27,13 +27,12 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
     needs:
       - tag
-      - release
     secrets: inherit
     with:
       name: Production
       target: production
       reference: ${{needs.tag.outputs.version}}
-      tag-name: "gmmcal/gmmcal:${{needs.tag.outputs.version}},gmmcal/gmmcal:production"
+      image: "gmmcal/gmmcal:${{needs.tag.outputs.version}},gmmcal/gmmcal:production"
 
   build_development:
     name: Build
@@ -42,7 +41,7 @@ jobs:
     with:
       name: Development
       target: development
-      tag-name: "gmmcal/gmmcal:development"
+      image: "gmmcal/gmmcal:development"
 
   deploy_staging:
     name: Deploy
