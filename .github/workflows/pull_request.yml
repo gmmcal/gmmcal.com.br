@@ -15,7 +15,7 @@ jobs:
     secrets: inherit
     with:
       name: Test
-      image: "gmmcal/gmmcal:test"
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
 
   cypress:
     name: Build Image
@@ -24,7 +24,7 @@ jobs:
     with:
       name: Cypress
       target: cypress
-      image: "gmmcal/gmmcal:cypress"
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
 
   preview:
     name: Build Image
@@ -62,7 +62,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: Rubocop
-      image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec rubocop --config .rubocop.yml .
     needs: build
 
@@ -71,7 +71,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: Reek
-      image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec reek --config .reek.yml .
     needs: build
 
@@ -80,7 +80,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: Brakeman
-      image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec brakeman
     needs: build
 
@@ -89,7 +89,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: SCSSLint
-      image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec scss-lint --config .scss-lint.yml
     needs: build
 
@@ -98,7 +98,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: Bundler Audit
-      image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec bundle-audit check --update
     needs: build
 
@@ -107,7 +107,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: ESLint
-      image: gmmcal/gmmcal:cypress
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
       command: yarn eslint
     needs: cypress
 
@@ -116,7 +116,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
     with:
       name: ESLint - Tests
-      image: gmmcal/gmmcal:cypress
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
       command: yarn eslint:tests
     needs: cypress
 
@@ -125,7 +125,7 @@ jobs:
     name: Tests
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v0
     with:
-      image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec rspec
     needs: build
 
@@ -133,8 +133,8 @@ jobs:
     name: Tests
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v0
     with:
-      image: gmmcal/gmmcal:cypress
-      application-image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+      application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       pattern: spec/end-to-end/tests/admin/**.js
       name: Admin
     needs: [build, cypress]
@@ -143,8 +143,8 @@ jobs:
     name: Tests
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v0
     with:
-      image: gmmcal/gmmcal:cypress
-      application-image: gmmcal/gmmcal:test
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+      application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       pattern: spec/end-to-end/tests/frontend/**.js
       name: Frontend
     needs: [build, cypress]
