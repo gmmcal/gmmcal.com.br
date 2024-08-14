@@ -12,7 +12,7 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1.3'
+gem 'rails', '~> 7.2.0'
 
 # Frontend gems
 gem 'draper'
@@ -52,7 +52,7 @@ end
 
 # Test suite
 group :test do
-  gem 'database_cleaner'
+  gem 'database_cleaner-active_record'
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
