@@ -5,14 +5,15 @@ on:
     branches:
       - main
 
-concurrency:
-  group: deploy
-  cancel-in-progress: false
-
 jobs:
   tag:
     name: "Tag: Production"
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tag.yml@v0
+    concurrency:
+      group: tag
+      cancel-in-progress: false
+    with:
+      reference: ${{ github.sha }}
 
   release:
     name: Release
@@ -38,6 +39,9 @@ jobs:
     name: Build
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
     secrets: inherit
+    concurrency:
+      group: build-development
+      cancel-in-progress: true
     with:
       name: Development
       target: development
