@@ -19,7 +19,8 @@ jobs:
     name: Release
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_release.yml@v0
     secrets: inherit
-    needs: tag
+    needs:
+      - tag
     with:
       tag: ${{needs.tag.outputs.version}}
       reference: ${{ github.sha }}
@@ -29,6 +30,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
     needs:
       - tag
+      - release
     secrets: inherit
     with:
       name: Production
