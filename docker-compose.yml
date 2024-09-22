@@ -27,6 +27,7 @@ services:
       - db
     networks:
       - db
+      - web
     environment:
       RAILS_ENV: development
       DATABASE_HOST: db
@@ -35,5 +36,16 @@ services:
     ports:
       - "3000:3000"
 
+  cypress:
+    build:
+      context: .
+      target: cypress
+    image: gmmcal:cypress
+    depends_on:
+      - web
+    networks:
+      - web
+
 networks:
   db:
+  web:
