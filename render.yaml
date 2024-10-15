@@ -1,7 +1,7 @@
 databases:
   - name: gustavocunha
     databaseName: gustavocunha
-    plan: starter
+    plan: basic-256mb
     ipAllowList: []
     region: frankfurt
   - name: gustavocunha-staging
