@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  get 'up', to: 'rails/health#show', as: :rails_health_check
+
   scope '(:locale)', locale: /en|pt-BR/ do
     get '/', to: 'home#index', as: :home
     get '/cv(/:disposition)', to: 'download#cv', as: :cv, disposition: /attachment|inline/, defaults: { disposition: :attachment }

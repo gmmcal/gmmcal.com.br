@@ -1,0 +1,71 @@
+service: gmmcal
+
+image: gmmcal/gmmcal
+
+servers:
+  web:
+    - www.gustavocunha.dev
+  db:
+    - www.gustavocunha.dev
+  redis:
+    - www.gustavocunha.dev
+
+proxy:
+  ssl: true
+  hosts:
+    - gustavocunha.dev
+    - www.gustavocunha.dev
+  app_port: 3000
+
+registry:
+  username: gmmcal
+
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+  target: production
+  context: .
+
+env:
+  clear:
+    IS_PRODUCTION: true
+    RAILS_LOG_TO_STDOUT: enabled
+    RAILS_SERVE_STATIC_FILES: enabled
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_URL
+    - REDIS_URL
+
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  worker: app logs -f -r worker
+  db: app exec --interactive --reuse "bin/rails dbconsole"
+
+asset_path: /rails/public/assets
+
+accessories:
+  db:
+    image: postgres:16
+    roles:
+      - db
+    port: 5432
+    env:
+      secret:
+        - POSTGRES_USER
+        - POSTGRES_DB
+        - POSTGRES_PASSWORD
+    files:
+      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+    directories:
+      - data:/var/lib/mysql
+  redis:
+    image: redis:7.2
+    roles:
+      - redis
+    port: 6379
+    directories:
+      - data:/data

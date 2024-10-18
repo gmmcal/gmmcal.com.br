@@ -16,8 +16,6 @@ services:
     pullRequestPreviewsEnabled: false
     plan: free
     region: frankfurt
-    domains:
-      - staging.gustavocunha.dev
     envVars:
       - key: DATABASE_URL
         fromDatabase:
