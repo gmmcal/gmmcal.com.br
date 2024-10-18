@@ -2,7 +2,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim AS base
 
 # Rails app lives here
 WORKDIR /rails
@@ -11,7 +11,7 @@ WORKDIR /rails
 ENV BUNDLE_PATH="/usr/local/bundle"
 
 # Throw-away build stage to reduce size of final image
-FROM base as build
+FROM base AS build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
@@ -33,7 +33,7 @@ RUN bundle exec bootsnap precompile app/ lib/
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 # Development image
-FROM base as production
+FROM base AS production
 
 ENV RAILS_ENV="production" \
   BUNDLE_DEPLOYMENT="1" \
@@ -62,7 +62,7 @@ EXPOSE 3000
 CMD ["./bin/rails", "server"]
 
 # Development image
-FROM base as development
+FROM base AS development
 
 ENV RAILS_ENV="development"
 
@@ -88,7 +88,7 @@ EXPOSE 3000
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
 
 # Backend Test image
-FROM base as test
+FROM base AS test
 
 ENV RAILS_ENV="test"
 
@@ -114,7 +114,7 @@ EXPOSE 3000
 CMD ["bundle", "exec", "rspec"]
 
 # Cypress Test image - WIP
-FROM cypress/included as cypress
+FROM cypress/included AS cypress
 
 WORKDIR /rails
 

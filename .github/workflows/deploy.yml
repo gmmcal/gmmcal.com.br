@@ -25,19 +25,6 @@ jobs:
       tag: ${{needs.tag.outputs.version}}
       reference: ${{ github.sha }}
 
-  build_production:
-    name: Build
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
-    needs:
-      - tag
-      - release
-    secrets: inherit
-    with:
-      name: Production
-      target: production
-      reference: ${{needs.tag.outputs.version}}
-      image: "gmmcal/gmmcal:${{needs.tag.outputs.version}},gmmcal/gmmcal:production"
-
   build_development:
     name: Build
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
@@ -50,25 +37,67 @@ jobs:
       target: development
       image: "gmmcal/gmmcal:development"
 
-  deploy_staging:
-    name: Deploy
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_deploy.yml@v0
-    secrets: inherit
-    needs: build_production
-    with:
-      name: Staging
-      environment: staging
-      url: https://staging.gustavocunha.dev
-
-  deploy_production:
-    name: Deploy
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_deploy.yml@v0
-    secrets: inherit
+  build_production:
+    name: Build
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
     needs:
-      - build_production
       - tag
+      - release
+    secrets: inherit
+    concurrency:
+      group: build-production
+      cancel-in-progress: true
     with:
       name: Production
-      environment: production
+      target: production
+      reference: ${{needs.tag.outputs.version}}
+      image: "gmmcal/gmmcal:production"
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: production
       url: https://www.gustavocunha.dev
-      params: imgURL=docker.io/gmmcal/gmmcal:${{needs.tag.outputs.version}}
+    needs:
+      - tag
+      - release
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{needs.tag.outputs.version}}
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          log-public-key: false
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install Kamal
+        run: gem install kamal -v 2.2.0 # lock version because of kamal proxy. Maybe consider adding kamal as a project dependency on a deploy group that will be installed on this action
+
+      - name: Deploy command
+        run: kamal deploy --version=${{needs.tag.outputs.version}}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          REDIS_URL: ${{ secrets.REDIS_URL }}
