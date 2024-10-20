@@ -1,9 +1,4 @@
 databases:
-  - name: gustavocunha
-    databaseName: gustavocunha
-    plan: basic-256mb
-    ipAllowList: []
-    region: frankfurt
   - name: gustavocunha-staging
     databaseName: gustavocunha_staging
     plan: free
@@ -11,31 +6,6 @@ databases:
     region: frankfurt
 
 services:
-  - type: web
-    name: gustavocunha
-    env: ruby
-    runtime: image
-    image:
-      url: gmmcal/gmmcal:production
-    autoDeploy: false
-    pullRequestPreviewsEnabled: false
-    plan: free
-    region: frankfurt
-    domains:
-      - gustavocunha.dev
-      - www.gustavocunha.dev
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: gustavocunha
-          property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: gustavocunha
-          property: connectionString
-      - fromGroup: production
-      - fromGroup: gmmcal
   - type: web
     name: gustavocunha-staging
     env: ruby
@@ -54,8 +24,3 @@ services:
           name: gustavocunha-staging
           property: connectionString
       - fromGroup: gmmcal
-  - type: redis
-    name: gustavocunha
-    ipAllowList: []
-    plan: free
-    region: frankfurt
