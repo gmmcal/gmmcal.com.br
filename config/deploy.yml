@@ -26,7 +26,10 @@ registry:
 builder:
   arch: amd64
   target: production
-  context: .
+  cache:
+    type: registry
+    options: mode=max
+    image: gmmcal/gmmcal.com.br:productioncache
 
 env:
   clear:
