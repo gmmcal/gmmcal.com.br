@@ -23,6 +23,7 @@ pickle-email-*.html
 /storage
 
 .ruby-*
+!.ruby-version
 .rbenv-*
 .rvmrc
 .nvmrc
