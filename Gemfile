@@ -12,7 +12,7 @@ gem 'bootsnap', require: false
 # use PostgreSQL as database
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.2.2'
+gem 'rails', '~> 8.0.0'
 
 # Frontend gems
 gem 'draper'
@@ -44,9 +44,10 @@ group :development do
   gem 'listen'
   gem 'reek'
   gem 'rubocop'
-  gem 'rubocop-factory_bot'
-  gem 'rubocop-rails'
-  gem 'rubocop-rspec'
+  gem 'rubocop-factory_bot', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-rspec_rails', require: false
   gem 'scss_lint', require: false
 end
 

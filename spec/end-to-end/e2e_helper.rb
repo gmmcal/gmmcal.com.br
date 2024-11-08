@@ -26,10 +26,15 @@ factory = FactoryBot if defined?(FactoryBot)
 factory = FactoryGirl if defined?(FactoryGirl)
 
 CypressOnRails::SmartFactoryWrapper.configure(
-  always_reload: !Rails.configuration.cache_classes,
+  always_reload: false,
   factory: factory,
   files: [
     Rails.root.join('spec', 'factories.rb'),
     Rails.root.join('spec', 'factories', '**', '*.rb')
   ]
 )
+
+# require 'vcr'
+# VCR.configure do |config|
+#   config.hook_into :webmock
+# end

@@ -1,17 +1,18 @@
 require:
+  - rubocop-factory_bot
   - rubocop-rails
   - rubocop-rspec
-  - rubocop-factory_bot
+  - rubocop-rspec_rails
 
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.3
   DisplayCopNames: true
   NewCops: enable
   Exclude:
-    - 'bin/**/*'
-    - 'db/schema.rb'
-    - 'node_modules/**/*'
-    - 'vendor/**/*'
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "vendor/**/*"
 
 Rails:
   Enabled: true
@@ -19,9 +20,8 @@ Rails:
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     default: ()
-    '%i': '[]'
-    '%w': '[]'
-
+    "%i": "[]"
+    "%w": "[]"
 Style/Documentation:
   Enabled: false
 
@@ -30,20 +30,20 @@ Lint/ScriptPermission:
 
 Metrics/BlockLength:
   Exclude:
-    - 'lib/tasks/*'
-    - 'spec/**/*'
-    - 'config/routes.rb'
+    - "lib/tasks/*"
+    - "spec/**/*"
+    - "config/routes.rb"
 
 Layout/LineLength:
   Exclude:
-    - 'config/**/*'
-    - 'db/**/*'
-    - 'spec/**/*'
+    - "config/**/*"
+    - "db/**/*"
+    - "spec/**/*"
 
 Metrics/MethodLength:
   Exclude:
-    - 'db/migrate/*'
-    - 'lib/seed_manager.rb'
+    - "db/migrate/*"
+    - "lib/seed_manager.rb"
 
 Rails/LexicallyScopedActionFilter:
   Enabled: false
@@ -59,7 +59,7 @@ Style/MixinUsage:
 
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
-    - 'config/**/*'
+    - "config/**/*"
 
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true

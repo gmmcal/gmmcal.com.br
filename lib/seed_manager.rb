@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
-require 'factory_bot_rails'
-require 'faker'
-
-FactoryBot.definition_file_paths = ['spec/backend/factories']
-FactoryBot.find_definitions
-
 class SeedManager
   def self.all
     return if production?
+
+    prepare
 
     log('Create About')
     create(:about, 1)
@@ -43,6 +39,8 @@ class SeedManager
   def self.create(model, quantity, trait = nil)
     return if production?
 
+    prepare
+
     I18n.available_locales.each do |locale|
       FactoryBot.create_list(model, quantity, trait, locale: locale)
     end
@@ -50,6 +48,8 @@ class SeedManager
 
   def self.user
     return if production?
+
+    prepare
 
     log('Create/Update default user')
     User.where(
@@ -71,5 +71,17 @@ class SeedManager
 
   def self.production?
     ENV['IS_PRODUCTION'].present?
+  end
+
+  def self.prepare
+    require 'factory_bot_rails'
+    require 'faker'
+
+    begin
+      FactoryBot.definition_file_paths = ['spec/backend/factories']
+      FactoryBot.find_definitions
+    rescue FactoryBot::DuplicateDefinitionError
+      # do nothing
+    end
   end
 end
