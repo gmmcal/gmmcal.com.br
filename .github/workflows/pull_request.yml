@@ -63,7 +63,7 @@ jobs:
     with:
       name: Rubocop
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
-      command: bundle exec rubocop --config .rubocop.yml .
+      command: bin/rubocop
     needs: build
 
   reek:
@@ -81,7 +81,7 @@ jobs:
     with:
       name: Brakeman
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
-      command: bundle exec brakeman
+      command: bin/brakeman
     needs: build
 
   scsslint:

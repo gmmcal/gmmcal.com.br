@@ -2,8 +2,8 @@
 
 module Pdf
   module Format
-    def column(start, finish, &block)
-      pdf.grid(start, finish).bounding_box(&block)
+    def column(start, finish, &)
+      pdf.grid(start, finish).bounding_box(&)
     end
 
     def h1
@@ -48,8 +48,8 @@ module Pdf
       end
     end
 
-    def strong_body(&block)
-      pdf.font 'Helvetica', size: 13, style: :bold, &block
+    def strong_body(&)
+      pdf.font('Helvetica', size: 13, style: :bold, &)
     end
 
     def html(content)
