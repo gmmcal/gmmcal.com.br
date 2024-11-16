@@ -12,14 +12,11 @@ class WebsiteController < ApplicationController
     result = Rails.cache.fetch("#{I18n.locale}/#{model}") do
       retrieve_data(model)
     end
-    instance_variable_set(:"@#{model}", result)
+    instance_variable_set(:"@#{model}", result.decorate)
   end
 
   def retrieve_data(model)
-    data = model.classify.constantize.find_for_locale(I18n.locale).decorate
-    return data.to_a if data.is_a?(ActiveRecord::Relation)
-
-    data
+    model.classify.constantize.find_for_locale(I18n.locale)
   end
 
   def set_data
