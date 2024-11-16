@@ -21,13 +21,9 @@ Rails.application.routes.draw do
   get 'service-worker', to: 'pwa#worker', defaults: { format: :js }
   get 'offline', to: 'pwa#offline'
 
-  devise_for :users, path: 'admin', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout'
-  }, controllers: { sessions: 'admin/sessions' }
-
   namespace :admin do
     root 'about#index'
+    resource :session
 
     resources :abouts, controller: :about, path: :about, except: %i[new show]
     resources :educations, except: :show

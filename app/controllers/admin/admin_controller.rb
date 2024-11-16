@@ -2,9 +2,9 @@
 
 module Admin
   class AdminController < ApplicationController
+    include Authentication
     include Pundit::Authorization
     layout 'admin'
-    before_action :authenticate_user!
     before_action :set_default_locale
     after_action :verify_authorized
 
@@ -26,6 +26,10 @@ module Admin
 
     def set_default_locale
       I18n.locale = current_user.default_locale
+    end
+
+    def current_user
+      Current.user
     end
   end
 end
