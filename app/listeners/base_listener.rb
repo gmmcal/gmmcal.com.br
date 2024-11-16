@@ -25,7 +25,7 @@ class BaseListener
   end
 
   def respond_to_missing?(name, *args)
-    return true if payload.keys.include?(name)
+    return true if payload.key?(name)
 
     super
   end

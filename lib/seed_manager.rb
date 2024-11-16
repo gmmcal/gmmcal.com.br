@@ -6,25 +6,25 @@ class SeedManager
 
     prepare
 
-    log('Create About')
+    log("Create About")
     create(:about, 1)
-    log('Create Work Experiences')
+    log("Create Work Experiences")
     create(:work_experience, 5)
-    log('Create Skills')
+    log("Create Skills")
     create(:skill, 20)
-    log('Create Educations')
+    log("Create Educations")
     create(:education, 2, :finished)
   end
 
   def self.clear_cache
-    log('Clearing cache')
+    log("Clearing cache")
     Rails.cache.clear
   end
 
   def self.clean
     return if production?
 
-    log('Cleaning tables')
+    log("Cleaning tables")
     tables = %i[about
                 education
                 skill
@@ -51,34 +51,34 @@ class SeedManager
 
     prepare
 
-    log('Create/Update default user')
+    log("Create/Update default user")
     User.where(
-      first_name: 'Gustavo',
-      last_name: 'Cunha',
-      email_address: 'email@example.com',
+      first_name: "Gustavo",
+      last_name: "Cunha",
+      email_address: "email@example.com",
       default_locale: :en
-    ).first_or_create(password: 'password2018')
+    ).first_or_create(password: "password2018")
   end
 
   def self.log(message)
     max_size = 79
     messages = []
-    messages << ('=' * 2)
+    messages << ("=" * 2)
     messages << message
-    messages << ('=' * (max_size - 2 - messages.map(&:length).inject(:+)))
-    Rails.logger.info messages.join(' ')
+    messages << ("=" * (max_size - 2 - messages.sum(&:length)))
+    Rails.logger.info messages.join(" ")
   end
 
   def self.production?
-    ENV['IS_PRODUCTION'].present?
+    ENV["IS_PRODUCTION"].present?
   end
 
   def self.prepare
-    require 'factory_bot_rails'
-    require 'faker'
+    require "factory_bot_rails"
+    require "faker"
 
     begin
-      FactoryBot.definition_file_paths = ['spec/backend/factories']
+      FactoryBot.definition_file_paths = [ "spec/backend/factories" ]
       FactoryBot.find_definitions
     rescue FactoryBot::DuplicateDefinitionError
       # do nothing

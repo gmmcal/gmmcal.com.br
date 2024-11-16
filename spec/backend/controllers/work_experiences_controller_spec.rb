@@ -40,10 +40,10 @@ RSpec.describe WorkExperiencesController, type: :controller do
 
     context 'with locale in pt-BR' do
       before do
-        get :index, params: { locale: :'pt-BR' }
+        get :index, params: { locale: :"pt-BR" }
       end
 
-      let(:expected_locale) { :'pt-BR' }
+      let(:expected_locale) { :"pt-BR" }
 
       it_behaves_like 'Localization'
     end

@@ -20,7 +20,7 @@ RSpec.describe SkillListener, type: :listener do
     let(:event) { :skill_created }
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'skills'].join('/') }
+      let(:cache_key) { [ locale, 'skills' ].join('/') }
     end
   end
 
@@ -28,7 +28,7 @@ RSpec.describe SkillListener, type: :listener do
     let(:event) { :skill_updated }
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'skills'].join('/') }
+      let(:cache_key) { [ locale, 'skills' ].join('/') }
     end
   end
 
@@ -36,7 +36,7 @@ RSpec.describe SkillListener, type: :listener do
     let(:event) { :skill_destroyed }
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'skills'].join('/') }
+      let(:cache_key) { [ locale, 'skills' ].join('/') }
     end
   end
 end

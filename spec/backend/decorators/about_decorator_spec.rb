@@ -25,7 +25,7 @@ RSpec.describe AboutDecorator, type: :decorator do
     end
 
     it 'returns pt-BR for portuguese' do
-      I18n.with_locale(:'pt-BR') do
+      I18n.with_locale(:"pt-BR") do
         expect(about.spoken_languages).to eq('Inglês, Português')
       end
     end

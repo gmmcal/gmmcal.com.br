@@ -6,7 +6,7 @@ module LocaleHelper
   end
 
   def available_locales
-    I18n.available_locales - [I18n.locale]
+    I18n.available_locales - [ I18n.locale ]
   end
 
   private

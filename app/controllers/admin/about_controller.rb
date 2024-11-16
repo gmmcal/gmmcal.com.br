@@ -20,7 +20,7 @@ module Admin
 
       if @about.save
         publish(:about_created, about: @about)
-        render_success('helpers.created')
+        render_success("helpers.created")
       else
         render_failure(:new)
       end
@@ -31,7 +31,7 @@ module Admin
       authorize @about
       if @about.update(permitted_attributes(@about))
         publish(:about_updated, about: @about)
-        render_success('helpers.updated')
+        render_success("helpers.updated")
       else
         render_failure(:edit)
       end
@@ -42,7 +42,7 @@ module Admin
       @about.destroy
       authorize @about
       publish(:about_destroyed, about: @about)
-      render_success('helpers.deleted')
+      render_success("helpers.deleted")
     end
 
     private

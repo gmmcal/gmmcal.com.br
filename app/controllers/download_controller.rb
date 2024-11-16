@@ -5,7 +5,7 @@ class DownloadController < WebsiteController
     send_data(
       pdf.render,
       filename: "curriculum-gustavo-cunha-#{I18n.locale.downcase}",
-      type: 'application/pdf',
+      type: "application/pdf",
       disposition: params[:disposition]
     )
   end
@@ -14,7 +14,7 @@ class DownloadController < WebsiteController
 
   def pdf
     host = request.host
-    file = Cv.new(@skills.cv, page_size: 'A4', page_layout: :landscape)
+    file = Cv.new(@skills.cv, page_size: "A4", page_layout: :landscape)
     file.about(@about, host)
     file.experiences(@work_experiences, host)
     file.educations(@educations)
@@ -23,9 +23,9 @@ class DownloadController < WebsiteController
   end
 
   def set_data
-    fetch_from_cache('about')
-    fetch_from_cache('educations')
-    fetch_from_cache('skills')
-    fetch_from_cache('work_experiences')
+    fetch_from_cache("about")
+    fetch_from_cache("educations")
+    fetch_from_cache("skills")
+    fetch_from_cache("work_experiences")
   end
 end

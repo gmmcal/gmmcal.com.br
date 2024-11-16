@@ -41,7 +41,7 @@ RSpec.configure do |config|
   config.include Helpers::Authentication, type: :controller
 
   config.before(:suite) do
-    FactoryBot.definition_file_paths = ['spec/backend/factories']
+    FactoryBot.definition_file_paths = [ 'spec/backend/factories' ]
     FactoryBot.find_definitions
   end
 

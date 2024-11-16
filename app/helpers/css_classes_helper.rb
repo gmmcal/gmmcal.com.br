@@ -2,25 +2,25 @@
 
 module CssClassesHelper
   def body_class
-    [controller_name, I18n.locale.downcase].join(' ')
+    [ controller_name, I18n.locale.downcase ].join(" ")
   end
 
   def menu_classes(menu)
     classes = %w[nav-link]
     classes << active_class if menu_active?(menu)
-    classes.join(' ')
+    classes.join(" ")
   end
 
   def tab_classes(locale)
     classes = %w[nav-link border-bottom]
     classes << active_class if locale_active?(locale)
-    classes.join(' ')
+    classes.join(" ")
   end
 
   private
 
   def active_class
-    'active'
+    "active"
   end
 
   def menu_active?(menu)

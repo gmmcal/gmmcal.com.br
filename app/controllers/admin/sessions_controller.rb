@@ -5,10 +5,10 @@ module Admin
     include Authentication
     allow_unauthenticated_access only: %i[new create]
     rate_limit to: 10, within: 3.minutes, only: :create, with: lambda {
-      redirect_to new_session_url, alert: t('admin.sessions.limited')
+      redirect_to new_session_url, alert: t("admin.sessions.limited")
     }
     before_action :set_locale
-    layout 'authentication'
+    layout "authentication"
 
     def new; end
 
@@ -16,9 +16,9 @@ module Admin
       if (user = User.authenticate_by(params.require(:user).permit(:email_address, :password)))
         start_new_session_for user
         set_locale
-        redirect_to after_authentication_url, notice: t('admin.sessions.signed_in')
+        redirect_to after_authentication_url, notice: t("admin.sessions.signed_in")
       else
-        redirect_to new_admin_session_path, alert: t('admin.sessions.invalid')
+        redirect_to new_admin_session_path, alert: t("admin.sessions.invalid")
       end
     end
 

@@ -22,7 +22,8 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
 
       table.datetime :created_at, null: false
 
-      table.index %i[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness', unique: true
+      table.index %i[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness',
+                                                          unique: true
     end
   end
 end

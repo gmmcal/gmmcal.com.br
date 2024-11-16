@@ -15,7 +15,7 @@ class Country
   end
 
   def to_a
-    [name, @country]
+    [ name, @country ]
   end
 
   class << self

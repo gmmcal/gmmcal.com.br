@@ -21,7 +21,7 @@ RSpec.describe Admin::SessionsController, type: :controller do
     end
 
     context 'with user locale set to portuguese' do
-      let(:locale) { :'pt-BR' }
+      let(:locale) { :"pt-BR" }
 
       it 'login message is in portuguese' do
         post :create, params: { user: attributes }
