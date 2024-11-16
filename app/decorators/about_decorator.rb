@@ -12,6 +12,6 @@ class AboutDecorator < ApplicationDecorator
   end
 
   def spoken_languages
-    h.spoken_languages_list.join(', ')
+    h.spoken_languages_list.join(", ")
   end
 end

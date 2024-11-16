@@ -27,7 +27,7 @@ module Admin
 
       if @work_experience.save
         publish(:experience_created, experience: @work_experience)
-        render_success('helpers.created')
+        render_success("helpers.created")
       else
         render_failure(:new)
       end
@@ -38,7 +38,7 @@ module Admin
       authorize @work_experience
       if @work_experience.update(permitted_attributes(@work_experience))
         publish(:experience_updated, experience: @work_experience)
-        render_success('helpers.updated')
+        render_success("helpers.updated")
       else
         render_failure(:edit)
       end
@@ -49,7 +49,7 @@ module Admin
       @work_experience.destroy
       authorize @work_experience
       publish(:experience_destroyed, experience: @work_experience)
-      render_success('helpers.deleted')
+      render_success("helpers.deleted")
     end
 
     private

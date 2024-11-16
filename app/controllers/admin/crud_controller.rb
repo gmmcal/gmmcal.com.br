@@ -5,6 +5,18 @@ module Admin
     include Publisher
     before_action :set_model, only: %i[edit update destroy]
 
+    def edit
+      raise NotImplementedError
+    end
+
+    def update
+      raise NotImplementedError
+    end
+
+    def destroy
+      raise NotImplementedError
+    end
+
     private
 
     def instance_variable_name
@@ -17,7 +29,7 @@ module Admin
 
     def set_model
       instance_variable_set(
-        "@#{instance_variable_name}",
+        :"@#{instance_variable_name}",
         instance_variable_value
       )
     end

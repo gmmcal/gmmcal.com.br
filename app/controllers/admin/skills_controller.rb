@@ -27,7 +27,7 @@ module Admin
 
       if @skill.save
         publish(:skill_created, skill: @skill)
-        render_success('helpers.created')
+        render_success("helpers.created")
       else
         render_failure(:new)
       end
@@ -38,7 +38,7 @@ module Admin
       authorize @skill
       if @skill.update(permitted_attributes(@skill))
         publish(:skill_updated, skill: @skill)
-        render_success('helpers.updated')
+        render_success("helpers.updated")
       else
         render_failure(:edit)
       end
@@ -49,7 +49,7 @@ module Admin
       @skill.destroy
       authorize @skill
       publish(:skill_destroyed, skill: @skill)
-      render_success('helpers.deleted')
+      render_success("helpers.deleted")
     end
 
     private

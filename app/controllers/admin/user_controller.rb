@@ -12,7 +12,7 @@ module Admin
       authorize @user
       if @user.update(permitted_attributes(@user))
         redirect_to %i[edit admin user],
-                    notice: t('helpers.updated', model: human_model)
+                    notice: t("helpers.updated", model: human_model)
       else
         render :edit
       end

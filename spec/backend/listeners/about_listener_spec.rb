@@ -20,7 +20,7 @@ RSpec.describe AboutListener, type: :listener do
     let(:event) { :about_created }
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'about'].join('/') }
+      let(:cache_key) { [ locale, 'about' ].join('/') }
     end
   end
 
@@ -28,7 +28,7 @@ RSpec.describe AboutListener, type: :listener do
     let(:event) { :about_updated }
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'about'].join('/') }
+      let(:cache_key) { [ locale, 'about' ].join('/') }
     end
   end
 
@@ -36,7 +36,7 @@ RSpec.describe AboutListener, type: :listener do
     let(:event) { :about_destroyed }
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'about'].join('/') }
+      let(:cache_key) { [ locale, 'about' ].join('/') }
     end
   end
 end

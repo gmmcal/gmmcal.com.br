@@ -2,9 +2,9 @@
 
 class WebsiteController < ApplicationController
   before_action :set_locale
-  before_action :set_data, except: :worker
-  before_action :set_flag_links, except: %i[worker cv]
-  before_action :set_menu_links, except: %i[worker cv]
+  before_action :set_data
+  before_action :set_flag_links
+  before_action :set_menu_links
 
   private
 
@@ -12,7 +12,7 @@ class WebsiteController < ApplicationController
     result = Rails.cache.fetch("#{I18n.locale}/#{model}") do
       retrieve_data(model)
     end
-    instance_variable_set("@#{model}", result)
+    instance_variable_set(:"@#{model}", result)
   end
 
   def retrieve_data(model)
@@ -23,7 +23,7 @@ class WebsiteController < ApplicationController
   end
 
   def set_data
-    fetch_from_cache('about')
+    fetch_from_cache("about")
   end
 
   def set_flag_links
@@ -31,7 +31,7 @@ class WebsiteController < ApplicationController
       {
         link: home_path(flag),
         label: flag,
-        css_class: ['flag', flag.downcase].join(' ')
+        css_class: [ "flag", flag.downcase ].join(" ")
       }
     end
   end

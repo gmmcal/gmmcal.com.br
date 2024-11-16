@@ -17,7 +17,7 @@ class PrawnPdf
 
   def initialize(keywords, options)
     @pdf = Prawn::Document.new(options.merge(metadata(keywords)))
-    pdf.font 'Helvetica', size: 13
+    pdf.font "Helvetica", size: 13
     pdf.define_grid(columns: 24, rows: 12, gutter: 10)
     pdf.default_leading 5
   end
@@ -45,12 +45,12 @@ class PrawnPdf
 
   def metadata_info(keywords)
     {
-      Title: I18n.t('frontend.helpers.title'),
-      Author: I18n.t('frontend.template.name'),
-      Subject: I18n.t('cv.subject'),
-      Keywords: keywords.join(' '),
-      Creator: I18n.t('frontend.template.name'),
-      Producer: 'Prawn',
+      Title: I18n.t("frontend.helpers.title"),
+      Author: I18n.t("frontend.template.name"),
+      Subject: I18n.t("cv.subject"),
+      Keywords: keywords.join(" "),
+      Creator: I18n.t("frontend.template.name"),
+      Producer: "Prawn",
       CreationDate: Time.zone.now
     }
   end

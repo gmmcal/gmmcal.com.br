@@ -4,7 +4,7 @@ module Admin
   class AdminController < ApplicationController
     include Authentication
     include Pundit::Authorization
-    layout 'admin'
+    layout "admin"
     before_action :set_default_locale
     after_action :verify_authorized
 

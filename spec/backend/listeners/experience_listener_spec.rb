@@ -25,7 +25,7 @@ RSpec.describe ExperienceListener, type: :listener do
       let(:event) { :experience_created }
 
       it_behaves_like 'listener' do
-        let(:cache_key) { [locale, 'work_experiences'].join('/') }
+        let(:cache_key) { [ locale, 'work_experiences' ].join('/') }
       end
     end
 
@@ -33,7 +33,7 @@ RSpec.describe ExperienceListener, type: :listener do
       let(:event) { :experience_updated }
 
       it_behaves_like 'listener' do
-        let(:cache_key) { [locale, 'work_experiences'].join('/') }
+        let(:cache_key) { [ locale, 'work_experiences' ].join('/') }
       end
     end
 
@@ -41,7 +41,7 @@ RSpec.describe ExperienceListener, type: :listener do
       let(:event) { :experience_destroyed }
 
       it_behaves_like 'listener' do
-        let(:cache_key) { [locale, 'work_experiences'].join('/') }
+        let(:cache_key) { [ locale, 'work_experiences' ].join('/') }
       end
     end
   end
@@ -60,7 +60,7 @@ RSpec.describe ExperienceListener, type: :listener do
     end
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'work_experiences'].join('/') }
+      let(:cache_key) { [ locale, 'work_experiences' ].join('/') }
     end
   end
 end

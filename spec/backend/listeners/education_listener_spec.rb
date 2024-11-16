@@ -25,7 +25,7 @@ RSpec.describe EducationListener, type: :listener do
       let(:event) { :education_created }
 
       it_behaves_like 'listener' do
-        let(:cache_key) { [locale, 'educations'].join('/') }
+        let(:cache_key) { [ locale, 'educations' ].join('/') }
       end
     end
 
@@ -33,7 +33,7 @@ RSpec.describe EducationListener, type: :listener do
       let(:event) { :education_updated }
 
       it_behaves_like 'listener' do
-        let(:cache_key) { [locale, 'educations'].join('/') }
+        let(:cache_key) { [ locale, 'educations' ].join('/') }
       end
     end
 
@@ -41,7 +41,7 @@ RSpec.describe EducationListener, type: :listener do
       let(:event) { :education_destroyed }
 
       it_behaves_like 'listener' do
-        let(:cache_key) { [locale, 'educations'].join('/') }
+        let(:cache_key) { [ locale, 'educations' ].join('/') }
       end
     end
   end
@@ -60,7 +60,7 @@ RSpec.describe EducationListener, type: :listener do
     end
 
     it_behaves_like 'listener' do
-      let(:cache_key) { [locale, 'educations'].join('/') }
+      let(:cache_key) { [ locale, 'educations' ].join('/') }
     end
   end
 end

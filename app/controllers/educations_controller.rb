@@ -2,6 +2,6 @@
 
 class EducationsController < WebsiteController
   def index
-    fetch_from_cache('educations')
+    fetch_from_cache("educations")
   end
 end

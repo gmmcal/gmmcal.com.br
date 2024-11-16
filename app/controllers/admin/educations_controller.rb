@@ -27,7 +27,7 @@ module Admin
 
       if @education.save
         publish(:education_created, education: @education)
-        render_success('helpers.created')
+        render_success("helpers.created")
       else
         render_failure(:new)
       end
@@ -38,7 +38,7 @@ module Admin
       authorize @education
       if @education.update(permitted_attributes(@education))
         publish(:education_updated, education: @education)
-        render_success('helpers.updated')
+        render_success("helpers.updated")
       else
         render_failure(:edit)
       end
@@ -49,7 +49,7 @@ module Admin
       @education.destroy
       authorize @education
       publish(:education_destroyed, education: @education)
-      render_success('helpers.deleted')
+      render_success("helpers.deleted")
     end
 
     private

@@ -1,32 +1,25 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# custom setup
 require:
   - rubocop-factory_bot
-  - rubocop-rails
   - rubocop-rspec
   - rubocop-rspec_rails
 
 AllCops:
   TargetRubyVersion: 3.3
+  SuggestExtensions: true
   DisplayCopNames: true
+  DisabledByDefault: false
   NewCops: enable
+
+FactoryBot/ExcessiveCreateList:
+  Enabled: false
+
+Layout/LineLength:
   Exclude:
-    - "bin/**/*"
-    - "db/schema.rb"
-    - "node_modules/**/*"
-    - "vendor/**/*"
-
-Rails:
-  Enabled: true
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    default: ()
-    "%i": "[]"
-    "%w": "[]"
-Style/Documentation:
-  Enabled: false
-
-Lint/ScriptPermission:
-  Enabled: false
+    - "config/**/*"
 
 Metrics/BlockLength:
   Exclude:
@@ -34,78 +27,13 @@ Metrics/BlockLength:
     - "spec/**/*"
     - "config/routes.rb"
 
-Layout/LineLength:
-  Exclude:
-    - "config/**/*"
-    - "db/**/*"
-    - "spec/**/*"
-
 Metrics/MethodLength:
   Exclude:
     - "db/migrate/*"
     - "lib/seed_manager.rb"
 
-Rails/LexicallyScopedActionFilter:
-  Enabled: false
-
 RSpec/NestedGroups:
   Max: 5
 
-Rails/FilePath:
-  Enabled: false
-
-Style/MixinUsage:
-  Enabled: false
-
-Layout/SpaceInsideArrayLiteralBrackets:
-  Exclude:
-    - "config/**/*"
-
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-
-Lint/RaiseException:
-  Enabled: true
-
-Lint/StructNewOverride:
-  Enabled: true
-
-Style/ExponentialNotation:
-  Enabled: true
-
-Style/HashEachMethods:
-  Enabled: true
-
-Style/HashTransformKeys:
-  Enabled: true
-
-Style/HashTransformValues:
-  Enabled: true
-
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: true
-
-Lint/MixedRegexpCaptureTypes:
-  Enabled: true
-
-Style/RedundantRegexpCharacterClass:
-  Enabled: true
-
-Style/RedundantRegexpEscape:
-  Enabled: true
-
-Style/SlicingWithRange:
-  Enabled: true
-
-Rails/EnvironmentVariableAccess:
-  Enabled: true
-  AllowReads: true
-
-Naming/InclusiveLanguage:
-  Enabled: false
-
-FactoryBot/ExcessiveCreateList:
+Style/Documentation:
   Enabled: false

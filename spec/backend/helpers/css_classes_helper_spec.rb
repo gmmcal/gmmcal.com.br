@@ -11,7 +11,7 @@ RSpec.describe CssClassesHelper, type: :helper do
     end
 
     it 'includes pt-br when locale is set for Portuguese' do
-      I18n.with_locale(:'pt-BR') do
+      I18n.with_locale(:"pt-BR") do
         expect(helper.body_class).to include('pt-br')
       end
     end
@@ -109,7 +109,7 @@ RSpec.describe CssClassesHelper, type: :helper do
 
       it 'returns inactive for portuguese' do
         I18n.with_locale(:en) do
-          expect(helper.tab_classes(:'pt-BR')).not_to include('active')
+          expect(helper.tab_classes(:"pt-BR")).not_to include('active')
         end
       end
     end
@@ -125,13 +125,13 @@ RSpec.describe CssClassesHelper, type: :helper do
 
       it 'returns inactive for portuguese' do
         I18n.with_locale(:en) do
-          expect(helper.tab_classes(:'pt-BR')).not_to include('active')
+          expect(helper.tab_classes(:"pt-BR")).not_to include('active')
         end
       end
     end
 
     context 'with params with locale set to :pt-BR' do
-      before { allow(helper).to receive(:params).and_return(locale: :'pt-BR') }
+      before { allow(helper).to receive(:params).and_return(locale: :"pt-BR") }
 
       it 'returns inactive for english' do
         I18n.with_locale(:en) do
@@ -141,7 +141,7 @@ RSpec.describe CssClassesHelper, type: :helper do
 
       it 'returns active for portuguese' do
         I18n.with_locale(:en) do
-          expect(helper.tab_classes(:'pt-BR')).to include('active')
+          expect(helper.tab_classes(:"pt-BR")).to include('active')
         end
       end
     end
