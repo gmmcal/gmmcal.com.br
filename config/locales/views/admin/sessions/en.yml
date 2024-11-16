@@ -1,0 +1,10 @@
+en:
+  admin:
+    sessions:
+      signed_in: "Signed in successfully."
+      invalid: "Invalid E-mail or password."
+      limited: "Try again later."
+    shared:
+      links:
+        sign_in: Login
+        sign_out: Logout

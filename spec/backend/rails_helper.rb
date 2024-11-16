@@ -26,7 +26,7 @@ require 'factory_bot_rails'
 # require only the support files necessary.
 #
 Rails.root.glob('spec/backend/support/**/*_autoload.rb').each { |f| require f }
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Rails.root.glob('spec/backend/support/helpers/**/*.rb').each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -38,7 +38,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
-  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Helpers::Authentication, type: :controller
 
   config.before(:suite) do
     FactoryBot.definition_file_paths = ['spec/backend/factories']

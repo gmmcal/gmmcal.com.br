@@ -25,7 +25,6 @@ gem 'matrix'
 gem 'prawn'
 
 # Admin gems
-gem 'devise'
 gem 'kramdown'
 gem 'pundit'
 gem 'simple_form'
@@ -38,7 +37,6 @@ gem 'turbo-rails'
 
 # Groups
 group :development do
-  # gem 'i18n-debug'
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'listen'
@@ -69,3 +67,5 @@ group :production do
   gem 'rack-cors'
   gem 'redis'
 end
+
+gem 'bcrypt'

@@ -2,10 +2,10 @@ Cypress.Commands.add('login', (email = 'email@example.com', password = 'password
   cy.session({email, password}, () => {
     cy.request({
       method: 'POST',
-      url: '/admin/login',
+      url: '/admin/session',
       body: {
         user: {
-          email: email,
+          email_address: email,
           password: password
         }
       }
@@ -17,7 +17,7 @@ Cypress.Commands.add('logout', () => {
   Cypress.session.clearAllSavedSessions()
   return cy.request({
     method: 'DELETE',
-    url: '/admin/logout',
+    url: '/admin/session',
   })
 })
 

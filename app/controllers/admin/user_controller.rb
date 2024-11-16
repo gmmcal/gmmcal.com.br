@@ -11,7 +11,6 @@ module Admin
     def update
       authorize @user
       if @user.update(permitted_attributes(@user))
-        bypass_sign_in(@user)
         redirect_to %i[edit admin user],
                     notice: t('helpers.updated', model: human_model)
       else

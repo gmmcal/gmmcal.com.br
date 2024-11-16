@@ -6,6 +6,6 @@ RSpec.shared_examples 'unauthorized' do
   end
 
   it 'redirects to login page' do
-    expect(response).to redirect_to(%i[new user session])
+    expect(response).to redirect_to(%i[new admin session])
   end
 end

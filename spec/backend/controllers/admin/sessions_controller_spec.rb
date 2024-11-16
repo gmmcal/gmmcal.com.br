@@ -6,20 +6,17 @@ RSpec.describe Admin::SessionsController, type: :controller do
   let(:email) { 'email@example.com' }
   let(:password) { 'password2018' }
   let(:locale) { :en }
-  let(:attributes) { { email: email, password: password } }
+  let(:attributes) { { email_address: email, password: password } }
 
   before do
-    # rubocop:disable RSpec/InstanceVariable
-    @request.env['devise.mapping'] = Devise.mappings[:user]
-    # rubocop:enable RSpec/InstanceVariable
-    create(:user, email: email, password: password, default_locale: locale)
+    create(:user, email_address: email, password: password, default_locale: locale)
   end
 
   describe 'POST #create' do
     context 'with user locale set to english' do
       it 'login message is in english' do
         post :create, params: { user: attributes }
-        expect(flash[:notice]).to eq(I18n.t('devise.sessions.signed_in', locale: locale))
+        expect(flash[:notice]).to eq(I18n.t('admin.sessions.signed_in', locale: locale))
       end
     end
 
@@ -28,7 +25,7 @@ RSpec.describe Admin::SessionsController, type: :controller do
 
       it 'login message is in portuguese' do
         post :create, params: { user: attributes }
-        expect(flash[:notice]).to eq(I18n.t('devise.sessions.signed_in', locale: locale))
+        expect(flash[:notice]).to eq(I18n.t('admin.sessions.signed_in', locale: locale))
       end
     end
   end

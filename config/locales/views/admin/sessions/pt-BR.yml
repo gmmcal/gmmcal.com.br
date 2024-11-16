@@ -1,0 +1,10 @@
+pt-BR:
+  admin:
+    sessions:
+      signed_in: Login efetuado com sucesso.
+      invalid: "E-mail ou senha inválidos."
+      limited: "Tente novamente mais tarde."
+    shared:
+      links:
+        sign_in: Login
+        sign_out: Sair

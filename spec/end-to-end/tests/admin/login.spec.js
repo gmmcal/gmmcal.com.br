@@ -11,12 +11,12 @@ describe('Login', () => {
 
   context('With only email filled', () => {
     beforeEach(() => {
-      cy.get('input[name="user[email]"]').type('email@example.com')
+      cy.get('input[name="user[email_address]"]').type('email@example.com')
       cy.get('input[value="Login"]').click()
     })
 
     it('fails if username and password doesn\'t match', () => {
-      cy.url().should('include', '/admin/login')
+      cy.url().should('include', '/admin/session')
     })
 
     it('shows error message', () => {
@@ -26,13 +26,13 @@ describe('Login', () => {
 
   context('With only password filled', () => {
     beforeEach(() => {
-      cy.get('input[name="user[email]"]')
+      cy.get('input[name="user[email_address]"]')
       cy.get('input[name="user[password]"]').type('password2018')
       cy.get('input[value="Login"]').click()
     })
 
     it('fails if username and password doesn\'t match', () => {
-      cy.url().should('include', '/admin/login')
+      cy.url().should('include', '/admin/session')
     })
 
     it('shows error message', () => {
@@ -43,7 +43,7 @@ describe('Login', () => {
   context('With email and password filled', () => {
     context('With valid information', () => {
       beforeEach(() => {
-        cy.get('input[name="user[email]"]').type('email@example.com')
+        cy.get('input[name="user[email_address]"]').type('email@example.com')
         cy.get('input[name="user[password]"]').type('password2018')
         cy.get('input[value="Login"]').click()
       })
@@ -59,13 +59,13 @@ describe('Login', () => {
 
     context('With invalid information', () => {
       beforeEach(() => {
-        cy.get('input[name="user[email]"]').type('email@example.com')
+        cy.get('input[name="user[email_address]"]').type('email@example.com')
         cy.get('input[name="user[password]"]').type('passwordpassword')
         cy.get('input[value="Login"]').click()
       })
 
       it('fails if username and password doesn\'t match', () => {
-        cy.url().should('include', '/admin/login')
+        cy.url().should('include', '/admin/session')
       })
 
       it('shows error message', () => {
