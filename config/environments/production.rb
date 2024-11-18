@@ -23,6 +23,9 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
+  # Store uploaded files on the local file system (see config/storage.yml for options).
+  config.active_storage.service = :local
+
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
   config.assume_ssl = true
 
@@ -46,10 +49,11 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Replace the default in-process memory cache store with a durable alternative.
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :solid_cache_store
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
-  # config.active_job.queue_adapter = :resque
+  config.active_job.queue_adapter = :solid_queue
+  config.solid_queue.connects_to = { database: { writing: :queue } }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -95,14 +99,6 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   config.log_tags = %i[request_id]
-
-  # Use a different cache store in production.
-  config.cache_store = :redis_cache_store,
-                       { url: ENV.fetch("REDIS_URL", nil),
-                         expires_in: (ENV.fetch("CACHE_EXPIRATION_TIME", nil) || 60).minutes }
-  config.public_file_server.headers = {
-    "Cache-Control" => "public, max-age=#{1.day.to_i}"
-  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = ENV.fetch("ASSET_HOST", nil)

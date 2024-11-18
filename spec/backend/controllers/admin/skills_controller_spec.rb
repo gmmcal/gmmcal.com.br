@@ -68,7 +68,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
     let(:user) { create(:user) }
 
     before do
-      allow(controller).to receive(:publish)
+      allow(CacheCleanupJob).to receive(:perform_later)
       sign_in(user)
     end
 
@@ -104,7 +104,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
 
         it 'triggers created event' do
           post :create, params: { skill: valid_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:skill_created, skill: Skill.last)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: Skill.last.id, model: :skills)
         end
       end
 
@@ -116,7 +116,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
 
         it 'does not triggers any event' do
           post :create, params: { skill: invalid_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -136,7 +136,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
         it 'triggers updated event' do
           skill = create(:skill, valid_attributes)
           put :update, params: { id: skill.to_param, skill: new_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:skill_updated, skill: skill)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: skill.id, model: :skills)
         end
       end
 
@@ -152,7 +152,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
         it 'does not triggers any event' do
           skill = create(:skill, valid_attributes)
           put :update, params: { id: skill.to_param, skill: new_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -168,7 +168,7 @@ RSpec.describe Admin::SkillsController, type: :controller do
       it 'triggers destroyed event' do
         skill = create(:skill, valid_attributes)
         delete :destroy, params: { id: skill.id }, format: :turbo_stream
-        expect(controller).to have_received(:publish).with(:skill_destroyed, skill: skill)
+        expect(CacheCleanupJob).to have_received(:perform_later).with(id: skill.id, model: :skills)
       end
     end
   end

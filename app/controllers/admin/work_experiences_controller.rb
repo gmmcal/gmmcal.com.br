@@ -26,7 +26,7 @@ module Admin
       authorize @work_experience
 
       if @work_experience.save
-        publish(:experience_created, experience: @work_experience)
+        CacheCleanupJob.perform_later(id: @work_experience.id, model: :work_experiences)
         render_success("helpers.created")
       else
         render_failure(:new)
@@ -37,7 +37,7 @@ module Admin
     def update
       authorize @work_experience
       if @work_experience.update(permitted_attributes(@work_experience))
-        publish(:experience_updated, experience: @work_experience)
+        CacheCleanupJob.perform_later(id: @work_experience.id, model: :work_experiences)
         render_success("helpers.updated")
       else
         render_failure(:edit)
@@ -48,7 +48,7 @@ module Admin
     def destroy
       @work_experience.destroy
       authorize @work_experience
-      publish(:experience_destroyed, experience: @work_experience)
+      CacheCleanupJob.perform_later(id: @work_experience.id, model: :work_experiences)
       render_success("helpers.deleted")
     end
 

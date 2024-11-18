@@ -35,6 +35,11 @@ gem "faker", require: false
 
 gem "turbo-rails"
 
+# Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
+gem "solid_cable"
+gem "solid_cache"
+gem "solid_queue"
+
 # Groups
 group :development do
   gem "brakeman"
@@ -64,7 +69,6 @@ group :production do
   # Use puma as the app server
   gem "puma"
   gem "rack-cors"
-  gem "redis"
 end
 
 gem "bcrypt"

@@ -68,7 +68,7 @@ RSpec.describe Admin::EducationsController, type: :controller do
     let(:user) { create(:user) }
 
     before do
-      allow(controller).to receive(:publish)
+      allow(CacheCleanupJob).to receive(:perform_later)
       sign_in(user)
     end
 
@@ -104,7 +104,7 @@ RSpec.describe Admin::EducationsController, type: :controller do
 
         it 'triggers created event' do
           post :create, params: { education: valid_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:education_created, education: Education.last)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: Education.last.id, model: :educations)
         end
       end
 
@@ -116,7 +116,7 @@ RSpec.describe Admin::EducationsController, type: :controller do
 
         it 'does not triggers any event' do
           post :create, params: { education: invalid_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -136,7 +136,7 @@ RSpec.describe Admin::EducationsController, type: :controller do
         it 'triggers updated event' do
           education = create(:education, valid_attributes)
           put :update, params: { id: education.to_param, education: new_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:education_updated, education: education)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: education.id, model: :educations)
         end
       end
 
@@ -152,7 +152,7 @@ RSpec.describe Admin::EducationsController, type: :controller do
         it 'does not triggers any event' do
           education = create(:education, valid_attributes)
           put :update, params: { id: education.to_param, education: new_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -168,7 +168,7 @@ RSpec.describe Admin::EducationsController, type: :controller do
       it 'triggers destroyed event' do
         education = create(:education, valid_attributes)
         delete :destroy, params: { id: education.id }, format: :turbo_stream
-        expect(controller).to have_received(:publish).with(:education_destroyed, education: education)
+        expect(CacheCleanupJob).to have_received(:perform_later).with(id: education.id, model: :educations)
       end
     end
   end

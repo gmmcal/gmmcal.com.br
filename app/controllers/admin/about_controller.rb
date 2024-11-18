@@ -19,7 +19,7 @@ module Admin
       authorize @about
 
       if @about.save
-        publish(:about_created, about: @about)
+        CacheCleanupJob.perform_later(id: @about.id, model: :about)
         render_success("helpers.created")
       else
         render_failure(:new)
@@ -30,7 +30,7 @@ module Admin
     def update
       authorize @about
       if @about.update(permitted_attributes(@about))
-        publish(:about_updated, about: @about)
+        CacheCleanupJob.perform_later(id: @about.id, model: :about)
         render_success("helpers.updated")
       else
         render_failure(:edit)
@@ -41,7 +41,7 @@ module Admin
     def destroy
       @about.destroy
       authorize @about
-      publish(:about_destroyed, about: @about)
+      CacheCleanupJob.perform_later(id: @about.id, model: :about)
       render_success("helpers.deleted")
     end
 

@@ -26,7 +26,7 @@ module Admin
       authorize @education
 
       if @education.save
-        publish(:education_created, education: @education)
+        CacheCleanupJob.perform_later(id: @education.id, model: :educations)
         render_success("helpers.created")
       else
         render_failure(:new)
@@ -37,7 +37,7 @@ module Admin
     def update
       authorize @education
       if @education.update(permitted_attributes(@education))
-        publish(:education_updated, education: @education)
+        CacheCleanupJob.perform_later(id: @education.id, model: :educations)
         render_success("helpers.updated")
       else
         render_failure(:edit)
@@ -48,7 +48,7 @@ module Admin
     def destroy
       @education.destroy
       authorize @education
-      publish(:education_destroyed, education: @education)
+      CacheCleanupJob.perform_later(id: @education.id, model: :educations)
       render_success("helpers.deleted")
     end
 

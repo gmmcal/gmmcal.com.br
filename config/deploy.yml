@@ -7,8 +7,10 @@ servers:
     - www.gustavocunha.dev
   db:
     - www.gustavocunha.dev
-  redis:
-    - www.gustavocunha.dev
+  job:
+    hosts:
+      - www.gustavocunha.dev
+    cmd: bin/jobs
 
 proxy:
   ssl: true
@@ -38,8 +40,9 @@ env:
     RAILS_SERVE_STATIC_FILES: enabled
   secret:
     - RAILS_MASTER_KEY
-    - DATABASE_URL
-    - REDIS_URL
+    - DATABASE_USERNAME
+    - DATABASE_HOST
+    - DATABASE_PASSWORD
 
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
@@ -64,11 +67,4 @@ accessories:
     files:
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
     directories:
-      - data:/var/lib/mysql
-  redis:
-    image: redis:7.2
-    roles:
-      - redis
-    port: 6379
-    directories:
-      - data:/data
+      - data:/var/lib/postgresql/data
