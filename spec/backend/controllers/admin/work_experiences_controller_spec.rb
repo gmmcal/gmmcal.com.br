@@ -68,7 +68,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
     let(:user) { create(:user) }
 
     before do
-      allow(controller).to receive(:publish)
+      allow(CacheCleanupJob).to receive(:perform_later)
       sign_in(user)
     end
 
@@ -104,7 +104,8 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
 
         it 'triggers created event' do
           post :create, params: { work_experience: valid_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:experience_created, experience: WorkExperience.last)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: WorkExperience.last.id,
+                                                                        model: :work_experiences)
         end
       end
 
@@ -116,7 +117,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
 
         it 'does not triggers any event' do
           post :create, params: { work_experience: invalid_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -136,7 +137,8 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
         it 'triggers updated event' do
           work_experience = create(:work_experience, valid_attributes)
           put :update, params: { id: work_experience.to_param, work_experience: new_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:experience_updated, experience: work_experience)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: work_experience.id,
+                                                                        model: :work_experiences)
         end
       end
 
@@ -152,7 +154,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
         it 'does not triggers any event' do
           work_experience = create(:work_experience, valid_attributes)
           put :update, params: { id: work_experience.to_param, work_experience: new_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -168,7 +170,7 @@ RSpec.describe Admin::WorkExperiencesController, type: :controller do
       it 'triggers destroyed event' do
         work_experience = create(:work_experience, valid_attributes)
         delete :destroy, params: { id: work_experience.id }, format: :turbo_stream
-        expect(controller).to have_received(:publish).with(:experience_destroyed, experience: work_experience)
+        expect(CacheCleanupJob).to have_received(:perform_later).with(id: work_experience.id, model: :work_experiences)
       end
     end
   end

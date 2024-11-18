@@ -26,7 +26,7 @@ module Admin
       authorize @skill
 
       if @skill.save
-        publish(:skill_created, skill: @skill)
+        CacheCleanupJob.perform_later(id: @skill.id, model: :skills)
         render_success("helpers.created")
       else
         render_failure(:new)
@@ -37,7 +37,7 @@ module Admin
     def update
       authorize @skill
       if @skill.update(permitted_attributes(@skill))
-        publish(:skill_updated, skill: @skill)
+        CacheCleanupJob.perform_later(id: @skill.id, model: :skills)
         render_success("helpers.updated")
       else
         render_failure(:edit)
@@ -48,7 +48,7 @@ module Admin
     def destroy
       @skill.destroy
       authorize @skill
-      publish(:skill_destroyed, skill: @skill)
+      CacheCleanupJob.perform_later(id: @skill.id, model: :skills)
       render_success("helpers.deleted")
     end
 

@@ -60,7 +60,7 @@ RSpec.describe Admin::AboutController, type: :controller do
     let(:user) { create(:user) }
 
     before do
-      allow(controller).to receive(:publish)
+      allow(CacheCleanupJob).to receive(:perform_later)
       sign_in(user)
     end
 
@@ -89,7 +89,7 @@ RSpec.describe Admin::AboutController, type: :controller do
 
         it 'triggers created event' do
           post :create, params: { about: valid_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:about_created, about: About.last)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: About.last.id, model: :about)
         end
       end
 
@@ -101,7 +101,7 @@ RSpec.describe Admin::AboutController, type: :controller do
 
         it 'does not triggers any event' do
           post :create, params: { about: invalid_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -121,7 +121,7 @@ RSpec.describe Admin::AboutController, type: :controller do
         it 'triggers updated event' do
           about = create(:about, valid_attributes)
           put :update, params: { id: about.to_param, about: new_attributes }, format: :turbo_stream
-          expect(controller).to have_received(:publish).with(:about_updated, about: about)
+          expect(CacheCleanupJob).to have_received(:perform_later).with(id: about.id, model: :about)
         end
       end
 
@@ -137,7 +137,7 @@ RSpec.describe Admin::AboutController, type: :controller do
         it 'does not triggers any event' do
           about = create(:about, valid_attributes)
           put :update, params: { id: about.to_param, about: new_attributes }, format: :turbo_stream
-          expect(controller).not_to have_received(:publish)
+          expect(CacheCleanupJob).not_to have_received(:perform_later)
         end
       end
     end
@@ -153,7 +153,7 @@ RSpec.describe Admin::AboutController, type: :controller do
       it 'triggers destroyed event' do
         about = create(:about, valid_attributes)
         delete :destroy, params: { id: about.id }, format: :turbo_stream
-        expect(controller).to have_received(:publish).with(:about_destroyed, about: about)
+        expect(CacheCleanupJob).to have_received(:perform_later).with(id: about.id, model: :about)
       end
     end
   end

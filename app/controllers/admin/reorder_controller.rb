@@ -2,12 +2,10 @@
 
 module Admin
   class ReorderController < AdminController
-    include Publisher
-
     def update
       authorize :reorder
 
-      publish(:"reorder_#{permitted_attributes[:model]}", ids: ids)
+      ReorderJob.perform_later(ids:, model: permitted_attributes[:model])
     end
 
     private

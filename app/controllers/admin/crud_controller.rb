@@ -2,7 +2,6 @@
 
 module Admin
   class CrudController < AdminController
-    include Publisher
     before_action :set_model, only: %i[edit update destroy]
 
     def edit

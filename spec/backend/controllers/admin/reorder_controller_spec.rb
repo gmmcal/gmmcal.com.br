@@ -17,7 +17,7 @@ RSpec.describe Admin::ReorderController, type: :controller do
     let(:user) { create(:user) }
 
     before do
-      allow(controller).to receive(:publish)
+      allow(ReorderJob).to receive(:perform_later)
       sign_in(user)
     end
 
@@ -36,7 +36,7 @@ RSpec.describe Admin::ReorderController, type: :controller do
         end
 
         it 'triggers reorder event' do
-          expect(controller).to have_received(:publish).with(:reorder_about, ids: ids)
+          expect(ReorderJob).to have_received(:perform_later).with(ids: ids, model: "about")
         end
       end
 
@@ -50,7 +50,7 @@ RSpec.describe Admin::ReorderController, type: :controller do
         end
 
         it 'triggers reorder event' do
-          expect(controller).to have_received(:publish).with(:reorder_education, ids: ids)
+          expect(ReorderJob).to have_received(:perform_later).with(ids: ids, model: "education")
         end
       end
 
@@ -64,7 +64,7 @@ RSpec.describe Admin::ReorderController, type: :controller do
         end
 
         it 'triggers reorder event' do
-          expect(controller).to have_received(:publish).with(:reorder_skill, ids: ids)
+          expect(ReorderJob).to have_received(:perform_later).with(ids: ids, model: "skill")
         end
       end
 
@@ -78,7 +78,7 @@ RSpec.describe Admin::ReorderController, type: :controller do
         end
 
         it 'triggers reorder event' do
-          expect(controller).to have_received(:publish).with(:reorder_work_experience, ids: ids)
+          expect(ReorderJob).to have_received(:perform_later).with(ids: ids, model: "work_experience")
         end
       end
 
@@ -92,7 +92,7 @@ RSpec.describe Admin::ReorderController, type: :controller do
         end
 
         it 'triggers reorder event' do
-          expect(controller).to have_received(:publish).with(:reorder_user, ids: ids)
+          expect(ReorderJob).to have_received(:perform_later).with(ids: ids, model: "user")
         end
       end
     end

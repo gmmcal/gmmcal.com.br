@@ -1,1 +1,4 @@
 create database gmmcalcombr_production
+create database gmmcalcombr_production_cache
+create database gmmcalcombr_production_queue
+create database gmmcalcombr_production_cable
