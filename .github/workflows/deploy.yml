@@ -97,7 +97,11 @@ jobs:
         run: kamal deploy --version=${{needs.tag.outputs.version}}
         env:
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          DATABASE_USERNAME: ${{ secrets.POSTGRES_USER }}
+          DATABASE_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          # db setup
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
