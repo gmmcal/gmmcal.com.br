@@ -173,8 +173,8 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.8.1)
-    kramdown (2.4.0)
-      rexml
+    kramdown (2.5.1)
+      rexml (>= 3.3.9)
     language_server-protocol (3.17.0.3)
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
