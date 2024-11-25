@@ -1,0 +1,25 @@
+servers:
+  web:
+    - www.gustavocunha.dev
+  db:
+    - www.gustavocunha.dev
+  job:
+    hosts:
+      - www.gustavocunha.dev
+    cmd: bin/jobs
+
+proxy:
+  hosts:
+    - gustavocunha.dev
+    - www.gustavocunha.dev
+
+env:
+  clear:
+    IS_PRODUCTION: true
+    RAILS_LOG_TO_STDOUT: enabled
+    RAILS_SERVE_STATIC_FILES: enabled
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_USERNAME
+    - DATABASE_HOST
+    - DATABASE_PASSWORD

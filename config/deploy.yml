@@ -2,21 +2,8 @@ service: gmmcal
 
 image: gmmcal/gmmcal
 
-servers:
-  web:
-    - www.gustavocunha.dev
-  db:
-    - www.gustavocunha.dev
-  job:
-    hosts:
-      - www.gustavocunha.dev
-    cmd: bin/jobs
-
 proxy:
   ssl: true
-  hosts:
-    - gustavocunha.dev
-    - www.gustavocunha.dev
   app_port: 3000
 
 registry:
@@ -32,17 +19,6 @@ builder:
     type: registry
     options: mode=max
     image: gmmcal/gmmcal.com.br:productioncache
-
-env:
-  clear:
-    IS_PRODUCTION: true
-    RAILS_LOG_TO_STDOUT: enabled
-    RAILS_SERVE_STATIC_FILES: enabled
-  secret:
-    - RAILS_MASTER_KEY
-    - DATABASE_USERNAME
-    - DATABASE_HOST
-    - DATABASE_PASSWORD
 
 aliases:
   console: app exec --interactive --reuse "bin/rails console"

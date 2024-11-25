@@ -1,0 +1,28 @@
+servers:
+  web:
+    - pr.gustavocunha.dev
+  db:
+    - pr.gustavocunha.dev
+  job:
+    hosts:
+      - pr.gustavocunha.dev
+    cmd: bin/jobs
+
+proxy:
+  hosts:
+    - pr1.gustavocunha.dev
+
+env:
+  clear:
+    IS_PRODUCTION: true
+    RAILS_LOG_TO_STDOUT: enabled
+    RAILS_SERVE_STATIC_FILES: enabled
+    DATABASE_NAME: gmmcalcombr_production_pr1
+    DATABASE_NAME_CACHE: gmmcalcombr_production_pr1_cache
+    DATABASE_NAME_QUEUE: gmmcalcombr_production_pr1_queue
+    DATABASE_NAME_CABLE: gmmcalcombr_production_pr1_cable
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_USERNAME
+    - DATABASE_HOST
+    - DATABASE_PASSWORD
