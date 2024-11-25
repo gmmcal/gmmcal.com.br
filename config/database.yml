@@ -85,19 +85,20 @@ staging:
 production:
   primary: &primary_production
     <<: *default
-    database: gmmcalcombr_production
+    database: <%= ENV.fetch("DATABASE_NAME", "gmmcalcombr_production") %>
     host: <%= ENV["DATABASE_HOST"] %>
     username: <%= ENV["DATABASE_USERNAME"] %>
     password: <%= ENV["DATABASE_PASSWORD"] %>
+    port: <%= ENV.fetch("DATABASE_PORT", "5432") %>
   cache:
     <<: *primary_production
-    database: gmmcalcombr_production_cache
+    database: <%= ENV.fetch("DATABASE_NAME_CACHE", "gmmcalcombr_production_cache") %>
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: gmmcalcombr_production_queue
+    database: <%= ENV.fetch("DATABASE_NAME_QUEUE", "gmmcalcombr_production_queue") %>
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: gmmcalcombr_production_cable
+    database: <%= ENV.fetch("DATABASE_NAME_CABLE", "gmmcalcombr_production_cable") %>
     migrations_paths: db/cable_migrate

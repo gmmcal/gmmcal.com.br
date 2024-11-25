@@ -1,0 +1,52 @@
+name: Cleanup
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: read
+
+jobs:
+  teardown:
+    runs-on: ubuntu-latest
+    environment:
+      name: preview
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          log-public-key: false
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+
+      - uses: jdx/mise-action@v3
+        with:
+          mise_toml: |
+            [tools]
+            ytt = "latest"
+
+      - name: Template file
+        run: |
+          ytt -f config/deploy.template.yml --data-value host=pr${{ github.event.number }}.gustavocunha.dev --data-value database=gmmcal_pr${{ github.event.number }} > config/deploy.pr${{ github.event.number }}.yml
+          cp .kamal/secrets .kamal/secrets.pr${{ github.event.number }}
+
+      - name: Deploy command
+        run: bundle exec kamal app remove -d pr${{ github.event.number }}
+        env:
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          DATABASE_USERNAME: ${{ secrets.POSTGRES_USER }}
+          DATABASE_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          # db setup
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
