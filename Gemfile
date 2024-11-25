@@ -70,6 +70,7 @@ group :production, :staging do
   gem "puma"
   gem "rack-cors"
   gem "thruster", require: false
+  gem "kamal"
 end
 
 gem "bcrypt"

@@ -1,0 +1,44 @@
+servers:
+  web:
+    - pr2.gustavocunha.dev
+  db:
+    - pr2.gustavocunha.dev
+  job:
+    hosts:
+      - pr2.gustavocunha.dev
+    cmd: bin/jobs
+
+proxy:
+  hosts:
+    - pr2.gustavocunha.dev
+
+env:
+  clear:
+    RAILS_LOG_TO_STDOUT: enabled
+    RAILS_SERVE_STATIC_FILES: enabled
+    DATABASE_NAME: gmmcalcombr_production_pr2
+    DATABASE_NAME_CACHE: gmmcalcombr_production_pr2_cache
+    DATABASE_NAME_QUEUE: gmmcalcombr_production_pr2_queue
+    DATABASE_NAME_CABLE: gmmcalcombr_production_pr2_cable
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_USERNAME
+    - DATABASE_HOST
+    - DATABASE_PASSWORD
+
+aliases:
+  post-release: app exec --interactive --reuse "bin/rails db:migrate db:seed:all db:cache:clear"
+
+accessories:
+  db-pr:
+    image: postgres:16
+    roles:
+      - db
+    port: 5432
+    env:
+      secret:
+        - POSTGRES_USER
+        - POSTGRES_DB
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
