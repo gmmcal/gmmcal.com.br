@@ -227,7 +227,7 @@ GEM
       ttfunk (~> 1.8)
     psych (5.2.0)
       stringio
-    puma (6.4.3)
+    puma (6.5.0)
       nio4r (~> 2.0)
     pundit (2.4.0)
       activesupport (>= 3.0.0)
