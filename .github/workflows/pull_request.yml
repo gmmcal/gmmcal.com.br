@@ -77,7 +77,8 @@ jobs:
       name: Rubocop
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bin/rubocop
-    needs: build
+    needs:
+      - build
 
   reek:
     name: Lint
@@ -86,7 +87,8 @@ jobs:
       name: Reek
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec reek --config .reek.yml .
-    needs: build
+    needs:
+      - build
 
   brakeman:
     name: Lint
@@ -95,7 +97,8 @@ jobs:
       name: Brakeman
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bin/brakeman
-    needs: build
+    needs:
+      - build
 
   scsslint:
     name: Lint
@@ -104,7 +107,8 @@ jobs:
       name: SCSSLint
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec scss-lint --config .scss-lint.yml
-    needs: build
+    needs:
+      - build
 
   bundler-audit:
     name: Lint
@@ -113,7 +117,8 @@ jobs:
       name: Bundler Audit
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec bundle-audit check --update
-    needs: build
+    needs:
+      - build
 
   eslint:
     name: Lint
@@ -122,7 +127,8 @@ jobs:
       name: ESLint
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
       command: yarn eslint
-    needs: cypress
+    needs:
+      - cypress
 
   eslint_tests:
     name: Lint
@@ -131,7 +137,8 @@ jobs:
       name: ESLint - Tests
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
       command: yarn eslint:tests
-    needs: cypress
+    needs:
+      - cypress
 
   # TESTS
   tests:
@@ -140,7 +147,8 @@ jobs:
     with:
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec rspec
-    needs: build
+    needs:
+      - build
 
   e2e-admin:
     name: Tests
@@ -150,7 +158,9 @@ jobs:
       application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       pattern: spec/end-to-end/tests/admin/**.js
       name: Admin
-    needs: [build, cypress]
+    needs:
+      - build
+      - cypress
 
   e2e-frontend:
     name: Tests
@@ -160,4 +170,27 @@ jobs:
       application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       pattern: spec/end-to-end/tests/frontend/**.js
       name: Frontend
-    needs: [build, cypress]
+    needs:
+      - build
+      - cypress
+
+  deploy:
+    name: Preview
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_preview.yml@v1
+    needs:
+      - build
+      - preview
+      - production
+    with:
+      name: Deploy
+      environment: preview
+      url: https://pr${{ github.event.number }}.gustavocunha.dev
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      rails-master-key: ${{ secrets.RAILS_MASTER_KEY }}
+      database-host: ${{ secrets.DATABASE_HOST }}
+      postgres-user: ${{ secrets.POSTGRES_USER }}
+      postgres-password: ${{ secrets.POSTGRES_PASSWORD }}
+      postgres-db: ${{ secrets.POSTGRES_DB }}

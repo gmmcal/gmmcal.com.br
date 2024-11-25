@@ -73,3 +73,5 @@ group :production, :staging do
 end
 
 gem "bcrypt"
+
+gem "kamal"

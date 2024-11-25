@@ -1,0 +1,29 @@
+#! deploy.yml
+
+#@ load("@ytt:data", "data")
+
+servers:
+  web:
+    -  #@ data.values.host
+  db:
+    -  #@ data.values.host
+  job:
+    hosts:
+      -  #@ data.values.host
+    cmd: bin/jobs
+
+proxy:
+  hosts:
+    -  #@ data.values.host
+
+env:
+  clear:
+    RAILS_LOG_TO_STDOUT: enabled
+    RAILS_SERVE_STATIC_FILES: enabled
+    DATABASE_NAME: #@ data.values.database
+    DATABASE_NAME_CACHE: #@ data.values.database + "_cache"
+    DATABASE_NAME_QUEUE: #@ data.values.database + "_queue"
+    DATABASE_NAME_CABLE: #@ data.values.database + "_cable"
+
+aliases:
+  post-release: app exec --interactive --reuse "bin/rails db:migrate db:seed:all db:cache:clear"
