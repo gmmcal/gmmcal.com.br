@@ -17,7 +17,6 @@ proxy:
   hosts:
     - gustavocunha.dev
     - www.gustavocunha.dev
-  app_port: 3000
 
 registry:
   username: gmmcal

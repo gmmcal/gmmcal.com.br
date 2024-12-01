@@ -69,6 +69,7 @@ group :production, :staging do
   # Use puma as the app server
   gem "puma"
   gem "rack-cors"
+  gem "thruster", require: false
 end
 
 gem "bcrypt"
