@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
 # ./bin/rails server (executed on production image)
-if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
+if [ "${3}" == "puma" ]; then
+  echo "booting application on staging"
   ./bin/rails db:migrate
   ./bin/rails db:seed:all
 fi

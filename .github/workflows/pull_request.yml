@@ -32,7 +32,7 @@ jobs:
     secrets: inherit
     with:
       name: Preview
-      target: production
+      target: staging
       image: "gmmcal/gmmcal:preview-${{ github.event.number }}-${{ github.run_number }}"
       publish: true
 

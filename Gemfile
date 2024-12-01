@@ -65,7 +65,7 @@ group :test, :development do
   gem "cypress-on-rails"
 end
 
-group :production do
+group :production, :staging do
   # Use puma as the app server
   gem "puma"
   gem "rack-cors"

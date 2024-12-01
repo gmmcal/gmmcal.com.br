@@ -8,6 +8,9 @@ development:
 test:
   adapter: test
 
+staging:
+  adapter: async
+
 production:
   adapter: solid_cable
   connects_to:
