@@ -101,7 +101,7 @@ GEM
     date (3.4.1)
     diff-lcs (1.5.1)
     docile (1.4.1)
-    draper (4.0.2)
+    draper (4.0.4)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
       activemodel-serializers-xml (>= 1.0)
