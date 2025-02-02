@@ -22,12 +22,11 @@ en:
         title: Contacts
         github: gmmcal
         linkedin: Gustavo Cunha
-        twitter: '@gmmcal'
   cv:
-    subject: 'Curriculum from Gustavo Cunha'
-    experience: 'Experiences'
-    skill: 'Interests'
-    education: 'Educations'
-    contact: 'Contact'
-    spoken_languages: 'Fluent in: %{languages}'
-    previous_experiences: '* For previous experiences, please visit my website at %{link}'
+    subject: "Curriculum from Gustavo Cunha"
+    experience: "Experiences"
+    skill: "Interests"
+    education: "Educations"
+    contact: "Contact"
+    spoken_languages: "Fluent in: %{languages}"
+    previous_experiences: "* For previous experiences, please visit my website at %{link}"

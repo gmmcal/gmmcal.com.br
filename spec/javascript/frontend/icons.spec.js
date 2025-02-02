@@ -16,7 +16,6 @@ describe('Icons', () => {
       'github',
       'gitlab',
       'dev',
-      'twitter',
       'linkedin-in',
       'location-dot',
       'mobile-screen-button',

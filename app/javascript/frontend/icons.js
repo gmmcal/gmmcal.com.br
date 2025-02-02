@@ -1,5 +1,5 @@
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faGithub, faGitlab, faDev, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faGitlab, faDev, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faInbox, faMapMarkerAlt, faMobileAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Icons {
@@ -13,7 +13,6 @@ class Icons {
       faGithub,
       faGitlab,
       faDev,
-      faTwitter,
       faLinkedinIn,
       faMapMarkerAlt,
       faMobileAlt,

@@ -171,10 +171,6 @@ describe('Content', {testIsolation: false}, () => {
       it('has a linkedin', () => {
         cy.get('#contact .linkedin').should('have.length', 1)
       })
-
-      it('has a twitter', () => {
-        cy.get('#contact .twitter').should('have.length', 1)
-      })
     })
   })
 
@@ -189,10 +185,6 @@ describe('Content', {testIsolation: false}, () => {
 
     it('contains linkedin link', () => {
       cy.get('#footer svg[data-icon="linkedin-in"]').should('have.length', 1)
-    })
-
-    it('contains twitter link', () => {
-      cy.get('#footer svg[data-icon="twitter"]').should('have.length', 1)
     })
   })
 })
