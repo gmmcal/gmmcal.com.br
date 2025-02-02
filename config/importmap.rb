@@ -18,12 +18,8 @@ pin "admin/application", preload: false
 pin "admin/components/modal", preload: false
 pin "admin/components/sortable", preload: false
 
-pin "@fortawesome/fontawesome-svg-core",
-    to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-svg-core@6.5.1/index.mjs", preload: false
-pin "@fortawesome/free-brands-svg-icons",
-    to: "https://ga.jspm.io/npm:@fortawesome/free-brands-svg-icons@6.5.1/index.mjs", preload: false
-pin "@fortawesome/free-regular-svg-icons",
-    to: "https://ga.jspm.io/npm:@fortawesome/free-regular-svg-icons@6.5.1/index.mjs", preload: false
-pin "@fortawesome/free-solid-svg-icons",
-    to: "https://ga.jspm.io/npm:@fortawesome/free-solid-svg-icons@6.5.1/index.mjs", preload: false
-pin "sortablejs", to: "https://ga.jspm.io/npm:sortablejs@1.15.2/modular/sortable.esm.js", preload: false
+pin "@fortawesome/fontawesome-svg-core", to: "@fortawesome--fontawesome-svg-core.js", preload: false # @6.7.2
+pin "@fortawesome/free-brands-svg-icons", to: "@fortawesome--free-brands-svg-icons.js", preload: false # @6.7.2
+pin "@fortawesome/free-regular-svg-icons", to: "@fortawesome--free-regular-svg-icons.js", preload: false # @6.7.2
+pin "@fortawesome/free-solid-svg-icons", to: "@fortawesome--free-solid-svg-icons.js", preload: false # @6.7.2
+pin "sortablejs", preload: false # @1.15.6
