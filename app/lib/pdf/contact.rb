@@ -19,7 +19,6 @@ module Pdf
         { link: "mailto:#{about.email}", text: about.email },
         { link: "https://github.com/gmmcal", text: "github.com/gmmcal" },
         { link: "https://linkedin.com/in/gmmcal", text: "linkedin.com/in/gmmcal" },
-        { link: "https://twitter.com/gmmcal", text: "twitter.com/gmmcal" },
         { link: "tel:#{about.phone_number}", text: about.phone_number }
       ]
     end
