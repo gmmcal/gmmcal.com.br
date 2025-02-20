@@ -41,10 +41,10 @@ module Pdf
       end
     end
 
-    def body(color: "000000", padding: 10, &block)
+    def body(color: "000000", padding: 10, &)
       pdf.font "Helvetica", size: 13 do
         pdf.fill_color color
-        pdf.pad(padding, &block)
+        pdf.pad(padding, &)
       end
     end
 
