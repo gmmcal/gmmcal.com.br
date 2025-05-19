@@ -1,34 +1,12 @@
 name: Dependabot
 
-on: pull_request
-
-permissions:
-  contents: write
-  pull-requests: write
+on:
+  - pull_request
 
 jobs:
-  auto-approve:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
-    steps:
-      - name: Approve a PR
-        run: gh pr review --approve "$PR_URL"
-        env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-  auto-merge:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
-    steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@08eff52bf64351f401fb50d4972fa95b9f2c2d1b
-        with:
-          github-token: ${{ secrets.PAT_TOKEN }}
-      - name: Enable auto-merge for Dependabot PRs
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
-        run: gh pr merge --auto --rebase "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+  run:
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_dependabot.yml@v0
+    with:
+      pull-request-url: ${{ github.event.pull_request.html_url }}
+    secrets:
+      token: ${{ secrets.PAT_TOKEN }}
