@@ -14,8 +14,6 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "Europe/Amsterdam"
-    assignees:
-      - "gmmcal"
   - package-ecosystem: "npm"
     directory: "/"
     open-pull-requests-limit: 50
@@ -25,8 +23,6 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "Europe/Amsterdam"
-    assignees:
-      - "gmmcal"
   - package-ecosystem: github-actions
     directory: "/"
     open-pull-requests-limit: 50
@@ -36,5 +32,3 @@ updates:
       interval: "daily"
       time: "08:00"
       timezone: "Europe/Amsterdam"
-    assignees:
-      - "gmmcal"
