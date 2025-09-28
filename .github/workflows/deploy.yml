@@ -91,7 +91,7 @@ jobs:
           ruby-version: "3.4"
 
       - name: Install Kamal
-        run: gem install kamal -v 2.2.0 # lock version because of kamal proxy. Maybe consider adding kamal as a project dependency on a deploy group that will be installed on this action
+        run: gem install kamal -v 2.7.0 # lock version because of kamal proxy. Maybe consider adding kamal as a project dependency on a deploy group that will be installed on this action
 
       - name: Deploy command
         run: kamal deploy --version=${{needs.tag.outputs.version}}
