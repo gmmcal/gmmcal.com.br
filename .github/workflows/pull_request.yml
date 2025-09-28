@@ -148,12 +148,3 @@ jobs:
       pattern: spec/end-to-end/tests/frontend/**.js
       name: Frontend
     needs: [build, cypress]
-
-  # Preview and Cleanup
-  deploy:
-    name: Preview
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_preview.yml@v0
-    needs: preview
-    secrets: inherit
-    with:
-      image: "gmmcal/gmmcal:preview-${{ github.event.number }}-${{ github.run_number }}"
