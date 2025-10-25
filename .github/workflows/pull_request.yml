@@ -7,20 +7,27 @@ concurrency:
   group: pull-request-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   # DOCKER
   build:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
-    secrets: inherit
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
     with:
       name: Test
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
 
   cypress:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
-    secrets: inherit
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
     with:
       name: Cypress
       target: cypress
@@ -28,8 +35,10 @@ jobs:
 
   preview:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
-    secrets: inherit
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
     with:
       name: Preview
       target: staging
@@ -38,8 +47,10 @@ jobs:
 
   development:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
-    secrets: inherit
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
     with:
       name: Development
       target: development
@@ -48,8 +59,10 @@ jobs:
 
   production:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v0
-    secrets: inherit
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
     with:
       name: Production
       target: production
@@ -59,7 +72,7 @@ jobs:
   # LINT
   rubocop:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: Rubocop
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -68,7 +81,7 @@ jobs:
 
   reek:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: Reek
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -77,7 +90,7 @@ jobs:
 
   brakeman:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: Brakeman
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -86,7 +99,7 @@ jobs:
 
   scsslint:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: SCSSLint
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -95,7 +108,7 @@ jobs:
 
   bundler-audit:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: Bundler Audit
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -104,7 +117,7 @@ jobs:
 
   eslint:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: ESLint
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
@@ -113,7 +126,7 @@ jobs:
 
   eslint_tests:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
     with:
       name: ESLint - Tests
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
@@ -123,7 +136,7 @@ jobs:
   # TESTS
   tests:
     name: Tests
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v1
     with:
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       command: bundle exec rspec
@@ -131,7 +144,7 @@ jobs:
 
   e2e-admin:
     name: Tests
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v1
     with:
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
       application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -141,7 +154,7 @@ jobs:
 
   e2e-frontend:
     name: Tests
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v0
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v1
     with:
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
       application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
