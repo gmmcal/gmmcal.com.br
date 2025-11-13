@@ -15,7 +15,7 @@ RSpec.describe ErrorsController, type: :controller do
     it 'is a success' do
       get :unacceptable
 
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:unprocessable_content)
     end
   end
 
