@@ -14,7 +14,7 @@ jobs:
       name: preview
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - uses: webfactory/ssh-agent@v0.9.1
         with:
