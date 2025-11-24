@@ -9,4 +9,5 @@ class WorkExperience < Locatable
   validates :city, presence: true
   validates :country, presence: true
   validates :start_date, presence: true
+  has_rich_text :description
 end

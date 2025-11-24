@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :education do
     course { Faker::Educator.degree }
     institution { Faker::Educator.university }
-    description { Faker::Lorem.paragraphs(number: 5).join("\n\n") }
+    description { "<p>#{Faker::Lorem.paragraphs(number: 5).join("\n\n")}</p>" }
     start_date { Faker::Date.between(from: 5.years.ago, to: 2.years.ago) }
     locale { :en }
 

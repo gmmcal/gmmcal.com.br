@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class DownloadController < WebsiteController
+  protect_from_forgery with: :exception, except: %i[cv]
+
   def cv
     send_data(
       pdf.render,

@@ -6,7 +6,7 @@ module.exports = defineConfig({
   screenshotsFolder: 'spec/end-to-end/screenshots',
   video: false,
   viewportWidth: 1980,
-  viewportHeight: 1024,
+  viewportHeight: 1300,
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.

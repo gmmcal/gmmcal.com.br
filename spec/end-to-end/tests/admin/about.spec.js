@@ -13,7 +13,7 @@ describe('About', () => {
     beforeEach(() => {
       cy.appScenario('about/data')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'About').click({force: true})
+      cy.contains('.sidebar a', 'About').click({ force: true })
     })
 
     it('shows the current content', () => {
@@ -25,7 +25,7 @@ describe('About', () => {
     beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'About').click({force: true})
+      cy.contains('.sidebar a', 'About').click({ force: true })
     })
 
     it('shows the form', () => {
@@ -36,7 +36,7 @@ describe('About', () => {
       context('with empty form', () => {
         beforeEach(function () {
           cy.get('select[name="about[locale]"]').select('')
-          cy.get('input[value="Save"]').click({force: true})
+          cy.get('input[value="Save"]').click({ force: true })
         })
 
         it('shows the form', () => {
@@ -80,7 +80,7 @@ describe('About', () => {
         beforeEach(function () {
           cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
           cy.get('select[name="about[locale]"]').select('en')
-          cy.get('input[value="Save"]').click({force: true})
+          cy.get('input[value="Save"]').click({ force: true })
         })
 
         it('shows the form', () => {
@@ -124,7 +124,7 @@ describe('About', () => {
     context('With valid data', () => {
       beforeEach(function () {
         cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
-        cy.get('textarea[name="about[description]"]').clear().type('Lorem ipsum nulus dolor.')
+        cy.get('#about_description-content').clear().type('Lorem ipsum nulus dolor.')
         cy.get('select[name="about[locale]"]').select('en')
         cy.get('input[value="Save"]').click({ force: true })
       })
@@ -147,21 +147,21 @@ describe('About', () => {
     beforeEach(() => {
       cy.appScenario('about/data')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'About').click({force: true})
-      cy.contains('.btn-outline-primary', 'Edit').click({force: true})
+      cy.contains('.sidebar a', 'About').click({ force: true })
+      cy.contains('.btn-outline-primary', 'Edit').click({ force: true })
     })
 
     context('With invalid data', () => {
       context('with empty form', () => {
         beforeEach(function () {
           cy.get('input[name="about[job_title]"]').clear()
-          cy.get('textarea[name="about[description]"]').clear()
+          cy.get('#about_description-content').clear()
           cy.get('select[name="about[country]"]').select('')
           cy.get('input[name="about[city]"]').clear()
           cy.get('input[name="about[phone_number]"]').clear()
           cy.get('input[name="about[email]"]').clear()
           cy.get('select[name="about[locale]"]').select('')
-          cy.get('input[value="Update"]').click({force: true})
+          cy.get('input[value="Update"]').click({ force: true })
         })
 
         it('shows the form', () => {
@@ -204,13 +204,13 @@ describe('About', () => {
       context('with some required fields filled', () => {
         beforeEach(function () {
           cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
-          cy.get('textarea[name="about[description]"]').clear()
+          cy.get('#about_description-content').clear()
           cy.get('select[name="about[country]"]').select('')
           cy.get('input[name="about[city]"]').clear()
           cy.get('input[name="about[phone_number]"]').clear()
           cy.get('input[name="about[email]"]').clear()
           cy.get('select[name="about[locale]"]').select('en')
-          cy.get('input[value="Update"]').click({force: true})
+          cy.get('input[value="Update"]').click({ force: true })
         })
 
         it('shows the form', () => {
@@ -254,9 +254,9 @@ describe('About', () => {
     context('With valid data', () => {
       beforeEach(function () {
         cy.get('input[name="about[job_title]"]').clear().type('Some title at some company')
-        cy.get('textarea[name="about[description]"]').clear().type('Lorem ipsum nulus dolor.')
+        cy.get('#about_description-content').clear().type('Lorem ipsum nulus dolor.')
         cy.get('select[name="about[locale]"]').select('en')
-        cy.get('input[value="Update"]').click({force: true})
+        cy.get('input[value="Update"]').click({ force: true })
       })
 
       it('edits the information', () => {
@@ -273,7 +273,7 @@ describe('About', () => {
     beforeEach(() => {
       cy.appScenario('about/data')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'About').click({force: true})
+      cy.contains('.sidebar a', 'About').click({ force: true })
     })
 
     it('has a download button', () => {

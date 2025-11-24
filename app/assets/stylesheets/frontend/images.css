@@ -2,7 +2,7 @@
   .arrowpart {
     background-position: 0 2.3rem;
     background-repeat: no-repeat;
-    background-image: url("frontend/arrow-left-light.png");
+    background-image: url("arrow-left-light.png");
   }
 }
 
@@ -10,44 +10,44 @@
   .arrowpart {
     background-position: 50% 100%;
     background-repeat: no-repeat;
-    background-image: url("frontend/arrow-top-light.png");
+    background-image: url("arrow-top-light.png");
   }
 }
 
 @media screen {
   .flag {
     background-repeat: no-repeat;
-    background-image: url("frontend/flags.png");
+    background-image: url("flags.png");
   }
 
   .skill-bg {
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url("frontend/skills.png");
+    background-image: url("skills.png");
   }
 
   .banner .banner-img::after {
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url("frontend/banner-small.jpg");
+    background-image: url("banner-small.jpg");
   }
 }
 
 @media screen and (min-width: 420px) and (max-width: 767px) {
   .banner .banner-img.visible::after {
-    background-image: url("frontend/banner-medium.jpg");
+    background-image: url("banner-medium.jpg");
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .banner .banner-img.visible::after {
-    background-image: url("frontend/banner-large.jpg");
+    background-image: url("banner-large.jpg");
   }
 }
 
 @media screen and (min-width: 1024px) {
   .banner .banner-img.visible::after {
-    background-image: url("frontend/banner.jpg");
+    background-image: url("banner.jpg");
   }
 }
 
@@ -55,24 +55,24 @@
   .about-me .topmar {
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: url("frontend/gmmcal-small.png");
+    background-image: url("gmmcal-small.png");
   }
 }
 
 @media screen and (min-width: 420px) and (max-width: 767px) {
   .about-me .topmar.visible {
-    background-image: url("frontend/gmmcal-medium.png");
+    background-image: url("gmmcal-medium.png");
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .about-me .topmar.visible {
-    background-image: url("frontend/gmmcal-large.png");
+    background-image: url("gmmcal-large.png");
   }
 }
 
 @media screen and (min-width: 1024px) {
   .about-me .topmar.visible {
-    background-image: url("frontend/gmmcal.png");
+    background-image: url("gmmcal.png");
   }
 }

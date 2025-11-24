@@ -7,4 +7,5 @@ class Education < Locatable
   validates :course, presence: true
   validates :institution, presence: true
   validates :start_date, presence: true
+  has_rich_text :description
 end
