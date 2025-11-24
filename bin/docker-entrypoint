@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
 # bundle exec puma -C config/puma.rb (executed on staging image)
-if [ "${3}" == "puma" ]; then
+if [ "${2}" == "puma" ]; then
   ./bin/rails db:migrate
   ./bin/rails db:seed:all
 fi
 
 # bin/thrust bundle exec puma -C config/puma.rb (executed on production image)
-if [ "${4}" == "puma" ]; then
+if [ "${3}" == "puma" ]; then
   ./bin/rails db:migrate
 fi
 

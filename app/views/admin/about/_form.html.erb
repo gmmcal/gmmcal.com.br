@@ -4,7 +4,7 @@
 
   <div class="form-inputs">
     <%= f.input :job_title %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :rich_text_area, attachments: false %>
     <%= f.input :country, collection: Country.all %>
     <%= f.input :city %>
     <%= f.input :phone_number %>

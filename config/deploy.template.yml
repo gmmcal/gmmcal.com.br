@@ -18,6 +18,7 @@ proxy:
 
 env:
   clear:
+    IS_PRODUCTION: "false"
     RAILS_LOG_TO_STDOUT: enabled
     RAILS_SERVE_STATIC_FILES: enabled
     DATABASE_NAME: #@ data.values.database

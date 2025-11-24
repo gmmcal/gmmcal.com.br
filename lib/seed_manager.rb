@@ -26,6 +26,7 @@ class SeedManager
 
     log("Cleaning tables")
     tables = %i[about
+                action_text_rich_texts
                 education
                 skill
                 work_experience]
@@ -70,7 +71,7 @@ class SeedManager
   end
 
   def self.production?
-    ENV["IS_PRODUCTION"].present?
+    ENV["IS_PRODUCTION"] == "true"
   end
 
   def self.prepare

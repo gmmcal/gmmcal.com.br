@@ -34,7 +34,7 @@ module Pdf
 
     def text(about)
       pdf.pad(5) do
-        h5 { pdf.text about.description }
+        h5 { pdf.text about.description.to_plain_text }
       end
       pdf.pad(5) do
         h5 { pdf.text I18n.t("cv.spoken_languages", languages: about.spoken_languages) }

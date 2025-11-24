@@ -54,7 +54,7 @@ module Pdf
 
     def html(content)
       body do
-        pdf.text sanitize(content, tags: allowed_tags), inline_format: true
+        pdf.text sanitize(content.to_s, tags: allowed_tags), inline_format: true
       end
     end
 

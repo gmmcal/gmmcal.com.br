@@ -18,7 +18,8 @@ gem "rails", "~> 8.1.1"
 gem "draper"
 # Use SCSS for stylesheets
 gem "importmap-rails"
-gem "sprockets-rails"
+gem "propshaft"
+gem "lexxy"
 
 # CV PDF generation
 gem "matrix"
@@ -28,6 +29,7 @@ gem "prawn"
 gem "kramdown"
 gem "pundit"
 gem "simple_form"
+gem "bcrypt"
 
 # Fake Data gems
 gem "factory_bot_rails", require: false
@@ -40,6 +42,9 @@ gem "solid_cable"
 gem "solid_cache"
 gem "solid_queue"
 
+# release
+gem "kamal"
+
 # Groups
 group :development do
   gem "brakeman"
@@ -51,6 +56,7 @@ group :development do
   gem "rubocop-rspec", require: false
   gem "rubocop-rspec_rails", require: false
   gem "scss_lint", require: false
+  gem "openssl"
 end
 
 # Test suite
@@ -71,7 +77,3 @@ group :production, :staging do
   gem "rack-cors"
   gem "thruster", require: false
 end
-
-gem "bcrypt"
-
-gem "kamal"

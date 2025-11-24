@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :about do
     job_title { Faker::Job.title }
-    description { Faker::Lorem.paragraphs(number: 5).join("\n\n") }
+    description { "<p>#{Faker::Lorem.paragraphs(number: 5).join("\n\n")}</p>" }
     city { Faker::Address.city }
     country { Country.random }
     phone_number { Faker::PhoneNumber.cell_phone }

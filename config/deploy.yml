@@ -55,7 +55,7 @@ builder:
 #
 env:
   clear:
-    IS_PRODUCTION: true
+    IS_PRODUCTION: "true"
     RAILS_LOG_TO_STDOUT: enabled
     RAILS_SERVE_STATIC_FILES: enabled
   secret:

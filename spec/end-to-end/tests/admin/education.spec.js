@@ -13,7 +13,7 @@ describe('Education', () => {
     beforeEach(() => {
       cy.appScenario('education/list')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Educations').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({ force: true })
     })
 
     it('shows the current content', () => {
@@ -29,8 +29,8 @@ describe('Education', () => {
     beforeEach(() => {
       cy.app('clean')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Educations').click({force: true})
-      cy.contains('a.btn', 'New').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({ force: true })
+      cy.contains('a.btn', 'New').click({ force: true })
     })
 
     context('With invalid data', () => {
@@ -42,7 +42,7 @@ describe('Education', () => {
           cy.get('select[name="education[end_date(1i)]"]').select('')
           cy.get('select[name="education[end_date(2i)]"]').select('')
           cy.get('select[name="education[end_date(3i)]"]').select('')
-          cy.get('input[value="Save"]').click({force: true})
+          cy.get('input[value="Save"]').click({ force: true })
         })
 
         it('shows the form', () => {
@@ -81,7 +81,7 @@ describe('Education', () => {
       context('with some required fields filled', () => {
         beforeEach(function () {
           cy.get('input[name="education[course]"]').clear().type('Some title at some company')
-          cy.get('input[value="Save"]').click({force: true})
+          cy.get('input[value="Save"]').click({ force: true })
         })
 
         it('shows the form', () => {
@@ -127,7 +127,7 @@ describe('Education', () => {
         cy.get('select[name="education[start_date(2i)]"]').select('1')
         cy.get('select[name="education[start_date(3i)]"]').select('1')
         cy.get('select[name="education[locale]"]').select('en')
-        cy.get('input[value="Save"]').click({force: true})
+        cy.get('input[value="Save"]').click({ force: true })
       })
 
       it('is successful', () => {
@@ -154,7 +154,7 @@ describe('Education', () => {
         beforeEach(function () {
           cy.get('form.edit_education input[name="education[course]"]').clear()
           cy.get('form.edit_education input[name="education[institution]"]').clear()
-          cy.get('form.edit_education textarea[name="education[description]"]').clear()
+          cy.get('form.edit_education #education_description-content').clear()
           cy.get('form.edit_education select[name="education[start_date(1i)]"]').select('')
           cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('')
           cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('')
@@ -202,7 +202,7 @@ describe('Education', () => {
         beforeEach(function () {
           cy.get('form.edit_education input[name="education[course]"]').clear().type('Some title at some company')
           cy.get('form.edit_education input[name="education[institution]"]').clear()
-          cy.get('form.edit_education textarea[name="education[description]"]').clear()
+          cy.get('form.edit_education #education_description-content').clear()
           cy.get('form.edit_education select[name="education[start_date(1i)]"]').select('')
           cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('')
           cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('')
@@ -256,7 +256,7 @@ describe('Education', () => {
         cy.get('form.edit_education select[name="education[start_date(2i)]"]').select('1')
         cy.get('form.edit_education select[name="education[start_date(3i)]"]').select('1')
         cy.get('form.edit_education select[name="education[locale]"]').select('en')
-        cy.get('form.edit_education input[value="Update"]').click({force: true})
+        cy.get('form.edit_education input[value="Update"]').click({ force: true })
       })
 
       it('edits the information', () => {
@@ -273,8 +273,8 @@ describe('Education', () => {
     beforeEach(() => {
       cy.appScenario('education/edit')
       cy.visit('/admin')
-      cy.contains('.sidebar a', 'Educations').click({force: true})
-      cy.contains('.btn-danger', 'Delete').click({force: true})
+      cy.contains('.sidebar a', 'Educations').click({ force: true })
+      cy.contains('.btn-danger', 'Delete').click({ force: true })
     })
 
     it('is empty', () => {

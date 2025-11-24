@@ -7,7 +7,29 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><%= t(:title, scope: %i[frontend helpers]) %></title>
-  <%= stylesheet_link_tag 'frontend/application', media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/application', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/tailwind', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/grid', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/navbar', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/setup', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/images', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/fonts', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/print', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/about', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/banner', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/contact', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/education', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/educations', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/experience', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/experiences', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/footer', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/header', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/menu', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/menu-container', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/menu-item', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/skill', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/skills', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
+  <%= stylesheet_link_tag 'frontend/components/social', integrity: true, media: 'all', 'data-turbo-track': 'reload', rel: 'stylesheet' %>
   <link rel="manifest" href="manifest.json">
   <%= favicon_link_tag %>
   <%= favicon_link_tag 'icons/apple-icon-57x57.png', rel: 'apple-touch-icon', sizes: '57x57' %>
@@ -27,13 +49,13 @@
   <meta name="msapplication-TileImage" content="<%= asset_url('icons/ms-icon-144x144.png') %>">
   <meta name="theme-color" content="#262b37">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="<%=@about.description%>" />
+  <meta name="description" content="<%=@about.description.to_plain_text%>" />
   <!-- Open Graph Tags -->
   <meta property="og:title" content="<%= t(:title, scope: %i[frontend helpers]) %>" />
   <meta property="og:site_name" content="<%= t(:header, scope: %i[frontend helpers]) %>"/>
   <meta property="og:image" content="<%= asset_url('avatar.jpg') %>"/>
   <meta property="og:url" content="<%= home_url(I18n.locale) %>" />
-  <meta property="og:description" content="<%= @about.description %>" />
+  <meta property="og:description" content="<%= @about.description.to_plain_text %>" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="<%= I18n.locale %>" />
   <!--google font style-->
