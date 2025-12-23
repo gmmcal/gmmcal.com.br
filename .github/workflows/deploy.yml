@@ -70,6 +70,7 @@ jobs:
       environment: production
       url: https://www.gustavocunha.dev
       tag: ${{ needs.tag.outputs.version }}
+      ruby-version: 3.4.8
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
