@@ -5,17 +5,17 @@
 begin
   require 'database_cleaner'
 rescue LoadError => e
-  puts e.message
+
 end
 
 begin
   require 'factory_bot_rails'
 rescue LoadError => e
-  puts e.message
+
   begin
     require 'factory_girl_rails'
   rescue LoadError => e
-    puts e.message
+
   end
 end
 

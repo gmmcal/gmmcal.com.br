@@ -33,7 +33,7 @@ Rails.root.glob('spec/backend/support/helpers/**/*.rb').each { |f| require f }
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
-  puts e.to_s.strip
+
   exit 1
 end
 RSpec.configure do |config|
