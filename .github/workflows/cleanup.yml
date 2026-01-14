@@ -8,10 +8,14 @@ permissions:
   contents: read
 
 jobs:
-  teardown:
+  preview:
     runs-on: ubuntu-latest
     environment:
       name: preview
+    concurrency:
+      group: cleanup
+      cancel-in-progress: false
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
