@@ -26,7 +26,6 @@ gem "matrix"
 gem "prawn"
 
 # Admin gems
-gem "kramdown"
 gem "pundit"
 gem "simple_form"
 gem "bcrypt"
