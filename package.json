@@ -42,13 +42,15 @@
     "ci-cd"
   ],
   "engines": {
-    "node": "^20.11.1",
+    "node": "^20.19.0",
     "npm": "^10.2.4",
     "yarn": "^4.5.0"
   },
   "devDependencies": {
+    "@eslint/js": "*",
     "cypress": "*",
     "eslint": "*",
+    "globals": "*",
     "start-server-and-test": "*"
   },
   "scripts": {
@@ -57,7 +59,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "cypress:ci": "start-test server:start 3000 cypress:run",
-    "eslint": "eslint --config=eslintrc.config.mjs app/javascript/**/**.js",
+    "eslint": "eslint --config=eslintrc.config.mjs app/javascript/**/**.js eslintrc.config.mjs cypress.config.js",
     "eslint:tests": "eslint --config=eslintrc.config.mjs spec/**/**.js"
   },
   "packageManager": "yarn@4.1.0"

@@ -1,15 +1,14 @@
+import { defineConfig } from 'eslint/config'
 import js from '@eslint/js'
 import globals from 'globals'
 
-export default [
+export default defineConfig([
   js.configs.recommended,
   {
     languageOptions: {
       ecmaVersion: 13,
       sourceType: 'module',
-      globals: {
-        ...globals.browser,
-      },
+      globals: globals.browser,
     },
     rules: {
       camelcase: 0,
@@ -34,4 +33,4 @@ export default [
       semi: [2, 'never'],
     },
   },
-]
+])
