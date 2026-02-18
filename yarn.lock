@@ -88,7 +88,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:*":
+"@eslint/js@npm:^10.0.1":
   version: 10.0.1
   resolution: "@eslint/js@npm:10.0.1"
   peerDependencies:
@@ -654,7 +654,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:*":
+"cypress@npm:^15.10.0":
   version: 15.10.0
   resolution: "cypress@npm:15.10.0"
   dependencies:
@@ -886,7 +886,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:*":
+"eslint@npm:^10.0.0":
   version: 10.0.0
   resolution: "eslint@npm:10.0.0"
   dependencies:
@@ -1289,7 +1289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:*":
+"globals@npm:^17.3.0":
   version: 17.3.0
   resolution: "globals@npm:17.3.0"
   checksum: 10c0/7f21443ecaa60c6e9ff56d9fb6f10a9b5f9514e7f22e5392f715472bb220ce31c865ebf414a32695150e733fb3e1013e6322dbce70fddd1e066f372b8d55a4b8
@@ -1300,11 +1300,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gmmcal.com.br@workspace:."
   dependencies:
-    "@eslint/js": "npm:*"
-    cypress: "npm:*"
-    eslint: "npm:*"
-    globals: "npm:*"
-    start-server-and-test: "npm:*"
+    "@eslint/js": "npm:^10.0.1"
+    cypress: "npm:^15.10.0"
+    eslint: "npm:^10.0.0"
+    globals: "npm:^17.3.0"
+    start-server-and-test: "npm:^2.1.3"
   languageName: unknown
   linkType: soft
 
@@ -2117,7 +2117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-server-and-test@npm:*":
+"start-server-and-test@npm:^2.1.3":
   version: 2.1.3
   resolution: "start-server-and-test@npm:2.1.3"
   dependencies:

@@ -134,8 +134,10 @@ WORKDIR /rails
 
 # Copy application code
 COPY . .
-RUN rm package.json
-RUN mv package.ci.json package.json
+
+RUN npm install -g corepack
+
+RUN yarn set version latest
 
 RUN yarn install
 
