@@ -6,7 +6,7 @@ class DownloadController < WebsiteController
   def cv
     send_data(
       pdf.render,
-      filename: "curriculum-gustavo-cunha-#{I18n.locale.downcase}",
+      filename: "curriculum-gustavo-cunha-#{I18n.locale.downcase}.pdf",
       type: "application/pdf",
       disposition: params[:disposition]
     )
