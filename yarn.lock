@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 9
   cacheKey: 10c0
 
 "@cypress/request@npm:^3.0.10":
@@ -654,9 +654,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^15.13.1":
-  version: 15.13.1
-  resolution: "cypress@npm:15.13.1"
+"cypress@npm:^15.14.1":
+  version: 15.14.1
+  resolution: "cypress@npm:15.14.1"
   dependencies:
     "@cypress/request": "npm:^3.0.10"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -703,7 +703,7 @@ __metadata:
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10c0/eecc539d15af2f5bfc7ab9cb5502fc1e2f9f71571dbcb392b5d99109786c63548dd4a0aa20c512beb61a0a76dee10ea6c421a79026e96fb3a9dddd59c319541d
+  checksum: 10c0/a4cf496c9a44ab910fe14a3bff973bed3fe5ad44f865195346eac219c49d7da97761d5e489e1389e676366ba1f45a4868deeec737cc35db6aa6a82f971840d88
   languageName: node
   linkType: hard
 
@@ -1273,7 +1273,7 @@ __metadata:
   resolution: "gmmcal.com.br@workspace:."
   dependencies:
     "@eslint/js": "npm:^10.0.1"
-    cypress: "npm:^15.13.1"
+    cypress: "npm:^15.14.1"
     eslint: "npm:^10.2.0"
     globals: "npm:^17.5.0"
     start-server-and-test: "npm:^3.0.2"
