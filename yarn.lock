@@ -402,7 +402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.15.0":
+"axios@npm:^1.16.0":
   version: 1.16.0
   resolution: "axios@npm:1.16.0"
   dependencies:
@@ -1258,7 +1258,7 @@ __metadata:
     cypress: "npm:^15.14.2"
     eslint: "npm:^10.3.0"
     globals: "npm:^17.6.0"
-    start-server-and-test: "npm:^3.0.2"
+    start-server-and-test: "npm:^3.0.4"
   languageName: unknown
   linkType: soft
 
@@ -1455,9 +1455,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^18.1.2":
-  version: 18.1.2
-  resolution: "joi@npm:18.1.2"
+"joi@npm:^18.2.1":
+  version: 18.2.1
+  resolution: "joi@npm:18.2.1"
   dependencies:
     "@hapi/address": "npm:^5.1.1"
     "@hapi/formula": "npm:^3.0.2"
@@ -1466,7 +1466,7 @@ __metadata:
     "@hapi/tlds": "npm:^1.1.1"
     "@hapi/topo": "npm:^6.0.2"
     "@standard-schema/spec": "npm:^1.1.0"
-  checksum: 10c0/67d6fcbd81c017adf31ae6e0e6cd9d82ba25d6835d2981970ec0ea3198f2e8223aded756cdb8d5ed14fff3d6da2e2684a0767a770bcc544ce00fdcf9748e104a
+  checksum: 10c0/d74f8b382de107f8bcc376ed3a2206971760176e167c7b69ff5b1dfe47a0de01e4a171f07bf4783f9bd240fb1e75f7b2d514eed175f3326e681c3572c0990ecc
   languageName: node
   linkType: hard
 
@@ -2043,9 +2043,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-server-and-test@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "start-server-and-test@npm:3.0.2"
+"start-server-and-test@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "start-server-and-test@npm:3.0.4"
   dependencies:
     arg: "npm:5.0.2"
     bluebird: "npm:3.7.2"
@@ -2054,12 +2054,12 @@ __metadata:
     execa: "npm:5.1.1"
     lazy-ass: "npm:1.6.0"
     tree-kill: "npm:1.2.2"
-    wait-on: "npm:9.0.5"
+    wait-on: "npm:9.0.6"
   bin:
     server-test: src/bin/start.js
     start-server-and-test: src/bin/start.js
     start-test: src/bin/start.js
-  checksum: 10c0/d440d643dd48e65128716503a3220ab76e40eafca0285b2f6de1b2ac223f0c26bdb692287933852755f88b0358d8efbb0768edbf8d83554db832b1e67c629149
+  checksum: 10c0/314552c70c4f6342b8d4bb17997ec37b439ab48c4a5aa34f1d1cab5b9cb02c80a97a1b455f504afecce4129836c1c9cf315273597e702e6cf59a20822d8b9c7c
   languageName: node
   linkType: hard
 
@@ -2294,18 +2294,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-on@npm:9.0.5":
-  version: 9.0.5
-  resolution: "wait-on@npm:9.0.5"
+"wait-on@npm:9.0.6":
+  version: 9.0.6
+  resolution: "wait-on@npm:9.0.6"
   dependencies:
-    axios: "npm:^1.15.0"
-    joi: "npm:^18.1.2"
+    axios: "npm:^1.16.0"
+    joi: "npm:^18.2.1"
     lodash: "npm:^4.18.1"
     minimist: "npm:^1.2.8"
     rxjs: "npm:^7.8.2"
   bin:
     wait-on: bin/wait-on
-  checksum: 10c0/79823ebda9bb08ae341abb49d298d001039071ac103f6557da69371ae92a6b35ea8faca0b1c349f08c7b6db0ea527705bea9044a6a41e5a0e4470ee9d95fdcd1
+  checksum: 10c0/968ab8580228f06f8295fb4103d733f1ebc148580a4083351645badcaaafc22a34d5cece4a9fcd15c8d494745ca0f309efeef79ce2b3759e78ae9951a57405fe
   languageName: node
   linkType: hard
 
