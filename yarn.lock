@@ -1257,7 +1257,7 @@ __metadata:
     cypress: "npm:^15.15.0"
     eslint: "npm:^10.3.0"
     globals: "npm:^17.6.0"
-    start-server-and-test: "npm:^3.0.4"
+    start-server-and-test: "npm:^3.0.5"
   languageName: unknown
   linkType: soft
 
@@ -2042,9 +2042,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-server-and-test@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "start-server-and-test@npm:3.0.4"
+"start-server-and-test@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "start-server-and-test@npm:3.0.5"
   dependencies:
     arg: "npm:5.0.2"
     bluebird: "npm:3.7.2"
@@ -2053,12 +2053,12 @@ __metadata:
     execa: "npm:5.1.1"
     lazy-ass: "npm:1.6.0"
     tree-kill: "npm:1.2.2"
-    wait-on: "npm:9.0.6"
+    wait-on: "npm:9.0.10"
   bin:
     server-test: src/bin/start.js
     start-server-and-test: src/bin/start.js
     start-test: src/bin/start.js
-  checksum: 10c0/314552c70c4f6342b8d4bb17997ec37b439ab48c4a5aa34f1d1cab5b9cb02c80a97a1b455f504afecce4129836c1c9cf315273597e702e6cf59a20822d8b9c7c
+  checksum: 10c0/579bf00fe5babbb90279e7f7706e76d6001d93472c907c7b757ae767708ba004c96e743b71613a8524d5a0c890597529ffca315ebd5d6a34182566776caa213d
   languageName: node
   linkType: hard
 
@@ -2284,9 +2284,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-on@npm:9.0.6":
-  version: 9.0.6
-  resolution: "wait-on@npm:9.0.6"
+"wait-on@npm:9.0.10":
+  version: 9.0.10
+  resolution: "wait-on@npm:9.0.10"
   dependencies:
     axios: "npm:^1.16.0"
     joi: "npm:^18.2.1"
@@ -2295,7 +2295,7 @@ __metadata:
     rxjs: "npm:^7.8.2"
   bin:
     wait-on: bin/wait-on
-  checksum: 10c0/968ab8580228f06f8295fb4103d733f1ebc148580a4083351645badcaaafc22a34d5cece4a9fcd15c8d494745ca0f309efeef79ce2b3759e78ae9951a57405fe
+  checksum: 10c0/f5a1e940fe8efa6ad4b52efabad46925bfddea191d895a7f87e1c364975e7b095b0849f2f37549aea6a9dabacbf3c8ab14e818ba1182e370f060b7f6c8da0cf2
   languageName: node
   linkType: hard
 
