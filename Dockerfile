@@ -137,7 +137,7 @@ COPY . .
 
 RUN npm install -g corepack
 
-RUN yarn set version latest
+RUN yarn set version 4.15.0
 
 RUN yarn install
 
