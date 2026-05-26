@@ -1,0 +1,66 @@
+name: End to End Tests
+
+on:
+  - pull_request
+
+concurrency:
+  group: end-to-end-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # DOCKER
+  build:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Cypress
+      target: cypress
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+
+  admin:
+    name: Tests
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v1
+    with:
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+      application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      pattern: spec/end-to-end/tests/admin/**.js
+      name: Admin
+    needs:
+      - build
+
+  frontend:
+    name: Tests
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_cypress.yml@v1
+    with:
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+      application-image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      pattern: spec/end-to-end/tests/frontend/**.js
+      name: Frontend
+    needs:
+      - build
+
+  eslint:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: ESLint
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+      command: yarn eslint
+    needs:
+      - build
+
+  eslint_tests:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: ESLint - Tests
+      image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
+      command: yarn eslint:tests
+    needs:
+      - build

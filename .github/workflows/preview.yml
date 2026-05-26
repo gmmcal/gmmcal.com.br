@@ -1,0 +1,45 @@
+name: Preview Environment
+
+on:
+  - pull_request
+
+concurrency:
+  group: preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # DOCKER
+  build:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Preview
+      target: staging
+      image: "gmmcal/gmmcal:preview-${{ github.event.number }}-${{ github.run_number }}"
+      publish: true
+
+  deploy:
+    name: Preview
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_preview.yml@v1
+    needs:
+      - build
+    with:
+      name: Deploy
+      environment: preview
+      url: https://pr${{ github.event.number }}.gustavocunha.dev
+      ruby-version: 3.4.9
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      rails-master-key: ${{ secrets.RAILS_MASTER_KEY }}
+      database-host: ${{ secrets.DATABASE_HOST }}
+      postgres-user: ${{ secrets.POSTGRES_USER }}
+      postgres-password: ${{ secrets.POSTGRES_PASSWORD }}
+      postgres-db: ${{ secrets.POSTGRES_DB }}

@@ -1,0 +1,85 @@
+name: Tests & Lint
+
+on:
+  - pull_request
+
+concurrency:
+  group: tests-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # DOCKER
+  build:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Test
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+
+  # LINT
+  rubocop:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: Rubocop
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      command: bin/rubocop
+    needs:
+      - build
+
+  reek:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: Reek
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      command: bundle exec reek --config .reek.yml .
+    needs:
+      - build
+
+  brakeman:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: Brakeman
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      command: bin/brakeman
+    needs:
+      - build
+
+  scsslint:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: SCSSLint
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      command: bundle exec scss-lint --config .scss-lint.yml
+    needs:
+      - build
+
+  bundler-audit:
+    name: Lint
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1
+    with:
+      name: Bundler Audit
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      command: bundle exec bundle-audit check --update
+    needs:
+      - build
+
+  # TESTS
+  tests:
+    name: Tests
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v1
+    with:
+      image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      migration-command: bundle exec rails db:migrate:databases
+      command: bundle exec rspec
+    needs:
+      - build
