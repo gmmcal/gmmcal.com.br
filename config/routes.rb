@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     resources :work_experiences, except: :show
     resource :user, controller: :user, only: %i[edit update]
     resource :reorder, only: :update, controller: :reorder
+
+    mount SolidBro::Engine => :queue
   end
 
   get "404", to: "errors#not_found"

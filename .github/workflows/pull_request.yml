@@ -146,6 +146,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v1
     with:
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
+      migration-command: bundle exec rails db:migrate:databases
       command: bundle exec rspec
     needs:
       - build
@@ -185,7 +186,7 @@ jobs:
       name: Deploy
       environment: preview
       url: https://pr${{ github.event.number }}.gustavocunha.dev
-      ruby-version: 3.4.8
+      ruby-version: 3.4.9
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}

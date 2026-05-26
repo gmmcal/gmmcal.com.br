@@ -1,6 +1,19 @@
 # frozen_string_literal: true
 
 namespace :db do
+  namespace :migrate do
+    task databases: :environment do
+      Rails.logger.info("==> Migrate primary database")
+      Rake::Task["db:migrate:primary"].execute
+      Rails.logger.info("==> Load cable schema")
+      Rake::Task["db:schema:load:cable"].execute
+      Rails.logger.info("==> Load cache schema")
+      Rake::Task["db:schema:load:cache"].execute
+      Rails.logger.info("==> Load queue schema")
+      Rake::Task["db:schema:load:queue"].execute
+    end
+  end
+
   namespace :cache do
     task clear: :environment do
       require "seed_manager"
