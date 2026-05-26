@@ -1,0 +1,36 @@
+name: Docker Images
+
+on:
+  - pull_request
+
+concurrency:
+  group: images-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  development:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Development
+      target: development
+      publish: false
+      image: gmmcal/gmmcal:development
+
+  production:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Production
+      target: production
+      publish: false
+      image: gmmcal/gmmcal:production
