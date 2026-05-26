@@ -20,8 +20,18 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: gmmcalcombr_development
+  primary: &primary_development
+    <<: *default
+    database: gmmcalcombr_development
+  cache:
+    <<: *primary_development
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_development
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_development
+    migrations_paths: db/cable_migrate
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -54,8 +64,19 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: gmmcalcombr_test
+  primary: &primary_test
+    <<: *default
+    database: gmmcalcombr_test
+    url: <%= ENV['DATABASE_URL'] %>
+  cache:
+    <<: *primary_test
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_test
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_test
+    migrations_paths: db/cable_migrate
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

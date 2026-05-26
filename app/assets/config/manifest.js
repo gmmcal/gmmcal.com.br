@@ -5,3 +5,5 @@
 //= link_tree ../../../vendor/javascript .js
 //= link lexxy.js
 //= link lexxy.css
+//= link solid_bro/application.css
+//= link solid_bro/application.js
