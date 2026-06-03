@@ -424,7 +424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bluebird@npm:3.7.2, bluebird@npm:^3.7.2":
+"bluebird@npm:^3.7.2":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 10c0/680de03adc54ff925eaa6c7bb9a47a0690e8b5de60f4792604aae8ed618c65e6b63a7893b57ca924beaf53eee69c5af4f8314148c08124c550fe1df1add897d2
@@ -1212,7 +1212,7 @@ __metadata:
     cypress: "npm:^15.16.0"
     eslint: "npm:^10.4.1"
     globals: "npm:^17.6.0"
-    start-server-and-test: "npm:^3.0.5"
+    start-server-and-test: "npm:^3.0.6"
   languageName: unknown
   linkType: soft
 
@@ -1997,12 +1997,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-server-and-test@npm:^3.0.5":
-  version: 3.0.5
-  resolution: "start-server-and-test@npm:3.0.5"
+"start-server-and-test@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "start-server-and-test@npm:3.0.6"
   dependencies:
     arg: "npm:5.0.2"
-    bluebird: "npm:3.7.2"
     check-more-types: "npm:2.24.0"
     debug: "npm:4.4.3"
     execa: "npm:5.1.1"
@@ -2013,7 +2012,7 @@ __metadata:
     server-test: src/bin/start.js
     start-server-and-test: src/bin/start.js
     start-test: src/bin/start.js
-  checksum: 10c0/579bf00fe5babbb90279e7f7706e76d6001d93472c907c7b757ae767708ba004c96e743b71613a8524d5a0c890597529ffca315ebd5d6a34182566776caa213d
+  checksum: 10c0/600efc2a181df10e558902cabd4069750d302009b00e3b2b6430616aa4dbaa00e371743d0c6aab1cb18c35cb9b7cc1ecb9b7b7fd349ed8b7cb30934834ca4a64
   languageName: node
   linkType: hard
 
