@@ -24,6 +24,8 @@ jobs:
             build-mode: none
           - language: javascript-typescript
             build-mode: none
+          - language: javascript
+            build-mode: none
           - language: ruby
             build-mode: none
     steps:
