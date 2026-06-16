@@ -51,7 +51,7 @@
     "cypress": "^15.17.0",
     "eslint": "^10.4.1",
     "globals": "^17.6.0",
-    "start-server-and-test": "^3.0.9"
+    "start-server-and-test": "^3.0.11"
   },
   "scripts": {
     "cypress:dev": "start-test server:start 3000 cypress:open",
