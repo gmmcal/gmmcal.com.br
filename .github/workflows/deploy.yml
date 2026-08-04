@@ -11,7 +11,7 @@ permissions:
 jobs:
   tag:
     name: "Tag: Production"
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tag.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tag.yml@v1.3.4
     concurrency:
       group: tag
       cancel-in-progress: false
