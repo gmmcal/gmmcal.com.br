@@ -76,7 +76,7 @@ jobs:
   # TESTS
   tests:
     name: Tests
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v1.3.4
     with:
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
       migration-command: bundle exec rails db:migrate:databases
