@@ -26,7 +26,7 @@ jobs:
 
   deploy:
     name: Preview
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_preview.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_preview.yml@v1.3.4
     needs:
       - build
     with:
