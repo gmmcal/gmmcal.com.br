@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   run:
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_dependabot.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_dependabot.yml@v1.3.4
     with:
       pull-request-url: ${{ github.event.pull_request.html_url }}
     secrets:
