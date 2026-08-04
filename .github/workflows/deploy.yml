@@ -61,7 +61,7 @@ jobs:
 
   deploy:
     name: Deploy
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_deploy.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_deploy.yml@v1.3.4
     needs:
       - tag
       - release
