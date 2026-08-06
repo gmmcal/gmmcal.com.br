@@ -25,7 +25,7 @@ jobs:
   # LINT
   rubocop:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: Rubocop
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -35,7 +35,7 @@ jobs:
 
   reek:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: Reek
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -45,7 +45,7 @@ jobs:
 
   brakeman:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: Brakeman
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -55,7 +55,7 @@ jobs:
 
   scsslint:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: SCSSLint
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
@@ -65,7 +65,7 @@ jobs:
 
   bundler-audit:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: Bundler Audit
       image: "gmmcal/gmmcal:test-${{ github.event.number }}-${{ github.run_number }}"
