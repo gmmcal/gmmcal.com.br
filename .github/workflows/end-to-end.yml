@@ -47,7 +47,7 @@ jobs:
 
   eslint:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: ESLint
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
@@ -57,7 +57,7 @@ jobs:
 
   eslint_tests:
     name: Lint
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.4
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v1.3.6
     with:
       name: ESLint - Tests
       image: "gmmcal/gmmcal:cypress-${{ github.event.number }}-${{ github.run_number }}"
