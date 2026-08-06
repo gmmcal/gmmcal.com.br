@@ -38,3 +38,7 @@ updates:
       timezone: "Europe/Amsterdam"
     assignees:
       - gmmcal
+    allow:
+      - dependency-type: "*"
+        update-types:
+          - "version-update:semver-major"
