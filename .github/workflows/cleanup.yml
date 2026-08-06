@@ -20,7 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - uses: webfactory/ssh-agent@v0
+      - uses: webfactory/ssh-agent@v0.10.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           log-public-key: false

@@ -39,6 +39,13 @@ updates:
     assignees:
       - gmmcal
     allow:
-      - dependency-type: "*"
+      - dependency-name: "webfactory/ssh-agent"
+        dependency-type: "all"
+        update-types:
+          - "version-update:semver-patch"
+          - "version-update:semver-minor"
+          - "version-update:semver-major"
+      - dependency-name: "*"
+        dependency-type: "all"
         update-types:
           - "version-update:semver-major"
