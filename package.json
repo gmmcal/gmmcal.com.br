@@ -50,7 +50,7 @@
     "@eslint/js": "^10.0.1",
     "cypress": "^15.20.0",
     "eslint": "^10.8.1",
-    "globals": "^17.9.0",
+    "globals": "^17.11.0",
     "start-server-and-test": "^3.0.12"
   },
   "scripts": {
