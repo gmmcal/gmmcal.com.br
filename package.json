@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "cypress": "^15.21.0",
+    "cypress": "^15.21.1",
     "eslint": "^10.9.1",
     "globals": "^17.11.0",
     "start-server-and-test": "^3.0.12"
