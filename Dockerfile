@@ -148,4 +148,4 @@ USER rails:rails
 
 ENTRYPOINT ["/rails/bin/cypress-entrypoint"]
 
-CMD ["cypress", "run"]
+CMD ["yarn", "cypress:run"]
