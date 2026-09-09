@@ -141,6 +141,8 @@ RUN yarn set version 4.15.0
 
 RUN yarn install
 
+RUN chmod -R 777 /root/.cache/Cypress
+
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
   chown -R rails:rails .
