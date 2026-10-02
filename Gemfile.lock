@@ -431,7 +431,7 @@ GEM
       pagy (>= 5.0)
       rails (>= 7.0)
       solid_queue
-    solid_cable (4.0.2)
+    solid_cable (4.1.0)
       actioncable (>= 7.2)
       activejob (>= 7.2)
       activerecord (>= 7.2)
