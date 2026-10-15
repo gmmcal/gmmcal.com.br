@@ -443,7 +443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.18.1":
+"axios@npm:^1.20.0":
   version: 1.20.0
   resolution: "axios@npm:1.20.0"
   dependencies:
@@ -1306,7 +1306,7 @@ __metadata:
     cypress: "npm:^16.1.1"
     eslint: "npm:^10.12.0"
     globals: "npm:^17.13.0"
-    start-server-and-test: "npm:^3.0.12"
+    start-server-and-test: "npm:^3.0.13"
   languageName: unknown
   linkType: soft
 
@@ -1545,7 +1545,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^18.2.3":
+"joi@npm:^18.2.9":
   version: 18.2.9
   resolution: "joi@npm:18.2.9"
   dependencies:
@@ -2144,9 +2144,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"start-server-and-test@npm:^3.0.12":
-  version: 3.0.12
-  resolution: "start-server-and-test@npm:3.0.12"
+"start-server-and-test@npm:^3.0.13":
+  version: 3.0.13
+  resolution: "start-server-and-test@npm:3.0.13"
   dependencies:
     arg: "npm:5.0.2"
     check-more-types: "npm:2.24.0"
@@ -2154,12 +2154,12 @@ __metadata:
     execa: "npm:5.1.1"
     lazy-ass: "npm:2.0.3"
     tree-kill: "npm:1.2.2"
-    wait-on: "npm:9.1.0"
+    wait-on: "npm:9.5.1"
   bin:
     server-test: src/bin/start.js
     start-server-and-test: src/bin/start.js
     start-test: src/bin/start.js
-  checksum: 10c0/d8bb5452ee300740836f4e53386353a9696fac0d763af4a9af7cac6d08b940686b7b3663f7847922433bce8fc784a0b90c7e143bb508788391b9c4e2b9b9a319
+  checksum: 10c0/d27238a3cce280e834e55e0b43b446b3b7dafd92f24b225e06977a4758093018b037dac5e01595619093619128bf2ac75ae961a659a85aed286d5de975e4597b
   languageName: node
   linkType: hard
 
@@ -2371,18 +2371,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-on@npm:9.1.0":
-  version: 9.1.0
-  resolution: "wait-on@npm:9.1.0"
+"wait-on@npm:9.5.1":
+  version: 9.5.1
+  resolution: "wait-on@npm:9.5.1"
   dependencies:
-    axios: "npm:^1.18.1"
-    joi: "npm:^18.2.3"
+    axios: "npm:^1.20.0"
+    joi: "npm:^18.2.9"
     lodash: "npm:^4.18.1"
-    minimist: "npm:^1.2.8"
     rxjs: "npm:^7.8.2"
   bin:
     wait-on: bin/wait-on
-  checksum: 10c0/6179b3a06718d8f6ed8b4d5d50c789cc965979a483c0d75b4868de2b5188272d2f94b872f384afbfc3d6b55155f29ae51b1b38e4e4e6b2ee5bfd695e66310733
+  checksum: 10c0/6ff776a9a289db217febd4d399ce65931d38cec328382d209f5fd972729d7423dda0befd9ce00dc7e13d0d49ddd78bca0d6896e6a077fe4a24d62f885b7be73b
   languageName: node
   linkType: hard
 
