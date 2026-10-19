@@ -35,5 +35,8 @@ Metrics/MethodLength:
 RSpec/NestedGroups:
   Max: 5
 
+RSpecRails/ReceivePerformLater:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
