@@ -27,9 +27,25 @@ jobs:
       tag: ${{needs.tag.outputs.version}}
       reference: ${{ github.sha }}
 
+  build_test:
+    name: Build
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    concurrency:
+      group: build-test
+      cancel-in-progress: true
+    with:
+      name: Test
+      target: test
+      image: "gmmcal/gmmcal:test"
+      cache_from: test-${{ github.event.repository.default_branch }}
+      cache_to: test-${{ github.event.repository.default_branch }}
+
   build_development:
     name: Build
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -40,10 +56,12 @@ jobs:
       name: Development
       target: development
       image: "gmmcal/gmmcal:development"
+      cache_from: development-${{ github.event.repository.default_branch }}
+      cache_to: development-${{ github.event.repository.default_branch }}
 
   build_production:
     name: Build
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
     needs:
       - tag
       - release
@@ -58,6 +76,24 @@ jobs:
       target: production
       reference: ${{needs.tag.outputs.version}}
       image: "gmmcal/gmmcal:production"
+      cache_from: production-${{ github.event.repository.default_branch }}
+      cache_to: production-${{ github.event.repository.default_branch }}
+
+  build_cypress:
+    name: Build
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    concurrency:
+      group: build-cypress
+      cancel-in-progress: true
+    with:
+      name: Cypress
+      target: cypress
+      image: "gmmcal/gmmcal:cypress"
+      cache_from: cypress-${{ github.event.repository.default_branch }}
+      cache_to: cypress-${{ github.event.repository.default_branch }}
 
   deploy:
     name: Deploy
