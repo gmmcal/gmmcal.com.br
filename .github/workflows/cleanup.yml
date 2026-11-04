@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   preview:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     environment:
       name: preview
     concurrency:
@@ -42,7 +42,7 @@ jobs:
           ytt -f config/deploy.template.yml --data-value host=pr${{ github.event.number }}.gustavocunha.dev --data-value database=gmmcal_pr${{ github.event.number }} > config/deploy.pr${{ github.event.number }}.yml
           cp .kamal/secrets .kamal/secrets.pr${{ github.event.number }}
 
-      - name: Deploy command
+      - name: Remove preview application
         run: bundle exec kamal app remove -d pr${{ github.event.number }}
         env:
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}

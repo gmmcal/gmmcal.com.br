@@ -11,9 +11,23 @@ permissions:
   contents: read
 
 jobs:
+  test:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Test
+      target: test
+      publish: false
+      image: gmmcal/gmmcal:test
+      cache_from: test-${{ github.event.number }}
+      cache_to: test-${{ github.event.number }}
+
   development:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -22,10 +36,12 @@ jobs:
       target: development
       publish: false
       image: gmmcal/gmmcal:development
+      cache_from: development-${{ github.event.number }}
+      cache_to: development-${{ github.event.number }}
 
   production:
     name: Build Image
-    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v1
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -34,3 +50,19 @@ jobs:
       target: production
       publish: false
       image: gmmcal/gmmcal:production
+      cache_from: production-${{ github.event.number }}
+      cache_to: production-${{ github.event.number }}
+
+  cypress:
+    name: Build Image
+    uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_docker.yml@v2
+    secrets:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+    with:
+      name: Cypress
+      target: cypress
+      publish: false
+      image: "gmmcal/gmmcal:cypress"
+      cache_from: cypress-${{ github.event.number }}
+      cache_to: cypress-${{ github.event.number }}
