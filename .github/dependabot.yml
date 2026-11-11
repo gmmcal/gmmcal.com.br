@@ -18,6 +18,8 @@ updates:
       timezone: "Europe/Amsterdam"
     assignees:
       - gmmcal
+    allow:
+      - dependency-type: "all"
   - package-ecosystem: "npm"
     directory: "/"
     open-pull-requests-limit: 50
@@ -31,6 +33,8 @@ updates:
       timezone: "Europe/Amsterdam"
     assignees:
       - gmmcal
+    allow:
+      - dependency-type: "all"
   - package-ecosystem: github-actions
     directory: "/"
     open-pull-requests-limit: 50
