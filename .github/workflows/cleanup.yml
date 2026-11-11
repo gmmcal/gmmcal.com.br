@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       - uses: webfactory/ssh-agent@v0.10.0
         with:
@@ -26,12 +26,12 @@ jobs:
           log-public-key: false
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v1.338.0
         with:
           ruby-version: 3.4.9
           bundler-cache: true
 
-      - uses: jdx/mise-action@v5
+      - uses: jdx/mise-action@v5.2.7
         with:
           mise_toml: |
             [tools]
