@@ -107,8 +107,6 @@ jobs:
       url: https://www.gustavocunha.dev
       tag: ${{ needs.tag.outputs.version }}
       ruby-version: 3.4.9
-      cache_from: main
-      cache_to: main
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
