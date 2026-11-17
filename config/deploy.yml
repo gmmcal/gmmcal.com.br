@@ -8,8 +8,6 @@ image: gmmcal/gmmcal
 servers:
   web:
     - www.gustavocunha.dev
-  db:
-    - www.gustavocunha.dev
   job:
     hosts:
       - www.gustavocunha.dev
@@ -101,7 +99,7 @@ accessories:
   db:
     image: postgres:16
     roles:
-      - db
+      - web
     port: 5432
     env:
       secret:
