@@ -17,7 +17,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v2
     with:
       name: Rubocop
-      ruby-version: "3.4.9"
+      ruby-version: "3.4.13"
       command: bin/rubocop
 
   reek:
@@ -25,7 +25,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v2
     with:
       name: Reek
-      ruby-version: "3.4.9"
+      ruby-version: "3.4.13"
       command: bundle exec reek --config .reek.yml .
 
   brakeman:
@@ -33,7 +33,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v2
     with:
       name: Brakeman
-      ruby-version: "3.4.9"
+      ruby-version: "3.4.13"
       command: bin/brakeman
 
   scsslint:
@@ -41,7 +41,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v2
     with:
       name: SCSSLint
-      ruby-version: "3.4.9"
+      ruby-version: "3.4.13"
       command: bundle exec scss-lint --config .scss-lint.yml
 
   bundler-audit:
@@ -49,7 +49,7 @@ jobs:
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_lint.yml@v2
     with:
       name: Bundler Audit
-      ruby-version: "3.4.9"
+      ruby-version: "3.4.13"
       command: bundle exec bundle-audit check --update
 
   eslint:
@@ -75,7 +75,7 @@ jobs:
     name: Tests
     uses: gmmcal/gmmcal-reusable-workflows/.github/workflows/_tests.yml@v2
     with:
-      ruby-version: "3.4.9"
+      ruby-version: "3.4.13"
       migration-command: bundle exec rails db:migrate:databases
       command: bundle exec rspec
       database-name: gmmcalcombr_test
