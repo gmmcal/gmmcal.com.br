@@ -35,7 +35,7 @@ jobs:
       name: Deploy
       environment: preview
       url: https://pr${{ github.event.number }}.gustavocunha.dev
-      ruby-version: 3.4.9
+      ruby-version: 3.4.13
     secrets:
       dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
