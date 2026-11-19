@@ -6,7 +6,7 @@ workflows:
     '.github/workflows/cleanup.yml':
         - 'actions/checkout@v7.0.1'
         - 'jdx/mise-action@v5.2.8'
-        - 'ruby/setup-ruby@v1.338.0'
+        - 'ruby/setup-ruby@v1.342.0'
         - 'webfactory/ssh-agent@v0.10.0'
     '.github/workflows/codeql.yml':
         - 'actions/checkout@v7.0.1'
@@ -33,9 +33,9 @@ dependencies:
         commit: 'sha1-d5574b52816a478f9d4e6529a3f6ff17a8a36785'
         owner_id: 216188
         repo_id: 738284564
-    'ruby/setup-ruby@v1.338.0':
-        ref: 'v1.338.0'
-        commit: 'sha1-b3aaceaef7e0ee231b499e7b5f49c03fc1d32199'
+    'ruby/setup-ruby@v1.342.0':
+        ref: 'v1.342.0'
+        commit: 'sha1-f9c4492e86def3e644ab32a0ef185eda5b0c20d0'
         owner_id: 210414
         repo_id: 231208785
     'webfactory/ssh-agent@v0.10.0':
