@@ -39,7 +39,9 @@ updates:
     directory: "/"
     open-pull-requests-limit: 50
     cooldown:
-      default-days: 5
+      default-days: 7
+      exclude:
+        - "gmmcal/gmmcal-reusable-workflows/*"
     commit-message:
       prefix: "OPT"
     schedule:
