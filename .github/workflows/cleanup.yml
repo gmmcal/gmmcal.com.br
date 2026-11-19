@@ -26,7 +26,7 @@ jobs:
           log-public-key: false
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1.338.0
+        uses: ruby/setup-ruby@v1.342.0
         with:
           ruby-version: 3.4.13
           bundler-cache: true
